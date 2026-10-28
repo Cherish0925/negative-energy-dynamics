@@ -1,8 +1,11 @@
-work/
-.venv/
 __pycache__/
 *.pyc
+.venv/
+.build/
 *.aux
 *.out
+*.toc
+*.fls
+*.fdb_latexmk
 *.synctex.gz
 .DS_Store

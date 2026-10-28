@@ -1,0 +1,57 @@
+# Bibliography
+
+The primary references below are grouped in the [annotated guide](README.md). Detailed theorem-level comparisons, including version and normalization choices, remain in the linked research notes.
+
+- B. Pausader and S. Shao, The mass-critical fourth-order Schrödinger equation in high dimensions, J. Hyperbolic Differ. Equ. 7 (2010), 651–705, [arXiv:0906.1547](https://arxiv.org/abs/0906.1547).
+- D. Bonheure, J.-B. Castéras, T. Gou and L. Jeanjean, Normalized solutions to the mixed dispersion nonlinear Schrödinger equation in the mass critical and supercritical regime, [arXiv:1802.09217v2](https://arxiv.org/abs/1802.09217).
+- Z. Liu, G. Romani and Y. Su, Mixed-dispersion Schrödinger equations and Gagliardo–Nirenberg inequalities: equivalence between ground states and optimizers, [arXiv:2603.26493v1](https://arxiv.org/abs/2603.26493) (2026).
+- Y. Cho, G. Hwang, S. Kwon and S. Lee, On finite time blowup for the mass-critical Hartree equations, [arXiv:1208.2302v3](https://arxiv.org/abs/1208.2302) (2014).
+- Z. Lin and C. Zeng, Instability, index theorem, and exponential trichotomy for linear Hamiltonian PDEs, Mem. Amer. Math. Soc. 275 (2022), no. 1347, [arXiv:1703.04016v4](https://arxiv.org/abs/1703.04016).
+- T. Boulenger and E. Lenzmann, Blowup for biharmonic NLS, Ann. Sci. Éc. Norm. Supér. (4) 50 (2017), 503–544. <https://doi.org/10.24033/asens.2326>.
+- D. Bonheure, J.-B. Castéras, T. Gou and L. Jeanjean, Strong instability of ground states to a fourth order Schrödinger equation, IMRN 2019, 5299–5315. [arXiv:1703.07977](https://arxiv.org/abs/1703.07977).
+- L. Dinh, Finite-Time Blow-Up of Radial Negative-Energy Solutions for the Mass-Critical Biharmonic Nonlinear Schrödinger Equation, 20-page manuscript, Meta AI Research, posted 2 October 2026. [Official publication page and full PDF](https://ai.meta.com/research/publications/finite-time-blow-up-of-radial-negative-energy-solutions-for-the-mass-critical-biharmonic-nonlinear-schrodinger-equation/).
+- E. Lenzmann and J. Sok, A sharp rearrangement principle in Fourier space and symmetry results for PDEs with arbitrary order, IMRN 2021, 15040–15081. [arXiv:1805.06294](https://arxiv.org/abs/1805.06294).
+- T. Gou, Blowup of cylindrically symmetric solutions for biharmonic NLS, [arXiv:2205.08167v3](https://arxiv.org/html/2205.08167v3), 4 November 2024. Journal metadata: Proc. Edinburgh Math. Soc. 67 (2024), 1085–1098, [doi:10.1017/S001309152400066X](https://doi.org/10.1017/S001309152400066X). The inspected full text is the arXiv version.
+- L. Bugiera, E. Lenzmann, A. Schikorra and J. Sok, On symmetry of traveling solitary waves for dispersion generalized NLS, Nonlinearity 33 (2020), 2797–2819. <https://doi.org/10.1088/1361-6544/ab74b2>.
+- Y. Hong, S. Kwon and H. Yoon, Global existence versus finite time blowup dichotomy for the system of nonlinear Schrödinger equations, [arXiv:1712.06811](https://arxiv.org/abs/1712.06811).
+- K. Komada, Scattering of group-invariant solutions below the ground state for the fourth-order NLS, arXiv:2609.33381v1, 27 September 2026, Section 5. <https://arxiv.org/abs/2609.33381>.
+- I. Naumkin and P. Raphaël, On small travelling waves to the mass critical fractional NLS, Calc. Var. Partial Differential Equations 57, 93 (2018), [arXiv:1712.04484](https://arxiv.org/abs/1712.04484).
+- A. J. Fern\'andez, L. Jeanjean, R. Mandel and M. Mariș, Some non-homogeneous Gagliardo–Nirenberg inequalities and application to a biharmonic non-linear Schrödinger equation, J. Differential Equations 330 (2022), 1–65, [arXiv:2010.01448](https://arxiv.org/abs/2010.01448).
+- V. Iyer, R. Parker and A. G. Stefanov, Existence and stability for traveling waves of fourth order semilinear wave and Schrödinger equations, [arXiv:2512.12390](https://arxiv.org/abs/2512.12390), Section 3.3.2.
+- T. Boulenger, D. Himmelsbach and E. Lenzmann, Blowup for fractional NLS, [arXiv:1509.08845](https://arxiv.org/abs/1509.08845).
+- R. Côte and S. Le Coz, High-speed excited multi-solitons in nonlinear Schrödinger equations, J. Math. Pures Appl. 96 (2011), 135–166. <https://arxiv.org/abs/1007.3034>.
+- G. Fibich, B. Ilan and S. Schochet, Critical exponents and collapse of nonlinear Schrödinger equations with anisotropic fourth-order dispersion, Nonlinearity 16 (2003), 1809–1821. [doi:10.1088/0951-7715/16/5/314](https://doi.org/10.1088/0951-7715/16/5/314). Author manuscript: <https://www.math.tau.ac.il/ fibich/Manuscripts/anisotropic_NL.pdf>.
+- K. Komada, Existence of blow-up solutions to nonlinear Schrödinger equations with anisotropic fourth-order dispersion, Funkcialaj Ekvacioj 65 (2022), 191–214. [doi:10.1619/fesi.65.191](https://doi.org/10.1619/fesi.65.191).
+- W. Chen and Z. Wang, Normalized solutions to the biharmonic nonlinear Schrödinger equation with combined nonlinearities, [arXiv:2305.16565](https://arxiv.org/abs/2305.16565) (2023).
+- D. Bonheure, J.-B. Castéras, E. Moreira dos Santos and R. Nascimento, Orbitally stable standing waves of a mixed dispersion nonlinear Schrödinger equation, SIAM J. Math. Anal. 50 (2018), 5027–5071, [arXiv:1710.09775](https://arxiv.org/abs/1710.09775).
+- T. Luo and H. Hajaiej, Normalized solutions for a class of scalar field equations involving mixed fractional Laplacians, Adv. Nonlinear Stud. 22 (2022), 228–247, [doi:10.1515/ans-2022-0013](https://doi.org/10.1515/ans-2022-0013).
+- T. Inui, K. Komada and K. Nishimura, \emph{Scattering of non-radial solutions for the fourth-order Schrödinger equation with $\dot H^{1/2}$-critical and supercritical nonlinearity}, 2026 preprint. [arXiv:2610.05802v1](https://arxiv.org/abs/2610.05802).
+- C. Klein, I. Petrenko, S. Roudenko and N. Stoilov, Dynamics of solutions in the 1d bi-harmonic nonlinear Schrödinger equation, arXiv:2510.24961v2 (27 February 2026), Section 1.3, Conjecture I. <https://arxiv.org/abs/2510.24961>.
+- T. Cazenave and P.-L. Lions, Orbital stability of standing waves for some nonlinear Schrödinger equations, Comm. Math. Phys. 85 (1982), 549–561. [doi:10.1007/BF01403504](https://doi.org/10.1007/BF01403504).
+- M. Grillakis, J. Shatah and W. Strauss, Stability theory of solitary waves in the presence of symmetry, II, J. Funct. Anal. 94 (1990), 308–348. [doi:10.1016/0022-1236(90)90016-E](https://doi.org/10.1016/0022-1236(90)90016-E).
+- A. Comech and D. Pelinovsky, Purely nonlinear instability of standing waves with minimal energy, Comm. Pure Appl. Math. 56 (2003), 1565–1607. [doi:10.1002/cpa.10104](https://doi.org/10.1002/cpa.10104).
+- L. Ma and L. Zhao, Uniqueness of ground states of some coupled nonlinear Schrödinger systems and their application, [arXiv:0708.0284](https://arxiv.org/abs/0708.0284).
+- X. Cheng, Z. Guo, G. Hwang and H. Yoon, Global well-posedness and scattering of the two dimensional cubic focusing nonlinear Schrödinger system, [arXiv:2202.10757](https://arxiv.org/abs/2202.10757).
+- V. D. Dinh, Blow-up criteria for fractional nonlinear Schrödinger equations, [arXiv:1808.07368v1](https://arxiv.org/abs/1808.07368).
+- G. Talenti, Best constant in Sobolev inequality, Annali di Matematica Pura ed Applicata 110 (1976), 353–372. [doi:10.1007/BF02418013](https://doi.org/10.1007/BF02418013).
+- F. Johansson, Arb: Efficient Arbitrary-Precision Midpoint-Radius Interval Arithmetic, 2016 preprint, [arXiv:1611.02831](https://arxiv.org/abs/1611.02831).
+- J. Dolbeault, P. Felmer, M. Loss and E. Paturel, Lieb–Thirring type inequalities and Gagliardo–Nirenberg inequalities for systems, J. Funct. Anal. 238 (2006), 193–220. [arXiv:math-ph/0506052](https://arxiv.org/abs/math-ph/0506052).
+- R. L. Frank, D. Gontier and M. Lewin, The Nonlinear Schrödinger Equation for Orthonormal Functions II: Application to Lieb–Thirring Inequalities, Commun. Math. Phys. 384 (2021), 1783–1828. [arXiv:2002.04964](https://arxiv.org/abs/2002.04964).
+- E. A. Carlen, R. L. Frank and E. H. Lieb. Stability estimates for the lowest eigenvalue of a Schrödinger operator. Geom. Funct. Anal. 24 (2014), 63–84. <https://arxiv.org/abs/1301.5032>.
+- J. Bourgain and W. Wang. Construction of blowup solutions for the nonlinear Schrödinger equation with critical nonlinearity. Ann. Scuola Norm. Sup. Pisa 25 (1997), 197–215. <https://numdam.org/item/ASNSP_1997_4_25_1-2_197_0/>.
+- L. Read and M. R. Schulz. The sharp one-dimensional Lieb–Thirring inequality for the sum of eigenvalues. arXiv:2609.10478v2 (14 September 2026). <https://arxiv.org/abs/2609.10478v2>.
+- R. L. Frank, D. Gontier and M. Lewin. Optimizers for the finite-rank Lieb–Thirring inequality. <https://arxiv.org/abs/2109.05984v2>.
+- R. L. Frank, D. Gontier and M. Lewin. The periodic Lieb–Thirring inequality. <https://arxiv.org/abs/2010.02981>.
+- A. Levitt. Best constants in Lieb–Thirring inequalities: a numerical investigation. J. Spectr. Theory 4 (2014), 153–175. <https://ems.press/journals/jst/articles/12471>.
+- P. Raphaël and J. Szeftel. Existence and uniqueness of minimal blow-up solutions to an inhomogeneous mass critical NLS. <https://arxiv.org/abs/1001.1627>.
+- W. Schlag. Dispersive estimates for Schrödinger operators in dimension two. <https://arxiv.org/abs/math/0405437>.
+- M. Beceanu and A. Soffer. Schrödinger equation with potential in rough motion. <https://arxiv.org/abs/1103.0521>.
+- M. Röckner, Y. Su and D. Zhang. Multi-bubble Bourgain–Wang solutions to nonlinear Schrödinger equation. <https://arxiv.org/abs/2110.04107>.
+- D. Cao, Y. Su and D. Zhang. On uniqueness of multi-bubble blow-up solutions and multi-solitons to L2-critical nonlinear Schrödinger equations. <https://arxiv.org/abs/2105.14554>.
+- Y. Su and Q. Guo. Blow-up solutions to nonlinear Schrödinger system at multiple points. Z. Angew. Math. Phys. 70, 20 (2019). <https://doi.org/10.1007/s00033-018-1065-z>.
+- A. Olivo and F. Grosshans. Investigating the optimality of ancilla-assisted linear optical Bell measurements. Phys. Rev. A 98, 042323 (2018). <https://arxiv.org/abs/1806.01243>.
+- OpenAI. Sharp one-dimensional Lieb–Thirring inequalities for matrix potentials. Research manuscript, 5 October 2026. <https://www.emergentmind.com/openai-math-explorer/papers/526.pdf?v=adc7f12>.
+
+- O. Bang, D. Edmundson and W. Królikowski. Collapse of incoherent light beams in inertial bulk Kerr media. Phys. Rev. Lett. 83 (1999), 5479–5482. <https://doi.org/10.1103/PhysRevLett.83.5479>.
+- R. Killip and M. Visan. Nonlinear Schrödinger equations at critical regularity. Clay Mathematics Proceedings 17 (2013). <https://www.math.ucla.edu/~visan/ClayLectureNotes.pdf>.
+- G. K. Duong, T. M. T. Le, P. T. Nam and P.-T. Nguyen. Finite-rank optimizers for the mass-supercritical Lieb–Thirring and Hardy–Lieb–Thirring inequalities. <https://arxiv.org/abs/2510.24148>.

@@ -1,0 +1,169 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=23mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype,amsmath,amssymb,amsthm,mathtools,enumitem,xcolor,booktabs}
+\usepackage[colorlinks=true,linkcolor=blue!45!black,citecolor=blue!45!black,urlcolor=blue!45!black]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\setlength{\parskip}{3pt}
+\setlist{nosep}
+\allowdisplaybreaks[1]
+\title{Thresholds, spectral geometry, and persistent radiation\\in mass-critical dispersive equations}
+\author{Shuxing Yang}
+\date{8 October 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We develop five connected results for critical focusing dispersive equations.
+For homogeneous real-even elliptic symbols of degree $m>1$, a sequence of
+negative-energy traveling waves minimizing mass is compact after scaling
+and translation, except for a finite splitting into zero-energy exact
+profiles; no diffuse remainder survives. Negative energy forces at least
+three negative directions in the full real action Hessian, and momentum
+response gives stronger branch-dependent bounds. A strictly convex
+density-norm argument unifies phase-kernel simplicity for local powers
+and positive-type Hartree attraction and yields a uniform nonlocal
+traveling-profile mass gap. For same-order dispersions interpolating
+between two homogeneous limits, we determine both variational thresholds,
+classify the rational model's upper endpoint, and prove a sharp
+lower-threshold selection law by a variational limit on the optimizer
+manifold. Finally, any bounded global zero-momentum negative-energy BNLS
+orbit must sustain exterior gradient at distances proportional to time.
+These are profile, variational, spectral-form, and necessary dynamical
+results; they do not constitute a general classification of near-critical
+time-dependent solutions.
+\end{abstract}
+Conditional stability-index statements retain their spectral assumptions; the quadratic-form conclusions require no such assumptions.
+
+\section*{What has advanced}
+The original physical question concerns pure BNLS,
+$iu_t=\Delta^2u-|u|^{8/N}u$, and the relationship between negative
+energy and collapse without radial symmetry. The present continuation
+studies the structures that distinguish persistent coherent motion from
+collapse, and the changes in those structures under modified dispersion
+or nonlocal attraction.
+
+\begin{enumerate}
+\item \textbf{The pure traveling-wave threshold.}
+When negative-energy exact profiles exist, define their least possible
+mass by $M_{\mathrm{tr}}$. A normalized minimizing sequence either
+converges to a negative-energy minimizer or splits strongly into finitely
+many zero-energy profiles with common parameters. If
+$M_{\mathrm{tr}}<2M_c$, the latter alternative has only one component.
+The theorem does not decide the endpoint sign or the value of
+$M_{\mathrm{tr}}$.
+\item \textbf{A spectral requirement at every mass.}
+Negative energy forces a three-dimensional negative plane in the full
+action Hessian. On a smooth isotropic branch with momentum parallel to
+velocity it forces at least $N+2$ negative directions. The distinction
+between near-ground and excited branches is thus expressed by precise
+spectral conditions, rather than by an assumption that every coherent
+wave has the same sign of energy.
+\item \textbf{A nonlocal extension with a common proof mechanism.}
+The simplicity of the phase kernel follows from equality in a strictly
+convex density norm and sharp critical interpolation. For positive-type
+Hartree interactions this gives the complete analytic input for a
+uniform negative-energy profile mass gap, even with arbitrary admissible
+subhomogeneous dispersion additions.
+\item \textbf{A complete variational model and selected scales.}
+For the rational same-order interpolation, the constrained energy has
+two exact mass thresholds and three different upper-endpoint behaviors.
+Near the lower threshold, the energy, kinetic scale, and frequency have
+explicit leading constants. The next low-frequency moment selects among
+all principal GN optimizers; uniqueness is unnecessary.
+\item \textbf{A stronger necessary dynamical alternative.}
+A forward-global uniformly $H^2$-bounded pure BNLS solution with
+$E<0$ and $P=0$ must maintain nonzero time-averaged exterior gradient
+at a linear spatial scale. Gradient localization, including an averaged
+version, is incompatible with those assumptions. This does not exclude
+persistent splitting or radiation.
+\end{enumerate}
+
+The common idea is to use the geometry of the density attraction to
+control phase directions, the response to dilation to identify energy
+thresholds, and the velocity--momentum response to distinguish coherent
+branches. The actual evolution introduces a separate transport question;
+a static profile theorem cannot supply that missing time-dependent step.
+
+\input{../thresholds-and-radiation/foundations-section.tex}
+\input{../thresholds-and-radiation/threshold-section.tex}
+\input{../thresholds-and-radiation/inertia-section.tex}
+\input{../thresholds-and-radiation/hartree-section.tex}
+\input{../thresholds-and-radiation/symbol-section.tex}
+\input{../thresholds-and-radiation/dynamics-section.tex}
+
+\section{Relation to established methods and remaining questions}
+Concentration compactness, translation profile decomposition, sharp
+interpolation, constrained minimization and localized virial identities
+are established tools. The claims requiring mathematical and historical
+assessment here are the particular threshold compactification,
+spectral bounds, uniform nonlocal gap, and dispersion-dependent
+selection statements in their precise stated classes.
+
+Pausader--Shao~\cite{PS} already use compact-orbit virial and center-motion
+arguments for the mass-critical fourth-order equation. Our gradient-tail
+and ballistic conclusions are consequences of that virial framework
+with the displayed localization estimates; we do not present the virial
+identity itself as new. The dynamical result allows noncompact mass
+tails, but it still assumes a uniform energy-space bound on the orbit.
+
+Bonheure--Cast\'eras--Gou--Jeanjean~\cite{BCGJ} analyze normalized
+solutions for mixed second- and fourth-order dispersion in a critical
+and supercritical regime. Liu--Romani--Su~\cite{LRS} study relations
+between optimizers and ground states in the mass-competition regime
+of that mixed-order equation. Those works supply relevant variational
+context. The same-order low/high frequency interpolation, its endpoint
+trichotomy and its optimizer-manifold selection laws are the specific
+objects analyzed here; a targeted comparison does not prove priority.
+
+Cho--Hwang--Kwon--Lee~\cite{CHKL}, Theorems 1.1 and 1.2, prove
+negative-energy finite-time blowup for fractional/higher-order Hartree
+equations under radial, high-regularity and spatially weighted initial
+data assumptions. Their higher-order theorem has
+$2<\alpha<1+N/2$. It is therefore not an unrestricted nonradial theorem
+for every symbol and interaction in Section~\ref{sec:r10-hartree}.
+The Hartree result here is a traveling-profile exclusion theorem; no
+contradiction with that blowup theorem is asserted.
+
+The central unfinished dynamical question in this continuation remains
+the existence or exclusion of a forward-global uniformly $H^2$-bounded
+pure BNLS orbit with $P=0$, $E<0$, and mass in a fixed sufficiently
+small interval above $M_c$. The new escape theorem identifies a necessary
+mechanism for such an orbit but does not make that mechanism impossible.
+Even excluding all global bounded orbits would not, by itself, exclude
+infinite-time growth of the $H^2$ norm or prove finite-time blowup.
+
+For the static threshold, the next precise questions are whether the
+endpoint has negative or zero energy, whether more than one component
+can occur, and which spectral degeneracies permit the endpoint to be
+approached. For modified dispersion the full isotropic constrained
+classification is proved, while general anisotropic borderline
+upper-endpoint equality and nonlinear stability of individual branches
+require additional analysis. These are separate mathematical questions;
+none is settled merely by increasing the number of parameters covered.
+
+\begin{thebibliography}{9}
+\bibitem{PS} B. Pausader and S. Shao,
+\emph{The mass-critical fourth-order Schr\"odinger equation in high dimensions},
+J. Hyperbolic Differ. Equ. \textbf{7} (2010), 651--705,
+\href{https://arxiv.org/abs/0906.1547}{arXiv:0906.1547}.
+\bibitem{BCGJ} D. Bonheure, J.-B. Cast\'eras, T. Gou and L. Jeanjean,
+\emph{Normalized solutions to the mixed dispersion nonlinear Schr\"odinger
+equation in the mass critical and supercritical regime},
+\href{https://arxiv.org/abs/1802.09217}{arXiv:1802.09217v2}.
+\bibitem{LRS} Z. Liu, G. Romani and Y. Su,
+\emph{Mixed-dispersion Schr\"odinger equations and Gagliardo--Nirenberg
+inequalities: equivalence between ground states and optimizers},
+\href{https://arxiv.org/abs/2603.26493}{arXiv:2603.26493v1} (2026).
+\bibitem{CHKL} Y. Cho, G. Hwang, S. Kwon and S. Lee,
+\emph{On finite time blowup for the mass-critical Hartree equations},
+\href{https://arxiv.org/abs/1208.2302}{arXiv:1208.2302v3} (2014).
+\bibitem{LZ} Z. Lin and C. Zeng,
+\emph{Instability, index theorem, and exponential trichotomy for linear
+Hamiltonian PDEs}, Mem. Amer. Math. Soc. \textbf{275} (2022), no. 1347,
+\href{https://arxiv.org/abs/1703.04016}{arXiv:1703.04016v4}.
+\end{thebibliography}
+\end{document}

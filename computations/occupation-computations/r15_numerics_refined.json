@@ -1,0 +1,62 @@
+[
+  {
+    "kind": "two_well",
+    "n": 160,
+    "L": 12.0,
+    "C": 0.17092698746138232,
+    "K": 2.000060918299021,
+    "F": 0.3418643875040976,
+    "penalty": 3.710926123697952e-11,
+    "mass_error": 6.661338147750939e-16,
+    "iterations": 1500,
+    "success": false,
+    "message": "STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT",
+    "seconds": 9.370768308639526,
+    "gradcheck": 8.577308828472407e-11
+  },
+  {
+    "kind": "asymmetric",
+    "n": 160,
+    "L": 12.0,
+    "C": 0.17092687219193714,
+    "K": 2.000074264747946,
+    "F": 0.34186643822495477,
+    "penalty": 5.515048000012229e-11,
+    "mass_error": 8.881784197001252e-16,
+    "iterations": 1500,
+    "success": false,
+    "message": "STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT",
+    "seconds": 8.512063026428223,
+    "gradcheck": 9.35545616670419e-11
+  },
+  {
+    "kind": "dipole",
+    "n": 160,
+    "L": 12.0,
+    "C": 0.1709269650847507,
+    "K": 2.0001652740556635,
+    "F": 0.3418821799622432,
+    "penalty": 2.731325637358038e-10,
+    "mass_error": 5.551115123125783e-16,
+    "iterations": 1500,
+    "success": false,
+    "message": "STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT",
+    "seconds": 8.200134992599487,
+    "gradcheck": 9.057238856483019e-11
+  },
+  {
+    "kind": "ground_vortex",
+    "n": 160,
+    "L": 12.0,
+    "C": 0.16961201259292755,
+    "K": 2.034171614553398,
+    "F": 0.3450199415038067,
+    "penalty": 1.1480558517290478e-05,
+    "mass_error": 8.881784257632315e-16,
+    "iterations": 1086,
+    "success": true,
+    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+    "seconds": 13.55873966217041,
+    "gradcheck": 1.4989080289462553e-10
+  }
+]

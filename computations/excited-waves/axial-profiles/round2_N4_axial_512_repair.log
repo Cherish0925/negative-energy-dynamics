@@ -1,0 +1,3 @@
+{"N": 512, "L": 64.0, "v": 0.0, "seed": "round2_radial_mode1_dim4.npz", "success": true, "preconditioned_residual": 9.769962616701378e-15, "elliptic_residual": 3.544299683357497e-09, "mass": 5317.792241997537, "P": 2.490104222229447e-13, "E": 1.5737262663014946e-12, "pohozaev": 1.5737262663014946e-12, "elapsed": 0.7444198131561279}
+LINEAR {"N": 512, "L": 64.0, "I": -273.4738619091778, "info": 0, "residual": 3.0008548337345786e-06}
+{"N": 512, "L": 64.0, "v": 0.005, "seed": "round2_radial_mode1_dim4.npz", "success": true, "preconditioned_residual": 4.263256414560601e-13, "elliptic_residual": 1.4241179364880565e-07, "mass": 5317.78882836242, "P": -2.7328232295234236, "E": -0.0017080145274465917, "pohozaev": -8.994451884680732e-12, "elapsed": 1.1795403957366943}

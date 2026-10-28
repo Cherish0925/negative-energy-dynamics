@@ -1,0 +1,6 @@
+{
+  "general_partner_residual": "0",
+  "radial_wronskian_residual": "0",
+  "component_virial_residual": "0",
+  "scope": "Exact algebra only; operator domains, boundary terms and spectral implications are proved in the notes."
+}

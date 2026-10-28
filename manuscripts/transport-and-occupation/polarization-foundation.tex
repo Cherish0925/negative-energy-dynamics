@@ -1,0 +1,334 @@
+\section{Sharp density geometry and quantitative polarization}
+\label{sec:r12-polarization-foundation}
+This appendix reproduces the analytic inputs used by the new evolution
+arguments. They are proved here, including the infinite-dimensional
+compactness step. No radiality, positivity of the kinetic semigroup,
+or real-sector nondegeneracy is used.
+
+Let $\mathcal H$ be any nonzero separable complex Hilbert space.
+Finite-dimensional $\mathbb C^d$ and $\ell^2$ are both allowed.
+Fix $N\ge1$, $m>1$, $s=m/2$, and a real-even, positive elliptic,
+$m$-homogeneous symbol $a$, of class $C^{N+2}$ away from zero.
+For $U\in H^s(\mathbb R^N;\mathcal H)$ put
+\[
+ \rho_U=\|U\|_{\mathcal H}^2,\quad
+ M(U)=\int\rho_U,\quad
+ A(U)=\int a(\xi)\|\widehat U(\xi)\|_{\mathcal H}^2\,d\xi.
+\]
+We use either of the following interactions:
+\begin{align*}
+ &\kappa=1+m/N,
+ &&\mathcal F(U)=\int\rho_U^\kappa,
+ &&V_\rho=\rho^{\kappa-1};\\
+ &\kappa=2,
+ &&\mathcal F(U)=\mathcal D(\rho_U,\rho_U),
+ &&V_\rho=K*\rho.
+\end{align*}
+In the second case $1<m<N$, the real even kernel $K$ is homogeneous
+of degree $-m$, its interaction form $\mathcal D$ is positive definite,
+and
+\[
+ |K(x)|+|x||\nabla K(x)|\le C|x|^{-m}.
+\]
+As before, positivity of the Fourier transform of $K$ almost everywhere
+suffices for positive definiteness. Pointwise positivity is not needed.
+The scalar sharp inequality defines $M_c$ by
+\begin{equation}\label{eq:r11-vectorGN}
+ \mathcal F(u)\le\kappa
+       \left(\frac{M(u)}{M_c}\right)^{\kappa-1}A(u).
+\end{equation}
+
+\begin{theorem}[Sharp interpolation and dimension-independent compactness]
+\label{thm:r11-vectorcompact}
+Inequality \eqref{eq:r11-vectorGN} has the same sharp constant for
+$\mathcal H$-valued functions. Every optimizer has the form
+\[
+ U(x)=\zeta Q(x),\qquad \|\zeta\|_{\mathcal H}=1,
+\]
+where $Q$ is a real scalar optimizer, up to a constant phase.
+If $M(U_n)\to M_c$, $A(U_n)\to1$, and
+$\mathcal F(U_n)\to\kappa$, then the sequence is strongly compact
+in $H^s$ after translations and internal unitaries. This remains
+true when the internal dimensions vary: embed all spaces in
+$\ell^2$ before applying the unitaries.
+\end{theorem}
+
+\subsection{Sharp interpolation and complete polarization}
+The local interaction is the $\kappa$-th power of the $L^\kappa$
+density norm. The Hartree interaction is the square of its positive
+definite Hilbert density norm. Thus both have the form
+$\mathcal F(U)=\|\rho_U\|_{\mathcal B}^\kappa$ for a strictly convex
+real density space $\mathcal B$.
+In an internal orthonormal basis $U=(u_j)$, the triangle inequality,
+scalar sharp interpolation, and sequence H\"older give
+\begin{align*}
+ \mathcal F(U)^{1/\kappa}
+ &\le\sum_j\mathcal F(u_j)^{1/\kappa}\\
+ &\le\kappa^{1/\kappa}M_c^{-(\kappa-1)/\kappa}
+   \sum_j A(u_j)^{1/\kappa}M(u_j)^{(\kappa-1)/\kappa}\\
+ &\le\kappa^{1/\kappa}M_c^{-(\kappa-1)/\kappa}
+              A(U)^{1/\kappa}M(U)^{(\kappa-1)/\kappa}.
+\end{align*}
+Finite partial sums converge in the density norm because the same
+bound applied to their tails tends to zero. A scalar maximizing sequence
+in one component proves sharpness.
+
+Split the components further into real scalar functions $f_j$.
+Equality forces every active $f_j$ to be a scalar optimizer, all
+$f_j^2$ to be proportional, and all kinetic-to-mass ratios to agree.
+The same conclusions hold after any real orthogonal rotation of a
+pair $f_i,f_j$. If $f_j/f_i$ took both signs of a nonzero constant,
+the squared sum and difference could not be proportional; when the
+constant has magnitude one their nonzero supports would be disjoint.
+Thus each $f_j$ is one real constant multiple of a fixed scalar
+function. This proves complete polarization, including for countably
+many components.
+
+\subsection{Compactness modulo internal unitaries}
+Ordinary local compactness does not hold directly in an infinite
+internal dimension: a fixed spatial shape can move through mutually
+orthogonal internal vectors. The following argument removes precisely
+that loss of compactness.
+
+\begin{lemma}[Internal-unitary local compactness]
+\label{lem:r11-internalcompact}
+Let $X=H^s(\mathbb R^N;\mathbb C)$ with $s>0$. From every bounded
+sequence in $X\widehat\otimes\ell^2$, one can extract a subsequence
+and internal unitaries $W_n$ such that $W_nU_n$ converges weakly in
+$X\widehat\otimes\ell^2$ and strongly in
+$L^2_{\mathrm{loc}}(\mathbb R^N;\ell^2)$.
+\end{lemma}
+\begin{proof}
+Fix an orthonormal basis $(\phi_k)$ of the scalar Hilbert space $X$.
+Write its internal coefficient vectors as
+$c_{nk}=\langle\phi_k,U_n\rangle_X\in\ell^2$.
+Gram--Schmidt the first $n$ vectors and extend the resulting finite
+orthonormal list to an internal orthonormal basis. A unitary $W_n$
+can therefore be chosen so that
+\[
+ W_nc_{nk}\in\operatorname{span}\{e_1,\ldots,e_k\},\qquad k\le n.
+\]
+For each fixed $k$, these vectors have a convergent subsequence in a
+fixed finite-dimensional space. Diagonal extraction gives strong
+convergence of every coefficient vector. Weak compactness gives a
+weak limit of $W_nU_n$, with exactly those coefficients.
+
+For $\chi\in C_c^\infty$, the scalar multiplication map
+$K_\chi:X\to L^2$, $f\mapsto\chi f$, is compact. If $P_L$ is the
+scalar projection onto the first $L$ basis vectors, then
+\[
+ \|K_\chi(I-P_L)\|_{X\to L^2}\longrightarrow0.
+\]
+Tensoring with the identity on $\ell^2$ preserves this norm.
+The transformed $P_LU_n$ converge strongly because there are only
+$L$ coefficient vectors; after multiplication by $\chi$, the tails
+are uniformly small. This proves local strong convergence.
+\end{proof}
+
+\begin{proof}[Compactness assertion of Theorem~\ref{thm:r11-vectorcompact}]
+The localized Sobolev inequality has constants independent of internal
+dimension: use the Hilbert-valued Bessel-potential representation and
+its norm triangle inequality, then spatial localization and the sum of
+component quadratic norms. Thus local mass vanishing for an
+$H^s$-bounded sequence implies vanishing in $L^p(\mathcal H)$ for
+$2<p<2N/(N-2s)$, or every finite $p>2$ if $2s\ge N$.
+In the local case take $p=2\kappa$; in the Hartree case use
+$p=4N/(2N-m)$ and Hardy--Littlewood--Sobolev. Hence
+$\mathcal F(U_n)\to\kappa>0$ excludes local mass vanishing.
+
+Translate a nonzero amount of local mass into a fixed ball and use
+Lemma~\ref{lem:r11-internalcompact}. We obtain a nonzero weak limit
+$U$, strong local $L^2$ convergence, and by interpolation strong local
+convergence in the interaction exponent. Put $R_n=U_n-U$.
+The quadratic quantities split. For local powers the Brezis--Lieb
+argument for $\|U\|_{\mathcal H}^{2\kappa}$ gives
+\[
+ \mathcal F(U_n)=\mathcal F(U)+\mathcal F(R_n)+o(1).
+\]
+For Hartree, the term $\operatorname{Re}\langle U,R_n\rangle$
+tends to zero in $L^{p/2}$ by local convergence and the small
+$L^p$ tail of $U$. Also
+$\mathcal D(\rho_U,\rho_{R_n})\to0$: approximate $U$ in
+$L^p(\mathcal H)$ by a compactly supported smooth finite-dimensional
+field. Its potential is bounded and decays at infinity, while $R_n$
+tends locally to zero in $L^2$. HLS controls the approximation error.
+This proves the same splitting for Hartree.
+
+Let $M_1>0,M_2$ and $A_1,A_2$ be the limiting contributions.
+Then $M_1+M_2=M_c$, $A_1+A_2=1$, and sharp interpolation yields
+\[
+ M_c^{\kappa-1}\le
+ M_1^{\kappa-1}A_1+M_2^{\kappa-1}A_2.
+\]
+Both masses cannot be positive, since each would be strictly below
+$M_c$. Thus $M_2=0$, and the inequality then forces $A_2=0$.
+The convergence is strong in $H^s$. The limit is an optimizer,
+already proved to be completely polarized.
+\end{proof}
+
+\subsection{Phase coercivity and the internal symmetry kernel}
+For completeness, the scalar phase fact used below follows directly
+from the density norm. Normalize a real optimizer by $M(Q)=M_c$,
+$A(Q)=1$, and put $\omega_*=(\kappa-1)/M_c$. The form
+\[
+ L_Q=a(D)+\omega_*-V_{Q^2}
+\]
+is nonnegative: differentiate the sharp inequality at
+$Q+i\sqrt t\,h$. If $h$ belongs to its kernel, write
+$x=A(h)$ and $y=M(h)/M_c$. The supporting-functional inequality
+for the density norm, sharp interpolation for $h$, and weighted
+arithmetic--geometric mean give
+\[
+ x+(\kappa-1)y
+ \le\kappa x^{1/\kappa}y^{(\kappa-1)/\kappa}
+ \le x+(\kappa-1)y.
+\]
+Equality implies $x=y$ and $h^2=yQ^2$ by strict convexity.
+The kernel of a nonnegative form is linear; apply the same conclusion
+to $h+Q$ to get $h=cQ$. The potential is compact as a form
+$H^s\to H^{-s}$, by local Rellich and H\"older in the local case,
+or the compact-potential approximation and HLS in the Hartree case.
+Consequently
+\begin{equation}\label{eq:r11-vectorcoercivity}
+ \langle h,L_Qh\rangle\ge c_Q\|h\|_{H^s}^2,
+ \qquad \langle h,Q\rangle_{L^2}=0.
+\end{equation}
+This holds for complex $h$ by real--imaginary splitting, and it can
+be summed over arbitrarily many components with the same constant.
+
+At $Qe_1$, write a perturbation as $(h+ik)e_1+Z$ with $Z\perp e_1$.
+The Hessian of $E+\omega_*M/2$ is
+\[
+ \langle h,L_+h\rangle+\langle k,L_Qk\rangle
+ +\sum_{j\ge2}\bigl(
+  \langle\operatorname{Re}Z_j,L_Q\operatorname{Re}Z_j\rangle
+ +\langle\operatorname{Im}Z_j,L_Q\operatorname{Im}Z_j\rangle\bigr).
+\]
+Its kernel in the phase and internal transverse sector is exactly
+\[
+ \{Q\eta:\ \eta\in\mathcal H,
+                 \operatorname{Re}\langle\eta,e_1\rangle=0\}.
+\]
+For $\mathcal H=\mathbb C^d$, this is the $(2d-1)$-dimensional real
+tangent space to the internal unitary orbit. Any additional full
+Hessian kernel lies in the scalar real sector $L_+$; no assumption
+on that sector is made.
+
+\subsection{Quantitative polarization without real-sector nondegeneracy}
+The preceding compactness and phase coercivity also give a quantitative
+statement for arbitrary fields, not just stationary or traveling ones.
+Define the scale-invariant interpolation deficit
+\[
+ \mathfrak d(U)=1-
+ \frac{\mathcal F(U)}{\kappa(M(U)/M_c)^{\kappa-1}A(U)}
+\]
+and the squared distance to a completely polarized field by
+\[
+ \mathfrak p(U)=\inf_{\substack{\|\zeta\|_{\mathcal H}=1\\q\in H^s}}
+ \left\{\frac{M(U-\zeta q)}{M(U)}
+             +\frac{A(U-\zeta q)}{A(U)}\right\}.
+\]
+Both are defined for every nonzero $U\in H^s(\mathcal H)$.
+
+\begin{theorem}[Dimension-independent quantitative polarization]
+\label{thm:r11-quantitativepolarization}
+There is $C<\infty$, depending only on the fixed scalar dispersion
+and interaction, such that
+\begin{equation}\label{eq:r11-polarizationdeficit}
+ \mathfrak p(U)\le C\mathfrak d(U)
+\end{equation}
+for every nonzero Hilbert-valued field $U$ and every internal dimension.
+No nondegeneracy or uniqueness of the scalar real-sector ground state
+is required.
+\end{theorem}
+\begin{proof}
+Amplitude and spatial scaling preserve both quantities, so impose
+$M(U)=M_c$, $A(U)=1$. Write
+$\|U\|_X^2=M(U)/M_c+A(U)$.
+Since $\mathfrak p(U)\le2$, failure of a uniform constant would
+produce $U_n$ with $\mathfrak d(U_n)\to0$ and
+$\mathfrak d(U_n)/\mathfrak p(U_n)\to0$.
+After the symmetries of Theorem~\ref{thm:r11-vectorcompact},
+$U_n\to Qe_1$ strongly in $H^s$.
+Align $\int QU_n$ with the positive real first internal direction
+and write $U_n=(u_n,Z_n)$. Each component of $Z_n$ is complex
+$L^2$-orthogonal to $Q$, and $u_n\to Q$, $Z_n\to0$ in $H^s$.
+
+The interaction expansion in these transverse directions is
+\begin{equation}\label{eq:r11-transverseexpansion}
+ \mathcal F(u_n,Z_n)=\mathcal F(u_n)
+ +\kappa\langle V_{|u_n|^2},\|Z_n\|^2\rangle
+ +o(\|Z_n\|_X^2).
+\end{equation}
+For local powers, set $a=|u_n|^2$ and $b=\|Z_n\|^2$ pointwise.
+When $1<\kappa\le2$, the nonnegative Taylor remainder of
+$(a+b)^\kappa$ after its linear term in $b$ is at most $C_\kappa b^\kappa$.
+When $\kappa>2$, it is at most
+$C_\kappa(a^{\kappa-2}b^2+b^\kappa)$.
+H\"older and the dimension-independent $L^{2\kappa}$ Sobolev bound
+make these respectively $O(\|Z_n\|_X^{2\kappa})$ and
+$O(\|Z_n\|_X^4+\|Z_n\|_X^{2\kappa})$, since $u_n$ stays bounded.
+Both are $o(\|Z_n\|_X^2)$.
+For Hartree the remainder is exactly
+$\mathcal D(\|Z_n\|^2,\|Z_n\|^2)=O(\|Z_n\|_X^4)$.
+
+Put $m_n=M(Z_n)$ and $a_n=A(Z_n)$. Scalar sharp interpolation gives
+\[
+ \mathcal F(u_n)\le
+ \kappa(1-m_n/M_c)^{\kappa-1}(1-a_n).
+\]
+Combining its expansion with \eqref{eq:r11-transverseexpansion}
+and potential form convergence yields
+\begin{align*}
+ \kappa-\mathcal F(U_n)
+ &\ge\kappa\left[
+ a_n+\frac{\kappa-1}{M_c}m_n
+       -\langle V_{Q^2},\|Z_n\|^2\rangle\right]
+       -o(\|Z_n\|_X^2)\\
+ &=\kappa\sum_j\langle Z_{nj},L_QZ_{nj}\rangle
+       -o(\|Z_n\|_X^2)\\
+ &\ge c\|Z_n\|_X^2.
+\end{align*}
+The constant is independent of component number. Taking the candidate
+$e_1u_n$ in the distance gives
+$\mathfrak p(U_n)\le\|Z_n\|_X^2$.
+As $\mathfrak d(U_n)=(\kappa-\mathcal F(U_n))/\kappa$,
+this contradicts the assumed ratio and proves the theorem.
+\end{proof}
+
+The theorem controls internal polarization rather than the full
+scalar shape. It therefore remains valid even when scalar optimizer
+uniqueness or real-sector quantitative stability is unavailable.
+
+\subsection{The real version and scalar constant phase}
+\label{subsec:r13-real-phase}
+All preceding density inequalities, compactness, and quantitative
+polarization statements hold over a separable real internal Hilbert
+space, with orthogonal maps replacing unitaries and real scalar $q$
+in the definition of $\mathfrak p$. Here are the points that matter
+for the scalar evolution theorem. The real scalar sharp constant
+equals the complex one: apply the density triangle inequality and
+sequence H\"older to $(\operatorname{Re}u,\operatorname{Im}u)$,
+starting with the real scalar constant, while the reverse comparison
+is immediate. Equality forces a constant real internal direction
+by the pair-rotation argument above. The internal compactness proof
+uses real Gram--Schmidt without any other change. Finally rotate
+$\int QU_n$ into the first real direction. Every transverse real
+component is orthogonal to $Q$, so exactly the displayed $L_Q$
+coercivity and transverse expansion apply. This proves the real
+quantitative assertion, not just its complex analogue.
+
+In particular, for a scalar complex $u$ and either allowed interaction,
+there exists a phase $\theta$ such that $u=e^{i\theta}(X+iY)$,
+with $X,Y$ real, and
+\[
+ \frac{M(Y)}{M(u)}+\frac{A(Y)}{A(u)}\le C\mathfrak d(u).
+\]
+This holds for every local exponent $r>0$, and for the strictly
+positive-definite Hartree density form. For negative energy and
+$d=(M/M_c)^{\kappa-1}-1>0$, one has
+$0\le\mathfrak d(u)<d/(1+d)$, providing exactly the input used
+in Theorem~\ref{thm:r13-general-average}. No phase is differentiated
+in time. In the local range $r\ge1$,
+Theorem~\ref{thm:r13-explicitpolarization} gives an explicit constant
+in place of this compactness argument.

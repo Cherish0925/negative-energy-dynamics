@@ -1,0 +1,15 @@
+{
+  "v": 0.02,
+  "best_residual_boost_k": 0.0019039079468921635,
+  "optimized_boost_frequency": 1.0000312062858892,
+  "boost_residual_L2": 0.36544344323091776,
+  "boost_P": 10.124586909460609,
+  "boost_E": 0.01827159659361826,
+  "best_profile_fit_k": -0.011459692828847175,
+  "best_profile_fit_relative_L2": 0.015318363513599375,
+  "actual_residual_L2": 3.562628475129355e-09,
+  "actual_M": 5317.738764017577,
+  "actual_P": -10.817139056578712,
+  "third_moment": 26.58869382008769,
+  "velocity_moment_difference": 7.673861546209082e-13
+}

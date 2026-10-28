@@ -1,41 +1,34 @@
-# Negative-Energy Global Solutions and Traveling-Wave Mass Gaps in Mass-Critical Dispersive Equations
+# Critical Focusing Dynamics
 
-**Shuxing Yang · Personal research repository · 28 October 2026**
+**Coherent structures, occupation thresholds, and collapse**  
+Shuxing Yang
 
-[中文说明](README.zh-CN.md) · [Complete results index](docs/results.md) · [Prior-work correspondence](docs/prior-work.md) · [Reproduction](docs/reproduce.md)
+[中文](README.zh-CN.md) · [Research narrative](RESEARCH.md) · [Results](RESULTS.md) · [Contents](CONTENTS.md) · [References](references/README.md) · [Computations](COMPUTATIONS.md)
 
-## Abstract
+This work studies how dispersion, mass, momentum, and conserved modal occupations determine the alternatives between coherent global motion and concentration in focusing dispersive equations.
 
-Negative energy is central to blowup criteria for focusing dispersive equations, but its consequences beyond radial symmetry depend on the interaction between dispersion and momentum. We construct nonradial, global negative-energy solutions of the mass-critical biharmonic Schrödinger equation in dimensions three and four by continuing excited standing waves with negative momentum response. Computer-assisted estimates certify the required profile and spectral inputs. In four dimensions, nonlinear gluing produces zero-total-momentum, forward-global solutions with uniformly bounded Sobolev norms, both as separating two-wave states and as a single coherent core coupled to momentum-cancelling radiation. For a prescribed core, we determine the exact infimum of the radiation mass compatible with negative total energy. Complementing these constructions, we prove a uniform positive gap between the critical mass and the mass of every negative-energy traveling profile for real-even, positive elliptic homogeneous dispersion. A quantitative residual estimate extends this obstruction to approximate profiles without spatial-moment assumptions. The same phase-coercivity mechanism yields a uniform intrinsic-energy mass gap for a three-dimensional cubic mixed-dispersion model with nonnegative transverse quadratic corrections. Spectral instability, conserved-quantity geometry, and localized transport further constrain the resulting dynamics. The constructions rule out an unconditional nonradial extension of negative-energy blowup or growup, while the mass-gap results separate this coherent mechanism from the critical variational threshold.
+Three connected developments organize the results:
 
-## One scientific question
+1. **Negative-energy global dynamics.** Excited-state continuation produces three- and four-dimensional biharmonic traveling waves with negative energy. In four dimensions, wave pairs and a coherent core with radiation realize zero total momentum. A uniform traveling-wave mass gap and quantitative profile residuals separate these mechanisms from the scalar critical mass.
+2. **Occupation-dependent criticality.** In common-density Schrödinger systems, the conserved Gram spectrum gives exact thresholds in the specified occupation regimes, a coherent principal core, and a regular background carrying the remaining occupations. Transport and conformal arguments determine core motion and, under stated curvature assumptions, its collapse scale.
+3. **Collective binding and the sharp two-dimensional constant.** The orthogonal Gagliardo–Nirenberg problem links these thresholds to Lieb–Thirring inequalities. Separated-core interactions, all-scale Townes scattering, matrix remainders, full spectral response, and direct numerical searches describe specific mechanisms; the unrestricted two-dimensional sharp inequality remains open in this work.
 
-**How can negative energy persist globally in mass-critical focusing dynamics, and how close can its coherent mechanisms come to the critical mass?**
+The first paper retains the title **Negative-Energy Global Solutions and Traveling-Wave Mass Gaps in Mass-Critical Dispersive Equations**. Its [title and abstracts](papers/negative-energy/README.md) and [proof sequence](papers/negative-energy/PROOFS.md) are presented together. The broader repository contains the full research development, including the occupation and collective-binding results.
 
-The construction and exclusion theorems answer complementary parts of this question. Excited-state phase response supplies negative-energy motion; momentum cancellation produces exact zero-momentum dynamics; phase coercivity near variational optimizers creates a uniform traveling-wave mass gap. The mixed-dispersion extension tests the same mechanism in an anisotropic model relevant to optical modeling.
+## Reading order
 
-## Read the work
-
-| Material | Entry point |
+| Purpose | Read |
 |---|---|
-| Unified title and abstract | [English](paper/abstract.md), [Chinese](paper/abstract.zh-CN.md), [LaTeX](paper/title-and-abstract.tex) |
-| Complete theorem and dependency map | [Results](docs/results.md) |
-| Constructions, generalization, and dynamical extensions | [Research source index](research/INDEX.md) |
-| Existing manuscript PDFs | [Manuscripts](manuscripts/INDEX.md) |
-| Full original inputs, code, logs, and certificates | [Archive manifest](provenance/sources.json); restore with `python3 scripts/restore_archives.py` |
-| Open questions and optical continuation | [Research status](docs/research-status.md) |
+| Understand the equations and common mechanism | [Research narrative](RESEARCH.md) |
+| Find an exact result, its hypotheses, and its proof | [Results catalogue](RESULTS.md) |
+| Follow the development and the changes of formulation | [Research history](HISTORY.md) |
+| Locate all mathematical notes and manuscripts | [Contents](CONTENTS.md) |
+| Understand the relation to previous work | [Annotated references](references/README.md) |
+| Run the computations | [Reproduction guide](COMPUTATIONS.md) |
+| Continue the central unresolved questions | [Open problems](OPEN_PROBLEMS.md) |
 
-This repository collects the **first research class**, including its original proof packages and subsequent coherent-dynamics extensions. The manuscript PDFs are successive research manuscripts; the unified title and abstract identify one integrated work. A fully merged journal submission is not represented as already assembled.
+`theory/` contains derivations, `manuscripts/` contains LaTeX and typeset manuscripts, and `computations/` contains runnable programs and their numerical inputs and outputs. Files can be used directly after cloning; archive reconstruction is unnecessary.
 
-## Reproduce
+The manuscripts are unpublished research. Conditional statements retain their assumptions; numerical searches and asymptotic proposals are identified where they occur. Source coverage and the small number of unavailable artifacts are recorded in [the catalogue](catalog/README.md).
 
-```sh
-python3 scripts/restore_archives.py
-python3 scripts/verify_integrity.py
-```
-
-The first command verifies every archive and reconstructs the original packages under `work/`, including all numerical inputs. See [the reproduction guide](docs/reproduce.md) for the N3/N4 interval verifiers. `research/` provides byte-identical, browsable copies of text sources; the complete original packages, including large data, are in `archives/`.
-
-The mathematical statements use the accompanying analytic arguments and, where specified, computational certificates. Internal checks and recorded verifier outputs are preserved; external peer review and historical-priority assessment remain separate. The latest optical continuation is exploratory and has not established a negative-intrinsic-energy wave in the mixed model.
-
-Copyright © 2026 Shuxing Yang. All rights reserved. This private research snapshot grants no open-source license.
+Copyright © 2026 Shuxing Yang. All rights reserved.

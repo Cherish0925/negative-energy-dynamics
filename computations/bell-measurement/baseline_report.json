@@ -1,0 +1,2236 @@
+{
+  "status": "Exact reproduction of a known baseline; no novelty or optimality claim.",
+  "modes": 6,
+  "total_photons": 4,
+  "number_of_possible_detection_patterns": 126,
+  "balanced_beam_splitters_in_application_order": [
+    [
+      1,
+      3
+    ],
+    [
+      2,
+      4
+    ],
+    [
+      5,
+      6
+    ],
+    [
+      1,
+      5
+    ],
+    [
+      2,
+      6
+    ]
+  ],
+  "unitary_convention": "a_i^dagger -> sum_j U[i,j] c_j^dagger",
+  "U": [
+    [
+      "1/2",
+      "0",
+      "sqrt(2)/2",
+      "0",
+      "1/2",
+      "0"
+    ],
+    [
+      "0",
+      "1/2",
+      "0",
+      "sqrt(2)/2",
+      "0",
+      "1/2"
+    ],
+    [
+      "1/2",
+      "0",
+      "-sqrt(2)/2",
+      "0",
+      "1/2",
+      "0"
+    ],
+    [
+      "0",
+      "1/2",
+      "0",
+      "-sqrt(2)/2",
+      "0",
+      "1/2"
+    ],
+    [
+      "1/2",
+      "1/2",
+      "0",
+      "0",
+      "-1/2",
+      "-1/2"
+    ],
+    [
+      "1/2",
+      "-1/2",
+      "0",
+      "0",
+      "-1/2",
+      "1/2"
+    ]
+  ],
+  "state_normalizations": {
+    "Phi+": "1",
+    "Phi-": "1",
+    "Psi+": "1",
+    "Psi-": "1"
+  },
+  "unambiguous_success_by_Bell_state": {
+    "Phi+": "1/4",
+    "Phi-": "1/4",
+    "Psi+": "1",
+    "Psi-": "1"
+  },
+  "equal_prior_mean_success": "5/8",
+  "detection_records": [
+    {
+      "photons_per_output_mode": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        4
+      ],
+      "probabilities": {
+        "Phi+": "3/64",
+        "Phi-": "3/64",
+        "Psi+": "0",
+        "Psi-": "0"
+      },
+      "conclusive_label": null
+    },
+    {
+      "photons_per_output_mode": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        3
+      ],
+      "probabilities": {
+        "Phi+": "0",
+        "Phi-": "0",
+        "Psi+": "3/64",
+        "Psi-": "0"
+      },
+      "conclusive_label": "Psi+"
+    },
+    {
+      "photons_per_output_mode": [
+        0,
+        0,
+        0,
+        0,
+        2,
+        2
+      ],
+      "probabilities": {
+        "Phi+": "0",
+        "Phi-": "1/32",
+        "Psi+": "0",
+        "Psi-": "0"
+      },
+      "conclusive_label": "Phi-"
+    },
+    {
+      "photons_per_output_mode": [
+        0,
+        0,
+        0,
+        0,
+        3,
+        1
+      ],
+      "probabilities": {
+        "Phi+": "0",
+        "Phi-": "0",
+        "Psi+": "3/64",
+        "Psi-": "0"
+      },
+      "conclusive_label": "Psi+"
+    },
+    {
+      "photons_per_output_mode": [
+        0,
+        0,
+        0,
+        0,
+        4,
+        0
+      ],
+      "probabilities": {
+        "Phi+": "3/64",
+        "Phi-": "3/64",
+        "Psi+": "0",
+        "Psi-": "0"
+      },
+      "conclusive_label": null
+    },
+    {
+      "photons_per_output_mode": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        3
+      ],
+      "probabilities": {
+        "Phi+": "0",
+        "Phi-": "0",
+        "Psi+": "0",
+        "Psi-": "0"
+      },
+      "conclusive_label": null
+    },
+    {
+      "photons_per_output_mode": [
+        0,
+        0,
+        0,
+        1,
+        1,
+        2
+      ],
+      "probabilities": {
+        "Phi+": "0",
+        "Phi-": "0",
+        "Psi+": "0",
+        "Psi-": "1/32"
+      },
+      "conclusive_label": "Psi-"
+    },
+    {
+      "photons_per_output_mode": [
+        0,
+        0,
+        0,
+        1,
+        2,
+        1
+      ],
+      "probabilities": {
+        "Phi+": "0",
+        "Phi-": "0",
+        "Psi+": "0",
+        "Psi-": "0"
+      },
+      "conclusive_label": null
+    },
+    {
+      "photons_per_output_mode": [
+        0,
+        0,
+        0,
+        1,
+        3,
+        0
+      ],
+      "probabilities": {
+        "Phi+": "0",
+        "Phi-": "0",
+        "Psi+": "0",
+        "Psi-": "3/32"
+      },
+      "conclusive_label": "Psi-"
+    },
+    {
+      "photons_per_output_mode": [
+        0,
+        0,
+        0,
+        2,
+        0,
+        2
+      ],
+      "probabilities": {
+        "Phi+": "1/32",
+        "Phi-": "1/32",
+        "Psi+": "0",
+        "Psi-": "0"
+      },
+      "conclusive_label": null
+    },
+    {
+      "photons_per_output_mode": [
+        0,
+        0,
+        0,
+        2,
+        1,
+        1
+      ],
+      "probabilities": {
+        "Phi+": "0",
+        "Phi-": "0",
+        "Psi+": "0",
+        "Psi-": "0"
+      },
+      "conclusive_label": null
+    },
+    {
+      "photons_per_output_mode": [
+        0,
+        0,
+        0,
+        2,
+        2,
+        0
+      ],
+      "probabilities": {
+        "Phi+": "1/32",
+        "Phi-": "1/32",
+        "Psi+": "0",
+        "Psi-": "0"
+      },
+      "conclusive_label": null
+    },
+    {
+      "photons_per_output_mode": [
+        0,
+        0,
+        0,
+        3,
+        0,
+        1
+      ],
+      "probabilities": {
+        "Phi+": "0",
+        "Phi-": "0",
+        "Psi+": "0",
+        "Psi-": "0"
+      },
+      "conclusive_label": null
+    },
+    {
+      "photons_per_output_mode": [
+        0,
+        0,
+        0,
+        3,
+        1,
+        0
+      ],
+      "probabilities": {
+        "Phi+": "0",
+        "Phi-": "0",
+        "Psi+": "0",
+        "Psi-": "0"
+      },
+      "conclusive_label": null
+    },
+    {
+      "photons_per_output_mode": [
+        0,
+        0,
+        0,
+        4,
+        0,
+        0
+      ],
+      "probabilities": {
+        "Phi+": "0",
+        "Phi-": "0",
+        "Psi+": "0",
+        "Psi-": "0"
+      },
+      "conclusive_label": null
+    },
+    {
+      "photons_per_output_mode": [
+        0,
+        0,
+        1,
+        0,
+        0,
+        3
+      ],
+      "probabilities": {
+        "Phi+": "0",
+        "Phi-": "0",
+        "Psi+": "0",
+        "Psi-": "3/32"
+      },
+      "conclusive_label": "Psi-"
+    },
+    {
+      "photons_per_output_mode": [
+        0,
+        0,
+        1,
+        0,
+        1,
+        2
+      ],
+      "probabilities": {
+        "Phi+": "0",
+        "Phi-": "0",
+        "Psi+": "0",
+        "Psi-": "0"
+      },
+      "conclusive_label": null
+    },
+    {
+      "photons_per_output_mode": [
+        0,
+        0,
+        1,
+        0,
+        2,
+        1
+      ],
+      "probabilities": {
+        "Phi+": "0",
+        "Phi-": "0",
+        "Psi+": "0",
+        "Psi-": "1/32"
+      },
+      "conclusive_label": "Psi-"
+    },
+    {
+      "photons_per_output_mode": [
+        0,
+        0,
+        1,
+        0,
+        3,
+        0
+      ],
+      "probabilities": {
+        "Phi+": "0",
+        "Phi-": "0",
+        "Psi+": "0",
+        "Psi-": "0"
+      },
+      "conclusive_label": null
+    },
+    {
+      "photons_per_output_mode": [
+        0,
+        0,
+        1,
+        1,
+        0,
+        2
+      ],
+      "probabilities": {
+        "Phi+": "0",
+        "Phi-": "0",
+        "Psi+": "1/16",
+        "Psi-": "0"
+      },
+      "conclusive_label": "Psi+"
+    },
+    {
+      "photons_per_output_mode": [
+        0,
+        0,
+        1,
+        1,
+        1,
+        1
+      ],
+      "probabilities": {
+        "Phi+": "0",
+        "Phi-": "0",
+        "Psi+": "0",
+        "Psi-": "0"
+      },
+      "conclusive_label": null
+    },
+    {
+      "photons_per_output_mode": [
+        0,
+        0,
+        1,
+        1,
+        2,
+        0
+      ],
+      "probabilities": {
+        "Phi+": "0",
+        "Phi-": "0",
+        "Psi+": "1/16",
+        "Psi-": "0"
+      },
+      "conclusive_label": "Psi+"
+    },
+    {
+      "photons_per_output_mode": [
+        0,
+        0,
+        1,
+        2,
+        0,
+        1
+      ],
+      "probabilities": {
+        "Phi+": "0",
+        "Phi-": "0",
+        "Psi+": "0",
+        "Psi-": "0"
+      },
+      "conclusive_label": null
+    },
+    {
+      "photons_per_output_mode": [
+        0,
+        0,
+        1,
+        2,
+        1,
+        0
+      ],
+      "probabilities": {
+        "Phi+": "0",
+        "Phi-": "0",
+        "Psi+": "0",
+        "Psi-": "0"
+      },
+      "conclusive_label": null
+    },
+    {
+      "photons_per_output_mode": [
+        0,
+        0,
+        1,
+        3,
+        0,
+        0
+      ],
+      "probabilities": {
+        "Phi+": "0",
+        "Phi-": "0",
+        "Psi+": "0",
+        "Psi-": "0"
+      },
+      "conclusive_label": null
+    },
+    {
+      "photons_per_output_mode": [
+        0,
+        0,
+        2,
+        0,
+        0,
+        2
+      ],
+      "probabilities": {
+        "Phi+": "1/32",
+        "Phi-": "1/32",
+        "Psi+": "0",
+        "Psi-": "0"
+      },
+      "conclusive_label": null
+    },
+    {
+      "photons_per_output_mode": [
+        0,
+        0,
+        2,
+        0,
+        1,
+        1
+      ],
+      "probabilities": {
+        "Phi+": "0",
+        "Phi-": "0",
+        "Psi+": "0",
+        "Psi-": "0"
+      },
+      "conclusive_label": null
+    },
+    {
+      "photons_per_output_mode": [
+        0,
+        0,
+        2,
+        0,
+        2,
+        0
+      ],
+      "probabilities": {
+        "Phi+": "1/32",
+        "Phi-": "1/32",
+        "Psi+": "0",
+        "Psi-": "0"
+      },
+      "conclusive_label": null
+    },
+    {
+      "photons_per_output_mode": [
+        0,
+        0,
+        2,
+        1,
+        0,
+        1
+      ],
+      "probabilities": {
+        "Phi+": "0",
+        "Phi-": "0",
+        "Psi+": "0",
+        "Psi-": "0"
+      },
+      "conclusive_label": null
+    },
+    {
+      "photons_per_output_mode": [
+        0,
+        0,
+        2,
+        1,
+        1,
+        0
+      ],
+      "probabilities": {
+        "Phi+": "0",
+        "Phi-": "0",
+        "Psi+": "0",
+        "Psi-": "0"
+      },
+      "conclusive_label": null
+    },
+    {
+      "photons_per_output_mode": [
+        0,
+        0,
+        2,
+        2,
+        0,
+        0
+      ],
+      "probabilities": {
+        "Phi+": "0",
+        "Phi-": "0",
+        "Psi+": "0",
+        "Psi-": "0"
+      },
+      "conclusive_label": null
+    },
+    {
+      "photons_per_output_mode": [
+        0,
+        0,
+        3,
+        0,
+        0,
+        1
+      ],
+      "probabilities": {
+        "Phi+": "0",
+        "Phi-": "0",
+        "Psi+": "0",
+        "Psi-": "0"
+      },
+      "conclusive_label": null
+    },
+    {
+      "photons_per_output_mode": [
+        0,
+        0,
+        3,
+        0,
+        1,
+        0
+      ],
+      "probabilities": {
+        "Phi+": "0",
+        "Phi-": "0",
+        "Psi+": "0",
+        "Psi-": "0"
+      },
+      "conclusive_label": null
+    },
+    {
+      "photons_per_output_mode": [
+        0,
+        0,
+        3,
+        1,
+        0,
+        0
+      ],
+      "probabilities": {
+        "Phi+": "0",
+        "Phi-": "0",
+        "Psi+": "0",
+        "Psi-": "0"
+      },
+      "conclusive_label": null
+    },
+    {
+      "photons_per_output_mode": [
+        0,
+        0,
+        4,
+        0,
+        0,
+        0
+      ],
+      "probabilities": {
+        "Phi+": "0",
+        "Phi-": "0",
+        "Psi+": "0",
+        "Psi-": "0"
+      },
+      "conclusive_label": null
+    },
+    {
+      "photons_per_output_mode": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        3
+      ],
+      "probabilities": {
+        "Phi+": "0",
+        "Phi-": "0",
+        "Psi+": "0",
+        "Psi-": "0"
+      },
+      "conclusive_label": null
+    },
+    {
+      "photons_per_output_mode": [
+        0,
+        1,
+        0,
+        0,
+        1,
+        2
+      ],
+      "probabilities": {
+        "Phi+": "0",
+        "Phi-": "0",
+        "Psi+": "1/64",
+        "Psi-": "0"
+      },
+      "conclusive_label": "Psi+"
+    },
+    {
+      "photons_per_output_mode": [
+        0,
+        1,
+        0,
+        0,
+        2,
+        1
+      ],
+      "probabilities": {
+        "Phi+": "1/16",
+        "Phi-": "0",
+        "Psi+": "0",
+        "Psi-": "0"
+      },
+      "conclusive_label": "Phi+"
+    },
+    {
+      "photons_per_output_mode": [
+        0,
+        1,
+        0,
+        0,
+        3,
+        0
+      ],
+      "probabilities": {
+        "Phi+": "0",
+        "Phi-": "0",
+        "Psi+": "3/64",
+        "Psi-": "0"
+      },
+      "conclusive_label": "Psi+"
+    },
+    {
+      "photons_per_output_mode": [
+        0,
+        1,
+        0,
+        1,
+        0,
+        2
+      ],
+      "probabilities": {
+        "Phi+": "0",
+        "Phi-": "0",
+        "Psi+": "0",
+        "Psi-": "0"
+      },
+      "conclusive_label": null
+    },
+    {
+      "photons_per_output_mode": [
+        0,
+        1,
+        0,
+        1,
+        1,
+        1
+      ],
+      "probabilities": {
+        "Phi+": "0",
+        "Phi-": "0",
+        "Psi+": "0",
+        "Psi-": "1/16"
+      },
+      "conclusive_label": "Psi-"
+    },
+    {
+      "photons_per_output_mode": [
+        0,
+        1,
+        0,
+        1,
+        2,
+        0
+      ],
+      "probabilities": {
+        "Phi+": "0",
+        "Phi-": "0",
+        "Psi+": "0",
+        "Psi-": "0"
+      },
+      "conclusive_label": null
+    },
+    {
+      "photons_per_output_mode": [
+        0,
+        1,
+        0,
+        2,
+        0,
+        1
+      ],
+      "probabilities": {
+        "Phi+": "1/16",
+        "Phi-": "1/16",
+        "Psi+": "0",
+        "Psi-": "0"
+      },
+      "conclusive_label": null
+    },
+    {
+      "photons_per_output_mode": [
+        0,
+        1,
+        0,
+        2,
+        1,
+        0
+      ],
+      "probabilities": {
+        "Phi+": "0",
+        "Phi-": "0",
+        "Psi+": "0",
+        "Psi-": "0"
+      },
+      "conclusive_label": null
+    },
+    {
+      "photons_per_output_mode": [
+        0,
+        1,
+        0,
+        3,
+        0,
+        0
+      ],
+      "probabilities": {
+        "Phi+": "0",
+        "Phi-": "0",
+        "Psi+": "0",
+        "Psi-": "0"
+      },
+      "conclusive_label": null
+    },
+    {
+      "photons_per_output_mode": [
+        0,
+        1,
+        1,
+        0,
+        0,
+        2
+      ],
+      "probabilities": {
+        "Phi+": "0",
+        "Phi-": "0",
+        "Psi+": "0",
+        "Psi-": "1/32"
+      },
+      "conclusive_label": "Psi-"
+    },
+    {
+      "photons_per_output_mode": [
+        0,
+        1,
+        1,
+        0,
+        1,
+        1
+      ],
+      "probabilities": {
+        "Phi+": "0",
+        "Phi-": "0",
+        "Psi+": "0",
+        "Psi-": "0"
+      },
+      "conclusive_label": null
+    },
+    {
+      "photons_per_output_mode": [
+        0,
+        1,
+        1,
+        0,
+        2,
+        0
+      ],
+      "probabilities": {
+        "Phi+": "0",
+        "Phi-": "0",
+        "Psi+": "0",
+        "Psi-": "1/32"
+      },
+      "conclusive_label": "Psi-"
+    },
+    {
+      "photons_per_output_mode": [
+        0,
+        1,
+        1,
+        1,
+        0,
+        1
+      ],
+      "probabilities": {
+        "Phi+": "0",
+        "Phi-": "0",
+        "Psi+": "1/8",
+        "Psi-": "0"
+      },
+      "conclusive_label": "Psi+"
+    },
+    {
+      "photons_per_output_mode": [
+        0,
+        1,
+        1,
+        1,
+        1,
+        0
+      ],
+      "probabilities": {
+        "Phi+": "0",
+        "Phi-": "0",
+        "Psi+": "0",
+        "Psi-": "0"
+      },
+      "conclusive_label": null
+    },
+    {
+      "photons_per_output_mode": [
+        0,
+        1,
+        1,
+        2,
+        0,
+        0
+      ],
+      "probabilities": {
+        "Phi+": "0",
+        "Phi-": "0",
+        "Psi+": "0",
+        "Psi-": "0"
+      },
+      "conclusive_label": null
+    },
+    {
+      "photons_per_output_mode": [
+        0,
+        1,
+        2,
+        0,
+        0,
+        1
+      ],
+      "probabilities": {
+        "Phi+": "1/16",
+        "Phi-": "1/16",
+        "Psi+": "0",
+        "Psi-": "0"
+      },
+      "conclusive_label": null
+    },
+    {
+      "photons_per_output_mode": [
+        0,
+        1,
+        2,
+        0,
+        1,
+        0
+      ],
+      "probabilities": {
+        "Phi+": "0",
+        "Phi-": "0",
+        "Psi+": "0",
+        "Psi-": "0"
+      },
+      "conclusive_label": null
+    },
+    {
+      "photons_per_output_mode": [
+        0,
+        1,
+        2,
+        1,
+        0,
+        0
+      ],
+      "probabilities": {
+        "Phi+": "0",
+        "Phi-": "0",
+        "Psi+": "0",
+        "Psi-": "0"
+      },
+      "conclusive_label": null
+    },
+    {
+      "photons_per_output_mode": [
+        0,
+        1,
+        3,
+        0,
+        0,
+        0
+      ],
+      "probabilities": {
+        "Phi+": "0",
+        "Phi-": "0",
+        "Psi+": "0",
+        "Psi-": "0"
+      },
+      "conclusive_label": null
+    },
+    {
+      "photons_per_output_mode": [
+        0,
+        2,
+        0,
+        0,
+        0,
+        2
+      ],
+      "probabilities": {
+        "Phi+": "1/32",
+        "Phi-": "1/32",
+        "Psi+": "0",
+        "Psi-": "0"
+      },
+      "conclusive_label": null
+    },
+    {
+      "photons_per_output_mode": [
+        0,
+        2,
+        0,
+        0,
+        1,
+        1
+      ],
+      "probabilities": {
+        "Phi+": "0",
+        "Phi-": "0",
+        "Psi+": "1/64",
+        "Psi-": "0"
+      },
+      "conclusive_label": "Psi+"
+    },
+    {
+      "photons_per_output_mode": [
+        0,
+        2,
+        0,
+        0,
+        2,
+        0
+      ],
+      "probabilities": {
+        "Phi+": "0",
+        "Phi-": "1/32",
+        "Psi+": "0",
+        "Psi-": "0"
+      },
+      "conclusive_label": "Phi-"
+    },
+    {
+      "photons_per_output_mode": [
+        0,
+        2,
+        0,
+        1,
+        0,
+        1
+      ],
+      "probabilities": {
+        "Phi+": "0",
+        "Phi-": "0",
+        "Psi+": "0",
+        "Psi-": "0"
+      },
+      "conclusive_label": null
+    },
+    {
+      "photons_per_output_mode": [
+        0,
+        2,
+        0,
+        1,
+        1,
+        0
+      ],
+      "probabilities": {
+        "Phi+": "0",
+        "Phi-": "0",
+        "Psi+": "0",
+        "Psi-": "1/32"
+      },
+      "conclusive_label": "Psi-"
+    },
+    {
+      "photons_per_output_mode": [
+        0,
+        2,
+        0,
+        2,
+        0,
+        0
+      ],
+      "probabilities": {
+        "Phi+": "1/32",
+        "Phi-": "1/32",
+        "Psi+": "0",
+        "Psi-": "0"
+      },
+      "conclusive_label": null
+    },
+    {
+      "photons_per_output_mode": [
+        0,
+        2,
+        1,
+        0,
+        0,
+        1
+      ],
+      "probabilities": {
+        "Phi+": "0",
+        "Phi-": "0",
+        "Psi+": "0",
+        "Psi-": "1/32"
+      },
+      "conclusive_label": "Psi-"
+    },
+    {
+      "photons_per_output_mode": [
+        0,
+        2,
+        1,
+        0,
+        1,
+        0
+      ],
+      "probabilities": {
+        "Phi+": "0",
+        "Phi-": "0",
+        "Psi+": "0",
+        "Psi-": "0"
+      },
+      "conclusive_label": null
+    },
+    {
+      "photons_per_output_mode": [
+        0,
+        2,
+        1,
+        1,
+        0,
+        0
+      ],
+      "probabilities": {
+        "Phi+": "0",
+        "Phi-": "0",
+        "Psi+": "1/16",
+        "Psi-": "0"
+      },
+      "conclusive_label": "Psi+"
+    },
+    {
+      "photons_per_output_mode": [
+        0,
+        2,
+        2,
+        0,
+        0,
+        0
+      ],
+      "probabilities": {
+        "Phi+": "1/32",
+        "Phi-": "1/32",
+        "Psi+": "0",
+        "Psi-": "0"
+      },
+      "conclusive_label": null
+    },
+    {
+      "photons_per_output_mode": [
+        0,
+        3,
+        0,
+        0,
+        0,
+        1
+      ],
+      "probabilities": {
+        "Phi+": "0",
+        "Phi-": "0",
+        "Psi+": "0",
+        "Psi-": "0"
+      },
+      "conclusive_label": null
+    },
+    {
+      "photons_per_output_mode": [
+        0,
+        3,
+        0,
+        0,
+        1,
+        0
+      ],
+      "probabilities": {
+        "Phi+": "0",
+        "Phi-": "0",
+        "Psi+": "3/64",
+        "Psi-": "0"
+      },
+      "conclusive_label": "Psi+"
+    },
+    {
+      "photons_per_output_mode": [
+        0,
+        3,
+        0,
+        1,
+        0,
+        0
+      ],
+      "probabilities": {
+        "Phi+": "0",
+        "Phi-": "0",
+        "Psi+": "0",
+        "Psi-": "0"
+      },
+      "conclusive_label": null
+    },
+    {
+      "photons_per_output_mode": [
+        0,
+        3,
+        1,
+        0,
+        0,
+        0
+      ],
+      "probabilities": {
+        "Phi+": "0",
+        "Phi-": "0",
+        "Psi+": "0",
+        "Psi-": "3/32"
+      },
+      "conclusive_label": "Psi-"
+    },
+    {
+      "photons_per_output_mode": [
+        0,
+        4,
+        0,
+        0,
+        0,
+        0
+      ],
+      "probabilities": {
+        "Phi+": "3/64",
+        "Phi-": "3/64",
+        "Psi+": "0",
+        "Psi-": "0"
+      },
+      "conclusive_label": null
+    },
+    {
+      "photons_per_output_mode": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        3
+      ],
+      "probabilities": {
+        "Phi+": "0",
+        "Phi-": "0",
+        "Psi+": "3/64",
+        "Psi-": "0"
+      },
+      "conclusive_label": "Psi+"
+    },
+    {
+      "photons_per_output_mode": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        2
+      ],
+      "probabilities": {
+        "Phi+": "1/16",
+        "Phi-": "0",
+        "Psi+": "0",
+        "Psi-": "0"
+      },
+      "conclusive_label": "Phi+"
+    },
+    {
+      "photons_per_output_mode": [
+        1,
+        0,
+        0,
+        0,
+        2,
+        1
+      ],
+      "probabilities": {
+        "Phi+": "0",
+        "Phi-": "0",
+        "Psi+": "1/64",
+        "Psi-": "0"
+      },
+      "conclusive_label": "Psi+"
+    },
+    {
+      "photons_per_output_mode": [
+        1,
+        0,
+        0,
+        0,
+        3,
+        0
+      ],
+      "probabilities": {
+        "Phi+": "0",
+        "Phi-": "0",
+        "Psi+": "0",
+        "Psi-": "0"
+      },
+      "conclusive_label": null
+    },
+    {
+      "photons_per_output_mode": [
+        1,
+        0,
+        0,
+        1,
+        0,
+        2
+      ],
+      "probabilities": {
+        "Phi+": "0",
+        "Phi-": "0",
+        "Psi+": "0",
+        "Psi-": "1/32"
+      },
+      "conclusive_label": "Psi-"
+    },
+    {
+      "photons_per_output_mode": [
+        1,
+        0,
+        0,
+        1,
+        1,
+        1
+      ],
+      "probabilities": {
+        "Phi+": "0",
+        "Phi-": "0",
+        "Psi+": "0",
+        "Psi-": "0"
+      },
+      "conclusive_label": null
+    },
+    {
+      "photons_per_output_mode": [
+        1,
+        0,
+        0,
+        1,
+        2,
+        0
+      ],
+      "probabilities": {
+        "Phi+": "0",
+        "Phi-": "0",
+        "Psi+": "0",
+        "Psi-": "1/32"
+      },
+      "conclusive_label": "Psi-"
+    },
+    {
+      "photons_per_output_mode": [
+        1,
+        0,
+        0,
+        2,
+        0,
+        1
+      ],
+      "probabilities": {
+        "Phi+": "0",
+        "Phi-": "0",
+        "Psi+": "0",
+        "Psi-": "0"
+      },
+      "conclusive_label": null
+    },
+    {
+      "photons_per_output_mode": [
+        1,
+        0,
+        0,
+        2,
+        1,
+        0
+      ],
+      "probabilities": {
+        "Phi+": "1/16",
+        "Phi-": "1/16",
+        "Psi+": "0",
+        "Psi-": "0"
+      },
+      "conclusive_label": null
+    },
+    {
+      "photons_per_output_mode": [
+        1,
+        0,
+        0,
+        3,
+        0,
+        0
+      ],
+      "probabilities": {
+        "Phi+": "0",
+        "Phi-": "0",
+        "Psi+": "0",
+        "Psi-": "0"
+      },
+      "conclusive_label": null
+    },
+    {
+      "photons_per_output_mode": [
+        1,
+        0,
+        1,
+        0,
+        0,
+        2
+      ],
+      "probabilities": {
+        "Phi+": "0",
+        "Phi-": "0",
+        "Psi+": "0",
+        "Psi-": "0"
+      },
+      "conclusive_label": null
+    },
+    {
+      "photons_per_output_mode": [
+        1,
+        0,
+        1,
+        0,
+        1,
+        1
+      ],
+      "probabilities": {
+        "Phi+": "0",
+        "Phi-": "0",
+        "Psi+": "0",
+        "Psi-": "1/16"
+      },
+      "conclusive_label": "Psi-"
+    },
+    {
+      "photons_per_output_mode": [
+        1,
+        0,
+        1,
+        0,
+        2,
+        0
+      ],
+      "probabilities": {
+        "Phi+": "0",
+        "Phi-": "0",
+        "Psi+": "0",
+        "Psi-": "0"
+      },
+      "conclusive_label": null
+    },
+    {
+      "photons_per_output_mode": [
+        1,
+        0,
+        1,
+        1,
+        0,
+        1
+      ],
+      "probabilities": {
+        "Phi+": "0",
+        "Phi-": "0",
+        "Psi+": "0",
+        "Psi-": "0"
+      },
+      "conclusive_label": null
+    },
+    {
+      "photons_per_output_mode": [
+        1,
+        0,
+        1,
+        1,
+        1,
+        0
+      ],
+      "probabilities": {
+        "Phi+": "0",
+        "Phi-": "0",
+        "Psi+": "1/8",
+        "Psi-": "0"
+      },
+      "conclusive_label": "Psi+"
+    },
+    {
+      "photons_per_output_mode": [
+        1,
+        0,
+        1,
+        2,
+        0,
+        0
+      ],
+      "probabilities": {
+        "Phi+": "0",
+        "Phi-": "0",
+        "Psi+": "0",
+        "Psi-": "0"
+      },
+      "conclusive_label": null
+    },
+    {
+      "photons_per_output_mode": [
+        1,
+        0,
+        2,
+        0,
+        0,
+        1
+      ],
+      "probabilities": {
+        "Phi+": "0",
+        "Phi-": "0",
+        "Psi+": "0",
+        "Psi-": "0"
+      },
+      "conclusive_label": null
+    },
+    {
+      "photons_per_output_mode": [
+        1,
+        0,
+        2,
+        0,
+        1,
+        0
+      ],
+      "probabilities": {
+        "Phi+": "1/16",
+        "Phi-": "1/16",
+        "Psi+": "0",
+        "Psi-": "0"
+      },
+      "conclusive_label": null
+    },
+    {
+      "photons_per_output_mode": [
+        1,
+        0,
+        2,
+        1,
+        0,
+        0
+      ],
+      "probabilities": {
+        "Phi+": "0",
+        "Phi-": "0",
+        "Psi+": "0",
+        "Psi-": "0"
+      },
+      "conclusive_label": null
+    },
+    {
+      "photons_per_output_mode": [
+        1,
+        0,
+        3,
+        0,
+        0,
+        0
+      ],
+      "probabilities": {
+        "Phi+": "0",
+        "Phi-": "0",
+        "Psi+": "0",
+        "Psi-": "0"
+      },
+      "conclusive_label": null
+    },
+    {
+      "photons_per_output_mode": [
+        1,
+        1,
+        0,
+        0,
+        0,
+        2
+      ],
+      "probabilities": {
+        "Phi+": "0",
+        "Phi-": "0",
+        "Psi+": "1/64",
+        "Psi-": "0"
+      },
+      "conclusive_label": "Psi+"
+    },
+    {
+      "photons_per_output_mode": [
+        1,
+        1,
+        0,
+        0,
+        1,
+        1
+      ],
+      "probabilities": {
+        "Phi+": "0",
+        "Phi-": "1/8",
+        "Psi+": "0",
+        "Psi-": "0"
+      },
+      "conclusive_label": "Phi-"
+    },
+    {
+      "photons_per_output_mode": [
+        1,
+        1,
+        0,
+        0,
+        2,
+        0
+      ],
+      "probabilities": {
+        "Phi+": "0",
+        "Phi-": "0",
+        "Psi+": "1/64",
+        "Psi-": "0"
+      },
+      "conclusive_label": "Psi+"
+    },
+    {
+      "photons_per_output_mode": [
+        1,
+        1,
+        0,
+        1,
+        0,
+        1
+      ],
+      "probabilities": {
+        "Phi+": "0",
+        "Phi-": "0",
+        "Psi+": "0",
+        "Psi-": "1/16"
+      },
+      "conclusive_label": "Psi-"
+    },
+    {
+      "photons_per_output_mode": [
+        1,
+        1,
+        0,
+        1,
+        1,
+        0
+      ],
+      "probabilities": {
+        "Phi+": "0",
+        "Phi-": "0",
+        "Psi+": "0",
+        "Psi-": "0"
+      },
+      "conclusive_label": null
+    },
+    {
+      "photons_per_output_mode": [
+        1,
+        1,
+        0,
+        2,
+        0,
+        0
+      ],
+      "probabilities": {
+        "Phi+": "0",
+        "Phi-": "0",
+        "Psi+": "0",
+        "Psi-": "0"
+      },
+      "conclusive_label": null
+    },
+    {
+      "photons_per_output_mode": [
+        1,
+        1,
+        1,
+        0,
+        0,
+        1
+      ],
+      "probabilities": {
+        "Phi+": "0",
+        "Phi-": "0",
+        "Psi+": "0",
+        "Psi-": "0"
+      },
+      "conclusive_label": null
+    },
+    {
+      "photons_per_output_mode": [
+        1,
+        1,
+        1,
+        0,
+        1,
+        0
+      ],
+      "probabilities": {
+        "Phi+": "0",
+        "Phi-": "0",
+        "Psi+": "0",
+        "Psi-": "1/16"
+      },
+      "conclusive_label": "Psi-"
+    },
+    {
+      "photons_per_output_mode": [
+        1,
+        1,
+        1,
+        1,
+        0,
+        0
+      ],
+      "probabilities": {
+        "Phi+": "0",
+        "Phi-": "0",
+        "Psi+": "0",
+        "Psi-": "0"
+      },
+      "conclusive_label": null
+    },
+    {
+      "photons_per_output_mode": [
+        1,
+        1,
+        2,
+        0,
+        0,
+        0
+      ],
+      "probabilities": {
+        "Phi+": "0",
+        "Phi-": "0",
+        "Psi+": "0",
+        "Psi-": "0"
+      },
+      "conclusive_label": null
+    },
+    {
+      "photons_per_output_mode": [
+        1,
+        2,
+        0,
+        0,
+        0,
+        1
+      ],
+      "probabilities": {
+        "Phi+": "0",
+        "Phi-": "0",
+        "Psi+": "1/64",
+        "Psi-": "0"
+      },
+      "conclusive_label": "Psi+"
+    },
+    {
+      "photons_per_output_mode": [
+        1,
+        2,
+        0,
+        0,
+        1,
+        0
+      ],
+      "probabilities": {
+        "Phi+": "1/16",
+        "Phi-": "0",
+        "Psi+": "0",
+        "Psi-": "0"
+      },
+      "conclusive_label": "Phi+"
+    },
+    {
+      "photons_per_output_mode": [
+        1,
+        2,
+        0,
+        1,
+        0,
+        0
+      ],
+      "probabilities": {
+        "Phi+": "0",
+        "Phi-": "0",
+        "Psi+": "0",
+        "Psi-": "1/32"
+      },
+      "conclusive_label": "Psi-"
+    },
+    {
+      "photons_per_output_mode": [
+        1,
+        2,
+        1,
+        0,
+        0,
+        0
+      ],
+      "probabilities": {
+        "Phi+": "0",
+        "Phi-": "0",
+        "Psi+": "0",
+        "Psi-": "0"
+      },
+      "conclusive_label": null
+    },
+    {
+      "photons_per_output_mode": [
+        1,
+        3,
+        0,
+        0,
+        0,
+        0
+      ],
+      "probabilities": {
+        "Phi+": "0",
+        "Phi-": "0",
+        "Psi+": "3/64",
+        "Psi-": "0"
+      },
+      "conclusive_label": "Psi+"
+    },
+    {
+      "photons_per_output_mode": [
+        2,
+        0,
+        0,
+        0,
+        0,
+        2
+      ],
+      "probabilities": {
+        "Phi+": "0",
+        "Phi-": "1/32",
+        "Psi+": "0",
+        "Psi-": "0"
+      },
+      "conclusive_label": "Phi-"
+    },
+    {
+      "photons_per_output_mode": [
+        2,
+        0,
+        0,
+        0,
+        1,
+        1
+      ],
+      "probabilities": {
+        "Phi+": "0",
+        "Phi-": "0",
+        "Psi+": "1/64",
+        "Psi-": "0"
+      },
+      "conclusive_label": "Psi+"
+    },
+    {
+      "photons_per_output_mode": [
+        2,
+        0,
+        0,
+        0,
+        2,
+        0
+      ],
+      "probabilities": {
+        "Phi+": "1/32",
+        "Phi-": "1/32",
+        "Psi+": "0",
+        "Psi-": "0"
+      },
+      "conclusive_label": null
+    },
+    {
+      "photons_per_output_mode": [
+        2,
+        0,
+        0,
+        1,
+        0,
+        1
+      ],
+      "probabilities": {
+        "Phi+": "0",
+        "Phi-": "0",
+        "Psi+": "0",
+        "Psi-": "0"
+      },
+      "conclusive_label": null
+    },
+    {
+      "photons_per_output_mode": [
+        2,
+        0,
+        0,
+        1,
+        1,
+        0
+      ],
+      "probabilities": {
+        "Phi+": "0",
+        "Phi-": "0",
+        "Psi+": "0",
+        "Psi-": "1/32"
+      },
+      "conclusive_label": "Psi-"
+    },
+    {
+      "photons_per_output_mode": [
+        2,
+        0,
+        0,
+        2,
+        0,
+        0
+      ],
+      "probabilities": {
+        "Phi+": "1/32",
+        "Phi-": "1/32",
+        "Psi+": "0",
+        "Psi-": "0"
+      },
+      "conclusive_label": null
+    },
+    {
+      "photons_per_output_mode": [
+        2,
+        0,
+        1,
+        0,
+        0,
+        1
+      ],
+      "probabilities": {
+        "Phi+": "0",
+        "Phi-": "0",
+        "Psi+": "0",
+        "Psi-": "1/32"
+      },
+      "conclusive_label": "Psi-"
+    },
+    {
+      "photons_per_output_mode": [
+        2,
+        0,
+        1,
+        0,
+        1,
+        0
+      ],
+      "probabilities": {
+        "Phi+": "0",
+        "Phi-": "0",
+        "Psi+": "0",
+        "Psi-": "0"
+      },
+      "conclusive_label": null
+    },
+    {
+      "photons_per_output_mode": [
+        2,
+        0,
+        1,
+        1,
+        0,
+        0
+      ],
+      "probabilities": {
+        "Phi+": "0",
+        "Phi-": "0",
+        "Psi+": "1/16",
+        "Psi-": "0"
+      },
+      "conclusive_label": "Psi+"
+    },
+    {
+      "photons_per_output_mode": [
+        2,
+        0,
+        2,
+        0,
+        0,
+        0
+      ],
+      "probabilities": {
+        "Phi+": "1/32",
+        "Phi-": "1/32",
+        "Psi+": "0",
+        "Psi-": "0"
+      },
+      "conclusive_label": null
+    },
+    {
+      "photons_per_output_mode": [
+        2,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "probabilities": {
+        "Phi+": "1/16",
+        "Phi-": "0",
+        "Psi+": "0",
+        "Psi-": "0"
+      },
+      "conclusive_label": "Phi+"
+    },
+    {
+      "photons_per_output_mode": [
+        2,
+        1,
+        0,
+        0,
+        1,
+        0
+      ],
+      "probabilities": {
+        "Phi+": "0",
+        "Phi-": "0",
+        "Psi+": "1/64",
+        "Psi-": "0"
+      },
+      "conclusive_label": "Psi+"
+    },
+    {
+      "photons_per_output_mode": [
+        2,
+        1,
+        0,
+        1,
+        0,
+        0
+      ],
+      "probabilities": {
+        "Phi+": "0",
+        "Phi-": "0",
+        "Psi+": "0",
+        "Psi-": "0"
+      },
+      "conclusive_label": null
+    },
+    {
+      "photons_per_output_mode": [
+        2,
+        1,
+        1,
+        0,
+        0,
+        0
+      ],
+      "probabilities": {
+        "Phi+": "0",
+        "Phi-": "0",
+        "Psi+": "0",
+        "Psi-": "1/32"
+      },
+      "conclusive_label": "Psi-"
+    },
+    {
+      "photons_per_output_mode": [
+        2,
+        2,
+        0,
+        0,
+        0,
+        0
+      ],
+      "probabilities": {
+        "Phi+": "0",
+        "Phi-": "1/32",
+        "Psi+": "0",
+        "Psi-": "0"
+      },
+      "conclusive_label": "Phi-"
+    },
+    {
+      "photons_per_output_mode": [
+        3,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "probabilities": {
+        "Phi+": "0",
+        "Phi-": "0",
+        "Psi+": "3/64",
+        "Psi-": "0"
+      },
+      "conclusive_label": "Psi+"
+    },
+    {
+      "photons_per_output_mode": [
+        3,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "probabilities": {
+        "Phi+": "0",
+        "Phi-": "0",
+        "Psi+": "0",
+        "Psi-": "0"
+      },
+      "conclusive_label": null
+    },
+    {
+      "photons_per_output_mode": [
+        3,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "probabilities": {
+        "Phi+": "0",
+        "Phi-": "0",
+        "Psi+": "0",
+        "Psi-": "3/32"
+      },
+      "conclusive_label": "Psi-"
+    },
+    {
+      "photons_per_output_mode": [
+        3,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "probabilities": {
+        "Phi+": "0",
+        "Phi-": "0",
+        "Psi+": "0",
+        "Psi-": "0"
+      },
+      "conclusive_label": null
+    },
+    {
+      "photons_per_output_mode": [
+        3,
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "probabilities": {
+        "Phi+": "0",
+        "Phi-": "0",
+        "Psi+": "3/64",
+        "Psi-": "0"
+      },
+      "conclusive_label": "Psi+"
+    },
+    {
+      "photons_per_output_mode": [
+        4,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "probabilities": {
+        "Phi+": "3/64",
+        "Phi-": "3/64",
+        "Psi+": "0",
+        "Psi-": "0"
+      },
+      "conclusive_label": null
+    }
+  ]
+}

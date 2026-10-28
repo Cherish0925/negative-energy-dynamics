@@ -1,0 +1,11 @@
+{
+  "source_certificate_sha256": "8831896943e85d9f3d335fd722ed95396d0d49185220a7aa9c13e278b6ef0f2a",
+  "envelope_C": "81/16",
+  "origin_bound": "524490263089/107374182400",
+  "middle_bound_exact_dyadic": "5657248516868831/1125899906842624",
+  "tail_bound": "1369/40000",
+  "sphere_beta": "47/128",
+  "homogeneous_kappa": "47/175",
+  "restricted_primary_Townes_pmax_min": "175/222",
+  "passed": true
+}

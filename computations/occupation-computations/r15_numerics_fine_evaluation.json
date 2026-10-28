@@ -1,0 +1,34 @@
+[
+  {
+    "kind": "scalar",
+    "evaluation_n": 320,
+    "C": 0.1709270734484682,
+    "K": 1.000000500555735,
+    "tail_mass_outside_10": 1.9548712342488957e-09,
+    "Mc_est": 11.700896526511748
+  },
+  {
+    "kind": "two_well",
+    "evaluation_n": 320,
+    "C": 0.17092698746138194,
+    "K": 2.0000609182990208,
+    "tail_mass_outside_10": 5.325930359998075e-06,
+    "Mc_est": null
+  },
+  {
+    "kind": "asymmetric",
+    "evaluation_n": 320,
+    "C": 0.17092687219193187,
+    "K": 2.0000742647479473,
+    "tail_mass_outside_10": 1.1966254002555617e-05,
+    "Mc_est": null
+  },
+  {
+    "kind": "dipole",
+    "evaluation_n": 320,
+    "C": 0.17092696508475022,
+    "K": 2.000165274055663,
+    "tail_mass_outside_10": 4.109374128795057e-06,
+    "Mc_est": null
+  }
+]

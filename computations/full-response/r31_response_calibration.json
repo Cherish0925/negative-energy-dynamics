@@ -1,0 +1,981 @@
+{
+  "source": "research/r24/r24_shell.npz",
+  "energy": 0.06222748425517942,
+  "beta_f": 12.80583924019625,
+  "beta_g": 12.805839240091066,
+  "interpretation": "Numerical calibration only; no rigorous error certificate.",
+  "results": [
+    {
+      "radius": 45.0,
+      "h": 0.04,
+      "n": 1125,
+      "sectors": [
+        {
+          "name": "tracefree_l0",
+          "ell": 0,
+          "multiplicity": 1,
+          "ratio": 0.9207395772174792,
+          "source_norm_radial": 10.9250718187415,
+          "f_response": {
+            "value": 4.036685193496844,
+            "projection_error": 1.7165435739485702e-13
+          },
+          "g_responses": [
+            {
+              "value": 0.9928878102324786,
+              "projection_error": 1.1380700353196757e-13
+            }
+          ]
+        },
+        {
+          "name": "tracefree_l1",
+          "ell": 1,
+          "multiplicity": 2,
+          "ratio": 0.9549776366938941,
+          "source_norm_radial": 0.4271886217579373,
+          "f_response": {
+            "value": 0.15135918561834744,
+            "projection_error": 4.3472430841796054e-15
+          },
+          "g_responses": [
+            {
+              "value": 0.021178400581551945,
+              "projection_error": 4.0713959982164034e-15
+            },
+            {
+              "value": 0.08405880861067001,
+              "projection_error": 0.0
+            }
+          ]
+        },
+        {
+          "name": "tracefree_l2",
+          "ell": 2,
+          "multiplicity": 2,
+          "ratio": 0.6716584787485345,
+          "source_norm_radial": 0.762021232951968,
+          "f_response": {
+            "value": 0.04006524488086043,
+            "projection_error": 0.0
+          },
+          "g_responses": [
+            {
+              "value": 0.25221726686593665,
+              "projection_error": 6.740178396397577e-14
+            },
+            {
+              "value": 0.17947026547094388,
+              "projection_error": 0.0
+            }
+          ]
+        },
+        {
+          "name": "common_scale_control",
+          "ell": 0,
+          "multiplicity": 1,
+          "ratio": 1.0007343206856751,
+          "source_norm_radial": 6.470868694073505,
+          "f_response": {
+            "value": 2.454363856752478,
+            "projection_error": 8.316958233223204e-14
+          },
+          "g_responses": [
+            {
+              "value": 0.7834463366524469,
+              "projection_error": 3.106758366845502e-13
+            }
+          ]
+        },
+        {
+          "name": "relative_core_scale_control",
+          "ell": 0,
+          "multiplicity": 1,
+          "ratio": 1.1028475961600055,
+          "source_norm_radial": 1.2891224089516715,
+          "f_response": {
+            "value": 0.6817335470100543,
+            "projection_error": 1.3954115640757436e-14
+          },
+          "g_responses": [
+            {
+              "value": 0.029119227924118887,
+              "projection_error": 4.539562192020688e-16
+            }
+          ]
+        }
+      ],
+      "full_quadratic_radial_eigenvalues": [
+        0.6773777773592815,
+        0.9221470305021874
+      ],
+      "full_quadratic_response_matrix": [
+        [
+          2.713575600973414,
+          0.3283741083149725
+        ],
+        [
+          0.3283741083149725,
+          0.5183400368246988
+        ]
+      ],
+      "full_quadratic_norm_matrix": [
+        [
+          2.9679512682053213,
+          0.4271886217579373
+        ],
+        [
+          0.4271886217579373,
+          0.762021232951968
+        ]
+      ]
+    },
+    {
+      "radius": 45.0,
+      "h": 0.02,
+      "n": 2250,
+      "sectors": [
+        {
+          "name": "tracefree_l0",
+          "ell": 0,
+          "multiplicity": 1,
+          "ratio": 0.920311687318448,
+          "source_norm_radial": 10.922616996487934,
+          "f_response": {
+            "value": 4.033482784485488,
+            "projection_error": 1.914086944498905e-12
+          },
+          "g_responses": [
+            {
+              "value": 0.9926232544999962,
+              "projection_error": 8.942739727555033e-13
+            }
+          ]
+        },
+        {
+          "name": "tracefree_l1",
+          "ell": 1,
+          "multiplicity": 2,
+          "ratio": 0.9547719071253953,
+          "source_norm_radial": 0.4271886505447364,
+          "f_response": {
+            "value": 0.15133532786752413,
+            "projection_error": 1.648919035643191e-15
+          },
+          "g_responses": [
+            {
+              "value": 0.02114102570607325,
+              "projection_error": 2.2629684584680596e-14
+            },
+            {
+              "value": 0.08405604114180054,
+              "projection_error": 0.0
+            }
+          ]
+        },
+        {
+          "name": "tracefree_l2",
+          "ell": 2,
+          "multiplicity": 2,
+          "ratio": 0.6716341270349844,
+          "source_norm_radial": 0.7620212329485407,
+          "f_response": {
+            "value": 0.040063820706767464,
+            "projection_error": 0.0
+          },
+          "g_responses": [
+            {
+              "value": 0.252203115124706,
+              "projection_error": 3.6158894478563873e-13
+            },
+            {
+              "value": 0.17946870903527476,
+              "projection_error": 0.0
+            }
+          ]
+        },
+        {
+          "name": "common_scale_control",
+          "ell": 0,
+          "multiplicity": 1,
+          "ratio": 1.0001833780450549,
+          "source_norm_radial": 6.468412293789579,
+          "f_response": {
+            "value": 2.4514819481199335,
+            "projection_error": 2.0556993607367957e-13
+          },
+          "g_responses": [
+            {
+              "value": 0.7833172811753781,
+              "projection_error": 9.646574028164617e-13
+            }
+          ]
+        },
+        {
+          "name": "relative_core_scale_control",
+          "ell": 0,
+          "multiplicity": 1,
+          "ratio": 1.102036331345595,
+          "source_norm_radial": 1.2885081935655651,
+          "f_response": {
+            "value": 0.6808808865917672,
+            "projection_error": 3.840218074091517e-13
+          },
+          "g_responses": [
+            {
+              "value": 0.029110534681100485,
+              "projection_error": 3.1506550000423306e-13
+            }
+          ]
+        }
+      ],
+      "full_quadratic_radial_eigenvalues": [
+        0.6773017540254095,
+        0.9217349157476845
+      ],
+      "full_quadratic_response_matrix": [
+        [
+          2.711938682983159,
+          0.32846025626132724
+        ],
+        [
+          0.32846025626132724,
+          0.5182983710812518
+        ]
+      ],
+      "full_quadratic_norm_matrix": [
+        [
+          2.967337591429585,
+          0.4271886505447364
+        ],
+        [
+          0.4271886505447364,
+          0.7620212329485403
+        ]
+      ]
+    },
+    {
+      "radius": 45.0,
+      "h": 0.01,
+      "n": 4500,
+      "sectors": [
+        {
+          "name": "tracefree_l0",
+          "ell": 0,
+          "multiplicity": 1,
+          "ratio": 0.9202048210692165,
+          "source_norm_radial": 10.922003715855759,
+          "f_response": {
+            "value": 4.032683179203365,
+            "projection_error": 9.126596180186741e-12
+          },
+          "g_responses": [
+            {
+              "value": 0.9925570583298192,
+              "projection_error": 4.7586811311113246e-12
+            }
+          ]
+        },
+        {
+          "name": "tracefree_l1",
+          "ell": 1,
+          "multiplicity": 2,
+          "ratio": 0.9547204969978925,
+          "source_norm_radial": 0.42718865234138576,
+          "f_response": {
+            "value": 0.15132935609530276,
+            "projection_error": 8.595375463055399e-15
+          },
+          "g_responses": [
+            {
+              "value": 0.021131700937157324,
+              "projection_error": 9.267695118274998e-14
+            },
+            {
+              "value": 0.08405534934746488,
+              "projection_error": 0.0
+            }
+          ]
+        },
+        {
+          "name": "tracefree_l2",
+          "ell": 2,
+          "multiplicity": 2,
+          "ratio": 0.6716280378712646,
+          "source_norm_radial": 0.7620212329484776,
+          "f_response": {
+            "value": 0.04006346470241044,
+            "projection_error": 0.0
+          },
+          "g_responses": [
+            {
+              "value": 0.2521995761672963,
+              "projection_error": 8.721447306348335e-12
+            },
+            {
+              "value": 0.1794683199293106,
+              "projection_error": 0.0
+            }
+          ]
+        },
+        {
+          "name": "common_scale_control",
+          "ell": 0,
+          "multiplicity": 1,
+          "ratio": 1.0000458170225588,
+          "source_norm_radial": 6.467798914804412,
+          "f_response": {
+            "value": 2.4507626571146086,
+            "projection_error": 8.622416149128842e-12
+          },
+          "g_responses": [
+            {
+              "value": 0.7832849679319901,
+              "projection_error": 2.7431089854086764e-12
+            }
+          ]
+        },
+        {
+          "name": "relative_core_scale_control",
+          "ell": 0,
+          "multiplicity": 1,
+          "ratio": 1.1018337745570839,
+          "source_norm_radial": 1.2883548416198007,
+          "f_response": {
+            "value": 0.6806680786093179,
+            "projection_error": 1.1426749303711237e-12
+          },
+          "g_responses": [
+            {
+              "value": 0.029108360446101635,
+              "projection_error": 1.1736201229896654e-12
+            }
+          ]
+        }
+      ],
+      "full_quadratic_radial_eigenvalues": [
+        0.6772827422336113,
+        0.9216320045956525
+      ],
+      "full_quadratic_response_matrix": [
+        [
+          2.7115298672781663,
+          0.32848173776252954
+        ],
+        [
+          0.32848173776252954,
+          0.5182879569956858
+        ]
+      ],
+      "full_quadratic_norm_matrix": [
+        [
+          2.967184273068206,
+          0.4271886523413858
+        ],
+        [
+          0.4271886523413858,
+          0.7620212329484772
+        ]
+      ]
+    },
+    {
+      "radius": 45.0,
+      "h": 0.005,
+      "n": 9000,
+      "sectors": [
+        {
+          "name": "tracefree_l0",
+          "ell": 0,
+          "multiplicity": 1,
+          "ratio": 0.9201781111273813,
+          "source_norm_radial": 10.921850422222356,
+          "f_response": {
+            "value": 4.0324833400807005,
+            "projection_error": 3.7195172072554405e-12
+          },
+          "g_responses": [
+            {
+              "value": 0.9925405056874792,
+              "projection_error": 2.1059338116485272e-11
+            }
+          ]
+        },
+        {
+          "name": "tracefree_l1",
+          "ell": 1,
+          "multiplicity": 2,
+          "ratio": 0.9547076458385664,
+          "source_norm_radial": 0.4271886524536374,
+          "f_response": {
+            "value": 0.1513278626933909,
+            "projection_error": 8.123930652938922e-15
+          },
+          "g_responses": [
+            {
+              "value": 0.02112937092440376,
+              "projection_error": 2.0642875971956912e-13
+            },
+            {
+              "value": 0.08405517640177614,
+              "projection_error": 0.0
+            }
+          ]
+        },
+        {
+          "name": "tracefree_l2",
+          "ell": 2,
+          "multiplicity": 2,
+          "ratio": 0.671626515383988,
+          "source_norm_radial": 0.7620212329484838,
+          "f_response": {
+            "value": 0.04006337570368333,
+            "projection_error": 0.0
+          },
+          "g_responses": [
+            {
+              "value": 0.2521986912763187,
+              "projection_error": 1.2340989068615536e-10
+            },
+            {
+              "value": 0.17946822265011492,
+              "projection_error": 0.0
+            }
+          ]
+        },
+        {
+          "name": "common_scale_control",
+          "ell": 0,
+          "multiplicity": 1,
+          "ratio": 1.000011437631885,
+          "source_norm_radial": 6.46764561499907,
+          "f_response": {
+            "value": 2.4505829083323465,
+            "projection_error": 4.415165390410369e-12
+          },
+          "g_responses": [
+            {
+              "value": 0.7832768864420424,
+              "projection_error": 6.033157965008137e-11
+            }
+          ]
+        },
+        {
+          "name": "relative_core_scale_control",
+          "ell": 0,
+          "multiplicity": 1,
+          "ratio": 1.101783151528991,
+          "source_norm_radial": 1.2883165162269887,
+          "f_response": {
+            "value": 0.6806148988810391,
+            "projection_error": 2.2748063578225536e-11
+          },
+          "g_responses": [
+            {
+              "value": 0.02910781682667199,
+              "projection_error": 8.779275132673362e-12
+            }
+          ]
+        }
+      ],
+      "full_quadratic_radial_eigenvalues": [
+        0.6772779886871592,
+        0.9216062841302333
+      ],
+      "full_quadratic_response_matrix": [
+        [
+          2.711427689085999,
+          0.3284871045670379
+        ],
+        [
+          0.3284871045670379,
+          0.5182853534451767
+        ]
+      ],
+      "full_quadratic_norm_matrix": [
+        [
+          2.9671459497721058,
+          0.42718865245363724
+        ],
+        [
+          0.42718865245363724,
+          0.7620212329484835
+        ]
+      ]
+    },
+    {
+      "radius": 65.0,
+      "h": 0.01,
+      "n": 6500,
+      "sectors": [
+        {
+          "name": "tracefree_l0",
+          "ell": 0,
+          "multiplicity": 1,
+          "ratio": 0.9202048216957441,
+          "source_norm_radial": 10.922003715855759,
+          "f_response": {
+            "value": 4.032683179203365,
+            "projection_error": 9.126596180186741e-12
+          },
+          "g_responses": [
+            {
+              "value": 0.9925570617512877,
+              "projection_error": 1.2002800134240022e-11
+            }
+          ]
+        },
+        {
+          "name": "tracefree_l1",
+          "ell": 1,
+          "multiplicity": 2,
+          "ratio": 0.9547204973482253,
+          "source_norm_radial": 0.42718865234138576,
+          "f_response": {
+            "value": 0.15132935614129958,
+            "projection_error": 3.0535989889360205e-14
+          },
+          "g_responses": [
+            {
+              "value": 0.0211317009907939,
+              "projection_error": 2.6723415147422713e-14
+            },
+            {
+              "value": 0.08405534935149282,
+              "projection_error": 0.0
+            }
+          ]
+        },
+        {
+          "name": "tracefree_l2",
+          "ell": 2,
+          "multiplicity": 2,
+          "ratio": 0.6716282077464562,
+          "source_norm_radial": 0.7620212329484776,
+          "f_response": {
+            "value": 0.04006346470241044,
+            "projection_error": 0.0
+          },
+          "g_responses": [
+            {
+              "value": 0.2521997056114404,
+              "projection_error": 7.046415282385172e-13
+            },
+            {
+              "value": 0.1794683199336695,
+              "projection_error": 0.0
+            }
+          ]
+        },
+        {
+          "name": "common_scale_control",
+          "ell": 0,
+          "multiplicity": 1,
+          "ratio": 1.000045838168941,
+          "source_norm_radial": 6.467798914804412,
+          "f_response": {
+            "value": 2.4507626571146086,
+            "projection_error": 8.622416149128842e-12
+          },
+          "g_responses": [
+            {
+              "value": 0.7832850363172636,
+              "projection_error": 7.498540153870351e-12
+            }
+          ]
+        },
+        {
+          "name": "relative_core_scale_control",
+          "ell": 0,
+          "multiplicity": 1,
+          "ratio": 1.1018337804282572,
+          "source_norm_radial": 1.2883548416198007,
+          "f_response": {
+            "value": 0.6806680786093179,
+            "projection_error": 1.1426749303711237e-12
+          },
+          "g_responses": [
+            {
+              "value": 0.029108364228178845,
+              "projection_error": 7.754642328968585e-13
+            }
+          ]
+        }
+      ],
+      "full_quadratic_radial_eigenvalues": [
+        0.6772830771880423,
+        0.92163200942083
+      ],
+      "full_quadratic_response_matrix": [
+        [
+          2.711529954754397,
+          0.3284818882501739
+        ],
+        [
+          0.3284818882501739,
+          0.5182882158839739
+        ]
+      ],
+      "full_quadratic_norm_matrix": [
+        [
+          2.967184273068206,
+          0.4271886523413858
+        ],
+        [
+          0.4271886523413858,
+          0.7620212329484772
+        ]
+      ]
+    },
+    {
+      "radius": 65.0,
+      "h": 0.005,
+      "n": 13000,
+      "sectors": [
+        {
+          "name": "tracefree_l0",
+          "ell": 0,
+          "multiplicity": 1,
+          "ratio": 0.920178111754617,
+          "source_norm_radial": 10.921850422222356,
+          "f_response": {
+            "value": 4.0324833400807005,
+            "projection_error": 3.7195172072554405e-12
+          },
+          "g_responses": [
+            {
+              "value": 0.9925405091127665,
+              "projection_error": 3.392320720451985e-11
+            }
+          ]
+        },
+        {
+          "name": "tracefree_l1",
+          "ell": 1,
+          "multiplicity": 2,
+          "ratio": 0.9547076461893382,
+          "source_norm_radial": 0.4271886524536374,
+          "f_response": {
+            "value": 0.1513278627394454,
+            "projection_error": 5.987886504666706e-14
+          },
+          "g_responses": [
+            {
+              "value": 0.021129370978107433,
+              "projection_error": 9.612550826935268e-13
+            },
+            {
+              "value": 0.08405517640580917,
+              "projection_error": 0.0
+            }
+          ]
+        },
+        {
+          "name": "tracefree_l2",
+          "ell": 2,
+          "multiplicity": 2,
+          "ratio": 0.6716266854584367,
+          "source_norm_radial": 0.7620212329484838,
+          "f_response": {
+            "value": 0.04006337570368333,
+            "projection_error": 0.0
+          },
+          "g_responses": [
+            {
+              "value": 0.2521988208722955,
+              "projection_error": 9.10336886621853e-11
+            },
+            {
+              "value": 0.17946822265447923,
+              "projection_error": 0.0
+            }
+          ]
+        },
+        {
+          "name": "common_scale_control",
+          "ell": 0,
+          "multiplicity": 1,
+          "ratio": 1.0000114588031075,
+          "source_norm_radial": 6.46764561499907,
+          "f_response": {
+            "value": 2.4505829083323465,
+            "projection_error": 4.415165390410369e-12
+          },
+          "g_responses": [
+            {
+              "value": 0.7832769549060242,
+              "projection_error": 4.1966166561338834e-11
+            }
+          ]
+        },
+        {
+          "name": "relative_core_scale_control",
+          "ell": 0,
+          "multiplicity": 1,
+          "ratio": 1.1017831574070287,
+          "source_norm_radial": 1.2883165162269887,
+          "f_response": {
+            "value": 0.6806148988810391,
+            "projection_error": 2.2748063578225536e-11
+          },
+          "g_responses": [
+            {
+              "value": 0.029107820613058513,
+              "projection_error": 1.887983658348105e-11
+            }
+          ]
+        }
+      ],
+      "full_quadratic_radial_eigenvalues": [
+        0.677278324033882,
+        0.9216062889655843
+      ],
+      "full_quadratic_response_matrix": [
+        [
+          2.711427776662123,
+          0.3284872552192488
+        ],
+        [
+          0.3284872552192488,
+          0.5182856126371302
+        ]
+      ],
+      "full_quadratic_norm_matrix": [
+        [
+          2.9671459497721058,
+          0.42718865245363724
+        ],
+        [
+          0.42718865245363724,
+          0.7620212329484835
+        ]
+      ],
+      "derivative_response_eigenvalues": [
+        1.0000114586317554,
+        1.364374543023534
+      ],
+      "derivative_response_eigenvectors": [
+        [
+          -0.7864154772030859,
+          -0.4038066738801683
+        ],
+        [
+          -0.7864516295593116,
+          1.263277444959332
+        ]
+      ],
+      "derivative_response_matrix": [
+        [
+          1.4194454389881952,
+          -0.1941510985183349
+        ],
+        [
+          -0.1941510985183349,
+          0.5857866896676601
+        ]
+      ],
+      "derivative_norm_matrix": [
+        [
+          1.2883165162269878,
+          -0.06304224290420746
+        ],
+        [
+          -0.06304224290420746,
+          0.454679373331193
+        ]
+      ],
+      "restricted_dilation_cost": [
+        2.450499594733119,
+        0.7832715696096421
+      ],
+      "restricted_dilation_response_matrix": [
+        [
+          1.3647718667337745,
+          -0.13947856509859108
+        ],
+        [
+          -0.13947856509859108,
+          0.531115193565257
+        ]
+      ],
+      "restricted_dilation_response_eigenvalues": [
+        1.000011457663269,
+        1.2124317939304778
+      ]
+    },
+    {
+      "radius": 65.0,
+      "h": 0.0025,
+      "n": 26000,
+      "sectors": [
+        {
+          "name": "tracefree_l0",
+          "ell": 0,
+          "multiplicity": 1,
+          "ratio": 0.9201714346805877,
+          "source_norm_radial": 10.921812100471232,
+          "f_response": {
+            "value": 4.032433384161128,
+            "projection_error": 4.011676283050339e-11
+          },
+          "g_responses": [
+            {
+              "value": 0.9925363707400804,
+              "projection_error": 1.8405494726106636e-10
+            }
+          ]
+        },
+        {
+          "name": "tracefree_l1",
+          "ell": 1,
+          "multiplicity": 2,
+          "ratio": 0.9547044334862314,
+          "source_norm_radial": 0.42718865246065224,
+          "f_response": {
+            "value": 0.15132748935944723,
+            "projection_error": 8.459863616495663e-14
+          },
+          "g_responses": [
+            {
+              "value": 0.02112878854979925,
+              "projection_error": 1.3212218049219598e-12
+            },
+            {
+              "value": 0.08405513317049987,
+              "projection_error": 0.0
+            }
+          ]
+        },
+        {
+          "name": "tracefree_l2",
+          "ell": 2,
+          "multiplicity": 2,
+          "ratio": 0.6716263048968341,
+          "source_norm_radial": 0.7620212329484832,
+          "f_response": {
+            "value": 0.04006335345395938,
+            "projection_error": 0.0
+          },
+          "g_responses": [
+            {
+              "value": 0.2521985996940701,
+              "projection_error": 1.3790481211011648e-10
+            },
+            {
+              "value": 0.17946819833613045,
+              "projection_error": 0.0
+            }
+          ]
+        },
+        {
+          "name": "common_scale_control",
+          "ell": 0,
+          "multiplicity": 1,
+          "ratio": 1.000002864642788,
+          "source_norm_radial": 6.467607292863412,
+          "f_response": {
+            "value": 2.450537975743236,
+            "projection_error": 1.0679298916536906e-11
+          },
+          "g_responses": [
+            {
+              "value": 0.7832749343807632,
+              "projection_error": 5.623672762273536e-11
+            }
+          ]
+        },
+        {
+          "name": "relative_core_scale_control",
+          "ell": 0,
+          "multiplicity": 1,
+          "ratio": 1.1017705026565363,
+          "source_norm_radial": 1.288306935665205,
+          "f_response": {
+            "value": 0.6806016053356997,
+            "projection_error": 4.64856087650789e-11
+          },
+          "g_responses": [
+            {
+              "value": 0.029107684706177778,
+              "projection_error": 3.5110021210004744e-11
+            }
+          ]
+        }
+      ],
+      "full_quadratic_radial_eigenvalues": [
+        0.6772771357476957,
+        0.9215998593069071
+      ],
+      "full_quadratic_response_matrix": [
+        [
+          2.7114022337570827,
+          0.3284885967677522
+        ],
+        [
+          0.3284885967677522,
+          0.5182849618555985
+        ]
+      ],
+      "full_quadratic_norm_matrix": [
+        [
+          2.967136369341341,
+          0.42718865246065185
+        ],
+        [
+          0.42718865246065185,
+          0.7620212329484819
+        ]
+      ],
+      "derivative_response_eigenvalues": [
+        1.0000028646320795,
+        1.3643683089631211
+      ],
+      "derivative_response_eigenvectors": [
+        [
+          -0.786424374711842,
+          -0.4037965910528085
+        ],
+        [
+          -0.7864334126183805,
+          1.263288830228924
+        ]
+      ],
+      "derivative_response_matrix": [
+        [
+          1.4194185800837549,
+          -0.1941488706479666
+        ],
+        [
+          -0.1941488706479666,
+          0.5857856162741781
+        ]
+      ],
+      "derivative_norm_matrix": [
+        [
+          1.288306935665204,
+          -0.06304224289020333
+        ],
+        [
+          -0.06304224289020331,
+          0.45467937333105407
+        ]
+      ],
+      "restricted_dilation_cost": [
+        2.4505171477794647,
+        0.7832735924422741
+      ],
+      "restricted_dilation_response_matrix": [
+        [
+          1.3647461781011017,
+          -0.13947672805622754
+        ],
+        [
+          -0.13947672805622754,
+          0.5311137304797942
+        ]
+      ],
+      "restricted_dilation_response_eigenvalues": [
+        1.0000028630261304,
+        1.2124252901106913
+      ]
+    }
+  ]
+}

@@ -1,0 +1,186 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=26mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype,amsmath,amssymb,amsthm,mathtools}
+\usepackage[colorlinks=true,linkcolor=blue!45!black,urlcolor=blue!45!black,citecolor=blue!45!black]{hyperref}
+\usepackage{xcolor}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newcommand{\R}{\mathbb R}
+\newcommand{\mc}{M_{\rm c}}
+\DeclareMathOperator{\Tr}{Tr}
+\setlength{\emergencystretch}{2em}
+\title{Fixed occupations and sharp collapse thresholds\\\large An exact one-dimensional result and a two-dimensional Lieb--Thirring problem}
+\author{Shuxing Yang}
+\date{9 October 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+For common-density nonlinear Schr\"odinger systems, the conserved Gram spectrum determines an occupation-dependent universal collapse threshold. In two dimensions we give the exact weighted spectral reformulation, prove monotonicity under majorization, and record explicit bounds. In the one-dimensional quintic system the sharp inequality of Read--Schulz yields the exact strict-side threshold for every finite occupation spectrum. The two-dimensional two-state sharp constant remains undetermined. These statements concern uniform protection below threshold and existence of blowup above it; they do not classify every solution at equality.
+\end{abstract}
+
+\section{The two-dimensional threshold}
+Fix a finite probability vector $p_1\ge\cdots\ge p_r>0$, $\sum_jp_j=1$, and consider
+\begin{equation}\label{eq:model}
+ i\partial_tu_j=-\Delta u_j-\rho u_j,\qquad
+ \rho=\sum_{j=1}^r|u_j|^2,\qquad x\in\R^2.
+\end{equation}
+For $U=(u_1,\ldots,u_r)^T$, write
+\[
+ \Gamma(U)=\int UU^*,\quad M=\Tr\Gamma,\quad
+ A(U)=\sum_j\|\nabla u_j\|_2^2,\quad F(U)=\int\rho^2,\quad E=\tfrac12A-\tfrac14F.
+\]
+The entire matrix $\Gamma$ is conserved. Indeed the common self-adjoint operator $H_U=-\Delta-\rho$ gives
+\[
+ \frac{d}{dt}\int u_j\overline{u_k}
+ =-i\int(H_Uu_j)\overline{u_k}+i\int u_j\overline{H_Uu_k}=0.
+\]
+Approximation extends this identity to the finite-component $H^1$ flow. The usual local theory and blowup alternative apply; the cubic nonlinearity has derivative bounded by $3|U|^2|V|$.
+
+For an $L^2$-orthonormal tuple $\Phi=(\phi_1,\ldots,\phi_r)$, define
+\[
+ \rho_p=\sum_jp_j|\phi_j|^2,\quad A_p=\sum_jp_j\|\nabla\phi_j\|_2^2,\quad
+ C(p)=\sup_\Phi\frac{\int\rho_p^2}{A_p},\qquad M_*(p)=\frac2{C(p)}.
+\]
+The constant is positive and finite: $\|\sqrt{\rho_p}\|_2=1$ and $\|\nabla\sqrt{\rho_p}\|_2^2\le A_p$ reduce finiteness to scalar interpolation. With $u_j=\sqrt{Mp_j}\phi_j$,
+\begin{equation}\label{eq:sharp}
+ F(U)\le MC(p)A(U)\quad\hbox{when }\Gamma(U)=M\operatorname{diag}(p).
+\end{equation}
+A constant internal unitary transformation covers any Gram matrix with the same spectrum.
+
+\begin{theorem}[Strict-side dynamical meaning]\label{thm:strict}
+If $M<M_*(p)$, all $H^1$ data with Gram matrix $M\operatorname{diag}(p)$ generate global solutions uniformly bounded in $H^1$ in both time directions. If $M>M_*(p)$, there exist smooth compactly supported data with exactly this Gram matrix whose solutions blow up in finite time in both directions.
+\end{theorem}
+\begin{proof}
+Conservation and \eqref{eq:sharp} imply
+\[
+ E(U_0)\ge\tfrac12(1-M/M_*)A(U(t)),\qquad
+ A(U(t))\le\frac{2E(U_0)}{1-M/M_*}.
+\]
+Mass conservation and continuation give the subthreshold conclusion. Above threshold choose an orthonormal tuple with $\int\rho_p^2/A_p>2/M$. Approximate it in $H^1$ by a smooth compactly supported vector $F_n$. Its Gram matrix $G_n=\int F_nF_n^*$ tends to $I$, and $G_n^{-1/2}F_n$ is exactly orthonormal and converges in $H^1$. The $L^4$ embedding preserves the strict quotient inequality. Multiplying the components by $\sqrt{Mp_j}$ gives the prescribed Gram matrix and $E<0$. The variance satisfies
+\[
+ I(t)=\int |x|^2\rho(t,x),\quad
+ I'(t)=4\operatorname{Im}\sum_j\int x\cdot\nabla u_j\overline{u_j},\quad
+ I''=8A-4F=16E.
+\]
+Thus $I(t)=I(0)+tI'(0)+8t^2E$ cannot remain nonnegative for all positive or all negative times.
+\end{proof}
+No maximizer is needed. The superthreshold assertion is existential.
+
+\section{The weighted spectral problem}
+For $0\ne V\ge0$ in $L^2(\R^2)$, let $e_1(V)\ge e_2(V)\ge\cdots\ge0$ be the magnitudes of the negative eigenvalues of $-\Delta-V$, padded by zeros. Put
+\[
+ K_p(V)=\sum_jp_je_j(V),\qquad L(p)=\sup_V\frac{K_p(V)}{\int V^2}.
+\]
+Weighted min--max gives $K_p(V)=\sup_\Phi(\int V\rho_p-A_p)$. Diffuse states at infinity supply the zero-filled entries. This is the weighted form of the established kinetic/spectral duality \cite{DFLP,FGL}.
+\begin{proposition}[Normalization]
+\[
+ C(p)=4L(p),\qquad M_*(p)=\frac1{2L(p)}.
+\]
+\end{proposition}
+\begin{proof}
+For $X=\int\rho_p^2$ and $A=A_p$, take $V=b\rho_p$ with $b=2A/X$. Then $L(p)\ge(bX-A)/(b^2X)=X/(4A)$. Conversely,
+\[
+ \int V\rho_p-A\le\|V\|_2\sqrt{C(p)A}-A\le\tfrac14C(p)\|V\|_2^2.
+\]
+Take the relevant suprema.
+\end{proof}
+
+\section{Redistribution of occupations}
+If $p\succ q$ in majorization order, Abel summation against the decreasing sequence $e_j(V)$ gives $\sum_jp_je_j(V)\ge\sum_jq_je_j(V)$. Hence
+\begin{equation}\label{eq:majorization}
+ p\succ q\quad\Longrightarrow\quad M_*(p)\le M_*(q).
+\end{equation}
+More evenly distributed occupations never lower the universal non-collapse threshold. Extended by permutation symmetry, $L(p)$ is convex, being a supremum of linear functions of $p$. Thus $1/M_*(p)$ is convex.
+
+Let $\mc=\|Q\|_2^2$ for $-\Delta Q+Q-Q^3=0$ in $\R^2$, so $\int|f|^4\le(2/\mc)\|f\|_2^2\|\nabla f\|_2^2$. Define
+\[
+ L_{1,2}^{(k)}=\sup_{V\ge0,V\ne0}\frac{\sum_{j=1}^ke_j(V)}{\int V^2}.
+\]
+Then $L_{1,2}^{(1)}=1/(2\mc)$ and $M_*(1/k,\ldots,1/k)=k/(2L_{1,2}^{(k)})$. For two occupations,
+\[
+ p_1L_{1,2}^{(1)}\le L(p)\le(p_1-p_2)L_{1,2}^{(1)}+p_2L_{1,2}^{(2)}.
+\]
+Consequently,
+\[
+ L_{1,2}^{(2)}=L_{1,2}^{(1)}
+ \quad\Longleftrightarrow\quad
+ M_*(p_1,p_2)=\frac{\mc}{\max(p_1,p_2)}\quad\hbox{for all }p.
+\]
+The reverse implication already follows from $p_1=p_2=1/2$.
+
+Read--Schulz \cite[Theorem 2]{RS} give $L_{1,2}\le1/(4\sqrt3\pi)$. Since $K_p\le p_1\sum_je_j$, this yields $M_*(p)\ge2\sqrt3\pi/p_1$. The scalar-projection estimate from the preceding occupation derivation gives $C(p)\le(1+p_1)/\mc$. Together,
+\begin{equation}\label{eq:bounds}
+ \max\left\{\frac{2\mc}{1+p_1},\frac{2\sqrt3\pi}{p_1}\right\}
+ \le M_*(p)\le\frac{\mc}{p_1}.
+\end{equation}
+In particular $4\sqrt3\pi\le M_*(1/2,1/2)\le2\mc$. The stronger spectral lower bound uses the external 2026 theorem.
+
+\section{Exact one-dimensional thresholds}
+Consider instead the one-dimensional quintic system
+\[
+ i\partial_tu_j=-\partial_x^2u_j-\rho^2u_j,\qquad
+ \rho=\sum_j|u_j|^2,\qquad E=\tfrac12A-\tfrac16F,
+ \quad A=\sum_j\|u_j'\|_2^2,\quad F=\int\rho^3.
+\]
+Its Gram matrix is conserved by the same argument. Here
+\[
+ Q(x)=3^{1/4}\operatorname{sech}^{1/2}(2x),\qquad
+ -Q''+Q-Q^5=0,\qquad M_{\rm c}^{(1)}=\|Q\|_2^2=\frac{\sqrt3\pi}{2}.
+\]
+The external orthonormal inequality of Read--Schulz, including its complex formulation, is
+\begin{equation}\label{eq:1d}
+ \int_\R\left(\sum_{j=1}^k|\phi_j|^2\right)^3
+ \le\frac4{\pi^2}\sum_{j=1}^k\|\phi_j'\|_2^2.
+\end{equation}
+\begin{theorem}
+For every finite occupation spectrum, the strict-side universal threshold is
+\[
+ M_*^{(1)}(p)=\frac{\sqrt3\pi}{2p_1}=\frac{M_{\rm c}^{(1)}}{p_1}.
+\]
+Below it every prescribed-Gram $H^1$ solution is global and uniformly bounded. Above it smooth compactly supported prescribed-Gram data exist with finite-time blowup in both directions.
+\end{theorem}
+\begin{proof}
+Diagonalize $\Gamma$ and write $u_j=\sqrt{\lambda_j}\phi_j$, with $\mu=\lambda_1=Mp_1$. For $0<t<\mu$, set $\rho_t=\sum_{\lambda_j>t}|\phi_j|^2$ and $A_t=\sum_{\lambda_j>t}\|\phi_j'\|_2^2$. Layer integration gives $\rho=\int_0^\mu\rho_t\,dt$ and $A=\int_0^\mu A_t\,dt$. Jensen and \eqref{eq:1d} imply
+\[
+ F\le\mu^2\int_0^\mu\int\rho_t^3\,dx\,dt
+ \le\frac{4\mu^2}{\pi^2}A
+ =3\left(\frac\mu{M_{\rm c}^{(1)}}\right)^2A.
+\]
+Thus $E\ge\frac12[1-(\mu/M_{\rm c}^{(1)})^2]A$ proves the subthreshold claim.
+For sharpness, approximate $Q/\sqrt{M_{\rm c}^{(1)}}$ by a normalized smooth compactly supported function. Choose the other normalized smooth modes on disjoint distant intervals and dilate them so that their kinetic energies tend to zero. Orthogonality is exact and
+\[
+ \frac{\int(\sum_jp_j|\phi_j|^2)^3}{\sum_jp_j\|\phi_j'\|_2^2}
+ \longrightarrow\frac{4p_1^2}{\pi^2}.
+\]
+If $Mp_1>M_{\rm c}^{(1)}$, a finite construction has $E<0$ and finite variance. The critical identity $I''=8A-\frac83F=16E$ gives blowup as in Theorem~\ref{thm:strict}.
+\end{proof}
+
+\section{The planar endpoint and optical normalization}
+The remaining two-state target is
+\[
+ e_1(V)+e_2(V)\stackrel{?}{\le}\frac1{2\mc}\int_{\R^2}V^2.
+\]
+Frank--Gontier--Lewin's strict binding range is $\gamma>\max\{0,2-d/2\}$, which at $d=2$ does not include $\gamma=1$. Their finite-rank optimizer theory does not itself determine this endpoint \cite{FGL,FGLrank}. If the target holds, every two-mode threshold is $\mc/p_1$; if it fails, the equal-mode threshold is strictly below $2\mc$.
+
+For the common-density optical equation
+\[
+ i\partial_za_j=-D\Delta_xa_j-g\left(\sum_k|a_k|^2\right)a_j,
+ \qquad D,g>0,\quad x\in\R^2,
+\]
+put $x=\ell y$, $z=\ell^2t/D$ and $a_j=\sqrt{D/(g\ell^2)}u_j$. Physical total power satisfies
+\[
+ P=\int\sum_j|a_j|^2=\frac DgM,\qquad P_*(p)=\frac DgM_*(p).
+\]
+The two-state target therefore asks whether two equally occupied orthogonal modes double the infimum of powers admitting collapse. The model requires common scalar dispersion and common density coupling. Coherence-dependent collapse has established optical antecedents \cite{Bang}. In the one-dimensional quintic model the corresponding normalization is $P=\sqrt{D/g}\,M$, giving $P_*=(M_{\rm c}^{(1)}/p_1)\sqrt{D/g}$.
+
+\begin{thebibliography}{9}
+\bibitem{RS} L. Read and M. R. Schulz, \emph{The sharp one-dimensional Lieb--Thirring inequality for the sum of eigenvalues}, arXiv:2609.10478v2 (2026). \url{https://arxiv.org/abs/2609.10478v2}.
+\bibitem{DFLP} J. Dolbeault, P. Felmer, M. Loss and E. Paturel, \emph{Lieb--Thirring type inequalities and Gagliardo--Nirenberg inequalities for systems}, J. Funct. Anal. 238 (2006), 193--220. \url{https://arxiv.org/abs/math-ph/0506052}.
+\bibitem{FGL} R. L. Frank, D. Gontier and M. Lewin, \emph{The nonlinear Schr\"odinger equation for orthonormal functions II: Application to Lieb--Thirring inequalities}, Comm. Math. Phys. 384 (2021), 1783--1828. \url{https://arxiv.org/abs/2002.04964}.
+\bibitem{FGLrank} R. L. Frank, D. Gontier and M. Lewin, \emph{Optimizers for the finite-rank Lieb--Thirring inequality}. \url{https://arxiv.org/abs/2109.05984}.
+\bibitem{Duong} G. K. Duong, T. M. T. Le, P. T. Nam and P.-T. Nguyen, \emph{Finite-rank optimizers for the mass-supercritical Lieb--Thirring and Hardy--Lieb--Thirring inequalities}. \url{https://arxiv.org/abs/2510.24148}.
+\bibitem{KV} R. Killip and M. Visan, \emph{Nonlinear Schr\"odinger equations at critical regularity}, Clay Mathematics Proceedings 17 (2013). \url{https://www.math.ucla.edu/~visan/ClayLectureNotes.pdf}.
+\bibitem{Bang} O. Bang, D. Edmundson and W. Kr\'olikowski, \emph{Collapse of incoherent light beams in inertial bulk Kerr media}, Phys. Rev. Lett. 83 (1999), 5479--5482. \url{https://doi.org/10.1103/PhysRevLett.83.5479}.
+\end{thebibliography}
+\end{document}

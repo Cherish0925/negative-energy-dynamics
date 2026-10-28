@@ -1,0 +1,35 @@
+[
+  {
+    "ratio": 0.04273139483293292,
+    "patch_lower": 0.04271783146487737,
+    "norm": 48.0,
+    "mean_rank": 1.0,
+    "min_rank": 1,
+    "max_rank": 1,
+    "lattice": "square",
+    "cutoff": 10,
+    "nq": 16
+  },
+  {
+    "ratio": 0.042731718210367066,
+    "patch_lower": 0.042696995988144845,
+    "norm": 47.99999999999999,
+    "mean_rank": 1.0,
+    "min_rank": 1,
+    "max_rank": 1,
+    "lattice": "square",
+    "cutoff": 12,
+    "nq": 10
+  },
+  {
+    "ratio": 0.04273173463607243,
+    "patch_lower": 0.04267748116385021,
+    "norm": 48.0,
+    "mean_rank": 1.0,
+    "min_rank": 1,
+    "max_rank": 1,
+    "lattice": "square",
+    "cutoff": 14,
+    "nq": 8
+  }
+]

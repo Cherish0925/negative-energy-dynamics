@@ -1,10 +1,14 @@
 cff-version: 1.2.0
-message: "Unpublished personal research snapshot; contact the author before redistribution or citation as a public release."
-title: "Negative-Energy Global Solutions and Traveling-Wave Mass Gaps in Mass-Critical Dispersive Equations"
-type: software
+message: "Unpublished research manuscripts and supporting computations."
+title: "Critical Focusing Dynamics: Coherent Structures, Occupation Thresholds, and Collapse"
 authors:
   - family-names: Yang
     given-names: Shuxing
-date-released: 2026-10-28
-version: "research-snapshot-2026-10-28"
-repository-code: "https://github.com/Cherish0925/negative-energy-dynamics"
+version: "2026-10-28"
+preferred-citation:
+  type: unpublished
+  title: "Critical Focusing Dynamics: Coherent Structures, Occupation Thresholds, and Collapse"
+  authors:
+    - family-names: Yang
+      given-names: Shuxing
+  year: 2026

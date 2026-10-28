@@ -1,0 +1,185 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,hyperref}
+\newcommand{\Tr}{\operatorname{Tr}}
+\title{Collective focusing in two dimensions:\\the central problem and verified reductions}
+\author{Shuxing Yang}
+\date{11 October 2026}
+\begin{document}
+\maketitle
+\paragraph{Status.}
+The complete two-dimensional sharp Lieb--Thirring problem is unresolved
+by this work. The reductions below use existing spectral theorems and
+standard NLS symmetries. The tensor-product bound is a direct application
+of a classical sharp inequality; no historical novelty is asserted.
+The accompanying numerical searches found no counterexample.
+
+\section{The precise target}
+For the two-dimensional common-density system
+\[
+ i\partial_tu_j+\Delta u_j+\rho u_j=0,\qquad
+ \rho=\sum_j|u_j|^2,\qquad
+ E=\tfrac12\sum_j\|\nabla u_j\|_2^2-\tfrac14\int\rho^2,
+\]
+the eigenvalues of the full Gram matrix are conserved occupations.
+Let $-\Delta Q+Q-Q^3=0$ be the scalar ground-state equation,
+$M_c=\|Q\|_2^2$, and $C_1=2/M_c$.
+The question is whether, for every positive finite-trace operator
+$\Gamma$ with finite kinetic energy,
+\begin{equation}\label{target}
+ \|\rho_\Gamma\|_2^2\le C_1\|\Gamma\|_{\rm op}\Tr(-\Delta\Gamma).
+\end{equation}
+It is equivalent by spectral duality to
+\[
+ \Tr(-\Delta-V)_-\le \frac{1}{2M_c}\int_{\mathbb R^2}V_+^2.
+\]
+If true, \eqref{target} yields
+\[
+ E\ge\tfrac12(1-\|\Gamma\|_{\rm op}/M_c)\Tr(-\Delta\Gamma).
+\]
+For a fixed normalized occupation spectrum $p$, the total-mass threshold
+would therefore be $M_*(p)=M_c/p_{\max}$. Below this value all
+finite-component energy-space solutions are global and uniformly bounded;
+above it negative-energy finite-variance data exist. The latter follows
+by concentrating the largest mode and putting the others on disjoint
+broad supports. No assertion is made that all superthreshold data collapse.
+
+\section{Every failure can be sought among equal occupations}
+Set $m=\|\Gamma\|_{\rm op}$, $P_s={\bf1}_{(s,\infty)}(\Gamma)$ and
+$D(P)=C_1\Tr(-\Delta P)-\|\rho_P\|_2^2$. The exact identity
+\begin{align*}
+ C_1m\Tr(-\Delta\Gamma)-\|\rho_\Gamma\|_2^2
+ &=m\int_0^mD(P_s)\,ds\\
+ &\quad+\tfrac12\int_0^m\int_0^m
+       \|\rho_{P_s}-\rho_{P_t}\|_2^2\,ds\,dt
+\end{align*}
+follows from $\Gamma=\int_0^mP_s\,ds$ and the Hilbert-space variance
+identity. The classical non-sharp kinetic inequality ensures integrability.
+Each $P_s$ has finite rank. Thus a strict counterexample always yields
+a finite-rank projection counterexample, with all occupied modes weighted
+equally. This reduction does not bound its rank.
+
+\section{A failure would produce an exact collective standing wave and collapse}
+Write $L_N$ for the best constant in the first-$N$ spectral sum.
+Frank--Gontier--Lewin's finite-rank optimizer, bubble-decomposition and
+Euler--Lagrange theorems apply at $d=2,\gamma=1$.
+If $L_N>L_1=1/(2M_c)$ first occurs at $N=N_*$, minimality excludes
+splitting of maximizing sequences into smaller-rank optimizers.
+There is a normalized optimizer, real analytic and exponentially decaying,
+with
+\[
+ \int V_*^2=1,\qquad
+ V_*=\frac1{2L_{N_*}}\sum_{j=1}^{N_*}|\phi_j|^2,\qquad
+ (-\Delta-V_*)\phi_j=-e_j\phi_j,\qquad
+ \langle\phi_i,\phi_j\rangle=\delta_{ij}.
+\]
+There may be additional unoccupied negative eigenvalues; they must not
+be excluded by assumption.
+
+Let $\beta=1/(2L_{N_*})<M_c$ and $\psi_j=\sqrt{\beta}\phi_j$. Then
+\begin{equation}\label{standing}
+ -\Delta\psi_j-\left(\sum_k|\psi_k|^2\right)\psi_j=-e_j\psi_j,\qquad
+ \langle\psi_i,\psi_j\rangle=\beta\delta_{ij}.
+\end{equation}
+Summing the eigenvalue equations gives
+$\sum_j\|\nabla\psi_j\|_2^2=1/2$, $\int\rho_\Psi^2=1$, hence $E(\Psi)=0$.
+Conversely any nonzero localized solution of \eqref{standing} with
+equal occupation $\beta<M_c$ disproves \eqref{target}:
+the Pohozaev identity gives $E(\Psi)=0$, and normalization of the
+orbitals yields the quotient $2/\beta>2/M_c$.
+
+Choose real eigenfunctions, let $h=T-t>0$, and set
+\[
+ u_j(t,x)=h^{-1}
+ \exp\!\left(-\frac{i|x|^2}{4h}+\frac{ie_j}{h}\right)\psi_j(x/h).
+\]
+Pseudoconformal invariance, or direct differentiation, gives an exact
+NLS solution with Gram matrix $\beta I$ and
+\[
+ \sum_j\|\nabla u_j(t)\|_2^2
+ =h^{-2}\sum_j\|\nabla\psi_j\|_2^2+
+   \tfrac14\sum_j\||x|\psi_j\|_2^2.
+\]
+Its energy is $\frac18\sum_j\||x|\psi_j\|_2^2$.
+It collapses although every occupation is below $M_c$.
+These implications identify the unresolved existence question;
+they do not construct such a subcritical standing wave.
+
+\section{A global exclusion of complete product occupations}
+The classical sharp one-dimensional $\gamma=3/2$ inequality is
+\[
+ \Tr(-\partial_x^2-V)_-^{3/2}\le\tfrac3{16}\int V_+^2.
+\]
+For a positive finite-rank operator $A$, write
+$B_A=\int\rho_A^2$ and $T_A=\Tr(-\partial_x^2A)$.
+Variational duality and Schatten H\"older yield, for $a>0$,
+\[
+ aB_A-T_A\le
+ (\Tr A^3)^{1/3}(3/16)^{2/3}a^{4/3}B_A^{2/3}.
+\]
+Optimization in $a$ gives $B_A^2\le(\Tr A^3)T_A/3$.
+For contractions $0\le A,B\le1$, therefore,
+\[
+ \int\rho_{A\otimes B}^2
+ \le\tfrac13\sqrt{(\Tr A)(\Tr B)T_AT_B}
+ \le\tfrac16\Tr[-\Delta(A\otimes B)].
+\]
+Convex combinations obey the same estimate by Jensen's inequality.
+In particular, every complete rectangular occupation
+$\{f_i(x)g_j(y):1\le i\le m,\ 1\le j\le n\}$
+has kinetic quotient at most $1/6$, with no shape or rank restriction.
+The constant is attained at rank one by
+$\frac12\operatorname{sech}x\,\operatorname{sech}y$ and approached
+at larger rectangular ranks by separated copies.
+
+The strict inequality $1/6<C_1$ has an elementary witness.
+For $q(x)=\operatorname{sech}|x|/\sqrt{2\pi\log2}$ in two dimensions,
+\[
+ \frac{\int q^4}{\int|\nabla q|^2}
+ =\frac{4\ell-1}{2\pi\ell(2\ell+1)}>\frac16,\qquad \ell=\log2.
+\]
+Indeed $69/100<\ell<7/10$ and $\pi<22/7$ give the strict bound
+$1.76/10.56=1/6$. The logarithm estimates follow from
+$\log2=2\sum_{k\ge0}[(2k+1)3^{2k+1}]^{-1}$.
+Nonrectangular occupation sets and general nonseparable projections
+are not covered.
+
+\section{Numerical exploration and the remaining mathematical task}
+The recorded periodic Gaussian-well potential is
+\[
+ V(x)=A\sum_{z\in\mathbb Z^2}
+ e^{-|x-2\pi z|^2/(2\sigma^2)}+c,
+ \quad A=2.9414883,\quad \sigma=0.73521703,\quad c/A=0.01513357.
+\]
+Its computed spectral ratio is approximately $0.0425618561$,
+below the scalar target $1/(2M_c)\simeq0.0427317684$ by $0.398\%$.
+Plane-wave cutoffs and Bloch meshes were increased; the recorded digits
+were stable. Fourier and spatial evaluations of the potential cost
+also agree. These are floating-point checks, not rigorous enclosures.
+No continuum upper bound or global optimality follows.
+
+The open task is to construct or exclude the equal-occupation collective
+structures in \eqref{standing}, without radiality, fixed-rank or
+single-core assumptions. The existing reductions and product bound
+do not accomplish this. Full derivations, source checks, code and
+numerical results are included in the accompanying working files.
+
+\begin{thebibliography}{9}
+\bibitem{FGL}
+R.~L. Frank, D.~Gontier and M.~Lewin,
+\emph{Optimizers for the finite-rank Lieb--Thirring inequality},
+arXiv:2109.05984v2 (2023), Theorem 1, Corollary 2 and Theorem 3.
+\url{https://arxiv.org/abs/2109.05984}
+\bibitem{FGL2}
+R.~L. Frank, D.~Gontier and M.~Lewin,
+\emph{The nonlinear Schr\"odinger equation for orthonormal functions II.
+Application to Lieb--Thirring inequalities}, CMP (2021).
+\url{https://arxiv.org/abs/2002.04964}
+\bibitem{LW}
+A.~Laptev and T.~Weidl,
+\emph{Sharp Lieb--Thirring inequalities in high dimensions},
+Acta Math.\ (2000).
+\url{https://arxiv.org/abs/math-ph/9903007}
+\end{thebibliography}
+\end{document}
+

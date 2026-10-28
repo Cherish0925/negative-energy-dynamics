@@ -1,0 +1,482 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=24mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype,amsmath,amssymb,amsthm,mathtools,booktabs,array,xcolor}
+\usepackage[colorlinks=true,linkcolor=blue!40!black,urlcolor=blue!40!black]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\R}{\mathbb R}\newcommand{\C}{\mathbb C}
+\newcommand{\ii}{\mathrm i}\newcommand{\dd}{\,\mathrm d}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\newcommand{\ip}[2]{\left\langle #1,#2\right\rangle}
+\newcommand{\Imn}{\operatorname{Im}}\newcommand{\Ren}{\operatorname{Re}}
+\newcommand{\dist}{\operatorname{dist}}\newcommand{\Span}{\operatorname{span}}
+\setlength{\parskip}{3pt}
+\title{Negative energy beyond a single traveling wave:\\intrinsic spreading, spectral instability,\\and nonstationary global solutions for BNLS}
+\author{Shuxing Yang}
+\date{7 October 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We develop two complementary parts of the negative-energy dynamics of the focusing biharmonic nonlinear Schr\"odinger equation. Independently of computer-assisted profiles, a one-sided interaction virial estimate forces intrinsic mass separation on a linear spatial scale for every globally bounded zero-momentum negative-energy solution, in every dimension and throughout the mass-critical and mass-supercritical energy-subcritical range. For the previously constructed four-dimensional cubic traveling branch, an exact additional angular certificate completes its full Morse index and kernel. Hamiltonian index theory then proves nonlinear orbital instability and at least 29 unstable directions. A direct Lyapunov--Perron construction produces nonstationary forward-global solutions converging to the wave, all with exactly its mass, momentum and negative energy. We also provide a certified three-dimensional energy-dual residual, an infinite angular-tail estimate, and a precise conditional reduction of the zero-momentum two-wave problem. These last two existence problems are not asserted to be solved.
+\end{abstract}
+
+\noindent\textbf{Dependencies.} Section 1 is a purely analytic theorem, independent of all numerical certificates. Sections 2--4 use the exact four-dimensional profile supplied by the companion frozen certificate, with the new angular certificate proved here.  Section 5 states a conditional gluing theorem, and Section 6 records a completed intermediate three-dimensional certificate. The conditional gluing statement is strengthened in the subsequent zero-momentum manuscript.
+
+\section{Intrinsic spreading without compactness assumptions}
+Consider
+\begin{equation}\label{eq:bnls}
+ \ii u_t=\Delta^2u-|u|^\beta u\quad\hbox{on }\R^N,
+ \qquad \beta=\frac8N.
+\end{equation}
+Write
+\[
+ M=\int|u|^2,\quad E=\frac12\norm{\Delta u}_2^2-
+ \frac1{2+\beta}\norm u_{2+\beta}^{2+\beta},\quad
+ P=\Imn\int\overline u\nabla u.
+\]
+Let $u$ be a forward-global standard $H^2$ solution with
+\begin{equation}\label{eq:escapehyp}
+ E<0,\qquad P=0,\qquad K:=\sup_{t\ge0}\norm{\Delta u(t)}_2<\infty.
+\end{equation}
+In particular $M>0$. No radiality, spatial moment, orbit compactness or prescribed concentration center is assumed. Define the pairwise mass tail
+\[
+ D_R(t)=\iint_{|x-y|>R}|u(t,x)|^2|u(t,y)|^2\dd x\dd y,
+ \qquad d_R=D_R/M^2\in[0,1].
+\]
+
+\begin{theorem}[Pairwise mass-tail estimate]\label{thm:tail}
+There are finite constants $A,B,C>0$, depending only on $N,M,K$ and fixed cutoffs, such that for $S\ge0$, $T>0$, $R\ge1$,
+\begin{equation}\label{eq:tailestimate}
+ 16M|E|\le A\frac RT+\frac B{R^2}
+ +\frac CT\int_S^{S+T}d_R(t)^\theta\dd t,
+ \qquad \theta=\min\left\{\frac4N,\frac14\right\}.
+\end{equation}
+Consequently there are $c,\delta,\eta,T_0>0$ such that, for every $S\ge0$ and $T\ge T_0$, a set of times of measure at least $\eta T$ in $[S,S+T]$ satisfies
+\begin{equation}\label{eq:ballistic}
+ \inf_{a\in\R^N}\int_{|x-a|>cT/2}|u(t,x)|^2\dd x
+ \ge\frac\delta2 M.
+\end{equation}
+\end{theorem}
+
+Thus a positive mass fraction must separate intrinsically on a linear spatial scale at a positive proportion of times. The quantifier over all centers in~\eqref{eq:ballistic} is simultaneous. This is not a claim that such zero-momentum global solutions exist.
+
+\subsection{Localized estimates using mass tails alone}
+Choose a smooth radial $\phi$ equal to $|x|^2/2$ on $|x|\le4$, constant on $|x|\ge8$, and with $D^2\phi\le\mathrm{Id}$. Bounded derivatives through order six suffice. Such a cutoff follows by smoothly decreasing its radial derivative from $r$ to zero while keeping $\phi''\le1$ and $\phi'/r\le1$. It need not have nonnegative Hessian. Put $\phi_R(x)=R^2\phi(x/R)$.
+
+Let $\chi_R(x)=\chi(x/R)$ vanish on $|x|\le R$, equal one on $|x|\ge2R$, and take values in $[0,1]$. Set
+\[
+ m_R(a)=\int_{|x-a|>R}|u(x)|^2\dd x,\quad
+ G=M^{1/4}K^{1/2},\quad H_R=K+C_\chi G/R+C_\chi\sqrt M/R^2.
+\]
+Interpolation and the product rule give
+\[
+ \norm{\nabla u}_2\le G,\quad
+ \norm{\Delta(\chi_R(\cdot-a)u)}_2\le H_R,\quad
+ \norm{\chi_R(\cdot-a)u}_2^2\le m_R(a).
+\]
+The mass-critical Gagliardo--Nirenberg inequality and another interpolation yield
+\begin{align}
+ \int_{|x-a|>2R}|u|^{2+8/N}&\le C_Nm_R(a)^{4/N}H_R^2,\label{eq:tailGN}\\
+ \int_{|x-a|>2R}|\nabla u|^2&\le\sqrt{m_R(a)}H_R.\label{eq:tailgrad}
+\end{align}
+Both require only a mass tail and a global $H^2$ bound.
+
+\subsection{Interaction identity and its one-sided closure}
+Put $\rho=|u|^2$, $j=\Imn(\overline u\nabla u)$ and
+\[
+ \mathcal M_R^y=2\int\nabla\phi_R(x-y)\cdot j(x)\dd x,
+ \qquad \mathcal I_R=\int\rho(y)\mathcal M_R^y\dd y.
+\]
+The fourth-order localized virial identity is standard; see \cite{BL}. Its leading term is
+\[8\Ren\int\partial_{jk}\phi_R\,\partial_{ij}\overline u\,\partial_{ik}u.\]
+Since $D^2\phi_R\le\mathrm{Id}$, that term is bounded above by $8\norm{\Delta u}_2^2$. The other linear terms contain derivatives of $\phi_R$ of order at least four, and the nonlinear term equals
+$-2\beta(\beta+2)^{-1}\int\Delta\phi_R|u|^{\beta+2}$.
+It follows that
+\begin{equation}\label{eq:singlevir}
+ \frac{\dd}{\dd t}\mathcal M_R^y
+ \le16E+C(R^{-2}G^2+R^{-4}M)
+ +C\int_{|x-y|>4R}|u(x)|^{2+8/N}\dd x.
+\end{equation}
+The favorable one-sided Hessian sign removes any need for small $\Delta u$ tails.
+
+The derivative falling on $\rho(y)$ in $\mathcal I_R$ must also be retained. Define
+\[
+ w=\Imn(\Delta u\nabla\overline u),\qquad W(t)=\int w(t,x)\dd x,
+ \qquad |W(t)|\le KG.
+\]
+Testing the mass equation against real $f$ gives
+\[
+ \int f\rho_t=2\Imn\int\Delta f\,\overline u\Delta u
+ +4\Imn\int\nabla f\cdot\Delta u\nabla\overline u.
+\]
+Using $\Imn(\overline u\Delta u)=\nabla\cdot j$, its exact contribution is
+\begin{align}\label{eq:Y}
+ \mathcal Y_R={}&4\iint D^2\Delta\phi_R(x-y)[j(x),j(y)]\dd x\dd y\notag\\
+ &-8\iint D^2\phi_R(x-y)[j(x),w(y)]\dd x\dd y.
+\end{align}
+The first term is bounded by $CR^{-2}MG^2$. The second is $-8P\cdot W$ plus a tail bounded by
+\[
+ C\iint_{|x-y|>4R}|u(x)||\nabla u(x)||\Delta u(y)||\nabla u(y)|\dd x\dd y.
+\]
+Cauchy--Schwarz on the product space bounds this by $CGK\sqrt{B_R}$, where
+\begin{align*}
+ B_R&=\iint_{|x-y|>4R}\rho(x)|\nabla u(y)|^2\dd x\dd y\\
+ &\le H_{2R}\int\rho(x)\sqrt{m_{2R}(x)}\dd x
+ \le H_{2R}\sqrt{MD_{2R}}\le H_{2R}\sqrt{MD_R}.
+\end{align*}
+Thus the interaction tail is at most $C(N,M,K)d_R^{1/4}$ for $R\ge1$.
+Similarly,~\eqref{eq:tailGN} gives, with $q=4/N$,
+\[
+ \int\rho(y)m_{2R}(y)^q\dd y
+ \le M^{q+1}d_R^{\min(q,1)}.
+\]
+For $q\le1$ use Jensen's inequality; for $q>1$ use $m^q\le M^{q-1}m$.
+Combining these bounds proves the stronger general-momentum estimate
+\begin{equation}\label{eq:interaction}
+ \mathcal I_R'(t)\le16ME-8P\cdot W(t)+B/R^2+Cd_R(t)^\theta.
+\end{equation}
+All terms have continuous $H^2$ realizations; the integrated identity follows for standard $H^2$ solutions by regularization and strong approximation. No spatial moments are used. The interaction functional and flux term have a direct precedent in \cite[Section 5]{Komada}; the mass-tail closure above is the additional estimate used here.
+
+\subsection{From the estimate to intrinsic separation}
+The endpoint bound is
+\[
+ |\mathcal I_R(t)|\le2\norm{\nabla\phi}_\infty R M^{3/2}G.
+\]
+Integrating~\eqref{eq:interaction} therefore gives, for arbitrary momentum,
+\begin{equation}\label{eq:defect}
+ -16ME+\frac8T P\cdot\int_S^{S+T}W(t)\dd t
+ \le A R/T+B/R^2+\frac CT\int_S^{S+T}d_R(t)^\theta\dd t.
+\end{equation}
+For $P=0$ this proves~\eqref{eq:tailestimate}. The inequality $|E|\le C_NM^{4/N}K^2$ for $E<0$ permits enlarging constants below without changing their stated dependence. Choose $c>0$ with $Ac\le4M|E|$, enlarge $C$ so that $C\ge16M|E|$, and take $T_0$ large enough that $cT\ge1$ and $B/(cT)^2\le4M|E|$. At $R=cT$,
+\[
+ \frac1T\int_S^{S+T}d_{cT}^\theta\dd t\ge\varepsilon,
+ \qquad \varepsilon=8M|E|/C\in(0,1/2].
+\]
+Put $\delta=(\varepsilon/2)^{1/\theta}$ and $\eta=\varepsilon/2$. Since $d_R\le1$, the set where $d_{cT}\ge\delta$ has measure at least $\eta T$. Finally, for every center $a$,
+\[
+ D_{2r}(t)\le2M\int_{|x-a|>r}\rho(t,x)\dd x,
+\]
+because a pair at distance greater than $2r$ cannot have both points in $B(a,r)$. This proves~\eqref{eq:ballistic}.
+
+\begin{corollary}[Mass confinement is impossible]
+A global $H^2$-bounded solution with $P=0$ and $E<0$ cannot be uniformly tight in mass modulo arbitrary translations:
+\[
+ \lim_{R\to\infty}\sup_{t\ge0}\inf_a\int_{|x-a|>R}|u(t,x)|^2\dd x\ne0.
+\]
+\end{corollary}
+\begin{proof}
+Uniform mass tightness would force $\sup_t d_R(t)\to0$. First let $T\to\infty$ in~\eqref{eq:tailestimate}, then let $R\to\infty$.
+\end{proof}
+For a localized exact traveling wave, the mass identity gives $W=Mv/4$, while critical Pohozaev gives $E=v\cdot P/8$. The left side of~\eqref{eq:defect} is then zero, as required. More generally, intrinsic spreading follows if $16M|E|>8|P|KG$.
+
+\begin{corollary}[Noncritical powers]
+The same intrinsic spreading conclusion holds for every
+\[
+ \beta\ge8/N,\qquad \beta<8/(N-4)\quad(N\ge5),
+\]
+with no finite upper bound on $\beta$ when $N\le4$, provided~\eqref{eq:escapehyp} holds with its corresponding energy. The energy-critical endpoint is excluded.
+\end{corollary}
+\begin{proof}
+The principal virial expression is
+$2N\beta E-(N\beta-8)\norm{\Delta u}_2^2\le2N\beta E$.
+The nonlinear mass-tail power becomes
+$\gamma=1-\beta(N-4)/8>0$ by the energy-subcritical Gagliardo--Nirenberg inequality. Replace $16$ by $2N\beta$ and $\theta$ by $\min(\gamma,1/4)$ throughout.
+\end{proof}
+
+\section{Completing the four-dimensional angular certificate}
+The remaining sections concerning exact waves use the companion exact radial profile $Q$ satisfying
+\[
+ (\Delta^2+1)Q-Q^3=0,\quad\norm{Q-q}_Z\le0.006,\quad\norm q_Z<104,
+ \qquad\norm f_Z^2=\norm{\Delta f}_2^2+\norm f_2^2.
+\]
+Here $q$ is a frozen rational compact profile. Put
+\[
+ L_+=\Delta^2+1-3Q^2,\quad L_-=\Delta^2+1-Q^2,
+ \quad I=\ip{\partial_1Q}{L_-^{-1}\partial_1Q}<-175.
+\]
+The inverse in $I$ is restricted to odd functions. The old certificate supplies the product constant $1/256$, and hence a coefficient-one potential perturbation bound
+\[
+ d=\frac{2(104)(0.006)+(0.006)^2}{256}
+ =\frac{312009}{64000000}.
+\]
+
+\begin{theorem}[Full Morse count]\label{thm:morse}
+On the full scalar spaces,
+\[
+ n(L_+)=31,\quad n(L_-)=5,\quad
+ \ker L_+=\Span\{\partial_jQ:1\le j\le4\},\quad\ker L_-=\Span\{Q\}.
+\]
+The nonzero preconditioned spectrum is separated from zero by more than $1/29$.
+\end{theorem}
+
+The new finite input is a degree-three trial obtained from the frozen degree-two reduced radial function $f$ by using $r^3f(r)Y_3$. Its quotient is
+\[
+ \mathcal R=
+ \frac{3\int_0^{36}q^2 f^2r^9\dd r}
+ {\int_0^{36}\{(rf''+9f')^2r^7+f^2r^9\}\dd r}
+ >\frac{13}{10}.
+\]
+Exact rational polynomial integration gives the displayed numerical value $1.308995988054891$. The old interval bound $\norm{K_{1,q,3}}_{HS}^2<0.22$ implies
+\[
+ \mu_2(K_{3,q,3})^2<1.98-1.30^2=0.29<0.54^2.
+\]
+Transferring eigenvalues by at most $3d$ proves exactly one negative degree-three $L_+$ direction and no kernel. This was the missing angular channel.
+
+The complete accounting, with multiplicity $(\ell+1)^2$ on $S^3$, is
+\begin{center}
+\begin{tabular}{@{}ccrrrr@{}}
+\toprule
+$\ell$ & multiplicity & $n(L_+)$ & $\dim\ker L_+$ & $n(L_-)$ & $\dim\ker L_-$\\
+\midrule
+0&1&2&0&1&1\\
+1&4&1&1&1&0\\
+2&9&1&0&0&0\\
+3&16&1&0&0&0\\
+$\ge4$&$(\ell+1)^2$&0&0&0&0\\
+\bottomrule
+\end{tabular}
+\end{center}
+Entries after the multiplicity column are per single harmonic. For degree one, the exact translation identity supplies the coefficient-one Birman--Schwinger eigenvalue $1/3$. Together with $\mu_1(K_{1,q,1})>1.04$ and $HS^2<1.24$,
+\[
+ \mu_3(K_{1,q,1})^2
+ <1.24-1.04^2-(1/3-d)^2<0.23^2.
+\]
+After transfer, the symmetry eigenvalue is simple in each channel; no extra kernel is hidden. In degree zero, the exact phase identity likewise identifies the second coefficient-three eigenvalue as $3$. The degree-four positive bound extends to every larger degree by the angular form identity
+\[
+ \norm{D_\ell f}_{L^2(r^3\dd r)}^2=
+ \norm{D_0f}_{L^2(r^3\dd r)}^2+
+ 2\ell(\ell+2)\int r|f'|^2\dd r+
+ \ell^2(\ell+2)^2\int r^{-1}|f|^2\dd r.
+\]
+The full finite inequalities and the five independently rerun Arb channel bounds are supplied in the certificate note and scripts. There are 27 exact separation checks.
+
+For the exact traveling branch $U_v$, $0<|v|\le10^{-6}$, the known bound $\norm{U_v-Q}_Z\le200|v|$ gives the Hessian perturbation
+\[
+ \norm{A^{-1/2}(\mathcal L_v-\mathcal L_0)A^{-1/2}}
+ \le492.7875|v|+468.75|v|^2<0.000493,
+ \quad A=\Delta^2+1.
+\]
+The five vectors $iU_v,\partial_jU_v$ remain independent: a nontrivial real relation would force the Fourier transform of a nonzero $L^2$ function to be supported on a hyperplane. Consequently the entire near-zero cluster is exactly the symmetry kernel. Throughout this explicit speed interval,
+\[
+ n(\mathcal L_v)=36,\quad\dim\ker\mathcal L_v=5,
+ \qquad\hbox{nonzero preconditioned gap}>1/30.
+\]
+This signed spectral separation must not be confused with an absolute quadratic-form coercivity on an indefinite subspace.
+
+\section{Instability, including perturbations preserving mass and momentum}
+For a fixed sufficiently small nonzero velocity set
+\[
+ S_{\omega,v}=E+\omega M/2-v\cdot P/2,\qquad
+ d(\omega,v)=S_{\omega,v}(U_{\omega,v}),\qquad
+ \mathcal A_v=-i\mathcal L_v.
+\]
+The cubic branch is real analytic, equivariant under rotations, and satisfies
+\[
+ d(\omega,v)=\omega d(1,v\omega^{-3/4})
+ =\omega d_0-\frac I2\omega^{-1/2}|v|^2+O(|v|^4).
+\]
+With $a=-I/2>0$, at $\omega=1$ the velocity block of $d''$ is $2a\mathrm{Id}+O(|v|^2)$, and its frequency Schur complement is
+\[
+ \frac{3a}{4}|v|^2-\frac a2|v|^2+O(|v|^4)
+ =\frac a4|v|^2+O(|v|^4)>0.
+\]
+Thus $d''$ has five positive eigenvalues for sufficiently small nonzero $v$. The radius of this assertion has not been numerically quantified.
+
+Write $C_0=M/2$, $C_j=-P_j/2$, $J=-i$, $q_\alpha=C_\alpha'(U)$ and $\zeta_\alpha=-\partial_\alpha U$. Then
+\[
+ \mathcal L\zeta_\alpha=q_\alpha,\quad
+ \mathcal A\zeta_\alpha=Jq_\alpha=:e_\alpha,\quad
+ \mathcal A e_\alpha=0,\quad
+ \ip{\mathcal L\zeta_\alpha}{\zeta_\beta}=-d''_{\alpha\beta}.
+\]
+The charges commute. Invertibility of $d''$ excludes longer chains, since the solvability of another preimage requires the coefficient vector to lie in $\ker d''$. Hence the generalized zero space consists of five chains of length two, whose quotient by the symmetry kernel has negative index five.
+
+The energy-space hypotheses of Lin--Zeng \cite{LZ} hold: $\mathcal L:H^2\to H^{-2}$ is symmetric with finite negative index and coercive positive complement; $J:H^{-2}\supset H^2\to H^2$ is anti-self-dual; the finite smooth kernel supplies their domain condition. Their index formula gives
+\begin{equation}\label{eq:index}
+ k_r+2k_c+2k_i^{\le0}=36-5=31.
+\end{equation}
+Here $k_r$ counts positive real eigenvalues, $k_c$ first-quadrant eigenvalues, and $k_i^{\le0}$ the nonpositive-energy index on positive-imaginary generalized eigenspaces, including the permitted embedded case. In particular $k_r\ge1$.
+
+\begin{proposition}[At least 29 unstable dimensions]\label{prop:29}
+For sufficiently small nonzero $v$,
+\[
+ \dim_\R E^u=\dim_\R E^s\in\{29,31\}.
+\]
+\end{proposition}
+\begin{proof}
+At $v=0$, each degree-two or degree-three channel has $L_->0$ and exactly one negative direction of $L_+$. The real eigenvalue equation reduces to
+\[
+ (L_++\lambda^2L_-^{-1})a=0.
+\]
+This self-adjoint pencil has one negative direction at zero, increases strictly with $\lambda^2$, and becomes positive because
+$L_-+\lambda^2L_-^{-1}\ge2\lambda$ and $L_+=L_--2Q^2$. In particular it is positive for $\lambda>\norm Q_\infty^2$. It therefore has one simple positive crossing in each channel, contributing $9+16=25$ unstable dimensions.
+
+In a degree-one channel put $g=\partial_jQ$ and $z=L_-^{-1}g$. The kernel vector $e=(g,0)$ and generalized vector $\zeta=(0,z)$ satisfy $\mathcal A\zeta=e$ and $\ip{L\zeta}{\zeta}=I<0$. A third chain vector would require $\ip g z=0$, which is false. This channel has total Morse index two and zero-quotient index one. Its Hamiltonian index is exactly one, so it has precisely one positive real eigenvalue. Four harmonic copies add four dimensions. These isolated right-half-plane spectral clusters persist under small velocity by Riesz projection continuity on $H^6\subset H^2$. Combining this lower bound with~\eqref{eq:index} gives the two possible dimensions.
+\end{proof}
+
+\begin{theorem}[Nonlinear orbital instability]
+The small nonzero-speed waves are orbitally unstable in $H^2$, even when the perturbing initial data have exactly their mass and all four momentum components. The perturbing data can be smooth and have negative energy.
+\end{theorem}
+\begin{proof}
+The profile is smooth by elliptic bootstrap. Lin--Zeng's trichotomy gives polynomial center growth and finite-dimensional hyperbolic subspaces. Its estimates lift to the graph domain $D(\mathcal A:H^2\to H^2)=H^6$. If $\sigma>0$ is the largest unstable real part, then for any $0<\epsilon<\sigma$,
+\[
+ \norm{e^{t\mathcal A}}_{H^6\to H^6}\le C_\epsilon e^{(\sigma+\epsilon)t},\qquad t\ge0.
+\]
+Choose a real linear solution $z(t)$ from a maximizing eigenvector or its real two-dimensional plane. Then $\norm{z(t)}_{H^6}\le Ce^{\sigma t}$ and $\dist_{H^2}(z(t),\ker\mathcal L)\ge ce^{\sigma t}$. The plane is transverse to the symmetry kernel.
+
+The nonlinear remainder satisfies $\norm{N(w)}_{H^6}\le C\norm w_{H^6}^2$. Duhamel and a bootstrap yield
+\[
+ \norm{w(t)-\delta z(t)}_{H^6}\le C\delta^2e^{2\sigma t}
+\]
+up to $T_\delta=\sigma^{-1}\log(\eta/\delta)$, for a fixed small $\eta>0$. The kernel exponent $\sigma+\epsilon<2\sigma$ makes the integral close. The phase-translation orbit is a locally embedded smooth manifold with tangent $\ker\mathcal L$, so its distance at $T_\delta$ is at least $c\eta-C\eta^2>0$.
+
+To preserve charges exactly, their derivatives annihilate the unstable space because $\mathcal A^*C_\alpha'(U)=0$. Correct the initial perturbation by $\sum b_\alpha(\delta)\zeta_\alpha$. The charge Jacobian in $b$ is $-d''$, hence $b(\delta)=O(\delta^2)$ by the finite-dimensional implicit-function theorem. These generalized-zero corrections grow only as $O(\delta^2(1+t))$ linearly and fit the same error bound. Energy remains negative by continuity. This proves orbital escape, not finite-time blowup of the perturbations.
+\end{proof}
+
+\section{Exact nonstationary global solutions with the same negative energy}
+Orbital instability and a family of convergent trajectories can coexist. Here that family can be constructed directly.
+
+\begin{theorem}[Strong stable family]\label{thm:stable}
+For each sufficiently small nonzero $v$, there is a real-analytic family of exact forward-global solutions $u_a$, parameterized by $a\in B_\varepsilon(0)\subset\R^{d_s}$ with $d_s\in\{29,31\}$, satisfying
+\[
+ \norm{e^{-it}u_a(t,\cdot+vt)-U_v}_{H^6}
+ \le C_v|a|e^{-\eta_vt},\qquad t\ge0.
+\]
+Every member has exactly $M(U_v)$, $P(U_v)$ and $E(U_v)<0$. For $a\ne0$ these are not exact traveling waves. The family is not an open neighborhood of initial data, and backward global existence is not asserted.
+\end{theorem}
+\begin{proof}
+In the fixed moving and rotating frame, write $w_t=\mathcal Aw+N(w)$. On $Y=H^6$, the trichotomy gives bounded commuting projections $P_s,P_c,P_u$, with
+\begin{align*}
+ \norm{e^{t\mathcal A}P_s}&\le Ke^{-\rho t}\quad(t\ge0),&
+ \norm{e^{-t\mathcal A}P_u}&\le Ke^{-\rho t}\quad(t\ge0),\\
+ \norm{e^{t\mathcal A}P_c}&\le K(1+|t|^k)&& (t\in\R).
+\end{align*}
+Polynomial factors on finite hyperbolic blocks are absorbed by decreasing $\rho$. Choose $0<\eta<\rho/2$ and the Banach space
+\[
+ \mathcal W_\eta=\{w\in C([0,\infty);Y):
+ \norm w_\eta=\sup_{t\ge0}e^{\eta t}\norm{w(t)}_Y<\infty\}.
+\]
+For $a\in E^s$ define
+\begin{align*}
+ \Phi_a(w)(t)={}&e^{t\mathcal A}a
+ +\int_0^te^{(t-s)\mathcal A}P_sN(w(s))\dd s\\
+ &-\int_t^\infty e^{(t-s)\mathcal A}(P_c+P_u)N(w(s))\dd s.
+\end{align*}
+Because $H^6(\R^4)$ is an algebra, the nonlinearity is analytic and quadratic at zero. On $\norm w_\eta\le r$, its size at time $s$ is at most $Cr^2e^{-2\eta s}$. The stable and unstable integrals are bounded by
+\[
+ KCr^2e^{-2\eta t}/(\rho-2\eta),\qquad
+ KCr^2e^{-2\eta t}/(\rho+2\eta),
+\]
+respectively. The center integral is bounded by
+\[
+ KCr^2e^{-2\eta t}\int_0^\infty(1+\tau^k)e^{-2\eta\tau}\dd\tau.
+\]
+Consequently $\norm{\Phi_a(w)}_\eta\le K\norm a_Y+C_\eta r^2$, and its Lipschitz constant on that ball is at most $C_\eta r$. For small $a$ it is a contraction on the ball of radius $2K\norm a_Y$.
+
+The fixed point satisfies the ordinary Duhamel equation, as follows by subtracting its formulas at two times. Local uniqueness and boundedness make it the exact global $H^6$ solution. At time zero,
+\[
+ P_sw_a(0)=a,\qquad w_a(0)=a+h(a),\quad h(a)\in E^c\oplus E^u,
+ \quad h(a)=O(|a|^2).
+\]
+Analytic dependence follows from the implicit-function theorem on $\mathcal W_\eta$, and projection onto $E^s$ proves injectivity. Strong $H^2$ convergence and conservation give the exact equalities of mass, momentum and energy. A distinct traveling wave cannot converge strongly to $U_v$ in this fixed frame: different velocities separate, different frequencies produce a nonconvergent relative phase, and matching parameters leave a fixed profile difference. Thus every nonzero stable parameter gives a nonstationary solution.
+\end{proof}
+
+This construction persists for sufficiently small smooth cubic dispersion perturbations preserving the finite-index spectral structure. Combined with the earlier scaling argument, it also yields such families for every prescribed real symmetric quadratic dispersion matrix in four dimensions, with frequency free. The separate continuation of stationary profiles to noninteger powers does not automatically extend this $H^6$ nonlinear argument to those powers.
+
+\section{The zero-momentum problem: a precise remaining spectral gate}
+An exact outgoing pair with asymptotics
+\[
+ u(t,x)\sim e^{it}\{U_v(x-vt)+U_{-v}(x+vt)\}
+\]
+would have $P=0$ and $E=2E(U_v)<0$. The sum itself is only an approximate solution. The accompanying note proves a conditional gluing theorem under the following single-wave hypothesis:
+
+\medskip\noindent
+\textbf{Spectral-coercive splitting.} A finite-dimensional invariant space contains the generalized symmetry eigenspace, has smooth exponentially localized bases and dual bases, and admits an invariant complement on which the traveling Hessian is coercive in $H^2$.
+\medskip
+
+Under that hypothesis, translate the modes to the two centers. Their coupling errors are exponentially small. A moving quadratic action adds a localized velocity-momentum Hessian to the physical linearization. The leading fourth-order commutator is a bounded $H^2$ quadratic form; its coefficients are $O(t^{-1})$. Coercivity on the projected complement yields a polynomial two-center propagator. An elliptic graph-norm argument upgrades it to $H^6$. Stable modes are integrated forward, unstable and center modes backward, giving a bounded exponentially weighted Green operator. A sufficiently large initial separation then makes the nonlinear correction a contraction. This argument does not require a lower bound on nonzero relative speed.
+
+The proof details, including time-dependent projections and the higher-regularity estimate, are in \path{round4_zero_momentum_gluing.md}. The hypothesis is not yet supplied by the existing Morse count. One sufficient closure would be a proof that $\dim E^u=31$: its hyperbolic spaces contribute 31 negative directions, and the generalized symmetry space contributes five, exhausting all 36. The remaining invariant complement would then be positive and coercive. Off-axis and zero-in-gap root spaces have localized bases by elliptic resolvent estimates.
+
+The remaining radial Hamiltonian sector has a numerically persistent quartet near
+\[\lambda\approx2.920852873657242+6.322391742298660i\]
+and its Hamiltonian reflections. Finite differences and an independent real-system boundary-value calculation agree; the latter uses the exact decaying free Bessel boundary condition for the compact approximate profile. Radii 36 and 40 give values differing by about $5\times10^{-11}$. These are numerical diagnostics, not an enclosure of the whole-space spectrum or a transfer to the exact profile. The four-dimensional radial generalized-zero response was numerically positive, so a proposed shortcut based on its negativity does not apply. A validated non-self-adjoint spectral enclosure remains necessary. We therefore do not assert the exact zero-momentum solution.
+
+\section{Three dimensions: completed rigorous intermediate inputs}
+For $Z=H^2(\R^3)$ and $F(q)=\Delta^2q+q-|q|^{8/3}q$, the new frozen data define compact rational radial splines $q,z\in H^2$. They have exactly matched value and first two derivative data at the positive interior nodes, with even origin treatment and compact support at radius 54. The auxiliary field $z$ approximates $\Delta q$.
+
+\begin{proposition}[Mixed energy-dual residual]
+The interval verifier proves
+\[
+ \norm q_Z<137,\quad\norm q_\infty<6.3,
+ \quad\norm{F(q)}_{Z^*}<1.3\times10^{-7}.
+\]
+The enclosed residual upper value is less than $1.2618104691\times10^{-7}$.
+\end{proposition}
+The mechanism is the exact distributional identity
+\[
+ F(q)=\Delta(\Delta q-z)+(\Delta z+q-|q|^{8/3}q).
+\]
+If the two parentheses are $d_1,d_2$, then
+\[
+ \norm{F(q)}_{Z^*}\le\sqrt{\norm{d_1}_2^2+\norm{d_2}_2^2}.
+\]
+The verified $L^2$ upper bounds are $3.057\times10^{-8}$ and $1.225\times10^{-7}$. In radial coordinates,
+\[
+ \norm{d_1}_2^2=4\pi\int(rq''+2q'-rz)^2\dd r,
+\]
+\[
+ \norm{d_2}_2^2=4\pi\int(rz''+2z'+rq-r|q|^{8/3}q)^2\dd r.
+\]
+Polynomial terms are integrated rigorously; noninteger powers use a Taylor enclosure away from zeros and a direct safe enclosure in cells meeting zero. Because $q,z\in H^2$, the distributional identity already incorporates any higher-order interface contributions. This avoids amplifying reconstruction errors by taking four derivatives of the approximate profile.
+
+For $\lambda=\ell(\ell+1)$, the three-dimensional angular identity is
+\[
+ \int r^2|\Delta_\ell f|^2=
+ \int r^2|\Delta_0 f|^2+2\lambda\int|f'|^2
+ +\lambda(\lambda-2)\int r^{-2}|f|^2.
+\]
+Together with the verified potential budgets, it proves
+\[
+ L_-(q)\ge\tfrac15 Z^2\quad\hbox{for odd }\ell\ge13,
+ \qquad L_+(q)\ge\tfrac15 Z^2\quad\hbox{for even }\ell\ge20,
+\]
+as quadratic forms. These infinitely many gaps remain at least $1/10$ for every real radial $Q$ with $\norm{Q-q}_Z\le10^{-3}$; use the exact embedding bound $\norm h_\infty<\norm h_Z/4$ and the potential derivative estimate.
+
+A concrete remaining sufficient condition for an exact radial solution is
+\[
+ \norm{L_+(q)^{-1}}_{Z^*_{\rm rad}\to Z_{\rm rad}}\le25.
+\]
+If it is certified, a ball of radius $4\times10^{-6}$ closes: with a pointwise second derivative bound $G<211$, the Newton image has radius at most
+\[
+ 25(1.3\times10^{-7})+\frac{25\cdot211}{8}(4\times10^{-6})^2
+ <4\times10^{-6},
+\]
+and contraction factor less than $0.006$. That inverse has not yet been certified. Low angular channels and the exact negative inverse pairing also remain. Thus the three-dimensional counterexample is not yet established.
+
+\section{Reproduction and scientific scope}
+The proof package contains the base frozen certificate, the preceding continuation manuscript, the present source, and these new components:
+\begin{itemize}
+\item \path{round4_ell3_rayleigh.py}, \path{round4_verify_morse.py}, their outputs and the independent Arb channel run: the new full angular certificate.
+\item \path{round4_stability_theory.md}, \path{round4_stable_manifold.md}: detailed nonlinear instability and exact global-family proofs.
+\item \path{round4_escape_theory.md}: the intrinsic spreading proof, with all cutoff and flux signs.
+\item \path{round4_n3_verify_mixed.py}, its frozen input and output: the three-dimensional residual and infinite-tail certificate.
+\item \path{round4_zero_momentum_gluing.md}: the conditional two-wave theorem and its remaining spectral requirement.
+\item Independent foundation checks and separately labeled radial spectral diagnostics.
+\end{itemize}
+The exact verifiers require Python and \texttt{python-flint==0.9.0}; the degree-three quotient and finite scalar comparisons use rational arithmetic. Floating spectra are not used as certified enclosures.
+
+The interaction functional is not claimed as an invention of this work: \cite{Komada} already uses it under orbit compactness. The present proof supplies a quantitative mass-tail closure without that assumption. The Hamiltonian index and trichotomy are established theory \cite{LZ}; the new spectral certification and their application here identify the dynamics of this particular negative-energy branch. The strong stable construction supplies exact nonstationary solutions, but does not provide an open set of globally bounded initial data. Neither the three-dimensional nor zero-momentum existence gap is concealed by the completed results.
+
+\begin{thebibliography}{9}
+\bibitem{Base} Companion research manuscripts, \emph{Global negative-energy traveling waves for mass-critical BNLS in four dimensions}, and \emph{Negative-energy traveling waves beyond a single parameter point}, 7 October 2026. Frozen certificate and continuation package; research manuscripts.
+\bibitem{BL} T. Boulenger and E. Lenzmann, \emph{Blowup for biharmonic NLS}, Ann. Sci. \'Ec. Norm. Sup\'er. (4) \textbf{50} (2017), 503--544. \url{https://doi.org/10.24033/asens.2326}.
+\bibitem{LZ} Z. Lin and C. Zeng, \emph{Instability, index theorem, and exponential trichotomy for linear Hamiltonian PDEs}, Mem. Amer. Math. Soc. \textbf{275} (2022), no. 1347. \url{https://arxiv.org/abs/1703.04016}; \url{https://doi.org/10.1090/memo/1347}.
+\bibitem{Komada} K. Komada, \emph{Scattering of group-invariant solutions below the ground state for the fourth-order NLS}, arXiv:2609.33381v1, 27 September 2026, Section 5. \url{https://arxiv.org/abs/2609.33381}.
+\bibitem{Gou} T. Gou, \emph{Blowup of cylindrically symmetric solutions for biharmonic NLS}, Proc. Edinburgh Math. Soc. \textbf{67} (2024), 1085--1098. \url{https://arxiv.org/abs/2205.08167}. The conflict with the companion construction and its axial-moment audit are recorded in the previous supplement.
+\end{thebibliography}
+\end{document}

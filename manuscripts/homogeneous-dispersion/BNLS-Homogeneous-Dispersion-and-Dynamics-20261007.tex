@@ -1,0 +1,79 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=23mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype,amsmath,amssymb,amsthm,mathtools,enumitem,xcolor,booktabs}
+\usepackage[colorlinks=true,linkcolor=blue!45!black,citecolor=blue!45!black,urlcolor=blue!45!black]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\setlength{\parskip}{3pt}
+\setlist{nosep}
+\allowdisplaybreaks[1]
+\title{Mass gaps, radiation costs and coherent motion\\for mass-critical dispersive equations}
+\author{Shuxing Yang}
+\date{7 October 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We extend the negative-energy traveling-profile mass gap from biharmonic dispersion to every smooth, real, even, positive elliptic homogeneous symbol of degree greater than one. The proof includes a nonlocal cutoff commutator and Pohozaev identity at energy regularity, and the gap persists under sufficiently small uniform perturbations of the angular symbol. We determine the exact free-radiation energy cost at prescribed mass and momentum: the correct coefficient is the convex envelope of the symbol, even when the dispersion is nonconvex. These results give a mass exclusion for finite traveling-core and dispersive-remainder asymptotics. For the isotropic fourth-order equation, including a nonnegative second-order term, we additionally prove a one-sided center-drift restriction under mass tightness and a first time-average kinetic bound. Failure of the required drift forces divergence of the full initial-time kinetic averages. No soliton-resolution theorem or unrestricted dynamical mass gap is asserted.
+\end{abstract}
+ Its conclusions do not use numerical profiles or the computational certificates of earlier installments. The mass gap proved here is qualitative, with no numerical value of its constant.
+
+\section*{What is being generalized}
+The central equation is
+\[
+ i\partial_t u=a(D)u-|u|^{2m/N}u,\qquad m>1,
+\]
+where $a$ is real, even, homogeneous of degree $m$, smooth away from the origin, and comparable to $|\xi|^m$. The usual mass-critical BNLS corresponds to $a(\xi)=|\xi|^4$. Throughout, $M(f)=\|f\|_2^2$ denotes mass, not its square root, and the Fourier transform is unitary. A traveling profile has the convention $u(t,x)=e^{i\omega t}U(x-vt)$.
+
+There are three distinct conclusions. The profile gap is an unconditional theorem about every weak profile in the stated class. The radiation optimization is an unconditional variational theorem, while its application to a nonlinear solution requires the stated asymptotic decomposition. The center-drift result is a dynamical theorem for a global strong solution with uniformly concentrated mass; it does not assume a traveling-wave shape. These distinctions are part of the statements.
+
+\input{fractional-section.tex}
+\input{radiation-section.tex}
+\input{drift-section.tex}
+
+\section{The remaining unrestricted dynamical question}
+For pure BNLS, put $M_c=M_{c,|\xi|^4}$ and consider
+\[
+ m_{\mathrm{ng}}=\inf\left\{M(u_0):\ E(u_0)<0,\ P(u_0)=0,\quad
+ u\text{ is forward global},\quad
+ \sup_{t\ge0}\|u(t)\|_{H^2}<\infty\right\}.
+\]
+Nothing proved here establishes $m_{\mathrm{ng}}>M_c$ without an additional compactness or asymptotic decomposition hypothesis. In particular, the elliptic imaginary-part identity for a traveling profile is not an identity for an arbitrary time-dependent solution.
+
+The obstruction to one tempting argument can be made exact. The sharp inequality supplies only
+\[
+ 0<\frac{|E(f)|}{\|\Delta f\|_2^2}
+ \le\frac12\left[\left(\frac{M(f)}{M_c}\right)^{4/N}-1\right]
+ \quad\text{when } E(f)<0.
+\]
+There is no positive lower bound on this ratio from the mass excess alone. Fix any $M_0>M_c$. A real smooth compactly supported function of mass $M_0$ and negative energy is obtained by approximating a suitable multiple of an optimizer and renormalizing. Another real smooth function of the same mass can have positive energy, for example by separating the mass into sufficiently many disjoint subthreshold pieces. Join the two in the mass sphere of a finite-dimensional real smooth compactly supported space. Approaching the first zero of the continuous energy along this path from its negative side gives
+\[
+ M(f_n)=M_0,\quad P(f_n)=0,\quad E(f_n)<0,\quad
+ \frac{|E(f_n)|}{\|\Delta f_n\|_2^2}\longrightarrow0.
+\]
+The denominator tends to a positive number because the limiting zero-energy function has nonzero mass. These are admissible initial functions; no global behavior for their evolutions is inferred.
+
+Consequently, a small near-optimizer mass tail cannot simply absorb a virial error of the form $C\|\Delta f\|_2^2d_R^\theta$ into $|E|$. To obtain an unrestricted result through this route, a sharper estimate must control the localized interaction cross-flux as well as the nonlinear tail, possibly retaining the favorable Hessian defect discarded in the present upper bound. Such an estimate is not proved here. Neither a general nonlinear wave operator for the prescribed core/radiation data nor general soliton resolution is supplied by conservation-law feasibility.
+
+\section{Relation to existing work}
+The constant-phase equality mechanism for complex optimizers has precedent in Proposition 3.8 of~\cite{FJMM}. Related variational phase-kernel and spectral-gap arguments occur in Iyer--Parker--Stefanov~\cite{IPS}, Section 3.3.2, in a one-dimensional fourth-order setting. The proof here spells out the all-dimensional, arbitrary-power algebra used for general homogeneous dispersion; it does not claim to invent phase rotation or the variational method.
+
+Naumkin--Rapha\"el~\cite{NR} construct traveling waves with subthreshold mass for one-dimensional fractional dispersion of order $1<m<2$. There is no conflict: the sharp inequality forces their unmodified energy to be positive. Our gap concerns \emph{negative} energy, and cannot be stated for all traveling waves. General-dispersion boosted-wave existence and symmetry have been studied by Bugiera--Lenzmann--Schikorra--Sok~\cite{BLSS}; our exclusion result does not replace those existence theorems. Fractional radial blowup and nonlocal virial methods also have important prior work~\cite{BHL}.
+
+Pausader--Shao~\cite{PS}, Proposition 6.1, already prove the precise relation between translation, momentum and energy for compact soliton-like solutions. Their Proposition 6.2 and Remark 6.1 identify the averaged-current and interaction-virial connection. Komada~\cite{Komada}, Proposition 5.2, gives a localized interaction identity for bounded $H^2$-precompact trajectories in the mass-supercritical, energy-subcritical setting. The present dynamical increment is the \emph{one-sided} restriction with only mass tightness, a first kinetic time average and arbitrary momentum, together with the full-average divergence consequence. The exact compact-orbit identity is not claimed as new.
+
+Finally, Jensen's inequality, convex relaxation, Carath\'eodory's theorem and van der Corput bounds are standard tools. Their role here is to identify the sharp radiation cost for nonconvex dispersion and establish the decoupling needed for the stated nonlinear corollaries. A search of these closest primary references found no identical general negative-energy profile-gap theorem; that limited comparison is not an exhaustive novelty certification.
+
+\begin{thebibliography}{9}
+\bibitem{PS} B. Pausader and S. Shao, \emph{The mass-critical fourth-order Schr\"odinger equation in high dimensions}, \href{https://arxiv.org/abs/0906.1547}{arXiv:0906.1547}, especially Section 6.
+\bibitem{Komada} K. Komada, \emph{Scattering of group-invariant solutions below the ground state for the fourth-order NLS}, \href{https://arxiv.org/abs/2609.33381}{arXiv:2609.33381v1} (2026), Proposition 5.2.
+\bibitem{NR} I. Naumkin and P. Rapha\"el, \emph{On small travelling waves to the mass critical fractional NLS}, Calc. Var. Partial Differential Equations \textbf{57}, 93 (2018), \href{https://arxiv.org/abs/1712.04484}{arXiv:1712.04484}.
+\bibitem{BLSS} L. Bugiera, E. Lenzmann, A. Schikorra and J. Sok, \emph{On symmetry of traveling solitary waves for dispersion generalized NLS}, \href{https://arxiv.org/abs/1908.06771}{arXiv:1908.06771}.
+\bibitem{FJMM} A. J. Fern\'andez, L. Jeanjean, R. Mandel and M. Mari\c{s}, \emph{Some non-homogeneous Gagliardo--Nirenberg inequalities and application to a biharmonic non-linear Schr\"odinger equation}, J. Differential Equations \textbf{330} (2022), 1--65, \href{https://arxiv.org/abs/2010.01448}{arXiv:2010.01448}.
+\bibitem{IPS} V. Iyer, R. Parker and A. G. Stefanov, \emph{Existence and stability for traveling waves of fourth order semilinear wave and Schr\"odinger equations}, \href{https://arxiv.org/abs/2512.12390}{arXiv:2512.12390}, Section 3.3.2.
+\bibitem{BHL} T. Boulenger, D. Himmelsbach and E. Lenzmann, \emph{Blowup for fractional NLS}, \href{https://arxiv.org/abs/1509.08845}{arXiv:1509.08845}.
+\end{thebibliography}
+\end{document}

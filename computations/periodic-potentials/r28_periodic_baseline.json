@@ -1,0 +1,372 @@
+[
+  {
+    "file": "research/r28_periodic_square_D4.npz",
+    "cutoff": 5,
+    "nq": 12,
+    "lattice": "square",
+    "original_ratio": 0.040211486855662476,
+    "original_patch_lower": 0.039930172555250956,
+    "signed_shift": {
+      "shift": 0.03774793893398298,
+      "ratio": 0.04063475435185736,
+      "numerator": 0.1980011266848326,
+      "denominator": 4.872703916709718,
+      "mean_rank": 1.0
+    },
+    "signed_shift_patch_lower": {
+      "shift": 0.03957212707194105,
+      "ratio": 0.040398314735089834,
+      "numerator": 0.19866790741538315,
+      "denominator": 4.917727601216516,
+      "mean_rank": 1.0
+    },
+    "nonnegative_shift": {
+      "shift": 0.03774793893398298,
+      "ratio": 0.04063475435185736,
+      "numerator": 0.1980011266848326,
+      "denominator": 4.872703916709718,
+      "mean_rank": 1.0
+    },
+    "nonnegative_shift_patch_lower": {
+      "shift": 0.03957212707194105,
+      "ratio": 0.040398314735089834,
+      "numerator": 0.19866790741538315,
+      "denominator": 4.917727601216516,
+      "mean_rank": 1.0
+    },
+    "arithmetic_certified": false
+  },
+  {
+    "file": "research/r28_periodic_square_D12.npz",
+    "cutoff": 5,
+    "nq": 12,
+    "lattice": "square",
+    "original_ratio": 0.042652232679082816,
+    "original_patch_lower": 0.04255578206179887,
+    "signed_shift": {
+      "shift": 0.0022646409411246626,
+      "ratio": 0.04265295233731368,
+      "numerator": 0.5140914330901182,
+      "denominator": 12.052892119272608,
+      "mean_rank": 1.0
+    },
+    "signed_shift_patch_lower": {
+      "shift": 0.0029342210578910954,
+      "ratio": 0.04255698747245736,
+      "numerator": 0.5136036057994775,
+      "denominator": 12.068608148823476,
+      "mean_rank": 1.0
+    },
+    "nonnegative_shift": {
+      "shift": 0.0022646409411246626,
+      "ratio": 0.04265295233731368,
+      "numerator": 0.5140914330901182,
+      "denominator": 12.052892119272608,
+      "mean_rank": 1.0
+    },
+    "nonnegative_shift_patch_lower": {
+      "shift": 0.0029342210578910954,
+      "ratio": 0.04255698747245736,
+      "numerator": 0.5136036057994775,
+      "denominator": 12.068608148823476,
+      "mean_rank": 1.0
+    },
+    "arithmetic_certified": false
+  },
+  {
+    "file": "research/r28_periodic_square_D24.npz",
+    "cutoff": 5,
+    "nq": 12,
+    "lattice": "square",
+    "original_ratio": 0.04271523273876889,
+    "original_patch_lower": 0.04266700743012691,
+    "signed_shift": {
+      "shift": -0.00040075137465778177,
+      "ratio": 0.04271524402324569,
+      "numerator": 1.0247648343557956,
+      "denominator": 23.990611730981033,
+      "mean_rank": 1.0
+    },
+    "signed_shift_patch_lower": {
+      "shift": -6.554744522202505e-05,
+      "ratio": 0.042667007731671966,
+      "numerator": 1.023942630877824,
+      "denominator": 23.998463574415258,
+      "mean_rank": 1.0
+    },
+    "nonnegative_shift": {
+      "shift": 0.0,
+      "ratio": 0.042715232738768885,
+      "numerator": 1.0251655857304534,
+      "denominator": 24.000000000000004,
+      "mean_rank": 1.0
+    },
+    "nonnegative_shift_patch_lower": {
+      "shift": 0.0,
+      "ratio": 0.04266700743012691,
+      "numerator": 1.0240081783230461,
+      "denominator": 24.000000000000004,
+      "mean_rank": 1.0
+    },
+    "arithmetic_certified": false
+  },
+  {
+    "file": "research/r28_periodic_square_D48.npz",
+    "cutoff": 5,
+    "nq": 12,
+    "lattice": "square",
+    "original_ratio": 0.04248613722372129,
+    "original_patch_lower": 0.0424620245694003,
+    "signed_shift": {
+      "shift": -0.005679135236904109,
+      "ratio": 0.042487264269842326,
+      "numerator": 2.033655451501718,
+      "denominator": 47.86505995268838,
+      "mean_rank": 1.0
+    },
+    "signed_shift_patch_lower": {
+      "shift": -0.005509393169936594,
+      "ratio": 0.04246308464678942,
+      "numerator": 2.0326677861612774,
+      "denominator": 47.86905621833964,
+      "mean_rank": 1.0
+    },
+    "nonnegative_shift": {
+      "shift": 0.0,
+      "ratio": 0.04248613722372129,
+      "numerator": 2.039334586738622,
+      "denominator": 48.0,
+      "mean_rank": 1.0
+    },
+    "nonnegative_shift_patch_lower": {
+      "shift": 0.0,
+      "ratio": 0.04246202456940029,
+      "numerator": 2.038177179331214,
+      "denominator": 48.0,
+      "mean_rank": 1.0
+    },
+    "arithmetic_certified": false
+  },
+  {
+    "file": "research/r28_periodic_square_D96.npz",
+    "cutoff": 5,
+    "nq": 12,
+    "lattice": "square",
+    "original_ratio": 0.04127425573717621,
+    "original_patch_lower": 0.04126219941001571,
+    "signed_shift": {
+      "shift": -0.023431431245793277,
+      "ratio": 0.04128357675749923,
+      "numerator": 3.938897119523124,
+      "denominator": 95.41075238369739,
+      "mean_rank": 1.0
+    },
+    "signed_shift_patch_lower": {
+      "shift": -0.02334126017434368,
+      "ratio": 0.04127144611047372,
+      "numerator": 3.937829883187164,
+      "denominator": 95.41293689216856,
+      "mean_rank": 1.0
+    },
+    "nonnegative_shift": {
+      "shift": 0.0,
+      "ratio": 0.04127425573717622,
+      "numerator": 3.962328550768917,
+      "denominator": 96.0,
+      "mean_rank": 1.0
+    },
+    "nonnegative_shift_patch_lower": {
+      "shift": 0.0,
+      "ratio": 0.0412621994100157,
+      "numerator": 3.9611711433615073,
+      "denominator": 96.0,
+      "mean_rank": 1.0
+    },
+    "arithmetic_certified": false
+  },
+  {
+    "file": "research/r28_periodic_triangular_D4.npz",
+    "cutoff": 5,
+    "nq": 12,
+    "lattice": "triangular",
+    "original_ratio": 0.039883112136640905,
+    "original_patch_lower": 0.03949730966750511,
+    "signed_shift": {
+      "shift": 0.04645937416757717,
+      "ratio": 0.040632753147264965,
+      "numerator": 0.20599182271414088,
+      "denominator": 5.06960042721118,
+      "mean_rank": 1.0
+    },
+    "signed_shift_patch_lower": {
+      "shift": 0.04915827604769865,
+      "ratio": 0.04033032968442569,
+      "numerator": 0.20714751471771894,
+      "denominator": 5.13627129603438,
+      "mean_rank": 1.0
+    },
+    "nonnegative_shift": {
+      "shift": 0.04645937416757717,
+      "ratio": 0.040632753147264965,
+      "numerator": 0.20599182271414088,
+      "denominator": 5.06960042721118,
+      "mean_rank": 1.0
+    },
+    "nonnegative_shift_patch_lower": {
+      "shift": 0.04915827604769865,
+      "ratio": 0.04033032968442569,
+      "numerator": 0.20714751471771894,
+      "denominator": 5.13627129603438,
+      "mean_rank": 1.0
+    },
+    "arithmetic_certified": false
+  },
+  {
+    "file": "research/r28_periodic_triangular_D12.npz",
+    "cutoff": 5,
+    "nq": 12,
+    "lattice": "triangular",
+    "original_ratio": 0.042627617515656635,
+    "original_patch_lower": 0.04249901669261138,
+    "signed_shift": {
+      "shift": 0.00327360806279986,
+      "ratio": 0.0426289190834881,
+      "numerator": 0.5148050182506796,
+      "denominator": 12.076426738441143,
+      "mean_rank": 1.0
+    },
+    "signed_shift_patch_lower": {
+      "shift": 0.004304054979275107,
+      "ratio": 0.04250125988512664,
+      "numerator": 0.5142922552906117,
+      "denominator": 12.100635526585622,
+      "mean_rank": 1.0
+    },
+    "nonnegative_shift": {
+      "shift": 0.00327360806279986,
+      "ratio": 0.0426289190834881,
+      "numerator": 0.5148050182506796,
+      "denominator": 12.076426738441143,
+      "mean_rank": 1.0
+    },
+    "nonnegative_shift_patch_lower": {
+      "shift": 0.004304054979275107,
+      "ratio": 0.04250125988512664,
+      "numerator": 0.5142922552906117,
+      "denominator": 12.100635526585622,
+      "mean_rank": 1.0
+    },
+    "arithmetic_certified": false
+  },
+  {
+    "file": "research/r28_periodic_triangular_D24.npz",
+    "cutoff": 5,
+    "nq": 12,
+    "lattice": "triangular",
+    "original_ratio": 0.042714646944758,
+    "original_patch_lower": 0.042650346533235364,
+    "signed_shift": {
+      "shift": -0.00039076706492435775,
+      "ratio": 0.04271465623638886,
+      "numerator": 1.0247607596092676,
+      "denominator": 23.990846465861715,
+      "mean_rank": 1.0
+    },
+    "signed_shift_patch_lower": {
+      "shift": 0.0001254711993405877,
+      "ratio": 0.04265034748974599,
+      "numerator": 1.0237337879969897,
+      "denominator": 24.002941318194793,
+      "mean_rank": 1.0
+    },
+    "nonnegative_shift": {
+      "shift": 0.0,
+      "ratio": 0.04271464694475799,
+      "numerator": 1.025151526674192,
+      "denominator": 24.000000000000007,
+      "mean_rank": 1.0
+    },
+    "nonnegative_shift_patch_lower": {
+      "shift": 0.0001254711993405877,
+      "ratio": 0.04265034748974599,
+      "numerator": 1.0237337879969897,
+      "denominator": 24.002941318194793,
+      "mean_rank": 1.0
+    },
+    "arithmetic_certified": false
+  },
+  {
+    "file": "research/r28_periodic_triangular_D48.npz",
+    "cutoff": 5,
+    "nq": 12,
+    "lattice": "triangular",
+    "original_ratio": 0.04249893368039341,
+    "original_patch_lower": 0.0424667834746321,
+    "signed_shift": {
+      "shift": -0.0061662463747689245,
+      "ratio": 0.042500084694570395,
+      "numerator": 2.0337825702841155,
+      "denominator": 47.85361217277625,
+      "mean_rank": 1.0
+    },
+    "signed_shift_patch_lower": {
+      "shift": -0.005904962830572735,
+      "ratio": 0.042467838210273084,
+      "numerator": 2.0325006439517668,
+      "denominator": 47.85976234269677,
+      "mean_rank": 1.0
+    },
+    "nonnegative_shift": {
+      "shift": 0.0,
+      "ratio": 0.04249893368039343,
+      "numerator": 2.0399488166588844,
+      "denominator": 47.99999999999999,
+      "mean_rank": 1.0
+    },
+    "nonnegative_shift_patch_lower": {
+      "shift": 0.0,
+      "ratio": 0.04246678347463208,
+      "numerator": 2.0384056067823395,
+      "denominator": 47.99999999999999,
+      "mean_rank": 1.0
+    },
+    "arithmetic_certified": false
+  },
+  {
+    "file": "research/r28_periodic_triangular_D96.npz",
+    "cutoff": 5,
+    "nq": 12,
+    "lattice": "triangular",
+    "original_ratio": 0.04135970419656524,
+    "original_patch_lower": 0.041343629093684574,
+    "signed_shift": {
+      "shift": -0.025242191875018083,
+      "ratio": 0.041369091681392856,
+      "numerator": 3.945289410995246,
+      "denominator": 95.36804533636335,
+      "mean_rank": 1.0
+    },
+    "signed_shift_patch_lower": {
+      "shift": -0.02510386324687275,
+      "ratio": 0.04135291034080043,
+      "numerator": 3.9438845297468483,
+      "denominator": 95.37138975816303,
+      "mean_rank": 1.0
+    },
+    "nonnegative_shift": {
+      "shift": 0.0,
+      "ratio": 0.041359704196565254,
+      "numerator": 3.9705316028702646,
+      "denominator": 96.0,
+      "mean_rank": 1.0
+    },
+    "nonnegative_shift_patch_lower": {
+      "shift": 0.0,
+      "ratio": 0.0413436290936846,
+      "numerator": 3.9689883929937215,
+      "denominator": 96.0,
+      "mean_rank": 1.0
+    },
+    "arithmetic_certified": false
+  }
+]

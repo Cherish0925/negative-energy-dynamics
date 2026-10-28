@@ -1,0 +1,49 @@
+{
+  "status": "numerical candidates, not certified inequalities",
+  "gaussian_parameters": [
+    2.9414883,
+    0.73521703,
+    0.01513357
+  ],
+  "gaussian_checks": [
+    {
+      "ncut": 8,
+      "positive_quadrant_bloch_n": 12,
+      "ratio": 0.04256185612410048
+    },
+    {
+      "ncut": 12,
+      "positive_quadrant_bloch_n": 12,
+      "ratio": 0.04256185612635181
+    },
+    {
+      "ncut": 16,
+      "positive_quadrant_bloch_n": 12,
+      "ratio": 0.042561856126351445
+    },
+    {
+      "ncut": 12,
+      "positive_quadrant_bloch_n": 24,
+      "ratio": 0.042561856126351605
+    }
+  ],
+  "separable_checks": [
+    {
+      "bloch_n": 40,
+      "ratio": 0.039789391265427104
+    },
+    {
+      "bloch_n": 80,
+      "ratio": 0.03978849150574076
+    },
+    {
+      "bloch_n": 160,
+      "ratio": 0.03978864112991857
+    }
+  ],
+  "separable_parameters": [
+    2.00054357,
+    0.7283338,
+    0.08201107
+  ]
+}
