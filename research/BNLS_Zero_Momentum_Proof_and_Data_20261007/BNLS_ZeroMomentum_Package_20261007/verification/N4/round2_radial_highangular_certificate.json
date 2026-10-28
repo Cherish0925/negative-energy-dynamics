@@ -1,0 +1,33 @@
+{
+  "canonical": "round2_radial_H4_exact_h1_16.json",
+  "sha256": "c50a6f98682ce5f5bef9ab62ae2a93ba06b91522c8f3e29b859ac521afb8f627",
+  "checks": [
+    {
+      "beta": 1,
+      "minimal_ell": 5,
+      "c_ell_squared": "1225",
+      "theta": "9/10",
+      "all_Bernstein_coefficients_positive": true,
+      "smallest_Bernstein_margin_exact": "25134166562767595348743931726241166602664678325317/29855122634532871730730942837507993966131281920",
+      "Bc_upper_exact": "1430105136376445520040172369439870883249284832091/5971024526906574346146188567501598793226256384",
+      "Bc_upper_decimal": "239.5074965664802174593019018769675449609775828693389068776114792248430",
+      "verified_uniform_preconditioned_gap": "1/10",
+      "pointwise_statement": "beta r^4 q(r)^2 <= (9/10)(r^4+c_ell^2) for allr>=0",
+      "operator_statement": "Delta_l^2+1-betaq\u00b2 >= (1/10)(Delta_l\u00b2+1) inquadraticformsfor ell>=minimal_ell"
+    },
+    {
+      "beta": 3,
+      "minimal_ell": 6,
+      "c_ell_squared": "2304",
+      "theta": "9/10",
+      "all_Bernstein_coefficients_positive": true,
+      "smallest_Bernstein_margin_exact": "3510974851007768721416972710485426825200679041780723/4065983368322095864280499834060612511577879347200",
+      "Bc_upper_exact": "9971010927950992173206835592045776303086826189/8422669146027068847645448283151126769958912",
+      "Bc_upper_decimal": "1183.830298338890403237386594119656064741326555246128337360052414704174",
+      "verified_uniform_preconditioned_gap": "1/10",
+      "pointwise_statement": "beta r^4 q(r)^2 <= (9/10)(r^4+c_ell^2) for allr>=0",
+      "operator_statement": "Delta_l^2+1-betaq\u00b2 >= (1/10)(Delta_l\u00b2+1) inquadraticformsfor ell>=minimal_ell"
+    }
+  ],
+  "outside_support": "q=0 for r>=36, inequality immediate"
+}

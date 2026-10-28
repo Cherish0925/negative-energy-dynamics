@@ -1,0 +1,368 @@
+\section{Momentum-adapted centers and stronger amplification}
+\label{sec:r13-center}
+
+The preceding amplification theorem requires no nondegeneracy of the
+real linearized operator. We now show what that additional hypothesis
+buys dynamically: conserved momentum removes the leading translation
+speed in a suitable modulation coordinate. The scale and phase
+equations must be retained for this cancellation to be useful.
+
+Throughout this section $N\in\{1,2,3\}$ and
+\[
+ iu_t=\Delta^2u-|u|^{8/N}u,\qquad p=2+8/N.
+\]
+Let $Q$ be a real sharp ground wave satisfying
+\[
+ \Delta^2Q+Q-|Q|^{p-2}Q=0,\qquad M(Q)=M_c,
+\]
+and put
+\[
+ L_-=\Delta^2+1-|Q|^{p-2},\quad
+ L_+=\Delta^2+1-(p-1)|Q|^{p-2},\quad
+ \Lambda=N/2+x\cdot\nabla.
+\]
+We assume
+\begin{equation}\label{eq:r13-real-nondeg}
+ \ker L_+=\operatorname{span}\{\partial_jQ:1\le j\le N\}.
+\end{equation}
+The phase coercivity and simplicity of $\ker L_-$ are provided by the
+sharp variational problem. The weighted regularity of the profile and
+dual functions needed below follows from this concrete elliptic
+equation, as we prove next; it is not an additional assumption.
+
+\begin{lemma}[Exponential regularity of the dual functions]
+\label{lem:r13-dual-decay}
+For some $a>0$, $e^{a\langle x\rangle}Q\in H^6$. If
+$L_-Z=f$ on $Q^\perp$, with $f=\partial_jQ$ or $f=\Lambda Q$,
+then $e^{a'\langle x\rangle}Z\in H^6$ for some $a'>0$.
+In particular $\Lambda Q\in H^4$, and the functions $Z_j,W$ below
+satisfy $\nabla Z_j,\Lambda Z_j,\nabla W,\Lambda W\in L^2$.
+\end{lemma}
+\begin{proof}
+The $H^2$ algebra property and the profile equation give $Q\in H^6$.
+Hence $V=|Q|^{8/N}\in W^{2,\infty}$ and $V$ tends to zero at infinity.
+For smooth bounded truncations $\phi_R$ of $a\langle x\rangle$, put
+$w_R=e^{\phi_R}Q$. The exact identity
+\[
+ \operatorname{Re}\langle\Delta^2Q,e^{2\phi_R}Q\rangle
+ =\|\Delta w_R+|\nabla\phi_R|^2w_R\|_2^2
+ -\|2\nabla\phi_R\cdot\nabla w_R+(\Delta\phi_R)w_R\|_2^2
+\]
+differs from $\|\Delta w_R\|_2^2$ by at most
+$Ca^2\|w_R\|_{H^2}^2$. The potential is small outside a fixed ball;
+its weighted integral inside that ball is uniformly bounded.
+Absorption therefore gives a uniform weighted $H^2$ bound. The
+conjugated equation has smooth bounded lower-order coefficients of
+order at most three. Since multiplication by $V$ preserves $H^2$,
+successive elliptic gains give
+$e^{a\langle x\rangle}Q\in H^6$.
+
+For $L_-Z=f$, choose $0<a'<a$ small enough and truncate
+$a'\langle x\rangle$ with $\phi_R\le a'\langle x\rangle$.
+The same test produces the source term
+\[
+ |\langle e^{\phi_R}f,e^{\phi_R}Z\rangle|
+ \le \tfrac14\|e^{\phi_R}Z\|_2^2
+      +C\|e^{a'\langle x\rangle}f\|_2^2.
+\]
+The rightmost norm is finite, and the interior weighted potential is
+bounded by the fixed unweighted $L^2$ norm of $Z$ on the ball.
+Absorption and passage to the limit again give weighted $H^2$.
+Moreover $e^{a'\langle x\rangle}f\in H^2$. The conjugated equation
+then gives the successive gains $H^2\to H^3\to H^4\to H^5\to H^6$.
+Polynomially weighted derivatives of lower order follow by reducing
+the exponential weight. Differentiating the scaled profile equation
+now also justifies $L_+\Lambda Q=-4Q$.
+\end{proof}
+
+\begin{theorem}[Quadratic drift and stronger amplification]
+\label{thm:r13-quadratic-drift}
+Under these hypotheses there are constants $d_Q,C_Q>0$ and a
+neighborhood $\mathcal U_Q$ of the normalized phase--translation orbit
+of $Q$ such that the following holds. Let $u$ be a conservative,
+strongly approximable $H^2$ solution with the usual continuation
+property, and suppose
+\[
+ 0<d=\left(\frac{M}{M_c}\right)^{4/N}-1<d_Q,
+ \qquad E=-e<0,\qquad P=0.
+\]
+Assume the datum, after amplitude normalization to mass $M_c$ and
+spatial normalization to kinetic energy $A(Q)$, lies in
+$\mathcal U_Q$. Every forward-global such solution satisfies
+\begin{equation}\label{eq:r13-seven-thirds-average}
+ \liminf_{T\to\infty}\frac1T\int_0^T A(u(t))\,dt
+ \ge c_Q e d^{-7/3}.
+\end{equation}
+In particular, if $B=\sup_{t\ge0}A(u(t))<\infty$, then
+\begin{equation}\label{eq:r13-seven-thirds}
+ e\le C_Q d^{7/3}B.
+\end{equation}
+In particular, for
+$u_d(0)=(1+d)^{N/8}Q$,
+\begin{equation}\label{eq:r13-four-thirds}
+ \sup_{0\le t<T_+}\frac{A(u_d(t))}{A(u_d(0))}
+ \ge c_Qd^{-4/3}.
+\end{equation}
+Every factor strictly smaller than the right-hand side is attained at
+a finite time, and at arbitrarily late times if the solution is global.
+In that case the lower long-time average of $A(u_d(t))/A(u_d(0))$ is
+also at least $c_Qd^{-4/3}$.
+No radial condition is imposed on the evolving solution.
+\end{theorem}
+
+\begin{proof}
+Define
+\[
+ Z_j=L_-^{-1}\partial_jQ,\quad
+ T_{ij}=\langle\partial_iQ,Z_j\rangle,\quad
+ c_j=\langle\Lambda Q,Z_j\rangle.
+\]
+Phase coercivity implies $T>0$. Translating $Q(x)$ to $Q(x+b)$ changes
+$c$ to $c-Tb$. Choose $b=T^{-1}c$, so that $c=0$, and define
+\[
+ W=L_-^{-1}\Lambda Q,\qquad D=\langle\Lambda Q,W\rangle>0.
+\]
+Selfadjointness gives
+\begin{equation}\label{eq:r13-dual-orth}
+ \langle\Lambda Q,Z_j\rangle=
+ \langle\partial_jQ,W\rangle=0.
+\end{equation}
+Strict positivity of $D$ follows from phase coercivity and
+$\Lambda Q\ne0$; a nonzero $L^2$ function cannot be homogeneous of
+degree $-N/2$.
+
+\emph{Coercivity and isolation.}
+Sharp interpolation implies $E(f)\ge0$ on $M(f)=M_c$. Therefore
+$\langle L_+h,h\rangle\ge0$ on $Q^\perp$. A zero vector of this
+constrained form satisfies $L_+h\in\mathbb RQ$. Since
+$L_+\Lambda Q=-4Q$, assumption \eqref{eq:r13-real-nondeg} identifies
+the constrained null space as
+$\operatorname{span}\{\Lambda Q,\partial_1Q,\ldots,\partial_NQ\}$.
+The decaying potential is form-compact relative to $\Delta^2+1$.
+Consequently, \eqref{eq:r13-dual-orth} and $T>0$ yield
+\begin{equation}\label{eq:r13-constrained-coercivity}
+ \langle L_+h,h\rangle+\langle L_-k,k\rangle
+ \ge c_Q(\|h\|_{H^2}^2+\|k\|_{H^2}^2)
+       -C_Q\langle h,Q\rangle^2
+\end{equation}
+whenever
+\begin{equation}\label{eq:r13-gauges}
+ \langle h,Z_j\rangle=\langle h,W\rangle=
+ \langle k,Q\rangle=0.
+\end{equation}
+The same estimate, applied to a nearby exact optimizer with its exact
+mass and energy constraints, shows that the normalized orbit of $Q$
+is isolated. Indeed its perturbation norm is bounded by a higher-order
+remainder in that same norm and must vanish.
+
+For a negative-energy trajectory of mass parameter $d$, the normalized
+sharp-interpolation deficit is at most $d$. Sharp-optimizer compactness
+therefore places the normalized trajectory uniformly close to the set
+of normalized optimizers as $d\to0$. Choose $\rho>0$ so that the
+quotient ball of radius $2\rho$ about $Q$'s orbit contains no other
+normalized optimizer orbit. A state at distance $\rho$ from that orbit
+is at distance at least $\rho$ from every optimizer orbit, by the
+triangle inequality. This contradicts uniform distance less than
+$\rho/4$ from the optimizer set for small $d$. Thus a continuous
+normalized trajectory starting at distance less than $\rho/2$ cannot
+leave the $\rho$ tube. Choosing $\rho$ small enough proves that one
+fixed $Q$ can be used throughout the maximal existence interval.
+
+\emph{Exact modulation equations.}
+Write
+\[
+ u(t,x)=\lambda(t)^{N/2}e^{i\theta(t)}w(s,y),\qquad
+ w=Q+h+ik,\qquad y=\lambda(t)(x-a(t)),\qquad
+ \frac{ds}{dt}=\lambda^4,
+\]
+with \eqref{eq:r13-gauges}. The parameter Jacobian at $Q$ has
+invertible blocks $T,D,M_c$. Lemma~\ref{lem:r13-dual-decay} justifies
+local absolute continuity of the parameters and
+differentiation of the gauges. Terms involving $\Lambda h$ are paired
+by integration by parts against $\Lambda Z_j$ or $\Lambda W$.
+Set
+\[
+ b=\lambda_s/\lambda,\qquad v=\lambda a_s,\qquad
+ \alpha=\theta_s-1,
+\]
+and, for $F(z)=|z|^{p-2}z$, set
+\[
+ \mathcal R=F(Q+h+ik)-F(Q)
+ -(p-1)|Q|^{p-2}h-i|Q|^{p-2}k.
+\]
+The exact real equations are
+\begin{align}
+ h_s&=L_-k-\operatorname{Im}\mathcal R+\alpha k
+       -b\Lambda(Q+h)+v\cdot\nabla(Q+h),\label{eq:r13-real-flow}\\
+ k_s&=-L_+h+\operatorname{Re}\mathcal R-\alpha(Q+h)
+       -b\Lambda k+v\cdot\nabla k.\label{eq:r13-imag-flow}
+\end{align}
+If $\epsilon^2=\|h\|_{H^2}^2+\|k\|_{H^2}^2$, then
+$\|\mathcal R\|_2\le C_Q\epsilon^2$, since $N\le3$, $p>4$, and
+$H^2\hookrightarrow L^\infty$.
+
+Zero momentum is exactly
+\begin{equation}\label{eq:r13-momentum-cancel}
+ \langle k,\partial_jQ\rangle=-\langle k,\partial_jh\rangle.
+\end{equation}
+Let $(T_h)_{j\ell}=\langle\partial_\ell h,Z_j\rangle$.
+Differentiate the translation, scale and phase gauges in that order:
+\begin{align}
+ [(T+T_h)v]_j
+ &=\langle k,\partial_jh\rangle
+   +\langle\operatorname{Im}\mathcal R,Z_j\rangle
+   -\alpha\langle k,Z_j\rangle
+   +b\langle\Lambda h,Z_j\rangle,
+   \label{eq:r13-translation-eq}\\
+ b[D+\langle\Lambda h,W\rangle]-v\cdot\langle\nabla h,W\rangle
+ &=\langle k,\Lambda Q\rangle
+   -\langle\operatorname{Im}\mathcal R,W\rangle
+   +\alpha\langle k,W\rangle,
+   \label{eq:r13-scale-eq}\\
+ \alpha[M_c+\langle h,Q\rangle]+b\langle\Lambda k,Q\rangle
+   -v\cdot\langle\nabla k,Q\rangle
+ &=-\langle h,L_+Q\rangle
+   +\langle\operatorname{Re}\mathcal R,Q\rangle.
+   \label{eq:r13-phase-eq}
+\end{align}
+This linear system for $v,b,\alpha$ is a small perturbation of one
+with diagonal blocks $T,D,M_c$, so
+$|v|+|b|+|\alpha|\le C_Q\epsilon$. Substitution in
+\eqref{eq:r13-translation-eq} improves the translation estimate to
+\begin{equation}\label{eq:r13-quadratic-v}
+ |v|\le C_Q\epsilon^2.
+\end{equation}
+The phase and scale terms have thus been controlled, not omitted.
+
+\emph{Energy and center speed.}
+Put $\delta M=M-M_c=O(d)$. The mass identity gives
+$2\langle h,Q\rangle=\delta M-\|h\|_2^2-\|k\|_2^2$.
+For $S=E+M/2$, Taylor expansion and
+\eqref{eq:r13-constrained-coercivity} imply
+\[
+ S(w)-S(Q)\ge c_Q\epsilon^2-C_Q(\delta M)^2-o(\epsilon^2).
+\]
+But $E(w)=\lambda^{-4}E(u)<0$, so
+$S(w)-S(Q)\le\delta M/2$. Shrinking the tube yields
+\begin{equation}\label{eq:r13-small-error}
+ \epsilon^2\le C_Qd,\qquad
+ |a_t|=\lambda^3|v|\le C_Qd\lambda^3.
+\end{equation}
+
+Since $A(w)$ stays comparable to $A(Q)$,
+\eqref{eq:r13-small-error} gives the scale-sensitive speed
+\[
+ |a_t|\le C_Qd A(t)^{3/4}
+\]
+without any upper bound on $A(t)$. A ball of radius $C_Q A(t)^{-1/4}$
+about $a(t)$ contains at least $M_c-\varepsilon_0$ mass, where
+$\varepsilon_0>0$ is fixed and small. The bound $A(t)\ge2e/d$ makes
+these physical radii uniformly bounded.
+
+For every $\eta>0$ the mass outside a sufficiently large fixed radius
+about $a(t)$ is at most $M-M_c+\eta$, uniformly in time. To justify
+this without a kinetic bound, suppose bad times and radii tend to
+infinity and normalize each state to kinetic energy one about its
+center. The bad normalized radii tend to infinity because
+$A(t)\ge2e/d$. Weak $H^2$ compactness gives a nonzero core of mass
+between $M_c-\varepsilon_0$ and $M_c-\eta$. The remainder is also
+subcritical. Their split energies have strictly positive sum, in
+contradiction with the normalized total energies $-e/A(t)\le0$.
+
+Put $\mu=M-M_c+\eta$. The negative exterior kinetic contribution
+of Lemma~\ref{lem:r13g-principal}, with $a(\xi)=|\xi|^4$,
+absorbs the exterior current by Young's
+inequality. With $H_R$ denoting the transition-annulus kinetic energy,
+the resulting estimate is
+\[
+ J_R'\le-16e+CH_R+C_Q\mu d^{4/3}A(t)
+                  +C[R^{-1}A(t)^{3/4}+R^{-2}A(t)^{1/2}+R^{-4}].
+\]
+Let $L=\liminf_{T\to\infty}T^{-1}\int_0^T A$. If $L=\infty$ the
+claim follows. Otherwise choose times $t_n\to\infty$ with the
+averages tending to $L$ and $A(t_n)^{1/4}/t_n\to0$; the endpoint
+selection in the preceding actual-time argument applies unchanged.
+Since $|J_R(t)|\le CR A(t)^{1/4}$, endpoint terms disappear after
+division by $t_n$. Among $K$ disjoint geometrically spaced annuli,
+one has average kinetic energy at most the total average divided by
+$K$. Integrate at that radius, then let time tend to infinity, $K$
+tend to infinity, the base radius tend to infinity, and $\eta$ tend
+to zero. This gives
+\[
+ e\le C_Q(M-M_c)d^{4/3}L\le C_Qd^{7/3}L.
+\]
+It proves \eqref{eq:r13-seven-thirds-average}, and
+\eqref{eq:r13-seven-thirds} follows immediately.
+For the specified initial data $E=-dA(u_d(0))/2$ and $P=0$.
+The average bound gives arbitrarily late crossings for global
+solutions. Finite-time breakdown makes the kinetic supremum infinite
+by continuation. Continuity gives the stated finite-time crossings.
+\end{proof}
+
+\begin{theorem}[Arbitrary momentum in the same ground component]
+\label{thm:r13-any-momentum}
+Retain the hypotheses of Theorem~\ref{thm:r13-quadratic-drift}, except
+that $P$ may now be arbitrary. Every forward-global such solution
+satisfies
+\begin{equation}\label{eq:r13-any-momentum-average}
+ \liminf_{T\to\infty}\frac1T\int_0^T A(u(t))\,dt
+ \ge c_Q|E|d^{-2}.
+\end{equation}
+At $P=0$, \eqref{eq:r13-seven-thirds-average} gives the stronger
+exponent $7/3$.
+\end{theorem}
+\begin{proof}
+Component trapping, constrained coercivity and
+$\epsilon^2\le C_Qd$ did not use $P=0$. For general momentum the
+exact identity replacing \eqref{eq:r13-momentum-cancel} is
+\[
+ \langle k,\partial_jQ\rangle
+ =-\frac{P_j}{2\lambda}-\langle k,\partial_jh\rangle.
+\]
+The right-hand side of \eqref{eq:r13-translation-eq} therefore gains
+$P_j/(2\lambda)$. Since $|P|/\lambda\le C_Q\epsilon$, solving the
+same coupled equations first to linear order and substituting back
+gives
+\begin{equation}\label{eq:r13-effective-drift}
+ v=\tfrac12T^{-1}(P/\lambda)+O_Q(d),\qquad
+ a_t=\tfrac{\lambda^2}{2}T^{-1}P+O_Q(d\lambda^3).
+\end{equation}
+Retain the exact $-2a_t\cdot P$ term in localized virial. Positivity
+of $T$ gives
+\[
+ -2a_t\cdot P\le-c_Q\lambda^2|P|^2+C_Qd^2\lambda^4.
+\]
+After absorbing exterior kinetic energy, the exterior current costs
+$C\mu|a_t|^{4/3}$, where $\mu=M-M_c+\eta$. For any fixed small
+$\varepsilon_1>0$, \eqref{eq:r13-effective-drift} and Young's
+inequality imply
+\begin{align*}
+ \mu|a_t|^{4/3}
+ &\le C_Q\mu\lambda^{8/3}|P|^{4/3}
+       +C_Q\mu d^{4/3}\lambda^4\\
+ &\le\varepsilon_1\lambda^2|P|^2
+       +C_{Q,\varepsilon_1}(\mu^3+\mu d^{4/3})\lambda^4.
+\end{align*}
+The first term is absorbed into the negative momentum contribution.
+Since $\lambda^4$ is comparable to $A(t)$, this leaves
+\[
+ J_R'\le-16e+CH_R
+   +C_Q[d^2+\mu^3+\mu d^{4/3}]A(t)
+   +C[R^{-1}A(t)^{3/4}+R^{-2}A(t)^{1/2}+R^{-4}].
+\]
+Uniform surplus-tail mass and actual-time endpoint selection remain
+valid. Averaging disjoint annuli and sending $\eta\to0$ gives
+\[
+ e\le C_Q[d^2+(M-M_c)^3+(M-M_c)d^{4/3}]
+       \liminf_{T\to\infty}\frac1T\int_0^T A(t)\,dt.
+\]
+Because $M-M_c=O(d)$, the bracket is $O(d^2)$. This proves
+\eqref{eq:r13-any-momentum-average}. No Galilean invariance is used.
+\end{proof}
+
+The conditional exponent $4/3$ improves the unconditional exponent
+$2/3$. It still permits a bounded trajectory at a sufficiently large
+kinetic scale. Reapplying the estimate later leaves $d$ and $E$
+unchanged and does not force iteration to infinity. A further dynamical
+argument must control scale evolution or the quadratic translation
+terms in \eqref{eq:r13-translation-eq} over long times.

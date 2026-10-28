@@ -1,0 +1,46 @@
+{
+  "status": "PASS: one algebraically simple exact-Q radial eigenvalue in the first-quadrant rectangle, conditional only on the stated previously proved base/Morse and finite-block theorems",
+  "rectangle": [
+    "1.5",
+    "4.5",
+    "4.5",
+    "7.5"
+  ],
+  "precision_bits": 256,
+  "checks": {
+    "bootstrap_Aw_lt_0.0003": true,
+    "Q_minus_q_Linfty_lt_8.4e-7": true,
+    "trial_Gram_has_exactly_three_negative_directions": true,
+    "Gram_transfer_nonsingular": true,
+    "exact_G_inverse_lt_6": true,
+    "exact_projected_basis_norm_lt_1.001": true,
+    "exact_block_residual_lt_0.0031": true,
+    "finite_block_reference_inverse_lt_1.34": true,
+    "Rouche_strictly_lt_one": true
+  },
+  "bounds": {
+    "rho_Z_global": "[3.000000000000000000000000000000000000000000000000000000000000000000000000000e-7 +/- 2.81e-84]",
+    "Aw_L2_bound": "[0.0003000000000000000000000000000000000000000000000000000000000000000000000000000 +/- 5.58e-81]",
+    "w_Linfty_bound": "[8.400000000000000000000000000000000000000000000000000000000000000000000000000e-7 +/- 4.57e-84]",
+    "Q_transfer_H2_residual": "[4.186400936754232094143152306305725847496694275136220915428015386559658974507e-5 +/- 2.22e-81]",
+    "phase_quotient_residual": "[9.617576730944035574690418526666702896578746367428248647127138674785676838673e-9 +/- 3.37e-86]",
+    "exact_residual_epsilon": "[0.002991361761093818499117454523851421848839281992012312785017329129838298432779 +/- 5.44e-80]",
+    "G_perturbation": "[5.637657572908281218198106389413095977503927589882247645900384409782242948566e-6 +/- 5.12e-84]",
+    "exact_G_inverse": "[5.858205640350711863057294008565781801906382307726339637488498235248936281335 +/- 3.92e-76]",
+    "exact_basis_norm": "[1.000001875119910493776644008538750006787435556753241138016542270462704168551 +/- 2.35e-76]",
+    "L2_potential_transfer": "[1.479333636864560807860223847795539321375781929966929489845194162137771525437e-6 +/- 3.49e-82]",
+    "K_perturbation": "[2.019186722569885066532510473364276245607912581260285610922379608146369121205e-5 +/- 4.04e-81]",
+    "B_perturbation_from_explicit_reference": "[0.0008770544731011642811038210833598935189816596398554302426075046438260689636843 +/- 2.15e-81]",
+    "L_orthogonal_complement_projection_bound": "[36.14936566028429037220457026538056062225190822587293482332132156017781356286 +/- 4.96e-75]",
+    "contour_inverse": "1.330628592520952224731445312500000000000000000000000000000000000000000000000",
+    "Rouche_bound": "[0.3657704153942314184285123998969148231892965934872002587077036041751937912831 +/- 4.34e-77]"
+  },
+  "conclusion": "The Hamiltonian symmetry produces one simple complex quartet, providing two radial real unstable dimensions. Together with the 29 nonradial unstable dimensions and the index bound, the sufficiently small nonzero-speed branch has exactly 31 unstable dimensions.",
+  "dependencies": [
+    "round5_radial_analytic.md Section 7",
+    "round4_morse_certificate.md",
+    "round5_n4_refinement_certificate.json",
+    "round5_radial_block_certificate_h2.json",
+    "round5_radial_contour.json"
+  ]
+}

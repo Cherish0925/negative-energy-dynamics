@@ -1,0 +1,20 @@
+{
+  "verified": true,
+  "scope": "Canonical residual and Z bound; recomputed frozen Ritz variational inequalities only.",
+  "sha256": {
+    "profile": "c50a6f98682ce5f5bef9ab62ae2a93ba06b91522c8f3e29b859ac521afb8f627",
+    "ritz_data": "e028e0e15d82adc377d83dc7afb397403f312c9127f32fdf3aa37bc3bebaa511",
+    "polynomial_helpers": "cf731d5faf1d0ee7207e779624e7ab0633a72c1053e4d82fda97fb3b270121d5",
+    "verifier": "ca08a786b827787247593775e63b2a6832abb345b4d97d60b81a4d39ce4ff041"
+  },
+  "checks": {
+    "canonical_q_residual_lt_0.000242": true,
+    "canonical_q_Z_le_104": true,
+    "ell_0_top_eigenvalue_ge_5.395": true,
+    "ell_0_second_eigenvalue_gt_2.999": true,
+    "ell_2_top_eigenvalue_gt_2.11": true,
+    "ell_1_top_eigenvalue_gt_1.04": true,
+    "ell_1_gamma_half_top_ge_1.5": true
+  },
+  "elapsed_seconds_diagnostic": 12.658845213998575
+}

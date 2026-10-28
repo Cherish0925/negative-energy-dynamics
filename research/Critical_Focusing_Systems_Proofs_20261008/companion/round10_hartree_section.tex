@@ -1,0 +1,393 @@
+\section{A density-norm principle and nonlocal critical attraction}
+\label{sec:r10-hartree}
+
+The phase-kernel argument has a first-order formulation that applies
+to both local powers and nonlocal Hartree interactions. It avoids
+second derivatives of the nonlinear density at nodal sets.
+
+\subsection{The common variational lemma}
+
+Let $A$ be a positive quadratic form on a complex function space,
+with $A(X+iY)=A(X)+A(Y)$ for real $X,Y$, and let
+$M(u)=\|u\|_2^2$. Let $\mathcal B$ be a strictly convex real normed
+space containing the squared densities under consideration. Fix
+$\kappa>1$ and set
+\[
+ \mathcal F(u)=\mathfrak f(|u|^2),\qquad
+ \mathfrak f(\rho)=\|\rho\|_{\mathcal B}^{\kappa}.
+\]
+Assume that the sharp inequality
+\begin{equation}\label{r10:density-gn}
+ \mathcal F(u)\le\kappa
+       \left(\frac{M(u)}{M_c}\right)^{\kappa-1}A(u)
+\end{equation}
+has a nonzero optimizer. Assume the relevant density norm is
+Gateaux differentiable at the squared density of each optimizer.
+For a real optimizer $Q$ of mass $M_c$, write its derivative as
+\[
+ D\mathfrak f(Q^2)[h]=\kappa\langle V_Q,h\rangle.
+\]
+The notation allows either a multiplication potential or a bounded
+linear functional on the density space; in particular
+$\langle V_Q,b^2\rangle$ must be a well-defined quadratic form.
+
+\begin{lemma}[Simple phase kernel from density convexity]
+\label{lem:r10-density}
+Under these assumptions every complex optimizer is a constant phase
+times a real function. For a real mass-$M_c$ optimizer $Q$, the form
+\[
+ \mathcal L_-(b)=A(b)+(\kappa-1)\frac{A(Q)}{M_c}M(b)
+                    -\langle V_Q,b^2\rangle
+\]
+is nonnegative on real functions and has kernel
+$\operatorname{span}_{\mathbb R}\{Q\}$.
+\end{lemma}
+\begin{proof}
+For $u=X+iY$, the density triangle inequality, sharp interpolation,
+and two-term H\"older give
+\begin{align*}
+ \mathcal F(u)^{1/\kappa}
+ &\le\mathcal F(X)^{1/\kappa}+\mathcal F(Y)^{1/\kappa}\\
+ &\le \kappa^{1/\kappa}M_c^{-(\kappa-1)/\kappa}
+  \left[A(X)^{1/\kappa}M(X)^{(\kappa-1)/\kappa}
+       +A(Y)^{1/\kappa}M(Y)^{(\kappa-1)/\kappa}\right]\\
+ &\le \kappa^{1/\kappa}M_c^{-(\kappa-1)/\kappa}
+              A(u)^{1/\kappa}M(u)^{(\kappa-1)/\kappa}.
+\end{align*}
+All inequalities are equalities for an optimizer. Strict convexity
+in the density space forces $Y^2=cX^2$ unless a component vanishes.
+Apply the same assertion after multiplication by $e^{i\pi/4}$.
+If both signs of $Y/X$ occurred on sets of positive measure, the
+rotated squared components would fail to be proportional; when
+$c=1$, they would instead have disjoint nonzero supports.
+Thus one relative sign holds almost everywhere, proving constant
+phase. Here, as usual for a normed space of densities, equality in
+$\mathcal B$ identifies densities almost everywhere.
+
+Put $M=M_c$, $A=A(Q)$, $B=M(b)$ and $C=A(b)$.
+For real $b$, \eqref{r10:density-gn} gives
+\[
+ \mathfrak f(Q^2+tb^2)
+ \le\kappa(1+tB/M)^{\kappa-1}(A+tC),\qquad t\ge0.
+\]
+Differentiation at zero proves $\mathcal L_-(b)\ge0$.
+The homogeneity of $\mathfrak f$ gives
+$\langle V_Q,Q^2\rangle=\mathfrak f(Q^2)=\kappa A$,
+so $\mathcal L_-(Q)=0$.
+
+If $b\ne0$ belongs to the form kernel, the first-derivative bound
+is an equality. The supporting-functional bound for a norm power is
+\[
+ D\mathfrak f(Q^2)[b^2]
+ \le\kappa\mathfrak f(Q^2)^{(\kappa-1)/\kappa}
+                   \mathfrak f(b^2)^{1/\kappa}.
+\]
+Use $\mathfrak f(Q^2)=\kappa A$ and
+\eqref{r10:density-gn} for $b$. With $x=C/A$ and $y=B/M$,
+the kernel equality implies
+\[
+ x+(\kappa-1)y
+ \le\kappa x^{1/\kappa}y^{(\kappa-1)/\kappa}
+ \le x+(\kappa-1)y.
+\]
+The last inequality is weighted arithmetic--geometric mean.
+Hence $x=y$ and equality holds in the supporting-functional bound.
+Strict convexity makes the supporting hyperplane meet the unit
+sphere at one point, giving $b^2=yQ^2$. Since a nonnegative
+quadratic form has a linear kernel, apply this conclusion also to
+$b+Q$. Subtracting the squared identities proves $b=cQ$ with one
+real constant $c$.
+\end{proof}
+
+For the local critical power, take
+$\mathcal B=L^{\kappa}$ and $\kappa=1+m/N$.
+For a positive-type Hartree interaction, take the Hilbert space of
+densities in its interaction norm and $\kappa=2$.
+Lemma~\ref{lem:r10-density} itself asserts neither compactness of
+near-optimizers nor a dynamical theorem. Those require additional
+analytic information, supplied for the Hartree model below.
+
+\begin{corollary}[The local-power profile gap]
+For the homogeneous local-power class of Section~\ref{sec:r10-foundations},
+there is $\delta>0$ such that every negative-energy traveling profile
+has mass at least $M_c+\delta$. Consequently, when the negative-energy
+profile set is nonempty, $M_{\mathrm{tr}}>M_c$.
+\end{corollary}
+\begin{proof}
+For a real normalized optimizer $Q$, the preceding lemma with
+$\kappa=1+r$ gives the nonnegative phase form
+$L_Q=a(D)+r/M_c-|Q|^{2r}$ with kernel $\mathbb RQ$.
+Multiplication by $|Q|^{2r}$ is compact $H^s\to H^{-s}$:
+H\"older with two $L^p$ factors controls its tails, and local
+Rellich compactness controls its restriction to a ball. Hence
+$\langle h,L_Qh\rangle\ge c_Q\|h\|_{H^s}^2$ for real $h\perp Q$.
+If negative-energy profiles had masses tending to $M_c$, normalize
+$A(U_n)=1$. Sharp GN then gives $E(U_n)\to0$ and convergence to a
+normalized optimizer modulo translations and phase. Make its limit
+$Q$ real and choose phases so $Y_n=\operatorname{Im}U_n\perp Q$.
+Pohozaev gives $\omega_n\to r/M_c$, and strong $H^s$ convergence
+gives convergence of $|U_n|^{2r}$ in potential form norm.
+The imaginary equation and $P(U_n)=-2\int Y_n\nabla\operatorname{Re}U_n$
+give the exact identity
+\[
+ mE(U_n)=\langle Y_n,[a(D)+\omega_n-|U_n|^{2r}]Y_n\rangle
+ \ge\tfrac12c_Q\|Y_n\|_{H^s}^2\ge0
+\]
+for large $n$, a contradiction.
+\end{proof}
+
+\subsection{The critical Hartree class}
+
+Fix $1<m<N$, set $s=m/2$, and let $a$ be real, even, positive elliptic,
+$C^{N+2}$ away from zero, and homogeneous of degree $m$:
+\[
+ c|\xi|^m\le a(\xi)\le C|\xi|^m.
+\]
+Let $K$ be real, even, $C^1$ away from zero, homogeneous of degree
+$-m$, and satisfy
+\begin{equation}\label{r10:kernel-bounds}
+ |K(x)|+|x||\nabla K(x)|\le C_K|x|^{-m}.
+\end{equation}
+Assume its interaction form
+\[
+ \mathcal D(f,g)=\iint K(x-y)f(x)g(y)\,dx\,dy
+\]
+is positive definite on the real density space in use. More
+explicitly, it suffices that the Fourier transform of $K$ is a
+locally integrable, strictly positive function almost everywhere;
+then the Fourier representation of $\mathcal D$ gives the required
+inner product and identifies zero-norm densities with zero functions.
+Examples include $K(x)=|x|^{-m}$ and positive finite sums of
+$|B_jx|^{-m}$ for invertible real matrices $B_j$.
+Pointwise positivity of $K$ is not needed for the proof.
+
+Write
+\[
+ H(u)=\mathcal D(|u|^2,|u|^2),\qquad
+ A(u)=\int a(\xi)|\widehat u(\xi)|^2\,d\xi.
+\]
+Hardy--Littlewood--Sobolev and Sobolev interpolation give the finite
+sharp inequality
+\begin{equation}\label{r10:hartree-gn}
+ H(u)\le\frac{2}{M_c}M(u)A(u).
+\end{equation}
+Indeed, with $q=4N/(2N-m)$, the interaction is bounded by
+$C\|u\|_q^4$, and interpolation gives
+$\|u\|_q^4\le C M(u)A(u)$.
+
+Allow in addition any real-even symbol $b\ge0$ satisfying
+\begin{equation}\label{r10:hartree-bclass}
+ \xi\cdot\nabla b\le mb,\qquad
+ |\partial^\beta b(\xi)|\le C_{b,\beta}|\xi|^{-|\beta|}
+                    (1+|\xi|^m),\quad |\beta|\le N+2,
+\end{equation}
+with $b\in C^{N+2}(\mathbb R^N\setminus\{0\})$.
+There is no common bound on the individual constants.
+Define
+\[
+ B_b(u)=\int b(\xi)|\widehat u(\xi)|^2\,d\xi,
+ \qquad E_b(u)=\tfrac12[A(u)+B_b(u)]-\tfrac14H(u).
+\]
+
+\begin{theorem}[Nonlocal mass gap over the dispersion cone]
+\label{thm:r10-hartree-gap}
+There exists $\delta>0$, depending only on $N,m,a,K$, such that
+for every admissible $b$, every $\omega\in\mathbb R$ and
+$v\in\mathbb R^N$, a nonzero weak $H^{m/2}$ solution of
+\begin{equation}\label{r10:hartree-profile}
+ [a(D)+b(D)+\omega+iv\cdot\nabla]U-(K*|U|^2)U=0
+\end{equation}
+with $E_b(U)<0$ satisfies $M(U)\ge M_c+\delta$.
+The gap is uniform over the entire addition class, frequencies,
+and velocities. No radial symmetry, spatial moment, positivity or
+uniqueness of a ground state, or real-sector nondegeneracy is assumed.
+\end{theorem}
+
+\subsection{Compactness and the phase form}
+
+Normalized maximizing sequences for \eqref{r10:hartree-gn} are compact
+modulo translation and constant phase. Here are the details needed
+for this nonlocal statement. Normalize $M(u_n)=M_c$, $A(u_n)=1$, and
+$H(u_n)\to2$. Since $H(u_n)\le C\|u_n\|_q^4$, local vanishing in
+mass is impossible by the localized Sobolev inequality. A translated
+subsequence has a nonzero weak $H^s$ limit $Q$, with local strong
+$L^q$ convergence. Set $r_n=u_n-Q$.
+The product $Qr_n$ tends to zero in $L^{q/2}$ by local convergence
+and the small $L^q$ tail of $Q$.
+Moreover,
+\begin{equation}\label{r10:hartree-crossvanish}
+ \mathcal D(|Q|^2,|r_n|^2)\longrightarrow0.
+\end{equation}
+To see this, approximate $Q$ in $L^q$ by a smooth compactly supported
+function. Its potential is bounded and tends to zero at infinity,
+so multiplication by it is compact as a form $H^s\to H^{-s}$.
+The Hardy--Littlewood--Sobolev estimate controls the approximation
+error, proving \eqref{r10:hartree-crossvanish}. It also proves the
+nonlocal splitting
+\[
+ H(u_n)=H(Q)+H(r_n)+o(1).
+\]
+If $M_j,A_j$ are the limiting mass and kinetic contributions of the
+two pieces, \eqref{r10:hartree-gn} implies
+\[
+ M_c\le M_1A_1+M_2A_2,
+ \qquad M_1+M_2=M_c,\quad A_1+A_2=1,\quad M_1>0.
+\]
+Both masses cannot be positive. Thus $M_1=M_c$, $A_1=1$, proving
+strong convergence and attainment. The same argument covers
+sequences with these normalization limits and all sequences of
+normalized optimizers.
+
+Take $\mathcal B$ to be the completion of real densities under
+$\|\rho\|_{\mathcal B}^2=\mathcal D(\rho,\rho)$.
+Lemma~\ref{lem:r10-density} shows that every optimizer has constant
+phase. A real optimizer with $M(Q)=M_c$, $A(Q)=1$ satisfies
+\[
+ a(D)Q+\omega_*Q-(K*Q^2)Q=0,\qquad \omega_*=1/M_c.
+\]
+The real phase form
+\[
+ L_Q=a(D)+\omega_*-K*Q^2
+\]
+is nonnegative with kernel $\operatorname{span}_{\mathbb R}\{Q\}$.
+The potential is a compact form by the same approximation used in
+\eqref{r10:hartree-crossvanish}. Consequently
+\begin{equation}\label{r10:hartree-phasecoercivity}
+ \langle h,L_Qh\rangle\ge c_Q\|h\|_{H^s}^2
+ \quad\text{for real }h\perp Q.
+\end{equation}
+The constants can be taken uniform over normalized optimizers:
+otherwise translate a convergent sequence of optimizers and use
+form continuity to contradict \eqref{r10:hartree-phasecoercivity}
+for its limit. Form continuity follows from HLS, since
+$u\mapsto |u|^2$ is continuous $H^s\to L^{q/2}$.
+
+\subsection{Weak-profile regularity and identities}
+
+Every weak profile in \eqref{r10:hartree-profile} belongs to
+$L^\infty\cap H^{m+1}$. For the fixed $b,v$, choose $\Lambda$ large
+so that
+\[
+ a(\xi)+b(\xi)-v\cdot\xi+\Lambda\asymp1+|\xi|^m.
+\]
+The resolvent maps $L^p$ to $H^{m,p}$ for $1<p<\infty$ by the
+individual Mihlin bounds. Split $K$ into its parts inside and outside
+a fixed ball. The outside potential applied to $|U|^2$ is bounded.
+The inside kernel lies in $L^j$ for $1\le j<N/m$, while
+$|U|^2\in L^{N/(N-m)}$. Young's inequality therefore puts the
+inside potential in arbitrarily large finite $L^t$ spaces.
+Fix sufficiently large $t>N/m$. Multiplication by this potential,
+followed by the resolvent, improves a reciprocal integrability
+exponent by $m/N-1/t>0$. Starting from the energy Sobolev exponent,
+finitely many iterations give $U\in L^\infty$; intermediate
+exponents may be weakened to avoid endpoints. Bounded potential
+and linear terms improve at least as strongly and may be combined
+using interpolation with $L^2$.
+
+Now $K*|U|^2$ is bounded, giving $U\in H^m\subset H^1$.
+Also $\nabla |U|^2\in L^1\cap L^2$, and the near/far kernel split
+gives $\nabla(K*|U|^2)\in L^2+L^\infty$.
+Thus $(K*|U|^2)U\in H^1$, and the resolvent gives $H^{m+1}$.
+
+Put $\rho=|U|^2$, $f_R(x)=x\chi(x/R)$ with smooth compactly
+supported $\chi=1$ near zero, and
+$L_R=f_R\cdot\nabla+(\operatorname{div}f_R)/2$.
+Symmetrized integration by parts gives
+\begin{align}
+ &\operatorname{Re}\int(K*\rho)U\,\overline{L_RU}\,dx\notag\\
+ &\quad=-\frac14\iint\rho(x)\rho(y)
+       [f_R(x)-f_R(y)]\cdot\nabla K(x-y)\,dx\,dy
+ \longrightarrow\frac m4H(U).
+ \label{r10:hartree-cutoff}
+\end{align}
+One can first regularize or exclude the diagonal. The omitted
+boundary term vanishes because $m<N$ after symmetrization.
+The uniform Lipschitz bound for $f_R$ and
+\eqref{r10:kernel-bounds} dominate the integrand by
+$C\rho(x)\rho(y)|x-y|^{-m}$, integrable by HLS, and justify the
+limit without a spatial moment.
+
+For clarity, the kinetic commutator used here has kernel, up to
+Fourier normalization,
+\[
+ \frac i2[c(\xi)-c(\eta)](\xi+\eta)\cdot
+                    \widehat f_R(\xi-\eta),\qquad c=a+b.
+\]
+The symbol assumptions give
+\[
+ |c(\xi)-c(\eta)||\xi+\eta|
+ \le C|\xi-\eta|[1+(|\xi|+|\eta|)^m].
+\]
+Divide by the two energy weights and use
+$\widehat f_R(k)=R^{N+1}\widehat f(Rk)$ to get an integrable kernel
+majorant with a bound independent of $R$. The limiting form for
+Schwartz functions is $\int\xi\cdot\nabla c\,|\widehat U|^2$;
+density extends it to the energy space. The degree-one drift term
+has limit $-v\cdot P(U)$, where
+$P(U)=\int\xi|\widehat U|^2$ is finite because $m>1$.
+
+Abbreviate $A=A(U)$, $B=B_b(U)$, $M=M(U)$ and $E=E_b(U)$, and set
+\[
+ D_b=\int[mb(\xi)-\xi\cdot\nabla b(\xi)]
+                    |\widehat U(\xi)|^2\,d\xi\ge0.
+\]
+Testing by $L_RU$, taking the limit, and testing separately by $U$
+gives
+\begin{equation}\label{r10:hartree-identities}
+ v\cdot P=2mE-D_b,
+ \qquad \omega M=A+B+(2m-4)E-D_b.
+\end{equation}
+Write $U=X+iY$ with real components and put
+$\widetilde\omega=\omega+D_b/M$.
+The imaginary profile equation, together with
+$P(U)=-2\int Y\nabla X$, yields the exact shifted identity
+\begin{equation}\label{r10:hartree-shift}
+ \begin{aligned}
+ mE={}&\langle Y,[a(D)+\widetilde\omega-K*|U|^2]Y\rangle
+       +B_b(Y)\\
+     &+D_b\left(\frac12-\frac{M(Y)}M\right),\qquad
+ \widetilde\omega M=A+B+(2m-4)E.
+ \end{aligned}
+\end{equation}
+
+\subsection{Proof of the uniform nonlocal gap}
+
+\begin{proof}[Proof of Theorem~\ref{thm:r10-hartree-gap}]
+Negative energy and \eqref{r10:hartree-gn} require $M>M_c$.
+If the gap failed, take profiles with $M(U_n)\to M_c$ and negative
+energies, allowing arbitrary admissible $b_n,\omega_n,v_n$.
+The critical scaling
+\[
+ U_\lambda(x)=\lambda^{N/2}U(\lambda x),\quad
+ b_\lambda(\xi)=\lambda^m b(\xi/\lambda),\quad
+ \omega_\lambda=\lambda^m\omega,\quad
+ v_\lambda=\lambda^{m-1}v
+\]
+preserves the class, mass, and profile equation, and multiplies
+energy by $\lambda^m$. Normalize $A(U_n)=1$.
+Writing $d_n=M(U_n)/M_c-1$, the sharp bound gives
+\[
+ 0\le B_{b_n}(U_n)<d_n,\qquad
+ -d_n/2\le E_n<0,\qquad H(U_n)\longrightarrow2.
+\]
+Compactness yields, after translations and phases, strong
+$H^s$ convergence to a real normalized optimizer $Q$.
+A further phase makes $Y_n=\operatorname{Im}U_n$ orthogonal to $Q$.
+Equation~\eqref{r10:hartree-shift} gives
+$\widetilde\omega_n\to1/M_c$ even if $D_{b_n}$ is unbounded.
+HLS gives convergence of the Hartree potentials in form norm.
+By \eqref{r10:hartree-phasecoercivity}, for large $n$,
+\[
+ \langle Y_n,[a(D)+\widetilde\omega_n-K*|U_n|^2]Y_n\rangle
+       \ge c\|Y_n\|_{H^s}^2.
+\]
+The other terms in \eqref{r10:hartree-shift} are nonnegative,
+since $M(Y_n)/M(U_n)\to0$. Its right side is therefore
+nonnegative, contradicting $mE_n<0$.
+\end{proof}
+
+The conclusion extends a local attraction mechanism to a nonlocal
+density interaction. It is a profile theorem, not a classification
+of arbitrary global trajectories. The positive-density geometry is
+an explicit hypothesis; arbitrary matrix couplings, non-even
+symbols, and indefinite interaction kernels are not covered.

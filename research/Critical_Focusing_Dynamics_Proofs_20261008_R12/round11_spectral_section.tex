@@ -1,0 +1,307 @@
+\section{The spectral pair created by slow translation}
+\label{sec:r11-spectral}
+
+The preceding velocity--momentum identities determine the inertia of the
+charge Hessian. We now identify the pair of spectral values that emerges
+from the critical scaling mode, including its leading coefficient. The
+result assumes real-profile nondegeneracy; this hypothesis is not supplied
+by phase coercivity alone.
+
+Let $a$ be positive, elliptic, real-even and homogeneous of degree $m>1$.
+Consider
+\[
+ iu_t=a(D)u-|u|^{2m/N}u,
+ \qquad
+ a(D)U+\omega U+iv\cdot\nabla U-|U|^{2m/N}U=0.
+\]
+All Hilbert spaces in this section are real unless explicitly complexified.
+Let $Q=U_{1,0}$ be a real sharp ground wave and set
+\[
+ \Lambda Q=\frac N2Q+x\cdot\nabla Q,\qquad
+ L_-=a(D)+1-|Q|^{2m/N},\qquad
+ L_+=a(D)+1-\left(1+\frac{2m}{N}\right)|Q|^{2m/N}.
+\]
+We impose the following hypotheses.
+\begin{enumerate}
+\item The functions $\partial_jQ$ and $\Lambda Q$ have the regularity and
+spatial decay needed to differentiate translations and critical scaling
+in $L^2$ and in the profile equation. In particular,
+$L_+\Lambda Q=-mQ$ holds in the operator sense.
+\item $L_-\geq0$, $\ker L_-=\mathbb RQ$, and $L_-^{-1}$ is bounded
+on $Q^\perp$. Moreover
+$\ker L_+=\operatorname{span}\{\partial_jQ:1\leq j\leq N\}$,
+and $L_+$ has a bounded inverse on that kernel's orthogonal complement.
+\item There is a $C^1$ local profile branch $U_{\omega,v}$, closed under
+critical scaling up to phase and translation. Its reduced action
+$d(\omega,v)=E(U_{\omega,v})+\omega M(U_{\omega,v})/2
+-v\cdot P(U_{\omega,v})/2$ is $C^2$ and satisfies
+$d_\omega=M/2$ and $d_v=-P/2$. Profile differentiation is valid, and in
+a translation gauge
+\[
+ D_{v_j}U_{1,0}=-iL_-^{-1}\partial_jQ.
+\]
+\item On the real space $\mathcal H=L^2(\mathbb R^N;\mathbb C)$ the
+real action Hessians $\mathcal L_v$ are selfadjoint on a common dense
+domain. Their kernels are exactly
+\[
+ K_v=\operatorname{span}_{\mathbb R}
+       \{iU_{1,v},\partial_1U_{1,v},\ldots,\partial_NU_{1,v}\}.
+\]
+These kernel bases vary continuously in $\mathcal H$. The inverse of
+$\mathcal L_v$ on $K_v^\perp$, extended by zero on $K_v$, exists and is
+norm-continuous as a bounded operator on $\mathcal H$ for small $v$.
+\end{enumerate}
+The last hypothesis explicitly includes a uniform complementary spectral
+gap. Common-domain operator continuity, or suitable norm-resolvent
+continuity with an isolated kernel of fixed dimension, provides standard
+ways to verify it. It is not being inferred for every dispersion symbol.
+
+Define the real matrix and vector
+\[
+ T_{ij}=\langle\partial_iQ,L_-^{-1}\partial_jQ\rangle,
+ \qquad c_j=\langle\Lambda Q,L_-^{-1}\partial_jQ\rangle,
+\]
+and the scalar
+\begin{equation}\label{eq:r11-spectral-D}
+ \mathcal D_Q=
+ \langle\Lambda Q,L_-^{-1}\Lambda Q\rangle-c^TT^{-1}c.
+\end{equation}
+The inverse of $L_-$ always acts on $Q^\perp$.
+
+\begin{theorem}[Small-velocity spectral asymptotics]
+\label{thm:r11-spectral-pair}
+Under the four hypotheses above, $T$ is positive definite and
+$\mathcal D_Q>0$. If $m\ne2$, then for every sufficiently small nonzero
+$v$, the nonzero spectrum of
+\[
+ \mathcal A_v=J\mathcal L_v,\qquad J=-i,
+\]
+in a fixed neighborhood of zero consists of exactly one simple pair
+$\lambda_\pm(v)$, satisfying
+\begin{equation}\label{eq:r11-lambda-square}
+ \lambda_\pm(v)^2
+  =\frac{(m-2)v^TTv}{\mathcal D_Q}+o(|v|^2).
+\end{equation}
+For $m>2$ this pair is real and
+\[
+ \lambda_\pm(v)=
+ \pm\sqrt{\frac{(m-2)v^TTv}{\mathcal D_Q}}+o(|v|).
+\]
+In particular, the wave is spectrally unstable. For $1<m<2$ the pair is
+purely imaginary, with
+\[
+ \lambda_\pm(v)=
+ \pm i\sqrt{\frac{(2-m)v^TTv}{\mathcal D_Q}}+o(|v|).
+\]
+The latter assertion concerns the pair near zero and does not, by itself,
+exclude unstable spectrum elsewhere.
+\end{theorem}
+
+\begin{proof}
+Phase coercivity gives $T>0$: a nonzero directional derivative of a
+nonzero $L^2$ function cannot vanish. Put
+\[
+ \Lambda_\perp Q=
+ \Lambda Q-\sum_j(T^{-1}c)_j\partial_jQ.
+\]
+Then
+\[
+ \mathcal D_Q=
+ \langle\Lambda_\perp Q,L_-^{-1}\Lambda_\perp Q\rangle\geq0.
+\]
+Equality would imply
+$(x-\zeta)\cdot\nabla Q+NQ/2=0$ for some $\zeta$.
+Thus $Q$ would be fixed by the mass-preserving dilation group about
+$\zeta$. A nonzero function homogeneous of degree $-N/2$ cannot belong
+to $L^2$: its radial mass integral is proportional to $\int_0^\infty dr/r$.
+Hence $\mathcal D_Q>0$. The same Schur-complement formula shows that
+$\mathcal D_Q$ is unchanged if a linear combination of translations is
+added to $\Lambda Q$, so it is independent of the spatial center.
+
+Write $U_v=U_{1,v}$ and
+$g_0=iU_v$, $g_j=\partial_jU_v$. Their span $K_v$ is isotropic:
+\begin{equation}\label{eq:r11-isotropic-kernel}
+ \langle g_i,Jg_j\rangle=0.
+\end{equation}
+For the phase--translation pairings this follows from integration of a
+mass derivative. For two translations it follows from commutation of
+translation charges, or directly from the Fourier representation of
+$\langle\partial_iU,-i\partial_jU\rangle_{\mathbb R}$.
+
+Let $\Pi_v$ project orthogonally onto $K_v$, let $\Pi_c=I-\Pi_v$, and
+write $\mathcal L_c=\mathcal L_v|_{K_v^\perp}$ and
+$J_c=\Pi_cJ\Pi_c$. The operator
+\[
+ R_v(\lambda)=(\mathcal L_c+\lambda J_c)^{-1}
+\]
+is extended by zero on $K_v$. A Neumann series and hypothesis 4 show
+that this inverse is analytic for $|\lambda|<\rho$, with a common
+$\rho>0$ for small $v$. The eigenvalue problem is considered on the
+complexification of $\mathcal H$; real pairings below extend bilinearly.
+
+The equation $J\mathcal L_v\psi=\lambda\psi$ is equivalent to
+$(\mathcal L_v+\lambda J)\psi=0$. Decompose $\psi=k+w$ with
+$k\in K_v$ and $w\in K_v^\perp$. For $\lambda\ne0$ the complementary
+equation gives
+\[
+ w=-\lambda R_v(\lambda)Jk.
+\]
+By \eqref{eq:r11-isotropic-kernel}, the kernel equation is therefore
+exactly $D(\lambda,v)z=0$, where
+\begin{equation}\label{eq:r11-reduced-matrix}
+ D_{ij}(\lambda,v)
+  =\langle g_i,J R_v(\lambda)Jg_j\rangle,
+ \qquad k=\sum_{j=0}^Nz_jg_j.
+\end{equation}
+The common factor suppressed in this equation is $-\lambda^2$.
+For $0<|\lambda|<\rho$, analytic block elimination therefore preserves
+the eigenvalues and their algebraic multiplicities. Selfadjointness of
+$\mathcal L_c$ and skew-adjointness of $J$ imply
+\begin{equation}\label{eq:r11-reduced-transpose}
+ D(-\lambda,v)=D(\lambda,v)^T.
+\end{equation}
+
+Profile differentiation yields
+\[
+ \mathcal L_v\partial_\omega U=-U,
+ \qquad
+ \mathcal L_v\partial_{v_j}U=-i\partial_jU=Jg_j.
+\]
+Components of the parameter derivatives in $K_v$ do not contribute,
+by \eqref{eq:r11-isotropic-kernel}. Consequently
+\[
+ D(0,v)=C d''(1,v)C,
+ \qquad C=\operatorname{diag}(1,-I_N).
+\]
+The lower-right block is $D_{vv}(0,v)=-B(1,v)/2$, where
+$B=D_vP$. The first derivative of the branch gives
+\[
+ P(U_v)=2Tv+o(|v|),\qquad B(1,v)=2T+o(1).
+\]
+Thus the lower-right block stays invertible for small $\lambda,v$.
+Take its scalar Schur complement $f(\lambda,v)$. Identity
+\eqref{eq:r11-reduced-transpose} makes $f$ even in $\lambda$.
+It is consequently analytic in $z=\lambda^2$ in a common disk, with
+coefficients continuous in $v$.
+
+The exact scaling identity for the reduced action gives
+\begin{align}
+ f(0,v)
+ &=\frac{P^TB^{-1}P-(m-1)v\cdot P}{2m^2}\notag\\
+ &=\frac{2-m}{m^2}v^TTv+o(|v|^2).
+ \label{eq:r11-f-zero}
+\end{align}
+For completeness, the identity follows by differentiating the scaling
+laws for the charges. With $H=d''$ and
+$D_*=(m\omega,(m-1)v)^T$, they give
+$HD_*=(0,-P/2)^T$ and $H_{vv}=-B/2$. Eliminating the velocity block
+shows that its scalar Schur complement is
+$[P^TB^{-1}P-(m-1)v\cdot P]/(2m^2\omega^2)$.
+This uses no differentiated second-order remainder for the profile.
+
+It remains to compute the coefficient of $\lambda^2$ at $v=0$.
+Let $R_0$ be the $L^2$-orthogonal projection of $\Lambda Q/m$ off the
+translation kernel, and put $Z_j=L_-^{-1}\partial_jQ$.
+At $v=0$ the two real blocks give
+\[
+ \mathcal L_0=\operatorname{diag}(L_+,L_-),
+ \qquad J(h,b)=(b,-h),
+\]
+\[
+ \mathcal L_c^{-1}Jg_0=(-R_0,0),
+ \qquad \mathcal L_c^{-1}Jg_j=(0,-Z_j).
+\]
+Expanding the exact resolvent in \eqref{eq:r11-reduced-matrix}, and
+writing $b_j=\langle R_0,Z_j\rangle$, gives
+\begin{align*}
+ D_{00}(\lambda,0)
+  &=\lambda^2\langle R_0,L_-^{-1}R_0\rangle+O(\lambda^4),\\
+ D_{0v}(\lambda,0)&=\lambda b^T+O(\lambda^2),\\
+ D_{v0}(\lambda,0)&=-\lambda b+O(\lambda^2),\\
+ D_{vv}(\lambda,0)&=-T+O(\lambda).
+\end{align*}
+The scalar Schur complement is even. Its coefficient is therefore
+\[
+ \partial_z f(0,0)=
+ \langle R_0,L_-^{-1}R_0\rangle-b^TT^{-1}b
+ =\frac{\mathcal D_Q}{m^2}>0.
+\]
+The final equality uses invariance of the Schur expression under
+addition of translations to the scaling derivative. Analyticity with
+a common radius and continuity in $v$ now give
+\[
+ f(\lambda,v)=\frac{2-m}{m^2}v^TTv+o(|v|^2)
+ +\lambda^2\left(\frac{\mathcal D_Q}{m^2}+o(1)\right)
+ +O(\lambda^4),
+\]
+where the last remainder is uniform for small $v$.
+
+The analytic scalar equation, regarded as an equation in $z=\lambda^2$,
+has one simple real root near zero, by
+$\partial_zf(0,0)>0$ and uniform analytic inversion. That root obeys
+\eqref{eq:r11-lambda-square}. Its sign is the sign of $m-2$, since
+$T>0$, and it is nonzero for nonzero sufficiently small $v$.
+Its two square roots are simple because
+$\partial_\lambda f=2\lambda\partial_zf\ne0$ there.
+The invertible complementary and velocity blocks exclude further
+nonzero spectrum in a sufficiently small fixed neighborhood.
+\end{proof}
+
+\begin{remark}[Center, frequency, and linear time scale]
+If $Q(-x)=Q(x)$, then $c=0$ by parity. Without this symmetry, omitting
+$c^TT^{-1}c$ gives an incorrect coefficient in general.
+Critical scaling also gives the exact spectral covariance
+\[
+ \lambda(\omega,v)=
+ \omega\lambda\bigl(1,v\omega^{-(m-1)/m}\bigr).
+\]
+Thus for $m>2$ and fixed $\omega>0$,
+\[
+ \lambda_+(\omega,v)=\omega^{1/m}
+ \sqrt{\frac{(m-2)v^TTv}{\mathcal D_Q}}+o(|v|).
+\]
+The reciprocal growth rate is of order $|v|^{-1}$. This is a statement
+about linear exponential growth, not an established nonlinear escape
+time. When $m=2$, the displayed leading coefficient vanishes; a general
+homogeneous degree-two symbol need not be a quadratic form, so an exact
+Galilean degeneracy is not asserted.
+\end{remark}
+
+\begin{corollary}[Critical Hartree interactions]
+Theorem~\ref{thm:r11-spectral-pair} holds, with the same coefficient,
+for the critical Hartree flow
+\[
+ iu_t=a(D)u-(K*|u|^2)u,
+ \qquad K(x)=|x|^{-m},\quad 1<m<N,
+\]
+whenever its real ground wave and local branch satisfy the same four
+hypotheses with
+\[
+ L_-=a(D)+1-(K*Q^2),\qquad
+ L_+h=L_-h-2Q\bigl(K*(Qh)\bigr).
+\]
+It also holds for a positive-type anisotropic interaction of the same
+homogeneity under those operator and regularity assumptions.
+\end{corollary}
+\begin{proof}
+The proof above uses the nonlinearity through phase and translation
+invariance, conjugation symmetry, critical scaling, and the stated
+real-block operators. These properties hold for the Hartree energy.
+In particular $L_+\Lambda Q=-mQ$, the parameter equations and the
+charge-scaling identities are unchanged. No step in the resolvent
+reduction uses locality of $L_+$. Thus the proof applies verbatim.
+\end{proof}
+
+\begin{remark}[Relation to established instability theory]
+The general mechanism of a spectral pair leaving zero at charge
+Hessian degeneracy belongs to established Hamiltonian bifurcation
+theory. Here the additional calculation is its coefficient for
+mass-critical translation branches, including the coupling to the
+translation modes. The theorem proves spectral instability for
+$m>2$ under its explicit assumptions. Nonlinear orbital instability
+requires a sufficiently differentiable local flow and the associated
+linear evolution bounds or unstable-manifold construction in a
+specified phase space; it is not inferred here for every admissible
+symbol and dimension. Likewise, real-profile nondegeneracy is not
+proved by this section.
+\end{remark}

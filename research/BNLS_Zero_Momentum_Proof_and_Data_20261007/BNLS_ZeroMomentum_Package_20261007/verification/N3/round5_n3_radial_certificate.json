@@ -1,0 +1,26 @@
+{
+  "profile_sha256": "5d2a86dc991fe960e7036ca651634c556ded9da4aa7d1ae357ab5f4f656d526b",
+  "precision_bits": 128,
+  "box_R": 64,
+  "linear_potential_intervals": 65536,
+  "sine_rank": 640,
+  "potential_sup": "[477.0153991989530065124470495114961904 +/- 4.59e-35]",
+  "potential_second_derivative_bound": "[3665.982088564488520993283704108213340 +/- 2.51e-34]",
+  "potential_Linfty_interpolation_error": "[0.00043701912028366190445343061734535853150 +/- 4.03e-42]",
+  "whole_space_box_kernel_error": "[6.1612393507167209908828845742241735344e-31 +/- 2.99e-69]",
+  "high_frequency_operator_error": "[0.00048665393947053311550198203798690351897 +/- 9.14e-43]",
+  "eigenvector_orthogonality_Frobenius": "[7.8193216476999056261550807067121961002e-13 +/- 2.65e-51]",
+  "eigensystem_residual_Frobenius": "[3.2263801507332293837848400988508001968e-14 +/- 2.41e-52]",
+  "finite_matrix_spectral_error": "[3.2263801507344907889926577198539017244e-14 +/- 2.97e-52]",
+  "total_spectral_error": "[0.00092367305978645882146275756383831256274 +/- 2.23e-42]",
+  "finite_matrix_gap_at_1": "[0.043229945908928812947635833552340045571 +/- 3.28e-40]",
+  "whole_space_gap_lower": "[0.042306272849142354126173075988501733008 +/- 2.30e-40]",
+  "inverse_norm_lt25": true,
+  "eigenvalues_near_one": [
+    0.5066807519874229,
+    0.739429207716437,
+    0.9567700540910712
+  ],
+  "seconds": 7.006559610366821,
+  "python_flint_version": "0.9.0"
+}

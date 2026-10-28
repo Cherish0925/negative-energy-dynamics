@@ -1,0 +1,515 @@
+\section{A uniform mass gap for positive subhomogeneous additions}
+\label{sec:cone}
+
+Fix \(N\ge1\), \(m>1\), and a real-even symbol
+\(a\in C^{N+2}(\mathbb R^N\setminus\{0\})\) such that
+\begin{equation}\label{cone:principal}
+a(t\xi)=t^m a(\xi),\qquad
+c|\xi|^m\le a(\xi)\le C|\xi|^m
+\end{equation}
+for \(t>0\) and positive constants \(c,C\). Put
+\[
+s=\frac m2,\qquad r=\frac mN,\qquad p=2+2r,
+\qquad A_a(f)=\int a(\xi)|\widehat f(\xi)|^2\,d\xi.
+\]
+The Fourier transform is unitary. Define \(M(f)=\|f\|_2^2\) and let
+\(M_{c,a}\) be the sharp critical mass determined by
+\begin{equation}\label{cone:gn}
+\|f\|_p^p\le\frac p2
+\left(\frac{M(f)}{M_{c,a}}\right)^r A_a(f),
+\qquad f\in H^{m/2}(\mathbb R^N;\mathbb C).
+\end{equation}
+The reference mass in this section belongs to the principal
+homogeneous symbol \(a\).
+
+\subsection{The two admissible classes}
+
+An added dispersion symbol \(b\) is admissible if it is real and even,
+belongs to \(C^{N+2}(\mathbb R^N\setminus\{0\})\), and satisfies
+\begin{align}
+b(\xi)&\ge0,\qquad \xi\cdot\nabla b(\xi)\le m b(\xi),
+&&\xi\ne0,\label{cone:dispersion-sign}\\
+|\partial^\beta b(\xi)|
+&\le C_{b,\beta}|\xi|^{-|\beta|}(1+|\xi|^m),
+&&|\beta|\le N+2,\quad \xi\ne0.\label{cone:dispersion-regularity}
+\end{align}
+Each constant \(C_{b,\beta}\) must be finite for its individual symbol;
+there is no uniform bound on these constants across the class.
+There is no lower bound on \(\xi\cdot\nabla b\). Values at the single
+frequency zero do not affect the multiplier.
+
+An added nonlinear energy density \(G\) is admissible if
+\begin{equation}\label{cone:nonlinear-sign}
+G\in C^1([0,\infty)),\quad G(0)=0,\quad G\ge0,\qquad
+0\le\rho G'(\rho)\le(1+r)G(\rho)\quad(\rho>0),
+\end{equation}
+and the map
+\begin{equation}\label{cone:nonlinear-regularity}
+z\longmapsto g(|z|^2)z,\qquad g=2G',
+\end{equation}
+is locally \(C^1\) on \(\mathbb C\simeq\mathbb R^2\).
+This last requirement is separate from the inequalities in
+\eqref{cone:nonlinear-sign}; it supplies the Sobolev chain rule.
+These assumptions imply, for a finite constant depending on \(G\),
+\begin{equation}\label{cone:nonlinear-growth}
+0\le G(\rho)\le C_G(\rho+\rho^{1+r}),\qquad
+0\le g(\rho)\le C_G(1+\rho^r).
+\end{equation}
+For \(\rho\le1\) this follows from the continuity of \(G'\) and
+\(G(0)=0\). For \(\rho\ge1\), integrate
+\(\rho G'(\rho)\le(1+r)G(\rho)\), or apply the differential inequality
+directly if \(G(1)=0\), and then use it to bound \(G'\).
+
+Write
+\[
+B_b(f)=\int b(\xi)|\widehat f(\xi)|^2\,d\xi,\qquad
+F_G(f)=\int G(|f|^2)\,dx,
+\]
+and define
+\begin{equation}\label{cone:energy}
+E_{a,b,G}(f)=\frac12\bigl(A_a(f)+B_b(f)\bigr)
+-\frac1p\|f\|_p^p+F_G(f).
+\end{equation}
+All these expressions are finite on \(H^{m/2}\) by
+\eqref{cone:dispersion-regularity},
+\eqref{cone:nonlinear-growth}, and Sobolev interpolation.
+
+\begin{theorem}[Uniform mass gap over the full addition classes]
+\label{cone:gap}
+There exists \(\varepsilon_{N,m,a}>0\) such that, for every admissible
+\(b,G\), every \(\omega\in\mathbb R\), and every \(v\in\mathbb R^N\),
+each nonzero weak \(H^{m/2}\) solution of
+\begin{equation}\label{cone:profile}
+(a(D)+b(D))U+\omega U+iv\cdot\nabla U
+-|U|^{2r}U+g(|U|^2)U=0
+\end{equation}
+with \(E_{a,b,G}(U)<0\) satisfies
+\[
+M(U)\ge M_{c,a}+\varepsilon_{N,m,a}.
+\]
+The gap is independent of the coefficients, derivative bounds,
+and detailed shapes of the admissible additions. It is also
+independent of frequency and velocity.
+\end{theorem}
+
+The theorem concerns traveling profiles. It does not assert their
+existence for every admissible model, nor does it assert a
+decomposition or classification of arbitrary global solutions.
+The proof does not require radiality, finite spatial moments,
+uniqueness of the principal optimizer, or real-sector
+nondegeneracy of that optimizer.
+
+\subsection{Regularity and the cutoff dilation identity}
+
+\begin{lemma}[Individual profile regularity]\label{cone:regularity}
+Every weak \(H^{m/2}\) profile in \eqref{cone:profile} belongs to
+\(L^\infty\cap H^{m+1}\).
+\end{lemma}
+\begin{proof}
+For the fixed symbol \(b\) and velocity \(v\), choose \(\Lambda>0\)
+large enough that
+\[
+a(\xi)+b(\xi)-v\cdot\xi+\Lambda\asymp1+|\xi|^m.
+\]
+Here \(b\ge0\), ellipticity, and \(m>1\) give the lower bound,
+and \eqref{cone:dispersion-regularity} gives the upper bound.
+The resolvent
+\[
+R_\Lambda=(a(D)+b(D)+iv\cdot\nabla+\Lambda)^{-1}
+\]
+maps \(L^q\) into the Bessel potential space \(H^{m,q}\) for every
+\(1<q<\infty\). Indeed the multiplier
+\[
+\frac{\langle\xi\rangle^m}
+{a(\xi)+b(\xi)-v\cdot\xi+\Lambda}
+\]
+satisfies the Mihlin bounds by
+\eqref{cone:dispersion-regularity} and homogeneity of \(a\).
+Constants may depend on the individual model and velocity.
+
+The equation takes the form
+\[
+U=R_\Lambda\bigl(|U|^{2r}U-g(|U|^2)U\bigr)
++(\Lambda-\omega)R_\Lambda U.
+\]
+The nonlinear expression has magnitude at most
+\(C(|U|+|U|^{1+2r})\) by \eqref{cone:nonlinear-growth}.
+For completeness, when \(N>m\), start with
+\(q_0=2N/(N-m)\) and reciprocal exponent
+\(\beta_0=1/2-m/(2N)\). On \(\{|U|>1\}\) the nonlinear
+expression is bounded by \(C|U|^{1+2r}\), and on
+\(\{|U|\le1\}\) by \(C|U|\). Apply the resolvent to these
+two terms separately. Sobolev embedding and interpolation give
+the improvement
+\[
+\beta_{j+1}=(1+2r)\beta_j-r
+\]
+until an exponent exceeds the threshold for boundedness. The
+linear contribution has the better reciprocal output exponent
+\(\beta_j-r\) and remains in \(L^2\); interpolation gives a common
+output exponent for the two terms. The ideal iterates are
+\(\beta_j=1/2-(r/2)(1+2r)^j\), so finitely many iterations
+suffice. All nonlinear input exponents exceed one since
+\(q_0>1+2r\), and intermediate exponents can be weakened slightly
+to avoid endpoints. If \(N=m\), the initial energy space embeds
+in every finite \(L^q\), and one starts with sufficiently large
+\(q\); if \(N<m\), it already embeds into \(L^\infty\).
+Thus \(U\in L^\infty\). The right-hand nonlinearities are now in
+\(L^2\), giving \(U\in H^m\subset H^1\). The local \(C^1\)
+assumption \eqref{cone:nonlinear-regularity} and the corresponding
+property of \(z\mapsto|z|^{2r}z\) imply that both nonlinearities
+belong to \(H^1\). A final resolvent application gives
+\(U\in H^{m+1}\).
+\end{proof}
+
+Choose \(\chi\in C_c^\infty(\mathbb R^N;\mathbb R)\) equal to one
+near zero, and put
+\[
+f_R(x)=x\chi(x/R)=R f(x/R),\qquad
+L_R=f_R\cdot\nabla+\frac12\operatorname{div}f_R,\qquad R\ge1.
+\]
+The operator \(L_R\) is skew-symmetric on \(L^2\).
+
+\begin{lemma}[Nonhomogeneous cutoff commutator]\label{cone:commutator}
+The commutators \([b(D),L_R]\) are uniformly bounded in \(R\)
+as forms \(H^{m/2}\to H^{-m/2}\). For every \(u\in H^{m/2}\),
+\begin{equation}\label{cone:commutator-limit}
+\langle u,[b(D),L_R]u\rangle
+\longrightarrow
+\int \xi\cdot\nabla b(\xi)|\widehat u(\xi)|^2\,d\xi.
+\end{equation}
+The bound may depend on the individual symbol \(b\).
+\end{lemma}
+\begin{proof}
+Apart from the fixed Fourier normalization, the kernel is
+\[
+\frac i2\bigl(b(\xi)-b(\eta)\bigr)
+(\xi+\eta)\cdot\widehat f_R(\xi-\eta).
+\]
+The zeroth and first derivative bounds in
+\eqref{cone:dispersion-regularity} imply
+\begin{equation}\label{cone:kernel-estimate}
+|b(\xi)-b(\eta)|\,|\xi+\eta|
+\le C_b|\xi-\eta|\bigl(1+(|\xi|+|\eta|)^m\bigr).
+\end{equation}
+To see this, write \(\rho=|\xi|+|\eta|\). If
+\(|\xi-\eta|\ge\rho/4\), use the zeroth-order bound.
+Otherwise the segment between the two frequencies has magnitude
+comparable to \(\rho\), and the first derivative bound and
+mean-value theorem apply.
+
+For \(k=\xi-\eta\), divide \eqref{cone:kernel-estimate} by
+\(\langle\xi\rangle^{m/2}\langle\eta\rangle^{m/2}\).
+The result is bounded by \(C_b|k|\langle k\rangle^{m/2}\);
+this follows from the inequalities for
+\(\langle\xi\rangle/\langle\eta\rangle\) and its reciprocal
+by a constant times \(\langle k\rangle\).
+Since \(\widehat f_R(k)=R^{N+1}\widehat f(Rk)\),
+\[
+\int |k|\langle k\rangle^{m/2}|\widehat f_R(k)|\,dk
+=\int |\ell|\langle\ell/R\rangle^{m/2}
+|\widehat f(\ell)|\,d\ell\le C_f.
+\]
+Young's inequality proves the uniform form bound.
+
+For Schwartz \(u\), \(L_Ru\to Lu\) in \(L^2\), where
+\(L=x\cdot\nabla+N/2\). Thus the left side of
+\eqref{cone:commutator-limit} converges to
+\(2\operatorname{Re}\langle b(D)u,Lu\rangle\).
+Fourier integration by parts gives the asserted integral. One may
+first exclude a ball of radius \(\delta\) around zero: \(b\)
+is bounded there by \eqref{cone:dispersion-regularity}, so the
+boundary term is \(O(\delta^N)\); the term at infinity vanishes
+by Schwartz decay. Finally
+\[
+|\xi\cdot\nabla b(\xi)|\le C_b(1+|\xi|^m)
+\]
+by the same derivative assumption. Density and the uniform form
+bound extend the limit to \(H^{m/2}\). This argument does not use
+a lower radial-slope bound.
+\end{proof}
+
+The identical argument applies to \(a\), giving limit \(mA_a(u)\)
+by homogeneity. Applied to \(iv\cdot\nabla\), it gives limit
+\(-v\cdot P(u)\), where
+\[
+P(u)=\int \xi|\widehat u(\xi)|^2\,d\xi.
+\]
+This momentum is finite because \(m>1\). The degree-one
+commutator is bounded on \(H^{1/2}\), and therefore on the
+energy space.
+
+\subsection{Exact defects and the shifted frequency}
+
+For a profile \(U\), abbreviate
+\[
+M=M(U),\quad A=A_a(U),\quad B=B_b(U),\quad
+F=F_G(U),\quad E=E_{a,b,G}(U),\quad \rho=|U|^2.
+\]
+Define the two dilation defects
+\begin{align}
+D_b&=\int\bigl(mb(\xi)-\xi\cdot\nabla b(\xi)\bigr)
+|\widehat U(\xi)|^2\,d\xi\ge0,\label{cone:defect-b}\\
+K_G&=N\int\bigl(\rho G'(\rho)-G(\rho)\bigr)\,dx,\qquad
+D_G=mF-K_G\ge0.\label{cone:defect-G}
+\end{align}
+Each defect is finite. In fact
+\(-NF\le K_G\le mF\), so \(0\le D_G\le(m+N)F\).
+There is no required estimate of \(D_b\) by \(B\), uniformly
+over the dispersion class.
+
+\begin{lemma}[Profile identities]\label{cone:identities}
+Every profile obeys
+\begin{align}
+v\cdot P(U)&=2mE-D_b-2D_G,\label{cone:pohozaev}\\
+\omega M&=r(A+B)+(2m-p)E-D_b-\vartheta_ND_G,
+\qquad \vartheta_N=2(1-1/N).\label{cone:frequency}
+\end{align}
+Writing \(U=X+iY\) with real \(X,Y\), one has
+\begin{equation}\label{cone:phase-energy}
+mE=\left\langle Y,
+\bigl[a(D)+b(D)+\omega-|U|^{2r}+g(|U|^2)\bigr]Y\right\rangle
++\frac{D_b}{2}+D_G.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Lemma~\ref{cone:regularity} makes \(L_RU\) an admissible test.
+The kinetic and drift terms converge by
+Lemma~\ref{cone:commutator}. The frequency pairing vanishes.
+The critical focusing term converges to
+\((m/p)\|U\|_p^p\). For the added nonlinearity, the chain rule gives
+\(\nabla G(|U|^2)=g(|U|^2)\operatorname{Re}(\overline U\nabla U)\),
+and compact-support integration by parts yields
+\[
+\operatorname{Re}\int g(\rho)U\,\overline{L_RU}\,dx
+=\int\operatorname{div}f_R\bigl(\rho G'(\rho)-G(\rho)\bigr)\,dx
+\longrightarrow K_G.
+\]
+Its integrand is dominated by a constant times \(G(\rho)\).
+These limits give
+\[
+\frac12\left(mA+\int\xi\cdot\nabla b\,|\widehat U|^2\right)
+-\frac12v\cdot P(U)-\frac mp\|U\|_p^p+K_G=0,
+\]
+which is \eqref{cone:pohozaev}.
+
+Pairing the profile with \(U\) gives
+\[
+A+B+\omega M-v\cdot P(U)-\|U\|_p^p+J=0,
+\qquad J=\int g(\rho)\rho\,dx.
+\]
+Since
+\[
+J=2F+\frac2N K_G,\qquad
+pF-J=\frac2N D_G,\qquad
+\|U\|_p^p=\frac p2(A+B)+pF-pE,
+\]
+substitution proves \eqref{cone:frequency}.
+
+Real-even symbols preserve real functions, so the imaginary
+profile equation reads
+\[
+\bigl[a(D)+b(D)+\omega-|U|^{2r}+g(|U|^2)\bigr]Y
+=-v\cdot\nabla X.
+\]
+Also \(P(U)=-2\int Y\nabla X\). Pairing this equation with \(Y\)
+and using \eqref{cone:pohozaev} proves
+\eqref{cone:phase-energy}.
+\end{proof}
+
+The useful frequency is
+\begin{equation}\label{cone:shifted-frequency}
+\widetilde\omega=\omega+\frac{D_b+\vartheta_ND_G}{M},
+\qquad
+\widetilde\omega M=r(A+B)+(2m-p)E.
+\end{equation}
+Substituting this frequency into \eqref{cone:phase-energy} gives
+the exact identity
+\begin{equation}\label{cone:shifted-identity}
+\begin{aligned}
+mE={}&
+\left\langle Y,\bigl[a(D)+\widetilde\omega-|U|^{2r}\bigr]Y\right\rangle
++B_b(Y)+\int g(|U|^2)Y^2\,dx\\
+&+D_b\left(\frac12-\frac{M(Y)}M\right)
++D_G\left(1-\vartheta_N\frac{M(Y)}M\right).
+\end{aligned}
+\end{equation}
+This identity retains the compensating contributions of the
+defects. In particular, an arbitrarily large negative shift of
+the actual frequency need not be estimated separately.
+
+\subsection{Proof of the uniform gap}
+
+\begin{proof}[Proof of Theorem~\ref{cone:gap}]
+The sharp inequality and positivity of \(B,F\) imply that
+negative energy requires \(M>M_{c,a}\). If the asserted gap
+failed, choose admissible additions \(b_n,G_n\) and profiles
+\(U_n\) such that \(E_n<0\) and \(M(U_n)\to M_{c,a}\).
+
+Critical dilation acts on the entire model by
+\begin{align*}
+U_\lambda(x)&=\lambda^{N/2}U(\lambda x),&
+b_\lambda(\xi)&=\lambda^m b(\xi/\lambda),\\
+G_\lambda(\rho)&=\lambda^{m+N}G(\lambda^{-N}\rho),&
+g_\lambda(\rho)&=\lambda^m g(\lambda^{-N}\rho),\\
+\omega_\lambda&=\lambda^m\omega,&
+v_\lambda&=\lambda^{m-1}v.
+\end{align*}
+It preserves both admissible classes and the profile equation,
+preserves mass, and multiplies the energy by \(\lambda^m\).
+Thus normalize \(A_a(U_n)=1\). The individual regularity constants
+may change under scaling, but no uniform bound on them is used.
+
+Set
+\[
+\delta_n=\left(\frac{M(U_n)}{M_{c,a}}\right)^r-1\longrightarrow0.
+\]
+The sharp inequality and negative energy give
+\begin{equation}\label{cone:near-threshold}
+0\le B_n+2F_n<\delta_n,\qquad
+-\frac{\delta_n}{2}\le E_n<0,\qquad
+\|U_n\|_p^p\longrightarrow\frac p2.
+\end{equation}
+Lemma~\ref{foundation:compact} gives translations and constant
+phases for which \(U_n\to Q\) strongly in \(H^{m/2}\), where
+\(Q\) is a real optimizer normalized by
+\[
+M(Q)=M_{c,a},\qquad A_a(Q)=1,\qquad
+\omega_Q=r/M_{c,a}.
+\]
+Equation \eqref{cone:shifted-frequency} gives
+\(\widetilde\omega_n\to\omega_Q\).
+After a further constant phase tending to zero, arrange
+\(\langle Y_n,Q\rangle=0\), where \(Y_n=\operatorname{Im}U_n\).
+
+By Lemma~\ref{foundation:phase}, the principal phase form
+\(L_-=a(D)+\omega_Q-|Q|^{2r}\) is coercive on real functions
+\(L^2\)-orthogonal to \(Q\). Strong \(L^p\) convergence gives
+\[
+|U_n|^{2r}\longrightarrow|Q|^{2r}
+\quad\hbox{in }L^{p/(2r)}.
+\]
+H\"older's inequality with two \(L^p\) factors and Sobolev
+embedding transfer this coercivity to the shifted forms:
+\[
+\left\langle Y_n,
+\bigl[a(D)+\widetilde\omega_n-|U_n|^{2r}\bigr]Y_n\right\rangle
+\ge\frac{c_Q}{2}\|Y_n\|_{H^{m/2}}^2
+\]
+for all sufficiently large \(n\).
+
+Moreover \(M(Y_n)/M(U_n)\to0\). Once this ratio is at most \(1/4\),
+and since \(0\le\vartheta_N<2\), identity
+\eqref{cone:shifted-identity} gives
+\[
+\begin{aligned}
+mE_n\ge{}&
+\frac{c_Q}{2}\|Y_n\|_{H^{m/2}}^2+B_{b_n}(Y_n)
++\int g_n(|U_n|^2)Y_n^2\,dx\\
+&+\frac14D_{b,n}+\frac12D_{G,n}\ge0.
+\end{aligned}
+\]
+All displayed terms are finite and nonnegative; for the
+multiplication term use
+\(\int g_n(|U_n|^2)Y_n^2\le J_n\le2(1+r)F_n\).
+This contradicts \(E_n<0\). No boundedness of the actual
+frequencies, and no convergence or boundedness of \(D_{b,n}\),
+was needed.
+\end{proof}
+
+\subsection{Uniformity under changes of the principal symbol}
+
+\begin{theorem}[Local uniform robustness]\label{cone:robustness}
+Fix a principal symbol \(a_0\) satisfying
+\eqref{cone:principal}. There are \(\eta>0\) and
+\(\varepsilon>0\) such that the conclusion
+\[
+M(U)\ge M_{c,a}+\varepsilon
+\]
+holds for every individually admissible principal symbol \(a\)
+with
+\[
+\sup_{\xi\in S^{N-1}}\left|\frac{a(\xi)}{a_0(\xi)}-1\right|<\eta,
+\]
+simultaneously for every admissible pair \(b,G\).
+No uniform derivative bounds on any symbol are required.
+\end{theorem}
+\begin{proof}
+If false, choose \(a_n\to a_0\) uniformly relative to \(a_0\)
+on the sphere, admissible additions, and negative-energy profiles
+whose masses differ from \(M_{c,a_n}\) by a quantity tending to
+zero. The principal form comparison
+\[
+(1-o(1))A_{a_0}\le A_{a_n}\le(1+o(1))A_{a_0}
+\]
+implies convergence of sharp constants and hence
+\(M_{c,a_n}\to M_{c,a_0}\). Normalize \(A_{a_n}(U_n)=1\).
+The bounds \eqref{cone:near-threshold} hold with \(M_{c,a_n}\);
+in addition \(A_{a_0}(U_n)\to1\). Variational compactness for
+\(a_0\) gives convergence to its real normalized optimizer \(Q\).
+The shifted frequency again converges to \(r/M_{c,a_0}\).
+The principal forms converge in norm from \(H^{m/2}\) to
+\(H^{-m/2}\), so their phase coercivity transfers exactly as in
+the preceding proof. The added forms and dilation defects are
+retained as nonnegative terms in
+\eqref{cone:shifted-identity}. The same contradiction follows.
+\end{proof}
+
+\begin{proposition}[Compact principal families]\label{cone:compact-family}
+Let the restrictions to \(S^{N-1}\) of a family of principal
+symbols form a compact subset of \(C^0(S^{N-1})\), with every
+member satisfying \eqref{cone:principal}. A single positive gap
+works over that family and over both full addition classes.
+\end{proposition}
+\begin{proof}
+Apply Theorem~\ref{cone:robustness} at every member, extract
+a finite subcover, and take the minimum of the corresponding
+positive gap constants.
+\end{proof}
+
+\subsection{Examples and the structural mechanism}
+
+For \(a(\xi)=|\xi|^4\), the theorem includes
+\(b(\xi)=\mu|\xi|^2\) for every \(\mu\ge0\), with one common
+gap independent of \(\mu\). More generally it includes arbitrary
+finite nonnegative sums of real-even nonnegative homogeneous
+symbols of orders \(0<k\le m\), and nonnegative constant terms.
+The added symbols need not be elliptic.
+
+Nonhomogeneous examples include
+\[
+b(\xi)=\mu\frac{|\xi|^k}{1+|\xi|^k}\quad(0<k\le m),\qquad
+b(\xi)=\mu e^{-|\xi|^2},\qquad
+b(\xi)=\mu(1+|\xi|^2)^{-q},
+\]
+simultaneously for arbitrary \(\mu,q\ge0\). The Gaussian has
+logarithmic radial slope \(-2|\xi|^2\), which is unbounded below;
+this illustrates why the shifted-frequency argument is stronger
+than imposing a two-sided radial-slope estimate.
+Nonnegative smooth radially decreasing compactly supported
+frequency multipliers are also admissible.
+
+The nonlinear class includes all finite sums
+\[
+G(\rho)=\sum_j\frac{\kappa_j}{q_j+2}\rho^{1+q_j/2},
+\qquad \kappa_j\ge0,\qquad 0\le q_j\le2m/N,
+\]
+which add \(\sum_j\kappa_j|U|^{q_j}U\) to the profile equation.
+It also includes, for arbitrary \(\kappa\ge0\),
+\[
+G(\rho)=\kappa\frac{\rho^{1+r}}{(1+\rho)^r},\qquad
+G(\rho)=\kappa\log(1+\rho),\qquad
+G(\rho)=\kappa\frac{\rho}{1+\rho}.
+\]
+The latter two are concave energy densities. Thus neither
+convexity of \(G\) nor monotonicity of \(g=2G'\) is required.
+
+The argument uses two complementary consequences of being near
+the sharp principal mass. Negative energy forces the actual added
+energies \(B+2F\) to be small after kinetic normalization, even if
+their coefficients are arbitrarily large. Variational compactness
+then makes the nonconstant phase component small. In the shifted
+identity, that small phase mass allows the positive dilation
+defects to dominate their own negative contributions to the
+frequency. This is a sign-and-scaling mechanism rather than a
+small-operator perturbation argument.

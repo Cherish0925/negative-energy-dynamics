@@ -1,0 +1,403 @@
+\section{Negative energy, Morse index, and the momentum response matrix}
+\label{sec:r10-inertia}
+
+This section distinguishes two statements.  The negative-index obstruction
+below holds for every exact profile and requires no nondegeneracy.  Statements
+about derivatives with respect to velocity apply only when a differentiable
+family of profiles has been supplied.  Such a family is not presumed to exist
+at every profile.
+
+Let $a$ be a real-even positive elliptic homogeneous symbol of degree $m>1$,
+let $X=H^{m/2}(\mathbb R^N;\mathbb C)$, and set
+\[
+ \alpha=\frac{2m}{N},\qquad
+ E(U)=\frac12\int a(\xi)|\widehat U(\xi)|^2\,d\xi
+       -\frac1{\alpha+2}\int|U|^{\alpha+2},\qquad
+ P(U)=\operatorname{Im}\int\overline U\nabla U.
+\]
+Suppose that a nonzero $U\in X$ solves
+\begin{equation}\label{eq:r10-profile}
+ a(D)U+\omega U+i v\cdot\nabla U-|U|^\alpha U=0.
+\end{equation}
+The mass-critical Pohozaev identity is $v\cdot P(U)=2mE(U)$.
+All pairings below are form pairings on $X$ and $X^*$; in particular
+the derivative pairings are defined since $m>1$.
+Our complex pairing is antilinear in its first argument, and the real
+Hilbert pairing is its real part.
+
+Define the real scalar operator and the complex-linear operator
+\[
+ A_U=a(D)+\omega-|U|^\alpha,\qquad
+ K_U=A_U+i v\cdot\nabla.
+\]
+Both are selfadjoint as forms on the complex space, and $A_U$ commutes
+with complex conjugation.  The Hessian of
+$S_{\omega,v}=E+\omega M/2-v\cdot P/2$ is a \emph{real-linear} operator
+$\mathcal L_U$, whose quadratic form is
+\begin{equation}\label{eq:r10-fullhessian}
+ q_{\mathcal L_U}(\eta)
+ =\operatorname{Re}\langle\eta,K_U\eta\rangle
+ -\alpha\int |U|^{\alpha-2}
+       \bigl(\operatorname{Re}(\overline U\eta)\bigr)^2.
+\end{equation}
+At $U=0$ the last integrand is defined to be zero.  It is bounded by
+$|U|^\alpha|\eta|^2$ and defines a continuous form even when $\alpha<2$.
+The notation $n_-(\mathcal L)$ denotes the maximal dimension of a real
+subspace on which its quadratic form is strictly negative.  It does not
+denote the number of exponentially growing modes of the evolution.
+
+\subsection{An unconditional negative-index obstruction}
+
+\begin{theorem}[Two scalar directions and three action directions]
+\label{thm:r10-three-directions}
+If $E(U)<0$, then
+\begin{equation}\label{eq:r10-index-bound}
+ n_-(A_U|_{X_{\mathbb R}})\ge2,
+ \qquad n_-(\mathcal L_U)\ge3.
+\end{equation}
+More generally these conclusions require only $v\cdot P(U)<0$ and
+the profile equation; homogeneity and criticality are used solely to
+infer that sign from the energy.
+
+Consequently, a profile whose full action Hessian has negative index
+at most two cannot have negative energy.  These statements are uniform
+in frequency and speed and do not require proximity to a ground state.
+\end{theorem}
+\begin{proof}
+Write $U=h+ib$ with real $h,b$.  The profile equation gives
+\[
+ A_Uh=v\cdot\nabla b,\qquad A_Ub=-v\cdot\nabla h.
+\]
+Antisymmetry of the derivative and
+$P(U)=-2\langle b,\nabla h\rangle$ imply
+\begin{equation}\label{eq:r10-scalar-plane}
+ \langle h,A_Uh\rangle=\langle b,A_Ub\rangle
+       =\frac12v\cdot P(U),\qquad
+ \langle h,A_Ub\rangle=0.
+\end{equation}
+The functions $h,b$ are linearly independent: dependence would make
+$U$ a constant phase times a real function and would force $P(U)=0$.
+Thus their real span is a two-dimensional negative subspace.
+
+For the full Hessian it is useful to retain complex notation.
+Since $K_UU=0$, conjugation of the profile equation gives
+\[
+ K_U\overline U=2i v\cdot\nabla\overline U,
+ \qquad
+ \langle\overline U,K_U\overline U\rangle=2v\cdot P(U).
+\]
+The latter pairing is real.  Selfadjointness and $K_UU=0$ show
+that all $K_U$ form pairings between $U$ and $\overline U$ vanish.
+Moreover, $U$ and $\overline U$ are linearly independent over
+$\mathbb C$, for the same constant-phase reason as above.
+
+For $t\in\mathbb R$ and $z\in\mathbb C$ put
+$\eta=tU+z\overline U$.  Equation \eqref{eq:r10-fullhessian} becomes
+\begin{equation}\label{eq:r10-three-plane}
+ q_{\mathcal L_U}(tU+z\overline U)
+ =2v\cdot P(U)|z|^2
+ -\alpha\int |U|^{\alpha-2}
+     \left(t|U|^2+\operatorname{Re}(z\overline{U}^{2})\right)^2.
+\end{equation}
+If $z\ne0$ the first term is strictly negative.  If $z=0$ and
+$t\ne0$, the second term equals
+$-\alpha t^2\|U\|_{\alpha+2}^{\alpha+2}<0$.
+The real span of $U,\overline U,i\overline U$ is therefore a
+three-dimensional negative subspace.  On the full four-dimensional
+real space $\operatorname{span}_{\mathbb C}\{U,\overline U\}$,
+the restricted form has precisely three negative directions and the
+one-dimensional kernel spanned by $iU$.
+\end{proof}
+
+\begin{remark}[What the obstruction does and does not say]
+The proof is an explicit finite-dimensional compression of the
+Hessian, not a computation of its full spectrum.  If the essential
+spectrum reaches negative values, the variational index may be
+infinite; three discrete negative eigenvalues are not being asserted.
+In particular it
+does not by itself prove spectral or nonlinear instability.  The same
+argument applies to a real dispersion operator and a gauge-invariant
+nonlinearity $f(|u|^2)u$ whenever $f'\ge0$ on the range of $|U|^2$
+and $\int f'(|U|^2)|U|^4>0$: the last term in
+\eqref{eq:r10-fullhessian} is then replaced by
+$-2\int f'(|U|^2)(\operatorname{Re}(\overline U\eta))^2$.
+The implication from negative energy to $v\cdot P<0$ must be checked
+separately for such a model.  No such monotonicity is asserted for
+every nonlinear correction in the preceding dilation cone.
+\end{remark}
+
+\begin{remark}[Positive-type Hartree interaction]
+The full index bound also extends to the critical Hartree setting
+with a positive interaction form $D$, under the Hartree form and
+regularity assumptions used in this manuscript.  There the frozen
+complex-linear operator still obeys $K_UU=0$ and
+$K_U\overline U=2iv\cdot\nabla\overline U$, while
+\[
+ q_{\mathcal L_U}(\eta)=\langle\eta,K_U\eta\rangle_{\mathbb R}
+ -2D\bigl(\operatorname{Re}(\overline U\eta),
+          \operatorname{Re}(\overline U\eta)\bigr).
+\]
+Positivity of $D$ makes the correction nonpositive, and its value
+on the amplitude direction is strictly negative when
+$D(|U|^2,|U|^2)>0$.  The proof on
+$\operatorname{span}_{\mathbb R}\{U,\overline U,i\overline U\}$
+is unchanged.  A nonnegative subhomogeneous dispersion addition
+preserves the implication from $E<0$ because its dilation identity
+is $v\cdot P=2mE-D_b<0$.  Thus $n_-(\mathcal L_U)\ge3$
+also holds in that class.  The conclusion uses positivity of the
+interaction form, not merely pointwise nonnegativity of its kernel.
+\end{remark}
+
+\begin{corollary}[A continuation barrier from a ground state]
+\label{cor:r10-continuation}
+A real sharp mass-critical ground state has full action Hessian
+negative index one.  A continuous Fredholm family of profiles starting
+at such a state cannot reach a negative-energy profile while retaining
+only its phase and translation kernel and keeping all other spectral
+values uniformly separated from zero.  If the essential spectral gap
+stays open, reaching a negative-energy profile requires a net gain of
+at least two negative directions through additional zero eigenvalues,
+counted with multiplicity.
+\end{corollary}
+\begin{proof}
+At a real optimizer $Q$, the phase block is nonnegative.  On the real
+mass tangent space $\{h:\langle Q,h\rangle=0\}$ the real block is
+nonnegative as well: $E$ is nonnegative on the mass sphere
+$M=M_c$ and vanishes at $Q$, so its constrained second variation is
+nonnegative.  On $Q$ itself the real block has quadratic form
+$-\alpha\|Q\|_{\alpha+2}^{\alpha+2}<0$.  Hence the full index is one.
+The index is locally constant for continuous selfadjoint Fredholm
+forms after quotienting a kernel of fixed dimension, as long as the
+remaining spectrum is separated from zero.  Apply
+Theorem~\ref{thm:r10-three-directions} at the proposed endpoint.
+\end{proof}
+
+\subsection{Additional negative directions from momentum response}
+
+Assume here that $v\mapsto U_v$ is a $C^1$ family in $X$ of exact
+profiles at fixed $\omega$, and that differentiating the profile
+equation is justified in $X^*$.  Define
+\[
+ B=D_vP(U_v).
+\]
+The matrix is symmetric: if $d(v)=S_{\omega,v}(U_v)$, then
+$d_v=-P(U_v)/2$ and $B=-2d_{vv}$.
+
+\begin{theorem}[A response-refined index bound]
+\label{thm:r10-response-index}
+At a negative-energy member of this family,
+\begin{equation}\label{eq:r10-response-index}
+ n_-(\mathcal L_{U_v})\ge
+ 3+n_-\bigl(B|_{P(U_v)^\perp}\bigr).
+\end{equation}
+For an isotropic, rotationally equivariant family with
+$P(U_v)=p(c)v/c$, $c=|v|>0$, this gives
+\begin{equation}\label{eq:r10-isotropic-index}
+ n_-(\mathcal L_{U_v})\ge N+2.
+\end{equation}
+Consequently such a wave is not a local energy minimum on the
+joint mass and momentum level set, provided that level set is a
+$C^2$ manifold near the wave.
+\end{theorem}
+\begin{proof}
+Let $w_\zeta=D_vU_v[\zeta]$.  Profile differentiation gives
+\[
+ \mathcal L_{U_v}w_\zeta=-i\zeta\cdot\nabla U_v,
+ \qquad
+ \langle w_\eta,\mathcal L_{U_v}w_\zeta\rangle_{\mathbb R}
+       =\tfrac12\eta^TB\zeta.
+\]
+The second formula uses
+$DP(U)[w]=2\operatorname{Re}\langle w,-i\nabla U\rangle$.
+The pairings of $\mathcal Lw_\zeta$ with $\overline U$ and
+$i\overline U$ vanish because $\int U\partial_jU=0$.
+Its pairing with $U$ is $\zeta\cdot P(U)$, which vanishes for
+$\zeta\perp P(U)$.
+Thus the image of a negative subspace of $B|_{P^\perp}$ is negative
+and form-orthogonal to the three-dimensional space in
+\eqref{eq:r10-three-plane}.  The map is injective on that subspace,
+since its quadratic form is strictly negative.  The two negative
+spaces have trivial intersection, proving \eqref{eq:r10-response-index}.
+
+In the isotropic case, with $e=v/c$,
+\[
+ B=p'(c)e\otimes e+\frac{p(c)}c(I-e\otimes e).
+\]
+Negative energy gives $cp(c)=v\cdot P<0$, so $p(c)<0$ and
+$B|_{P^\perp}=(p(c)/c)I$ has $N-1$ negative directions.
+This proves \eqref{eq:r10-isotropic-index}.
+The joint mass and momentum tangent space has codimension at most
+$N+1$, so it intersects the $(N+2)$-dimensional negative subspace
+nontrivially.  At a constrained critical point the corresponding
+second variation of $E$ is the restriction of $\mathcal L$.
+If the joint level set is a $C^2$ manifold, this negative tangent
+direction is realized by a constraint-preserving curve and excludes
+a local minimum.
+\end{proof}
+
+The last level-set assumption is not a hidden spectral hypothesis.
+For a sufficiently regular nonzero profile its charge differentials
+are independent: a real relation between them would give
+$(\tau-i\zeta\cdot\nabla)U=0$, forcing its $L^2$ Fourier transform
+onto a hyperplane (or forcing $U=0$ if $\zeta=0$).
+The finite-dimensional implicit-function theorem then supplies the
+local charge manifold in the energy space.
+
+\subsection{An exact reduction of the charge Hessian}
+
+Suppose now that $(\omega,v)\mapsto U_{\omega,v}$ is a $C^1$
+profile family on an open parameter set, that
+$d(\omega,v)=S_{\omega,v}(U_{\omega,v})$ is $C^2$, and that its
+charges obey the critical scaling covariance
+\begin{align*}
+ M(U_{\lambda^m\omega,\lambda^{m-1}v})&=M(U_{\omega,v}),\\
+ P(U_{\lambda^m\omega,\lambda^{m-1}v})&=\lambda P(U_{\omega,v})
+\end{align*}
+whenever the parameters are in the domain.  This follows, in
+particular, if the family is closed under the usual critical dilation,
+up to phase and translation.  Let $H=d''(\omega,v)$ and
+$B=D_vP(U_{\omega,v})$.
+
+\begin{theorem}[Bordered momentum formula]
+\label{thm:r10-bordered}
+If $\omega\ne0$, the symmetric matrices $H$ and
+\begin{equation}\label{eq:r10-bordered}
+ -\frac12
+ \begin{pmatrix}
+ (m-1)v\cdot P&P^T\\
+ P&B
+ \end{pmatrix}
+\end{equation}
+are congruent.  If $B$ is invertible, define
+\begin{equation}\label{eq:r10-kappa}
+ \kappa=P^TB^{-1}P-(m-1)v\cdot P.
+\end{equation}
+Then, writing $p(H)$ for the number of positive eigenvalues,
+\begin{equation}\label{eq:r10-hessian-inertia}
+ p(H)=n_-(B)+\mathbf1_{\{\kappa>0\}},
+ \qquad \dim\ker H=\mathbf1_{\{\kappa=0\}}.
+\end{equation}
+The Schur complement of the $v$ block in $H$ is exactly
+$\kappa/(2m^2\omega^2)$.
+\end{theorem}
+\begin{proof}
+Stationarity gives $d_\omega=M/2$ and $d_v=-P/2$.
+Put $D=(m\omega,(m-1)v)^T$.  Differentiating the two scaling laws
+gives the exact column identity
+\[
+ HD=\begin{pmatrix}0\\-P/2\end{pmatrix},
+ \qquad H_{vv}=-B/2.
+\]
+The invertible matrix
+\[
+ R=\begin{pmatrix}m\omega&0\\(m-1)v&I\end{pmatrix}
+\]
+therefore satisfies $R^THR=$ \eqref{eq:r10-bordered}.
+Sylvester's law of inertia and the Schur complement of $B$ prove
+\eqref{eq:r10-hessian-inertia}.
+For the final assertion, the mixed block is
+\[
+ H_{v\omega}=-\frac{P-(m-1)Bv}{2m\omega},
+\]
+and the upper-left entry follows from $HD=(0,-P/2)^T$.
+Substitution and cancellation give
+$H_{\omega\omega}-H_{\omega v}H_{vv}^{-1}H_{v\omega}
+=\kappa/(2m^2\omega^2)$.
+\end{proof}
+
+For an isotropic family $P=p(c)e$ with $p(c)p'(c)\ne0$,
+\begin{equation}\label{eq:r10-elasticity}
+ \kappa=\frac{p(c)^2}{p'(c)}-(m-1)cp(c).
+\end{equation}
+Thus charge-Hessian degeneracy occurs precisely at
+$cp'(c)/p(c)=1/(m-1)$, under these nonvanishing assumptions.
+This is a degeneracy criterion, not an assertion that every such
+point changes dynamical stability.  The momentum and its derivative
+at a fixed frequency suffice; a separate numerical differentiation
+in frequency is unnecessary.
+
+\subsection{The small-speed transition at dispersion order two}
+
+Assume a $C^1$ branch at $\omega=1$ starts at a real standing
+profile $Q$.  Assume $L_-=a(D)+1-|Q|^\alpha$ has kernel
+$\mathbb RQ$ and a bounded inverse on its orthogonal complement.
+Assume also that the real-part derivative of the branch at zero
+vanishes after the chosen translation gauge.  One sufficient
+condition for this last assertion is
+$\ker L_+=\operatorname{span}\{\partial_jQ\}$ together with
+the translation-orthogonal slice; neither this nondegeneracy nor
+branch existence is asserted for all ground states.
+Define
+\[
+ T_{ij}=\langle\partial_iQ,L_-^{-1}\partial_jQ\rangle.
+\]
+If $T$ has $k$ negative eigenvalues, then
+\begin{equation}\label{eq:r10-standing-index}
+ n_-(L_-)\ge k,\qquad
+ n_-\bigl(\operatorname{diag}(L_+,L_-)\bigr)\ge2k+1.
+\end{equation}
+Indeed, on the inverse-response vectors $L_-^{-1}(\zeta\cdot\nabla Q)$
+the $L_-$ form is exactly $\zeta^TT\zeta$.  Let $V$ be the resulting
+$k$-dimensional negative subspace.  The form of $L_-$ is negative
+on $V$ and vanishes on $Q$, with no cross term.  Since
+$L_+=L_--\alpha|Q|^\alpha$, it is strictly negative on
+$V\oplus\mathbb RQ$: for a nonzero $V$ component the first form is
+already negative, and on a nonzero multiple of $Q$ the subtracted
+potential term is strictly positive.  The two diagonal blocks then
+give \eqref{eq:r10-standing-index}.
+Finite strictly negative subspaces persist under form-continuous
+perturbations, so this lower bound persists on sufficiently nearby
+traveling profiles.  In particular an isotropic negative response
+$T=I_0I_N$, $I_0<0$, requires at least $2N+1$ negative action
+directions on the standing state and its nearby traveling branch.
+
+Differentiating the imaginary equation gives
+$D_{v_j}U|_{v=0}=-iL_-^{-1}\partial_jQ$, and hence
+\begin{equation}\label{eq:r10-small-speed}
+ P(U_{1,v})=2Tv+o(|v|),\qquad B(1,v)=2T+o(1).
+\end{equation}
+For a nonsingular $T$ and directions on which $v^TTv$ stays away
+from zero relative to $|v|^2$, the preceding exact formulas yield
+\begin{align}
+ E(U_{1,v})&=\frac1m v^TTv+o(|v|^2),\label{eq:r10-energy-expansion}\\
+ M(U_{1,v})&=M(Q)+\frac{m-2}{m}v^TTv+o(|v|^2),
+ \label{eq:r10-mass-expansion}\\
+ \kappa(1,v)&=2(2-m)v^TTv+o(|v|^2).
+ \label{eq:r10-kappa-expansion}
+\end{align}
+For \eqref{eq:r10-mass-expansion}, integrate $d_v=-P/2$ to get
+$d(1,v)=M(Q)/2-v^TTv/2+o(|v|^2)$ and use weighted homogeneity,
+$d=d_\omega+(m-1)v\cdot d_v/m$ at $\omega=1$.
+Only the stated $C^1$ branch and $C^2$ action regularity are used;
+no fourth derivative of a noninteger power nonlinearity is assumed.
+
+At a sharp ground state $T$ is positive definite by phase
+coercivity.  For sufficiently small nonzero velocity the charge
+Hessian is consequently negative definite if $m>2$, whereas it
+has exactly one positive eigenvalue if $1<m<2$.
+At $m=2$ this leading-order test vanishes.  General homogeneous
+symbols of degree two need not be quadratic forms, so no exact
+Galilean degeneracy is inferred for all such symbols.
+
+These are charge and index statements.  Under the additional
+hypotheses of a Hamiltonian index theorem---a closed Hamiltonian
+linearization, finite negative index, a coercive complementary
+subspace, exactly the phase and translation kernel, independent
+charges, and an invertible charge Hessian---the standard index
+formula reads
+\begin{equation}\label{eq:r10-hamiltonian-index}
+ k_r+2k_c+2k_i^-
+ =n_-(\mathcal L)-p(H)
+ =n_-(\mathcal L)-n_-(B)-\mathbf1_{\{\kappa>0\}}.
+\end{equation}
+Here the terms on the left count real unstable eigenvalues,
+complex unstable pairs, and the negative index on nonzero
+imaginary modes, respectively, with the conventions of the chosen
+index theorem.  This last formula invokes the established
+Hamiltonian index theory of Lin and Zeng~\cite{LZ}; it is not a replacement
+for checking its operator hypotheses.  For example, if a
+nondegenerate small-speed ground-state branch retains
+$n_-(\mathcal L)=1$ and all those hypotheses hold, the $m>2$
+case has index one and therefore one positive real eigenvalue.
+No unconditional nonlinear stability or instability conclusion
+is made for arbitrary branches.

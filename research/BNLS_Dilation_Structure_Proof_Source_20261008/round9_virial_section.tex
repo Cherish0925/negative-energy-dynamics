@@ -1,0 +1,264 @@
+\section{A near-threshold obstruction to a pointwise interaction-virial sign}
+\label{sec:r9-virial-obstruction}
+
+This section concerns the pure mass-critical BNLS
+\[
+ iu_t=\Delta^2u-|u|^{8/N}u,\qquad N\ge1.
+\]
+Write
+\[
+ p=2+8/N,\quad M(f)=\|f\|_2^2,\quad A(f)=\|\Delta f\|_2^2,
+ \quad E(f)=\frac12A(f)-\frac1p\|f\|_p^p,
+\]
+\[
+ P(f)=\operatorname{Im}\int\overline f\nabla f,
+ \qquad W(f)=\operatorname{Im}\int\Delta f\nabla\overline f.
+\]
+Let $M_c$ be the sharp Gagliardo--Nirenberg critical mass. Fix the
+interaction cutoff $\phi_R$ which equals $|z|^2/2$ for $|z|\le4R$,
+is constant for $|z|\ge8R$, and satisfies $D^2\phi_R\le I$. Define
+\begin{equation}\label{eq:r9-interaction-functional}
+ I_R(f)=2\iint |f(y)|^2\nabla\phi_R(x-y)\cdot
+       \operatorname{Im}(\overline f(x)\nabla f(x))\,dx\,dy.
+\end{equation}
+For smooth compactly supported $f$, let $\mathcal D_R(f)$ denote
+the initial derivative of this functional prescribed by the BNLS
+vector field, equivalently the right-hand side of the exact
+interaction-virial identity evaluated at $f$.
+
+\begin{theorem}[Positive localized virial derivative arbitrarily near threshold]
+\label{thm:r9-static-obstruction}
+For every $\delta>0$, there exist constants
+$M_*,A_*,e_*,c_*,R_*>0$ and functions
+$f_R\in C_c^\infty(\mathbb R^N;\mathbb C)$, $R\ge R_*$, such that
+\begin{align}
+ M_c<M(f_R)&=M_*<M_c+\delta,&
+ A(f_R)&=A_*,\label{eq:r9-static-invariants}\\
+ P(f_R)&=0,&E(f_R)&=-e_*<0,\notag
+\end{align}
+and
+\begin{equation}\label{eq:r9-static-positive}
+ \mathcal D_R(f_R)\ge c_*>0.
+\end{equation}
+All constants are independent of $R$. Moreover, one may choose
+these families as $\delta\downarrow0$ so that, for a fixed real
+normalized optimizer $Q$,
+\[
+ \sup_{R\ge R_*(\delta)}\|f_R-Q\|_{H^2}\longrightarrow0.
+\]
+Consequently no estimate
+\[
+ \mathcal D_R(f)\le c\,M(f)E(f)+o_{R\to\infty}(1),\qquad c>0,
+\]
+can hold uniformly over zero-momentum negative-energy data of
+sufficiently near-critical mass and bounded kinetic energy.
+\end{theorem}
+
+\begin{lemma}[Independent momentum and flux directions]
+\label{lem:r9-independent-currents}
+For every nonzero real $q\in C_c^\infty(\mathbb R^N)$, the linear
+map
+\[
+ b\longmapsto \bigl(P(q+ib),W(q+ib)\bigr),
+ \qquad b\in C_c^\infty(\mathbb R^N;\mathbb R),
+\]
+is onto $\mathbb R^N\times\mathbb R^N$.
+\end{lemma}
+\begin{proof}
+Integration by parts gives
+\begin{equation}\label{eq:r9-current-linearization}
+ P(q+ib)=-2\int b\nabla q,\qquad
+ W(q+ib)=2\int b\nabla\Delta q.
+\end{equation}
+The $2N$ real functions $\partial_jq,\partial_j\Delta q$ are
+linearly independent in $L^2$. Indeed, a dependence would imply
+\[
+ \bigl[(a\cdot\xi)-(b_0\cdot\xi)|\xi|^2\bigr]\widehat q(\xi)=0
+ \quad\text{a.e.}
+\]
+for some $a,b_0\in\mathbb R^N$. A nonzero polynomial has a
+Lebesgue-null zero set, whereas a nonzero $L^2$ function cannot
+be supported on a null set. Thus the polynomial vanishes
+identically, forcing $a=b_0=0$. The Gram matrix of the $2N$
+functions is therefore invertible. Taking $b$ in their span
+realizes every pair in \eqref{eq:r9-current-linearization}.
+\end{proof}
+
+\begin{lemma}[Separated-packet identity]
+\label{lem:r9-separated-virial}
+Suppose $F,G\in C_c^\infty$ have support diameters below $4R$, and
+the distance between their supports is above $8R$. Then
+\begin{equation}\label{eq:r9-separated-identity}
+ \mathcal D_R(F+G)=\mathcal V(F)+\mathcal V(G),\qquad
+ \mathcal V(h)=16M(h)E(h)-8P(h)\cdot W(h).
+\end{equation}
+\end{lemma}
+\begin{proof}
+For intrapacket pairs the cutoff is exactly quadratic; for
+interpacket pairs it is constant. Substitution into the exact
+interaction identity gives \eqref{eq:r9-separated-identity}.
+Equivalently, the quadratic interaction associated with one
+packet is
+\[
+ 2\left[M(h)\operatorname{Im}\int x\cdot\overline h\nabla h
+       -\left(\int x|h|^2\right)\cdot P(h)\right].
+\]
+With $J(h)=\operatorname{Im}\int x\cdot\overline h\nabla h$,
+one has $J'=8E(h)$, while the mass first moment has derivative
+$4W(h)$. Mass and momentum are conserved, so the displayed
+interaction has derivative $2[8ME-4W\cdot P]$, as asserted. This is an
+initial-derivative calculation; no finite-speed propagation or
+persistence of compact support is asserted.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:r9-static-obstruction}]
+Fix a real optimizer $Q$ with $M(Q)=M_c$ and $E(Q)=0$.
+Approximate it in $H^2$ by a nonzero real compactly supported
+smooth function $q_0$. Multiplication by
+\[
+ \left(\frac{pA(q_0)}{2\|q_0\|_p^p}\right)^{1/(p-2)}
+\]
+gives a real $q\in C_c^\infty$ satisfying
+\begin{equation}\label{eq:r9-zero-energy-core}
+ E(q)=0,\qquad M_0:=M(q)<M_c+\delta/4.
+\end{equation}
+The multiplier tends to one as $q_0\to Q$.
+
+By Lemma~\ref{lem:r9-independent-currents}, there are fixed real
+$b_1,b_2\in C_c^\infty$ such that
+\[
+ P(q+ib_1)=0,\quad W(q+ib_1)=e_1,\qquad
+ P(q+ib_2)=-e_1,\quad W(q+ib_2)=0.
+\]
+Set $b_\varepsilon=\varepsilon b_1+\varepsilon^2b_2$. Then
+\begin{equation}\label{eq:r9-prescribed-core-currents}
+ P(q+ib_\varepsilon)=-\varepsilon^2e_1,\qquad
+ W(q+ib_\varepsilon)=\varepsilon e_1,\qquad
+ \|b_\varepsilon\|_{H^2}=O(\varepsilon).
+\end{equation}
+Since
+\[
+ \left.\partial_aE(aq)\right|_{a=1}
+ =A(q)-\|q\|_p^p=-\frac4N A(q)<0,
+\]
+the implicit-function theorem supplies $a_\varepsilon=1+O(\varepsilon^2)$
+for which
+\begin{equation}\label{eq:r9-core-negative-energy}
+ F_\varepsilon=a_\varepsilon q+ib_\varepsilon,
+ \qquad E(F_\varepsilon)=-\frac{\varepsilon^3}{4M_0}.
+\end{equation}
+Here the energy is $C^2$ on this finite-dimensional family because
+$p>2$, and its change under the imaginary perturbation starts at
+second order. Write $M_F=M(F_\varepsilon)$. Exactly,
+\[
+ M_F=a_\varepsilon^2M_0+\|b_\varepsilon\|_2^2,
+ \qquad P_F=-a_\varepsilon\varepsilon^2e_1,
+ \qquad W_F=a_\varepsilon\varepsilon e_1.
+\]
+Consequently
+\begin{equation}\label{eq:r9-core-positive-virial}
+ \mathcal V(F_\varepsilon)
+ =\left(8a_\varepsilon^2-\frac{4M_F}{M_0}\right)\varepsilon^3
+ =(4+O(\varepsilon^2))\varepsilon^3>2\varepsilon^3
+\end{equation}
+for all sufficiently small positive $\varepsilon$.
+
+Fix $\mathfrak m\in(0,\min\{M_c,\delta/4\})$, and choose a real
+radial $\chi\in C_c^\infty(\mathbb R^N)$ with $\|\chi\|_2=1$.
+Define a second packet by
+\begin{equation}\label{eq:r9-balancing-packet}
+ G(x)=\sqrt{\mathfrak m}\,L^{-N/2}\chi(x/L)e^{ikx_1},
+ \qquad k=\frac{a_\varepsilon\varepsilon^2}{\mathfrak m}.
+\end{equation}
+Its mass is $\mathfrak m$ and its momentum is exactly $-P_F$.
+Put
+\[
+ B=\|\nabla\chi\|_2^2,\quad C=\|\Delta\chi\|_2^2,
+ \quad D=\|\chi\|_p^p,\quad d=1+2/N.
+\]
+Fourier expansion and radial symmetry give
+\begin{align}
+ A(G)&=\mathfrak m\bigl[k^4+2d k^2L^{-2}B+L^{-4}C\bigr],
+ \label{eq:r9-radiation-formulas}\\
+ W(G)&=\mathfrak m\bigl[k^3+d kL^{-2}B\bigr]e_1,
+ &\|G\|_p^p&=\mathfrak m^{p/2}L^{-4}D.\notag
+\end{align}
+In particular, the plane-wave terms cancel exactly in the
+self-interaction derivative:
+\begin{equation}\label{eq:r9-radiation-positive-virial}
+ \mathcal V(G)=8\mathfrak m^2
+ \left[d k^2L^{-2}B+
+ L^{-4}\left(C-\frac2p\mathfrak m^{4/N}D\right)\right]>0.
+\end{equation}
+The last inequality follows from the sharp GN inequality and
+$\mathfrak m<M_c$.
+For fixed $\varepsilon$, as $L\to\infty$,
+\[
+ E(G)\longrightarrow\frac{\mathfrak m k^4}{2}
+ =\frac{a_\varepsilon^4\varepsilon^8}{2\mathfrak m^3}.
+\]
+Choose $\varepsilon>0$ small enough that this limit is less than
+$\varepsilon^3/(16M_0)$ and that $M_F<M_c+\delta/2$.
+Then choose $L$ sufficiently large that
+\begin{equation}\label{eq:r9-radiation-energy-budget}
+ 0<E(G)<\frac{\varepsilon^3}{8M_0}.
+\end{equation}
+
+Fix these packets. For sufficiently large $R$, set
+\[
+ f_R(x)=F_\varepsilon(x)+G(x-20Re_1).
+\]
+Their support diameters are below $4R$ and their mutual support
+distance exceeds $8R$. All invariants in
+\eqref{eq:r9-static-invariants} are exactly independent of $R$
+by disjointness of the supports and locality of the pure BNLS
+energy. Their momentum is zero, and
+\[
+ E(f_R)=E(F_\varepsilon)+E(G)<-\frac{\varepsilon^3}{8M_0}<0,
+ \qquad M(f_R)<M_c+\delta.
+\]
+Negative energy forces $M(f_R)>M_c$. Lemma~\ref{lem:r9-separated-virial}
+and \eqref{eq:r9-core-positive-virial}--\eqref{eq:r9-radiation-positive-virial}
+prove \eqref{eq:r9-static-positive} with $c_*=2\varepsilon^3$.
+Finally, as $\delta\downarrow0$, choose $q\to Q$,
+$\mathfrak m\to0$, and then successively smaller $\varepsilon$
+and larger $L$. The core tends to $Q$ in $H^2$, and
+\eqref{eq:r9-radiation-formulas} makes $\|G\|_{H^2}\to0$.
+This norm is translation invariant, proving uniform closeness
+in $R$.
+\end{proof}
+
+\begin{remark}[The exact signed remainder]
+\label{rem:r9-hessian-deficit}
+The obstruction persists when the full favorable Hessian deficit
+is retained. Let $\mathsf D_R=I-D^2\phi_R\ge0$, and set
+$\rho=|f|^2$, $j=\operatorname{Im}(\overline f\nabla f)$,
+$w=\operatorname{Im}(\Delta f\nabla\overline f)$. Define
+\begin{align*}
+ \mathcal K_R&=\iint\rho(y)(\mathsf D_R)_{jk}(x-y)
+  \operatorname{Re}(\partial_{ij}\overline f\,\partial_{ik}f)(x)
+  \,dx\,dy,\\
+ \mathcal N_R&=\frac{2\beta}{p}\iint\rho(y)
+  \operatorname{tr}\mathsf D_R(x-y)|f(x)|^p\,dx\,dy,
+  \qquad\beta=8/N,\\
+ \mathcal X_R&=8\iint\mathsf D_R(x-y)[j(x),w(y)]\,dx\,dy.
+\end{align*}
+For the support configurations above, every term containing a
+higher cutoff derivative vanishes exactly, and
+\[
+ \mathcal D_R(f_R)=16ME-8P\cdot W
+                  -8\mathcal K_R+\mathcal N_R+\mathcal X_R.
+\]
+Moreover,
+\begin{align*}
+ \mathcal K_R&=M_F A(G)+\mathfrak m A(F_\varepsilon),\\
+ \mathcal N_R&=\frac{16}{p}
+  \bigl(M_F\|G\|_p^p+\mathfrak m\|F_\varepsilon\|_p^p\bigr),\\
+ \mathcal X_R&=8\bigl(P_F\cdot W(G)+P(G)\cdot W_F\bigr).
+\end{align*}
+Since $P=0$ and $\mathcal D_R(f_R)>0>16ME$, one has the strict
+inequality $\mathcal N_R+\mathcal X_R>8\mathcal K_R$. Thus the
+failure of a universal pointwise sign is an exact property of
+the interaction identity. The theorem imposes no conclusion on
+the subsequent lifespan or long-time dynamics of these data.
+\end{remark}

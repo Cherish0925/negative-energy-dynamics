@@ -1,0 +1,330 @@
+VERIFY round2_verify_frozen_ritz.py
+{
+  "verified": true,
+  "scope": "Canonical residual and Z bound; recomputed frozen Ritz variational inequalities only.",
+  "sha256": {
+    "profile": "c50a6f98682ce5f5bef9ab62ae2a93ba06b91522c8f3e29b859ac521afb8f627",
+    "ritz_data": "e028e0e15d82adc377d83dc7afb397403f312c9127f32fdf3aa37bc3bebaa511",
+    "polynomial_helpers": "cf731d5faf1d0ee7207e779624e7ab0633a72c1053e4d82fda97fb3b270121d5",
+    "verifier": "ca08a786b827787247593775e63b2a6832abb345b4d97d60b81a4d39ce4ff041"
+  },
+  "checks": {
+    "canonical_q_residual_lt_0.000242": true,
+    "canonical_q_Z_le_104": true,
+    "ell_0_top_eigenvalue_ge_5.395": true,
+    "ell_0_second_eigenvalue_gt_2.999": true,
+    "ell_2_top_eigenvalue_gt_2.11": true,
+    "ell_1_top_eigenvalue_gt_1.04": true,
+    "ell_1_gamma_half_top_ge_1.5": true
+  },
+  "elapsed_seconds_diagnostic": 9.689126654000574
+}
+VERIFY round2_certificate_canonical.py
+{
+  "canonical_q": "round2_radial_H4_exact_h1_16.json",
+  "response": "vjets in round2_certificate_exact_rational_data.json",
+  "arithmetic": "exact rational polynomial integration; exact conservative weighted residual bound; Machin-series pi enclosure",
+  "seconds": 12.996914512998046,
+  "common_intervals": 680,
+  "q_Z2_upper": 10635.58448399505,
+  "response_Z2_upper": 17273.995930603982,
+  "J_upper": -273.4738618768856,
+  "form_upper": -273.473861910667,
+  "response_residual2_upper": 4.1479196382807587e-07,
+  "q_sup_upper": 6.721690385775376,
+  "psi_sup_upper": 5.667210153416188,
+  "psi_L4_fourth_upper": 102319.2153044612,
+  "qpsi_L4_fourth_upper": 420362.79251508525,
+  "qpsi_L2_squared_upper": 17547.46979251465,
+  "exact_boolean_checks": {
+    "canonical_q_Z_le_104": true,
+    "response_Z_le_132": true,
+    "J_le_minus273": true,
+    "form_le_minus273": true,
+    "response_residual_le_0.000662": true,
+    "response_residual_le_0.001": true,
+    "q_sup_le_6.73": true,
+    "psi_sup_le_6": true,
+    "psi_L2_le_104": true,
+    "psi_L4_le_18": true,
+    "qpsi_L4_le_26": true,
+    "qpsi_L2_le_133": true,
+    "q_mass_norm_le_73": true,
+    "Tform_le_11950": true,
+    "potential_ge_17540": true
+  }
+}
+VERIFY round2_radial_highangular.py
+{
+  "canonical": "round2_radial_H4_exact_h1_16.json",
+  "checks": [
+    {
+      "beta": 1,
+      "minimal_ell": 5,
+      "c_ell_squared": "1225",
+      "theta": "9/10",
+      "all_Bernstein_coefficients_positive": true,
+      "Bc_upper_decimal": "239.5074965664802174593019018769675449609775828693389068776114792248430",
+      "verified_uniform_preconditioned_gap": "1/10",
+      "pointwise_statement": "beta r^4 q(r)^2 <= (9/10)(r^4+c_ell^2) for allr>=0",
+      "operator_statement": "Delta_l^2+1-betaq\u00b2 >= (1/10)(Delta_l\u00b2+1) inquadraticformsfor ell>=minimal_ell"
+    },
+    {
+      "beta": 3,
+      "minimal_ell": 6,
+      "c_ell_squared": "2304",
+      "theta": "9/10",
+      "all_Bernstein_coefficients_positive": true,
+      "Bc_upper_decimal": "1183.830298338890403237386594119656064741326555246128337360052414704174",
+      "verified_uniform_preconditioned_gap": "1/10",
+      "pointwise_statement": "beta r^4 q(r)^2 <= (9/10)(r^4+c_ell^2) for allr>=0",
+      "operator_statement": "Delta_l^2+1-betaq\u00b2 >= (1/10)(Delta_l\u00b2+1) inquadraticformsfor ell>=minimal_ell"
+    }
+  ]
+}
+VERIFY round2_final_rational_implication.py
+{
+  "status": "conditional analytic implication; spectral and scalar premises must be independently certified",
+  "comparison_arithmetic": "exact rational",
+  "checks": {
+    "Sobolev_constant_reduction_sufficient": true,
+    "derivative_constant_reduction_sufficient": true,
+    "radial_two_Ritz_above_one_plus_gap": true,
+    "radial_remaining_BS_eigenvalues_below_one_minus_gap": true,
+    "plus2_Ritz_above_one_plus_gap": true,
+    "plus2_remaining_BS_eigenvalues_below_one_minus_gap": true,
+    "minus1_Ritz_above_one_plus_gap": true,
+    "minus1_remaining_BS_eigenvalues_below_one_minus_gap": true,
+    "optional_plus4_HS_implies_high_gap": true,
+    "optional_minus3_HS_implies_high_gap": true,
+    "Newton_ball_invariant": true,
+    "Newton_strict_contraction": true,
+    "radial_gap_survives": true,
+    "plus2_gap_survives": true,
+    "all_high_plus_gaps_survive": true,
+    "minus1_gap_survives": true,
+    "all_high_minus_gaps_survive": true,
+    "negative_inverse_pairing": true,
+    "convenient_negative_pairing_margin": true
+  },
+  "all_checks_pass": true,
+  "values": {
+    "alpha": {
+      "exact_fraction": "1/256",
+      "decimal_display_only": "0.00390625"
+    },
+    "G": {
+      "exact_fraction": "3/5",
+      "decimal_display_only": "0.6"
+    },
+    "m": {
+      "exact_fraction": "104",
+      "decimal_display_only": "104"
+    },
+    "b": {
+      "exact_fraction": "132",
+      "decimal_display_only": "132"
+    },
+    "eta_q": {
+      "exact_fraction": "121/500000",
+      "decimal_display_only": "0.000242"
+    },
+    "eta_psi": {
+      "exact_fraction": "331/500000",
+      "decimal_display_only": "0.000662"
+    },
+    "rho": {
+      "exact_fraction": "3/500",
+      "decimal_display_only": "0.006"
+    },
+    "gamma_radial": {
+      "exact_fraction": "1/20",
+      "decimal_display_only": "0.05"
+    },
+    "gamma_minus": {
+      "exact_fraction": "1/25",
+      "decimal_display_only": "0.04"
+    },
+    "radius_bound": {
+      "exact_fraction": "9148027/1600000000",
+      "decimal_display_only": "0.005717516875"
+    },
+    "contraction_bound": {
+      "exact_fraction": "936027/3200000",
+      "decimal_display_only": "0.2925084375"
+    },
+    "d_minus": {
+      "exact_fraction": "312009/64000000",
+      "decimal_display_only": "0.004875140625"
+    },
+    "d_plus": {
+      "exact_fraction": "936027/64000000",
+      "decimal_display_only": "0.014625421875"
+    },
+    "exact_minus_gap_lower": {
+      "exact_fraction": "2247991/64000000",
+      "decimal_display_only": "0.035124859375"
+    },
+    "J_shift_upper": {
+      "exact_fraction": "343579401/4000000",
+      "decimal_display_only": "85.89485025"
+    },
+    "response_residual_upper": {
+      "exact_fraction": "10364489/16000000",
+      "decimal_display_only": "0.6477805625"
+    },
+    "quadratic_residual_upper": {
+      "exact_fraction": "107422632231121/8991964000000",
+      "decimal_display_only": "11.946514936127524531904264741273430"
+    },
+    "I_upper": {
+      "exact_fraction": "-24609689664617/140499437500",
+      "decimal_display_only": "-175.15863481387247546809573525872657"
+    },
+    "radial_HS_remainder_upper": {
+      "exact_fraction": "449987/500000",
+      "decimal_display_only": "0.899974"
+    }
+  }
+}
+VERIFY round4_ell3_rayleigh.py
+{
+  "verified": true,
+  "trial_description": "r^3 f(r)Y_3 with f the frozen ell2 reduced trial",
+  "profile_sha256": "c50a6f98682ce5f5bef9ab62ae2a93ba06b91522c8f3e29b859ac521afb8f627",
+  "ritz_sha256": "e028e0e15d82adc377d83dc7afb397403f312c9127f32fdf3aa37bc3bebaa511",
+  "quotient_float_diagnostic": 1.308995988054891,
+  "checks": {
+    "positive_denominator": true,
+    "lambda1_gt_1.25": true,
+    "lambda1_gt_1.30": true
+  },
+  "seconds": 1.6108553640005994
+}
+VERIFY round4_verify_morse.py
+{
+  "verified": true,
+  "scope": "Full-space Morse/kernel scalar separation, conditional only on the frozen stationary existence certificate and established Birman-Schwinger/form identities.",
+  "profile_sha256": "c50a6f98682ce5f5bef9ab62ae2a93ba06b91522c8f3e29b859ac521afb8f627",
+  "delta_minus_exact": "312009/64000000",
+  "delta_plus_exact": "936027/64000000",
+  "nonzero_preconditioned_spectral_gap_lower": "1/29",
+  "counts": {
+    "L_plus_negative": 31,
+    "L_minus_negative": 5,
+    "L_plus_kernel": 4,
+    "L_minus_kernel": 1
+  },
+  "traveling_speed_radius": "1/1000000",
+  "traveling_Hessian_perturbation_exact": "3153843/6400000000",
+  "traveling_nonzero_preconditioned_gap_lower": "1/30",
+  "checks": {
+    "ell3_exact_Rayleigh_gt_13_over_10": true,
+    "ell0_HS_squared_bound": true,
+    "ell1_HS_squared_bound": true,
+    "ell2_HS_squared_bound": true,
+    "ell3_HS_squared_bound": true,
+    "ell4_HS_squared_bound": true,
+    "traveling_Hessian_perturbation_lt_0.000493": true,
+    "traveling_nonzero_gap_gt_1_over_30": true,
+    "traveling_zero_cluster_separated": true,
+    "base_form_transfer_equal_product_estimate": true,
+    "radial_plus_remainder_lt_0.95_squared": true,
+    "radial_plus_gap_gt_1_over_29": true,
+    "radial_minus_top_gt_1": true,
+    "radial_minus_third_lt_1": true,
+    "ell1_minus_gap_gt_1_over_29": true,
+    "ell1_minus_second_lt_1": true,
+    "ell1_plus_third_q_lt_0.23": true,
+    "ell1_plus_third_Q_lt_1_over_3": true,
+    "ell1_plus_top_gt_1": true,
+    "ell2_plus_remainder_lt_0.6_squared": true,
+    "ell2_plus_gap_gt_1_over_29": true,
+    "ell2_minus_norm_lt_0.75": true,
+    "ell3_plus_remainder_lt_0.54_squared": true,
+    "ell3_plus_top_gt_1": true,
+    "ell3_plus_remainder_lt_1": true,
+    "ell4_plus_HS_lt_0.9_squared": true,
+    "ell4_plus_gap_gt_1_over_29": true
+  },
+  "ell3_trial_Rayleigh_float_diagnostic": 1.308995988054891,
+  "exact_channel_table": [
+    {
+      "ell": 0,
+      "multiplicity": 1,
+      "plus_negative_per_channel": 2,
+      "plus_kernel_per_channel": 0,
+      "minus_negative_per_channel": 1,
+      "minus_kernel_per_channel": 1
+    },
+    {
+      "ell": 1,
+      "multiplicity": 4,
+      "plus_negative_per_channel": 1,
+      "plus_kernel_per_channel": 1,
+      "minus_negative_per_channel": 1,
+      "minus_kernel_per_channel": 0
+    },
+    {
+      "ell": 2,
+      "multiplicity": 9,
+      "plus_negative_per_channel": 1,
+      "plus_kernel_per_channel": 0,
+      "minus_negative_per_channel": 0,
+      "minus_kernel_per_channel": 0
+    },
+    {
+      "ell": 3,
+      "multiplicity": 16,
+      "plus_negative_per_channel": 1,
+      "plus_kernel_per_channel": 0,
+      "minus_negative_per_channel": 0,
+      "minus_kernel_per_channel": 0
+    },
+    {
+      "ell": "all >=4",
+      "multiplicity": "(ell+1)^2",
+      "plus_negative_per_channel": 0,
+      "plus_kernel_per_channel": 0,
+      "minus_negative_per_channel": 0,
+      "minus_kernel_per_channel": 0
+    }
+  ]
+}
+VERIFY round5_n4_mixed_residual.py
+{
+  "status": "whole-space mixed Hminus2 residual for the unchanged frozen q",
+  "profile_sha256": "c50a6f98682ce5f5bef9ab62ae2a93ba06b91522c8f3e29b859ac521afb8f627",
+  "precision_bits": 256,
+  "auxiliary_rule": "septic Hermite: z=Delta q and z_prime at nodes, z_second and third from stationary ODE; even origin jets",
+  "d1_L2_upper": "[1.920668551391012295820397160331750190057479628921743640103638067795137951488e-8 +/- 4.54e-85]",
+  "d2_L2_upper": "[4.180583765099607953361972222026194090081089929791699400899299843364912062278e-8 +/- 1.99e-85]",
+  "Fq_Zdual_upper": "[4.600679113056773888048009653201906558146516565333987913305514279472043199992e-8 +/- 4.75e-84]",
+  "worst_cell": 512,
+  "seconds": 0.12410831451416016,
+  "residual_lt_1e_6": true,
+  "residual_lt_1e_7": true,
+  "residual_lt_1e_8": false
+}
+VERIFY round5_n4_refinement_certificate.py
+{
+  "verified": true,
+  "profile_sha256": "c50a6f98682ce5f5bef9ab62ae2a93ba06b91522c8f3e29b859ac521afb8f627",
+  "dependencies": "frozen radial Ritz lower bounds5.395,2.999; Arb HS^2<38.8; newly enclosed mixed H^-2 residual",
+  "exact_same_Q_as_prior_certificate": true,
+  "Z_distance_upper": "3/10000000",
+  "radial_inverse_upper": "25/4",
+  "coefficient_one_potential_transfer_upper": "6240000009/25600000000000000",
+  "coefficient_one_potential_transfer_diagnostic": 2.437500003515625e-07,
+  "newton_image_upper": "11778588080000027/40960000000000000000000",
+  "newton_lipschitz_upper": "18720000027/4096000000000000",
+  "checks": {
+    "new_energy_dual_residual_lt_4_601e_8": true,
+    "radial_BS_third_lt_0_84": true,
+    "radial_inverse_lt_25_over_4": true,
+    "newton_ball_maps_strictly_inside": true,
+    "newton_lipschitz_lt_1e_5": true,
+    "uniqueness_through_old_ball": true
+  }
+}
+N4 verification chain completed; HS integrals read from supplied interval outputs; use --full to recompute.

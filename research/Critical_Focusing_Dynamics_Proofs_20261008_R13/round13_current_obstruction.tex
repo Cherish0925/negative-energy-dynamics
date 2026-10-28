@@ -1,0 +1,45 @@
+\section{Zero momentum and instantaneous quartic transport}
+The distinction between momentum and quartic mass transport is exact.
+Choose a real sharp wave $Q$ and a real smooth test $h$ with
+\[
+ \langle h,Q\rangle=0,\qquad
+ \langle h,\partial_kQ\rangle=0\ (1\le k\le N),\qquad
+ \langle h,\partial_j\Delta Q\rangle\ne0
+\]
+for some $j$. Such a test exists. Otherwise
+$\partial_j\Delta Q\in\operatorname{span}\{Q,\partial_1Q,\ldots,
+\partial_NQ\}$ as distributions. Pairing with $Q$ removes its $Q$
+component, and Fourier transformation would force $\widehat Q$ onto
+the zero set of a nonzero polynomial, contradicting $Q\ne0$ in $L^2$.
+For fixed sufficiently large $a>0$, set
+\[
+ u_\varepsilon=(1+a\varepsilon^2)Q+i\varepsilon h.
+\]
+Then $P(u_\varepsilon)=0$ exactly, and
+\begin{align*}
+ d_\varepsilon
+ &=\frac4N\left(2a+\frac{M(h)}{M_c}\right)\varepsilon^2
+       +O(\varepsilon^4),\\
+ E(u_\varepsilon)
+ &=\varepsilon^2\left[
+ \frac{A(h)-\int|Q|^{8/N}h^2}{2}-a\omega M_c\right]
+       +o(\varepsilon^2)<0,
+\end{align*}
+where $\Delta^2Q+\omega Q-|Q|^{8/N}Q=0$.
+Nevertheless its quartic mass current is
+\[
+ 4\int\xi_j|\xi|^2|\widehat u_\varepsilon(\xi)|^2\,d\xi
+ =8\varepsilon(1+a\varepsilon^2)
+             \langle h,\partial_j\Delta Q\rangle.
+\]
+Thus this current has order $\sqrt{d_\varepsilon}$ even at exactly zero
+momentum and negative energy. With a finite first moment it is the
+instantaneous derivative of that moment; without one it remains the
+finite Fourier current underlying localized mass transport.
+
+
+The improved center in Section~\ref{sec:r13-center} is a modulation
+coordinate chosen by dual orthogonality, not the ordinary first-moment
+center. Its quadratic drift is therefore consistent with the example.
+The example rules out the proposed instantaneous current improvement;
+it does not rule out further cancellation along the nonlinear evolution.

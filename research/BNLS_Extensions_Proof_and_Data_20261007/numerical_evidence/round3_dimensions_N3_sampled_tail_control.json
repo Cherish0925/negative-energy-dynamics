@@ -1,0 +1,14 @@
+{
+  "minus": {
+    "sampled_sup_r4_cV_minus1": 18151.06345201794,
+    "sampled_argmax": 11.982041740834816,
+    "first_ell_passing_conservative_identity": 12,
+    "lambda_times_lambda_minus2": 24024
+  },
+  "plus": {
+    "sampled_sup_r4_cV_minus1": 122291.79825758103,
+    "sampled_argmax": 12.066035020700413,
+    "first_ell_passing_conservative_identity": 19,
+    "lambda_times_lambda_minus2": 143640
+  }
+}

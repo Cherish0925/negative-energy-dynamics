@@ -1,0 +1,321 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=24mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype,amsmath,amssymb,amsthm,mathtools,enumitem,xcolor}
+\usepackage[colorlinks=true,linkcolor=blue!45!black,urlcolor=blue!45!black]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\R}{\mathbb R}\newcommand{\C}{\mathbb C}
+\newcommand{\ii}{\mathrm i}\newcommand{\dd}{\,\mathrm d}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\newcommand{\ip}[2]{\left\langle #1,#2\right\rangle}
+\newcommand{\Rea}{\operatorname{Re}}\newcommand{\Ima}{\operatorname{Im}}
+\setlength{\parskip}{3pt}
+\title{A mass gap and conserved-momentum geometry\\for negative-energy biharmonic traveling waves}
+\author{Research continuation: analytic proofs and independent internal checks}
+\date{7 October 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+For the focusing mass-critical biharmonic nonlinear Schr\"odinger equation, we prove a positive gap between the sharp Gagliardo--Nirenberg threshold mass and the mass of any negative-energy traveling profile, in every spatial dimension. The proof uses compactness of optimizing sequences and an elementary rigidity argument for the phase Hessian. It requires neither uniqueness nor real-part nondegeneracy of ground states, and no numerical profile certificate. We also give an exact positive factorization of energy along the entire dilation curve preserving both mass and momentum of a negative-energy wave. These results identify two structural restrictions on coherent escape from collapse. They do not classify all globally bounded solutions.
+\end{abstract}
+\noindent\textbf{Status.} This is an internally checked research manuscript. The proofs below are self-contained apart from standard Sobolev, multiplier and compactness facts, whose applications are specified. No publication-priority claim or external peer-review claim is made. The main theorems are independent of the computational certificates and multiwave constructions in the earlier project.
+
+\section{Equation and main mass-gap statement}
+Fix $N\ge1$ and write
+\[
+ \alpha=\frac8N,\qquad p=2+\alpha,\qquad r=\frac4N,
+ \qquad p=2(r+1).
+\]
+The equation and profile equation are
+\begin{align}
+ \ii u_t&=\Delta^2u-|u|^\alpha u,\label{eq:pde}\\
+ \Delta^2U+\omega U+\ii v\cdot\nabla U-|U|^\alpha U&=0,
+ \qquad u(t,x)=e^{\ii\omega t}U(x-vt).\label{eq:profile}
+\end{align}
+Here $\omega\in\R$, $v\in\R^N$, and a profile is a nonzero weak solution $U\in H^2(\R^N;\C)$. Set
+\[
+ M(f)=\norm f_2^2,\quad A(f)=\norm{\Delta f}_2^2,\quad
+ E(f)=\frac12 A(f)-\frac1p\norm f_p^p,\quad
+ P(f)=\Ima\int\bar f\nabla f.
+\]
+Let $M_c>0$ be defined by the sharp inequality
+\begin{equation}\label{eq:gn}
+ \norm f_p^p\le\frac p2\left(\frac{M(f)}{M_c}\right)^r A(f).
+\end{equation}
+Equivalently, $M_c$ is the mass of a ground state with nonlinear coefficient one. Optimizers can be normalized to have $M=M_c$ and $A=1$.
+
+\begin{theorem}[A uniform gap for all traveling profiles]\label{thm:gap}
+For every $N\ge1$ there is $\varepsilon_N>0$ such that every profile of~\eqref{eq:profile} with $E(U)<0$ satisfies
+\[
+ \boxed{M(U)\ge M_c+\varepsilon_N.}
+\]
+The gap is uniform in frequency, velocity, translations and phase. No radial or parity assumption is imposed, and no finite-variance hypothesis is needed. The proof is qualitative: it does not supply a numerical value of $\varepsilon_N$.
+\end{theorem}
+
+The theorem is an exclusion result; it does not assert existence of negative-energy waves in every dimension. It is stronger than the immediate consequence $M(U)>M_c$ of~\eqref{eq:gn}, since a sequence of strictly larger masses could otherwise converge to $M_c$.
+
+\section{Profile identities at energy regularity}
+Every weak profile in~\eqref{eq:profile} belongs to $H^4$. Here are sufficient details to handle small, noninteger $\alpha$ in large dimension. For $N\le8$, Sobolev embedding gives $U\in L^{2(1+\alpha)}$ directly, so $|U|^\alpha U\in L^2$ and~\eqref{eq:profile} gives $H^4$ regularity. For $N>8$, choose $\mu$ so large that
+\[
+ |\xi|^4-v\cdot\xi+\mu\ge c(1+|\xi|^4).
+\]
+The inverse $R_\mu=(\Delta^2+\ii v\cdot\nabla+\mu)^{-1}$ maps $L^s$ to $W^{4,s}$ for $1<s<\infty$, by the multiplier theorem. Write
+\[
+ U=R_\mu(|U|^\alpha U)+(\mu-\omega)R_\mu U.
+\]
+The second term is in $H^4$, hence in $L^{q_{\rm lin}}$, $q_{\rm lin}=2N/(N-8)$. Starting from $q_0=2N/(N-4)$, the first term improves reciprocal integrability according to
+\[
+ a_{j+1}=(1+8/N)a_j-4/N,\qquad
+ a_0=\tfrac12-\tfrac2N,
+\]
+until $q=2(1+\alpha)$ is reached. The ideal iterates are $a_j=\tfrac12-(2/N)(1+8/N)^j$, so this takes finitely many steps. Intermediate exponents may be slightly weakened to avoid endpoints. All input exponents $q_j/(1+\alpha)$ exceed one, and $2(1+\alpha)<q_{\rm lin}$. Thus the linear term does not obstruct the iteration. Now the nonlinearity is in $L^2$, and the original equation implies $U\in H^4$.
+
+\begin{lemma}[Pohozaev and current identities]\label{lem:identities}
+Every such profile satisfies, with the unitary Fourier transform,
+\begin{align}
+ v\cdot P(U)&=8E(U),\label{eq:poho}\\
+ W(U):=\int |\xi|^2\xi|\widehat U(\xi)|^2\dd\xi&=\frac{M(U)}4v,\label{eq:current}\\
+ \omega M(U)&=rA(U)+(8-p)E(U).\label{eq:omega}
+\end{align}
+For $U=a+\ii b$, with real $a,b$, put
+\[
+ \mathcal A_U=\Delta^2+\omega-|U|^\alpha.
+\]
+Then, in quadratic-form notation,
+\begin{equation}\label{eq:imaginary}
+ \boxed{E(U)=\tfrac14\ip b{\mathcal A_Ub}.}
+\end{equation}
+\end{lemma}
+\begin{proof}
+The profile is a critical point of $S=E+\omega M/2-v\cdot P/2$. Mass-preserving dilation scales $E$ and $P$ by $\lambda^4$ and $\lambda$, respectively, giving~\eqref{eq:poho}. Linear phase modulation $e^{\ii k\cdot x}U$ has energy derivative $2W$ and momentum derivative $M$ at $k=0$, giving~\eqref{eq:current}.
+
+These variations do not require weighted assumptions. To justify them at $H^4$, test the weak equation with the cutoff dilation
+\[
+ (x\chi(x/R))\cdot\nabla U+
+ \tfrac12\operatorname{div}(x\chi(x/R))U
+\]
+and the cutoff phase $\ii x_j\chi(x/R)U$, respectively. Here $\chi$ is smooth, compactly supported and one near the origin. The tests belong to $H^2$. Integration by parts gives the displayed identities in the limit $R\to\infty$: coefficients of the leading terms converge to their constant values, and the additional derivatives of the cutoff are $O(R^{-1})$ or smaller. Their terms are bounded by tails of $|U|^2$, $|\nabla U|^2$, $|\Delta U|^2$, and $|U|^p$, or products controlled by these norms. All tails vanish. The nonlinear integration by parts is valid since $|U|^\alpha U\in L^2$ and $\nabla U\in L^2$.
+
+Taking the real pairing with $U$ gives $A+\omega M-v\cdot P-\norm U_p^p=0$; combine this with $\norm U_p^p=(p/2)A-pE$ to obtain~\eqref{eq:omega}. Finally, the imaginary profile equation is $\mathcal A_Ub=-v\cdot\nabla a$. Since $P(U)=-2\int b\nabla a$, it gives $v\cdot P=2\ip b{\mathcal A_Ub}$, proving~\eqref{eq:imaginary}.
+\end{proof}
+
+\section{Phase rigidity without uniqueness or radial symmetry}
+The real-valuedness argument below is a standard strict-convexity mechanism; compare the phase-rotation argument in Proposition 3.8 of~\cite{FJMM}. Fourier rearrangement provides further radial symmetry for even powers~\cite{LS}, but radial symmetry is not needed here.
+
+\begin{lemma}[All optimizers have constant phase]\label{lem:phase}
+Every complex optimizer of~\eqref{eq:gn} is a constant phase times a real function.
+\end{lemma}
+\begin{proof}
+Let $f=a+\ii b$. With $C=(p/2)M_c^{-r}$, Minkowski,~\eqref{eq:gn} on the real components, and two-term H\"older give
+\begin{align*}
+ \norm f_p^2
+ &\le\norm a_p^2+\norm b_p^2\\
+ &\le C^{2/p}\bigl[A(a)^{2/p}M(a)^{1-2/p}
+                 +A(b)^{2/p}M(b)^{1-2/p}\bigr]\\
+ &\le C^{2/p}A(f)^{2/p}M(f)^{1-2/p}.
+\end{align*}
+For an optimizer every inequality is an equality. Strict convexity of $L^{p/2}$ gives $b^2=c a^2$ almost everywhere, unless one component vanishes. Apply the same equality argument to $e^{\ii\pi/4}f$. If both signs of $b/a=\pm\sqrt c$ occurred on sets of positive measure, the new two squared components could not be proportional. For $c=1$ they instead have disjoint nonzero supports, which also gives strict Minkowski inequality. Hence one sign holds almost everywhere, proving the claim. The same argument covers any initial constant phase rotation.
+\end{proof}
+
+Let $Q$ be a real optimizer normalized by $M(Q)=M_c$ and $A(Q)=1$. Its Euler--Lagrange equation is
+\[
+ \Delta^2Q+\omega_QQ-|Q|^{2r}Q=0,\qquad \omega_Q=r/M_c>0.
+\]
+
+\begin{lemma}[Strict positivity after removing phase]\label{lem:coercivity}
+For every such optimizer,
+\[
+ L_-:=\Delta^2+\omega_Q-|Q|^{2r}\ge0,\qquad
+ \ker L_-=\operatorname{span}\{Q\}.
+\]
+There is $c_Q>0$ such that for every real $b\in H^2$ with $\ip bQ=0$,
+\[
+ \ip b{L_-b}\ge c_Q\norm b_{H^2}^2.
+\]
+\end{lemma}
+\begin{proof}
+We retain $A=A(Q)$ and $M=M(Q)$ in the algebra; $\omega_Q=rA/M$. For real $b$, set $B=M(b)$, $C_1=A(b)$ and
+\[
+ F(s)=\int(Q^2+s b^2)^{r+1},\qquad s\ge0.
+\]
+The sharp inequality and equality at $Q$ imply
+\begin{equation}\label{eq:comparison}
+ F(s)\le (r+1)(1+sB/M)^r(A+sC_1).
+\end{equation}
+Comparison of right derivatives at zero gives $L_-\ge0$. If $b$ belongs to its form kernel, these first derivatives agree and
+\[
+ \int |Q|^{2r}b^2=C_1+rAB/M.
+\]
+Compare the second-order remainders in~\eqref{eq:comparison}. Convexity gives a nonnegative pointwise remainder. Fatou's lemma, or the integral Taylor formula, yields
+\begin{equation}\label{eq:Dupper}
+ D:=\int |Q|^{2r-2}b^4
+ \le (r-1)AB^2/M^2+2BC_1/M.
+\end{equation}
+Here the integrand at $Q=0$ is interpreted by the limiting second-order remainder: it is infinite if $r<1$ and $b\ne0$, equals $b^4$ if $r=1$, and is zero if $r>1$. Thus when $r<1$ the finite upper bound already forces $b=0$ almost everywhere on that zero set.
+
+Cauchy--Schwarz gives
+\[
+ D\ge\frac{(C_1+rAB/M)^2}{(r+1)A}.
+\]
+Combining this with~\eqref{eq:Dupper}, and multiplying by $(r+1)A$, gives
+\[
+ (C_1-AB/M)^2\le0.
+\]
+Thus all inequalities are equalities. The Cauchy equality gives $b^2=(B/M)Q^2$ on $\{Q\ne0\}$. Its integral already equals $B$, so $b=0$ on the remaining zero set as well, including the case $r>1$. Moreover $C_1=AB/M$.
+
+The form kernel is a linear space containing $Q$. Applying the same conclusion to $b+Q$ yields $(b+Q)^2=c'Q^2$. Subtracting $b^2=(B/M)Q^2$ gives $bQ=c''Q^2$; since $b$ already vanishes where $Q$ does, $b=c''Q$ almost everywhere. This proves the kernel statement without a maximum principle or a Fourier-positivity argument.
+
+Finally, multiplication by $|Q|^{2r}$ is compact from $H^2$ to $H^{-2}$. Indeed $|Q|^{2r}\in L^{p/(2r)}$, the exponent $p$ is strictly below the $H^2$ critical embedding exponent, local Rellich compactness applies, and the tail is small by H\"older. Consequently $L_-$ is a compact form perturbation of the positive operator $\Delta^2+\omega_Q$. Nonnegativity and the one-dimensional kernel imply the claimed $H^2$ coercivity on the $L^2$ orthogonal complement.
+\end{proof}
+
+\section{Compactness and proof of the uniform mass gap}
+\begin{lemma}[Normalized near-optimizers are compact]\label{lem:compact}
+Suppose $M(f_n)\to M_c$, $A(f_n)=1$, and $E(f_n)<0$. After a subsequence and translations, $f_n$ converges strongly in $H^2$ to a normalized optimizer.
+\end{lemma}
+\begin{proof}
+The sharp inequality sandwiches the nonlinear norm:
+\[
+ \frac p2<\norm{f_n}_p^p
+ \le\frac p2\left(\frac{M(f_n)}{M_c}\right)^r\longrightarrow\frac p2.
+\]
+In particular $E(f_n)\to0$. Nonvanishing for bounded $H^2$ sequences follows from the local Sobolev inequality and a covering by unit cubes: if the mass on every translated fixed cube tended to zero, the $L^p$ norm would tend to zero. Thus translations yield a nonzero weak limit $Q$, also with local strong convergence and almost-everywhere convergence.
+
+Let $m_1=M(Q)>0$, $a_1=A(Q)>0$, $m_2=M_c-m_1$ and $a_2=1-a_1$. Hilbert norm splitting and the Brezis--Lieb lemma, followed by~\eqref{eq:gn}, give
+\[
+ M_c^r\le m_1^r a_1+m_2^r a_2,\qquad a_1+a_2=1.
+\]
+If $0<m_1<M_c$, both coefficients $m_j^r$ are strictly less than $M_c^r$, a contradiction. Hence $m_1=M_c$, and the inequality then forces $a_1=1$. This proves strong $H^2$ convergence and equality in~\eqref{eq:gn}.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:gap}]
+If no uniform gap existed, there would be profiles $U_n$ with negative energy and $M(U_n)\downarrow M_c$. Critical scaling
+\[
+ U(x)\mapsto\lambda^{N/2}U(\lambda x),\qquad
+ (\omega,v)\mapsto(\lambda^4\omega,\lambda^3v)
+\]
+preserves mass and the sign of energy. Normalize $A(U_n)=1$. Lemmas~\ref{lem:compact} and~\ref{lem:phase} give, after translations and a constant phase, $U_n\to Q$ strongly in $H^2$, with $Q$ real. By~\eqref{eq:omega},
+\[
+ \omega_n\longrightarrow r/M_c=\omega_Q.
+\]
+Rotate each $U_n=a_n+\ii b_n$ by a further phase tending to zero so that $\ip{b_n}Q=0$. This is possible since $\ip{U_n}Q\to M_c$.
+
+The forms $\mathcal A_n=\Delta^2+\omega_n-|U_n|^{2r}$ converge in operator norm $H^2\to H^{-2}$ to $L_-$. To see this, $U_n\to Q$ in $L^p$ implies $|U_n|^{2r}\to|Q|^{2r}$ in $L^{p/(2r)}$, and H\"older with two $L^p$ factors bounds the form difference. Lemma~\ref{lem:coercivity} therefore gives, for large $n$,
+\[
+ \ip{b_n}{\mathcal A_n b_n}\ge\tfrac12c_Q\norm{b_n}_{H^2}^2\ge0.
+\]
+But~\eqref{eq:imaginary} says $E(U_n)=\ip{b_n}{\mathcal A_n b_n}/4<0$. This contradiction proves the uniform gap. No uniform coercivity constant over all ground states is needed: compactness selects one limiting optimizer.
+\end{proof}
+
+\begin{corollary}[Arbitrary elliptic quartic anisotropy]
+Let $a(\xi)$ be a real homogeneous polynomial of degree four satisfying
+\[
+ 0<c|\xi|^4\le a(\xi)\le C|\xi|^4\qquad(\xi\ne0).
+\]
+Replace $\Delta^2$ by $a(D)$ and $A(f)$ by $A_a(f)=\int a(\xi)|\widehat f(\xi)|^2\dd\xi$. Define $E_a$ and the sharp threshold mass $M_{c,a}$ accordingly. There is $\varepsilon_{N,a}>0$ such that every $H^2$ profile solving
+\[
+ a(D)U+\omega U+\ii v\cdot\nabla U-|U|^{8/N}U=0,
+ \qquad E_a(U)<0,
+\]
+satisfies $M(U)\ge M_{c,a}+\varepsilon_{N,a}$.
+\end{corollary}
+\begin{proof}
+The symbol is even, so the kinetic form is real and splits additively over real and imaginary components. Its norm is equivalent to the homogeneous $H^2$ norm, and its homogeneity gives the same dilation identity $v\cdot P=8E_a$. The elliptic regularity argument applies to $a(D)+\ii v\cdot\nabla+\mu$ for large $\mu$. All GN, phase-kernel and compactness arguments above use only these properties. The identity $E_a(U)=\ip b{(a(D)+\omega-|U|^{8/N})b}/4$ is unchanged. The same contradiction proves the result. No smallness of the anisotropy is assumed; the gap is not asserted uniform over all symbols.
+\end{proof}
+
+\section{Exact geometry at fixed mass and momentum}
+This section applies to every negative-energy profile in every dimension, independently of the mass-gap proof. For such a profile put
+\[
+ a=\frac{P(U)}{M(U)},\quad m=M(U)|a|^4,\quad
+ B=\int\bigl(|a|^2|\xi|^2+2(a\cdot\xi)^2\bigr)|\widehat U(\xi)|^2\dd\xi.
+\]
+The letters $a,m,B$ here are unrelated to the real/imaginary decomposition in earlier sections. Jensen gives $B\ge3m$.
+
+\begin{theorem}[A strict minimum on the conserved-momentum dilation curve]
+Define
+\[
+ U_\lambda(x)=e^{\ii(1-\lambda)a\cdot x}\lambda^{N/2}U(\lambda x),
+ \qquad \lambda>0.
+\]
+Then $M(U_\lambda)=M(U)$ and $P(U_\lambda)=P(U)$. With $E=E(U)<0$,
+\begin{align}\label{eq:factor}
+ E(U_\lambda)-E
+ =(\lambda-1)^2\bigl[&(B-\tfrac32m-3E)\lambda^2\\
+ &+(m-2E)\lambda+(\tfrac12m-E)\bigr].\nonumber
+\end{align}
+All three coefficients in brackets are positive. In particular,
+\[
+ E(U_\lambda)-E(U)\ge\bigl(|E(U)|+m/2\bigr)(\lambda-1)^2.
+\]
+Thus $U$ is the unique energy minimum on this entire curve.
+\end{theorem}
+\begin{proof}
+For $U_{\lambda,k}=e^{\ii k\cdot x}\lambda^{N/2}U(\lambda x)$, direct Fourier expansion gives
+\begin{align*}
+ E(U_{\lambda,k})={}&\lambda^4E+2\lambda^3 k\cdot W
+ +\lambda^2\int\bigl(|k|^2|\xi|^2+2(k\cdot\xi)^2\bigr)|\widehat U|^2\\
+ &+2\lambda|k|^2 k\cdot P+\tfrac12M|k|^4.
+\end{align*}
+The nonlinear energy scales as $\lambda^4$. Equations~\eqref{eq:poho}--\eqref{eq:current} give $a\cdot W=2E$. Substitute $k=(1-\lambda)a$ and factor to get~\eqref{eq:factor}. Positivity follows from $B\ge3m$ and $E<0$.
+\end{proof}
+
+Two useful consequences are
+\[
+ \left.\frac{\dd^2}{\dd\lambda^2}E(U_\lambda)\right|_{\lambda=1}
+ =-12E+2B>0,
+\]
+and
+\begin{equation}\label{eq:boost}
+ E(e^{-\ii a\cdot x}U)=B-\tfrac32m-3E
+ \ge\tfrac32m+3|E|>0.
+\end{equation}
+So neutralizing a wave's momentum by a linear phase necessarily destroys its negative energy. Ordinary mass-preserving dilation has energy $\lambda^4E$; it does not preserve momentum. A minimum on the particular curve above is not a minimum on the full constraint surface and does not prove orbital stability.
+
+\section{The next dynamical threshold, and a radiation constraint}
+Define the distinct dynamical quantity
+\[
+ m_{\rm ng}=\inf\left\{M(u_0):\begin{array}{l}
+ E(u_0)<0,\ P(u_0)=0,\ u\text{ is forward global},\\
+ \sup_{t\ge0}\norm{u(t)}_{H^2}<\infty
+ \end{array}\right\},
+\]
+with the infimum of the empty set equal to $+\infty$. The sharp inequality gives only $m_{\rm ng}\ge M_c$. Theorem~\ref{thm:gap} concerns traveling profiles; it does not yet prove $m_{\rm ng}>M_c$. Proving that stronger statement would require control of arbitrary bounded dynamics, including radiation and multiple separating cores.
+
+For comparison, let $m_{\rm tw}$ be the infimum of the masses of all negative-energy traveling profiles. The theorem proves $m_{\rm tw}\ge M_c+\varepsilon_N$, with no assertion that the infimum is attained. If one already has an exact opposite-velocity two-wave solution with profile $U_v$, conservation and decoupling give $m_{\rm ng}\le2M(U_v)$. This upper bound depends on that separate nonlinear construction.
+
+There is a useful universal constraint on a prospective wave-plus-radiation mechanism. Suppose an exact solution were asymptotic to a negative-energy traveling wave plus free radiation $e^{-\ii t\Delta^2}f$, with vanishing cross terms and zero total momentum. For $m_f=M(f)>0$, Jensen gives
+\[
+ E_{\rm rad}=\tfrac12\norm{\Delta f}_2^2
+ \ge\frac{|P(f)|^4}{2m_f^3}.
+\]
+The constant is sharp as an infimum, approached by narrow Fourier packets. Since $P(f)=-P(U)$, strict negativity of total energy requires
+\begin{equation}\label{eq:budget}
+ m_f^3>\frac{|P(U)|^4}{2|E(U)|}.
+\end{equation}
+This is necessary, not a nonlinear existence theorem. For a branch with $|P(U_v)|\asymp|v|$ and $-E(U_v)\asymp v^2$, the lower bound on radiation mass from this budget is of order $|v|^{2/3}$. Thus two full nonlinear cores are not the only possible momentum-balancing mechanism. Constructing an exact radiative wave operator is a substantive next step.
+
+Three objectives now have precise content:
+\begin{enumerate}[leftmargin=*,itemsep=3pt]
+ \item Determine whether the traveling-wave gap extends to $m_{\rm ng}>M_c$, and identify the least-mass escape mechanism. This is a research question posed here, not an attributed named conjecture.
+ \item Construct an infinite-dimensional center-stable family near a negative-energy excited wave, first with uniform orbital control and then with an asymptotic description of radiation. The second objective additionally requires continuous-spectrum and internal-mode analysis.
+ \item Prove a local soliton-resolution theorem in a specified regime. Recent one-dimensional mixed-dispersion work explicitly formulates asymptotic stability, branch transitions and soliton-resolution conjectures~\cite{KPRS}. Those are related targets, not consequences of the present all-dimensional mass-gap theorem, and their dimension and parameter restrictions must be preserved.
+\end{enumerate}
+
+\begin{thebibliography}{9}
+\bibitem{FJMM} A. J. Fern\'andez, L. Jeanjean, R. Mandel and M. Mari\c{s},
+\emph{Non-homogeneous Gagliardo--Nirenberg inequalities in $\R^N$ and application to a biharmonic non-linear Schr\"odinger equation},
+Journal of Differential Equations 330 (2022), 1--65; Proposition 3.8.
+\url{https://arxiv.org/abs/2010.01448}.
+\bibitem{LS} E. Lenzmann and J. Sok,
+\emph{A sharp rearrangement principle in Fourier space and symmetry results for PDEs with arbitrary order},
+International Mathematics Research Notices (2021), 15040--15081; Theorem 2 and its remarks.
+\url{https://arxiv.org/abs/1805.06294}.
+\bibitem{KPRS} C. Klein, I. Petrenko, S. Roudenko and N. Stoilov,
+\emph{Dynamics of solutions in the 1d bi-harmonic nonlinear Schr\"odinger equation},
+arXiv:2510.24961v2 (27 February 2026), Section 1.3, Conjecture I.
+\url{https://arxiv.org/abs/2510.24961}.
+\end{thebibliography}
+\end{document}

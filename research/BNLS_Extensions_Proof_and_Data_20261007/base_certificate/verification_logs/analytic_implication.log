@@ -1,0 +1,104 @@
+{
+  "status": "conditional analytic implication; spectral and scalar premises must be independently certified",
+  "comparison_arithmetic": "exact rational",
+  "checks": {
+    "Sobolev_constant_reduction_sufficient": true,
+    "derivative_constant_reduction_sufficient": true,
+    "radial_two_Ritz_above_one_plus_gap": true,
+    "radial_remaining_BS_eigenvalues_below_one_minus_gap": true,
+    "plus2_Ritz_above_one_plus_gap": true,
+    "plus2_remaining_BS_eigenvalues_below_one_minus_gap": true,
+    "minus1_Ritz_above_one_plus_gap": true,
+    "minus1_remaining_BS_eigenvalues_below_one_minus_gap": true,
+    "optional_plus4_HS_implies_high_gap": true,
+    "optional_minus3_HS_implies_high_gap": true,
+    "Newton_ball_invariant": true,
+    "Newton_strict_contraction": true,
+    "radial_gap_survives": true,
+    "plus2_gap_survives": true,
+    "all_high_plus_gaps_survive": true,
+    "minus1_gap_survives": true,
+    "all_high_minus_gaps_survive": true,
+    "negative_inverse_pairing": true,
+    "convenient_negative_pairing_margin": true
+  },
+  "all_checks_pass": true,
+  "values": {
+    "alpha": {
+      "exact_fraction": "1/256",
+      "decimal_display_only": "0.00390625"
+    },
+    "G": {
+      "exact_fraction": "3/5",
+      "decimal_display_only": "0.6"
+    },
+    "m": {
+      "exact_fraction": "104",
+      "decimal_display_only": "104"
+    },
+    "b": {
+      "exact_fraction": "132",
+      "decimal_display_only": "132"
+    },
+    "eta_q": {
+      "exact_fraction": "121/500000",
+      "decimal_display_only": "0.000242"
+    },
+    "eta_psi": {
+      "exact_fraction": "331/500000",
+      "decimal_display_only": "0.000662"
+    },
+    "rho": {
+      "exact_fraction": "3/500",
+      "decimal_display_only": "0.006"
+    },
+    "gamma_radial": {
+      "exact_fraction": "1/20",
+      "decimal_display_only": "0.05"
+    },
+    "gamma_minus": {
+      "exact_fraction": "1/25",
+      "decimal_display_only": "0.04"
+    },
+    "radius_bound": {
+      "exact_fraction": "9148027/1600000000",
+      "decimal_display_only": "0.005717516875"
+    },
+    "contraction_bound": {
+      "exact_fraction": "936027/3200000",
+      "decimal_display_only": "0.2925084375"
+    },
+    "d_minus": {
+      "exact_fraction": "312009/64000000",
+      "decimal_display_only": "0.004875140625"
+    },
+    "d_plus": {
+      "exact_fraction": "936027/64000000",
+      "decimal_display_only": "0.014625421875"
+    },
+    "exact_minus_gap_lower": {
+      "exact_fraction": "2247991/64000000",
+      "decimal_display_only": "0.035124859375"
+    },
+    "J_shift_upper": {
+      "exact_fraction": "343579401/4000000",
+      "decimal_display_only": "85.89485025"
+    },
+    "response_residual_upper": {
+      "exact_fraction": "10364489/16000000",
+      "decimal_display_only": "0.6477805625"
+    },
+    "quadratic_residual_upper": {
+      "exact_fraction": "107422632231121/8991964000000",
+      "decimal_display_only": "11.946514936127524531904264741273430"
+    },
+    "I_upper": {
+      "exact_fraction": "-24609689664617/140499437500",
+      "decimal_display_only": "-175.15863481387247546809573525872657"
+    },
+    "radial_HS_remainder_upper": {
+      "exact_fraction": "449987/500000",
+      "decimal_display_only": "0.899974"
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "n": 128,
+  "L": 24.0,
+  "ds": 0.025,
+  "end": 1.0,
+  "start": 0,
+  "seed": null,
+  "out": "core_continuation/run128"
+}

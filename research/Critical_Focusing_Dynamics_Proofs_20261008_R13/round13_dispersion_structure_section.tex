@@ -1,0 +1,436 @@
+\section{Exterior energy for homogeneous dispersion and attraction}
+\label{sec:r13-dispersion-structure}
+
+Fix $m>2$, $s=m/2$, and a real even positive elliptic symbol $a$,
+$m$-homogeneous and $C^{N+2}$ away from zero:
+\[
+ c_a|\xi|^m\le a(\xi)\le C_a|\xi|^m.
+\]
+For $u\in H^s(\mathbb R^N)$ write
+\[
+ M=\|u\|_2^2,\qquad A=\|a(D)^{1/2}u\|_2^2,\qquad
+ P=\operatorname{Im}\int\overline u\nabla u.
+\]
+We use either the local equation
+\begin{equation}\label{r13g:equation}
+ iu_t=a(D)u-|u|^{2m/N}u,\qquad
+ p=2+2m/N,\qquad E=\frac A2-\frac{\|u\|_p^p}{p},
+\end{equation}
+or, when $2<m<N$, the Hartree equation
+\begin{equation}\label{r13g:hartree-equation}
+ iu_t=a(D)u-(K*|u|^2)u,\qquad
+ E=\frac A2-\frac{H_K(u)}4,
+ \quad H_K(u)=\iint K(x-y)|u(x)|^2|u(y)|^2\,dx\,dy.
+\end{equation}
+Here $K$ is real, even, $C^1$ away from zero, homogeneous of degree
+$-m$, positive definite as a density quadratic form, and
+\[
+ |K(x)|+|x||\nabla K(x)|\le C_K|x|^{-m}.
+\]
+The corresponding sharp inequalities and mass excesses are
+\begin{align*}
+ \|u\|_p^p&\le\frac p2(M/M_c)^{m/N}A,
+ &d&=(M/M_c)^{m/N}-1 &&\text{(local)},\\
+ H_K(u)&\le2(M/M_c)A,
+ &d&=M/M_c-1 &&\text{(Hartree)}.
+\end{align*}
+The dynamical theorem below uses strongly approximable conservative
+$H^s$ solutions. No local theory for arbitrary symbols and dimensions
+is silently included in that solution convention.
+Positive definiteness here is strict on nonzero real densities in the
+interaction space, so its square root is a strictly convex Hilbert
+norm. Mere nonnegative semidefiniteness is not the assumed hypothesis.
+
+The exterior kinetic density in both equations is
+$|a(D)^{1/2}u|^2$. Convexity of $a$ is unnecessary: all anisotropic
+contributions can be confined to an annulus, with an error tending to
+zero. We prove that fact directly by Fourier estimates.
+
+\subsection{An exterior kinetic term without convexity}
+
+Put $b=\sqrt a$ and, for $\xi\ne0$, define the bounded degree-zero
+symbols
+\[
+ B_{jk}(\xi)=\frac{\partial_j a(\xi)\xi_k}{a(\xi)}.
+\]
+Euler's identity gives $\sum_jB_{jj}=m$. These are real even symbols;
+no sign is assigned to individual entries.
+
+\begin{lemma}[Cutoff commutations]
+\label{lem:r13g-cutoff}
+For a fixed smooth compact cutoff $\theta$, $\theta_R(x)=\theta(x/R)$,
+and $R\ge1$,
+\begin{align}
+ \|[B_{jk}(D),\theta_R]b(D)u\|_2
+ &\le CR^{-1}\|u\|_{H^s},\label{r13g:zero-order-comm}\\
+ \|[b(D),\theta_R]u\|_2
+ &\le CR^{-1}\|u\|_{H^s}.\label{r13g:half-comm}
+\end{align}
+The same estimates hold for constant additions to $\theta_R$.
+\end{lemma}
+\begin{proof}
+Write $h=\xi-\zeta$. The angular derivative bound for $B_{jk}$,
+its boundedness, and $s>1$ give
+\[
+ |B_{jk}(\xi)-B_{jk}(\zeta)|b(\zeta)
+ \le C|h||\zeta|^{s-1}.
+\]
+For $|h|\le|\zeta|/2$ use its homogeneous derivative of degree $-1$;
+otherwise use $|\zeta|\le2|h|$. Young's convolution inequality and
+$\||h|\widehat\theta_R(h)\|_1=O(R^{-1})$ prove
+\eqref{r13g:zero-order-comm}. Similarly,
+\[
+ |b(\xi)-b(\zeta)|
+ \le C|h|\bigl(|\zeta|+|h|\bigr)^{s-1}
+\]
+gives an upper bound
+$CR^{-1}\|u\|_{H^{s-1}}+CR^{-s}\|u\|_2$ for
+\eqref{r13g:half-comm}. Constants commute.
+\end{proof}
+
+Choose a radial $h_0\in C_c^\infty$ with $0\le h_0\le1$, equal
+to one on $B_1$ and zero outside $B_2$. Let
+\[
+ f_R(x)=x h_0(x/R),\qquad
+ L_R=f_R\cdot\nabla+\tfrac12\operatorname{div}f_R,
+ \qquad C_R=[a(D),L_R].
+\]
+
+\begin{lemma}[Factorization of the principal form]
+\label{lem:r13g-principal}
+For $g=b(D)u$ and $R\ge1$,
+\begin{equation}\label{r13g:factor}
+ \langle u,C_Ru\rangle
+ =\operatorname{Re}\sum_{j,k}
+    \langle g,(\partial_j f_{R,k})B_{jk}(D)g\rangle
+       +O(R^{-1}\|u\|_{H^s}^2).
+\end{equation}
+In particular,
+\begin{align}
+ \langle u,C_Ru\rangle
+ &\le mA(u)-m\int_{|x|>2R}|g|^2
+    +C\int_{R/2<|x|<4R}|g|^2
+    +CR^{-1}\|u\|_{H^s}^2.
+ \label{r13g:exterior-sign}
+\end{align}
+All constants are unchanged by translation of the cutoffs.
+\end{lemma}
+\begin{proof}
+The Fourier kernel of $C_R$, with $h=\xi-\zeta$, is
+\[
+ \frac i2\,[a(\xi)-a(\zeta)](\xi+\zeta)_k
+                                  \widehat f_{R,k}(h).
+\]
+The kernel of $\sum_{j,k}(\partial_j f_{R,k})q_{jk}(D)$, where
+$q_{jk}(\zeta)=\partial_j a(\zeta)\zeta_k$, is
+\[
+ i h_j\widehat f_{R,k}(h)\partial_j a(\zeta)\zeta_k.
+\]
+Their difference is bounded by
+\begin{equation}\label{r13g:kernel-remainder}
+ C|h|^2(|\zeta|+|h|)^{m-1}|\widehat f_R(h)|.
+\end{equation}
+This is second-order Taylor expansion: the second derivatives of $a$
+extend continuously at zero because $m>2$. To bound the form on $H^s$,
+divide the kernel by $\langle\xi\rangle^s\langle\zeta\rangle^s$.
+The elementary bound
+\[
+ \frac{(|\zeta|+|h|)^{m-1}}
+      {\langle\xi\rangle^s\langle\zeta\rangle^s}
+ \le C\langle h\rangle^{m-1}
+\]
+follows by splitting $|\zeta|\le2|h|$ and its complement.
+Since $\widehat f_R(h)=R^{N+1}\widehat f_1(Rh)$, Schur's test
+bounds \eqref{r13g:kernel-remainder} by $CR^{-1}$ as a form
+$H^s\times H^s\to\mathbb C$.
+
+Replacing $q_{jk}(D)$ by the $b(D)$ sandwich changes its kernel by
+\[
+ [b(\zeta)-b(\xi)]b(\zeta)B_{jk}(\zeta)
+                      \widehat{\partial_j f_{R,k}}(h).
+\]
+Its magnitude is at most
+$C|h|(|\zeta|+|h|)^{m-1}
+|\widehat{\partial_j f_{R,k}}(h)|$.
+The same weighted Schur estimate, now using the scale-invariant
+coefficient $\partial_j f_{R,k}$, is $O(R^{-1})$.
+Taking real parts proves \eqref{r13g:factor}.
+
+Write
+\[
+ \partial_j f_{R,k}=h_0(x/R)\delta_{jk}+c_{jk,R}.
+\]
+The coefficients $c_{jk,R}$ are uniformly bounded and supported on
+$R<|x|<2R$. The identity $\sum_jB_{jj}=m$ makes the diagonal part
+exactly $m\int h_0(x/R)|g|^2$. Choose $\theta_R$ supported on
+$R/2<|x|<4R$ and equal to one on the support of every $c_{jk,R}$.
+For $c=c_{jk,R}$ and $B=B_{jk}(D)$,
+\[
+ \langle g,cBg\rangle
+ =\langle\theta_Rg,cB(\theta_Rg)\rangle
+   +\langle\theta_Rg,c[B,1-\theta_R]g\rangle.
+\]
+The first term is bounded by $C\|\theta_Rg\|_2^2$, and
+Lemma~\ref{lem:r13g-cutoff} bounds the second by
+$CR^{-1}\|u\|_{H^s}^2$.
+Finally $h_0\le1$ and $h_0=0$ outside $2R$ give
+\eqref{r13g:exterior-sign}. No pointwise principal-symbol sign has
+been used.
+\end{proof}
+
+\subsection{Localized mass and moving virial identities}
+
+\begin{lemma}[Localized mass transport]
+\label{lem:r13g-mass-commutator}
+For a real smooth compact cutoff $\chi_R(x)=\chi((x-z)/R)$,
+$R\ge1$, and $v,w\in H^s$,
+\begin{equation}\label{r13g:mass-commutator}
+ |\langle v,[a(D),\chi_R]w\rangle|
+ \le CR^{-1}\|v\|_{H^s}\|w\|_{H^s}.
+\end{equation}
+If at a given time $u=e^{i\theta}(X+iY)$, with $X,Y$ real,
+$M(Y)\le CdM$, $A(Y)\le CdA(u)$, and the mass is in a fixed
+compact positive interval, then for $R A(u)^{1/m}\ge1$,
+\begin{equation}\label{r13g:scaled-mass-transport}
+ \left|\frac d{dt}\int\chi((x-z)/R)|u|^2\right|
+ \le C\sqrt d\,R^{-1}A(u)^{(m-1)/m}.
+\end{equation}
+The center $z$ in this statement is fixed during differentiation.
+\end{lemma}
+\begin{proof}
+The Fourier kernel of the commutator is
+$[a(\xi)-a(\zeta)]\widehat\chi_R(\xi-\zeta)$.
+The mean-value bound
+\[
+ |a(\xi)-a(\zeta)|
+ \le C|\xi-\zeta|(|\zeta|+|\xi-\zeta|)^{m-1}
+\]
+and the weighted Schur estimate in
+Lemma~\ref{lem:r13g-principal} give \eqref{r13g:mass-commutator}.
+The nonlinear potential in both equations is real and cancels from
+the mass derivative. Since $a$ is real even and $\chi_R$ real,
+the real-real and imaginary-imaginary terms make no contribution;
+only a bilinear expression in $X,Y$ remains. Normalize $A(u)=1$
+by critical scaling, apply the commutator bound and
+$\|Y\|_{H^s}\le C\sqrt d$, then restore the scale.
+The temporal scale contributes $A(u)$, while the cutoff radius becomes
+$R A(u)^{1/m}$, giving \eqref{r13g:scaled-mass-transport}.
+The chosen constant phase is never differentiated.
+\end{proof}
+
+For a locally absolutely continuous center $z(t)$, define
+\[
+ J_R(t)=2\operatorname{Im}\int f_R(x-z(t))\cdot\overline u\nabla u.
+\]
+For smooth solutions, direct differentiation gives
+\begin{equation}\label{r13g:exact-moving-virial}
+ J_R'=2\langle u,C_R^{z(t)}u\rangle+\mathcal N_R
+ -2z'(t)\cdot\int Df_R(x-z(t))
+                         \operatorname{Im}(\overline u\nabla u).
+\end{equation}
+The vector field $f_R=xh_0(x/R)$ has symmetric derivative, so this
+matrix convention is unambiguous. The nonlinear term is
+\[
+ \mathcal N_R=-\frac{2(p-2)}p
+       \int\operatorname{div}f_R(x-z)|u|^p
+       \quad\hbox{for the local power},
+\]
+and
+\[
+ \mathcal N_R=\iint|u(x)|^2|u(y)|^2
+  [f_R(x-z)-f_R(y-z)]\cdot\nabla K(x-y)\,dx\,dy
+       \quad\hbox{for Hartree}.
+\]
+Their full-dilation values combine with $2mA$ to give $4mE$.
+The motion term equals $-2z'\cdot P$ plus an error bounded by
+\begin{equation}\label{r13g:motion-defect}
+ C|z'|\int_{|x-z|>R}|u||\nabla u|,
+\end{equation}
+because $Df_R=I$ inside $B_R$. Also, for mass in a fixed compact
+interval,
+\begin{equation}\label{r13g:virial-endpoint}
+ |J_R(t)|\le CR A(u(t))^{1/m}.
+\end{equation}
+Indeed $\|f_R\|_\infty\le CR$ and interpolation bounds
+$\|u\|_2\|\nabla u\|_2$ by $CM^{1-1/m}A^{1/m}$.
+All identities are understood in integrated form for the stated
+strongly approximable solution class; the Fourier form estimates and
+the interaction estimates below justify passage to the limit.
+
+\subsection{Exterior interaction and current estimates}
+\label{subsec:r13g-exterior-interaction}
+
+The preceding estimates were stated on a bounded $H^s$ ball. Their
+homogeneity gives precise instantaneous kinetic dependence. Fix the mass
+in a compact positive interval, put $\lambda=A(u)^{1/m}$, and assume
+$R\lambda\ge1$. Rescaling to $A=1$ in
+Lemma~\ref{lem:r13g-principal} replaces its remainder by
+\begin{equation}\label{r13g:scaled-principal-error}
+ CR^{-1}A(u)^{(m-1)/m}.
+\end{equation}
+For $\zeta_R=0$ on $B_{R/4}$ and $\zeta_R=1$ outside $B_{R/2}$,
+Lemma~\ref{lem:r13g-cutoff} similarly gives
+\begin{equation}\label{r13g:scaled-cutoff-error}
+ \|[a(D)^{1/2},\zeta_R]u\|_2^2
+ \le CR^{-2}A(u)^{(m-2)/m}.
+\end{equation}
+These follow by unitary critical spatial rescaling; the constants do
+not require an upper bound on $A(u)$.
+
+Fix a center $z$ and write $g=a(D)^{1/2}u$,
+\[
+ K_R=\int_{|x-z|>8R}|g|^2,\qquad
+ H_R=\int_{R/4<|x-z|<8R}|g|^2,\qquad
+ \varepsilon_R=R^{-2}A(u)^{(m-2)/m}.
+\]
+If $\int_{|x-z|>R/4}|u|^2\le\mu$, then
+\begin{equation}\label{r13g:tail-localization}
+ M(\zeta_Ru)\le\mu,\qquad
+ A(\zeta_Ru)\le C(K_R+H_R+\varepsilon_R).
+\end{equation}
+Sharp interpolation and interpolation between orders zero and $s$ give
+\begin{align}
+ \int_{|x-z|>R}|u|^p
+ &\le C\mu^{m/N}(K_R+H_R+\varepsilon_R),
+ \label{r13g:local-tail-struct}\\
+ \int_{|x-z|>R}|u||\nabla u|
+ &\le C\mu^{1-1/m}(K_R+H_R+\varepsilon_R)^{1/m}.
+ \label{r13g:current-tail-struct}
+\end{align}
+For the current bound, apply
+$\|\nabla w\|_2\le C\|w\|_2^{1-2/m}A(w)^{1/m}$ to
+$w=\zeta_Ru$, which equals $u$ on the indicated exterior region.
+
+\begin{lemma}[Hartree virial tail]
+\label{lem:r13g-hartree-tail}
+In the Hartree setting the difference between the nonlinear localized
+virial expression and its full dilation value $-mH_K(u)$ obeys
+\begin{equation}\label{r13g:hartree-tail}
+ |\text{Hartree defect}|
+ \le CR^{-m}M^2+C\mu(K_R+H_R+\varepsilon_R).
+\end{equation}
+\end{lemma}
+\begin{proof}
+For $\rho=|u|^2$ the symmetrized nonlinear expression is
+\[
+ \iint\rho(x)\rho(y)
+ [f_R(x-z)-f_R(y-z)]\cdot\nabla K(x-y)\,dx\,dy.
+\]
+The full dilation vector gives $-mH_K(u)$ by homogeneity.
+The difference vanishes if both points lie in $B(z,R)$, and the
+uniform Lipschitz bound for $f_R$ bounds its absolute integrand by
+$C\rho(x)\rho(y)|x-y|^{-m}$. By symmetry take $|x-z|>R$.
+If $|y-z|<R/2$, then $|x-y|\ge R/2$, and this contribution is at
+most $CR^{-m}M^2$. Otherwise both points are outside $B(z,R/2)$.
+For $w=\zeta_Ru$, HLS and elliptic interpolation give
+\[
+ \iint|x-y|^{-m}|w(x)|^2|w(y)|^2\,dx\,dy
+ \le C\|w\|_{4N/(2N-m)}^4\le CM(w)A(w).
+\]
+Use \eqref{r13g:tail-localization}. Thus the near-diagonal exterior
+interaction sees only the small mass $\mu$, while the separated
+core--tail interaction vanishes with $R$.
+\end{proof}
+
+\begin{lemma}[Hartree weak energy splitting]
+\label{lem:r13g-hartree-splitting}
+Suppose $u_n\rightharpoonup v$ in $H^s$ and $u_n\to v$ in
+$L^2_{\mathrm{loc}}$. For $w_n=u_n-v$,
+\[
+ H_K(u_n)=H_K(v)+H_K(w_n)+o(1),\qquad
+ E(u_n)=E(v)+E(w_n)+o(1).
+\]
+\end{lemma}
+\begin{proof}
+Set $q=4N/(2N-m)$, strictly between $2$ and the $H^s$ Sobolev
+exponent. Thus $w_n\to0$ in $L^q_{\mathrm{loc}}$ and is bounded
+globally in $L^q$. Approximate $v$ by smooth compact functions to
+obtain $\operatorname{Re}(\overline v w_n)\to0$ in $L^{q/2}$.
+HLS removes all corresponding terms in the density expansion.
+It remains to show
+$\iint K(x-y)|v(x)|^2|w_n(y)|^2\,dx\,dy\to0$.
+The potential of a smooth compact approximation to $v$ is bounded
+because $m<N$, and tends to zero at infinity by the Riesz bound.
+Local strong $L^2$ convergence and bounded mass of $w_n$ make this
+pairing tend to zero. HLS controls the approximation error.
+The kinetic quadratic form splits by weak convergence, proving the
+energy identity.
+\end{proof}
+
+\subsection{A concrete conservative local flow}
+
+\begin{proposition}[Integer energy regularity in dimensions one to three]
+\label{prop:r13g-local-flow}
+Let $m=2k$ with integer $k\ge2$, $N=1,2,3$, and let $\mathcal H$
+be any separable complex Hilbert space. For every symbol $a$ above,
+let $b$ be a common real measurable symbol satisfying
+$0\le b(\xi)\le C_b(1+|\xi|^{2k})$. The total-density system
+\[
+ i\partial_tU=[a(D)+b(D)]U-\|U\|_{\mathcal H}^{4k/N}U
+\]
+has a unique maximal $C_tH^k_x(\mathcal H)$ solution for every
+$H^k(\mathcal H)$ datum. The flow conserves
+\begin{gather*}
+ M=\int\|U\|_{\mathcal H}^2,\qquad
+ P=\operatorname{Im}\int\langle U,\nabla U\rangle_{\mathcal H},\\
+ E_b=\frac12\int(a+b)(\xi)\|\widehat U(\xi)\|_{\mathcal H}^2\,d\xi
+       -\frac1{\alpha+2}\int\|U\|_{\mathcal H}^{\alpha+2},
+ \qquad\alpha=4k/N,
+\end{gather*}
+and has the usual $H^k$ continuation alternative. The local estimates
+are independent of the internal dimension. For the homogeneous case
+$b=0$, the localized mass and virial identities also pass by strong
+approximation. In particular the scalar dynamical conclusions below
+need no additional local-theory assumption throughout this integer-order
+class, which includes every positive elliptic even homogeneous
+polynomial of degree $2k$. No homogeneous virial identity is asserted
+for a general nonzero $b$.
+\end{proposition}
+\begin{proof}
+Write $\alpha=4k/N>k$. On the underlying real Hilbert space, the
+radial map $F(Z)=\|Z\|_{\mathcal H}^{\alpha}Z$ is Fr\'echet
+$C^{k+1}$. Its derivatives obey, for $1\le j\le k+1$,
+\[
+ \|D^jF(Z)\|_{\mathrm{op}}
+ \le C_{\alpha,j}\|Z\|_{\mathcal H}^{\alpha+1-j},
+\]
+with constants independent of $\mathcal H$; the derivatives extend
+continuously at zero because $\alpha+1-j>0$. These bounds follow
+by differentiating the Hilbert norm away from zero: each term is a
+product of inner products, vectors, and a power of the norm.
+Since $k>N/2$, the Hilbert-valued Sobolev embedding and integer
+chain/product estimates, applied to
+\[
+ F(U)-F(V)=\int_0^1 DF(V+\tau(U-V))(U-V)\,d\tau,
+\]
+show that $F:H^k(\mathcal H)\to H^k(\mathcal H)$ is locally
+Lipschitz. The estimates use operator norms of the displayed
+derivatives and pointwise Hilbert norms, so their constants do not
+grow with the internal dimension. They extend from finite-component
+smooth fields by orthogonal projection and density. The common scalar
+group $e^{-it[a(D)+b(D)]}$ is strongly continuous and unitary on
+$H^k(\mathcal H)$. Duhamel contraction gives existence, uniqueness,
+continuous dependence, and the blowup alternative.
+
+For conservation and approximation, use the self-adjoint Fourier
+projection $\Pi_n$ onto $|\xi|\le n$ and solve
+\[
+ i\partial_tU_n=[a(D)+b(D)]U_n-\Pi_nF(U_n),\qquad
+ U_n(0)=\Pi_nU_0,\qquad U_n=\Pi_nU_n.
+\]
+This projected Hamiltonian flow conserves the restrictions of
+$M,P,E_b$: $\Pi_n$ commutes with translations and the linear
+dispersion, and its range is invariant under constant phase.
+The local Lipschitz bounds are uniform in $n$, so Duhamel and
+Gronwall give $U_n\to U$ in $C_tH^k_x(\mathcal H)$ on every compact subinterval
+of the lifespan. All three conserved functionals are continuous in
+$H^k(\mathcal H)$, using the stated growth bound for $b$, so
+conservation passes to the limit. When $b=0$, the same approximation
+proves the integrated localized identities: the linear commutators
+are continuous $H^k$ forms by the Fourier bounds above, which also
+hold componentwise with dimension-independent constants. The nonlinear
+projection error vanishes because $F(U_n)\to F(U)$ in $H^k$ and
+the fixed-radius first-order virial operator is bounded from $H^k$
+to $L^2$. No dispersive decay estimate is required.
+\end{proof}
+

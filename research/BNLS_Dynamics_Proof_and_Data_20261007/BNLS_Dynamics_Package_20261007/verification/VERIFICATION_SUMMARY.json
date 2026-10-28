@@ -1,0 +1,104 @@
+{
+  "status": "ALL FINITE CERTIFICATES PASSED",
+  "note": "Together with the analytic proof in the manuscript, these establish the four-dimensional counterexample. This is not a formal proof-assistant verification or external peer review.",
+  "python": "3.12.14",
+  "canonical_profile_sha256": "c50a6f98682ce5f5bef9ab62ae2a93ba06b91522c8f3e29b859ac521afb8f627",
+  "components": [
+    {
+      "component": "frozen_residual_and_ritz",
+      "returncode": 0,
+      "seconds": 10.171654500998557
+    },
+    {
+      "component": "response",
+      "returncode": 0,
+      "seconds": 13.117088511000475
+    },
+    {
+      "component": "high_angular",
+      "returncode": 0,
+      "seconds": 1.5000233489990933
+    },
+    {
+      "component": "birman_channel_0",
+      "returncode": 0,
+      "seconds": 4.5453983309998875
+    },
+    {
+      "component": "birman_channel_1",
+      "returncode": 0,
+      "seconds": 4.7260391950003395
+    },
+    {
+      "component": "birman_channel_2",
+      "returncode": 0,
+      "seconds": 4.793552931001614
+    },
+    {
+      "component": "birman_channel_3",
+      "returncode": 0,
+      "seconds": 4.932032215001527
+    },
+    {
+      "component": "birman_channel_4",
+      "returncode": 0,
+      "seconds": 4.873117340001045
+    },
+    {
+      "component": "analytic_implication",
+      "returncode": 0,
+      "seconds": 0.023824446001526667
+    }
+  ],
+  "BS_required_enclosures": [
+    {
+      "ell": 0,
+      "required_inequality": "HS squared < 38.80",
+      "required_pass": true,
+      "HS_squared_upper_endpoint_enclosure": "[38.7956907754366969439250339728973902162169912315927291824 +/- 3.30e-56]",
+      "trace_upper_endpoint_enclosure": "[9.79359366992174488071350060933225461640255828069226296660 +/- 2.05e-57]"
+    },
+    {
+      "ell": 1,
+      "required_inequality": "trace < 1.70",
+      "required_pass": true,
+      "HS_squared_upper_endpoint_enclosure": "[1.23332344371514715374191352209003082665059294217613599652 +/- 2.91e-57]",
+      "trace_upper_endpoint_enclosure": "[1.69118431335206223008097593063015659813986525948429519255 +/- 1.09e-57]"
+    },
+    {
+      "ell": 2,
+      "required_inequality": "HS squared < 4.80",
+      "required_pass": true,
+      "HS_squared_upper_endpoint_enclosure": "[4.79795190318830026727180546279945289531398033112048596081 +/- 7.12e-58]",
+      "trace_upper_endpoint_enclosure": "[3.14355129660598654033061337071512245427302181181389060994 +/- 4.69e-57]"
+    },
+    {
+      "ell": 3,
+      "required_inequality": "HS squared < 0.22",
+      "required_pass": true,
+      "HS_squared_upper_endpoint_enclosure": "[0.211702198799906379559766622199527603071535984535243590229 +/- 1.82e-58]",
+      "trace_upper_endpoint_enclosure": "[0.661068927348660669606653738550334848277274998672267738929 +/- 2.84e-58]"
+    },
+    {
+      "ell": 4,
+      "required_inequality": "HS squared < 0.73",
+      "required_pass": true,
+      "HS_squared_upper_endpoint_enclosure": "[0.725269017406953891963313259162315825400745446279986630701 +/- 2.84e-58]",
+      "trace_upper_endpoint_enclosure": "[1.26408612430198762073410433041972743860025603604608372921 +/- 1.26e-57]"
+    }
+  ],
+  "I_upper_exact": "-24609689664617/140499437500",
+  "data_and_verifier_hashes": {
+    "round2_certificate_canonical.py": "7add3cf49241b0f198084737c6379b91e6cdb6b95eced825b54d781e11df1e1b",
+    "round2_certificate_exact_rational_data.json": "46c7b6d0023781c769dc3077c99476a13d08c2b0b930deb5fc1e6802acc5b7e4",
+    "round2_certificate_polynomial_common.py": "b8e325c696bce6518f13e2cb9f9bac495715c20376dab15c58d4684b993f43d0",
+    "round2_certified_birman_hs.py": "96cc5d8633361c7cd23861af1e18a7c2500d7c2fa5fc967c87f2def8e61757f4",
+    "round2_final_rational_implication.py": "a22e8f9c2d1f0e4252f7bd278cd56947ae257982e6697803446ac68dffb43d58",
+    "round2_radial_H4_exact_h1_16.json": "c50a6f98682ce5f5bef9ab62ae2a93ba06b91522c8f3e29b859ac521afb8f627",
+    "round2_radial_exact_common.py": "cf731d5faf1d0ee7207e779624e7ab0633a72c1053e4d82fda97fb3b270121d5",
+    "round2_radial_highangular.py": "25db239488a568dd8f90fd9902711b9e08a9da19cbcbfc2cb7219f10afdf26f6",
+    "round2_ritz_exact_data.json": "e028e0e15d82adc377d83dc7afb397403f312c9127f32fdf3aa37bc3bebaa511",
+    "round2_verify_frozen_ritz.py": "ca08a786b827787247593775e63b2a6832abb345b4d97d60b81a4d39ce4ff041",
+    "run_verification.py": "43074bd1660eff2f941a103d54420414e4fe0887368f61984d35c76667de3fc9"
+  }
+}

@@ -1,0 +1,242 @@
+\section{Mass localization, arbitrary momentum, and averaged kinetic growth}
+
+We consider
+\begin{equation}\label{drift:equation}
+ i\partial_tu=\Delta^2u-\mu\Delta u-|u|^{8/N}u,
+ \qquad N\ge1,\quad \mu\ge0,
+\end{equation}
+and standard strong $H^2$ solutions for which mass, momentum, and energy are conserved. Our conventions are
+\begin{align*}
+ M&=\int |u|^2, & P&=\operatorname{Im}\int\overline u\nabla u,\\
+ E_\mu&=\frac12\|\Delta u\|_2^2+\frac\mu2\|\nabla u\|_2^2
+       -\frac1{2+8/N}\int|u|^{2+8/N}.
+\end{align*}
+Write $K(t)=\|\Delta u(t)\|_2$, $h(t)=1+K(t)^2$, and
+\[
+ W(t)=\operatorname{Im}\int\Delta u\nabla\overline u,
+ \qquad V(t)=4W(t)+2\mu P.
+\]
+Thus $V$ is the total mass flux. It is well defined in $H^2$, even when the spatial first moment is infinite.
+
+The compact-orbit relation between translation, momentum, and energy is already present in Pausader--Shao~\cite[Propositions 6.1--6.2]{PS}; their Remark 6.1 explicitly describes the interaction-virial interpretation. Related $H^2$-compactness arguments appear in~\cite[Proposition 5.2]{Komada}. The extension below requires only tightness of mass, allows noncompact curvature tails, and assumes only a first time average of kinetic energy. Its one-sided conclusion is essential.
+
+\begin{theorem}[Localized mass forces counter-momentum drift]\label{drift:main}
+Let $u$ be a forward-global solution of~\eqref{drift:equation}, with $M>0$. Suppose there is a center $c:[0,\infty)\to\mathbb R^N$ such that
+\begin{equation}\label{drift:tight}
+ m(r):=\sup_{t\ge0}\int_{|x-c(t)|>r}|u(t,x)|^2\,dx\longrightarrow0
+ \quad(r\to\infty).
+\end{equation}
+No regularity of $c$ is assumed. Suppose also that, for some $H,T_0<\infty$ with $T_0>0$,
+\begin{equation}\label{drift:budget}
+ \sup_{S\ge0,\,T\ge T_0}\frac1T\int_S^{S+T}h(t)\,dt\le H.
+\end{equation}
+Then
+\begin{equation}\label{drift:current}
+ \lim_{T\to\infty}\sup_{S\ge0}
+ \left|\frac{c(S+T)-c(S)}T
+       -\frac1{MT}\int_S^{S+T}V(t)\,dt\right|=0,
+\end{equation}
+and
+\begin{equation}\label{drift:inequality}
+ \limsup_{T\to\infty}\sup_{S\ge0}
+ \left\{\frac{P\cdot[c(S+T)-c(S)]}T
+       +\frac{2\mu}T\int_S^{S+T}\|\nabla u(t)\|_2^2\,dt\right\}
+ \le8E_\mu.
+\end{equation}
+In particular, if $E_\mu<0$, then $P\ne0$ and
+\[
+ \liminf_{T\to\infty}\inf_{S\ge0}
+ \frac{-P\cdot[c(S+T)-c(S)]}{|P|T}
+ \ge\frac{8|E_\mu|}{|P|}.
+\]
+\end{theorem}
+
+\begin{theorem}[Failure of the required drift forces averaged growth]\label{drift:growth}
+Let $u$ be a forward-global solution with $E_\mu<0$ satisfying~\eqref{drift:tight}. If, for some $\delta>0$ and all sufficiently large $t$,
+\begin{equation}\label{drift:slow}
+ P\cdot[c(t)-c(0)]\ge(8E_\mu+\delta)t,
+\end{equation}
+then
+\begin{equation}\label{drift:divergence}
+ \lim_{T\to\infty}\frac1T\int_0^T\|\Delta u(t)\|_2^2\,dt=\infty.
+\end{equation}
+In particular this holds if $c(t)=o(t)$, or if
+$\liminf_{t\to\infty}P\cdot c(t)/t\ge0$. No zero-momentum assumption is imposed.
+\end{theorem}
+
+\subsection{The interaction estimate with its full mass-flux term}
+
+We give the estimate and its tail closure explicitly. Choose a smooth radial function $\phi_R$ which equals $|x|^2/2$ on $|x|\le4R$, is constant on $|x|\ge8R$, and satisfies
+\[
+ D^2\phi_R\le I,\qquad
+ \|D^j\phi_R\|_\infty\le C_jR^{2-j}\quad(1\le j\le6).
+\]
+Set $\rho=|u|^2$, $j=\operatorname{Im}(\overline u\nabla u)$, $w=\operatorname{Im}(\Delta u\nabla\overline u)$, and
+\begin{align*}
+ I_R(t)&=2\iint\rho(t,y)\nabla\phi_R(x-y)\cdot j(t,x)\,dx\,dy,\\
+ d_R(t)&=M^{-2}\iint_{|x-y|>R}\rho(t,x)\rho(t,y)\,dx\,dy,
+ \qquad \theta=\min(4/N,1/4).
+\end{align*}
+All constants below may depend on $N,M,\mu$ and the cutoffs, but not on a pointwise kinetic bound.
+
+\begin{lemma}[Mass-tail interaction bound]\label{drift:interaction}
+For $R\ge1$,
+\begin{align}
+ |I_R(t)|&\le C R h(t)^{1/4},\label{drift:endpoint}\\
+ I_R'(t)&\le16ME_\mu-4\mu M\|\nabla u\|_2^2
+             -8P\cdot W-4\mu|P|^2
+             +C R^{-2}h^{1/2}+C h d_R^\theta.
+ \label{drift:virial}
+\end{align}
+The derivative is understood in the integrated energy-space sense.
+\end{lemma}
+
+\begin{proof}
+Interpolation gives $\|\nabla u\|_2\le G:=M^{1/4}K^{1/2}$, proving~\eqref{drift:endpoint}. At a fixed center $y$, let
+$J_R^y=2\int\nabla\phi_R(x-y)\cdot j(x)\,dx$. Direct differentiation and integration by parts give, with repeated indices summed,
+\begin{align*}
+ (J_R^y)'={}&8\operatorname{Re}\int\partial_{jk}\phi_R\,
+                  \partial_{ij}\overline u\,\partial_{ik}u
+ -4\operatorname{Re}\int\partial_{jk}\Delta\phi_R\,
+                  \partial_j\overline u\,\partial_ku\\
+ &-2\int\Delta^2\phi_R|\nabla u|^2+\int\Delta^3\phi_R\rho
+ -\frac{2\beta}{\beta+2}\int\Delta\phi_R|u|^{\beta+2}\\
+ &+4\mu\operatorname{Re}\int\partial_{jk}\phi_R\,
+                    \partial_j\overline u\,\partial_ku
+ -\mu\int\Delta^2\phi_R\rho,
+ \qquad\beta=8/N.
+\end{align*}
+Here every cutoff is evaluated at $x-y$. Since $D^2\phi_R\le I$, the leading fourth-order and second-order forms have favorable upper signs. Hence
+\begin{equation}\label{drift:single}
+ (J_R^y)'\le16E_\mu-4\mu\|\nabla u\|_2^2
+       +C R^{-2}h^{1/2}
+       +C\int_{|x-y|>4R}|u(x)|^{2+8/N}\,dx.
+\end{equation}
+
+The derivative falling on the \emph{second} mass density cannot be discarded. For real $f$ the mass equation is
+\begin{equation}\label{drift:mass}
+ \frac{d}{dt}\int f\rho
+ =2\operatorname{Im}\int(\Delta f)\overline u\Delta u
+  +4\int\nabla f\cdot w+2\mu\int\nabla f\cdot j.
+\end{equation}
+Using $\operatorname{Im}(\overline u\Delta u)=\operatorname{div}j$, its exact contribution to $I_R'$ is
+\begin{align}
+ Y_R={}&4\iint D^2\Delta\phi_R(x-y)[j(x),j(y)]\,dx\,dy\notag\\
+ &-8\iint D^2\phi_R(x-y)[j(x),w(y)]\,dx\,dy\notag\\
+ &-4\mu\iint D^2\phi_R(x-y)[j(x),j(y)]\,dx\,dy.
+ \label{drift:second-density}
+\end{align}
+The first term is $O(R^{-2}h^{1/2})$. Replacing the other Hessians by $I$ gives exactly $-8P\cdot W-4\mu|P|^2$.
+
+To bound the errors, write $m_r(a)=\int_{|x-a|>r}\rho(x)\,dx$ and
+\[
+ H_r=K+C G/r+C\sqrt M/r^2.
+\]
+For a cutoff $\eta_r$ which vanishes inside radius $r$ and equals one outside radius $2r$, product differentiation, interpolation, and the mass-critical Gagliardo--Nirenberg inequality give
+\begin{align}
+ \int_{|x-a|>2r}|u|^{2+8/N}&\le C m_r(a)^{4/N}H_r^2,
+ \label{drift:nonlinear-tail}\\
+ \int_{|x-a|>2r}|\nabla u|^2&\le m_r(a)^{1/2}H_r.
+ \label{drift:gradient-tail}
+\end{align}
+Averaging~\eqref{drift:nonlinear-tail} against $\rho(a)$ and applying Jensen (or $m_r\le M$ when $4/N>1$) bounds the nonlinear remainder in~\eqref{drift:single} by
+$C_MH_{2R}^2d_R^{\min(4/N,1)}$.
+
+For the cross-flux error define
+\[
+ B_R=\iint_{|x-y|>4R}\rho(x)|\nabla u(y)|^2\,dx\,dy.
+\]
+Equation~\eqref{drift:gradient-tail} and Cauchy--Schwarz imply
+\[
+ B_R\le H_{2R}\sqrt{M\,M^2d_R}.
+\]
+Cauchy--Schwarz on the product space therefore gives
+\[
+ \iint_{|x-y|>4R}|u(x)||\nabla u(x)||\Delta u(y)||\nabla u(y)|
+ \le GK\sqrt{B_R}\le C_Mh\,d_R^{1/4}.
+\]
+The $j$--$j$ tail is at most $B_R$, again by product-space Cauchy--Schwarz and symmetry, and hence at most $C_Mh^{1/2}d_R^{1/2}$. These estimates prove~\eqref{drift:virial}. The calculation initially applies to smooth approximations; its integrated form passes to standard strong $H^2$ solutions because all displayed terms have the indicated continuous energy-space bounds.
+\end{proof}
+
+\subsection{Recovering center motion without spatial moments}
+
+Mass tightness implies $d_R(t)\le2m(R/2)/M$. It also determines centers up to a uniformly bounded error: choose $r_0\ge1$ with $m(r_0)\le M/8$, so every $B(c(t),r_0)$ contains at least $7M/8$. This observation also shows that the condition with an infimum over centers at each radius is equivalent to~\eqref{drift:tight}; one first fixes these $7M/8$ centers and compares them with any higher-concentration ball by intersection.
+
+For a fixed cutoff $\chi((x-a)/r)$, $r\ge1$,~\eqref{drift:mass} gives
+\begin{equation}\label{drift:cutoff-flux}
+ \left|\frac{d}{dt}\int\chi((x-a)/r)\rho\right|
+ \le C r^{-1}h(t).
+\end{equation}
+Under~\eqref{drift:budget}, every interval $J$, including intervals shorter than $T_0$, satisfies
+$\int_Jh\le H(|J|+T_0)$. Start a cutoff at $c(s)$, equal to one on radius $L$ and supported on radius $2L$. Taking
+$L\ge r_0+C H(t-s+T_0)/M$ retains at least $3M/4$ of its mass until time $t$. Its support intersects $B(c(t),r_0)$, and hence
+\begin{equation}\label{drift:coarse}
+ |c(t)-c(s)|\le A|t-s|+B
+\end{equation}
+with uniform constants. More generally, if only $\int_0^Th\le HT$ is known, the same argument gives
+\begin{equation}\label{drift:sequence-coarse}
+ \sup_{0\le t\le T}|c(t)-c(0)|\le C_HT+C.
+\end{equation}
+
+Let $F_R(z)=z\chi(z/R)$ be a smooth vector cutoff, equal to $z$ on $|z|\le R$, zero on $|z|\ge2R$, with bounded first derivatives and second derivatives $O(R^{-1})$. On a window $[S,S+T]$, choose $R=LT$ with $L$ fixed sufficiently large that~\eqref{drift:coarse} puts all centers inside $B(c(S),R/4)$. Define
+\[
+ Z_R(t)=\int F_R(x-c(S))\rho(t,x)\,dx.
+\]
+Equation~\eqref{drift:mass} gives $Z_R'=V+\mathcal E_R$. Since the nonconstant-gradient error is supported outside the ball of radius $R$ about $c(S)$,~\eqref{drift:gradient-tail} implies
+\begin{equation}\label{drift:moment-error}
+ |\mathcal E_R(t)|\le C\left[m(R/4)^{1/4}+m(R/2)^{1/2}\right]h(t)^{3/4}
+                         +C R^{-1}h(t)^{1/2}.
+\end{equation}
+Indeed the fourth-order flux tail is bounded by
+$\|\Delta u\|_2(\int_{|x-c(t)|>R/2}|\nabla u|^2)^{1/2}$; the second-order flux tail is bounded by
+$m(R/2)^{1/2}\|\nabla u\|_2$. Both have the displayed integrable kinetic dependence.
+
+For either endpoint $t\in\{S,S+T\}$ and any fixed $r$, splitting into the ball about $c(t)$ and its complement yields, for sufficiently large $T$,
+\begin{equation}\label{drift:moment-endpoint}
+ |Z_R(t)-M[c(t)-c(S)]|\le Mr+C Rm(r).
+\end{equation}
+The average of~\eqref{drift:moment-error} tends to zero uniformly in $S$, by H\"older and~\eqref{drift:budget}. Divide~\eqref{drift:moment-endpoint} by $T$, first let $T\to\infty$, and then $r\to\infty$. Integration proves~\eqref{drift:current}.
+
+The same argument, using~\eqref{drift:sequence-coarse}, proves the following useful sequence version:
+\begin{equation}\label{drift:sequence-current}
+ \int_0^{T_n}h\le H T_n,\quad T_n\to\infty
+ \quad\Longrightarrow\quad
+ c(T_n)-c(0)=\frac1M\int_0^{T_n}V(t)\,dt+o(T_n).
+\end{equation}
+No center of mass is introduced in either argument.
+
+\subsection{Low-kinetic endpoints and the growth alternative}
+
+\begin{proof}[Proof of Theorem~\ref{drift:main}]
+It remains to prove~\eqref{drift:inequality}. Choose
+$s\in[S,S+T_0]$ and $t\in[S+T-T_0,S+T]$ with $h(s),h(t)\le2H$, which is possible by~\eqref{drift:budget}. Integrate~\eqref{drift:virial} between these endpoints. Using~\eqref{drift:endpoint}, $d_R\le2m(R/2)/M$, and H\"older gives
+\begin{align*}
+ 2P\cdot\int_s^t V
+ +4\mu M\int_s^t\|\nabla u\|_2^2
+ \le{}&16ME_\mu(t-s)+C R H^{1/4}\\
+ &+C R^{-2}H^{1/2}T
+ +C H[2m(R/2)/M]^\theta T.
+\end{align*}
+The omitted endpoint intervals have uniformly bounded integrals of $|V|$ and $\|\nabla u\|_2^2$, since both are bounded by a constant times $h$ and each interval has length at most $T_0$. Divide by $T$ and let $T\to\infty$, then $R\to\infty$. Finally use~\eqref{drift:current} and divide by $2M$ to obtain~\eqref{drift:inequality}. Its stated negative-energy consequences follow from $\mu\ge0$.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{drift:growth}]
+If~\eqref{drift:divergence} fails, there are $T_n\to\infty$ and $H<\infty$ with $\int_0^{T_n}h\le H T_n$. Choose $t_n\in[T_n/2,T_n]$ satisfying $h(t_n)\le4H$. Then
+\[
+ \int_0^{t_n}h\le2H t_n.
+\]
+Integrate~\eqref{drift:virial} from $0$ to $t_n$. Both endpoint factors in~\eqref{drift:endpoint} are uniformly bounded for fixed $R$. Divide by $t_n$, pass to the upper limit, and then let $R\to\infty$. Dropping the nonnegative second-order kinetic term gives
+\[
+ \limsup_n\frac1{M t_n}P\cdot\int_0^{t_n}V(t)\,dt\le8E_\mu.
+\]
+Equation~\eqref{drift:sequence-current}, applied with budget $2H$, implies
+\[
+ \limsup_n\frac{P\cdot[c(t_n)-c(0)]}{t_n}\le8E_\mu,
+\]
+contradicting~\eqref{drift:slow}. This proves divergence of the full averages, not only unboundedness along a subsequence.
+\end{proof}
+
+\begin{remark}
+The conclusions describe a necessary motion of any sufficiently controlled, mass-localized negative-energy solution; they do not classify such a solution as a traveling wave. They permit arbitrary curvature leakage and, under~\eqref{drift:budget}, arbitrarily large instantaneous kinetic norms. Negative-energy traveling waves satisfy the corresponding exact identity
+$P\cdot v+2\mu\|\nabla U\|_2^2=8E_\mu(U)$, while an outgoing pair with zero total momentum fails mass tightness. Thus both known counterexample mechanisms are consistent with these restrictions. For maximal solutions, Theorem~\ref{drift:growth} gives a finite-time-breakdown or averaged-growth alternative under its localization and drift hypotheses; it does not establish finite-time blowup from negative energy alone.
+\end{remark}

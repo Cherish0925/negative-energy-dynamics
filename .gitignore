@@ -1,0 +1,8 @@
+work/
+.venv/
+__pycache__/
+*.pyc
+*.aux
+*.out
+*.synctex.gz
+.DS_Store

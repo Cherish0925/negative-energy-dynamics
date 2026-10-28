@@ -1,0 +1,484 @@
+\section{A mass gap for homogeneous dispersion}\label{sec:r8-homogeneous}
+
+Fix an integer $N\ge1$, a real order $m>1$, and a real, even symbol
+$a\in C^{N+2}(\mathbb R^N\setminus\{0\})$ such that
+\begin{equation}\label{eq:r8-symbol}
+ a(t\xi)=t^m a(\xi)\quad(t>0),\qquad
+ c|\xi|^m\le a(\xi)\le C|\xi|^m
+\end{equation}
+for positive constants $c,C$. Set
+\[
+ s=\frac m2,\qquad r=\frac mN,\qquad
+ \alpha=2r,\qquad p=2(r+1),
+\]
+and define
+\[
+ A_a(f)=\int_{\mathbb R^N}a(\xi)|\widehat f(\xi)|^2\,d\xi,\qquad
+ M(f)=\|f\|_2^2,\qquad
+ E_a(f)=\frac12 A_a(f)-\frac1p\|f\|_p^p.
+\]
+The Fourier transform is unitary. The critical mass $M_{c,a}>0$ is defined
+by the sharp Gagliardo--Nirenberg inequality
+\begin{equation}\label{eq:r8-gn}
+ \|f\|_p^p\le\frac p2
+ \left(\frac{M(f)}{M_{c,a}}\right)^r A_a(f),
+ \qquad f\in H^{m/2}(\mathbb R^N;\mathbb C).
+\end{equation}
+The kinetic form is equivalent to the homogeneous $H^{m/2}$ norm.
+In particular, Sobolev interpolation proves that the sharp constant in
+\eqref{eq:r8-gn} is finite and positive.
+
+\begin{theorem}[Mass gap for homogeneous dispersion]\label{thm:r8-homogeneous-gap}
+There exists $\varepsilon_{N,m,a}>0$ such that every nonzero weak
+$H^{m/2}$ solution of
+\begin{equation}\label{eq:r8-profile}
+ a(D)U+\omega U+i v\cdot\nabla U-|U|^{2m/N}U=0,
+ \qquad (\omega,v)\in\mathbb R\times\mathbb R^N,
+\end{equation}
+with $E_a(U)<0$ satisfies
+\[
+ M(U)\ge M_{c,a}+\varepsilon_{N,m,a}.
+\]
+The gap is uniform in frequency and velocity. No radial symmetry,
+finite spatial moment, optimizer uniqueness, or real-part
+nondegeneracy assumption is required.
+\end{theorem}
+
+Thus the exclusion statement applies to all fractional Laplacians
+$a(D)=(-\Delta)^{m/2}$ of order $m>1$, all higher integer orders, and
+all real-even homogeneous anisotropies satisfying \eqref{eq:r8-symbol}.
+It does not assert existence of negative-energy traveling waves for
+every such operator. The sharp mass and the gap depend on the symbol.
+
+\subsection{Regularity at the energy level}
+
+\begin{lemma}[Profile regularity]\label{lem:r8-regularity}
+Every weak $H^{m/2}$ profile in \eqref{eq:r8-profile} belongs to
+$L^\infty\cap H^{m+1}$.
+\end{lemma}
+\begin{proof}
+Since $m>1$, for the fixed velocity $v$ one can choose $\mu>0$ so that
+\[
+ a(\xi)-v\cdot\xi+\mu\asymp1+|\xi|^m.
+\]
+The resolvent
+\[
+ R_\mu=(a(D)+iv\cdot\nabla+\mu)^{-1}
+\]
+maps $L^q$ to the Bessel potential space $H^{m,q}$ for every
+$1<q<\infty$. Indeed, the multiplier
+\[
+ \frac{(1+|\xi|^2)^{m/2}}
+ {a(\xi)-v\cdot\xi+\mu}
+\]
+satisfies the Mihlin derivative bounds. The possible nonsmoothness
+of $a$ at zero is harmless: homogeneity gives the required bounds
+after multiplication of each derivative by the corresponding power
+of $|\xi|$. The stated $C^{N+2}$ regularity away from zero suffices.
+None of the regularity constants below must be uniform in $v$.
+
+Write
+\begin{equation}\label{eq:r8-resolvent}
+ U=R_\mu(|U|^\alpha U)+(\mu-\omega)R_\mu U.
+\end{equation}
+We first obtain $U\in L^\infty$. If $N\le m$, the energy space
+embeds into all finite $L^q$; it embeds directly into $L^\infty$
+when $N<m$. In the endpoint case take a sufficiently large finite $q$.
+If $N>m$, start with
+\[
+ q_0=\frac{2N}{N-m},\qquad
+ \beta_0=\frac1{q_0}=\frac12-\frac{m}{2N}.
+\]
+For $U\in L^{q_j}$ the nonlinear term is in
+$L^{q_j/(1+\alpha)}$. Sobolev embedding in
+\eqref{eq:r8-resolvent} improves reciprocal integrability according to
+\[
+ \beta_{j+1}=(1+2m/N)\beta_j-m/N
+\]
+as long as the right side is positive. The linear resolvent term has
+the better reciprocal output exponent $\beta_j-m/N$ and also remains
+in $L^2$; interpolation therefore gives the desired common output
+exponent. The ideal iterates are
+\[
+ \beta_j=\frac12-\frac{m}{2N}(1+2m/N)^j.
+\]
+All nonlinear input exponents exceed one, since
+$q_0>1+2m/N$ and the $q_j$ increase. Intermediate exponents can be
+weakened slightly to avoid an endpoint. After finitely many steps,
+$q_j/(1+\alpha)>N/m$, so the resolvent and Sobolev embedding give
+$U\in L^\infty$.
+
+Now $|U|^\alpha U\in L^2$, and \eqref{eq:r8-resolvent} gives
+$U\in H^m\subset H^1$. The map
+$F(z)=|z|^\alpha z$ on $\mathbb C\simeq\mathbb R^2$ is $C^1$
+with bounded derivative on bounded sets. The Sobolev chain rule
+therefore gives $F(U)\in H^1$. A final application of the resolvent
+yields $U\in H^{m+1}$.
+\end{proof}
+
+\subsection{A nonlocal dilation identity without spatial moments}
+
+Let $\chi\in C_c^\infty(\mathbb R^N;\mathbb R)$ equal one near zero, and
+put
+\[
+ f_R(x)=x\chi(x/R)=R f(x/R),\qquad
+ L_R=f_R\cdot\nabla+\frac12\operatorname{div}f_R,\qquad R\ge1.
+\]
+The operator $L_R$ is skew-symmetric on $L^2$.
+
+\begin{lemma}[Cutoff commutator]\label{lem:r8-commutator}
+The commutators $[a(D),L_R]$ are uniformly bounded from
+$H^{m/2}$ to $H^{-m/2}$, and for every $u\in H^{m/2}$,
+\begin{equation}\label{eq:r8-commutator-limit}
+ \langle u,[a(D),L_R]u\rangle\longrightarrow mA_a(u)
+ \qquad(R\to\infty).
+\end{equation}
+\end{lemma}
+\begin{proof}
+Apart from the fixed Fourier normalization factor, the kernel is
+\[
+ \frac i2\bigl(a(\xi)-a(\eta)\bigr)
+ (\xi+\eta)\cdot\widehat f_R(\xi-\eta).
+\]
+Homogeneity and $C^1$ regularity on the sphere give
+\[
+ |a(\xi)-a(\eta)|
+ \le C|\xi-\eta|(|\xi|+|\eta|)^{m-1}.
+\]
+For $k=\xi-\eta$, it follows that
+\[
+ \frac{|a(\xi)-a(\eta)|\,|\xi+\eta|}
+ {\langle\xi\rangle^{m/2}\langle\eta\rangle^{m/2}}
+ \le C|k|\langle k\rangle^{m/2}.
+\]
+Here $(|\xi|+|\eta|)^m$ is bounded by a constant times
+$\langle\xi\rangle^m+\langle\eta\rangle^m$, and
+$\langle\xi\rangle/\langle\eta\rangle$ and its reciprocal are bounded
+by a constant times $\langle k\rangle$.
+Since $\widehat f_R(k)=R^{N+1}\widehat f(Rk)$,
+\[
+ \int |k|\langle k\rangle^{m/2}|\widehat f_R(k)|\,dk
+ =
+ \int |\ell|\langle\ell/R\rangle^{m/2}|\widehat f(\ell)|\,d\ell
+ \le C_f.
+\]
+Young's inequality proves the asserted uniform form bound.
+
+For Schwartz $u$, $L_Ru\to Lu$ in $L^2$, where
+$L=x\cdot\nabla+N/2$. Therefore
+\[
+ \langle u,[a(D),L_R]u\rangle
+ =2\operatorname{Re}\langle a(D)u,L_Ru\rangle
+ \longrightarrow
+ 2\operatorname{Re}\langle a(D)u,Lu\rangle=mA_a(u).
+\]
+The last equality follows from Fourier integration by parts and
+$\xi\cdot\nabla a(\xi)=ma(\xi)$. The uniform form bound and
+Schwartz density extend this limit to every $u\in H^{m/2}$.
+\end{proof}
+
+The same kernel argument, applied to the degree-one symbol
+$-v\cdot\xi$, gives
+\begin{equation}\label{eq:r8-drift-limit}
+ \langle u,[iv\cdot\nabla,L_R]u\rangle
+ \longrightarrow-v\cdot P(u).
+\end{equation}
+For this assertion the form estimate uses $H^{1/2}$, which contains
+the energy space continuously because $m>1$.
+
+\begin{lemma}[Profile identities]\label{lem:r8-identities}
+Every profile in \eqref{eq:r8-profile} satisfies
+\begin{align}
+ v\cdot P(U)&=2mE_a(U),\label{eq:r8-pohozaev}\\
+ \omega M(U)&=rA_a(U)+(2m-p)E_a(U).\label{eq:r8-frequency}
+\end{align}
+Writing $U=A+iB$ with real $A,B$, one also has
+\begin{equation}\label{eq:r8-phase-energy}
+ E_a(U)=\frac1m
+ \left\langle B,\bigl(a(D)+\omega-|U|^{2r}\bigr)B\right\rangle.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Lemma~\ref{lem:r8-regularity} makes $L_RU\in H^{m/2}$ an admissible
+test in the weak equation. The kinetic and drift pairings converge
+by \eqref{eq:r8-commutator-limit} and \eqref{eq:r8-drift-limit}.
+The frequency pairing vanishes. For the nonlinearity, integration
+by parts gives
+\[
+ \operatorname{Re}\int |U|^\alpha U\,\overline{L_RU}
+ =
+ \left(\frac12-\frac1p\right)
+ \int\operatorname{div}f_R\,|U|^p
+ \longrightarrow\frac mp\|U\|_p^p.
+\]
+This integration is justified by $|U|^\alpha U\in L^2$,
+$\nabla U\in L^2$, and the compact support of $f_R$.
+The coefficients $\operatorname{div}f_R$ are uniformly bounded
+and converge to $N$. The resulting identity is
+\[
+ \frac m2 A_a(U)-\frac12v\cdot P(U)-\frac mp\|U\|_p^p=0,
+\]
+which proves \eqref{eq:r8-pohozaev}. Pairing the profile equation
+with $U$ gives
+$A_a(U)+\omega M(U)-v\cdot P(U)-\|U\|_p^p=0$,
+and then \eqref{eq:r8-frequency}.
+
+Because the symbol is real and even, $a(D)$ preserves real
+functions. The imaginary profile equation is
+\[
+ \bigl(a(D)+\omega-|U|^{2r}\bigr)B=-v\cdot\nabla A.
+\]
+The identity $P(U)=-2\int B\nabla A$ and
+\eqref{eq:r8-pohozaev} yield \eqref{eq:r8-phase-energy}.
+\end{proof}
+
+\subsection{Compactness and phase coercivity}
+
+\begin{lemma}[Compactness of normalized near-optimizers]
+\label{lem:r8-compactness}
+The sharp inequality \eqref{eq:r8-gn} has an optimizer.
+If $M(f_n)\to M_{c,a}$, $A_a(f_n)=1$, and $E_a(f_n)<0$,
+then after translations and passage to a subsequence,
+$f_n$ converges strongly in $H^{m/2}$ to a normalized optimizer.
+\end{lemma}
+\begin{proof}
+The sharp inequality implies
+$\|f_n\|_p^p\to p/2$ and $E_a(f_n)\to0$.
+Local Sobolev nonvanishing gives translations for which a subsequence
+has a nonzero weak $H^{m/2}$ limit $Q$. Local Rellich compactness
+also gives almost-everywhere convergence after a subsequence.
+Write
+\[
+ m_1=M(Q)>0,\quad a_1=A_a(Q)>0,\quad
+ m_2=M_{c,a}-m_1,\quad a_2=1-a_1.
+\]
+Hilbert norm splitting, the Brezis--Lieb lemma, and
+\eqref{eq:r8-gn} give
+\[
+ M_{c,a}^r\le m_1^ra_1+m_2^ra_2,\qquad a_1+a_2=1.
+\]
+If $0<m_1<M_{c,a}$, both coefficients $m_j^r$ are strictly below
+$M_{c,a}^r$, which is impossible. Hence $m_1=M_{c,a}$, and the
+same inequality forces $a_1=1$. Strong energy-space convergence
+and equality in the sharp inequality follow.
+To prove attainment, normalize an arbitrary maximizing sequence
+by amplitude and dilation so that $M(f_n)=M_{c,a}$ and
+$A_a(f_n)=1$. Its nonlinear norms converge to $p/2$, and the
+identical splitting argument applies; negative energy is not
+needed once that convergence is known.
+\end{proof}
+
+\begin{lemma}[Constant phase of optimizers]\label{lem:r8-constant-phase}
+Every complex optimizer is a constant phase times a real function.
+\end{lemma}
+\begin{proof}
+Write $f=A+iB$, where $A,B$ are real. Evenness of $a$ gives
+$A_a(f)=A_a(A)+A_a(B)$. With
+$C=(p/2)M_{c,a}^{-r}$, Minkowski, the sharp inequality on each real
+component, and two-term H\"older yield
+\begin{align*}
+ \|f\|_p^2
+ &\le\|A\|_p^2+\|B\|_p^2\\
+ &\le C^{2/p}\left[
+ A_a(A)^{2/p}M(A)^{1-2/p}
+ +A_a(B)^{2/p}M(B)^{1-2/p}\right]\\
+ &\le C^{2/p}A_a(f)^{2/p}M(f)^{1-2/p}.
+\end{align*}
+For an optimizer all inequalities are equalities. Strict convexity
+of $L^{p/2}$ implies $B^2=cA^2$ almost everywhere, unless one
+component vanishes. Repeat this equality argument after multiplying
+$f$ by $e^{i\pi/4}$. If both signs of $B/A=\pm\sqrt c$ occurred
+on sets of positive measure, the new squared components could
+not be proportional. When $c=1$ the new components instead have
+disjoint nonzero supports, again giving strict Minkowski inequality.
+Thus only one sign is possible, and $f$ has constant phase.
+\end{proof}
+
+Let $Q$ be a real optimizer normalized by $M(Q)=M_{c,a}$ and
+$A_a(Q)=1$. Its Euler--Lagrange equation is
+\[
+ a(D)Q+\omega_QQ-|Q|^{2r}Q=0,\qquad
+ \omega_Q=r/M_{c,a}>0.
+\]
+
+\begin{lemma}[Strict phase coercivity]\label{lem:r8-phase-coercivity}
+The real quadratic form
+\[
+ L_-=a(D)+\omega_Q-|Q|^{2r}
+\]
+is nonnegative, has kernel $\operatorname{span}_{\mathbb R}\{Q\}$,
+and obeys
+\[
+ \langle b,L_-b\rangle\ge c_Q\|b\|_{H^{m/2}}^2
+ \quad\text{if }b\text{ is real and }\langle b,Q\rangle=0,
+\]
+for some $c_Q>0$.
+\end{lemma}
+\begin{proof}
+Retain $A=A_a(Q)$ and $M=M(Q)$ in the algebra, so that
+$\omega_Q=rA/M$. For real $b\in H^{m/2}$ set
+$B=M(b)$ and $C_1=A_a(b)$.
+The sharp inequality applied to $Q+i\sqrt t\,b$ gives
+\begin{equation}\label{eq:r8-kernel-comparison}
+ F(t):=\int(Q^2+tb^2)^{r+1}
+ \le(r+1)(1+tB/M)^r(A+tC_1),\qquad t\ge0.
+\end{equation}
+The right derivatives at zero prove $L_-\ge0$.
+If $b$ belongs to its form kernel, the first derivatives agree, and
+\[
+ \int |Q|^{2r}b^2=C_1+rAB/M.
+\]
+The pointwise second-order remainder for $F$ is nonnegative.
+Comparison of second-order remainders in
+\eqref{eq:r8-kernel-comparison} and Fatou's lemma yield
+\[
+ D:=\int |Q|^{2r-2}b^4
+ \le(r-1)AB^2/M^2+2BC_1/M.
+\]
+On the zero set of $Q$, the integrand is interpreted through
+the remainder: it is infinite if $r<1$ and $b\ne0$, equals $b^4$
+if $r=1$, and equals zero if $r>1$.
+Cauchy--Schwarz gives
+\[
+ D\ge\frac{(C_1+rAB/M)^2}{(r+1)A}.
+\]
+Combining the inequalities yields
+$(C_1-AB/M)^2\le0$. Consequently all inequalities are equalities.
+Equality in Cauchy--Schwarz implies
+$b^2=(B/M)Q^2$ on $\{Q\ne0\}$. Its integral already equals $B$,
+so $b=0$ on the remaining zero set as well.
+The form kernel is a linear space containing $Q$. Apply the same
+conclusion to $b+Q$ and subtract the identity for $b^2$.
+It follows that $b$ is one constant multiple of $Q$.
+
+Finally, multiplication by $|Q|^{2r}$ is compact from $H^{m/2}$
+to $H^{-m/2}$. Indeed $|Q|^{2r}\in L^{p/(2r)}$,
+H\"older with two $L^p$ factors makes the tail small, and the
+embedding into local $L^p$ is compact because $p$ lies strictly
+below the critical Sobolev exponent. Thus $L_-$ is a compact
+form perturbation of the coercive form $a(D)+\omega_Q$.
+Nonnegativity and its one-dimensional kernel give the asserted
+coercivity on the $L^2$ orthogonal complement of $Q$.
+\end{proof}
+
+\subsection{The mass-gap contradiction}
+
+\begin{proof}[Proof of Theorem~\ref{thm:r8-homogeneous-gap}]
+If no uniform gap existed, there would be profiles $U_n$ with
+$E_a(U_n)<0$ and $M(U_n)\downarrow M_{c,a}$.
+The scaling
+\[
+ U(x)\mapsto\lambda^{N/2}U(\lambda x),\qquad
+ (\omega,v)\mapsto(\lambda^m\omega,\lambda^{m-1}v)
+\]
+preserves mass and energy sign, so normalize $A_a(U_n)=1$.
+Lemmas~\ref{lem:r8-compactness} and \ref{lem:r8-constant-phase}
+give, after translations and phases,
+$U_n\to Q$ strongly in $H^{m/2}$, with $Q$ a real normalized
+optimizer. Identity~\eqref{eq:r8-frequency} gives
+$\omega_n\to r/M_{c,a}=\omega_Q$.
+A further phase tending to zero ensures
+$\langle\operatorname{Im}U_n,Q\rangle=0$.
+
+Strong $L^p$ convergence implies
+$|U_n|^{2r}\to|Q|^{2r}$ in $L^{p/(2r)}$.
+By H\"older with two $L^p$ factors,
+\[
+ a(D)+\omega_n-|U_n|^{2r}\longrightarrow L_-
+ \quad\text{in form norm }H^{m/2}\to H^{-m/2}.
+\]
+Write $B_n=\operatorname{Im}U_n$. Phase coercivity and
+\eqref{eq:r8-phase-energy} imply, for large $n$,
+\[
+ E_a(U_n)
+ =\frac1m\langle B_n,(a(D)+\omega_n-|U_n|^{2r})B_n\rangle
+ \ge\frac{c_Q}{2m}\|B_n\|_{H^{m/2}}^2\ge0,
+\]
+a contradiction. No uniform bound on $v_n$ is needed: the exact
+profile identities eliminate velocity from this final argument.
+\end{proof}
+
+\subsection{Local robustness in the uniform topology}
+
+\begin{theorem}[Local uniform robustness of the gap]
+\label{thm:r8-symbol-robustness}
+Fix a symbol $a_0$ satisfying \eqref{eq:r8-symbol}.
+There exist $\delta\in(0,1/2)$ and $\varepsilon>0$ such that, for every
+real-even homogeneous symbol $a$ of degree $m$, individually
+$C^{N+2}$ away from zero and satisfying
+\[
+ \sup_{\xi\in S^{N-1}}\left|\frac{a(\xi)}{a_0(\xi)}-1\right|
+ <\delta,
+\]
+every negative-energy traveling profile for $a$ satisfies
+\[
+ M(U)\ge M_{c,a}+\varepsilon.
+\]
+No uniform bounds on derivatives of $a$, or compactness of this
+symbol neighborhood, are required.
+\end{theorem}
+\begin{proof}
+Suppose the assertion fails. Taking the proposed neighborhood size
+and gap both to be $1/n$, choose symbols $a_n$ and
+negative-energy profiles $U_n$ such that
+\[
+ \sup_{S^{N-1}}|a_n/a_0-1|<1/n,\qquad
+ 0<M(U_n)-M_{c,a_n}<1/n.
+\]
+Normalize $A_{a_n}(U_n)=1$ by critical scaling.
+Homogeneity gives
+\[
+ (1-1/n)A_{a_0}\le A_{a_n}
+ \le(1+1/n)A_{a_0}.
+\]
+Taking sharp constants in \eqref{eq:r8-gn} shows
+$M_{c,a_n}\to M_{c,a_0}$.
+The sharp inequality and negative energy also give
+\[
+ \|U_n\|_p^p\to p/2,\qquad E_{a_n}(U_n)\to0,\qquad
+ A_{a_0}(U_n)\to1.
+\]
+The proof of Lemma~\ref{lem:r8-compactness}, with these converging
+normalizations, applies to the limiting symbol. Hence, after
+translations and phases, $U_n\to Q$ strongly in $H^{m/2}$,
+where $Q$ is a real normalized optimizer for $a_0$.
+The frequency identity gives $\omega_n\to r/M_{c,a_0}$.
+
+The kinetic forms converge in norm from $H^{m/2}$ to $H^{-m/2}$
+by uniform convergence of the symbols on the sphere.
+Together with convergence of the nonlinear potentials and
+frequencies, this transfers the strict phase coercivity for $Q$
+to the sequence. After arranging
+$\langle\operatorname{Im}U_n,Q\rangle=0$, the energy identity
+\eqref{eq:r8-phase-energy} yields the same contradiction as before.
+Profile regularity and the cutoff identity were established separately
+for each symbol and each velocity; their constants never entered this
+compactness argument. Uniform derivative bounds are therefore
+unnecessary.
+\end{proof}
+
+\begin{proposition}[Compact families of symbols]\label{thm:r8-symbol-family}
+Fix $N\ge1$ and $m>1$. Let $\mathcal K$ be a family of symbols
+as in \eqref{eq:r8-symbol}, each individually real, even, and
+$C^{N+2}$ away from zero, whose restrictions to $S^{N-1}$ form
+a compact subset of $C^0(S^{N-1})$.
+There is a single $\varepsilon_{N,m,\mathcal K}>0$ such that every
+negative-energy traveling profile for every $a\in\mathcal K$
+satisfies $M(U)\ge M_{c,a}+\varepsilon_{N,m,\mathcal K}$.
+\end{proposition}
+\begin{proof}
+The neighborhoods supplied by
+Theorem~\ref{thm:r8-symbol-robustness} form an open cover of
+$\mathcal K$ in the uniform topology. Choose a finite subcover
+and take the minimum of its positive gap constants.
+\end{proof}
+
+\begin{remark}
+The mechanism is a restriction on coherent negative-energy motion:
+near the sharp mass threshold, variational compactness forces a
+profile close to a real optimizer, whose only null phase direction is
+the constant phase. Removing that direction makes the phase form
+strictly positive, whereas a negative-energy traveling profile requires
+a negative value of the same form. This argument is independent of
+radiality and does not use a maximum principle.
+\end{remark}

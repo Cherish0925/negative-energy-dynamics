@@ -1,0 +1,318 @@
+\section{A constructive boundary: positive higher-order dispersion}
+\label{sec:superorder}
+
+A positive addition of strictly higher degree has the opposite
+dilation sign and admits negative-energy stationary waves arbitrarily
+close to the lower-order critical mass. This comparison lies outside
+both the upper dilation condition and the original order-$m$ growth
+class. The proof uses standard constrained minimization. Its
+fourth/second-order and fractional-order special cases have substantial
+precedent; it is included to explain the variational mechanism in
+arbitrary orders, not as a counterexample to the unmodified homogeneous
+equation or as an isolated sharpness test of the upper dilation condition.
+
+Fix $N\ge1$, $k>m>1$, and $\varepsilon>0$. Set
+\[
+ r=\frac mN,\qquad p=2+2r,\qquad
+ A_j(f)=\int |\xi|^j|\widehat f(\xi)|^2\,d\xi,
+\]
+and consider
+\begin{equation}\label{higher:equation}
+ iu_t=(|D|^m+\varepsilon|D|^k)u-|u|^{2m/N}u,
+ \qquad
+ E_\varepsilon(f)=\frac12A_m(f)+\frac\varepsilon2A_k(f)
+                    -\frac1p\|f\|_p^p.
+\end{equation}
+Let $M_{c,m}$ be the sharp critical mass for the \emph{lower-order}
+symbol $|\xi|^m$:
+\begin{equation}\label{higher:gn}
+ \|f\|_p^p\le\frac p2
+       \left(\frac{M(f)}{M_{c,m}}\right)^r A_m(f).
+\end{equation}
+Define
+\[
+ I_\varepsilon(M)=\inf\{E_\varepsilon(f):
+      f\in H^{k/2}(\mathbb R^N;\mathbb C),\ M(f)=M\}.
+\]
+
+\begin{theorem}[No gap above the lower-order threshold]
+\label{higher:existence}
+For $0<M\le M_{c,m}$, $I_\varepsilon(M)=0$ and the infimum is not
+attained. For every $M>M_{c,m}$,
+\[
+ -\infty<I_\varepsilon(M)<0,
+\]
+and every minimizing sequence is precompact in $H^{k/2}$ after
+translations and passage to a subsequence. There is a real minimizer
+$Q_M\in L^\infty\cap H^{k+1}$ satisfying
+\begin{equation}\label{higher:profile}
+ (|D|^m+\varepsilon|D|^k)Q_M+\omega_MQ_M
+       -|Q_M|^{2m/N}Q_M=0,
+ \qquad \omega_M>0.
+\end{equation}
+Its energy obeys
+\begin{equation}\label{higher:energy}
+ E_\varepsilon(Q_M)
+       =-\frac{k-m}{2m}\varepsilon A_k(Q_M)<0.
+\end{equation}
+Thus $e^{i\omega_Mt}Q_M$ is a global stationary solution of
+\eqref{higher:equation}, with zero momentum and strictly negative
+energy, for every $M>M_{c,m}$.
+\end{theorem}
+
+\begin{proof}
+\emph{Coercivity and sign.}
+Highest-order Gagliardo--Nirenberg interpolation gives
+\begin{equation}\label{higher:coercive-gn}
+ \|f\|_p^p\le C_{N,m,k}
+ M(f)^{1+m/N-m/k}A_k(f)^{m/k}.
+\end{equation}
+Since $m/k<1$, Young's inequality implies, at fixed mass,
+\begin{equation}\label{higher:coercivity}
+ E_\varepsilon(f)\ge\frac\varepsilon4A_k(f)
+                         -C_{N,m,k,\varepsilon,M}.
+\end{equation}
+The infimum is finite and minimizing sequences are bounded in
+$H^{k/2}$. If $M\le M_{c,m}$, \eqref{higher:gn} gives
+\[
+ E_\varepsilon(f)\ge
+ \frac12\left[1-(M/M_{c,m})^r\right]A_m(f)
+                       +\frac\varepsilon2A_k(f)>0
+\]
+for every nonzero admissible $f$. On the other hand, for any smooth
+datum of mass $M$, the mass-preserving dilation
+$f_\lambda(x)=\lambda^{N/2}f(\lambda x)$ satisfies
+\begin{equation}\label{higher:dilation}
+ E_\varepsilon(f_\lambda)
+       =\lambda^mE_0(f)+\frac\varepsilon2\lambda^kA_k(f)
+       \longrightarrow0\quad(\lambda\downarrow0).
+\end{equation}
+This proves the first assertion. If $M>M_{c,m}$, multiply a
+lower-order sharp optimizer by $\sqrt{M/M_{c,m}}$ to obtain negative
+$E_0$. Approximation in $H^{m/2}$ by real $C_c^\infty$ functions,
+followed by a mass adjustment, gives such an $f$ of exact mass $M$.
+Equation~\eqref{higher:dilation} is negative for sufficiently small
+$\lambda$, because $k>m$. This does not require the lower-order
+optimizer itself to belong to $H^{k/2}$.
+
+\emph{Strict binding.}
+For $\theta>1$, amplitude scaling gives
+\[
+ E_\varepsilon(\sqrt\theta f)
+ =\theta E_\varepsilon(f)
+       -\frac{\theta^{p/2}-\theta}{p}\|f\|_p^p
+ \le\theta E_\varepsilon(f),
+\]
+and also
+\[
+ E_\varepsilon(\sqrt\theta f)
+ =\theta^{p/2}E_\varepsilon(f)
+  +\frac{\theta-\theta^{p/2}}2(A_m(f)+\varepsilon A_k(f))
+ \le\theta^{p/2}E_\varepsilon(f).
+\]
+Consequently $I_\varepsilon(M)/M$ is nonincreasing, with
+\begin{equation}\label{higher:strict-amplitude}
+ I_\varepsilon(\theta M)\le\theta^{p/2}I_\varepsilon(M)
+               <\theta I_\varepsilon(M)
+ \quad\text{if }I_\varepsilon(M)<0.
+\end{equation}
+For $M>M_{c,m}$ and $M=M_1+M_2$ with $M_1,M_2>0$, it follows that
+\begin{equation}\label{higher:binding}
+ I_\varepsilon(M)<I_\varepsilon(M_1)+I_\varepsilon(M_2).
+\end{equation}
+Indeed, if both pieces are subthreshold the right side is zero.
+Otherwise the monotonicity of $I_\varepsilon(M)/M$, strict for a
+piece with negative infimum by~\eqref{higher:strict-amplitude}, proves
+\eqref{higher:binding} upon multiplying by the two masses and adding.
+
+\emph{Compactness and attainment.}
+Let $f_n$ be a minimizing sequence at $M>M_{c,m}$ and put $s=k/2$.
+Local mass vanishing is impossible. To see this, a smooth unit-cube
+partition and local GN interpolation give
+\[
+ \|\chi_j f_n\|_{2+2k/N}^{2+2k/N}
+    \le C\|\chi_j f_n\|_2^{2k/N}\|\chi_j f_n\|_{H^s}^2,
+ \qquad
+ \sum_j\|\chi_j f_n\|_{H^s}^2\le C\|f_n\|_{H^s}^2.
+\]
+Thus $\sup_y\int_{B(y,1)}|f_n|^2\to0$ would imply
+$\|f_n\|_{2+2k/N}\to0$, and interpolation would imply
+$\|f_n\|_p\to0$ since $2<p<2+2k/N$. This contradicts the negative
+limiting energy.
+
+After translations and a subsequence, there is therefore a weak
+$H^s$ limit $Q\ne0$, with local strong $L^2$ convergence and
+almost-everywhere convergence. Write $w_n=f_n-Q$,
+$M_1=M(Q)>0$, and $M_2=M-M_1\ge0$. Hilbert splitting of both
+kinetic forms and the Brezis--Lieb lemma yield
+\begin{align}
+ M(f_n)&=M(Q)+M(w_n)+o(1),\notag\\
+ E_\varepsilon(f_n)&=E_\varepsilon(Q)
+                         +E_\varepsilon(w_n)+o(1).
+ \label{higher:splitting}
+\end{align}
+If $M_2>0$, normalize $w_n$ to exactly that mass. Its normalization
+factor tends to one and all energy terms remain bounded, so the
+energy changes by $o(1)$. Equation~\eqref{higher:splitting} then
+contradicts~\eqref{higher:binding}. Hence $M_1=M$ and $M(w_n)\to0$.
+Equation~\eqref{higher:coercive-gn} now gives $\|w_n\|_p\to0$,
+so~\eqref{higher:splitting} forces
+\[
+ E_\varepsilon(Q)=I_\varepsilon(M),\qquad
+ A_m(w_n)+\varepsilon A_k(w_n)\longrightarrow0.
+\]
+Thus convergence is strong in $H^{k/2}$.
+
+A real minimizer can be obtained without a diamagnetic inequality.
+The real and complex infima coincide: write $f=A+iB$ and, if both
+component masses are positive, put
+\[
+ \vartheta=M(A)/M(f),\qquad
+ g=A/\sqrt\vartheta,\qquad h=B/\sqrt{1-\vartheta}.
+\]
+Both $g,h$ are real and have mass $M(f)$. The two real-even kinetic
+forms split, while convexity gives
+\[
+ |f|^p=\big(\vartheta g^2+(1-\vartheta)h^2\big)^{p/2}
+             \le\vartheta|g|^p+(1-\vartheta)|h|^p.
+\]
+Therefore $E_\varepsilon(f)\ge
+\vartheta E_\varepsilon(g)+(1-\vartheta)E_\varepsilon(h)$,
+which is at least the real infimum. The cases of a zero component
+are immediate. A real minimizing sequence and the preceding
+compactness proof give a real minimizer $Q_M$.
+
+\emph{Stationary identities.}
+The energy is $C^1$ on $H^{k/2}$. The Lagrange multiplier theorem
+gives~\eqref{higher:profile} weakly for a real $\omega_M$.
+Minimizing along the mass-preserving dilation gives directly
+\begin{equation}\label{higher:pohozaev}
+ \frac m2A_m(Q_M)+\frac{k\varepsilon}2A_k(Q_M)
+                         -\frac mp\|Q_M\|_p^p=0.
+\end{equation}
+Only the explicit scalar formula~\eqref{higher:dilation} is
+differentiated; no spatial moment or energy-space dilation generator
+is needed. Equation~\eqref{higher:energy} follows immediately.
+Testing the weak equation against $Q_M$ additionally gives
+\begin{equation}\label{higher:frequency}
+ \omega_M M=\frac mN A_m(Q_M)
+   +\left(\frac{k}{m}+\frac{k}{N}-1\right)
+           \varepsilon A_k(Q_M)>0.
+\end{equation}
+
+\emph{Regularity.}
+For $\omega_M>0$, the resolvent
+\[
+ R=(|D|^m+\varepsilon|D|^k+\omega_M)^{-1}
+\]
+maps $L^q$ to $H^{k,q}$ for every $1<q<\infty$. Its multiplier
+after multiplication by $(1+|\xi|^2)^{k/2}$ satisfies the Mihlin
+bounds, including at low frequency after each derivative is weighted
+by the corresponding power of $|\xi|$. The equation reads
+$Q_M=R(|Q_M|^{2m/N}Q_M)$.
+If $N<k$, the starting energy embedding gives $L^\infty$; if $N=k$,
+arbitrarily large finite input exponents give the same conclusion.
+If $N>k$, start at
+\[
+ \beta_0=\frac12-\frac{k}{2N},\qquad
+ \beta_{j+1}=(1+2m/N)\beta_j-k/N,
+\]
+where $\beta_j$ is the reciprocal integrability exponent. The fixed
+point is $k/(2m)>1/2>\beta_0$, so finitely many iterations give an
+input exponent above $N/k$ and hence $L^\infty$. The first nonlinear
+input exponent exceeds one because $2N/(N-k)>1+2m/N$; all later
+ones improve. An endpoint can be bypassed by slightly weakening an
+intermediate exponent. Boundedness gives the nonlinearity in $L^2$,
+so $Q_M\in H^k\subset H^1$. The $C^1$ chain rule then puts the
+nonlinearity in $H^1$, and one more resolvent step gives
+$Q_M\in H^{k+1}$. This proves the theorem.
+\end{proof}
+
+\subsection{Quantitative degeneration at the lower-order threshold}
+
+\begin{proposition}[Low-frequency bounds]\label{higher:low-frequency}
+For the minimizers in Theorem~\ref{higher:existence}, set
+\[d=(M/M_{c,m})^{m/N}-1>0.\]
+Then
+\begin{align}
+ \varepsilon A_k(Q_M)&\le\frac mk d A_m(Q_M),
+       \label{higher:ratio}\\
+ A_k(Q_M)&\le M\left(\frac{m d}{k\varepsilon}\right)^{k/(k-m)},
+ & A_m(Q_M)&\le M\left(\frac{m d}{k\varepsilon}\right)^{m/(k-m)},
+       \label{higher:kinetic-bounds}\\
+ -\frac{k-m}{2k}M d
+  \left(\frac{m d}{k\varepsilon}\right)^{m/(k-m)}
+     &\le I_\varepsilon(M)<0.
+       \label{higher:energy-bound}
+\end{align}
+Thus $A_m$, $A_k$, $|E_\varepsilon|$, and $\omega_M$ tend to zero
+as $M\downarrow M_{c,m}$ with $\varepsilon$ fixed. After normalizing
+$A_m=1$, these minimizers converge subsequentially in $H^{m/2}$,
+modulo translations and constant phases, to a lower-order sharp
+optimizer.
+\end{proposition}
+\begin{proof}
+Combining~\eqref{higher:gn} and~\eqref{higher:pohozaev} gives
+\eqref{higher:ratio}. Fourier interpolation gives
+$A_m\le M^{1-m/k}A_k^{m/k}$, which proves
+\eqref{higher:kinetic-bounds}; the energy identity gives
+\eqref{higher:energy-bound}. Equation~\eqref{higher:frequency}
+then gives $\omega_M\to0$.
+
+For $M_n\downarrow M_{c,m}$, put
+\[
+ \lambda_n=A_m(Q_{M_n})^{-1/m},\qquad
+ \widetilde Q_n(x)=\lambda_n^{N/2}Q_{M_n}(\lambda_nx).
+\]
+These profiles satisfy $A_m(\widetilde Q_n)=1$, $M(\widetilde Q_n)=M_n$,
+and
+\[
+ E_0(\widetilde Q_n)
+ =-\frac{k\varepsilon A_k(Q_{M_n})}{2mA_m(Q_{M_n})}<0,
+ \qquad |E_0(\widetilde Q_n)|\le d_n/2\longrightarrow0.
+\]
+The normalized sharp-GN compactness lemma therefore gives the
+asserted strong convergence. The higher-order coefficient in the
+normalized equation is
+\[
+ \varepsilon\lambda_n^{m-k}
+       =\varepsilon A_m(Q_{M_n})^{(k-m)/m}\longrightarrow0.
+\]
+Thus this term becomes small but still determines the negative
+energy in~\eqref{higher:energy}.
+\end{proof}
+
+If a lower-order optimizer $Q$ additionally belongs to $H^{k/2}$,
+one obtains matching energy powers by using the trial family
+$\sqrt{M/M_{c,m}}\,Q_\lambda$. Put $a=A_m(Q)$, $b=A_k(Q)$,
+and $\vartheta=M/M_{c,m}$, with $M(Q)=M_{c,m}$. Its optimal scale
+is $\lambda^{k-m}=m a d/(k\varepsilon b)$, yielding
+\begin{equation}\label{higher:energy-upper}
+ I_\varepsilon(M)\le
+ -\frac{\vartheta(k-m)}{2k}a d
+       \left(\frac{m a d}{k\varepsilon b}\right)^{m/(k-m)}.
+\end{equation}
+Together with~\eqref{higher:energy-bound}, this gives the same power
+$\varepsilon^{-m/(k-m)}d^{k/(k-m)}$ on both sides, not an exact
+asymptotic coefficient. The additional optimizer regularity is
+retained here for arbitrarily large $k$; the existence theorem does
+not require it.
+
+\begin{remark}[Meaning of the boundary]
+For $b(\xi)=\varepsilon|\xi|^k$ one has
+$\xi\cdot\nabla b=kb>mb$ away from zero. This is precisely the
+opposite dilation sign and accounts for~\eqref{higher:energy}.
+Every positive coefficient admits negative-energy stationary waves
+at masses arbitrarily close to $M_{c,m}$. This modification also violates
+the order-$m$ growth bound, so by itself it does not isolate the role of
+the upper dilation condition within that growth class. A small
+coefficient here is not a small bounded quadratic-form perturbation on
+$H^{m/2}$, and the modified symbol is not homogeneous of degree $m$;
+the fixed-order homogeneous robustness theorem is unaffected.
+
+For a strong $H^{k/2}$ flow with conservation and the usual norm
+continuation criterion,~\eqref{higher:coercivity} additionally rules
+out finite-time divergence of the energy norm. This conditional
+flow consequence is separate from the explicitly global stationary
+solutions proved above.
+\end{remark}

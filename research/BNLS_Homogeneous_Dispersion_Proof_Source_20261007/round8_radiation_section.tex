@@ -1,0 +1,234 @@
+\section{The exact radiation cost and asymptotic mass thresholds}
+
+In this section $m>1$ denotes the order of dispersion, while $\mu$ denotes a mass. Let
+\[
+ a\in C^\infty(\mathbb R^N\setminus\{0\};\mathbb R),\qquad
+ a(-\xi)=a(\xi),\qquad a(t\xi)=t^m a(\xi)\quad(t>0),
+ \qquad c|\xi|^m\le a(\xi)\le C|\xi|^m,
+\]
+where $c>0$. Extend $a$ continuously by $a(0)=0$. Put $s=m/2$ and
+\[
+ p=2+\frac{2m}{N},\qquad
+ A_a(f)=\int_{\mathbb R^N}a(\xi)|\widehat f(\xi)|^2\,d\xi,
+ \qquad E_a(f)=\frac12A_a(f)-\frac1p\|f\|_p^p.
+\]
+The Fourier transform is unitary, and
+\[
+ M(f)=\|f\|_2^2,\qquad P(f)=\int_{\mathbb R^N}\xi|\widehat f(\xi)|^2\,d\xi.
+\]
+All these quantities are continuous on $H^s$: momentum uses $s>1/2$, and the nonlinear exponent is strictly $H^s$-subcritical. Smoothness of $a$ away from zero will be used only for free propagation. The variational result below requires only continuity and positive elliptic homogeneity.
+
+\subsection{Convexification determines the optimal cost}
+
+Let $b=a^{**}$ be the closed convex envelope of $a$. It is even, convex and homogeneous of degree $m$, and
+\[
+ c|\xi|^m\le b(\xi)\le a(\xi)\le C|\xi|^m.
+\]
+For homogeneity, observe that $\xi\mapsto t^{-m}b(t\xi)$ is a convex minorant of $a$, and apply the resulting inequality with both $t$ and $t^{-1}$. Let
+\[
+ B=\{\xi:a(\xi)\le1\},\qquad K=\operatorname{conv}(B).
+\]
+This is a compact symmetric convex body with nonempty interior. If $\gamma_K$ is its Minkowski functional, then
+\begin{equation}\label{eq:r8-convexified-gauge}
+ b(\xi)=\gamma_K(\xi)^m.
+\end{equation}
+Indeed, $\gamma_K^m$ is convex and at most $a$, hence at most $b$. Conversely, $b\le1$ on $B$, and therefore on $K$; homogeneity gives the reverse inequality.
+
+\begin{theorem}[Exact radiation energy at fixed mass and momentum]\label{thm:r8-radiation-cost}
+For every $\mu>0$ and $\pi\in\mathbb R^N$,
+\[
+ \inf\left\{\frac12 A_a(f):f\in H^{m/2},\ M(f)=\mu,\ P(f)=\pi\right\}
+ =\frac{b(\pi)}{2\mu^{m-1}}.
+\]
+The infimum is not attained. Every strictly larger finite energy is attained by a Schwartz function satisfying the two constraints exactly.
+\end{theorem}
+
+\begin{proof}
+Set $q=\pi/\mu$ and $d\rho=|\widehat f|^2\,d\xi/\mu$. Jensen's inequality for $b\le a$ gives
+\[
+ \frac{A_a(f)}\mu=\int a\,d\rho\ge\int b\,d\rho\ge b(q)
+ =\mu^{-m}b(\pi).
+\]
+To prove strictness, choose a supporting affine function $\ell$ of $b$ at $q$. Thus $\ell\le b\le a$ and $\ell(q)=b(q)$. Equality in the bound would force $\rho$ to be supported on $\{a=\ell\}$. On each positive ray $r\theta$, $|\theta|=1$, the nonnegative function
+\[
+ h_\theta(r)=a(\theta)r^m-r\ell_{\rm lin}(\theta)-\ell(0)
+\]
+is strictly convex, since
+\[
+ h_\theta''(r)=m(m-1)a(\theta)r^{m-2}>0\qquad(r>0).
+\]
+It has at most one zero: two zeros would force a negative value between them. Polar-coordinate Fubini therefore shows that $\{a=\ell\}$ has Lebesgue measure zero. This contradicts the absolute continuity and unit mass of $\rho$. The origin is immaterial; in dimension one the same argument applies to the two half-lines.
+
+For sharpness, first assume $q\ne0$ and set $r_0=\gamma_K(q)$. The point $z=q/r_0$ lies on the boundary of $K$. Choose a supporting hyperplane there. The intersection of that hyperplane with $K$ is the convex hull of its intersection with $B$. Carath\'eodory's theorem in the hyperplane consequently gives
+\[
+ z=\sum_{j=1}^{L}\theta_j z_j,\qquad
+ L\le N,\quad\theta_j>0,\quad\sum_j\theta_j=1,\quad a(z_j)=1.
+\]
+Here $a(z_j)=1$ because the supporting hyperplane has positive distance from zero: if $a(z_j)<1$, a slightly larger radial multiple of $z_j$ would still belong to $B$ and would violate the supporting inequality. The probability measure with masses $\theta_j$ at $r_0z_j$ has mean $q$ and $a$-moment $r_0^m=b(q)$. At $q=0$, use the unit atom at zero.
+
+Replace each distinct atom by a sufficiently narrow smooth compactly supported Fourier bump. Choose each bump's squared modulus to have unit mass and zero centered first moment, and give it coefficient $\sqrt{\mu\theta_j}$. The supports can be made disjoint. The resulting inverse Fourier transform is Schwartz, has mass $\mu$ and momentum $\pi$ exactly, and its kinetic energy converges to $\mu b(q)/2$. Continuity of $a$ suffices for this convergence.
+
+Finally, fix an energy $e$ above this infimum and choose one such function $f_0$ with energy below $e$. Two equal Fourier bumps centered at $q\pm R\eta$, for a fixed unit vector $\eta$, give another Schwartz function $f_1$ with the same mass and momentum and energy tending to infinity as $R\to\infty$. For sufficiently large $R$ its Fourier support is disjoint from that of $f_0$. The functions
+\[
+ f_\theta=\sqrt{1-\theta}\,f_0+\sqrt\theta\,f_1,
+ \qquad0\le\theta\le1,
+\]
+have the same mass and momentum, and their kinetic energies interpolate affinely. A suitable $\theta$ gives energy exactly $e$.
+\end{proof}
+
+\begin{remark}[An explicit nonconvex elliptic dispersion]
+Convexification cannot be omitted for a general elliptic symbol. In two dimensions let
+\[
+ a(\xi_1,\xi_2)=\xi_1^4+\xi_2^4-\frac32\xi_1^2\xi_2^2
+ =\left(\xi_2^2-\frac34\xi_1^2\right)^2+\frac7{16}\xi_1^4.
+\]
+One has $a(\xi)\ge|\xi|^4/8$. The equal atoms at $(1,\sqrt3/2)$ and $(1,-\sqrt3/2)$ have mean $(1,0)$ and $a$-moment $7/16$. Conversely, every probability measure of that mean has
+\[
+ \int a\,d\rho\ge\frac7{16}\int\xi_1^4\,d\rho\ge\frac7{16}.
+\]
+Hence $a^{**}(1,0)=7/16$, whereas $a(1,0)=1$. At momentum $(r,0)$ the sharp cost is $7r^4/(32\mu^3)$, not $r^4/(2\mu^3)$. For the isotropic symbol $a(\xi)=|\xi|^m$, convexity gives $b=a$.
+\end{remark}
+
+\subsection{Free propagation and automatic decoupling}
+
+\begin{lemma}[Decay and uniform weak dispersion]\label{lem:r8-free-decay}
+Write $S_a(t)=e^{-it a(D)}$. For every $f\in H^{m/2}$ and every finite $q>2$ for which $H^{m/2}$ embeds continuously into $L^q$,
+\[
+ \|S_a(t)f\|_q\longrightarrow0\qquad(t\to+\infty).
+\]
+In particular this holds for $q=p=2+2m/N$. For every $f,g\in L^2$,
+\[
+ \sup_{x\in\mathbb R^N}
+ \left|\left\langle S_a(t)f,g(\cdot-x)\right\rangle\right|
+ \longrightarrow0.
+\]
+\end{lemma}
+
+\begin{proof}
+First suppose $\widehat f\in C_c^\infty(\mathbb R^N\setminus\{0\})$. At any point $\xi_0$ of its support, put $e=\xi_0/|\xi_0|$. Euler homogeneity gives
+\[
+ e^T D^2a(\xi_0)e=\frac{m(m-1)}{|\xi_0|^2}a(\xi_0)>0.
+\]
+This fixed-direction second derivative has a positive lower bound in a small ball about $\xi_0$. Cover the compact Fourier support by finitely many such balls and use a smooth partition of unity. On one piece write $\xi=re+\eta$, with $\eta\perp e$. Along each line intersecting its ball, the Fourier phase obeys
+\[
+ \Phi(r)=x\cdot(re+\eta)-t a(re+\eta),\qquad
+ |\Phi''(r)|\ge c_0|t|.
+\]
+The second-derivative van der Corput estimate, on the interval cut out by the ball, yields
+\[
+ \left|\int e^{i\Phi(r)}g(r,\eta)\,dr\right|
+ \le C|t|^{-1/2}
+ \left(\sup_r|g(r,\eta)|+\int|\partial_rg(r,\eta)|\,dr\right).
+\]
+Integrating in $\eta$ and summing the finite cover proves
+\[
+ \|S_a(t)f\|_\infty\le C_f|t|^{-1/2},
+\]
+uniformly in $x$. No global convexity or nondegeneracy of the full Hessian is required. This estimate has a datum-dependent constant; it is not a uniform $H^{m/2}$-to-$L^\infty$ bound.
+
+Interpolation with the conserved $L^2$ norm gives $L^q$ decay for this class. Functions whose Fourier transforms are smooth, compactly supported, and avoid zero are dense in $H^{m/2}$. Approximation, the isometry of $S_a(t)$ on $H^{m/2}$, and Sobolev embedding give the asserted decay for general data.
+
+For the weak assertion first take $f$ in the same dense class and $g$ Schwartz. Bound the pairing by $\|S_a(t)f\|_\infty\|g\|_1$, uniformly in translation. Approximation of both factors in $L^2$, together with unitarity, completes the argument.
+\end{proof}
+
+\begin{theorem}[Decoupling of a strong asymptotic expansion]\label{thm:r8-decoupling}
+Suppose a solution with conserved mass, momentum and energy admits
+\[
+ u(t)=\sum_{j=1}^{J}e^{i\theta_j(t)}U_j(\cdot-x_j(t))
+       +S_a(t)f+o_{H^{m/2}}(1),
+\]
+where $J$ is finite, $U_j,f\in H^{m/2}$, and
+$|x_j(t)-x_k(t)|\to\infty$ for $j\ne k$. Then
+\begin{align*}
+ M(u)&=\sum_jM(U_j)+M(f),\\
+ P(u)&=\sum_jP(U_j)+P(f),\\
+ E_a(u)&=\sum_jE_a(U_j)+\frac12A_a(f).
+\end{align*}
+The profiles $U_j$ need not satisfy a traveling-wave equation for this decoupling statement.
+\end{theorem}
+
+\begin{proof}
+Translation separation eliminates core-core quadratic cross terms by $L^2$ approximation with compactly supported functions. Lemma~\ref{lem:r8-free-decay} eliminates core-radiation cross terms, uniformly in the centers and phases. For the kinetic energy apply its weak assertion to the $L^2$ factors $a(D)^{1/2}f$ and $a(D)^{1/2}U_j$.
+
+For momentum, including the range $1<m<2$, use
+\[
+ \int\xi_k\overline{\widehat f}\,\widehat g
+ =\left\langle |D|^{1/2}f,
+ \frac{D_k}{|D|}|D|^{1/2}g\right\rangle.
+\]
+Both factors lie in $L^2$, and the multiplier $D_k/|D|$ is bounded, with any value assigned at zero. The same separation and weak-dispersion arguments therefore apply.
+
+Approximation of each core by a compactly supported function in $L^p$ decouples their nonlinear norms. The free term tends to zero in $L^p$ by Lemma~\ref{lem:r8-free-decay}. Finally all remainder terms vanish by continuity of the invariants on $H^{m/2}$.
+\end{proof}
+
+\subsection{Sharp invariant budgets and the mass gap}
+
+For a decomposition as above, set
+\[
+ S=\sum_jE_a(U_j),\qquad P_c=\sum_jP(U_j),\qquad\mu=M(f).
+\]
+If $\mu>0$, total momentum zero and negative total energy imply
+\begin{equation}\label{eq:r8-budget}
+ \boxed{\quad S<0,\qquad 2\mu^{m-1}(-S)>b(P_c).\quad}
+\end{equation}
+Indeed, Theorems~\ref{thm:r8-radiation-cost} and~\ref{thm:r8-decoupling} give
+\[
+ E_a(u)>S+\frac{b(P_c)}{2\mu^{m-1}}.
+\]
+Conversely, for fixed cores and a mass $\mu$ satisfying~\eqref{eq:r8-budget}, Theorem~\ref{thm:r8-radiation-cost} supplies Schwartz radiation of mass $\mu$, momentum $-P_c$, and free energy smaller than $-S$. If a total energy $E_0$ is prescribed, the exact feasibility condition is
+\begin{equation}\label{eq:r8-prescribed-budget}
+ E_0-S>\frac{b(P_c)}{2\mu^{m-1}}.
+\end{equation}
+If $f=0$, the corresponding conditions are simply $P_c=0$ and $S<0$.
+
+\begin{remark}[The extent of sufficiency]
+The sufficiency just stated is exact for the radiation datum and the asymptotic invariant budget. It does not construct a nonlinear solution having the prescribed expansion. A nonlinear wave operator or a gluing theorem is a separate requirement. The decoupling theorem also assumes an actual strong expansion and conservation; it is not a well-posedness or soliton-resolution theorem.
+\end{remark}
+
+\begin{proposition}[Transfer of the profile gap to asymptotic dynamics]\label{prop:r8-asymptotic-gap}
+Assume that every negative-energy traveling profile for the symbol $a$ has mass at least $M_{c,a}+\varepsilon_{N,m,a}$, as supplied by the preceding mass-gap theorem. Let a solution of negative total energy have the expansion in Theorem~\ref{thm:r8-decoupling}, with all $U_j$ traveling profiles. Then
+\[
+ M(u)\ge M_{c,a}+\varepsilon_{N,m,a}.
+\]
+If exactly $k$ cores have negative energy, their masses alone contribute at least $k(M_{c,a}+\varepsilon_{N,m,a})$.
+
+If there is no radiation, every core has negative energy, and total momentum is zero, then $J\ge2$ and
+\[
+ M(u)\ge2(M_{c,a}+\varepsilon_{N,m,a}).
+\]
+\end{proposition}
+
+\begin{proof}
+The radiation energy is nonnegative, so negative total energy requires at least one negative-energy core. Apply the profile mass gap to each such core and use mass decoupling. In the final assertion, a single negative-energy traveling profile cannot have zero momentum, because its Pohozaev identity is $v\cdot P=2m E_a<0$. Thus there must be at least two cores.
+\end{proof}
+
+\begin{proposition}[A sequential version with a general dispersive remainder]\label{prop:r8-sequential-gap}
+The single-gap conclusion and the count of negative-energy cores remain valid under the weaker assumption that, along a sequence $t_n\to\infty$,
+\[
+ u(t_n)=\sum_{j=1}^{J}e^{i\gamma_{j,n}}U_j(\cdot-x_{j,n})
+          +r_n+o_{H^{m/2}}(1),
+\]
+where the finitely many centers separate, each $U_j$ is a traveling profile, $r_n$ is bounded in $H^{m/2}$,
+$\|r_n\|_p\to0$, and $r_n(\cdot+x_{j,n})\rightharpoonup0$ in $H^{m/2}$ for every $j$. No free-evolution representation of the remainder, full-time resolution, or zero-total-momentum assumption is needed.
+\end{proposition}
+
+\begin{proof}
+Separation and the assumed weak convergence give quadratic splitting, including for the continuous kinetic form on $H^{m/2}$. Compact-support approximation separates the nonlinear norms of the cores, and $\|r_n\|_p\to0$ eliminates all nonlinear remainder terms. Thus
+\[
+ M(u)=\sum_jM(U_j)+M(r_n)+o(1),\qquad
+ E_a(u)=\sum_jE_a(U_j)+\tfrac12 A_a(r_n)+o(1).
+\]
+The bounded nonnegative sequence $A_a(r_n)$ has a convergent subsequence. Negative total energy then forces at least one negative-energy core. Apply the profile mass gap to each such core and use the mass identity. If $J=0$, the negative-energy assumption is impossible.
+\end{proof}
+
+The doubled lower bound applies to the specified radiation-free class. For a single negative core with radiation, the sharp additional-mass requirement is only
+\[
+ \mu>\left(\frac{b(P(U))}{2|E_a(U)|}\right)^{1/(m-1)}.
+\]
+For a hypothetical small-speed branch with
+$P(U_v)=v\pi_1+o(v)$, $\pi_1\ne0$, and
+$-E_a(U_v)=c_1v^2+o(v^2)$, $c_1>0$, this cost is asymptotic to a positive constant times
+\[
+ |v|^{(m-2)/(m-1)}.
+\]
+It tends to zero for $m>2$, remains of constant order for $m=2$, and diverges for $1<m<2$. This is a conditional invariant obstruction; it does not assert existence of negative-energy branches in those orders. Nor does the asymptotic mass gap classify all bounded solutions: extending it beyond the stated decomposition remains a dynamical problem.

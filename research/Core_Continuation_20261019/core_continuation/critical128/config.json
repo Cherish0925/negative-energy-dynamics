@@ -1,0 +1,9 @@
+{
+  "n": 128,
+  "L": 24.0,
+  "ds": 0.05,
+  "start": 0,
+  "end": 2,
+  "seed": "core_continuation/run128/core_0.000000.npz",
+  "out": "core_continuation/critical128"
+}

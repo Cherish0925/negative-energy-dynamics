@@ -1,0 +1,13 @@
+{
+  "date": "2026-10-08",
+  "sha256": {
+    "BNLS_Dilation_Structure_and_Profile_Gaps_20261008.tex": "faa6333309b7d96f388fecfb7d22ed4778ac189aa0c77f10a68a9ef54da46fee",
+    "round9_cone_section.tex": "627a0091c700ac5edb1dc8fe9075302e6eb912efeba6e7d696cd4e3b4a1ce896",
+    "round9_bounded_boundary_section.tex": "832684acc2450a611740d6dcdee48fa0cb861c8a70f77515c5cf9a04a324d6db",
+    "round9_relative_section.tex": "b590d010ffabf51a32e673a04e917d2beb7760ac2b72607362ec4f13826ae012",
+    "round9_foundations.tex": "ddae28e1689cff053c5c9184369fa30a2585996463a41e3f528f2f2b8aba95d4",
+    "round9_virial_section.tex": "27313378378eb0859dbc2f57e7247c2aa1724e41136184eef62febd464b5d032",
+    "round9_superorder_section.tex": "d04048a4033e132c37c12ab6fa6c69f0115a0ef1b33bdddc17037da26f011847",
+    "BNLS_Dilation_Structure_and_Profile_Gaps_20261008.pdf": "c6bf4a5b377357971228a03d5b99df651ac65a135248b5b32865d3cfec10325c"
+  }
+}

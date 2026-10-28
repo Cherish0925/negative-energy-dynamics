@@ -1,0 +1,16 @@
+{
+  "new_exact_Rayleigh_certificate": true,
+  "full_Morse_checks": 27,
+  "Morse_counts": {
+    "L_plus_negative": 31,
+    "L_minus_negative": 5,
+    "L_plus_kernel": 4,
+    "L_minus_kernel": 1
+  },
+  "N3_certified_dual_residual_upper": "[1.26181046902234629174930468295224733715957528035776106057e-7 +/- 5.59e-65]",
+  "N3_required_certificates_pass": true,
+  "N3_exact_solution_proved": false,
+  "zero_momentum_exact_pair_proved": false,
+  "radial_complex_quartet_certified": false,
+  "external_independent_review_completed": false
+}

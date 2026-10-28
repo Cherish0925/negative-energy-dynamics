@@ -1,0 +1,254 @@
+\section{Conserved occupations and explicit critical bounds}
+\label{sec:r13-occupations}
+
+The local critical nonlinearity admits an explicit connection between
+scalar sharp interpolation and the entire conserved occupation spectrum.
+The auxiliary Gaussian variables below occur only in the proof; the
+initial data and the evolution remain deterministic.
+
+Let $\mathcal H$ be a separable complex Hilbert space and suppose the
+scalar inequality is
+\begin{equation}\label{eq:r13-scalarGN}
+ \int |f|^{2(1+r)}\le (1+r)M_c^{-r}M(f)^r A(f),
+ \qquad r=m/N>0.
+\end{equation}
+The positive scalar Fourier multiplier defining $A$ may be anisotropic.
+For nonzero $U\in H^{m/2}(\mathbb R^N;\mathcal H)$ set
+\[
+ \mathcal F(U)=\int\|U\|_{\mathcal H}^{2(1+r)},\qquad
+ \Gamma=\int|U(x)\rangle\langle U(x)|\,dx,\qquad
+ \Gamma_A=\int a(\xi)|\widehat U(\xi)\rangle
+                              \langle\widehat U(\xi)|\,d\xi.
+\]
+Write $M=\operatorname{Tr}\Gamma$, $A=\operatorname{Tr}\Gamma_A$,
+$\mu=\|\Gamma\|_{\rm op}$, and list the positive eigenvalues of
+$\Gamma$ as $\lambda_1=\mu\ge\lambda_2\ge\cdots$.
+Euler's gamma function is denoted by $\mathrm G$ in this section, to
+distinguish it from the correlation operator.
+
+\begin{theorem}[Explicit bound from the occupation spectrum]
+\label{thm:r13-Gaussian}
+Let $\xi_j$ be independent exponential random variables of mean one.
+Define
+\begin{equation}\label{eq:r13-Bdef}
+ \mathcal B_r(\Gamma)=\frac{1}{\mathrm G(r+2)}
+   \mathbb E\left[\xi_1\left(\sum_j\lambda_j\xi_j\right)^r\right].
+\end{equation}
+Then
+\begin{equation}\label{eq:r13-spectralGN}
+ \mathcal F(U)\le(1+r)M_c^{-r}\mathcal B_r(\Gamma)A(U).
+\end{equation}
+The coefficient depends only on the spectrum, is homogeneous of degree
+$r$, and satisfies $\mathcal B_r(\Gamma)\le M^r$. Equality in this last
+inequality holds precisely when $\Gamma$ has rank one.
+\end{theorem}
+\begin{proof}
+First suppose the internal rank is finite and diagonalize $\Gamma$.
+For independent standard circular complex Gaussian variables $z_j$, put
+$f_z=\sum_jz_ju_j$. Pointwise, $f_z$ has Gaussian variance
+$\rho_U=\|U\|^2$, so
+\[
+ \mathbb E\mathcal F(f_z)=\mathrm G(r+2)\mathcal F(U).
+\]
+In the chosen basis $M(f_z)=S:=\sum_j\lambda_j|z_j|^2$.
+Apply \eqref{eq:r13-scalarGN} and average. Averaging over the phases
+of the $z_j$ removes off-diagonal entries of the kinetic Gram matrix,
+giving
+\begin{equation}\label{eq:r13-weightedGaussian}
+ \mathrm G(r+2)\mathcal F(U)
+ \le(1+r)M_c^{-r}\sum_j A(u_j)b_j,
+ \qquad b_j=\mathbb E[\xi_j S^r].
+\end{equation}
+If $\lambda_i\ge\lambda_j$, exchange $\xi_i$ and $\xi_j$ in one
+copy of this expectation. With $S'$ denoting the exchanged sum,
+\[
+ b_i-b_j=\tfrac12\mathbb E[(\xi_i-\xi_j)(S^r-(S')^r)]\ge0,
+\]
+because $S-S'=(\lambda_i-\lambda_j)(\xi_i-\xi_j)$.
+Thus $b_1$ is maximal, proving \eqref{eq:r13-spectralGN}.
+H\"older's inequality and convex Jensen at exponent $r+1$ give
+\[
+ \mathbb E[\xi_1S^r]
+ \le(\mathbb E\xi_1^{r+1})^{1/(r+1)}
+       (\mathbb ES^{r+1})^{r/(r+1)}
+ \le\mathrm G(r+2)M^r.
+\]
+If a second eigenvalue is positive, $S$ is not proportional to $\xi_1$
+almost surely, and H\"older is strict. In rank one the moment is
+exactly $M^r\mathrm G(r+2)$.
+
+For infinite rank, truncate in the eigenbasis of $\Gamma$.
+The truncated fields converge in $H^{m/2}$ and in the interaction
+space. Their moments increase to \eqref{eq:r13-Bdef} by monotone
+convergence and remain bounded by $M^r$. This proves the full result.
+In particular no identity-covariance Gaussian vector in infinite-dimensional
+$\mathcal H$ is assumed to exist.
+\end{proof}
+
+\subsection{Explicit quantitative polarization}
+For $X=\Gamma/M$ and $Y=\Gamma_A/A$, both positive of trace one, the
+normalized distance to a fixed internal direction is exactly
+\begin{equation}\label{eq:r13-pdistance}
+ \mathfrak p(U):=\inf_{\|\zeta\|=1,q}
+ \left\{\frac{M(U-\zeta q)}M+\frac{A(U-\zeta q)}A\right\}
+ =2-\lambda_{\max}(X+Y).
+\end{equation}
+Indeed the pointwise scalar projection minimizes the combined quadratic
+norm for each $\zeta$.
+
+\begin{theorem}[Mass and kinetic alignment, $r\ge1$]
+\label{thm:r13-explicitpolarization}
+For complex Hilbert-valued fields,
+\begin{align}
+ \frac{\mathcal F(U)}{(1+r)(M/M_c)^r A}
+ &\le\frac{1+r\operatorname{Tr}(XY)}{r+1},
+ \label{eq:r13-alignment}\\
+ \mathfrak p(U)&\le\frac{2(r+1)}r\,\mathfrak d(U),
+ \qquad
+ \mathfrak d(U)=1-
+  \frac{\mathcal F(U)}{(1+r)(M/M_c)^r A}.
+ \label{eq:r13-explicitpol}
+\end{align}
+Consequently
+\begin{equation}\label{eq:r13-simpleoccupation}
+ \mathcal F(U)\le(1+r)(M/M_c)^r
+ \left[1-\frac r{r+1}\left(1-\frac\mu M\right)\right]A.
+\end{equation}
+For real Hilbert-valued fields with real-even dispersion, the respective factors in
+\eqref{eq:r13-alignment} and \eqref{eq:r13-explicitpol} are
+\[
+ \frac{1+2r\operatorname{Tr}(XY)}{2r+1},
+ \qquad \frac{2r+1}{r}.
+\]
+\end{theorem}
+\begin{proof}
+For $r\ge1$, Jensen gives
+$S^r\le M^{r-1}\sum_i\lambda_i\xi_i^r$. Hence
+\[
+ \frac{b_j}{\mathrm G(r+2)}
+ \le M^{r-1}\left[\lambda_j+\frac{M-\lambda_j}{r+1}\right].
+\]
+Substitution into \eqref{eq:r13-weightedGaussian} proves
+\eqref{eq:r13-alignment}. Since
+\[
+ \lambda_{\max}(X+Y)
+ \ge\frac{\operatorname{Tr}((X+Y)^2)}{\operatorname{Tr}(X+Y)}
+ \ge2\operatorname{Tr}(XY),
+\]
+where the second step is $\operatorname{Tr}((X-Y)^2)\ge0$,
+\eqref{eq:r13-pdistance} proves \eqref{eq:r13-explicitpol}.
+Also $\operatorname{Tr}(XY)\le\|X\|_{\rm op}=\mu/M$, proving
+\eqref{eq:r13-simpleoccupation}.
+For real Gaussian projections use $\xi_j=g_j^2$ with standard real
+$g_j$. Their moments satisfy
+\[
+ a_q=\mathbb E\xi_j^q
+ =\frac{2^q\mathrm G(q+1/2)}{\sqrt\pi},
+ \qquad a_{r+1}=(2r+1)a_r.
+\]
+The same calculation gives the stated real constants. Finite-rank
+approximation proves all assertions in infinite dimension.
+\end{proof}
+
+A scalar complex field is a real two-component field
+$(\operatorname{Re}u,\operatorname{Im}u)$. Therefore, for $r\ge1$,
+there is a constant phase $\theta$ and a real scalar $q$ such that
+\begin{equation}\label{eq:r13-explicitphase}
+ \frac{M(u-e^{i\theta}q)}{M(u)}+
+ \frac{A(u-e^{i\theta}q)}{A(u)}
+ \le\frac{2r+1}{r}\mathfrak d(u).
+\end{equation}
+This supplies the phase-smallness input for near-critical quartic
+motion in $N\le4$ directly from sharp scalar interpolation.
+The real covariance used for this instantaneous estimate is generally
+not conserved. The complex internal covariance in the following
+dynamical result is conserved.
+
+\subsection{Consequences for the actual evolution}
+Consider the same common scalar system
+\[
+ i\partial_tU=(a+b)(D)U-\|U\|^{2r}U,\qquad b\ge0,
+ \qquad E=\frac{A+B}{2}-\frac{\mathcal F}{2(1+r)}.
+\]
+Assume its conservative energy-space local flow and continuation
+property. All pairwise component inner products, and therefore
+$\Gamma$, are conserved. To see this, use the common scalar
+self-adjoint Hamiltonian $H_U=(a+b)(D)-\|U\|^{2r}$. For smooth
+approximations the equations give
+\[
+ \frac{d}{dt}\int u_j\overline{u_k}
+ =-i\int (H_Uu_j)\overline{u_k}
+   +i\int u_j\overline{H_Uu_k}=0.
+\]
+The quadratic-form or strong-approximation interpretation passes this
+identity to the energy-space flow. In infinite internal dimension,
+all matrix elements are conserved and determine the positive trace-class
+operator $\Gamma$; continuity also follows from
+$\|\Gamma(U)-\Gamma(V)\|_1
+\le(\|U\|_2+\|V\|_2)\|U-V\|_2$.
+
+\begin{theorem}[Global bounded flow from conserved occupations]
+\label{thm:r13-spectrumflow}
+If $\mathcal B_r(\Gamma(U_0))<M_c^r$, the solution is global in both
+time directions, and
+\[
+ \sup_t A(U(t))\le
+ \frac{2E(U_0)}{1-\mathcal B_r(\Gamma(U_0))/M_c^r},
+ \qquad \sup_t B(U(t))\le2E(U_0).
+\]
+In particular any fixed normalized occupation spectrum of rank greater
+than one has an explicitly specified global mass interval extending
+strictly above $M_c$. At mass $M_c$, every orbit with unbounded energy
+norm lies in one fixed internal line for its entire maximal evolution.
+\end{theorem}
+\begin{proof}
+Theorem~\ref{thm:r13-Gaussian} and conservation of $\Gamma$ yield
+\[
+ E(U(t))\ge\frac12
+ \left[1-\frac{\mathcal B_r(\Gamma(U_0))}{M_c^r}\right]A(U(t))
+ +\frac12 B(U(t)).
+\]
+Conservation and continuation prove the bounds and global existence.
+Homogeneity and strictness of $\mathcal B_r(\Gamma)<M^r$ give the
+above-critical interval. At $M=M_c$, unboundedness forces rank one.
+The fixed range of the conserved $\Gamma$ then contains $U(t,x)$
+almost everywhere at every time.
+\end{proof}
+
+Proposition~\ref{prop:r13g-local-flow} verifies these flow assumptions
+for $m=2k\ge4$ and $N=1,2,3$, also for countably many components.
+In particular it applies to quartic dispersion in these dimensions.
+No randomness of the initial field,
+radial symmetry, or finite spatial moment is required.
+
+The spectral moment is directly computable. For integer $r$, with
+$h_r$ the complete homogeneous symmetric polynomial,
+\[
+ \mathcal B_r(\Gamma)
+ =\frac{h_r(\lambda_1,\lambda_1,\lambda_2,\ldots)}{r+1}.
+\]
+In particular,
+\begin{equation}\label{eq:r13-B2}
+ \mathcal B_2(\Gamma)=
+ \frac{M^2+\operatorname{Tr}\Gamma^2+2M\mu+2\mu^2}{6}.
+\end{equation}
+For $k$ equal occupations $\lambda_j=M/k$,
+\[
+ \frac{\mathcal B_r(\Gamma)}{M^r}
+ =\frac{\mathrm G(k+r+1)}
+ {k^r\mathrm G(k+1)\mathrm G(r+2)}.
+\]
+Thus in the two-dimensional quartic system, two equal orthogonal
+occupations give $\mathcal B_2=M^2/2$: every such $H^2$ datum with
+$M<\sqrt2M_c$ has globally bounded evolution.
+Formula~\eqref{eq:r13-B2} retains information beyond $M$ and $\mu$.
+For $r\ge1$, at fixed $M$ and $\lambda_1$, averaging any two of the
+remaining occupations cannot increase $\mathcal B_r$, by convexity
+and permutation symmetry of its defining expectation.
+
+These estimates retain the sharp scalar endpoint, but no assertion
+of optimality at each higher-rank spectrum is made. Evaluating that
+optimal coefficient is a sharp orthonormal kinetic problem. The
+Gaussian argument above applies to local powers; Hartree interactions
+produce an additional exchange term under Gaussian averaging, so no
+Hartree extension is asserted here.

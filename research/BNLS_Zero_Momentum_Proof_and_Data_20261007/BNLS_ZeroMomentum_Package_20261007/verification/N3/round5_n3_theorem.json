@@ -1,0 +1,77 @@
+{
+  "status": "complete quantitative N3 mass-critical nonradial negative-energy traveling-wave theorem, conditional only on validity of the supplied analytic proofs and reproducible arithmetic certificates",
+  "profile_sha256": "5d2a86dc991fe960e7036ca651634c556ded9da4aa7d1ae357ab5f4f656d526b",
+  "exact_Q_Z_distance_lt": "4e-6",
+  "symmetry": "f(-x)=conjugate(f(x))",
+  "full_symmetry_linearization_inverse_lt": 200,
+  "dipole_inverse_pairing_lt": -1280,
+  "exact_dipole_response_Z_norm_lt": 818,
+  "speed_range": "0<|v|<=1e-9",
+  "U_v_minus_Q_Z_norm_le": "1000|v|",
+  "energy_upper": "E(U_v)<-180 v^2",
+  "fixed_point_contraction_upper_at_endpoint": "[0.0105501200000000000000000000000000000000000000000000000000 +/- 6.38e-60]",
+  "fixed_point_radius": "1000|v|",
+  "quadratic_correction_coefficient": "[5275120000.00000000000000000000000000000000000000000000000 +/- 3.81e-48]",
+  "momentum_quadratic_error_coefficient_upper": "[1022040742965.72306462288709937523167121578859277960483428 +/- 4.05e-45]",
+  "certified_energy_coefficient_lower": "[192.244907129284616922139112578096041098026425902549395714 +/- 4.07e-55]",
+  "even_ell_ge16_Q_gap_lower": "[0.162232638301539155578241340014814744398600233550825594023 +/- 3.17e-58]",
+  "odd_ell_ge5_Q_gap_lower": "[0.0752897020773747285673296815363701016704499118820750387113 +/- 2.22e-59]",
+  "finite_channels": [
+    {
+      "ell": 2,
+      "operator": "plus",
+      "Q_gap_lower": "[0.104584968947248863839168582975010698040326436360677083333 +/- 2.50e-58]",
+      "negative_index_per_mode": 4
+    },
+    {
+      "ell": 3,
+      "operator": "minus",
+      "Q_gap_lower": "[0.0405027705591667375699671538313850760459899902343750000000 +/- 3.69e-59]",
+      "negative_index_per_mode": 1
+    },
+    {
+      "ell": 4,
+      "operator": "plus",
+      "Q_gap_lower": "[0.193530465440172800510273039738725249965985616048177083333 +/- 1.70e-58]",
+      "negative_index_per_mode": 3
+    },
+    {
+      "ell": 5,
+      "operator": "minus",
+      "Q_gap_lower": "[0.0752897020773747285673296815363701016704499118820750387113 +/- 2.22e-59]",
+      "negative_index_per_mode": 0
+    },
+    {
+      "ell": 6,
+      "operator": "plus",
+      "Q_gap_lower": "[0.0997344867430454981066153171317030986150105794270833333332 +/- 4.93e-59]",
+      "negative_index_per_mode": 3
+    },
+    {
+      "ell": 8,
+      "operator": "plus",
+      "Q_gap_lower": "[0.150981744434070142489576111470598174396143120648077091770 +/- 2.54e-58]",
+      "negative_index_per_mode": 2
+    },
+    {
+      "ell": 10,
+      "operator": "plus",
+      "Q_gap_lower": "[0.0851146132096088644563754617896241446336110432942708333332 +/- 4.93e-59]",
+      "negative_index_per_mode": 1
+    },
+    {
+      "ell": 12,
+      "operator": "plus",
+      "Q_gap_lower": "[0.286555560677852642259441846602605938219165691768238770923 +/- 1.08e-58]",
+      "negative_index_per_mode": 1
+    },
+    {
+      "ell": 14,
+      "operator": "plus",
+      "Q_gap_lower": "[0.0643148294017961982310301512673807640870412190755208333332 +/- 4.93e-59]",
+      "negative_index_per_mode": 1
+    }
+  ],
+  "all_checks_pass": true,
+  "precision_bits": 192
+}

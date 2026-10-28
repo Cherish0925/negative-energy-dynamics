@@ -1,0 +1,61 @@
+{
+  "status": "all exact implication checks passed; round-2 certificates remain premises",
+  "checks": {
+    "profile_norm_below_m": true,
+    "all_even_odd_inverse_bounds_below_C": true,
+    "response_norm_below_b": true,
+    "remainder_coefficient_below_D": true,
+    "ball_maps_strictly_inside": true,
+    "contraction_below_0015": true,
+    "gradient_squared_below_5513": true,
+    "momentum_error_coefficient_exact": true,
+    "energy_below_minus18_v_squared": true,
+    "sample_mu_is_on_wedge": true
+  },
+  "values": {
+    "vmax": {
+      "exact": "1/1000000",
+      "display": 1e-06
+    },
+    "kappa": {
+      "exact": "1/1000",
+      "display": 0.001
+    },
+    "full_inverse_bound": {
+      "exact": "29",
+      "display": 29.0
+    },
+    "z_bound": {
+      "exact": "338192768/2247991",
+      "display": 150.4422250800826
+    },
+    "remainder_coefficient": {
+      "exact": "14308261787529/10000000",
+      "display": 1430826.1787529
+    },
+    "contraction": {
+      "exact": "28581702187529/2000000000000000",
+      "display": 0.0142908510937645
+    },
+    "momentum_error_coefficient": {
+      "exact": "189024000",
+      "display": 189024000.0
+    },
+    "gradient_squared_bound": {
+      "exact": "275626050001/50000000",
+      "display": 5512.52100002
+    },
+    "energy_coefficient_upper": {
+      "exact": "-3748773949999/200000000000",
+      "display": -18.743869749995
+    },
+    "sample_v": {
+      "exact": "1/1000000",
+      "display": 1e-06
+    },
+    "sample_mu": {
+      "exact": "1/1000000000000000",
+      "display": 1e-15
+    }
+  }
+}

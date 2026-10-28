@@ -1,0 +1,241 @@
+\section{Conserved internal correlations and the critical mass}
+\label{sec:r12-internal-dynamics}
+
+The quantitative polarization theorem has a consequence for every time
+of an actual solution. The internal correlation operator is conserved,
+and a field with more than one occupied spatial mode cannot approach
+the scalar sharp interpolation constant arbitrarily closely. This
+raises the mass range in which conservation of energy controls the
+whole evolution.
+
+\subsection{The common scalar flow}
+Let $\mathcal H$ be a nonzero separable complex Hilbert space and let
+$a$ be a positive elliptic, real-even homogeneous symbol of order
+$m>1$. Put $s=m/2$ and
+\[
+ \rho_U=\|U\|_{\mathcal H}^2,\qquad
+ M(U)=\int\rho_U,\qquad
+ A(U)=\int a(\xi)\|\widehat U(\xi)\|_{\mathcal H}^2\,d\xi.
+\]
+As in the quantitative polarization theorem, take either
+$\mathcal F(U)=\int\rho_U^\kappa$, $\kappa=1+m/N$, or the positive
+definite critical Hartree interaction
+$\mathcal F(U)=\mathcal D(\rho_U,\rho_U)$, $\kappa=2$.
+Write $r=\kappa-1$. We allow a common real nonnegative multiplier
+$b$ of order at most $m$, and write
+\begin{equation}\label{eq:r12-internal-flow}
+ iU_t=[a(D)+b(D)]U-V_{\rho_U}U,\qquad
+ E_b(U)=\frac{A(U)+B_b(U)}2-\frac{\mathcal F(U)}{2\kappa}.
+\end{equation}
+No homogeneity or dilation inequality on $b$ is used in this section.
+
+For the general flow statements we assume a conservative local
+$H^s(\mathbb R^N;\mathcal H)$ theory with the continuation property:
+every finite endpoint of the maximal interval entails an unbounded
+$H^s$ norm. A concrete quartic class satisfying this assumption is
+proved below. The sharp scalar mass $M_c$ is fixed by
+\[
+ \mathcal F(u)\le\kappa(M(u)/M_c)^r A(u).
+\]
+
+Define the positive trace-class operator on $\mathcal H$
+\begin{equation}\label{eq:r12-Gamma}
+ \Gamma(U)=\int |U(x)\rangle\langle U(x)|\,dx,
+ \qquad \mu(U)=\|\Gamma(U)\|_{\mathrm{op}},
+ \qquad \chi(U)=1-\frac{\mu(U)}{M(U)}.
+\end{equation}
+For a nonzero field, $\operatorname{Tr}\Gamma=M$ and $0\le\chi<1$.
+The largest eigenvalue exists even if the internal space is
+infinite-dimensional, because $\Gamma$ is compact.
+
+\begin{lemma}[Conservation of all internal correlations]
+\label{lem:r12-Gamma-conservation}
+Every energy-space solution of \eqref{eq:r12-internal-flow} satisfies
+$\Gamma(U(t))=\Gamma(U(0))$. In particular, $\mu$ and $\chi$ are
+constant throughout its maximal interval.
+\end{lemma}
+\begin{proof}
+For fixed internal vectors $h,k$, the scalar components
+$u_h=\langle h,U\rangle$ and $u_k=\langle k,U\rangle$ solve the
+same equation $iu_t=H(t)u$, where
+$H(t)=a(D)+b(D)-V_{\rho_U}$ is a self-adjoint spatial form.
+The Hilbert-triple product rule for
+$C H^s\cap C^1 H^{-s}$ functions gives
+\[
+ \frac{d}{dt}\int u_h\overline{u_k}
+ =-i\langle H(t)u_h,u_k\rangle
+       +i\langle u_h,H(t)u_k\rangle=0.
+\]
+The local nonlinear form is continuous by H\"older at exponent
+$2\kappa$; the Hartree form is continuous by HLS. Equality for a
+countable dense set of $h,k$ proves equality of the operators.
+The trace-norm estimate
+\[
+ \|\Gamma(U)-\Gamma(W)\|_1
+ \le(\|U\|_2+\|W\|_2)\|U-W\|_2
+\]
+also shows that this identity passes to energy-space limits.
+\end{proof}
+
+The conserved eigenvalues measure the masses in mutually orthogonal
+spatial modes after an internal unitary change of basis. Merely writing
+one spatial profile in many components still gives a rank-one operator
+and $\mu=M$.
+
+\subsection{A strict improvement retaining the scalar sharp mass}
+\begin{theorem}[Internal mass distribution and energy control]
+\label{thm:r12-mixed-threshold}
+There is a constant $c>0$, depending only on the scalar dispersion
+and interaction and independent of the number of components, such that
+every nonzero $U\in H^s(\mathcal H)$ satisfies
+\begin{equation}\label{eq:r12-mixed-GN}
+ \mathcal F(U)
+ \le \kappa\left(\frac{M(U)}{M_c}\right)^r
+        [1-c\chi(U)]A(U).
+\end{equation}
+One may take $c=\min\{C^{-1},1/2\}$, where $C$ is the
+dimension-independent quantitative polarization constant.
+
+Consequently, if the initial state satisfies
+\begin{equation}\label{eq:r12-mixed-positive}
+ \eta:=1-\left(\frac{M}{M_c}\right)^r(1-c\chi)>0,
+\end{equation}
+its conservative energy-space evolution is global in both time
+directions, and
+\begin{equation}\label{eq:r12-mixed-global-bound}
+ \sup_{t\in\mathbb R}\{A(U(t))+B_b(U(t))\}
+ \le\frac{2E_b(U(0))}{\eta}.
+\end{equation}
+Thus every fixed $\chi>0$ permits the mass interval
+\[
+ M<M_c(1-c\chi)^{-1/r},
+\]
+which extends strictly above the scalar critical mass.
+\end{theorem}
+\begin{proof}
+Let $\mathfrak d$ and $\mathfrak p$ denote the normalized
+interpolation deficit and polarization distance:
+\[
+ \mathfrak d(U)=1-
+ \frac{\mathcal F(U)}{\kappa(M(U)/M_c)^r A(U)},
+ \qquad
+ \mathfrak p(U)=\inf_{\|\zeta\|=1,q\in H^s}
+ \left\{\frac{M(U-\zeta q)}{M(U)}
+              +\frac{A(U-\zeta q)}{A(U)}\right\}.
+\]
+For fixed $\zeta$, orthogonal projection gives
+\[
+ \inf_q M(U-\zeta q)=M-\langle\zeta,\Gamma(U)\zeta\rangle.
+\]
+Taking the infimum over unit $\zeta$ and discarding the nonnegative
+kinetic term yields $\mathfrak p(U)\ge\chi(U)$.
+The quantitative polarization theorem gives
+$\mathfrak p(U)\le C\mathfrak d(U)$, proving
+\eqref{eq:r12-mixed-GN}.
+
+For clarity, if
+$\Gamma_A=\int a(\xi)|\widehat U(\xi)\rangle
+\langle\widehat U(\xi)|\,d\xi$, the exact distance formula is
+\[
+ \mathfrak p(U)=2-\lambda_{\max}
+       \left(\frac{\Gamma(U)}M+\frac{\Gamma_A}A\right).
+\]
+The same scalar projection minimizes both terms in their combined
+Hilbert norm. Since $\Gamma_A/A$ is positive with trace one, this
+also gives $\mathfrak p\ge\chi$. No conservation of $\Gamma_A$ is
+asserted.
+
+By Lemma~\ref{lem:r12-Gamma-conservation}, $M,\chi$, and hence
+$\eta$ are constant along the flow. Equation
+\eqref{eq:r12-mixed-GN} gives
+\[
+ E_b(U(t))\ge\frac\eta2A(U(t))+\frac12B_b(U(t)).
+\]
+As $0<\eta\le1$, conservation yields
+\eqref{eq:r12-mixed-global-bound}. Ellipticity, the conserved mass,
+and the continuation property finish the proof.
+\end{proof}
+
+\begin{corollary}[Scalar reduction of critical-mass unbounded evolution]
+\label{cor:r12-minimal-scalar}
+Suppose $M(U)=M_c$ and a conservative orbit has unbounded kinetic
+energy along a sequence of times, including possible approach to a
+finite maximal endpoint. Then $\Gamma(U(0))$ has rank one, and there
+is one fixed unit vector $\zeta\in\mathcal H$ such that
+\[
+ U(t,x)=\zeta u(t,x)
+\]
+throughout the maximal interval. Here $u$ solves the corresponding
+scalar equation with mass $M_c$.
+
+More generally, any energy-space-unbounded orbit of finite conserved
+mass satisfies
+\begin{equation}\label{eq:r12-nearcritical-mixing}
+ \chi\le c^{-1}\left[1-(M_c/M)^r\right].
+\end{equation}
+\end{corollary}
+\begin{proof}
+If $M=M_c$ and $\chi>0$, Theorem~\ref{thm:r12-mixed-threshold}
+applies with $\eta=c\chi$, contradicting unboundedness. Thus
+$\mu=M$, so positivity and trace $M$ force
+$\Gamma=M|\zeta\rangle\langle\zeta|$. For every
+$h\perp\zeta$,
+\[
+ \int|\langle h,U(t,x)\rangle|^2\,dx
+     =\langle h,\Gamma h\rangle=0.
+\]
+A countable orthonormal basis in $\zeta^\perp$ shows that
+$U(t,x)$ lies in the same complex line almost everywhere.
+Substitution gives the scalar equation. Finally an unbounded orbit
+cannot satisfy \eqref{eq:r12-mixed-positive}; rearranging its
+negation proves \eqref{eq:r12-nearcritical-mixing}.
+\end{proof}
+
+The scalar reduction holds for the initial datum and the entire
+orbit, not merely for a rescaled concentration limit. For
+$M=M_c(1+\varepsilon)$, \eqref{eq:r12-nearcritical-mixing} gives
+$\chi\le(r/c)\varepsilon+O(\varepsilon^2)$.
+
+\subsection{A concrete quartic flow}
+\begin{proposition}[Unconditional realization in dimensions one to three]
+\label{prop:r12-quartic-vector-flow}
+Let $N=1,2,3$, let $a$ be any real-even positive elliptic homogeneous
+quartic symbol, and let $b$ be real with
+$0\le b(\xi)\le C(1+|\xi|^4)$. Then
+\[
+ iU_t=[a(D)+b(D)]U-\|U\|_{\mathcal H}^{8/N}U,
+ \qquad U(0)\in H^2(\mathbb R^N;\mathcal H),
+\]
+has a conservative local $H^2$ flow with the continuation property.
+Therefore Theorem~\ref{thm:r12-mixed-threshold} and
+Corollary~\ref{cor:r12-minimal-scalar} hold without additional flow
+assumptions for these equations, including countably many components.
+\end{proposition}
+\begin{proof}
+The Fourier group is unitary on $H^2$. In these dimensions,
+$H^2$ embeds into $L^\infty$, and the radial Hilbert-space map
+$z\mapsto\|z\|^{8/N}z$ is locally Lipschitz on $H^2(\mathcal H)$.
+Indeed its first three derivatives are bounded on bounded balls
+because $8/N>2$; the chain rule, the $H^2$ product estimates, and
+$H^1\hookrightarrow L^4$ give the required estimate, with constants
+independent of internal dimension. Duhamel contraction gives the
+local flow and its continuation property. Symmetric Fourier
+Galerkin regularization gives mass and energy conservation; the
+regularized solutions converge in $C H^2$ on every local existence
+interval, and both conserved functionals are continuous there.
+Lemma~\ref{lem:r12-Gamma-conservation} gives conservation of the
+full internal operator.
+\end{proof}
+
+\paragraph{Relation to kinetic-energy inequalities.}
+Conservation of all component overlaps and the use of the largest
+occupation are established tools in nonlinear Schr\"odinger systems;
+see Hong--Kwon--Yoon, arXiv:1712.06811, Section~1 and
+Proposition~7.3. Their Theorem~2.3 also includes fractional
+kinetic-energy inequalities. The specific connection used here is
+the dimension-independent correction $1-c(1-\mu/M)$ to the
+\emph{scalar sharp} critical-mass inequality. This gives a strict
+extension above $M_c$ for every genuinely nonpolarized internal
+state and the exact initial-data reduction at mass $M_c$.
+The constant $c$ is not claimed to be optimal, and equality in
+\eqref{eq:r12-mixed-positive} is not covered.

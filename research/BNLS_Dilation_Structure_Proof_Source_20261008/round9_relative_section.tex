@@ -1,0 +1,463 @@
+\section{Residual inertia and quantitative shape evolution}
+\label{sec:r9-relative}
+
+Let $N\ge1$, $m>1$, $s=m/2$, and let $a$ be a real, even,
+positive elliptic homogeneous symbol of degree $m$, of class
+$C^{N+2}$ away from the origin. Thus
+$c|\xi|^m\le a(\xi)\le C|\xi|^m$.
+Set $\alpha=2m/N$ and $p=2+2m/N$, and write
+\[
+ M(f)=\|f\|_2^2,\qquad
+ A(f)=\int a(\xi)|\widehat f(\xi)|^2\,d\xi,\qquad
+ E(f)=\tfrac12A(f)-\tfrac1p\|f\|_p^p,
+ \qquad P(f)=\int\xi|\widehat f(\xi)|^2\,d\xi.
+\]
+We use the equivalent energy norm and its dual norm
+\[
+ \|f\|_X^2=M(f)+A(f),\qquad X=H^{m/2},\qquad
+ \|h\|_{X^*}^2=\int\frac{|\widehat h(\xi)|^2}{1+a(\xi)}\,d\xi.
+\]
+Since $m>1$, differentiation maps $X$ continuously into $X^*$.
+The map $f\mapsto |f|^\alpha f$ is locally Lipschitz from $X$ to
+$X^*$, by H\"older's inequality and the embedding $X\hookrightarrow L^p$.
+Pairings of real functions below are real dual pairings.
+
+Let $M_c$ be the sharp critical mass, and let $\mathcal Q$ be the
+set of real sharp optimizers normalized by $M(Q)=M_c$ and $A(Q)=1$.
+Every $Q\in\mathcal Q$ satisfies
+\[
+ a(D)Q+\omega_*Q-|Q|^\alpha Q=0,
+ \qquad \omega_*=\frac{m}{NM_c}.
+\]
+We use the optimizer compactness and phase coercivity established in
+Lemmas~\ref{foundation:compact} and~\ref{foundation:phase}.
+Their uniform consequences are recorded explicitly first.
+
+\subsection{Uniform control near the optimizer set}
+
+\begin{lemma}[Uniform optimizer bounds]\label{lem:r9rel-uniform}
+There are $c_0,\kappa>0$, depending only on the fixed model, such that
+for every $Q\in\mathcal Q$, the form
+\[
+ L_Q=a(D)+\omega_*-|Q|^\alpha
+\]
+obeys
+\begin{align}
+ \langle b,L_Qb\rangle&\ge c_0\|b\|_X^2
+ &&\text{for real }b\in X,\ \langle b,Q\rangle=0,
+ \label{eq:r9rel-uniformcoercivity}\\
+ \|\zeta\cdot\nabla Q\|_{X^*}&\ge\kappa|\zeta|
+ &&\text{for }\zeta\in\mathbb R^N,
+ \label{eq:r9rel-derivativeinjective}\\
+ \|\tau Q+i\zeta\cdot\nabla Q\|_{X^*}
+ &\ge\kappa(|\tau|+|\zeta|)
+ &&\text{for }(\tau,\zeta)\in\mathbb R\times\mathbb R^N.
+ \label{eq:r9rel-parameterinjective}
+\end{align}
+\end{lemma}
+\begin{proof}
+The normalized optimizer set is compact in $X$ modulo translations.
+Moreover, $Q\mapsto |Q|^\alpha$ is continuous in the form norm
+$X\to X^*$. If \eqref{eq:r9rel-uniformcoercivity} failed, translate
+a sequence of optimizers to obtain $Q_n\to Q$ strongly in $X$, and
+choose real $b_n\perp Q_n$ with $\|b_n\|_X=1$ and
+$\langle b_n,L_{Q_n}b_n\rangle\to0$.
+The projection of $b_n$ onto $Q$ tends to zero. Form convergence and
+the strict coercivity for this fixed $Q$ contradict the unit norm.
+
+For a nonzero direction $\zeta$, the identity
+$\zeta\cdot\nabla Q=0$ would give
+$(\zeta\cdot\xi)\widehat Q(\xi)=0$.
+An $L^2$ function supported on a hyperplane is zero, contrary to
+$M(Q)=M_c$. Compactness modulo translations and continuity of
+differentiation from $X$ to $X^*$ make this lower bound uniform over
+$Q$ and over the unit sphere of directions.
+Finally, real and purely imaginary functions are orthogonal for
+the real-even multiplier defining the $X^*$ inner product.
+The norms $\|Q\|_{X^*}$ have a uniform positive lower bound by
+optimizer compactness, which proves
+\eqref{eq:r9rel-parameterinjective}.
+\end{proof}
+
+\begin{lemma}[Uniform proximity and phase choice]\label{lem:r9rel-proximity}
+There is a modulus $\varepsilon(\delta)\to0$ as $\delta\downarrow0$
+such that
+\[
+ A(U)=1,\qquad E(U)<0,\qquad M_c<M(U)<M_c+\delta
+\]
+imply that, after a translation and a constant phase, some
+$Q\in\mathcal Q$ satisfies
+\[
+ \|U-Q\|_X\le\varepsilon(\delta),\qquad
+ \langle\operatorname{Im}U,Q\rangle=0.
+\]
+\end{lemma}
+\begin{proof}
+Failure of the first assertion would contradict normalized
+near-optimizer compactness. A further phase tending to zero makes
+$\int UQ$ real and positive; this is possible because the integral
+tends to $M_c$. It changes the proximity modulus only by a fixed
+factor and gives the asserted orthogonality.
+\end{proof}
+
+\subsection{A quantitative residual theorem}
+
+\begin{theorem}[Positive inertia with a residual error]
+\label{thm:r9rel-residual}
+There exist $\delta,c,C>0$, depending only on $N,m,a$, such that
+the following holds. Let $U\in X$ satisfy
+\[
+ M_c<M(U)<M_c+\delta,\qquad E(U)<0.
+\]
+For arbitrary $\omega\in\mathbb R$ and $v\in\mathbb R^N$, define
+\[
+ F=a(D)U+\omega U+iv\cdot\nabla U-|U|^\alpha U\in X^*.
+\]
+Then
+\begin{equation}\label{eq:r9rel-residualinertia}
+ v\cdot P(U)\ge cA(U)^{2/m-1}|v|^2
+ -C\int\frac{|\widehat F(\xi)|^2}{A(U)+a(\xi)}\,d\xi.
+\end{equation}
+The constants are independent of frequency and velocity.
+No radial symmetry or spatial moment is required.
+
+If, in addition, the scalar dilation defect satisfies
+\begin{equation}\label{eq:r9rel-defecthyp}
+ D:=mE(U)-\tfrac12v\cdot P(U)
+ \ge-\theta m|E(U)|,
+ \qquad 0\le\theta<1,
+\end{equation}
+then, for some $c_\theta>0$ depending only on the model and $\theta$,
+\begin{equation}\label{eq:r9rel-residuallower}
+ \int\frac{|\widehat F(\xi)|^2}{A(U)+a(\xi)}\,d\xi
+ \ge c_\theta\bigl(|E(U)|+A(U)^{2/m-1}|v|^2\bigr).
+\end{equation}
+\end{theorem}
+\begin{proof}
+First normalize $A(U)=1$, and put $\rho=\|F\|_{X^*}$.
+Use Lemma~\ref{lem:r9rel-proximity} to arrange proximity to a real
+$Q\in\mathcal Q$ and the stated phase orthogonality. All quantities
+in the conclusion are invariant under these translations and phases.
+
+Write $G(U)=a(D)U-|U|^\alpha U$. Its $X^*$ norm is bounded uniformly
+in the normalized mass window. Replacing $Q$ by $U$ in
+\eqref{eq:r9rel-parameterinjective} costs at most
+$C\varepsilon(\delta)(|\omega|+|v|)$.
+For sufficiently small $\delta$, absorption in
+$F=G(U)+\omega U+iv\cdot\nabla U$ therefore gives
+\begin{equation}\label{eq:r9rel-parameterbound}
+ |\omega|+|v|\le C(1+\rho).
+\end{equation}
+Subtracting $G(Q)=-\omega_*Q$, and using the local Lipschitz
+continuity of $G$, now gives
+\begin{equation}\label{eq:r9rel-parametersmall}
+ |\omega-\omega_*|+|v|
+ \le C\{\rho+\varepsilon(\delta)(1+\rho)\}.
+\end{equation}
+
+Fix a sufficiently small $\rho_0>0$, and then shrink $\delta$.
+For $\rho\le\rho_0$, the form
+$L_U=a(D)+\omega-|U|^\alpha$ is uniformly close to $L_Q$.
+Consequently,
+\begin{equation}\label{eq:r9rel-perturbedcoercivity}
+ \langle b,L_Ub\rangle\ge c_1\|b\|_X^2
+ \quad\text{for real }b\perp Q,
+\end{equation}
+with $c_1>0$ independent of $U,\omega,v$ in this regime.
+Write $U=h+ib$. Its imaginary residual equation is
+\[
+ \operatorname{Im}F=L_Ub+v\cdot\nabla h.
+\]
+The identity $P(U)=-2\langle b,\nabla h\rangle$ is valid by $m>1$.
+Thus
+\begin{align}
+ \tfrac12v\cdot P(U)
+ &=\langle b,L_Ub\rangle-\langle\operatorname{Im}F,b\rangle
+ \notag\\
+ &\ge\tfrac12c_1\|b\|_X^2-C\rho^2.
+ \label{eq:r9rel-phasepairing}
+\end{align}
+The imaginary equation also gives, by
+\eqref{eq:r9rel-derivativeinjective},
+\[
+ \kappa|v|\le\|v\cdot\nabla Q\|_{X^*}
+ \le\rho+C\|b\|_X+C\varepsilon(\delta)|v|.
+\]
+Here $L_U:X\to X^*$ has uniformly bounded norm.
+Absorbing the last term yields
+$|v|\le C(\rho+\|b\|_X)$. Combining this with
+\eqref{eq:r9rel-phasepairing} proves
+\begin{equation}\label{eq:r9rel-normalized}
+ v\cdot P(U)\ge c|v|^2-C\rho^2
+\end{equation}
+when $\rho\le\rho_0$.
+
+If $\rho>\rho_0$, normalized mass and kinetic energy give
+$|P(U)|\le C$, while \eqref{eq:r9rel-parameterbound} gives
+$|v|\le C(1+\rho)$. Hence
+\[
+ c|v|^2-v\cdot P(U)\le C(1+\rho)^2
+ \le C_{\rho_0}\rho^2.
+\]
+After enlarging $C$, \eqref{eq:r9rel-normalized} holds for every
+residual size.
+
+For general $A=A(U)>0$, set $\lambda=A^{-1/m}$ and
+\[
+ U_\lambda(x)=\lambda^{N/2}U(\lambda x),\qquad
+ \omega_\lambda=\lambda^m\omega,\qquad
+ v_\lambda=\lambda^{m-1}v.
+\]
+Then $A(U_\lambda)=1$,
+$v_\lambda\cdot P(U_\lambda)=A^{-1}v\cdot P(U)$, and the
+residual scales as
+$F_\lambda(x)=\lambda^{N/2+m}F(\lambda x)$.
+A change of Fourier variables gives exactly
+\[
+ \|F_\lambda\|_{X^*}^2
+ =A^{-1}\int\frac{|\widehat F(\xi)|^2}{A+a(\xi)}\,d\xi.
+\]
+Rescaling \eqref{eq:r9rel-normalized} proves
+\eqref{eq:r9rel-residualinertia}. Finally,
+\eqref{eq:r9rel-defecthyp} implies
+\[
+ v\cdot P(U)=2mE(U)-2D
+ \le-2(1-\theta)m|E(U)|.
+\]
+Substitution into \eqref{eq:r9rel-residualinertia} proves
+\eqref{eq:r9rel-residuallower}.
+\end{proof}
+
+\begin{remark}
+The defect $D$ is defined without a spatially weighted pairing of
+$F$. When that pairing is justified,
+$D=\operatorname{Re}\langle F,(x\cdot\nabla+N/2)U\rangle$;
+the same conclusion holds through the corresponding cutoff limit.
+For an exact traveling profile the Pohozaev identity gives $D=0$.
+The residual theorem therefore refines the profile exclusion by
+quantifying how far an approximate relative equilibrium with small
+dilation defect must remain from satisfying its profile equation.
+\end{remark}
+
+\subsection{The positive response tensor}
+
+Let $L_Q^{-1}$ denote the coercive form inverse on the real
+$L^2$-orthogonal complement of $Q$. Since
+$\langle\partial_jQ,Q\rangle=0$, the matrix
+\begin{equation}\label{eq:r9rel-tensor}
+ T_{Q,ij}=\langle\partial_iQ,L_Q^{-1}\partial_jQ\rangle
+\end{equation}
+is well defined.
+
+\begin{proposition}[Uniform effective inertia]\label{prop:r9rel-tensor}
+The matrices $T_Q$ are symmetric positive definite, with eigenvalues
+bounded above and below by positive model-dependent constants,
+uniformly for $Q\in\mathcal Q$.
+Suppose
+\[
+ A(U_n)=1,\quad E(U_n)<0,\quad M(U_n)\downarrow M_c,
+ \qquad \rho_n=\|F_n\|_{X^*}\longrightarrow0,
+\]
+where $F_n$ uses arbitrary parameters $(\omega_n,v_n)$.
+For the optimizers $Q_n$ supplied by
+Lemma~\ref{lem:r9rel-proximity},
+\begin{equation}\label{eq:r9rel-tensorresponse}
+ P(U_n)=2T_{Q_n}v_n+o(|v_n|)+O(\rho_n),
+\end{equation}
+with a uniform constant in the $O$ term.
+\end{proposition}
+\begin{proof}
+The $L^2$ projection onto $Q^\perp$ is uniformly bounded on $X$
+and its dual. Thus the restricted dual norm is uniformly equivalent
+to the full norm for functionals annihilating $Q$.
+For $d=\zeta\cdot\nabla Q$, uniform coercivity and boundedness of
+$L_Q$ give
+\[
+ c\|d\|_{X^*}^2\le\langle d,L_Q^{-1}d\rangle
+ \le C\|d\|_{X^*}^2.
+\]
+Lemma~\ref{lem:r9rel-uniform} proves both eigenvalue bounds.
+
+Arrange $U_n=h_n+ib_n$ as in the residual proof.
+From \eqref{eq:r9rel-perturbedcoercivity} and the exact momentum
+pairing one also obtains
+\[
+ c_1\|b_n\|_X^2
+ \le\tfrac12v_n\cdot P(U_n)+\rho_n\|b_n\|_X
+ \le C|v_n|\|b_n\|_X+\rho_n\|b_n\|_X.
+\]
+Hence $\|b_n\|_X\le C(|v_n|+\rho_n)$.
+Using the imaginary residual equation, form convergence, and
+\eqref{eq:r9rel-parametersmall},
+\[
+ L_{Q_n}b_n=-v_n\cdot\nabla Q_n
+ +o_{X^*}(|v_n|)+O_{X^*}(\rho_n).
+\]
+Project onto $Q_n^\perp$ and invert $L_{Q_n}$.
+Pairing the resulting identity with $-2\nabla h_n$, and using
+$\|h_n-Q_n\|_X\to0$, proves
+\eqref{eq:r9rel-tensorresponse}.
+\end{proof}
+
+In particular, a residual satisfying $\rho_n=o(|v_n|)$ forces
+strictly positive velocity--momentum pairing at leading order.
+This conclusion uses neither uniqueness of the optimizer nor
+nondegeneracy of the real-part linearized operator.
+
+\subsection{Relative-periodic solutions and shape speed}
+
+The following statements impose explicit regularity sufficient for
+the differentiated cutoff virial identity. They do not assume that
+every energy-space solution has this additional regularity.
+
+\begin{theorem}[Nonvanishing shape speed]\label{thm:r9rel-periodic}
+Suppose a solution of
+\[
+ iu_t=a(D)u-|u|^\alpha u
+\]
+has the relative-periodic representation
+\[
+ u(t,x)=e^{i\omega t}V(t,x-vt),\qquad V(t+T)=V(t),
+\]
+where $T>0$ and
+\begin{equation}\label{eq:r9rel-periodicregularity}
+ V\in C_{\mathrm{per}}([0,T];H^{m+1})
+ \cap C^1_{\mathrm{per}}([0,T];H^{m/2}).
+\end{equation}
+Assume that the conserved energy is negative and that
+$M_c<M<M_c+\delta$, with $\delta$ as in
+Theorem~\ref{thm:r9rel-residual}. Then
+\begin{equation}\label{eq:r9rel-periodicpohozaev}
+ v\cdot P=2mE<0.
+\end{equation}
+At every time and for every real number $\nu$,
+\begin{equation}\label{eq:r9rel-shapespeed}
+ \int\frac{|\widehat{\partial_tV-i\nu V}(t,\xi)|^2}
+ {A(V(t))+a(\xi)}\,d\xi
+ \ge c\bigl(|E|+A(V(t))^{2/m-1}|v|^2\bigr),
+\end{equation}
+where $c>0$ depends only on the model.
+\end{theorem}
+\begin{proof}
+The equation in this frame is
+\[
+ iV_t=a(D)V+\omega V+iv\cdot\nabla V-|V|^\alpha V.
+\]
+Choose a real $\chi\in C_c^\infty$ equal to one near the origin,
+and set
+\[
+ f_R(x)=x\chi(x/R),\qquad
+ L_R=f_R\cdot\nabla+\tfrac12\operatorname{div}f_R,
+ \qquad J_R(V)=\operatorname{Im}\int\overline V L_RV.
+\]
+The operator $L_R$ is skew-symmetric. Differentiation gives
+\begin{align}
+ J_R'(t)
+ &=\langle V,[a(D),L_R]V\rangle
+ +\langle V,[iv\cdot\nabla,L_R]V\rangle\notag\\
+ &\quad-2\left(\tfrac12-\tfrac1p\right)
+ \int\operatorname{div}f_R\,|V|^p.
+ \label{eq:r9rel-cutoffvirial}
+\end{align}
+The frequency term vanishes by skew symmetry.
+Assumption~\eqref{eq:r9rel-periodicregularity} justifies the
+differentiation and all pairings. In particular,
+$|V|^\alpha V\in L^2$ by Sobolev embedding from $H^{m+1}$,
+and $\nabla V\in L^2$, so the nonlinear integration by parts is valid.
+
+For completeness, the kinetic commutator has Fourier kernel,
+up to the fixed normalization factor,
+\[
+ \frac i2\bigl(a(\xi)-a(\eta)\bigr)
+ (\xi+\eta)\cdot\widehat f_R(\xi-\eta).
+\]
+Homogeneity gives
+$|a(\xi)-a(\eta)|\le C|\xi-\eta|(|\xi|+|\eta|)^{m-1}$.
+After division by the two energy weights, the kernel is bounded
+by $C|k|\langle k\rangle^{m/2}|\widehat f_R(k)|$,
+where $k=\xi-\eta$. Since
+$\widehat f_R(k)=R^{N+1}\widehat f(Rk)$, this majorant has
+uniformly bounded $L^1$ norm for $R\ge1$.
+Young's inequality gives a uniform bound $X\to X^*$.
+For Schwartz functions, Fourier integration by parts and
+$\xi\cdot\nabla a=ma$ give the limiting form $mA$.
+Density and the uniform bound extend the limit to every $V\in X$.
+The identical degree-one argument for $iv\cdot\nabla$ gives
+the limit $-v\cdot P$. Finally, dominated convergence gives the
+nonlinear limit $-2m\|V\|_p^p/p$.
+Thus the right side of \eqref{eq:r9rel-cutoffvirial} tends to
+\[
+ mA(V)-v\cdot P-\frac{2m}{p}\|V\|_p^p
+ =2mE-v\cdot P.
+\]
+Uniform form bounds and boundedness of the trajectory on the period
+permit dominated convergence in time. Integrate first over
+$[0,T]$. Periodicity gives $J_R(T)-J_R(0)=0$ for every $R$;
+then let $R\to\infty$. This proves
+\eqref{eq:r9rel-periodicpohozaev} without a spatial moment.
+
+At a fixed time apply Theorem~\ref{thm:r9rel-residual} to $V(t)$
+with frequency $\omega+\nu$ and velocity $v$.
+Its residual is
+\[
+ F=iV_t+\nu V=i(V_t-i\nu V).
+\]
+Equation~\eqref{eq:r9rel-periodicpohozaev} gives $D=0$.
+The lower bound \eqref{eq:r9rel-residuallower}, with $\theta=0$,
+is precisely \eqref{eq:r9rel-shapespeed}.
+\end{proof}
+
+The result also applies to a profile periodic up to a constant
+phase: a linear phase adjustment makes the representation periodic,
+and the cutoff functional is phase invariant.
+
+\begin{corollary}[Moving-center cost over a cycle]
+\label{cor:r9rel-movingcenter}
+Under the same mass and energy hypotheses, suppose instead that
+\[
+ W(t,x)=e^{i\gamma(t)}u(t,x+c(t)),\qquad W(t+T)=W(t),
+\]
+where $c,\gamma$ are $C^1$ and $W$ has the regularity
+\eqref{eq:r9rel-periodicregularity}.
+Put $d=c(T)-c(0)$. Then
+\begin{equation}\label{eq:r9rel-netdisplacement}
+ P\cdot d=2mET,
+\end{equation}
+and
+\begin{align}
+ &\int_0^T\int
+ \frac{|\widehat{W_t}(t,\xi)|^2}{A(W(t))+a(\xi)}\,d\xi\,dt
+ \notag\\[-2pt]
+ &\hspace{15mm}\ge
+ c\left\{|E|T+
+ \int_0^T A(W(t))^{2/m-1}|c'(t)|^2\,dt\right\}.
+ \label{eq:r9rel-cyclecost}
+\end{align}
+The second term in braces is at least
+\begin{equation}\label{eq:r9rel-displacementcost}
+ \frac{|d|^2}{\displaystyle\int_0^T A(W(t))^{1-2/m}\,dt}.
+\end{equation}
+\end{corollary}
+\begin{proof}
+The equation for $W$ is
+\[
+ iW_t=a(D)W-\gamma'(t)W+ic'(t)\cdot\nabla W-|W|^\alpha W.
+\]
+The same cutoff virial calculation, integrated over the period,
+gives \eqref{eq:r9rel-netdisplacement}.
+At each time, Theorem~\ref{thm:r9rel-residual} applies with
+frequency $-\gamma'(t)$, velocity $c'(t)$, and residual $iW_t$.
+Integrating \eqref{eq:r9rel-residualinertia}, and substituting
+\eqref{eq:r9rel-netdisplacement}, proves
+\eqref{eq:r9rel-cyclecost}. Weighted Cauchy--Schwarz gives
+\eqref{eq:r9rel-displacementcost}.
+\end{proof}
+
+These inequalities give necessary quantitative restrictions on
+near-threshold negative-energy coherent dynamics. They exclude
+vanishing shape speed in the stated relative-periodic class, even
+after a time-dependent choice of center and phase. They neither
+exclude all breathers nor establish a mass gap for arbitrary bounded
+global solutions. The left side of \eqref{eq:r9rel-cyclecost} measures
+evolution in a dual energy norm; it is not a physical dissipation,
+and no loss of conserved energy is asserted.

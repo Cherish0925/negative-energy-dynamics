@@ -1,0 +1,12 @@
+{
+  "nt": 256,
+  "nr": 128,
+  "Lt": 24,
+  "Lr": 24,
+  "kind": "mixed",
+  "ds": 0.005,
+  "start": 0.98,
+  "end": 1.0,
+  "seed": "core_continuation/refine192/core_0.980000.npz",
+  "out": "core_continuation/spectral256"
+}

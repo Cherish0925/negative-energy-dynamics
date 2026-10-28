@@ -1,0 +1,32 @@
+[
+  {
+    "R": 30,
+    "tol": 1e-07,
+    "success": true,
+    "nodes": 2433,
+    "gamma": 981.3557733990397,
+    "max_rms_residual": 9.98591074066578e-08,
+    "saddle_multiplier": -8.391972797307366e-11,
+    "seconds": 0.29614734649658203
+  },
+  {
+    "R": 40,
+    "tol": 1e-08,
+    "success": true,
+    "nodes": 3893,
+    "gamma": 981.3557733073701,
+    "max_rms_residual": 9.983430072898887e-09,
+    "saddle_multiplier": -3.0448529583018633e-12,
+    "seconds": 0.4635486602783203
+  },
+  {
+    "R": 50,
+    "tol": 1e-08,
+    "success": true,
+    "nodes": 3946,
+    "gamma": 981.3557733031746,
+    "max_rms_residual": 9.99166164745079e-09,
+    "saddle_multiplier": -2.551436950643464e-12,
+    "seconds": 0.4386889934539795
+  }
+]

@@ -1,0 +1,295 @@
+\section{Least traveling mass and degenerate neutral modes}
+\label{sec:r11-endpoint}
+
+Let $m>1$, $s=m/2$, and let $a$ be a real-even, positive elliptic
+$m$-homogeneous symbol with the regularity needed for the energy-space
+profile equation and its Pohozaev identities.  On
+$X=H^s(\mathbb R^N;\mathbb C)$, considered as a real space, put
+\begin{gather*}
+ E(U)=\frac12\int a(\xi)|\widehat U(\xi)|^2\,d\xi
+       -\frac1p\int|U|^p,\qquad p=2+\frac{2m}{N},\\
+ M(U)=\|U\|_2^2,\qquad
+ P(U)=\operatorname{Im}\int\overline U\nabla U.
+\end{gather*}
+An exact profile satisfies
+\begin{equation}\label{eq:r11-end-profile}
+ F(U,\omega,v):=a(D)U+\omega U+iv\cdot\nabla U-|U|^{p-2}U=0.
+\end{equation}
+The action, its real Hessian, and the Hamiltonian structure are
+\[
+ S_{\omega,v}=E+\omega M/2-v\cdot P/2,
+ \qquad L=S''_{\omega,v}(U),\qquad J=-i.
+\]
+Assume the negative-energy profile set is nonempty and define
+\[
+ M_{\mathrm{tr}}=\inf\{M(U):F(U,\omega,v)=0
+                  \text{ for some }(\omega,v),\ E(U)<0\}.
+\]
+The identity $v\cdot P=2mE$ is understood with this normalization.
+All parameter families below are defined on open parameter sets; they
+are $C^1$ into $X$, differentiation of the profile equation is valid in
+$X^*$, and their reduced action is $C^2$.
+
+\subsection{Mass extrema and the reduced action}
+
+For a full profile family $U_\theta$, $\theta=(\omega,v)$, write
+\[
+ d(\theta)=S_\theta(U_\theta),\qquad H=d''(\theta),
+ \qquad B=D_vP(U_\theta),\qquad e_\omega=(1,0,\ldots,0)^T.
+\]
+Stationarity implies the exact identities
+\begin{equation}\label{eq:r11-end-legendre}
+ \nabla d=(M/2,-P/2)^T,\qquad
+ E=d-\theta\cdot\nabla d,\qquad
+ \nabla E=-H\theta,\qquad \nabla M=2He_\omega.
+\end{equation}
+In particular, $H\theta=0$ is a null-vector identity and does not
+mean that the entire matrix $H$ vanishes.
+
+If the charges of the family obey critical scaling covariance,
+differentiating that covariance and using the symmetry of $H$ gives
+\begin{equation}\label{eq:r11-end-scaling}
+ m\omega M_\omega+(m-1)v\cdot M_v=0,\qquad
+ m\omega P_\omega+(m-1)Bv=P,\qquad M_v=-P_\omega.
+\end{equation}
+This covariance holds for a family locally unique modulo phase and
+translation, because critical dilation produces another exact profile
+with parameters $(\lambda^m\omega,\lambda^{m-1}v)$.
+
+\begin{theorem}[An attained negative-energy endpoint]
+\label{thm:r11-end-attained}
+Suppose a member of a full profile family satisfies
+$E(U)<0$ and $M(U)=M_{\mathrm{tr}}$.  Then
+\begin{equation}\label{eq:r11-end-attained}
+ M_\omega=0,\qquad M_v=0,\qquad P_\omega=0,
+ \qquad He_\omega=0.
+\end{equation}
+If the family has critical scaling covariance, then additionally
+\begin{equation}\label{eq:r11-end-response}
+ (m-1)Bv=P,\qquad v^TBv=\frac{v\cdot P}{m-1}<0.
+\end{equation}
+Thus the charge Hessian is singular, whether or not $B$ is invertible.
+\end{theorem}
+\begin{proof}
+Negative energy persists in a parameter neighborhood.  By definition of
+$M_{\mathrm{tr}}$, mass has a local minimum there at the profile under
+consideration.  Its first derivatives vanish.  Equations
+\eqref{eq:r11-end-legendre} and \eqref{eq:r11-end-scaling} give the
+conclusions, and the strict sign follows from $v\cdot P=2mE<0$.
+\end{proof}
+
+The supplied-family hypothesis can be replaced by the following standard
+local profile assumptions.  Suppose $F$ is $C^1$ as a map into $X^*$,
+$L:X\to X^*$ is selfadjoint Fredholm, and
+\begin{equation}\label{eq:r11-end-kernel}
+ \ker L=K:=\operatorname{span}_{\mathbb R}
+             \{iU,\partial_1U,\ldots,\partial_NU\}.
+\end{equation}
+Assume the profile and projected solutions have enough regularity for
+these generators to belong to $X$ and for the symmetry Noether pairings
+below to hold.  These are local regularity assumptions, not an assertion
+that translations are differentiable at every point of $X$.
+
+\begin{lemma}[Local profile family from a symmetry slice]
+\label{lem:r11-end-slice}
+Under these assumptions, the profile has a full $C^1$ local parameter
+family, unique up to phase and translation, and its charges have critical
+scaling covariance.
+\end{lemma}
+\begin{proof}
+The generators in \eqref{eq:r11-end-kernel} are independent: a real
+dependence implies a constant-coefficient first-order equation for $U$,
+forcing its $L^2$ Fourier transform onto an affine hyperplane, or forcing
+$U=0$.  Take the fixed $L^2$-orthogonal slice to $K$ in $X$.  By
+selfadjoint Fredholmness, the restriction of $L$ is an isomorphism from
+that slice onto the annihilator of $K$ in $X^*$.  Apply the implicit-function
+theorem to the projected equation.  Its residual is a linear combination
+of the original generators, identified with elements of $X^*$.
+Gauge and translation invariance of $S_{\omega,v}$ give
+\[
+ \langle F(U_{\rm new},\omega,v),iU_{\rm new}\rangle_{\mathbb R}=0,
+ \qquad
+ \langle F(U_{\rm new},\omega,v),\partial_jU_{\rm new}\rangle_{\mathbb R}=0.
+\]
+The pairing matrix of the original and new generators is invertible near
+$U$.  Thus all residual coefficients vanish.  Local slice uniqueness
+gives uniqueness modulo symmetries.  Applying that uniqueness to the
+critically dilated profiles proves covariance of their charges.
+\end{proof}
+
+For example, a positive free spectral gap
+$\omega>\sup_\xi(v\cdot\xi-a(\xi))$, together with compactness of the
+nonlinear potential perturbation, supplies the Fredholm hypothesis.
+The kernel and local regularity assumptions must still be verified.
+
+\subsection{A degenerate charge response yields secular linear growth}
+
+\begin{theorem}[An extended neutral Jordan chain]
+\label{thm:r11-end-jordan}
+Assume \eqref{eq:r11-end-kernel} and the regularity of
+Lemma~\ref{lem:r11-end-slice}.  If $0\ne q=(q_\omega,q_v)\in\ker H$,
+set
+\[
+ Z=D_\theta U[q],\qquad
+ g=q_\omega iU-q_v\cdot\nabla U.
+\]
+There exists $W\in X$ such that
+\begin{equation}\label{eq:r11-end-chain}
+ LW=iZ,\qquad JLW=Z,\qquad JLZ=g,\qquad JLg=0.
+\end{equation}
+The chain has length three.  If $JL$ generates the linearized evolution
+on a phase space containing these vectors in its generator domain, then
+\begin{equation}\label{eq:r11-end-polynomial}
+ e^{tJL}W=W+tZ+\frac{t^2}{2}g.
+\end{equation}
+In the quotient by the phase and translation tangent space $K$, this
+solution grows at least linearly as $t\to+\infty$.
+\end{theorem}
+\begin{proof}
+Parameter differentiation gives
+$LU_\omega=-U$ and $LU_{v_j}=-i\partial_jU$, so $JLZ=g$.
+Solvability of $LW=iZ$ is equivalent to $iZ$ annihilating $K$.
+Its pairings with $iU$ and $\partial_jU$ are, respectively,
+$DM(U)[Z]/2$ and $DP_j(U)[Z]/2$.  These vanish precisely because
+$Hq=0$.  Selfadjoint Fredholm solvability gives $W$.
+Independence of the symmetry generators implies $g\ne0$; hence
+$Z\notin K$.  The finite Jordan chain proves
+\eqref{eq:r11-end-polynomial}.  In $X/K$ its value is $[W]+t[Z]$,
+whose norm is at least $t\|[Z]\|-\|[W]\|$.
+\end{proof}
+
+At the attained endpoint of Theorem~\ref{thm:r11-end-attained}, one may
+take $q=e_\omega$.  The conclusion is secular growth of the linearized
+equation modulo symmetries.  It asserts neither a positive-real-part
+eigenvalue nor nonlinear orbital instability.
+
+\subsection{Zero-energy components of a threshold limit}
+
+The preceding compactification result for $M_{\mathrm{tr}}$ says that a
+mass-minimizing negative-energy sequence, normalized to kinetic energy
+one, either converges strongly modulo translation to a negative-energy
+profile or splits strongly into finitely many zero-energy profiles with
+common parameters.  In the splitting alternative,
+\[
+ \sum_jM(V_j)=M_{\mathrm{tr}},\qquad
+ \omega_*=(m/N)/M_{\mathrm{tr}}>0.
+\]
+The following statements add restrictions to those alternatives.
+
+\begin{theorem}[Degeneracy of each genuinely split component]
+\label{thm:r11-end-split}
+Let $V$ be a zero-energy exact profile with $M(V)<M_{\mathrm{tr}}$
+belonging to a full profile family.  Then
+\begin{equation}\label{eq:r11-end-zero}
+ \nabla_\theta E=0,\qquad H\theta=0.
+\end{equation}
+For a scaling-covariant family with $\omega\ne0$, one also has
+\begin{equation}\label{eq:r11-end-zero-response}
+ Bv=-P,\qquad M_v=-P/\omega,\qquad M_\omega=0.
+\end{equation}
+Consequently every component in a split threshold limit with at least two
+nonzero components has singular charge Hessian whenever it has a regular
+profile slice as above; it then has the neutral chain of
+Theorem~\ref{thm:r11-end-jordan}.
+\end{theorem}
+\begin{proof}
+All sufficiently nearby members of the family still have mass less than
+$M_{\mathrm{tr}}$.  Their energy is nonnegative by definition of that
+threshold.  Thus $E$ has a local minimum at $V$ and
+\eqref{eq:r11-end-legendre} gives \eqref{eq:r11-end-zero}.
+Differentiating $E=v\cdot P/(2m)$ gives $Bv=-P$.  Substitution into
+\eqref{eq:r11-end-scaling} gives $M_v=-P/\omega$, and its first
+identity, together with $v\cdot P=0$, gives $M_\omega=0$.
+In a genuine finite split every component has mass strictly below the
+sum, and $\theta_*\ne0$ because $\omega_*>0$.
+\end{proof}
+
+If the family is rotationally equivariant for an isotropic equation,
+$P=p(c)v/c$ for $c=|v|>0$.  At a component in
+Theorem~\ref{thm:r11-end-split}, zero energy gives $p(c)=0$ and
+$Bv=-P$ gives $p'(c)=0$.  Hence $B=0$; when $\omega\ne0$,
+\eqref{eq:r11-end-zero-response} shows that the \emph{entire} matrix
+$H$ vanishes.  Isotropy of the equation alone does not assert rotational
+equivariance of every profile family.
+
+\begin{proposition}[A moving zero-energy endpoint]
+\label{prop:r11-end-moving}
+Suppose $E(U)=0$, $M(U)\le M_{\mathrm{tr}}$, $v\ne0$, and $U$
+belongs to a full profile family.  Then $H$ is singular.
+\end{proposition}
+\begin{proof}
+If $H$ were nonsingular, the map $\theta\mapsto(M,P)$ would be a local
+$C^1$ diffeomorphism.  Along exact profiles, stationarity gives
+\[
+ dE=-\frac\omega2\,dM+\frac v2\cdot dP.
+\]
+Choose $dM<0$ and then choose $dP$ with a sufficiently negative component
+along $v$ that $dE<0$.  A small positive perturbation in this charge
+direction has both negative energy and mass below $M_{\mathrm{tr}}$,
+a contradiction.
+\end{proof}
+
+\begin{remark}[The standing-wave exception]
+At a normalized zero-energy endpoint $\omega>0$.  If $v=0$ and $P=0$,
+scaling gives $H(m\omega,0)^T=(0,-P/2)^T=0$, so $H$ is again singular.
+The remaining case $v=0$, $P\ne0$ is not excluded.  The present argument
+does not prove that every complex stationary profile is real up to a
+constant phase, or that every such profile has zero momentum.  Thus the
+correct statement for a single regular zero-energy endpoint retains the
+possibility of a standing profile with nonzero momentum.
+\end{remark}
+
+\subsection{The exact turning-point slope in an isotropic branch}
+
+\begin{proposition}\label{prop:r11-end-turning}
+Suppose an isotropic rotationally equivariant branch, at fixed
+$\omega>0$, reaches an attained negative-energy mass threshold at speed
+$c_*>0$.  Write $P=p(c)v/c$, and assume the differentiability used below.
+Then
+\[
+ p(c_*)<0,\qquad
+ p'(c_*)=\frac{p(c_*)}{(m-1)c_*}<0.
+\]
+The matrix $B$ is negative definite at $c_*$, and $H$ has $N$ positive
+eigenvalues and a one-dimensional kernel.  If the mass minimum satisfies
+$M''(c_*)>0$, define
+\[
+ \kappa(c)=\frac{p(c)^2}{p'(c)}-(m-1)cp(c).
+\]
+Then
+\begin{equation}\label{eq:r11-end-kappaprime}
+ \kappa(c_*)=0,\qquad
+ \kappa'(c_*)=-m\omega(m-1)c_*M''(c_*)<0.
+\end{equation}
+Near $c_*$ the positive index of $H$ drops from $N+1$ to $N$ as $c$
+increases through $c_*$.
+\end{proposition}
+\begin{proof}
+Use \eqref{eq:r11-end-response}; the transverse eigenvalues of $B$
+are $p(c_*)/c_*<0$, and the longitudinal one is $p'(c_*)<0$.
+At the endpoint the first row and column of $H$ vanish and
+$H_{vv}=-B/2$, proving its stated inertia.
+Stationarity of $S$ and $E=cp/(2m)$ give
+\[
+ m\omega M'=(m-1)cp'-p.
+\]
+Differentiate this identity once.  Direct differentiation of $\kappa$
+at $c_*$, using $(m-1)c_*p'=p$, gives
+\[
+ \kappa'=(2-m)p-(m-1)^2c_*^2p''
+          =-m\omega(m-1)c_*M''.
+\]
+Finally the Schur complement of the $v$ block in $H$ equals
+$\kappa/(2m^2\omega^2)$, obtained from
+\eqref{eq:r11-end-scaling} and $H_{vv}=-B/2$.  The $v$ block remains
+positive definite nearby and $\kappa$ changes from positive to negative.
+\end{proof}
+
+The relation between conserved-charge degeneracy and extended neutral
+Jordan chains belongs to classical Hamiltonian solitary-wave theory,
+including the work of Grillakis--Shatah--Strauss and
+Comech--Pelinovsky.  The conclusions here specify what that mechanism
+forces at the least-negative-energy traveling-mass threshold and in its
+finite splitting.  The turning formula alone is not an eigenvalue
+bifurcation theorem; that requires the additional spectral hypotheses
+and resolvent expansion stated separately.

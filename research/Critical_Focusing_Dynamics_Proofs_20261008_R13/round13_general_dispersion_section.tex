@@ -1,0 +1,467 @@
+\section{Kinetic amplification for general homogeneous dispersion}
+\label{sec:r13-general-dispersion}
+
+The exterior kinetic term used for the biharmonic equation survives for
+arbitrary positive elliptic homogeneous dispersion. The relevant density
+is $|a(D)^{1/2}u|^2$. Anisotropic terms need not have a favorable sign:
+after an explicit factorization they occur in a transition annulus, which
+can be removed by averaging disjoint annuli.
+
+Fix $m>2$, $s=m/2$, $N\ge1$, and a real even symbol $a$, homogeneous
+of degree $m$, of class $C^{N+2}$ away from zero, satisfying
+\[
+ c_a|\xi|^m\le a(\xi)\le C_a|\xi|^m.
+\]
+Consider
+\begin{equation}\label{r13g:equation}
+ iu_t=a(D)u-|u|^{2m/N}u,
+ \qquad p=2+2m/N,
+ \qquad E(u)=\frac{A(u)}2-\frac{\|u\|_p^p}{p},
+\end{equation}
+where $A(u)=\|a(D)^{1/2}u\|_2^2$, $M(u)=\|u\|_2^2$, and
+$P(u)=\operatorname{Im}\int\overline u\nabla u$.
+The sharp critical mass $M_c$ is defined by
+\[
+ \|u\|_p^p\le\frac p2\left(\frac{M(u)}{M_c}\right)^{m/N}A(u).
+\]
+All dynamical statements refer to strong conservative $H^s$ solutions
+for which the integrated localized identities pass by strong approximation.
+Local well-posedness for every symbol and dimension is not asserted.
+
+\begin{theorem}[Homogeneous kinetic amplification]
+\label{thm:r13g-amplification}
+There exist $d_0,C>0$, depending on $a,N,m$, such that every
+forward-global solution satisfying
+\[
+ P=0,\quad E=-e<0,\quad
+ d=\left(\frac{M}{M_c}\right)^{m/N}-1\in(0,d_0),\quad
+ B=\sup_{t\ge0}A(u(t))<\infty
+\]
+obeys
+\begin{equation}\label{r13g:amplification}
+ e\le C d^{\alpha_m}B,
+ \qquad \alpha_m=1+\frac{m}{2(m-1)}.
+\end{equation}
+Consequently, in a maximal strong flow with the energy-space
+continuation alternative,
+\begin{equation}\label{r13g:maximal}
+ \sup_{0\le t<T_+} A(u(t))\ge C^{-1}|E|d^{-\alpha_m}.
+\end{equation}
+No radial symmetry, spatial moment, convexity of $a$, uniqueness of
+the ground state, or real-sector linearized nondegeneracy is assumed.
+\end{theorem}
+
+\begin{corollary}[Finite kinetic excursions from standing waves]
+\label{cor:r13g-ground-instability}
+Let $Q$ be a real sharp standing-wave profile with $M(Q)=M_c$, and set
+\[
+ u_d(0)=(1+d)^{N/(2m)}Q.
+\]
+In the solution class of Theorem~\ref{thm:r13g-amplification},
+\begin{equation}\label{r13g:ground-amplification}
+ \sup_{0\le t<T_+(d)}
+       \frac{A(u_d(t))}{A(u_d(0))}
+ \ge c d^{-m/[2(m-1)]}.
+\end{equation}
+Every fixed finite amplification factor is therefore exceeded at a
+finite forward time for all sufficiently small $d>0$. In particular
+each such standing wave is orbitally unstable in $H^s$ modulo phase
+and spatial translations.
+\end{corollary}
+\begin{proof}
+Here $P=0$ and $E=-dA(u_d(0))/2$. Apply
+\eqref{r13g:maximal}. A fixed amplification factor strictly below
+the displayed lower bound is crossed at some time in the lifespan.
+Since $u_d(0)\to Q$ in $H^s$, while $A^{1/2}$ is invariant under
+phase and translation, a fixed sufficiently large amplification
+separates the evolved state from the entire standing-wave orbit.
+\end{proof}
+
+For $m=4$ the exponent is $5/3$. The same proof covers positive
+elliptic even homogeneous polynomials of degree $2k\ge4$, including
+anisotropic ones, and $a(\xi)=|\xi|^m$ for every real $m>2$.
+It does not exclude all bounded global negative-energy motion.
+
+\subsection{An exterior kinetic term without convexity}
+
+Put $b=\sqrt a$ and, for $\xi\ne0$, define the bounded degree-zero
+symbols
+\[
+ B_{jk}(\xi)=\frac{\partial_j a(\xi)\xi_k}{a(\xi)}.
+\]
+Euler's identity gives $\sum_jB_{jj}=m$. These are real even symbols;
+no sign is assigned to individual entries.
+
+\begin{lemma}[Cutoff commutations]
+\label{lem:r13g-cutoff}
+For a fixed smooth compact cutoff $\theta$, $\theta_R(x)=\theta(x/R)$,
+and $R\ge1$,
+\begin{align}
+ \|[B_{jk}(D),\theta_R]b(D)u\|_2
+ &\le CR^{-1}\|u\|_{H^s},\label{r13g:zero-order-comm}\\
+ \|[b(D),\theta_R]u\|_2
+ &\le CR^{-1}\|u\|_{H^s}.\label{r13g:half-comm}
+\end{align}
+The same estimates hold for constant additions to $\theta_R$.
+\end{lemma}
+\begin{proof}
+Write $h=\xi-\zeta$. The angular derivative bound for $B_{jk}$,
+its boundedness, and $s>1$ give
+\[
+ |B_{jk}(\xi)-B_{jk}(\zeta)|b(\zeta)
+ \le C|h||\zeta|^{s-1}.
+\]
+For $|h|\le|\zeta|/2$ use its homogeneous derivative of degree $-1$;
+otherwise use $|\zeta|\le2|h|$. Young's convolution inequality and
+$\||h|\widehat\theta_R(h)\|_1=O(R^{-1})$ prove
+\eqref{r13g:zero-order-comm}. Similarly,
+\[
+ |b(\xi)-b(\zeta)|
+ \le C|h|\bigl(|\zeta|+|h|\bigr)^{s-1}
+\]
+gives an upper bound
+$CR^{-1}\|u\|_{H^{s-1}}+CR^{-s}\|u\|_2$ for
+\eqref{r13g:half-comm}. Constants commute.
+\end{proof}
+
+Choose a radial $h_0\in C_c^\infty$ with $0\le h_0\le1$, equal
+to one on $B_1$ and zero outside $B_2$. Let
+\[
+ f_R(x)=x h_0(x/R),\qquad
+ L_R=f_R\cdot\nabla+\tfrac12\operatorname{div}f_R,
+ \qquad C_R=[a(D),L_R].
+\]
+
+\begin{lemma}[Factorization of the principal form]
+\label{lem:r13g-principal}
+For $g=b(D)u$ and $R\ge1$,
+\begin{equation}\label{r13g:factor}
+ \langle u,C_Ru\rangle
+ =\operatorname{Re}\sum_{j,k}
+    \langle g,(\partial_j f_{R,k})B_{jk}(D)g\rangle
+       +O(R^{-1}\|u\|_{H^s}^2).
+\end{equation}
+In particular,
+\begin{align}
+ \langle u,C_Ru\rangle
+ &\le mA(u)-m\int_{|x|>2R}|g|^2
+    +C\int_{R/2<|x|<4R}|g|^2
+    +CR^{-1}\|u\|_{H^s}^2.
+ \label{r13g:exterior-sign}
+\end{align}
+All constants are unchanged by translation of the cutoffs.
+\end{lemma}
+\begin{proof}
+The Fourier kernel of $C_R$, with $h=\xi-\zeta$, is
+\[
+ \frac i2\,[a(\xi)-a(\zeta)](\xi+\zeta)_k
+                                  \widehat f_{R,k}(h).
+\]
+The kernel of $\sum_{j,k}(\partial_j f_{R,k})q_{jk}(D)$, where
+$q_{jk}(\zeta)=\partial_j a(\zeta)\zeta_k$, is
+\[
+ i h_j\widehat f_{R,k}(h)\partial_j a(\zeta)\zeta_k.
+\]
+Their difference is bounded by
+\begin{equation}\label{r13g:kernel-remainder}
+ C|h|^2(|\zeta|+|h|)^{m-1}|\widehat f_R(h)|.
+\end{equation}
+This is second-order Taylor expansion: the second derivatives of $a$
+extend continuously at zero because $m>2$. To bound the form on $H^s$,
+divide the kernel by $\langle\xi\rangle^s\langle\zeta\rangle^s$.
+The elementary bound
+\[
+ \frac{(|\zeta|+|h|)^{m-1}}
+      {\langle\xi\rangle^s\langle\zeta\rangle^s}
+ \le C\langle h\rangle^{m-1}
+\]
+follows by splitting $|\zeta|\le2|h|$ and its complement.
+Since $\widehat f_R(h)=R^{N+1}\widehat f_1(Rh)$, Schur's test
+bounds \eqref{r13g:kernel-remainder} by $CR^{-1}$ as a form
+$H^s\times H^s\to\mathbb C$.
+
+Replacing $q_{jk}(D)$ by the $b(D)$ sandwich changes its kernel by
+\[
+ [b(\zeta)-b(\xi)]b(\zeta)B_{jk}(\zeta)
+                      \widehat{\partial_j f_{R,k}}(h).
+\]
+Its magnitude is at most
+$C|h|(|\zeta|+|h|)^{m-1}
+|\widehat{\partial_j f_{R,k}}(h)|$.
+The same weighted Schur estimate, now using the scale-invariant
+coefficient $\partial_j f_{R,k}$, is $O(R^{-1})$.
+Taking real parts proves \eqref{r13g:factor}.
+
+Write
+\[
+ \partial_j f_{R,k}=h_0(x/R)\delta_{jk}+c_{jk,R}.
+\]
+The coefficients $c_{jk,R}$ are uniformly bounded and supported on
+$R<|x|<2R$. The identity $\sum_jB_{jj}=m$ makes the diagonal part
+exactly $m\int h_0(x/R)|g|^2$. Choose $\theta_R$ supported on
+$R/2<|x|<4R$ and equal to one on the support of every $c_{jk,R}$.
+For $c=c_{jk,R}$ and $B=B_{jk}(D)$,
+\[
+ \langle g,cBg\rangle
+ =\langle\theta_Rg,cB(\theta_Rg)\rangle
+   +\langle\theta_Rg,c[B,1-\theta_R]g\rangle.
+\]
+The first term is bounded by $C\|\theta_Rg\|_2^2$, and
+Lemma~\ref{lem:r13g-cutoff} bounds the second by
+$CR^{-1}\|u\|_{H^s}^2$.
+Finally $h_0\le1$ and $h_0=0$ outside $2R$ give
+\eqref{r13g:exterior-sign}. No pointwise principal-symbol sign has
+been used.
+\end{proof}
+
+\subsection{Concentration and slow density transport}
+
+The real two-component sharp polarization argument gives, for every
+nonzero scalar complex field,
+\begin{equation}\label{r13g:phase}
+ \inf_\theta\left[
+ \frac{M(\operatorname{Im}(e^{-i\theta}u))}{M(u)}+
+ \frac{A(\operatorname{Im}(e^{-i\theta}u))}{A(u)}\right]
+ \le C\left[1-
+ \frac{\|u\|_p^p}{(p/2)(M(u)/M_c)^{m/N}A(u)}\right].
+\end{equation}
+For clarity, this applies the real $O(2)$ statement to
+$(\operatorname{Re}u,\operatorname{Im}u)$. Its proof normalizes
+$M=M_c,A=1$, uses compactness of sharp optimizers modulo translation
+and phase, and writes $u=X+iY$ with $\langle Q,Y\rangle=0$.
+Sharp interpolation for $X$ and transverse Taylor expansion show that
+the deficit controls
+\[
+ \left\langle Y,
+ \left[a(D)+\frac{m/N}{M_c}-|Q|^{2m/N}\right]Y\right\rangle
+       -o(\|Y\|_{H^s}^2).
+\]
+The phase form has kernel $\mathbb RQ$ and is coercive on $Q^\perp$,
+by the sharp density strict-convexity argument. Compactness of the
+normalized optimizer family gives a uniform constant. Real-sector
+nondegeneracy is not involved.
+
+\begin{proof}[Proof of Theorem~\ref{thm:r13g-amplification}]
+Critical scaling first reduces $B$ to one. Then
+\[
+ \frac{2e}{d}\le A(u(t))\le1,\qquad
+ \|u(t)\|_{H^s}\le C.
+\]
+Equation~\eqref{r13g:phase} gives at each time a constant phase with
+\[
+ u=e^{i\theta}(X+iY),\qquad
+ \|X\|_{H^s}\le C,\quad \|Y\|_{H^s}\le C\sqrt d.
+\]
+No time derivative of $\theta$ is used. For any real cutoff
+$\chi_R(x)=\chi((x-z)/R)$, the Fourier estimate
+\[
+ |a(\xi)-a(\zeta)|
+ \le C|\xi-\zeta|(|\zeta|+|\xi-\zeta|)^{m-1}
+\]
+and the weighted Schur argument above give
+\[
+ |\langle v,[a(D),\chi_R]w\rangle|
+ \le CR^{-1}\|v\|_{H^s}\|w\|_{H^s}.
+\]
+The real-real and imaginary-imaginary terms make no contribution to
+the mass derivative, since $a$ is real even. The nonlinear term
+cancels pointwise. Thus
+\begin{equation}\label{r13g:slow-mass}
+ \left|\frac d{dt}\int\chi((x-z)/R)|u|^2\right|
+ \le C\sqrt d/R.
+\end{equation}
+
+Sharp near-optimizer compactness and the lower bound $A\ge2e/d$
+give a finite radius $R_0\ge1$ such that a ball of radius $R_0$
+captures $M_c-\epsilon_0$ mass at each time. Here $\epsilon_0>0$
+is a fixed sufficiently small fraction of $M_c$; $R_0$ may depend
+on $e/d$. If two chosen centers at times separated by at most
+$cR_0/\sqrt d$ were separated by more than $4R_0$, a cutoff mass
+would change by a fixed positive amount, contradicting
+\eqref{r13g:slow-mass}. Piecewise linear interpolation of centers
+therefore supplies a Lipschitz center $a(t)$ with
+\begin{equation}\label{r13g:center-speed}
+ \|a'\|_\infty\le L=C\sqrt d,
+\end{equation}
+about which a fixed-radius ball contains $M_c-\epsilon_0$ mass
+at all times. The speed constant is independent of $R_0$ and $e/d$.
+
+For every $\eta>0$, some finite $R_\eta$ satisfies
+\begin{equation}\label{r13g:tail-mass}
+ \sup_t\int_{|x-a(t)|>R_\eta}|u(t,x)|^2
+ \le M-M_c+\eta=:\mu.
+\end{equation}
+Indeed a violating sequence, translated by $a(t)$, has a weak $H^s$
+limit $v$ with $M_c-\epsilon_0\le M(v)\le M_c-\eta$.
+Its remainder also has mass strictly below $M_c$, for small $d_0$.
+Quadratic kinetic splitting and Brezis--Lieb splitting would then
+express $-e$ as a limit of two nonnegative subcritical energies.
+This contradiction proves \eqref{r13g:tail-mass}.
+
+\subsubsection*{Moving virial and exterior absorption}
+Let $g=a(D)^{1/2}u$ and define
+\[
+ J_R=2\operatorname{Im}\int f_R(x-a(t))\cdot\overline u\nabla u,
+\quad
+ K_R=\int_{|x-a|>8R}|g|^2,
+\quad
+ H_R=\int_{R/4<|x-a|<8R}|g|^2.
+\]
+Since $s>1$, $|J_R|\le CR$. The integrated localized identity,
+Lemma~\ref{lem:r13g-principal}, and $P=0$ give, for $R\ge4R_\eta$,
+\begin{align}
+ J_R'\le{}&-4me-2mK_R+CH_R+CR^{-1}
+  +C\int_{|x-a|>R}|u|^p\notag\\
+ &+CL\int_{|x-a|>R}|u||\nabla u|.
+ \label{r13g:virial}
+\end{align}
+The local nonlinear term is
+$-2(p-2)p^{-1}\int\operatorname{div}f_R|u|^p$; its difference
+from the full dilation expression is supported outside $R$.
+Motion of the center contributes $-2a'\cdot P$ plus the displayed
+exterior current, because $Df_R=I$ on $B_R$.
+
+Choose $\zeta_R=0$ on $B_{R/4}$ and $\zeta_R=1$ outside
+$B_{R/2}$. Equations~\eqref{r13g:half-comm} and
+\eqref{r13g:tail-mass} imply
+\[
+ M(\zeta_Ru)\le\mu,\qquad
+ A(\zeta_Ru)\le C(K_R+H_R)+CR^{-2}.
+\]
+Sharp interpolation and interpolation between derivative orders zero
+and $s$ therefore give
+\begin{align}
+ \int_{|x-a|>R}|u|^p
+ &\le C\mu^{m/N}(K_R+H_R+R^{-2}),\notag\\
+ \int_{|x-a|>R}|u||\nabla u|
+ &\le C\mu^{1-1/m}(K_R+H_R+R^{-2})^{1/m}.
+ \label{r13g:tail-bounds}
+\end{align}
+Take $d_0$ and then $\eta$ sufficiently small. The $K_R$ term in
+the first inequality is absorbed by its negative coefficient in
+\eqref{r13g:virial}. Young's inequality absorbs the current's
+$K_R^{1/m}$ term, leaving
+\begin{equation}\label{r13g:averagable}
+ J_R'\le -4me+CH_R
+    +CL\mu^{1-1/m}H_R^{1/m}
+    +CL^{m/(m-1)}\mu+o_R(1).
+\end{equation}
+The remainder tends to zero uniformly in time on the normalized
+$H^s$ ball.
+
+\subsubsection*{Annulus averaging and restoration of scale}
+Fix $K<\infty$ and $R_*\ge4R_\eta$, and take
+$R_j=64^jR_*$, $0\le j<K$. The annuli defining $H_{R_j}$ are
+disjoint, so $\sum_jH_{R_j}(t)\le1$. For each time window $[0,T]$
+one annulus has time average at most $1/K$. Integrating
+\eqref{r13g:averagable}, using Jensen's inequality, and estimating
+the endpoints of $J_R$ yields
+\[
+ 4me\le \frac{C64^{K-1}R_*}{T}+\frac CK
+  +CL\mu^{1-1/m}K^{-1/m}+CL^{m/(m-1)}\mu
+  +\sup_{R\ge R_*}|o_R(1)|.
+\]
+Let $T\to\infty$, then $K\to\infty$, then $R_*\to\infty$,
+and finally $\eta\downarrow0$. No time-dependent cutoff radius
+has been differentiated. We obtain
+\[
+ e\le CL^{m/(m-1)}(M-M_c)
+ \le C d^{1+m/[2(m-1)]}.
+\]
+Under $u_\lambda(t,x)=\lambda^{N/2}u(\lambda^m t,\lambda x)$,
+$A$ and $E$ scale by $\lambda^m$ and $d$ stays fixed. Choosing
+$\lambda=B^{-1/m}$ restores \eqref{r13g:amplification}.
+If the maximal solution is finite-time or global unbounded, its
+kinetic supremum is infinite by the continuation alternative; the
+only remaining case is the bounded global one already proved.
+\end{proof}
+
+\begin{remark}[The remaining dynamical obstruction]
+After annulus averaging the only surviving exterior cost is
+$L^{m/(m-1)}(M-M_c)$. Zero momentum does not set $L$ to zero:
+density transport involves $\nabla a(D)$, whereas momentum involves
+$D$. The present proof gives $L=O(\sqrt d)$, sufficient for the
+amplification law but insufficient to exclude every large bounded
+global orbit for fixed $d>0$.
+\end{remark}
+
+\subsection{Homogeneous Hartree attraction}
+\label{subsec:r13g-hartree}
+
+The same exterior kinetic mechanism applies to a nonlocal interaction.
+Assume now $2<m<N$, and let $K$ be real, even, $C^1$ away from zero,
+homogeneous of degree $-m$, and positive definite as a density quadratic
+form. Suppose
+\[
+ |K(x)|+|x||\nabla K(x)|\le C_K|x|^{-m}.
+\]
+Consider
+\[
+ iu_t=a(D)u-(K*|u|^2)u,\qquad
+ H_K(u)=\iint K(x-y)|u(x)|^2|u(y)|^2\,dx\,dy,
+ \qquad E=\frac A2-\frac{H_K}4.
+\]
+Let $M_c$ be the sharp mass in $H_K(u)\le2(M/M_c)A(u)$.
+The positive density form supplies sharp compactness and phase
+coercivity as in the scalar Hartree foundations.
+
+\begin{proposition}[Hartree amplification]
+\label{prop:r13g-hartree}
+Theorem~\ref{thm:r13g-amplification} and its maximal-flow conclusion
+hold for this Hartree equation with
+\[
+ d=M/M_c-1,\qquad \alpha_m=1+\frac{m}{2(m-1)}.
+\]
+For a real sharp ground state, the amplitude data
+$u_d(0)=\sqrt{1+d}\,Q$ satisfy
+\eqref{r13g:ground-amplification} in the same conservative strong
+solution class.
+\end{proposition}
+\begin{proof}
+The real two-component phase estimate uses the deficit
+\[
+ 1-\frac{H_K(u)}{2(M/M_c)A(u)}
+ =\frac{d-2e/A(u)}{1+d}\le d.
+\]
+Density transport is unchanged because the nonlinear potential is
+real. Sharp compactness and Hartree energy splitting yield the same
+center and surplus-mass bound. The splitting follows by local
+compactness and decay of the potential of a smooth compact core;
+Hardy--Littlewood--Sobolev controls its approximation error.
+
+Only the nonlinear virial defect needs a new estimate. With
+$\rho=|u|^2$, its symmetrized expression is
+\[
+ \iint\rho(x)\rho(y)
+ [f_R(x-a)-f_R(y-a)]\cdot\nabla K(x-y)\,dx\,dy.
+\]
+Subtracting the full dilation value $-mH_K(u)$ gives an integrand
+which vanishes when both points are in $B(a,R)$. Since $f_R$ is
+uniformly Lipschitz, the absolute remaining integrand is bounded by
+$C\rho(x)\rho(y)|x-y|^{-m}$. By symmetry suppose $|x-a|>R$.
+If $|y-a|<R/2$, then $|x-y|\ge R/2$, and the contribution is bounded
+by $CR^{-m}M^2$. Otherwise both points lie outside $B(a,R/2)$.
+Choose $\zeta_R=1$ there and zero on $B(a,R/4)$. The remaining
+contribution is at most the absolute-Riesz Hartree form of
+$w=\zeta_Ru$. Hardy--Littlewood--Sobolev and interpolation give
+\[
+ \iint|x-y|^{-m}|w(x)|^2|w(y)|^2\,dx\,dy
+ \le C\|w\|_{4N/(2N-m)}^4
+ \le CM(w)A(w).
+\]
+Consequently the nonlinear defect satisfies
+\begin{equation}\label{r13g:hartree-tail}
+ |\text{Hartree defect}|
+ \le CR^{-m}M^2+C\mu(K_R+H_R+R^{-2}).
+\end{equation}
+The term $C\mu K_R$ is absorbed for small $d_0,\eta$.
+All other steps of the moving virial, Young absorption, and annulus
+averaging are identical. Finally, amplitude data satisfy
+$E=-dA(u_d(0))/2$, giving the stated excursion law.
+\end{proof}
+
+The spatial separation in \eqref{r13g:hartree-tail} is essential:
+the true core--tail interaction decays with $R$, and the remaining
+near-diagonal interaction sees only the small exterior mass. Estimating
+one exterior factor against the entire state by HLS would instead
+leave a square-root exterior-energy term and lose this absorption.

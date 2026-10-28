@@ -1,0 +1,246 @@
+\section{Persistent kinetic amplification in actual time}
+\label{sec:r13-persistent}
+
+We work with the pure mass-critical biharmonic equation
+\[
+ iu_t=\Delta^2u-|u|^{8/N}u,
+ \qquad p=2+\frac8N.
+\]
+Write $M=\|u\|_2^2$, $A(t)=\|\Delta u(t)\|_2^2$, and
+$E=A/2-\|u\|_p^p/p$. The sharp mass is denoted by $M_c$.
+All solutions below are conservative strong $H^2$ solutions for which
+the localized mass and virial identities pass by strong energy-space
+approximation. This is a specified solution class, not an assertion of
+an unrestricted high-dimensional local theory.
+
+\begin{theorem}[Persistent amplification]\label{thm:r13-persistent}
+There are $d_0,c>0$, depending only on the fixed scalar problem, such that
+every forward-global solution with
+\[
+ P=\operatorname{Im}\int\overline u\nabla u=0,
+ \qquad E=-e<0,\qquad
+ 0<d=\left(\frac M{M_c}\right)^{4/N}-1<d_0
+\]
+satisfies
+\begin{equation}\label{eq:r13-average}
+ \liminf_{T\to\infty}\frac1T\int_0^T A(t)\,dt
+ \ge c e d^{-5/3}.
+\end{equation}
+No uniform upper bound on $A(t)$ is assumed.
+\end{theorem}
+
+\begin{proof}
+Put $\delta=M-M_c$ and $r=4/N$. Sharp interpolation gives
+\begin{equation}\label{eq:r13-min-A}
+ A(t)\ge a_*:=2e/d>0.
+\end{equation}
+The quantitative real $O(2)$ polarization estimate, applied separately
+at every time, supplies a phase with $u=e^{i\theta}(X+iY)$, $X,Y$ real,
+and
+\[
+ M(Y)\le CdM,\qquad A(Y)\le CdA(t).
+\]
+The phase is never differentiated. Substitution in the exact localized
+mass identity gives
+\begin{equation}\label{eq:r13-density}
+ \left|\frac d{dt}\int\varphi|u|^2\right|
+ \le C\sqrt d\left(
+ \|\nabla\varphi\|_\infty A(t)^{3/4}
+ +\|\Delta\varphi\|_\infty A(t)^{1/2}\right).
+\end{equation}
+For $\varphi(x)=\chi((x-b)/R)$ and $R\ge a_*^{-1/4}$ this is at most
+$C\sqrt d A(t)^{3/4}/R$.
+
+\medskip\noindent\emph{An intrinsic-time center.}
+Fix $\varepsilon_0=M_c/32$ and decrease $d_0$ if necessary.
+Near-optimizer compactness after kinetic normalization gives a universal
+$\overline R$ and centers $c(t)$ with
+\begin{equation}\label{eq:r13-center-core}
+ \int_{|x-c(t)|\le\overline R A(t)^{-1/4}}|u(t,x)|^2\,dx
+ \ge M_c-\varepsilon_0.
+\end{equation}
+Choose a fixed $R_0\ge1$ containing these balls and satisfying
+$R_0\ge a_*^{-1/4}$. Set
+\[
+ s(t)=\int_0^t A(\tau)^{3/4}\,d\tau.
+\]
+This is strictly increasing and unbounded. If two centers are separated
+by more than $4R_0$, a cutoff at one center changes by at least
+$M_c-3\varepsilon_0$. Equation~\eqref{eq:r13-density} excludes such a
+change whenever $|s(t)-s(t')|\le\tau R_0/\sqrt d$, for a fixed small
+$\tau>0$. Interpolating centers at equally spaced intrinsic times yields
+a locally absolutely continuous center $a(t)$ with
+\begin{equation}\label{eq:r13-center-speed}
+ |a(t)-c(t)|\le8R_0,
+ \qquad |a'(t)|\le C\sqrt d A(t)^{3/4}
+ \quad\text{for almost every }t.
+\end{equation}
+The radius may depend on $e/d$; the speed constant does not.
+
+\medskip\noindent\emph{Uniform exterior mass without a kinetic bound.}
+For every $\eta>0$ there is $R_\eta<\infty$ with
+\begin{equation}\label{eq:r13-tail}
+ \sup_{t\ge0}\int_{|x-a(t)|>R_\eta}|u(t,x)|^2\,dx
+ \le\delta+\eta.
+\end{equation}
+Suppose not, and choose bad times $t_k$ and radii $R_k\to\infty$.
+The same tail lower bound holds outside the ball about $c(t_k)$ of
+radius $R_k-8R_0$. Put $A_k=A(t_k)$, $\lambda_k=A_k^{-1/4}$ and
+\[
+ g_k(y)=\lambda_k^{N/2}u(t_k,c(t_k)+\lambda_k y).
+\]
+Then $A(g_k)=1$, $M(g_k)=M$ and $E(g_k)=-e/A_k\in[-d/2,0)$.
+By~\eqref{eq:r13-center-core}, a fixed ball contains mass at least
+$M_c-\varepsilon_0$. Weak $H^2$ compactness and strong local $L^2$
+convergence give a limit $g$ with $M(g)\ge M_c-\varepsilon_0$.
+The bad exterior radius after normalization tends to infinity, since
+\[
+ (R_k-8R_0)\lambda_k^{-1}
+ \ge (R_k-8R_0)a_*^{1/4}\longrightarrow\infty.
+\]
+Thus $M(g)\le M_c-\eta$. For $w_k=g_k-g$, quadratic and
+Brezis--Lieb splitting give
+\[
+ E(g_k)=E(g)+E(w_k)+o(1),\qquad
+ M(w_k)\le\delta+\varepsilon_0+o(1)<M_c.
+\]
+The remainder energies are eventually nonnegative by sharp
+interpolation, whereas $E(g)>0$ because $g\ne0$ is strictly
+subcritical. This contradicts $E(g_k)<0$ and proves
+\eqref{eq:r13-tail}. Normalization about the centers $c(t_k)$ in
+\eqref{eq:r13-center-core} is essential: their physical distance from
+$a(t_k)$ is bounded, but their normalized distance need not be.
+
+\medskip\noindent\emph{The moving virial.}
+Choose $\varphi_R=|x|^2/2$ inside $B_R$, constant outside $B_{2R}$,
+with $D^2\varphi_R\le I$ and the usual scaled derivative bounds.
+Set
+\begin{align*}
+ J_R&=2\operatorname{Im}\int\nabla\varphi_R(x-a(t))
+                \cdot\overline u\nabla u,\\
+ K_R&=\int_{|x-a(t)|>2R}|D^2u|^2,\qquad
+ H_R=\int_{R/2<|x-a(t)|<2R}|D^2u|^2,\\
+ q_R(t)&=R^{-2}A(t)^{1/2}+R^{-4}.
+\end{align*}
+The full Hessian is required in these exterior integrals. Its total
+squared norm equals $A$, but no pointwise equality with $|\Delta u|^2$
+is used. The quartic localized identity and $P=0$ yield
+\begin{equation}\label{eq:r13-virial-raw}
+ J_R'\le-16e-8K_R+C\int_{|x-a(t)|>R}|u|^p+Cq_R
+       +C|a'|\int_{|x-a(t)|>R}|u||\nabla u|.
+\end{equation}
+Also
+\begin{equation}\label{eq:r13-endpoint}
+ |J_R(t)|\le CR A(t)^{1/4}.
+\end{equation}
+Fix small $\eta>0$, put $\mu=\delta+\eta$, and take
+$R\ge2R_\eta$. An exterior cutoff and interpolation give
+\begin{align*}
+ \int_{|x-a(t)|>R}|u|^p
+     &\le C\mu^r(K_R+H_R+q_R),\\
+ \int_{|x-a(t)|>R}|u||\nabla u|
+     &\le C\mu^{3/4}(K_R+H_R+q_R)^{1/4}.
+\end{align*}
+For small $d_0,\eta$, the nonlinear $K_R$ term is absorbed.
+Young's inequality absorbs the current's $K_R$ term and bounds its
+other parts by $C(H_R+q_R)+C\mu|a'|^{4/3}$.
+Using~\eqref{eq:r13-center-speed} gives
+\begin{equation}\label{eq:r13-virial-final}
+ J_R'\le-16e+CH_R+C\mu d^{2/3}A(t)+Cq_R(t).
+\end{equation}
+
+\medskip\noindent\emph{Actual-time averaging.}
+Let $L$ denote the left side of~\eqref{eq:r13-average}; only $L<\infty$
+needs proof. Choose $T_n\to\infty$ whose averages tend to $L$.
+There are $t_n\in[T_n-\sqrt{T_n},T_n]$ with
+$A(t_n)\le C(L+1)\sqrt{T_n}$. Otherwise the integral over this last
+interval would exceed the full integral. Hence $t_n/T_n\to1$, the
+averages through $t_n$ also tend to $L$, and
+\[
+ \frac{A(t_n)^{1/4}}{t_n}\longrightarrow0.
+\]
+Fix $K<\infty$, $R_*\ge2R_\eta$, and radii $R_j=8^jR_*$,
+$0\le j<K$. Their transition annuli are disjoint, so
+$\sum_jH_{R_j}(t)\le A(t)$. For each $n$, choose one radius whose
+average annular kinetic energy through $t_n$ is at most $K^{-1}$ times
+the average of $A$. Integrate~\eqref{eq:r13-virial-final} at that radius.
+All radii are bounded by $8^{K-1}R_*$, so the endpoint terms divided
+by $t_n$ vanish by~\eqref{eq:r13-endpoint}. Cauchy--Schwarz bounds the
+average of $A^{1/2}$. The time limit gives
+\[
+ 16e\le\frac{CL}{K}+C\mu d^{2/3}L
+       +CR_*^{-2}\sqrt L+CR_*^{-4}.
+\]
+Now let $K\to\infty$, $R_*\to\infty$ and $\eta\downarrow0$.
+Since $\delta=M_c[(1+d)^{N/4}-1]\le Cd$, this proves
+$e\le Cd^{5/3}L$.
+\end{proof}
+
+\begin{corollary}[Recurring amplification]\label{cor:r13-recurring}
+Every strict lower value than $L_*=ce d^{-5/3}$ is exceeded by $A(t)$
+at arbitrarily late times. If $B=\sup_{t\ge0}A(t)<\infty$, then
+\[
+ \liminf_{T\to\infty}
+ \frac{|\{t\in[0,T]:A(t)\ge L_*/2\}|}{T}
+ \ge\frac{L_*}{2B}.
+\]
+For $u_d(0)=(1+d)^{N/8}Q$, with any real sharp standing ground wave $Q$,
+every global solution satisfies
+\[
+ \liminf_{T\to\infty}\frac1T\int_0^T
+        \frac{A(t)}{A(0)}\,dt\ge c d^{-2/3}.
+\]
+\end{corollary}
+\begin{proof}
+The first assertion follows directly from the average bound. For the
+second, bound the average by
+$L_*/2+B|\{A\ge L_*/2\}\cap[0,T]|/T$ and take lower limits.
+For the last assertion, the exact amplitude identities give
+$e=dA(0)/2$; absorb $1/2$ in the constant.
+\end{proof}
+
+\subsection{The instantaneous translation term cannot be removed by momentum alone}
+The distinction between momentum and quartic mass transport is exact.
+Choose a real sharp wave $Q$ and a real smooth test $h$ with
+\[
+ \langle h,Q\rangle=0,\qquad
+ \langle h,\partial_kQ\rangle=0\ (1\le k\le N),\qquad
+ \langle h,\partial_j\Delta Q\rangle\ne0
+\]
+for some $j$. Such a test exists. Otherwise
+$\partial_j\Delta Q\in\operatorname{span}\{Q,\partial_1Q,\ldots,
+\partial_NQ\}$ as distributions. Pairing with $Q$ removes its $Q$
+component, and Fourier transformation would force $\widehat Q$ onto
+the zero set of a nonzero polynomial, contradicting $Q\ne0$ in $L^2$.
+For fixed sufficiently large $a>0$, set
+\[
+ u_\varepsilon=(1+a\varepsilon^2)Q+i\varepsilon h.
+\]
+Then $P(u_\varepsilon)=0$ exactly, and
+\begin{align*}
+ d_\varepsilon
+ &=\frac4N\left(2a+\frac{M(h)}{M_c}\right)\varepsilon^2
+       +O(\varepsilon^4),\\
+ E(u_\varepsilon)
+ &=\varepsilon^2\left[
+ \frac{A(h)-\int|Q|^{8/N}h^2}{2}-a\omega M_c\right]
+       +o(\varepsilon^2)<0,
+\end{align*}
+where $\Delta^2Q+\omega Q-|Q|^{8/N}Q=0$.
+Nevertheless its quartic mass current is
+\[
+ 4\int\xi_j|\xi|^2|\widehat u_\varepsilon(\xi)|^2\,d\xi
+ =8\varepsilon(1+a\varepsilon^2)
+             \langle h,\partial_j\Delta Q\rangle.
+\]
+Thus this current has order $\sqrt{d_\varepsilon}$ even at exactly zero
+momentum and negative energy. With a finite first moment it is the
+instantaneous derivative of that moment; without one it remains the
+finite Fourier current underlying localized mass transport.
+
+The proof of Theorem~\ref{thm:r13-persistent} does not exclude bounded
+global motion at a sufficiently large kinetic scale. Its new conclusion
+is persistent amplification in actual time. Removing the center-motion
+term requires additional information from the evolution, since neither
+zero momentum nor a sharper use of the same instantaneous interpolation
+can supply it.

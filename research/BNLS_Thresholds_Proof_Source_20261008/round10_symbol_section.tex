@@ -1,0 +1,641 @@
+\section{Two dispersion thresholds and the selection of critical profiles}
+\label{sec:r10-symbols}
+
+The loss of a profile gap under a small nonhomogeneous perturbation has a
+more precise variational description.  We prove two distinct mass
+thresholds, classify the upper endpoint for a full interpolation family,
+and determine the scale and selected profiles as the lower threshold is
+approached.  The selection argument requires neither uniqueness of the
+homogeneous optimizers nor nondegeneracy of their real linearization.
+These are constrained variational statements; they do not classify
+arbitrary solutions of the homogeneous evolution.
+
+\subsection{Symbols and the two thresholds}
+
+Fix $N\ge1$, $m>1$, $s=m/2$, $r=m/N$, and $p=2+2r$.  Let $a_0$ and
+$a_\infty$ be real, even, positive elliptic symbols homogeneous of degree
+$m$, continuous on the sphere and $C^{N+2}$ off zero.  Suppose
+$a_\infty-a_0$ is also positive elliptic.  Use the notation
+\[
+ M(f)=\|f\|_2^2,\qquad A_j(f)=\int a_j(\xi)|\widehat f(\xi)|^2\,d\xi,
+ \qquad E_j(f)=\tfrac12 A_j(f)-\tfrac1p\|f\|_p^p
+ \quad(j=0,\infty).
+\]
+The sharp homogeneous masses $M_j$ are defined by
+\begin{equation}\label{eq:r10-sharp-gn}
+ \frac1p\|f\|_p^p\le
+ \frac12\left(\frac{M(f)}{M_j}\right)^r A_j(f).
+\end{equation}
+In particular, $M_\infty>M_0$: if
+$a_\infty\ge(1+\eta)a_0$, sharpness gives
+$M_\infty\ge(1+\eta)^{1/r}M_0$.
+
+Write the full symbol as $k=a_0+b$, with $b$ real, even, and continuous
+off zero.  Assume that, for some $q>0$ and constants $c,C>0$,
+\begin{equation}\label{eq:r10-bounds}
+ c\min\{|\xi|^{m+q},|\xi|^m\}
+ \le b(\xi)\le C\min\{|\xi|^{m+q},|\xi|^m\},
+\end{equation}
+and that, uniformly for $\theta\in S^{N-1}$,
+\begin{equation}\label{eq:r10-high-limit}
+ R^{-m}k(R\theta)\longrightarrow a_\infty(\theta)
+ \qquad(R\longrightarrow\infty).
+\end{equation}
+Thus $k$ is comparable with $|\xi|^m$.  Define
+\[
+ B(f)=\int b(\xi)|\widehat f(\xi)|^2\,d\xi,\qquad
+ E_k(f)=\tfrac12[A_0(f)+B(f)]-\tfrac1p\|f\|_p^p,
+ \qquad I(M)=\inf_{\substack{f\in H^s\\M(f)=M}}E_k(f).
+\]
+
+\begin{theorem}[Two homogeneous limits determine two mass thresholds]
+\label{thm:r10-two-thresholds}
+Under \eqref{eq:r10-bounds}--\eqref{eq:r10-high-limit}, the sharp GN
+mass for the full form $A_0+B$ is exactly $M_0$, and its sharp inequality
+has no nonzero optimizer.  The constrained infima satisfy
+\begin{enumerate}
+ \item $I(M)=0$, without attainment, for $0<M\le M_0$;
+ \item $-\infty<I(M)<0$ for $M_0<M<M_\infty$. Every minimizing
+ sequence has, after translations and extraction, a strong $H^s$ limit
+ attaining $I(M)$. A real minimizer can be chosen;
+ \item $I(M)=-\infty$ for $M>M_\infty$.
+\end{enumerate}
+The symbols $a_0$ and $a_\infty$ need not have the same anisotropy.
+\end{theorem}
+
+\begin{proof}
+Since $A_0+B\ge A_0$, the full GN constant is at most the principal
+one. If $Q$ is a principal optimizer and
+$Q_\lambda(x)=\lambda^{N/2}Q(\lambda x)$, then
+\[
+ \lambda^{-m}B(Q_\lambda)
+ =\int\lambda^{-m}b(\lambda\xi)|\widehat Q(\xi)|^2\,d\xi
+ \longrightarrow0\qquad(\lambda\downarrow0)
+\]
+by dominated convergence and \eqref{eq:r10-bounds}. Thus the sharp
+constants coincide. Since $B(f)>0$ for every nonzero $f$, equality in
+the full inequality is impossible. At mass $M\le M_0$, the sharp
+principal inequality gives $E_k(f)>0$. Dilating any smooth mass-$M$
+trial to low frequency proves that the infimum is zero.
+
+For every $\eta>0$, \eqref{eq:r10-high-limit} gives a finite $C_\eta$
+such that $k\ge(1-\eta)a_\infty-C_\eta$. Therefore, at fixed mass $M$,
+\begin{equation}\label{eq:r10-coercivity}
+ E_k(f)\ge\frac12\left[1-\eta-(M/M_\infty)^r\right]A_\infty(f)
+             -\frac12C_\eta M.
+\end{equation}
+If $M<M_\infty$, choose $\eta$ to make the bracket positive. This
+proves a finite lower bound and boundedness of minimizing sequences.
+If also $M>M_0$, sharpness and amplitude scaling give a real smooth
+mass-$M$ trial $f$ with $E_0(f)<0$. Its low-frequency dilation satisfies
+\[
+ E_k(f_\lambda)=\lambda^m E_0(f)+O(\lambda^{m+q})<0
+\]
+for sufficiently small $\lambda$, proving $I(M)<0$.
+
+We record the compactness argument. Amplitude scaling gives
+\[
+ E_k(\sqrt\vartheta f)
+ =\vartheta^{p/2}E_k(f)
+   +\tfrac12(\vartheta-\vartheta^{p/2})[A_0(f)+B(f)]
+ \qquad(\vartheta>1).
+\]
+Thus $I(\vartheta L)\le\vartheta I(L)$, with
+$I(\vartheta L)\le\vartheta^{p/2}I(L)<\vartheta I(L)$ if $I(L)<0$,
+whenever the masses are below $M_\infty$. For a mass $M$ with
+$I(M)<0$, it follows that $I(M)/M<I(L)/L$ for every $0<L<M$.
+Consequently
+\begin{equation}\label{eq:r10-binding}
+ I(M)<I(L)+I(M-L)\qquad(0<L<M).
+\end{equation}
+A bounded minimizing sequence cannot vanish locally in mass: the
+localized GN inequality would then imply $\|f_n\|_p\to0$, contradicting
+$I(M)<0$. After translations there is a nonzero weak $H^s$ limit $Q$
+and almost-everywhere convergence. The quadratic forms split by weak
+Hilbert convergence, and the nonlinear integral by the Brezis--Lieb
+lemma. If $0<M(Q)<M$, normalize the remainder to its limiting mass;
+boundedness of its kinetic and nonlinear terms makes the energy change
+$o(1)$. Splitting then contradicts \eqref{eq:r10-binding}. Hence
+$M(Q)=M$. For the remainder $w_n=f_n-Q$, the principal GN inequality
+gives
+\[
+ \|w_n\|_p^p\le C M(w_n)^r A_0(w_n)\longrightarrow0.
+\]
+Energy splitting now forces $A_0(w_n)+B(w_n)\to0$, giving strong $H^s$
+convergence and attainment.
+
+Realness does not require a modulus inequality for a higher-order
+operator. Write $f=X+iY$, put $\vartheta=M(X)/M(f)$, and, when both
+components are nonzero, set $g=X/\sqrt\vartheta$,
+$h=Y/\sqrt{1-\vartheta}$. These real functions have the same mass as
+$f$. Evenness of $k$ splits its form over real and imaginary parts,
+while convexity gives
+\[
+ |f|^p\le\vartheta|g|^p+(1-\vartheta)|h|^p,
+ \qquad E_k(f)\ge\vartheta E_k(g)+(1-\vartheta)E_k(h).
+\]
+Therefore a real minimizing sequence exists and its strong limit is real.
+
+Finally, for $M>M_\infty$ choose a smooth mass-$M$ function with
+$E_\infty(f)<0$. High-frequency dilation and
+\eqref{eq:r10-high-limit} give
+\[
+ \lambda^{-m}E_k(f_\lambda)\longrightarrow E_\infty(f)<0
+ \qquad(\lambda\longrightarrow\infty),
+\]
+using $k\le C|\xi|^m$ for domination. Hence $I(M)=-\infty$.
+\end{proof}
+
+For each minimizer $U$ in the open window, the multiplier equation and
+its scalar identity are
+\begin{equation}\label{eq:r10-multiplier}
+ k(D)U+\omega U-|U|^{2r}U=0,
+ \qquad \omega M=r[A_0(U)+B(U)]-pI(M)>0.
+\end{equation}
+If additionally $k$ is $C^{N+2}$ off zero and satisfies the individual
+order-$m$ derivative estimates
+\[
+ |\partial^\beta k(\xi)|\le C_\beta|\xi|^{m-|\beta|},
+ \qquad |\beta|\le N+2,
+\]
+the elliptic bootstrap gives $U\in L^\infty\cap H^{m+1}$. A real
+minimizer has zero momentum and its standing-wave formula gives a
+global solution directly.
+
+\subsection{The complete isotropic upper-endpoint classification}
+
+Consider the interpolation
+\begin{equation}\label{eq:r10-interpolation}
+ h=a_\infty-a_0,\qquad
+ k_q(\xi)=a_0(\xi)+h(\xi)\frac{|\xi|^q}{1+|\xi|^q}
+         =a_\infty(\xi)-d_q(\xi),\qquad
+ d_q(\xi)=\frac{h(\xi)}{1+|\xi|^q}.
+\end{equation}
+Write $D_q(f)=\int d_q|\widehat f|^2$. At mass $M_\infty$,
+\begin{equation}\label{eq:r10-endpoint-energy}
+ E_{k_q}(f)=E_\infty(f)-\tfrac12D_q(f),\qquad E_\infty(f)\ge0.
+\end{equation}
+
+\begin{theorem}[Upper-endpoint trichotomy]
+\label{thm:r10-endpoint}
+For \eqref{eq:r10-interpolation}, $q<m$ implies
+$I(M_\infty)=-\infty$, whereas $q>m$ implies
+$-\infty<I(M_\infty)<0$, attainment by a real minimizer, and
+precompactness of every minimizing sequence modulo translations.
+Both assertions allow anisotropic $a_0,a_\infty$.
+
+If $a_0(\xi)=|\xi|^m$ and
+$a_\infty(\xi)=(1+\varepsilon)|\xi|^m$, then at $q=m$,
+\begin{equation}\label{eq:r10-borderline-endpoint}
+ I(M_\infty)=-\tfrac12\varepsilon M_\infty,
+ \qquad M_\infty=(1+\varepsilon)^{N/m}M_0,
+\end{equation}
+and the infimum is not attained.
+\end{theorem}
+
+\begin{proof}
+Suppose $q<m$ and take an $a_\infty$ optimizer $Q$ of mass
+$M_\infty$, so $E_\infty(Q)=0$. Then
+\[
+ \lambda^{-(m-q)}D_q(Q_\lambda)
+ =\int\frac{h(\xi)}{\lambda^{-q}+|\xi|^q}|\widehat Q(\xi)|^2\,d\xi
+ \longrightarrow
+ \int h(\xi)|\xi|^{-q}|\widehat Q(\xi)|^2\,d\xi>0.
+\]
+The limit is finite: $0<m-q<m$, and the integrands are dominated by
+$C|\xi|^{m-q}|\widehat Q|^2$. Thus
+\eqref{eq:r10-endpoint-energy} tends to $-\infty$ along this sequence.
+
+Suppose $q>m$. Then $d_q$ is bounded and tends to zero at infinity, so
+\eqref{eq:r10-endpoint-energy} supplies the finite lower bound
+$-\|d_q\|_\infty M_\infty/2$. Negativity follows from the
+low-frequency trial since $M_\infty>M_0$. We must prove boundedness of
+minimizing sequences because \eqref{eq:r10-coercivity} degenerates at
+this endpoint. If instead a subsequence satisfies
+$A_\infty(f_n)=t_n^m\to\infty$, write
+$f_n(x)=t_n^{N/2}V_n(t_nx)$. Then
+\[
+ M(V_n)=M_\infty,\quad A_\infty(V_n)=1,\quad
+ E_\infty(V_n)=t_n^{-m}[E_{k_q}(f_n)+D_q(f_n)/2]\longrightarrow0.
+\]
+Normalized sharp-GN compactness gives, after translations,
+$V_n\to Q$ strongly in $H^s$, where $Q$ is an $a_\infty$ optimizer.
+The bounded multiplier and strong $L^2$ convergence permit replacement
+of $V_n$ by $Q$ in
+\[
+ D_q(f_n)=\int d_q(t_n\xi)|\widehat V_n(\xi)|^2\,d\xi.
+\]
+The expression for $Q$ tends to zero by dominated convergence. Thus
+$D_q(f_n)\to0$ and \eqref{eq:r10-endpoint-energy} implies
+$\liminf E_{k_q}(f_n)\ge0$, contradicting the negative infimum.
+Minimizing sequences are therefore bounded. Amplitude scaling proves
+\eqref{eq:r10-binding} also at $M=M_\infty$, since both positive
+submasses lie strictly below it. The compactness and realness arguments
+of Theorem~\ref{thm:r10-two-thresholds} now apply unchanged.
+
+In the isotropic case $q=m$,
+$d_m(\xi)=\varepsilon|\xi|^m/(1+|\xi|^m)<\varepsilon$.
+Every admissible nonzero function consequently has
+$E_{k_m}(f)>-\varepsilon M_\infty/2$. Conversely, high-frequency
+dilations of an $a_\infty$ optimizer have zero homogeneous energy and
+$D_m(Q_\lambda)\to\varepsilon M_\infty$ by dominated convergence.
+This proves the exact infimum and its nonattainment.
+\end{proof}
+
+For completeness, the anisotropic borderline $q=m$ cannot be replaced
+by the isotropic formula. Let $\mathcal G_\infty$ be the equality set
+normalized by $M=M_\infty$, $A_\infty=1$. Define
+\[
+ J_{\rm esc}=-\frac12\sup_{Q\in\mathcal G_\infty}
+       \int h(\xi/|\xi|)|\widehat Q(\xi)|^2\,d\xi.
+\]
+The supremum is attained by normalized GN compactness and continuity of
+this bounded multiplier form. High-frequency optimizer trials give
+$I(M_\infty)\le J_{\rm esc}$. If this inequality is strict,
+minimizing sequences are bounded and attainment follows. Indeed an
+unbounded sequence, normalized exactly as in the preceding proof,
+has a limiting homogeneous optimizer and energy liminf at least
+$J_{\rm esc}$. We make no assertion about attainment in the general
+anisotropic equality case.
+
+Every minimizer of \eqref{eq:r10-interpolation}, including the attained
+upper endpoint $q>m$, obeys the exact identity
+\begin{equation}\label{eq:r10-exact-negative-energy}
+ E_{k_q}(U)=-\frac{q}{2m}
+ \int h(\xi)\frac{|\xi|^q}{(1+|\xi|^q)^2}|\widehat U(\xi)|^2\,d\xi<0.
+\end{equation}
+To prove it, differentiate the explicit Fourier energy of the
+mass-preserving dilation at its scalar minimum $\lambda=1$. The
+derivative is dominated by $C|\xi|^m$. Subtract the resulting identity
+divided by $m$ from the energy. This uses no spatial moment.
+
+\subsection{Sharp behavior at the lower threshold}
+
+Return to the general symbol and assume additionally, uniformly on
+$S^{N-1}$,
+\begin{equation}\label{eq:r10-low-expansion}
+ R^{-(m+q)}b(R\theta)\longrightarrow c_*(\theta)
+ \qquad(R\downarrow0),
+\end{equation}
+where $c_*$ is positive elliptic and homogeneous of degree $m+q$.
+Let
+\[
+ \mathcal G_0=\{Q:M(Q)=M_0,\ A_0(Q)=1,\ \|Q\|_p^p=p/2\},
+ \qquad C_*(f)=\int c_*(\xi)|\widehat f(\xi)|^2\,d\xi.
+\]
+Assume that at least one $Q\in\mathcal G_0$ has $C_*(Q)<\infty$.
+This finite-moment assumption is automatic for $0<q\le m+2$ under the
+stated regularity of $a_0$: its optimizer equation and the elliptic
+bootstrap give $Q\in H^{m+1}$. For larger $q$ it is an explicit
+hypothesis; no unlimited smoothness of a non-polynomial nonlinearity is
+presumed.
+
+Define
+\begin{equation}\label{eq:r10-selection-constants}
+ \begin{gathered}
+ C_{\min}=\min_{Q\in\mathcal G_0}C_*(Q),\qquad
+ \beta_* =\left[\frac{m}{(m+q)C_{\min}}\right]^{1/q},\qquad
+ K_* =\frac{q}{2(m+q)}\beta_*^m,\\
+ \mathcal G_{\rm sel}=\{Q\in\mathcal G_0:C_*(Q)=C_{\min}\}.
+ \end{gathered}
+\end{equation}
+These definitions are well posed. The assumed finite trial gives
+finiteness; positivity follows from Jensen's inequality,
+\[
+ \int|\xi|^{m+q}|\widehat Q|^2
+ \ge M_0^{-q/m}\left(\int|\xi|^m|\widehat Q|^2\right)^{1+q/m},
+\]
+and $A_0(Q)=1$. A minimizing sequence in $\mathcal G_0$ is compact in
+$H^s$ modulo translations, and the nonnegative $C_*$ form is lower
+semicontinuous. Hence the minimum is attained. The selected set is
+compact in $H^s$ modulo translations and constant phase.
+
+\begin{theorem}[Scale law and optimizer selection]
+\label{thm:r10-selection}
+Let $M\downarrow M_0$ and let $U_M$ be any minimizer of $I(M)$. Set
+\begin{equation}\label{eq:r10-normalization}
+ \alpha=\frac{M}{M_0},\qquad d=\alpha^r-1,\qquad
+ \lambda_M=\left[\frac{A_0(U_M)}{\alpha}\right]^{1/m},\qquad
+ U_M(x)=\sqrt\alpha\,\lambda_M^{N/2}V_M(\lambda_Mx).
+\end{equation}
+Then $M(V_M)=M_0$, $A_0(V_M)=1$, and
+\begin{align}
+ I(M)&=-\alpha K_*d^{1+m/q}(1+o(1)),\label{eq:r10-energy-law}\\
+ \lambda_M/d^{1/q}&\longrightarrow\beta_*,\label{eq:r10-scale-law}\\
+ \operatorname{dist}_{H^s}(V_M,\mathcal G_{\rm sel})&\longrightarrow0,
+       \label{eq:r10-shape-law}\\
+ 1-\frac2p\|V_M\|_p^p&=o(d),\label{eq:r10-deficit-law}\\
+ \frac{B(U_M)}{A_0(U_M)}&=\frac{m}{m+q}d+o(d).
+       \label{eq:r10-equipartition-law}
+\end{align}
+The distance includes translations and constant phases, already
+contained in $\mathcal G_{\rm sel}$. For the multiplier in
+\eqref{eq:r10-multiplier},
+\begin{equation}\label{eq:r10-frequency-law}
+ \omega_M=\frac{r}{M_0}\beta_*^m d^{m/q}(1+o(1)).
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+For the normalization $M(V)=M_0$, $A_0(V)=1$, let
+$H(V)=1-(2/p)\|V\|_p^p\ge0$. The exact energy formula is
+\begin{equation}\label{eq:r10-exact-scaled-energy}
+ I(M)=\frac{\alpha\lambda_M^m}{2}
+          [-d+(1+d)H(V_M)]
+       +\frac\alpha2\int b(\lambda_M\xi)|\widehat V_M(\xi)|^2\,d\xi.
+\end{equation}
+Negativity implies $0\le H(V_M)<d/(1+d)$. Therefore normalized
+sharp-GN compactness applies, giving subsequential convergence, modulo
+translation and phase, to some $Q\in\mathcal G_0$ strongly in $H^s$.
+
+First $\lambda_M\to0$. Otherwise along a subsequence
+$\lambda_M\ge\ell>0$, and \eqref{eq:r10-bounds} gives
+\[
+ \frac{B(U_M)}{A_0(U_M)}
+ \ge c\int\min\{\lambda_M^q|\xi|^{m+q},|\xi|^m\}
+                         |\widehat V_M(\xi)|^2\,d\xi.
+\]
+Choose a compact annulus carrying positive Fourier mass of the limiting
+$Q$. The right side is then bounded below by a fixed positive number.
+But \eqref{eq:r10-exact-scaled-energy} implies $B/A_0<d\to0$, a
+contradiction.
+
+Define the rescaled correction form
+\[
+ D_\lambda(V)=\int\frac{b(\lambda\xi)}{\lambda^{m+q}}
+                              |\widehat V(\xi)|^2\,d\xi.
+\]
+Whenever $\lambda_n\downarrow0$ and $V_n\to Q$ strongly in $H^s$,
+\begin{equation}\label{eq:r10-correction-liminf}
+ \liminf_n D_{\lambda_n}(V_n)\ge C_*(Q).
+\end{equation}
+Indeed on a compact annulus, \eqref{eq:r10-low-expansion} gives uniform
+multiplier convergence and strong Fourier $L^2$ convergence gives
+convergence of the integral. Discard the complement by nonnegativity,
+then exhaust all frequencies. In particular the liminf is at least
+$C_{\min}$ for the normalized minimizing profiles. This step does not
+assume uniform higher moments of those profiles.
+
+For a fixed $Q\in\mathcal G_{\rm sel}$,
+\eqref{eq:r10-bounds} bounds the rescaled multiplier by
+$C|\xi|^{m+q}$. Dominated convergence gives
+$D_\lambda(Q)\to C_{\min}$. Testing with
+$\sqrt\alpha(\beta_*d^{1/q})^{N/2}Q(\beta_*d^{1/q}x)$ proves
+\begin{equation}\label{eq:r10-energy-limsup}
+ \limsup_{M\downarrow M_0}\frac{I(M)}{\alpha d^{1+m/q}}
+ \le-K_*<0.
+\end{equation}
+On the other hand, negativity in
+\eqref{eq:r10-exact-scaled-energy} gives
+$\lambda_M^qD_{\lambda_M}(V_M)<d$. Equation
+\eqref{eq:r10-correction-liminf} consequently yields
+$\lambda_M^q\le2d/C_{\min}$ for small $d$. The lower bound
+$I(M)\ge-\alpha d\lambda_M^m/2$, combined with
+\eqref{eq:r10-energy-limsup}, yields
+$\lambda_M^m\ge K_*d^{m/q}$ for small $d$. Thus
+\begin{equation}\label{eq:r10-scale-comparable}
+ 0<c\le\beta_M:=\lambda_M/d^{1/q}\le C<\infty.
+\end{equation}
+The same inequalities bound $D_{\lambda_M}(V_M)$ and $H(V_M)/d$.
+
+Extract a subsequence with $\beta_M\to\beta\in(0,\infty)$,
+$V_M\to Q\in\mathcal G_0$ strongly in $H^s$ modulo symmetries, and
+convergent bounded scalar quantities $D_{\lambda_M}(V_M)$ and
+$H(V_M)/d$. Divide \eqref{eq:r10-exact-scaled-energy} by
+$\alpha d^{1+m/q}$:
+\begin{equation}\label{eq:r10-final-scaled-energy}
+ \frac{I(M)}{\alpha d^{1+m/q}}
+ =\frac12\left[-\beta_M^m
+ +(1+d)\beta_M^m\frac{H(V_M)}d
+ +\beta_M^{m+q}D_{\lambda_M}(V_M)\right].
+\end{equation}
+Its liminf is at least
+\[
+ \tfrac12[-\beta^m+C_*(Q)\beta^{m+q}]
+ \ge\min_{t>0}\tfrac12[-t^m+C_{\min}t^{m+q}]=-K_*.
+\]
+Equality with \eqref{eq:r10-energy-limsup} forces
+$\beta=\beta_*$, the unique scalar minimizer, and
+$C_*(Q)=C_{\min}$. It also forces
+$H(V_M)/d\to0$ and $D_{\lambda_M}(V_M)\to C_{\min}$.
+Every extracted limit has these properties. This proves
+\eqref{eq:r10-energy-law}--\eqref{eq:r10-deficit-law}, including the
+distance statement. Finally,
+\[
+ \frac{B(U_M)}{A_0(U_M)}
+ =\lambda_M^qD_{\lambda_M}(V_M)
+ =d\beta_*^qC_{\min}+o(d)=\frac{m}{m+q}d+o(d).
+\]
+The multiplier identity \eqref{eq:r10-multiplier}, together with
+$A_0(U_M)=\alpha\lambda_M^m$, $B/A_0=O(d)$, and $I/A_0=O(d)$, gives
+$\omega_M/\lambda_M^m\to r/M_0$, proving
+\eqref{eq:r10-frequency-law}.
+\end{proof}
+
+The proof also gives the normalized frequency correction
+\[
+ \frac{\omega_M}{\lambda_M^m}
+ =\frac r{M_0}+\frac1{M_0}\left(r+\frac q{m+q}\right)d+o(d).
+\]
+This does not assert an additional-order expansion of $\lambda_M$.
+
+\subsection{The limiting functional}
+
+The selection has a precise variational interpretation. For $d>0$ set
+$\alpha_d=(1+d)^{1/r}$ and $\ell=d^{1/q}$, and define, on $H^s$,
+\[
+ \mathcal F_d(W)=
+ \frac{E_k(\sqrt{\alpha_d}\,\ell^{N/2}W(\ell\,\cdot))}
+      {\alpha_d d^{1+m/q}}
+ \quad\hbox{if }M(W)=M_0,
+ \qquad \mathcal F_d(W)=+\infty\quad\hbox{otherwise}.
+\]
+The exact expression on the mass constraint is
+\begin{equation}\label{eq:r10-gamma-exact}
+ \mathcal F_d(W)=\frac{E_0(W)}d-\frac1p\|W\|_p^p
+       +\frac12\int\frac{b(\ell\xi)}{\ell^{m+q}}
+                                 |\widehat W(\xi)|^2\,d\xi.
+\end{equation}
+
+\begin{proposition}[Variational selection on the equality manifold]
+\label{prop:r10-gamma}
+In the strong $H^s$ topology, $\mathcal F_d$ $\Gamma$-converges as
+$d\downarrow0$ to
+\[
+ \mathcal F_0(W)=
+ \begin{cases}
+ \tfrac12[C_*(W)-A_0(W)],&M(W)=M_0,\ E_0(W)=0,\\
+ +\infty,&\text{otherwise}.
+ \end{cases}
+\]
+Its minimizers are exactly the dilates
+$\beta_*^{N/2}Q(\beta_*\,\cdot)$ with
+$Q\in\mathcal G_{\rm sel}$, including their symmetries.
+\end{proposition}
+
+\begin{proof}
+On the fixed mass constraint $E_0\ge0$. If $W_n\to W$ strongly in
+$H^s$ and $E_0(W)>0$, continuity of the homogeneous energy and the
+nonlinear norm makes \eqref{eq:r10-gamma-exact} tend to $+\infty$.
+If $E_0(W)=0$, discard its nonnegative first term and apply the annular
+liminf argument \eqref{eq:r10-correction-liminf}. Since equality in
+the GN inequality gives $\|W\|_p^p/p=A_0(W)/2$, this is the required
+liminf. A limit of the fixed mass constraint has mass $M_0$ by strong
+$L^2$ convergence. For finite $\mathcal F_0(W)$, the constant sequence
+$W$ is a recovery sequence, using domination by
+$C|\xi|^{m+q}|\widehat W|^2$. This proves the $\Gamma$-limit.
+Every nonzero equality profile is a dilation of an element of
+$\mathcal G_0$; minimizing its scalar dilation gives exactly
+\eqref{eq:r10-selection-constants}.
+\end{proof}
+
+Translation invariance prevents global equicoercivity in $H^s$; none
+is asserted. Theorem~\ref{thm:r10-selection} separately proves
+compactness of the rescaled minimizers modulo translations. The
+limiting principle says that the first nonzero low-frequency correction
+selects a subset of the entire homogeneous optimizer manifold.
+
+\subsection{A joint small-perturbation and mass-excess limit}
+
+There is a complementary selection limit that needs no higher-moment
+hypothesis. Fix a positive elliptic homogeneous symbol $a$ as above and
+let
+\[
+ b_0(\xi)=a(\xi)\frac{|\xi|^q}{1+|\xi|^q},\qquad
+ k_\varepsilon=a+\varepsilon b_0,\qquad M_c=M_{c,a}.
+\]
+Write $A=A_a$, $B_0(f)=\int b_0|\widehat f|^2$, and let
+$I_\varepsilon$ be the constrained infimum for $k_\varepsilon$. The
+entire homogeneous equality manifold, with no kinetic normalization, is
+\[
+ \mathcal H=\{Q:M(Q)=M_c,\ E_a(Q)=0\}.
+\]
+For $0<\tau<1$ define
+\[
+ J(\tau)=\inf_{Q\in\mathcal H}\tfrac12[B_0(Q)-\tau A(Q)],\qquad
+ \mathcal S_\tau=\operatorname*{argmin}_{Q\in\mathcal H}
+                                \tfrac12[B_0(Q)-\tau A(Q)].
+\]
+
+\begin{proposition}[Selection by an arbitrarily weak perturbation]
+\label{prop:r10-crossover}
+For every $0<\tau<1$, $J(\tau)$ is finite, negative, and attained, and
+$\mathcal S_\tau$ is compact in $H^s$ modulo translations and phase.
+Let $\varepsilon\downarrow0$, set
+\[
+ \alpha_\varepsilon=(1+\varepsilon\tau)^{1/r},\qquad
+ M_\varepsilon=\alpha_\varepsilon M_c,
+\]
+and let $U_\varepsilon$ be any minimizer of
+$I_\varepsilon(M_\varepsilon)$. Then
+\[
+ \frac{I_\varepsilon(M_\varepsilon)}
+             {\alpha_\varepsilon\varepsilon}\longrightarrow J(\tau),
+ \qquad
+ \operatorname{dist}_{H^s}
+       (U_\varepsilon/\sqrt{\alpha_\varepsilon},\mathcal S_\tau)
+       \longrightarrow0.
+\]
+No spatial rescaling is used. The same assertions hold along
+$\tau_\varepsilon\to\tau\in(0,1)$, with
+$\alpha_\varepsilon=(1+\varepsilon\tau_\varepsilon)^{1/r}$ and limiting
+set $\mathcal S_\tau$; the compactness estimates are uniform for
+$\tau_\varepsilon$ in a compact subinterval of $(0,1)$.
+\end{proposition}
+
+\begin{proof}
+For every $\eta>0$,
+$B_0(f)\ge(1-\eta)A(f)-C_\eta M(f)$. Thus the objective defining
+$J(\tau)$ is coercive in $A$ on $\mathcal H$ if $\eta<1-\tau$.
+Low-frequency dilation of any homogeneous optimizer makes the
+objective negative. Its minimizing sequences consequently have $A$
+bounded above and bounded away from zero, the latter because the
+objective is at least $-\tau A/2$. Normalize $A$ to one and apply
+sharp-GN compactness. The normalizing scales stay in a compact subset
+of $(0,\infty)$, giving strong $H^s$ convergence modulo translations.
+Continuity of the order-$m$ form $B_0$ proves attainment and compactness
+of the selected set.
+
+On the mass constraint $M(f)=M_c$, the exact identity is
+\begin{equation}\label{eq:r10-crossover-functional}
+ \frac{E_{k_\varepsilon}(\sqrt{\alpha_\varepsilon}f)}
+             {\alpha_\varepsilon\varepsilon}
+ =\frac{E_a(f)}\varepsilon+\frac12B_0(f)
+                              -\frac\tau p\|f\|_p^p.
+\end{equation}
+It $\Gamma$-converges in the strong $H^s$ topology to
+$[B_0-\tau A]/2$ on $\mathcal H$ and $+\infty$ off $\mathcal H$:
+use $E_a\ge0$, continuity of the last two terms, and constant equality
+profiles as recovery sequences.
+
+We prove compactness of actual minimizers separately. The sharp GN
+inequality at mass $\alpha_\varepsilon M_c$ gives
+\[
+ E_{k_\varepsilon}(U)
+ \ge\frac\varepsilon2
+       [(1-\eta-\tau)A(U)-C_\eta M(U)].
+\]
+Testing \eqref{eq:r10-crossover-functional} with a selected profile
+gives the exact bound
+$I_\varepsilon/(\alpha_\varepsilon\varepsilon)\le J(\tau)<0$.
+Hence $A(U_\varepsilon)$ is uniformly bounded. The other lower bound
+$E_{k_\varepsilon}(U)\ge-\varepsilon\tau A(U)/2$ forces it to be
+bounded away from zero. With
+$f_\varepsilon=U_\varepsilon/\sqrt{\alpha_\varepsilon}$, identity
+\eqref{eq:r10-crossover-functional} now gives
+$E_a(f_\varepsilon)=O(\varepsilon)$. Normalize the kinetic form and
+use sharp-GN compactness to obtain a strong $H^s$ limit
+$Q\in\mathcal H$ modulo translation, without any escaping spatial
+scale. The $\Gamma$-liminf is at least $J(\tau)$ and the trial upper
+bound is at most $J(\tau)$, proving convergence of the energies and
+selection of $Q\in\mathcal S_\tau$.
+
+For $\tau_\varepsilon\to\tau$, the same proof has uniform constants:
+choose $\eta$ below the distance of the compact parameter interval to
+one, and a single sufficiently low-frequency optimizer trial that is
+strictly negative for the smallest parameter in that interval.
+Continuity of the bounded-energy objective gives the stated limit.
+\end{proof}
+
+Along every convergent subsequence in this proposition, the multiplier
+satisfies $\omega_\varepsilon\to rA(Q)/M_c$ for
+$Q\in\mathcal S_\tau$. Thus a perturbation tending to zero can select
+a finite spatial scale and frequency from the critical homogeneous
+family when the mass excess has the same order as the perturbation.
+The selection functional $J$ is concave and strictly decreasing. The
+first property follows by taking an infimum of affine functions; for
+the second, test the objective at $\tau_2>\tau_1$ with a minimizer
+$Q_1$ at $\tau_1$ to obtain
+\[
+ J(\tau_2)\le J(\tau_1)-\tfrac12(\tau_2-\tau_1)A(Q_1)<J(\tau_1).
+\]
+
+\subsection{A quartic example with explicit exponents}
+
+For $a_0(\xi)=|\xi|^4$ and
+$b(\xi)=\varepsilon|\xi|^6/(1+|\xi|^2)$, let
+\[
+ S_6=\min_{Q\in\mathcal G_0}\int|\xi|^6|\widehat Q(\xi)|^2\,d\xi,
+ \qquad d=(M/M_0)^{4/N}-1,\qquad \alpha=M/M_0.
+\]
+The higher-moment hypothesis holds, and $C_{\min}=\varepsilon S_6$.
+Theorem~\ref{thm:r10-selection} gives
+\[
+ I(M)\sim-\alpha\frac{2}{27\varepsilon^2 S_6^2}d^3,
+ \qquad \lambda_M^2\sim\frac{2}{3\varepsilon S_6}d,
+ \qquad
+ \omega_M\sim\frac{4}{NM_0}\frac{4}{9\varepsilon^2 S_6^2}d^2.
+\]
+Thus the spatial dilation length grows as $d^{-1/2}$, the principal
+kinetic energy vanishes as $d^2$, and the negative constrained energy
+vanishes as $d^3$. The selected critical profiles minimize their sixth
+Fourier moment. At the other end, $q=2<m=4$ implies
+$I(M_\infty)=-\infty$.
+
+For the isotropic family as a whole the result is a complete constrained
+energy classification: zero nonattained infimum up to $M_0$, negative
+attained infimum in $(M_0,M_\infty)$, and $-\infty$ above
+$M_\infty$, with the upper endpoint determined by the three cases in
+Theorem~\ref{thm:r10-endpoint}. The new asymptotic concerns a class of
+nonhomogeneous equations; it does not resolve the unrestricted dynamics
+of the original homogeneous BNLS.

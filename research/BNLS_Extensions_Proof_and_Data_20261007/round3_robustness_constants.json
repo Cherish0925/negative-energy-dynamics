@@ -1,0 +1,29 @@
+{
+  "all_pass": true,
+  "checks": {
+    "base_inverse_below_29": true,
+    "base_response_below_151": true,
+    "fixed_point_ball_invariant": true,
+    "fixed_point_contraction": true,
+    "energy_coefficient_below_minus_18": true
+  },
+  "speed_upper_bound": "1/1000000",
+  "static_operator_budget": "delta_a + ||B||/2 <= |v|^2/2000",
+  "W_over_s_squared": {
+    "fraction": "14308261787529/10000000",
+    "decimal_for_orientation": 1430826.1787529
+  },
+  "ball_fraction": {
+    "fraction": "1524308261787529/2000000000000000",
+    "decimal_for_orientation": 0.7621541308937645
+  },
+  "contraction_constant": {
+    "fraction": "28581702187529/2000000000000000",
+    "decimal_for_orientation": 0.0142908510937645
+  },
+  "energy_over_s_squared_upper_bound": {
+    "fraction": "-793334297385473/40000000000000",
+    "decimal_for_orientation": -19.833357434636824
+  },
+  "note": "Exact Fraction comparisons prove the claims; decimal fields are explanatory only."
+}

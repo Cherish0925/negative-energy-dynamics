@@ -1,0 +1,491 @@
+\section{Homogeneous transport, anisotropic dispersion, and nonlocal attraction}
+\label{sec:r11-transport}
+
+The transport argument extends to general homogeneous symbols without a
+sign assumption on the localized principal commutator. Its key is an
+exact cancellation on a spatially supported core. We obtain a common
+time-dependent result for local critical powers and Hartree attraction.
+The quantity localized in the general theorem is the full homogeneous
+kinetic density; the stronger gradient conclusion for isotropic quartic
+dispersion is considered separately at the end.
+
+\subsection{Equations and solution class}
+Fix $m>1$, $N\ge1$, and $s=m/2$. Let $a$ be real, even, homogeneous
+of degree $m$, $C^{N+2}$ away from zero, and positive elliptic:
+\[
+ c|\xi|^m\le a(\xi)\le C|\xi|^m.
+\]
+Set
+\[
+ A(u)=\int a(\xi)|\widehat u(\xi)|^2\,d\xi,
+ \quad M(u)=\|u\|_2^2,
+ \quad P(u)=\int\xi|\widehat u(\xi)|^2\,d\xi.
+\]
+Momentum is finite since $m>1$. We treat either
+\begin{align}
+ iu_t&=a(D)u-|u|^{p-2}u,
+ &p&=2+2m/N,
+ &E(u)&=\tfrac12A(u)-\tfrac1p\|u\|_p^p,
+ \label{r11tr:local}
+\end{align}
+or, for $1<m<N$,
+\begin{align}
+ iu_t&=a(D)u-(K*|u|^2)u,
+ &E(u)&=\tfrac12A(u)-\tfrac14H(u),
+ \label{r11tr:hartree}\\
+ H(u)&=\iint K(x-y)|u(x)|^2|u(y)|^2\,dx\,dy.
+ \notag
+\end{align}
+Here $K$ is real, even, $C^1$ off zero, homogeneous of degree $-m$, and
+\begin{equation}\label{r11tr:kernel}
+ |K(x)|+|x||\nabla K(x)|\le C_K|x|^{-m}.
+\end{equation}
+Positive type is unnecessary for the transport theorem: all nonlinear
+error estimates use the absolute Riesz interaction. This differs from
+the positivity needed for the phase-kernel argument.
+
+Throughout this section, $u\in C([0,\infty);H^s)$ is a strong energy
+solution with conserved $M,P,E$, satisfying
+\begin{equation}\label{r11tr:bound}
+ \sup_{t\ge0}\|u(t)\|_{H^s}\le B<\infty.
+\end{equation}
+We assume the solution is obtained, on compact time intervals, as a
+strong energy-space limit of sufficiently smooth solutions, so that
+the integrated localized virial identity follows from the estimates
+below. No local well-posedness theorem for arbitrary anisotropic
+symbols is asserted here.
+
+Choose $\chi\in C_c^\infty$ with $0\le\chi\le1$, equal to one on
+$|x|\le1$ and zero on $|x|\ge2$, and put $\eta=1-\chi$.
+For a center $c(t)$ define
+\begin{align}
+ T_R^c(t)&=\bigl\||D|^s[\eta((x-c(t))/R)u(t)]\bigr\|_2^2,
+ \label{r11tr:cut-tail}\\
+ D_R^c(t)&=\int_{|x-c(t)|>R}\bigl||D|^s u(t,x)\bigr|^2\,dx.
+ \label{r11tr:literal-tail}
+\end{align}
+These are distinct quantities, but the cutoff commutator below makes
+their localization properties equivalent on a bounded energy ball.
+
+\subsection{The kinetic commutator is exact on the core}
+Choose a real smooth compactly supported vector field $f$ equal to $x$
+on $|x|\le4$. Set
+\[
+ f_R(x)=Rf(x/R),\qquad
+ L_R=f_R\cdot\nabla+\tfrac12\operatorname{div}f_R,
+ \qquad B_R=-iL_R,
+ \qquad C_R=[a(D),L_R].
+\]
+Thus $L_R$ is skew-adjoint, while $B_R$ and $C_R$ are symmetric forms.
+Write
+\[
+ Q_R(w)^2=\||D|^s w\|_2^2+R^{-m}\|w\|_2^2.
+\]
+
+\begin{lemma}[Uniform form bound and core cancellation]
+\label{lem:r11tr-core}
+For all $R>0$ and $z,w\in H^s$,
+\begin{equation}\label{r11tr:form}
+ |\langle z,C_Rw\rangle|+
+ |\langle z,ma(D)w\rangle|\le C Q_R(z)Q_R(w).
+\end{equation}
+If $z$ is supported in $|x|\le2R$, then
+\begin{equation}\label{r11tr:exact-core}
+ \langle z,[C_R-ma(D)]z\rangle=0.
+\end{equation}
+Consequently, on a bounded $H^s$ ball and for $R\ge1$,
+\begin{equation}\label{r11tr:kinetic-tail}
+ \left|\langle u,C_Ru\rangle-mA(u)\right|
+ \le C_B\left(\||D|^s(\eta_Ru)\|_2+R^{-s}\right).
+\end{equation}
+All statements also hold about any fixed center.
+\end{lemma}
+\begin{proof}
+At $R=1$ the Fourier kernel of $C_1$, up to a fixed normalization and
+the factor $i$, is
+\[
+ \tfrac12[a(\xi)-a(\zeta)](\xi+\zeta)\cdot
+                   \widehat f(\xi-\zeta).
+\]
+The homogeneous derivative bound gives
+\[
+ |a(\xi)-a(\zeta)|\,|\xi+\zeta|
+ \le C|\xi-\zeta|(|\xi|+|\zeta|)^m.
+\]
+After division by $\langle\xi\rangle^s\langle\zeta\rangle^s$,
+the right side is at most
+$C|\xi-\zeta|\langle\xi-\zeta\rangle^s$. Its product with
+$|\widehat f(\xi-\zeta)|$ is integrable. Schur's test therefore
+bounds $C_1:H^s\to H^{-s}$. Under the unitary rescaling
+$v(y)=R^{N/2}w(Ry)$, $C_R$ becomes $R^{-m}C_1$.
+This proves \eqref{r11tr:form}; the term $ma(D)$ is immediate.
+
+For smooth compactly supported $z$ in the stated ball,
+$L_Rz=(x\cdot\nabla+N/2)z$. Homogeneity and differentiation of
+$A(\lambda^{N/2}z(\lambda\cdot))=\lambda^mA(z)$ give
+\[
+ 2\operatorname{Re}\langle a(D)z,L_Rz\rangle=mA(z),
+\]
+which is \eqref{r11tr:exact-core}. Approximation within a slightly
+larger ball and \eqref{r11tr:form} extend the equality to supported
+$H^s$ functions. This is equality of quadratic forms, not a claim
+that the defect operator annihilates $z$ pointwise.
+
+Let $z=\chi_Ru$, $w=\eta_Ru$ and $\mathcal D_R=C_R-ma(D)$.
+The core equality gives
+\[
+ \langle u,\mathcal D_Ru\rangle
+ =\langle w,\mathcal D_Rw\rangle
+       +2\operatorname{Re}\langle z,\mathcal D_Rw\rangle.
+\]
+The smooth-cutoff product estimate
+\[
+ \||D|^s(\chi_Ru)\|_2
+ \le C\bigl(\||D|^su\|_2+R^{-s}\|u\|_2\bigr)
+\]
+and \eqref{r11tr:form} now prove \eqref{r11tr:kinetic-tail}.
+The product estimate itself follows at scale one from the convolution
+inequality $|\xi|^s\le C_s(|\zeta|^s+|\xi-\zeta|^s)$ and Young's
+inequality, followed by rescaling.
+\end{proof}
+
+No favorable sign of the principal symbol
+$\nabla a(\xi)\cdot Df_R(x)\xi$ is used. In particular, the proof
+does not infer such a sign from ellipticity or convexity of $a$.
+
+\begin{lemma}[Cutoff energy and the literal kinetic tail]
+\label{lem:r11tr-tail-equivalence}
+Put $\delta=\min(s,1)$. On the ball \eqref{r11tr:bound},
+\begin{equation}\label{r11tr:tail-equivalence}
+ (T_R^c)^{1/2}\le(D_R^c)^{1/2}+C_BR^{-\delta},\qquad
+ (D_{2R}^c)^{1/2}\le(T_R^c)^{1/2}+C_BR^{-\delta}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+For $0<s<1$, the Fourier inequality
+$||\xi|^s-|\zeta|^s|\le|\xi-\zeta|^s$ and Young's inequality give
+\[
+ \|[|D|^s,\eta_R]u\|_2\le CR^{-s}\|u\|_2.
+\]
+For $s\ge1$, use
+\[
+ ||\xi|^s-|\zeta|^s|
+ \le C_s|\xi-\zeta|
+             (|\zeta|^{s-1}+|\xi-\zeta|^{s-1})
+\]
+to obtain
+\[
+ \|[|D|^s,\eta_R]u\|_2
+ \le C\left(R^{-1}\||D|^{s-1}u\|_2+R^{-s}\|u\|_2\right).
+\]
+Only the compact part $-\chi_R$ contributes to the commutator.
+The uniform bound is $C_BR^{-\delta}$. Since $\eta_R=0$ inside
+the radius-$R$ ball and $\eta_R=1$ outside the radius-$2R$ ball,
+the triangle inequality proves both assertions.
+\end{proof}
+
+\subsection{The common time-dependent estimate}
+Let $c$ be Lipschitz with $\|c'\|_\infty\le L$ and set
+\begin{equation}\label{r11tr:virial}
+ J_R(t)=2\langle u(t),B_R^{c(t)}u(t)\rangle
+ =2\operatorname{Im}\int f_R(x-c(t))\cdot\overline u\nabla u.
+\end{equation}
+For $s<1$, the last expression denotes the symmetric $H^{1/2}$
+quadratic form, defined by density.
+
+\begin{lemma}[Two-sided localized virial estimate]
+\label{lem:r11tr-virial}
+Set
+\[
+ \gamma=\min\left(\tfrac12,\tfrac1m\right),\qquad
+ \beta=\min\left(\tfrac m2,1\right),\qquad
+ \widetilde\beta=\min\left(\tfrac m2,\tfrac2m\right).
+\]
+There are constants $C_0,C_1$ depending on the fixed equation,
+$M,B,L$ and cutoffs such that, for $R\ge1$,
+\begin{align}
+ |J_R(t)|&\le C_0R,\label{r11tr:endpoint}\\
+ |J_R'-4mE+2c'\cdot P|
+ &\le C_1\left((T_R^c)^\gamma+R^{-\beta}\right),
+ \label{r11tr:virial-cut}\\
+ |J_R'-4mE+2c'\cdot P|
+ &\le C_1\left((D_R^c)^\gamma+R^{-\widetilde\beta}\right).
+ \label{r11tr:virial-literal}
+\end{align}
+The derivative assertions are understood as integrated identities with
+an error bounded by the integral of the displayed right side.
+\end{lemma}
+\begin{proof}
+The scale-one first-order Fourier-Schur form estimate and rescaling give
+\[
+ |\langle u,B_Ru\rangle|
+ \le C\bigl(R\||D|^{1/2}u\|_2^2+M\bigr).
+\]
+Since $s>1/2$, this proves \eqref{r11tr:endpoint}. The kinetic
+contribution to $J_R'$ is $2\langle u,C_Ru\rangle$.
+Lemma~\ref{lem:r11tr-core} controls its error from $2mA(u)$.
+
+For the local equation, direct integration by parts gives the nonlinear
+term
+\[
+ -\frac{2(p-2)}p\int\operatorname{div}f_R(x-c)|u|^p.
+\]
+Its difference from $-4m\|u\|_p^p/p$ is bounded by
+$C\int_{|x-c|>4R}|u|^p$. Critical interpolation gives
+\begin{equation}\label{r11tr:local-tail}
+ \int_{|x-c|>4R}|u|^p
+ \le\|\eta_Ru\|_p^p\le C M^{m/N}T_R^c.
+\end{equation}
+
+For the Hartree equation, write $\rho=|u|^2$. Symmetrization gives
+the nonlinear term
+\[
+ \iint\rho(x)\rho(y)
+  [f_R(x-c)-f_R(y-c)]\cdot\nabla K(x-y)\,dx\,dy.
+\]
+Its difference from $-mH(u)$ vanishes if both points lie in
+$B(c,4R)$. The Lipschitz bound on $f_R$ and
+\eqref{r11tr:kernel} dominate the error by the absolute Riesz
+interaction with at least one point outside that ball. For
+$q=4N/(2N-m)$, Hardy--Littlewood--Sobolev and interpolation yield
+\begin{align}
+ |\text{Hartree error}|
+ &\le C\|\eta_Ru\|_q^2\|u\|_q^2
+ \le C_{M,B}(T_R^c)^{1/2},\label{r11tr:hartree-tail}\\
+ \|w\|_q^2&\le C\|w\|_2\||D|^sw\|_2.\notag
+\end{align}
+Symmetrization supplies one factor $|x-y|$ at the diagonal, so HLS
+also justifies passage from a regularized kernel.
+
+Motion of the center adds
+\[
+ -2c'(t)\cdot\int Df_R(x-c)\operatorname{Im}(\overline u\nabla u).
+\]
+The difference from $-2c'\cdot P$ uses $g_R=Df_R-I$, which
+vanishes on $B(c,4R)$. Its current form on $u$ is exactly its
+current form on $w=\eta_Ru$: the cutoff is one on the support
+of $g_R$, and its derivative contributes only a real multiple of
+$|u|^2$. The rescaled first-order form estimate gives
+\begin{align*}
+ \left|\operatorname{Im}\int g_R\overline w\nabla w\right|
+ &\le C\bigl(\||D|^{1/2}w\|_2^2+R^{-1}\|w\|_2^2\bigr)\\
+ &\le C_M(T_R^c)^{1/m}+C_MR^{-1}.
+\end{align*}
+Here $g_R$ is a constant matrix plus a rescaled smooth compactly
+supported matrix; its constant part is the ordinary momentum form.
+The last inequality is interpolation between orders zero and $s$.
+All current identities extend by density in $H^{1/2}$.
+
+The principal terms are $4mE-2c'\cdot P$ in both equations.
+Since $T_R^c$ is uniformly bounded, reducing the powers
+$1/2,1,1/m$ to $\gamma$ proves \eqref{r11tr:virial-cut}.
+Lemma~\ref{lem:r11tr-tail-equivalence} gives
+\[
+ (T_R^c)^\gamma\le C(D_R^c)^\gamma+C_BR^{-2\delta\gamma}.
+\]
+Since $2\delta\gamma=\widetilde\beta\le\beta$, this proves
+\eqref{r11tr:virial-literal}. Every form and nonlinear expression
+used above is continuous on bounded energy-space sets. Approximation
+therefore proves the integrated statements for the solution class
+specified above.
+\end{proof}
+
+\subsection{Persistent exterior kinetic density and exact averaged drift}
+
+\begin{theorem}[Transport at a distance proportional to the time window]
+\label{thm:r11tr-ballistic}
+Assume $E=-e<0$ and $P=0$. For every speed bound $L$, there are
+$\nu,d>0$, depending only on the fixed equation, $M,B,e,L$ and
+cutoffs, such that every center $c$ with speed at most $L$ satisfies
+\begin{equation}\label{r11tr:ballistic}
+ \liminf_{T\to\infty}\inf_{S\ge0}\frac1T
+  \int_S^{S+T}\int_{|x-c(t)|>\nu T}
+                \bigl||D|^{m/2}u(t,x)\bigr|^2\,dx\,dt
+ \ge d.
+\end{equation}
+\end{theorem}
+\begin{proof}
+Integrate the upper half of \eqref{r11tr:virial-literal} over
+$[S,S+T]$ and use \eqref{r11tr:endpoint}:
+\[
+ C_1\frac1T\int_S^{S+T}(D_R^c)^\gamma\,dt
+ \ge4me-C_1R^{-\widetilde\beta}-2C_0R/T.
+\]
+Choose $\nu>0$ with $2C_0\nu\le me$ and put $R=\nu T$,
+held fixed during this time integration. For large $T$, the right
+side is at least $2me$. Jensen's inequality, using $\gamma\le1$,
+gives the asserted lower bound with $d=(2me/C_1)^{1/\gamma}$.
+The bounds are uniform in $S$ and in all centers of the given speed.
+\end{proof}
+
+\begin{remark}
+The conclusion concerns the nonlocal homogeneous kinetic density when
+$m$ is not an even integer. Its exterior integral is uniformly bounded,
+so the lower average forces a positive fraction of times in each long
+window to have nonzero exterior kinetic density. This is not a
+finite-speed theorem or a finite radiation-budget estimate, and does
+not exclude indefinite replenishment of exterior activity.
+\end{remark}
+
+\begin{theorem}[Exact drift under averaged kinetic localization]
+\label{thm:r11tr-drift}
+For either equation and a Lipschitz center $c$, suppose
+\begin{equation}\label{r11tr:average-tight}
+ \lim_{R\to\infty}\limsup_{T\to\infty}\frac1T
+                  \int_0^T D_R^c(t)\,dt=0.
+\end{equation}
+Then the limit exists and
+\begin{equation}\label{r11tr:drift}
+ \lim_{T\to\infty}\frac{P\cdot[c(T)-c(0)]}{T}=2mE.
+\end{equation}
+In particular $E<0$ and $P=0$ exclude
+\eqref{r11tr:average-tight}.
+\end{theorem}
+\begin{proof}
+Integrate the two-sided estimate \eqref{r11tr:virial-literal},
+divide by $T$, and use \eqref{r11tr:endpoint} and Jensen.
+For fixed $R$, the limiting discrepancy from \eqref{r11tr:drift}
+is at most
+\[
+ C\left[R^{-\widetilde\beta}+
+       \left(\limsup_{T\to\infty}\frac1T
+                    \int_0^TD_R^c(t)\,dt\right)^\gamma\right].
+\]
+Let $R\to\infty$.
+\end{proof}
+
+The drift theorem holds at every energy sign. For a traveling wave,
+it reproduces $v\cdot P=2mE$. Its content for a general localized
+trajectory does not require a rigid profile or periodicity.
+
+\subsection{Uniform localization with an arbitrary center}
+
+\begin{theorem}[No regularity assumption on the localization center]
+\label{thm:r11tr-center}
+Suppose $E<0$ and an arbitrary map $b:[0,\infty)\to\mathbb R^N$
+satisfies
+\begin{equation}\label{r11tr:uniform-tight}
+ \sup_{t\ge0}D_R^b(t)\longrightarrow0\qquad(R\to\infty).
+\end{equation}
+Then $b$ remains within a bounded distance of a Lipschitz center,
+and
+\[
+ \lim_{T\to\infty}\frac{P\cdot[b(T)-b(0)]}{T}=2mE.
+\]
+Consequently no solution obeying \eqref{r11tr:bound},
+$E<0$, $P=0$, and \eqref{r11tr:uniform-tight} exists.
+\end{theorem}
+\begin{proof}
+Lemma~\ref{lem:r11tr-tail-equivalence} first gives uniform
+localization of $T_R^b$. In the local case take $z=p$; negative
+energy gives $\|u(t)\|_p^p\ge p|E|$. In the Hartree case take
+$z=q=4N/(2N-m)$. Since
+$H(u)=2A(u)+4|E|\ge4|E|$ and
+$|H(u)|\le C\|u\|_q^4$, the $L^q$ norm also has a uniform
+positive lower bound. Estimates \eqref{r11tr:local-tail} and
+\eqref{r11tr:hartree-tail}, applied at smaller cutoff radii,
+show that the $L^z$ norm outside $B(b(t),2R)$ tends to zero
+uniformly in time.
+
+The equation gives $\|u_t\|_{H^{-s}}\le C_B$. For the local term,
+this follows by H\"older and $H^s\hookrightarrow L^p$; for Hartree,
+use
+\[
+ \left|\int(K*|u|^2)u\overline h\right|
+ \le C\|u\|_q^3\|h\|_q\le C_B\|h\|_{H^s}.
+\]
+Choose $\sigma$ strictly between $N(1/2-1/z)$ and $s$.
+Sobolev embedding and interpolation yield
+\begin{equation}\label{r11tr:time-continuity}
+ \|u(t)-u(t')\|_{L^z}
+ \le C_B|t-t'|^{(s-\sigma)/(2s)}.
+\end{equation}
+Fix $R_0$ so that the exterior $L^z$ norm is much smaller than
+the positive core norm, and then $\tau>0$ so that
+\eqref{r11tr:time-continuity} is smaller still for
+$|t-t'|\le\tau$. If $|b(t)-b(t')|>4R_0$, the two balls of
+radius $2R_0$ are disjoint. Restriction to the core ball at $t'$
+then contradicts \eqref{r11tr:time-continuity}. Hence
+$|b(t)-b(t')|\le4R_0$ whenever $|t-t'|\le\tau$.
+
+Linear interpolation through $b(n\tau)$ produces a center $c$
+with $\|c'\|_\infty\le4R_0/\tau$ and
+$\sup_t|c(t)-b(t)|\le8R_0$. A bounded displacement preserves
+literal kinetic-tail localization by inclusion of balls. Apply
+Theorem~\ref{thm:r11tr-drift}; the bounded displacement also
+does not affect the drift limit.
+\end{proof}
+
+The localization assumption allows a diffuse fixed-mass tail whose
+homogeneous kinetic norm tends to zero. Thus it is weaker than
+precompactness in $H^s$ modulo translations. No uniform control of
+high-frequency tails is needed.
+
+\subsection{A stronger exterior-gradient theorem for quartic Hartree}
+
+For $a(\xi)=|\xi|^4$, $N>4$, and a kernel satisfying
+\eqref{r11tr:kernel} with $m=4$, put
+\[
+ G_R^c(t)=\int_{|x-c(t)|>R}|\nabla u(t,x)|^2\,dx.
+\]
+Use the usual radial cutoff $f_R=\nabla\phi_R$ with
+$D^2\phi_R\le I$, equal to $x$ on the core. The biharmonic
+kinetic term is bounded above by
+$8\|\Delta u\|_2^2+O_B(R^{-2})$. In the Hartree estimate,
+$q=2N/(N-2)$ and homogeneous Sobolev give
+\[
+ |\text{Hartree error}|
+ \le C\|\eta_Ru\|_q^2\|u\|_q^2
+ \le C_B\|\nabla(\eta_Ru)\|_2^2
+ \le C_B(G_R^c+R^{-2}).
+\]
+The center-current error is at most
+$C\sqrt M L(G_R^c)^{1/2}$. Consequently
+\begin{equation}\label{r11tr:quartic-gradient}
+ J_R'\le16E-2c'\cdot P+C\bigl((G_R^c)^{1/2}+R^{-2}\bigr).
+\end{equation}
+
+\begin{corollary}[Quartic nonlocal exterior-gradient persistence]
+For the quartic Hartree equation just specified, a forward-global
+uniformly $H^2$-bounded solution with $E<0$ and $P=0$ satisfies
+\[
+ \liminf_{T\to\infty}\inf_{S\ge0}\frac1T
+ \int_S^{S+T}G_{\nu T}^c(t)\,dt\ge d>0
+\]
+for every bounded-speed center, with constants depending on its speed
+bound. Uniform gradient localization about an arbitrary center is
+impossible under those assumptions.
+\end{corollary}
+\begin{proof}
+The time-window integration of \eqref{r11tr:quartic-gradient}
+is identical to the proof of Theorem~\ref{thm:r11tr-ballistic}.
+For an arbitrary uniformly localizing center, the $L^q$ lower bound,
+the Sobolev estimate on the exterior gradient, and the temporal
+continuity argument in Theorem~\ref{thm:r11tr-center} produce a
+bounded-speed center. Fixed-radius integration then contradicts
+$E<0,P=0$.
+\end{proof}
+
+This gradient conclusion uses the isotropic fourth-order kinetic sign;
+it is not claimed for arbitrary anisotropic $a$. The general two-sided
+theorem instead gives exact drift at the full kinetic-localization
+level.
+
+\subsection{Relation to earlier virial arguments}
+Localized virial and compact-orbit rigidity are established methods.
+Boulenger--Himmelsbach--Lenzmann, \emph{Blowup for fractional NLS},
+arXiv:1509.08845, develop the fractional localized virial framework.
+Dinh, arXiv:1808.07368, Proposition~1.5, already proves finite-time
+blowup or an unbounded kinetic subsequence for nonradial mass-critical
+isotropic dispersion of degree $1<m<2$ with negative energy, without
+a localization hypothesis. That specialization is therefore not a
+new open-problem resolution here. Cho--Hwang--Kwon--Lee,
+arXiv:1208.2302, give earlier negative-energy Hartree blowup results
+under their stated assumptions.
+
+The extension established in this section is the common anisotropic
+all-degree transport argument, including nonlocal kernels, the exact
+averaged drift law and its kinetic-localization form. No priority claim
+is based solely on this comparison. Nor do these results exclude a
+bounded global orbit that indefinitely sustains the exterior activity
+required by Theorem~\ref{thm:r11tr-ballistic}.

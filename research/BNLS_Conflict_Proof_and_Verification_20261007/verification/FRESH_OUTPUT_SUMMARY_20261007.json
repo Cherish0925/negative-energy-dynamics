@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-07",
+  "scope": "Fresh outputs from executing the nine existing verifiers against unchanged frozen data; not an independent software reimplementation. Analytic reductions were separately reviewed.",
+  "checks": {
+    "ritz": true,
+    "response": true,
+    "high_angular": true,
+    "analytic_implication": true,
+    "bs_0": true,
+    "bs_1": true,
+    "bs_2": true,
+    "bs_3": true,
+    "bs_4": true
+  },
+  "I_upper_exact": "-24609689664617/140499437500",
+  "canonical_profile_sha256": "c50a6f98682ce5f5bef9ab62ae2a93ba06b91522c8f3e29b859ac521afb8f627"
+}

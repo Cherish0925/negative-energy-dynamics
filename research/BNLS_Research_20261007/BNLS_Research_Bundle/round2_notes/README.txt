@@ -1,0 +1,1 @@
+These are research-process and independent subtask notes. Conditional or pending statements record their status when written. The final assembled theorem and certification status are in the main PDF and round2_certificate/VERIFICATION_SUMMARY.json.

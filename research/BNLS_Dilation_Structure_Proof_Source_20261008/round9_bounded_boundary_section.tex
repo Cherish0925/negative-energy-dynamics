@@ -1,0 +1,241 @@
+\section{Arbitrarily small nonhomogeneous perturbations can remove the gap}
+\label{sec:r9-bounded-boundary}
+
+The upper dilation condition has a substantive role even among symbols
+of the same order and arbitrarily close in quadratic-form norm. The
+following construction complements the exclusion theorem. Its existence
+proof uses standard constrained minimization; no separate priority claim
+is attached to that variational method.
+
+Fix a principal symbol $a$ as in the cone theorem, of degree $m>1$,
+and write
+\[
+ r=m/N,\qquad p=2+2r,\qquad M_c=M_{c,a},\qquad
+ A(f)=\int a(\xi)|\widehat f(\xi)|^2\,d\xi.
+\]
+For fixed numbers $\varepsilon,q>0$, set
+\begin{equation}\label{eq:r9-bounded-symbol}
+ b_{\varepsilon,q}(\xi)
+ =\varepsilon a(\xi)\frac{|\xi|^q}{1+|\xi|^q},\qquad
+ B(f)=\int b_{\varepsilon,q}(\xi)|\widehat f(\xi)|^2\,d\xi,
+ \qquad E(f)=\frac12[A(f)+B(f)]-\frac1p\|f\|_p^p.
+\end{equation}
+The symbol is real, even, individually $C^{N+2}$ away from zero, and
+satisfies all the order-$m$ derivative bounds of the cone theorem. In
+particular,
+\begin{equation}\label{eq:r9-bounded-formsmall}
+ 0\le b_{\varepsilon,q}\le\varepsilon a,
+ \qquad 0\le B(f)\le\varepsilon A(f).
+\end{equation}
+But its dilation defect has the opposite sign:
+\begin{equation}\label{eq:r9-bounded-defect}
+ mb_{\varepsilon,q}-\xi\cdot\nabla b_{\varepsilon,q}
+ =-\varepsilon q\,a(\xi)
+       \frac{|\xi|^q}{(1+|\xi|^q)^2}<0\quad(\xi\ne0).
+\end{equation}
+
+The number $M_c$ is also the actual sharp GN threshold for the full
+kinetic form $A+B$, not merely a comparison with the principal part.
+Indeed $A+B\ge A$ gives the principal sharp constant as an upper
+bound for the full one. If $Q$ is a principal optimizer and
+$Q_\lambda(x)=\lambda^{N/2}Q(\lambda x)$, dominated convergence gives
+\[
+ \frac{B(Q_\lambda)}{\lambda^m}
+ =\varepsilon\int a(\xi)
+ \frac{\lambda^q|\xi|^q}{1+\lambda^q|\xi|^q}
+ |\widehat Q(\xi)|^2\,d\xi\longrightarrow0.
+\]
+The sharp constants therefore coincide. The full inequality has no
+nonzero optimizer: $B(f)>0$ makes its comparison with the principal
+sharp inequality strict for every nonzero $f$.
+
+\begin{theorem}[A boundary within the same operator order]
+\label{thm:r9-bounded-boundary}
+Define
+\[
+ I(M)=\inf\{E(f): f\in H^{m/2}(\mathbb R^N;\mathbb C),\ \|f\|_2^2=M\}.
+\]
+For $0<M\le M_c$, $I(M)=0$ and the infimum is not attained.
+For every
+\begin{equation}\label{eq:r9-bounded-window}
+ M_c<M<(1+\varepsilon)^{N/m}M_c,
+\end{equation}
+$-\infty<I(M)<0$, and each minimizing sequence has, after translations
+and passage to a subsequence, a strong $H^{m/2}$ limit attaining the
+infimum. A minimizer $Q_M$ can be chosen real and belongs to
+$L^\infty\cap H^{m+1}$. For some $\omega_M>0$ it solves
+\begin{equation}\label{eq:r9-bounded-profile}
+ [a(D)+b_{\varepsilon,q}(D)]Q_M+\omega_M Q_M
+       -|Q_M|^{2r}Q_M=0.
+\end{equation}
+Its energy is exactly
+\begin{equation}\label{eq:r9-bounded-energy}
+ E(Q_M)=-\frac{\varepsilon q}{2m}
+ \int a(\xi)\frac{|\xi|^q}{(1+|\xi|^q)^2}
+             |\widehat Q_M(\xi)|^2\,d\xi<0.
+\end{equation}
+Thus the modified evolution has a real-profile, zero-momentum standing
+wave $u_M(t)=e^{i\omega_Mt}Q_M$ for every mass in
+\eqref{eq:r9-bounded-window}. For each fixed $\varepsilon>0$, these
+negative-energy standing-wave masses approach $M_c$ from above.
+\end{theorem}
+
+\begin{proof}
+The sharp principal inequality is
+\begin{equation}\label{eq:r9-bounded-GN}
+ \frac1p\|f\|_p^p\le
+ \frac12(M(f)/M_c)^r A(f).
+\end{equation}
+Consequently, if $0<M\le M_c$ then $E(f)\ge B(f)/2>0$ for every
+nonzero admissible $f$. The strict inequality holds because
+$b_{\varepsilon,q}>0$ away from the single frequency zero. A smooth
+mass-$M$ trial function dilated to low frequency has energy tending to
+zero, so $I(M)=0$ without attainment.
+
+Now fix $M$ in \eqref{eq:r9-bounded-window}, and put
+$d=(M/M_c)^r-1\in(0,\varepsilon)$. For every
+$\eta\in(0,\varepsilon)$ there is a finite $C_\eta$ such that
+\[
+ b_{\varepsilon,q}(\xi)\ge(\varepsilon-\eta)a(\xi)-C_\eta.
+\]
+Indeed the coefficient $\varepsilon|\xi|^q/(1+|\xi|^q)$ tends to
+$\varepsilon$ at infinity, and $a$ is bounded on every finite ball.
+Choose $\eta<\varepsilon-d$. Equation~\eqref{eq:r9-bounded-GN} gives
+\begin{equation}\label{eq:r9-bounded-coercivity}
+ E(f)\ge\frac{\varepsilon-\eta-d}{2}A(f)-\frac{C_\eta M}{2}
+ \quad\text{when }M(f)=M.
+\end{equation}
+Thus $I(M)>-\infty$, and minimizing sequences are bounded in
+$H^{m/2}$.
+
+To see strict negativity, multiply a real principal GN optimizer of
+mass $M_c$ by $\sqrt{M/M_c}$ and approximate it in $H^{m/2}$ by real
+$C_c^\infty$ functions, adjusting the mass. This yields a real smooth
+$f$ of mass exactly $M$ with
+$E_a(f)=A(f)/2-\|f\|_p^p/p<0$.
+For $f_\lambda(x)=\lambda^{N/2}f(\lambda x)$,
+\[
+ B(f_\lambda)\le\varepsilon\lambda^{m+q}
+       \int a(\xi)|\xi|^q|\widehat f(\xi)|^2\,d\xi,
+ \qquad E(f_\lambda)=\lambda^m E_a(f)+\tfrac12B(f_\lambda)<0
+\]
+for sufficiently small positive $\lambda$. This proves $I(M)<0$.
+The same statements hold at every smaller positive mass in the window
+where needed below.
+
+We give the compactness argument to handle the mass-critical power
+without presuming that the added symbol has higher order.
+For $\theta>1$ such that the masses under consideration remain below
+the upper endpoint of \eqref{eq:r9-bounded-window}, amplitude scaling
+gives
+\[
+ I(\theta L)\le\theta I(L),\qquad
+ I(\theta L)\le\theta^{p/2}I(L)<\theta I(L)
+       \quad\text{if }I(L)<0.
+\]
+The second inequality follows from
+\[
+ E(\sqrt\theta f)=\theta^{p/2}E(f)
+       +\tfrac12(\theta-\theta^{p/2})[A(f)+B(f)].
+\]
+For every split $M=M_1+M_2$ with $M_j>0$, this implies
+\begin{equation}\label{eq:r9-bounded-binding}
+ I(M)<I(M_1)+I(M_2).
+\end{equation}
+If both pieces have nonnegative infimum, their infima are zero while
+$I(M)<0$. Otherwise $I(M)/M$ is strictly below the energy-per-mass
+ratio of a negative piece and no greater than that of the other piece;
+weighting by $M_1,M_2$ proves \eqref{eq:r9-bounded-binding}.
+
+A bounded minimizing sequence $f_n$ cannot vanish locally in mass.
+Bounded-overlap localization of the GN inequality gives
+\[
+ \|f_n\|_p^p
+ \le C\left(\sup_y\int_{B(y,2)}|f_n|^2\right)^r
+           \|f_n\|_{H^{m/2}}^2.
+\]
+For example, apply the GN inequality to smooth unit-cube cutoffs and
+sum their squared $H^{m/2}$ norms, which are bounded by a constant
+times the global squared norm. Local vanishing would imply
+$\|f_n\|_p\to0$, contradicting $I(M)<0$.
+After translations and extraction, there is therefore a nonzero weak
+limit $Q$ in $H^{m/2}$, with almost-everywhere convergence. Put
+$w_n=f_n-Q$. The two quadratic forms split by weak Hilbert convergence
+(the $b$ form is bounded by $\varepsilon A$), and the nonlinear
+integral splits by the Brezis--Lieb lemma. If $0<M(Q)<M$, normalizing
+$w_n$ to mass exactly $M-M(Q)$ changes its energy by $o(1)$, because
+its energy terms are bounded. The splitting would then contradict
+\eqref{eq:r9-bounded-binding}. Hence $M(Q)=M$ and $M(w_n)\to0$.
+The principal GN inequality gives
+\[
+ \|w_n\|_p^p\le C M(w_n)^r A(w_n)\longrightarrow0.
+\]
+Energy splitting and $E(Q)\ge I(M)$ now force
+$A(w_n)+B(w_n)\to0$. This proves strong $H^{m/2}$ convergence and
+attainment.
+
+A real minimizer is available without any modulus inequality for
+higher-order kinetic forms. Write $f=X+iY$ and, when both real
+components have positive mass, set
+$\vartheta=M(X)/M(f)$, $g=X/\sqrt\vartheta$ and
+$h=Y/\sqrt{1-\vartheta}$. Both $g,h$ have mass $M(f)$. Real-evenness
+splits the kinetic form, whereas convexity gives
+\[
+ |f|^p=[\vartheta g^2+(1-\vartheta)h^2]^{p/2}
+       \le\vartheta|g|^p+(1-\vartheta)|h|^p.
+\]
+Thus $E(f)\ge\vartheta E(g)+(1-\vartheta)E(h)$, and the complex
+and real constrained infima coincide. A real minimizing sequence
+and the proved compactness yield a real minimizer.
+
+The Lagrange multiplier rule gives \eqref{eq:r9-bounded-profile}.
+Testing it against $Q_M$ shows
+\[
+ \omega_M M=\|Q_M\|_p^p-A(Q_M)-B(Q_M)
+       =\left(1-\frac2p\right)\|Q_M\|_p^p-2E(Q_M)>0.
+\]
+The symbol $a+b_{\varepsilon,q}+\omega_M$ is comparable with
+$1+|\xi|^m$ and its resolvent satisfies the individual Mihlin bounds.
+The finite Sobolev bootstrap for the principal critical power therefore
+gives $L^\infty$, then $H^m\subset H^1$, and finally $H^{m+1}$ by
+the local $C^1$ Sobolev chain rule. This is the same individual
+regularity argument as for the cone theorem and uses no sign of the
+dilation defect.
+
+Finally the mass-preserving scaling curve through the minimizer has
+its scalar energy minimum at $\lambda=1$. Differentiation of its
+explicit Fourier energy formula is justified by
+$|\xi\cdot\nabla b_{\varepsilon,q}|\le(m+q)b_{\varepsilon,q}$
+and domination by $a$. It yields
+\[
+ \frac m2 A(Q_M)
+ +\frac12\int\xi\cdot\nabla b_{\varepsilon,q}(\xi)
+                         |\widehat Q_M(\xi)|^2\,d\xi
+ -\frac mp\|Q_M\|_p^p=0.
+\]
+Subtracting this identity divided by $m$ from the energy formula
+proves \eqref{eq:r9-bounded-energy}. No spatial moment or
+differentiability of the scaling curve in the energy norm is needed.
+A real $Q_M$ has zero momentum, and its standing-wave formula supplies
+a global solution directly.
+\end{proof}
+
+For the original fourth-order principal symbol, one concrete example is
+\[
+ a(\xi)=|\xi|^4,\qquad
+ b_{\varepsilon,2}(\xi)=\varepsilon\frac{|\xi|^6}{1+|\xi|^2}.
+\]
+Its perturbation is at most $\varepsilon$ times the original kinetic
+form, yet its negative-energy zero-momentum standing waves have every
+mass in $(M_c,(1+\varepsilon)^{N/4}M_c)$. This is a result about the
+specified modified equation, not a counterexample for the pure symbol
+$|\xi|^4$.
+
+The construction does not say that every symbol violating the upper
+dilation inequality loses its gap. It proves that removing that
+condition admits counterexamples arbitrarily close to the principal
+operator, even with the same energy space and the same order bounds.
+In particular, the homogeneous-symbol robustness theorem cannot be
+extended to all small nonhomogeneous quadratic-form perturbations.
+The distinction is structural: smallness alone does not control the
+sign of the dilation defect.

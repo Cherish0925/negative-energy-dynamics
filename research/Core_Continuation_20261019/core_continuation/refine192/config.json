@@ -1,0 +1,9 @@
+{
+  "n": 192,
+  "L": 24.0,
+  "ds": 0.005,
+  "end": 1.0,
+  "start": 0.975,
+  "seed": "core_continuation/run128/core_0.975000.npz",
+  "out": "core_continuation/refine192"
+}

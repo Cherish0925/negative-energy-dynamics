@@ -1,0 +1,417 @@
+\section{Nonlinear departure on the exact invariant level}
+\label{sec:r12-nonlinear}
+
+We now turn the real spectral pair into an actual nonlinear trajectory.
+The equation throughout this section is the pure mass-critical quartic
+model
+\begin{equation}\label{eq:r12-pure-quartic}
+ iu_t=\Delta^2u-|u|^{8/N}u,\qquad N\in\{1,2,3\},
+ \qquad X=H^2(\mathbb R^N;\mathbb C).
+\end{equation}
+The space $X$ is regarded as real. In this concrete phase space, the
+branch, weighted regularity, and complementary gap used in the spectral theorem in Appendix~\ref{sec:r11-spectral} follow from real-profile nondegeneracy. That remaining
+assumption is stated explicitly below. The form decomposition is the
+one-negative-direction instance of the Hamiltonian trichotomy developed
+by Lin and Zeng~\cite{LZ}; the estimates needed here are proved directly.
+
+\begin{theorem}[Ancient departure and nonlinear orbital instability]
+\label{thm:r12-nonlinear-instability}
+Let $Q$ be a real sharp ground profile at frequency one. Assume
+\begin{equation}\label{eq:r12-real-nondegeneracy}
+ \ker\left(\Delta^2+1-\left(1+\frac8N\right)|Q|^{8/N}\right)
+   =\operatorname{span}_{\mathbb R}
+        \{\partial_1Q,\ldots,\partial_NQ\}.
+\end{equation}
+Then there is a local $C^2$ profile family $U_{\omega,v}$ through $Q$,
+unique up to phase and translation near $Q$. Put $U_v=U_{1,v}$.
+For every sufficiently small fixed $v\ne0$, put
+\[
+ \mathcal O_v=\{e^{i\theta}U_v(\cdot-y):\theta\in\mathbb R,
+                                     \ y\in\mathbb R^N\}.
+\]
+There is a nonstationary solution in the co-moving, co-rotating frame,
+defined for $t\le0$, of the form
+\begin{equation}\label{eq:r12-ancient-asymptotic}
+ w_v(t)=U_v+\varepsilon_v e^{\lambda_vt}Y_{+,v}
+              +O_v(e^{(1+\beta)\lambda_vt}),\qquad t\to-\infty,
+\end{equation}
+where $\|Y_{+,v}\|_{H^2}=1$, $J\mathcal L_vY_{+,v}
+=\lambda_vY_{+,v}$, $\varepsilon_v>0$, and
+\[
+ \beta=\begin{cases}1,&N=1,2,\\2/3,&N=3.\end{cases}
+\]
+At every time this solution has exactly the same mass, momentum, and
+energy as $U_v$.
+
+Consequently, there are $\rho_v>0$ and data $u_{\delta,v}$ satisfying
+\begin{gather*}
+ M(u_{\delta,v})=M(U_v),\quad P(u_{\delta,v})=P(U_v),\quad
+ E(u_{\delta,v})=E(U_v),\\
+ u_{\delta,v}=U_v+\delta Y_{+,v}+O_v(\delta^{1+\beta})
+                         \quad\hbox{in }H^2,
+\end{gather*}
+whose first exit time from the orbital distance $\rho_v$ obeys
+\begin{equation}\label{eq:r12-exit-time}
+ \tau_{\delta,v}=\lambda_v^{-1}\log(1/\delta)+O_v(1)
+ \qquad(\delta\downarrow0).
+\end{equation}
+The spectral calculation gives
+\begin{equation}\label{eq:r12-rate}
+ \lambda_v=\sqrt{\frac{2v^TTv}{\mathcal D_Q}}+o(|v|),
+\end{equation}
+where
+\begin{gather*}
+ T_{ij}=\langle\partial_iQ,L_-^{-1}\partial_jQ\rangle,
+ \qquad c_j=\langle\Lambda Q,L_-^{-1}\partial_jQ\rangle,\\
+ \mathcal D_Q=\langle\Lambda Q,L_-^{-1}\Lambda Q\rangle-c^TT^{-1}c.
+\end{gather*}
+In particular, $e^{it}U_v(x-vt)$ is orbitally unstable in $H^2$ even
+on its exact joint mass--momentum--energy level.
+\end{theorem}
+
+\subsection{Local flow and the nonlinear remainder}
+
+Set $F(z)=|z|^{8/N}z$, with $\mathbb C$ identified with $\mathbb R^2$.
+Since $H^2\hookrightarrow L^\infty\cap W^{1,4}$ for $N\le3$ and
+$H^2$ is an algebra, $F:X\to X$ is locally $C^{1,\beta}$ with the
+exponent in the theorem. Here is a direct check of the regularity that
+is needed. Twice differentiating $DF(w)h$ produces sums of
+\begin{gather*}
+ DF(w)\nabla^2h,\qquad D^2F(w)[\nabla w,\nabla h],\\
+ D^2F(w)[\nabla^2w,h],\qquad D^3F(w)[\nabla w,\nabla w,h].
+\end{gather*}
+The products lie in $L^2$ by the stated embeddings. On bounded subsets
+of $\mathbb R^2$, $D^3F$ is Lipschitz in dimensions one and two, and
+$2/3$-H\"older in dimension three. Subtracting these expressions at
+$w_1,w_2$ therefore gives
+\[
+ \|DF(w_1)-DF(w_2)\|_{\mathcal B(X)}
+       \le C_R\|w_1-w_2\|_X^\beta
+\]
+for $\|w_i\|_X\le R$ and $\|w_1-w_2\|_X\le1$.
+The lower derivative terms obey the same bound. Smooth approximation
+justifies the weak chain rules. It follows that, near a fixed $U$,
+\begin{align}
+ \|F(U+h)-F(U)-DF(U)h\|_X&\le C\|h\|_X^{1+\beta},
+ \label{eq:r12-remainder}\\
+ \|R(h_1)-R(h_2)\|_X
+ &\le C(\|h_1\|_X^\beta+\|h_2\|_X^\beta)\|h_1-h_2\|_X,
+ \label{eq:r12-remainder-lipschitz}
+\end{align}
+where $R(h)=i[F(U+h)-F(U)-DF(U)h]$.
+
+The free group $e^{-it\Delta^2}$ is unitary on $X$. A contraction
+argument gives local well-posedness and continuation while the $H^2$
+norm is bounded. Mass, momentum, and energy are conserved. For a direct
+justification, insert a selfadjoint Fourier cutoff $P_n$ into the
+Hamiltonian nonlinearity $P_nF(P_nu)$, differentiate the conserved
+quantities for this regularized flow, and pass to the $H^2$ solution
+uniformly on compact existence intervals. The cutoff commutes with
+phase and translation actions. Thus no Strichartz or spectral-mapping
+hypothesis is required for the local nonlinear flow.
+
+For
+\[
+ w(t,x)=e^{-it}u(t,x+vt)=U_v+h(t,x)
+\]
+the perturbation equation is
+\begin{equation}\label{eq:r12-perturbation-eq}
+ h_t=\mathcal A_vh+R_v(h),\qquad
+ \mathcal A_v=J\mathcal L_v,\quad J=-i.
+\end{equation}
+The phase and translation transformations are $H^2$ isometries and
+preserve all three conserved quantities.
+
+\subsection{Why the other spectral assumptions follow here}
+
+\begin{lemma}[Local branch and complementary gap]
+\label{lem:r12-branch}
+For a real sharp quartic ground profile satisfying
+\eqref{eq:r12-real-nondegeneracy}, all the other assumptions of the
+small-velocity theorem in Appendix~\ref{sec:r11-spectral} hold. In particular,
+$\Lambda Q\in H^4$, the local profile branch is $C^2$ into $H^4$,
+and its only Hessian zero modes are phase and translations.
+\end{lemma}
+\begin{proof}
+Sharp phase coercivity gives $L_-\ge0$, $\ker L_-=\mathbb RQ$,
+and an inverse on $Q^\perp$. The nonlinearity calculation above and
+$(\Delta^2+1)Q=F(Q)$ give $Q\in H^6$. Therefore
+$V=|Q|^{8/N}\in W^{2,\infty}$ and $V(x)\to0$ as $|x|\to\infty$.
+We first justify the scaling derivative without assuming a moment.
+
+Choose smooth bounded truncations $\phi_R$ of
+$a\langle x\rangle$, with $\phi_R\to a\langle x\rangle$ pointwise,
+$\phi_R\le Ca\langle x\rangle$, and
+$|\nabla\phi_R|+|\Delta\phi_R|\le Ca$ uniformly in $R$.
+Test $(\Delta^2+1-V)Q=0$ with $e^{2\phi_R}Q$ and put
+$w_R=e^{\phi_R}Q$. The exact real identity
+\[
+ \operatorname{Re}\langle\Delta^2Q,e^{2\phi_R}Q\rangle
+ =\|\Delta w_R+|\nabla\phi_R|^2w_R\|_2^2
+  -\|2\nabla\phi_R\cdot\nabla w_R+(\Delta\phi_R)w_R\|_2^2
+\]
+shows that the difference from $\|\Delta w_R\|_2^2$ is bounded by
+$Ca^2\|w_R\|_{H^2}^2$ for $a\le1$.
+Choose a fixed ball outside which $V\le1/4$. Inside the ball,
+$\int V|w_R|^2$ is uniformly bounded because the weights there are
+bounded independently of $R$. Taking $a>0$ small absorbs both the
+exterior potential and the $Ca^2$ error. Thus $w_R$ is uniformly
+bounded in $H^2$, and passage to the limit gives
+$w=e^{a\langle x\rangle}Q\in H^2$.
+
+The conjugated equation
+\[
+ e^{a\langle x\rangle}(\Delta^2+1)e^{-a\langle x\rangle}w=Vw
+\]
+has smooth bounded coefficients in its lower-order terms, of order at
+most three. Since $V\in W^{2,\infty}$, elementary elliptic bootstrapping
+improves $w$ successively from $H^2$ to $H^3,H^4,H^5,H^6$.
+At the first step, the third-order terms belong to $H^{-1}$; at the
+subsequent steps they belong to $L^2,H^1,H^2$, respectively.
+Consequently $\Lambda Q=NQ/2+x\cdot\nabla Q\in H^4$, and
+$L_+\Lambda Q=-4Q$ follows by differentiating the scaled equation.
+
+For the branch, set
+\[
+ \mathcal F(U,\omega,v)=\Delta^2U+\omega U+iv\cdot\nabla U-F(U).
+\]
+This map is $C^2$ from $H^4\times\mathbb R^{1+N}$ to $L^2$.
+Let $g_0=iQ$, $g_j=\partial_jQ$, and augment the profile equation by
+\[
+ \mathcal F(U,\omega,v)=\sum_{j=0}^N b_jg_j,
+ \qquad \langle U-Q,g_j\rangle_{\mathbb R}=0.
+\]
+Its derivative with respect to $(U,b)$ is invertible: the real
+selfadjoint Hessian at $Q$ is Fredholm, its kernel is exactly the
+span of the $g_j$, and it has a bounded complementary inverse from
+$L^2$ to $H^4$. The implicit function theorem gives a $C^2$ augmented
+branch. Phase and translation invariance imply
+\[
+ \langle\mathcal F(U,\omega,v),iU\rangle_{\mathbb R}=0,
+ \qquad
+ \langle\mathcal F(U,\omega,v),\partial_kU\rangle_{\mathbb R}=0.
+\]
+The pairing matrix between the fixed $g_j$ and these moving symmetry
+vectors is close to the invertible Gram matrix at $Q$. Hence $b=0$,
+and the branch consists of exact profiles.
+
+The gauge determines profiles uniquely near $Q$ up to phase and
+translation. Mass-preserving scaling maps parameters to
+$(\kappa^4\omega,\kappa^3v)$; after returning to the gauge, uniqueness
+shows that the branch is scaling-closed. Its reduced action is $C^2$
+and has the usual charge derivatives. Differentiation at $(1,0)$ gives
+$D_{v_j}U=-iL_-^{-1}\partial_jQ$ in the fixed gauge.
+
+Finally, the Hessians have common domain $H^4$. The potentials converge
+in $L^\infty$, and $iv\cdot\nabla$ is small from $H^4$ to $L^2$.
+Norm-resolvent convergence therefore preserves the rank $N+1$ of a
+small isolated spectral cluster about zero. The $N+1$ independent
+vectors $iU,\partial_jU$ fill that cluster. They belong to the operator
+domain by the profile equation and elliptic bootstrapping. Thus there
+are no further zero or near-zero eigenvalues, and the inverse on the
+kernel complement, extended by zero, is norm-continuous on $L^2$.
+This verifies the complementary-gap assumption rather than adding it.
+\end{proof}
+
+\subsection{The linear group bound from one negative direction}
+
+\begin{lemma}\label{lem:r12-group-bound}
+For each fixed sufficiently small $v\ne0$,
+\[
+ n_-(\mathcal L_v)=1,
+ \qquad
+ \|e^{t\mathcal A_v}\|_{\mathcal B(H^2)}\le C_v e^{\lambda_vt}
+ \quad(t\ge0).
+\]
+On an invariant complement to the two real eigenvectors the group
+has at most linear growth.
+\end{lemma}
+\begin{proof}
+At $v=0$, sharp critical optimality gives nonnegativity of $L_+$ on
+$Q^\perp$ and
+\[
+ \langle Q,L_+Q\rangle=-\frac8N\|Q\|_{2+8/N}^{2+8/N}<0.
+\]
+Since $L_-\ge0$, the full Hessian has exactly one negative direction.
+For small $v$, the free operator
+\[
+ H_v=\Delta^2+1+iv\cdot\nabla
+\]
+has symbol $|\xi|^4+1-v\cdot\xi$ uniformly comparable to
+$1+|\xi|^4$. The potential $DF(U_v)$ is a decaying bounded real
+symmetric matrix and converges in $L^\infty$ to $DF(Q)$. The drift
+is small from $H^4$ to $L^2$. This gives norm-resolvent convergence
+with a common lower bound and a uniformly positive essential spectrum.
+The isolated zero cluster contains exactly the prescribed $N+1$
+symmetry modes. Hence $n_-(\mathcal L_v)=1$ for small $v$.
+This concrete perturbation argument excludes negative spectrum arriving
+from infinity, as well as from zero.
+
+Fix $v$ and omit its subscript. The profile equation and $F(U)\in H^2$
+give $U\in H^6$. The matrix multiplier $DF(U)$ is bounded on $H^2$.
+The free operator $-iH_v$ generates an isometric group on $H^2$;
+its bounded real-linear perturbation $iDF(U)$ therefore generates a
+$C^0$ group there. The $L^2$ eigenvectors of $\mathcal A$ lie in
+$H^4$, and their eigenvalue equations improve them to $H^6$.
+
+Let $\mathcal A Y_\pm=\pm\lambda Y_\pm$, $\lambda>0$, and write
+$B(f,g)=\langle\mathcal Lf,g\rangle$ for the real form. The identity
+\[
+ B(\mathcal Af,g)+B(f,\mathcal Ag)=0
+\]
+gives $B(Y_\pm,Y_\pm)=0$. Furthermore
+$b=B(Y_+,Y_-)\ne0$: otherwise their span would be a two-dimensional
+totally isotropic space modulo $\ker\mathcal L$, impossible for a
+form of negative index one. Their span is disjoint from the kernel,
+as is seen by applying $\mathcal A$ and $\mathcal A^2$ to any
+proposed relation. Hence
+\[
+ W=\operatorname{span}_{\mathbb R}\{Y_+,Y_-\},\qquad
+ Z=W^{\perp_B},\qquad X=W\oplus Z
+\]
+is an invariant decomposition with bounded projection
+\[
+ \Pi_Wh=\frac{B(h,Y_-)}bY_++\frac{B(h,Y_+)}bY_-.
+\]
+The form is nonnegative on $Z$, because its sole negative direction
+is already in $W$. Its null space in $Z$ is exactly
+$K=\ker\mathcal L$: if $B(z,z)=0$, nonnegativity implies
+$B(z,Z)=0$, while the definition gives $B(z,W)=0$.
+
+Let $\Pi_K$ be the $L^2$ orthogonal projection onto $K$. Compactness
+of the decaying potential relative to the positive free form gives
+\begin{equation}\label{eq:r12-center-coercivity}
+ B(z,z)\ge c_v\|(I-\Pi_K)z\|_{H^2}^2,
+ \qquad z\in Z.
+\end{equation}
+Indeed, a violating sequence in $Z\cap K^\perp$, normalized in $H^2$,
+has a weak limit. Weak lower semicontinuity of the free form and
+compactness of the potential force its form value to be nonpositive.
+The preceding null-space statement makes that limit zero. Compactness
+then makes the potential term vanish, contradicting coercivity of the
+free form and the normalization.
+
+The form $B(e^{t\mathcal A}z,e^{t\mathcal A}z)$ is conserved, first
+on the generator domain and then by density. It controls the component
+orthogonal to $K$ through \eqref{eq:r12-center-coercivity}. For an
+$L^2$ orthonormal basis $g_j$ of $K$, write
+$h=z+k$ with $k=\Pi_Kh$. In the $H^{-2}$--$H^2$ pairing,
+\[
+ \frac d{dt}\langle h,g_j\rangle
+ =-\langle\mathcal Lz,Jg_j\rangle,
+ \qquad
+ \left|\frac d{dt}\langle h,g_j\rangle\right|
+       \le C_v\|z\|_{H^2}.
+\]
+This proves
+\[
+ \|e^{t\mathcal A}|_Z\|_{\mathcal B(H^2)}\le C_v(1+|t|).
+\]
+The group on $W$ is exactly $e^{\pm\lambda t}$. Absorbing $1+t$
+into a $\lambda$-dependent multiple of $e^{\lambda t}$ proves the
+lemma.
+\end{proof}
+
+\subsection{An ancient nonlinear orbit and exact conservation}
+
+\begin{proof}[Proof of Theorem~\ref{thm:r12-nonlinear-instability}]
+Lemma~\ref{lem:r12-branch} verifies the hypotheses of the calculation in Appendix~\ref{sec:r11-spectral} and hence supplies $\lambda_v$ and
+$Y_{+,v}$. Fix $v$ and suppress it. Normalize $\|Y_+\|_X=1$. On continuous
+functions $h:(-\infty,0]\to X$ use the norm
+\[
+ \|h\|_* =\sup_{t\le0}e^{-\lambda t}\|h(t)\|_X.
+\]
+For small $\varepsilon>0$, consider on the ball $\|h\|_*\le2\varepsilon$
+the map
+\begin{equation}\label{eq:r12-ancient-fixedpoint}
+ \Phi(h)(t)=\varepsilon e^{\lambda t}Y_+
+       +\int_{-\infty}^t e^{(t-s)\mathcal A}R(h(s))\,ds.
+\end{equation}
+The integral converges in $X$, since Lemma~\ref{lem:r12-group-bound}
+and \eqref{eq:r12-remainder} give
+\begin{equation}\label{eq:r12-ancient-error}
+ \|\Phi(h)(t)-\varepsilon e^{\lambda t}Y_+\|_X
+ \le \frac{C_v C_R2^{1+\beta}}{\beta\lambda}
+             \varepsilon^{1+\beta}e^{(1+\beta)\lambda t}.
+\end{equation}
+By \eqref{eq:r12-remainder-lipschitz}, its weighted Lipschitz constant
+is at most $C'_v\varepsilon^\beta/(\beta\lambda)$.
+Choose $\varepsilon$ small enough for invariance of the ball and a
+contraction constant below $1/2$. The fixed point is a nonlinear mild
+solution on every finite subinterval: split the integral in
+\eqref{eq:r12-ancient-fixedpoint} at a finite initial time and use
+the group law. It satisfies \eqref{eq:r12-ancient-asymptotic} and
+converges strongly to $U$ backward in time. Conservation and continuity
+of $M,P,E$ therefore imply
+\begin{equation}\label{eq:r12-exact-invariants}
+ (M,P,E)(U+h(t))=(M,P,E)(U),\qquad t\le0.
+\end{equation}
+
+It remains to establish departure from the entire symmetry orbit.
+The map $(\theta,y)\mapsto e^{i\theta}U(\cdot-y)$ is $C^2$ into
+$H^2$, with injective differential and tangent $K$. It has no
+nontrivial stabilizer: a nonzero phase-periodic translation contradicts
+$U\in L^2$. Nor can translations tending to infinity approach $U$ in
+$L^2$. Thus every orbit point sufficiently near $U$ belongs to this
+local chart. Put
+\[
+ \eta_v=\operatorname{dist}_{H^2}(Y_+,K)>0.
+\]
+It is positive because $\mathcal A$ annihilates $K$ and has nonzero
+eigenvalue on $Y_+$. Taylor expansion of the chart gives, for small
+$a>0$,
+\begin{equation}\label{eq:r12-orbit-transverse}
+ \operatorname{dist}_{H^2}(U+aY_+,\mathcal O_v)
+                          \ge\frac{\eta_v}{2}a.
+\end{equation}
+Indeed, any competing orbit point with comparable distance lies in the
+chart with parameters $O(a)$; projecting its expansion off $K$ proves
+the inequality. No existence of a global nearest orbit point is needed.
+
+Shrink $\varepsilon_v$ further so that
+\eqref{eq:r12-orbit-transverse} holds at $a=\varepsilon_v$, and the
+right side of \eqref{eq:r12-ancient-error} at $t=0$ is at most
+$\eta_v\varepsilon_v/4$. Then
+\[
+ \operatorname{dist}_{H^2}(U+h(0),\mathcal O_v)
+                         \ge\eta_v\varepsilon_v/4.
+\]
+Set $\rho_v=\eta_v\varepsilon_v/8$. For $0<\delta<\varepsilon_v$
+let $t_\delta=\lambda^{-1}\log(\delta/\varepsilon_v)$ and
+$u_{\delta,v}=U+h(t_\delta)$. Its expansion and exact invariant values
+follow from \eqref{eq:r12-ancient-error} and
+\eqref{eq:r12-exact-invariants}. Its solution in the moving frame is
+$U+h(t+t_\delta)$. The first time $\tau_{\delta,v}$ at which the
+orbital distance equals $\rho_v$ satisfies
+\[
+ \lambda^{-1}\log\frac{\rho_v}{2\delta}
+ \le\tau_{\delta,v}\le
+ \lambda^{-1}\log\frac{\varepsilon_v}{\delta},
+\]
+because $\|h(t+t_\delta)\|_X\le2\delta e^{\lambda t}$ and the
+distance at $t=-t_\delta$ exceeds $\rho_v$.
+This proves \eqref{eq:r12-exit-time}. Formula \eqref{eq:r12-rate}
+is the asymptotic in Theorem~\ref{thm:r11-spectral-pair} with $m=4$.
+\end{proof}
+
+\begin{remark}[Velocity dependence and the remaining assumption]
+The construction gives a fixed positive escape radius for each fixed
+nonzero small velocity. It does not bound that radius uniformly as
+$v\to0$. The eigenvectors approach the neutral sector and the spectral
+projection constants may diverge. The rigorously implied rate statement
+along a unit direction $e$ is the iterated limit
+\[
+ \lim_{r\downarrow0}r\left[
+   \lim_{\delta\downarrow0}
+      \frac{\tau_{\delta,re}}{\log(1/\delta)}\right]
+       =\sqrt{\frac{\mathcal D_Q}{2e^TTe}}.
+\]
+Critical scaling transfers the theorem to every frequency $\omega>0$,
+with normalized velocity $v\omega^{-3/4}$ and the exact rate covariance
+$\lambda(\omega,v)=\omega\lambda(1,v\omega^{-3/4})$.
+The nonlinear instability mechanism is a classical Hamiltonian one;
+the present connection uses the previously computed critical
+small-velocity eigenvalue. Real-profile nondegeneracy is still an
+explicit hypothesis. The theorem does not assert finite-time blowup or
+classify the subsequent evolution after departure.
+\end{remark}

@@ -1,0 +1,385 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=24mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype,amsmath,amssymb,amsthm,mathtools,booktabs,array,enumitem,xcolor}
+\usepackage[colorlinks=true,linkcolor=blue!45!black,urlcolor=blue!45!black]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\R}{\mathbb R}\newcommand{\C}{\mathbb C}
+\newcommand{\ii}{\mathrm i}\newcommand{\dd}{\,\mathrm d}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\newcommand{\ip}[2]{\left\langle #1,#2\right\rangle}
+\newcommand{\Rea}{\operatorname{Re}}\newcommand{\Ima}{\operatorname{Im}}
+\setlength{\parskip}{3pt}
+\title{Negative-energy traveling waves beyond a single parameter point:\\quantitative continuation, anisotropic dispersion,\\and the limits of blowup criteria}
+\author{Research supplement with exact arithmetic checks}
+\date{7 October 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We derive extensions of the four-dimensional traveling-wave construction from an explicit list of bounds in its frozen computer-assisted certificate. A quantitative contraction gives actual velocities, with negative energy for $0<|v|\le10^{-6}$, including perturbations of the quartic dispersion and a quadratic dispersion matrix. Critical scaling then gives global bounded negative-energy waves for every fixed real symmetric quadratic dispersion matrix, with the frequency free. Local continuation also reaches an open interval of supercritical powers. We formulate a dimension-independent conditional inertia criterion, explain the conflict with an existing cylindrical blowup statement, and separate these proved implications from new three-dimensional numerical candidates and unresolved zero-momentum and stability questions.
+\end{abstract}
+
+\noindent\textbf{Proof status and dependency.} The analytic results below are proved from the displayed input bounds of the companion certificate package. That package was internally checked by exact rational arithmetic and interval arithmetic; it has not received external independent verification. This supplement does not treat a numerical candidate as an exact solution. The published-theorem conflict in Section~\ref{sec:gou} is a substantive part of the research record. No universal theorem in all dimensions, nor orbital stability, is asserted.
+
+\section{Input bounds and the correct symmetry space}
+Let $Z=H^2(\R^4;\C)$, considered as a real space, with
+\[
+ \norm f_Z^2=\norm{\Delta f}_2^2+\norm f_2^2,
+ \qquad A=\Delta^2+1.
+\]
+The companion construction specifies rational piecewise polynomial data and a nearby exact, real radial solution
+\[
+ AQ-Q^3=0.
+\]
+The input bounds needed here are
+\begin{equation}\label{eq:inputs}
+ \norm Q_Z<105,\qquad
+ \norm{L^{-1}}_{Z^*\to Z}<29,\qquad
+ \norm z_Z<151,\qquad I:=\ip{\partial_1Q}{z}<-175,
+\end{equation}
+where $L(a+\ii b)=L_+a+\ii L_-b$,
+\[
+ L_+=A-3Q^2,\quad L_-=A-Q^2,\quad z=L_-^{-1}\partial_1Q.
+\]
+The inverse is restricted to
+\begin{equation}\label{eq:PT}
+ X=\{f\in Z:f(-x)=\overline{f(x)}\},
+\end{equation}
+and the corresponding real subspace of $Z^*$. Thus its real part is even and its imaginary part odd under full inversion. This space allows anisotropy. It is larger than the cylindrical subspace used to find the original wave.
+
+The frozen certificate bounds every even angular degree of $L_+$ and every odd degree of $L_-$, with a uniform positive inverse gap. Multiplicities do not change an operator-norm bound. Explicitly, putting
+\[
+ d_-={312009\over64000000},\qquad d_+=3d_-,
+\]
+the relevant preconditioned gaps are at least
+\[
+ {1\over20}-d_+,\quad {2\over5}-d_+,\quad
+ {1\over10}-d_+,\quad {1\over25}-d_-,\quad {1\over10}-d_-.
+\]
+Each exceeds $1/29$. The response estimate follows from its certified approximate response $\psi$:
+\[
+ \norm z_Z\le132+
+ {331/500000+132d_-+(3/5)(3/500)\over 1/25-d_-}
+ ={338192768\over2247991}<151.
+\]
+These are consequences of the old certificate, not new spectral assumptions.
+
+We use the already justified estimates
+\begin{equation}\label{eq:norms}
+ \norm{fgh}_{Z^*}\le\alpha\norm f_Z\norm g_Z\norm h_Z,
+ \quad\alpha={1\over256},\quad
+ \norm{\partial_1}_{Z\to Z^*}\le G={3\over5}.
+\end{equation}
+Also $\norm{\Delta}_{Z\to Z^*}\le H=1/2$ and
+$\norm{\nabla f}_2^2\le\norm f_Z^2/2$, by the Fourier multiplier inequality
+$2|\xi|^2\le1+|\xi|^4$.
+
+\section{An explicit family with anisotropic dispersion}
+Let $a(\xi)$ be a real homogeneous polynomial of degree four on $\R^4$ and let $B$ be a real symmetric $4\times4$ matrix. Set
+\[
+ \delta_a=\sup_{|\xi|=1}|a(\xi)-|\xi|^4|,
+ \qquad \mathcal D_B=-\sum_{j,k}B_{jk}\partial_j\partial_k.
+\]
+We study
+\begin{equation}\label{eq:general}
+ \ii u_t=a(D)u+\mathcal D_Bu-|u|^2u.
+\end{equation}
+The energy is
+\[
+ E_{a,B}(f)={1\over2}\int a(\xi)|\widehat f(\xi)|^2\dd\xi
+ +{1\over2}K_B(f)-{1\over4}\norm f_4^4,
+\quad K_B(f)=\int\nabla\overline f\cdot B\nabla f.
+\]
+The Fourier transform is unitary. The operator
+$T=a(D)-\Delta^2+\mathcal D_B$ obeys
+\begin{equation}\label{eq:Tnorm}
+ \norm T_{Z\to Z^*}\le\delta_a+\tfrac12\norm B_{\mathrm{op}}.
+\end{equation}
+Every real degree-four polynomial is even under full inversion, so this operator preserves~\eqref{eq:PT}.
+
+\begin{theorem}[Explicit continuation]\label{thm:explicit}
+Assume the frozen bounds~\eqref{eq:inputs}. For every real $v$ and every $(a,B)$ satisfying
+\begin{equation}\label{eq:wedge}
+ 0<|v|\le10^{-6},\qquad
+ 2\delta_a+\norm B_{\mathrm{op}}\le{|v|^2\over1000},
+\end{equation}
+there exists $U\in X\cap H^4(\R^4)$ solving
+\[
+ a(D)U+\mathcal D_BU+U+\ii v\partial_1U-|U|^2U=0,
+\]
+with $\norm{U-Q}_Z\le200|v|$ and
+\begin{equation}\label{eq:Enegative}
+ E_{a,B}(U)<-18|v|^2.
+\end{equation}
+Consequently $u(t,x)=e^{\ii t}U(x-vte_1)$ is an exact global solution with constant finite $H^2$ norm.
+\end{theorem}
+\begin{proof}
+Write $U=Q+h$ and
+\[
+ N_2(h)=|Q+h|^2(Q+h)-Q^3-(2Q^2h+Q^2\overline h).
+\]
+For real $Q$, $N_2(h)=Q(h^2+2|h|^2)+|h|^2h$. Thus on the ball $\norm h_Z\le r$,
+\[
+ \norm{N_2(h)}_{Z^*}\le\alpha(3mr^2+r^3),\quad m=105,
+\]
+and its Lipschitz constant is at most $\alpha(6mr+3r^2)$. The equation is equivalent to
+\begin{equation}\label{eq:fixedpoint}
+ h=-\ii vz-L^{-1}TQ-L^{-1}(T+\ii v\partial_1)h+L^{-1}N_2(h).
+\end{equation}
+Put $s=|v|$, $s_0=10^{-6}$, $R=200$, $\kappa=1/1000$, $C=29$. By~\eqref{eq:wedge}, $\norm T\le\kappa s^2/2$. For $r=Rs$, the terms after $-\ii vz$ are bounded by $Ds^2$, where we may take $D=1500000$, because
+\begin{align*}
+ C\left\{{\kappa m\over2}+GR+{\kappa Rs_0\over2}
+ +\alpha(3mR^2+R^3s_0)\right\}
+ ={14308261787529\over10000000}<D.
+\end{align*}
+The map sends the ball strictly into itself since $151+Ds_0=152.5<200$. Its Lipschitz constant is bounded by
+\[
+ C\{Gs_0+\kappa s_0^2/2+\alpha(6mRs_0+3R^2s_0^2)\}
+ ={28581702187529\over2000000000000000}<0.015.
+\]
+Contraction therefore supplies an exact $h$, and additionally
+\begin{equation}\label{eq:werror}
+ \norm{h+\ii vz}_Z\le Ds^2.
+\end{equation}
+The real-analytic cubic map and this strict contraction also imply local analytic dependence on $(a,B,v)$, and on frequency near one. Regularity follows from $H^2(\R^4)\subset L^6$, the profile equation, and ellipticity of $a(D)+1$: hence $U\in H^4$.
+
+Let $P_1(f)=\Ima\int\overline f\partial_1f$. Expanding this quadratic functional around real $Q$ and using~\eqref{eq:werror} gives
+\begin{align*}
+ |P_1(Q+h)-2Iv|
+ &\le 2GmDs^2+GR^2s^2\\
+ &=189024000s^2.
+\end{align*}
+It follows that
+\[
+ {vP_1(U)\over8}\le{-350+189024000s_0\over8}s^2
+ =-20.122s^2.
+\]
+The mass-preserving Pohozaev identity is
+\begin{equation}\label{eq:pohoB}
+ 4E_{a,B}(U)-K_B(U)-\tfrac12vP_1(U)=0.
+\end{equation}
+It follows either by a truncated dilation test on the $H^4$ equation or by the scaling-and-uniqueness argument of Section~\ref{sec:criterion}, allowing $B$ and frequency to vary. Homogeneity four of $a$ is the only property required for the principal part. Since
+\[
+ K_B(U)\le\norm B_{\mathrm{op}}\norm{\nabla U}_2^2
+ \le\kappa s^2\,{(105+200s_0)^2\over2},
+\]
+we obtain
+\[
+ E_{a,B}(U)\le
+ -{3748773949999\over200000000000}s^2
+ <-18s^2.
+\]
+Direct substitution proves the all-time solution assertion. No stability premise is used.
+\end{proof}
+
+\begin{remark}
+The new rational verifier checks these inequalities exactly. It is an implication checker: the old interval spectral certificate remains an essential input. The explicit velocity $10^{-6}$ is now certified by the displayed argument. The earlier numerical example at $v=0.02$ is still not covered by this quantitative radius.
+\end{remark}
+
+\section{Every quadratic dispersion matrix, with frequency free}
+\begin{theorem}\label{thm:allB}
+Assume~\eqref{eq:inputs}. Fix a real homogeneous quartic polynomial with
+\[
+ \delta_a\le {1\over4\cdot10^{15}}.
+\]
+For every real symmetric matrix $B$, equation~\eqref{eq:general} has a global traveling-wave solution with strictly negative energy and constant finite $H^2$ norm. Its temporal frequency is allowed to depend on $B$.
+\end{theorem}
+\begin{proof}
+Set $v_0=10^{-6}$ and
+\[
+ \lambda^2=\max\{1,2\cdot10^{15}\norm B_{\mathrm{op}}\},\qquad B_0=B/\lambda^2.
+\]
+Then $2\delta_a+\norm{B_0}_{\mathrm{op}}\le10^{-15}=v_0^2/1000$. Theorem~\ref{thm:explicit} gives a solution $u_0$ for $B_0$. Define
+\[
+ u(t,x)=\lambda^2u_0(\lambda^4t,\lambda x).
+\]
+Homogeneity gives the target matrix $B=\lambda^2B_0$, frequency $\lambda^4$, speed $\lambda^3v_0e_1$, and
+\[
+ E_{a,B}(u(0))=\lambda^4E_{a,B_0}(u_0(0))<0.
+\]
+All Sobolev norms remain finite and constant in time for this fixed $\lambda$.
+\end{proof}
+
+In particular, $a(\xi)=|\xi|^4$, $B=\mu I_4$ covers every real $\mu$ in
+\[
+ \ii u_t=\Delta^2u-\mu\Delta u-|u|^2u.
+\]
+For this scalar case uniqueness preserves cylindrical symmetry around the travel axis. The result does not assert the same existence at fixed frequency one for arbitrary $\mu$. Nor does it extend by scaling from dimension four to dimensions two or three. These are distinct changes of problem.
+
+\begin{corollary}[Ellipsoidal principal dispersion]
+The preceding conclusion also holds in a neighborhood of every symbol $(\xi^{\mathsf T}C\xi)^2$, with $C$ any positive definite symmetric matrix. A sufficient normalized neighborhood is
+\[
+ \sup_{|\eta|=1}|a(C^{-1/2}\eta)-|\eta|^4|
+ \le {1\over4\cdot10^{15}}.
+\]
+There is no smallness restriction on the anisotropy of $C$ or on the quadratic matrix $B$.
+\end{corollary}
+\begin{proof}
+Use $y=C^{-1/2}x$. The transformed quartic symbol is $a(C^{-1/2}\eta)$ and the transformed quadratic matrix is $C^{-1/2}BC^{-1/2}$. Apply Theorem~\ref{thm:allB} and transform back. Energy is multiplied by the positive factor $(\det C)^{1/2}$. This covers the indicated neighborhoods, not every positive quartic polynomial.
+\end{proof}
+
+\section{Nonlinear powers near the critical power}
+Consider on $\R^4$
+\begin{equation}\label{eq:power}
+ \ii u_t=a(D)u+\mathcal D_Bu-|u|^{p-1}u.
+\end{equation}
+The cubic case is $p=3$. In a compact interval around $3$, the Nemytskii map $(p,U)\mapsto |U|^{p-1}U$ is continuously differentiable $\R\times H^2\to H^{-2}$. For the derivative in $p$, use
+\[
+ r^q|\log r|\le C_\epsilon(r^{q-\epsilon}+r^{q+\epsilon}),\qquad r>0,
+\]
+and the embeddings of $H^2(\R^4)$ into all finite $L^q$, with an integrability margin. Differentiation in $U$ follows from the usual pointwise derivative and H\"older bounds. No analyticity in the variable exponent is claimed.
+
+\begin{proposition}\label{prop:power}
+There is $\epsilon_p>0$ such that for every fixed $p\in(3-\epsilon_p,3+\epsilon_p)$ and every real symmetric $B$, the pure quartic equation~\eqref{eq:power}, $a(\xi)=|\xi|^4$, has a global negative-energy traveling wave, with frequency free. The conclusion persists for quartic symbols in a sufficiently small neighborhood of $|\xi|^4$.
+\end{proposition}
+\begin{proof}
+Use the exact wave in Theorem~\ref{thm:explicit} at $v_0=10^{-6}$ and $B=0$. The derivative of its profile equation is invertible on $X$: the fixed-point derivative has norm $<0.015$, so $L$ times a Neumann-invertible factor gives this inverse. The $C^1$ implicit-function theorem and continuity of energy give an open neighborhood in $(p,a,B)$ containing negative-energy profiles at frequency one. Shrink it to a product neighborhood. In particular, one fixed interval of powers admits all sufficiently small $B$.
+
+For an arbitrary target $B$, start with $B_0=B/\lambda^2$ in that neighborhood and apply
+\[
+ u_\lambda(t,x)=\lambda^{4/(p-1)}u(\lambda^4t,\lambda x).
+\]
+This leaves $p$ and $a$ unchanged, multiplies $B_0$ by $\lambda^2$, and multiplies the energy in dimension four by the positive factor $\lambda^{8/(p-1)}$. Hence negativity survives. The allowed power interval is not numerically quantified here.
+\end{proof}
+
+Thus the construction is not confined to exact mass criticality. The supercritical part $p>3$ is the more relevant extension: negative-energy standing waves in subcritical models are not in themselves a new mechanism. The general Pohozaev identity in four dimensions is
+\begin{equation}\label{eq:pPoho}
+ E_{a,B,p}(U)={1\over4}K_B(U)+{1\over8}v\cdot P(U)
+ +{p-3\over2(p+1)}\norm U_{p+1}^{p+1}.
+\end{equation}
+The last positive term for $p>3$ explains why the power range must initially be controlled relative to the negative drift contribution.
+
+\section{A dimension-independent conditional mechanism}\label{sec:criterion}
+Let $a_m(\xi)$ be a real even homogeneous symbol of order $m\ge1$, smooth on the unit sphere, with $c|\xi|^m\le a_m(\xi)\le C|\xi|^m$ for constants $0<c\le C$. Put $Z_m=H^{m/2}(\R^N)$. Its mass-critical power is
+\[
+ \beta={2m\over N},\qquad \ii u_t=a_m(D)u-|u|^\beta u.
+\]
+Take $\omega_0>0$ and a nonzero real even stationary profile $Q\in Z_m$ of
+\[
+ a_m(D)Q+\omega_0Q-|Q|^\beta Q=0.
+\]
+In this section the energy means
+\[
+ E(f)={1\over2}\int a_m(\xi)|\widehat f(\xi)|^2\dd\xi
+       -{1\over2+\beta}\norm f_{2+\beta}^{2+\beta}.
+\]
+Assume that the real linearization $L_+$ on even functions and $L_-$ on odd functions are isomorphisms $Z_m\to Z_m^*$, restricted to those parity spaces. These are substantial spectral hypotheses, not automatic properties of excited states. Define the real symmetric matrix
+\[
+ \mathcal I_{jk}=\ip{\partial_jQ}{L_-^{-1}\partial_kQ}.
+\]
+The pairing is meaningful because $m\ge1$ ensures $\partial_j:Z_m\to Z_m^*$ is bounded.
+
+\begin{theorem}[Conditional inertia criterion]\label{thm:inertia}
+Under these hypotheses and the usual elliptic realization of $a_m(D)$, the profile equation has a local $C^1$ family $Q_{\omega,v}\in Z_m$ in frequency and vector velocity. Its energy satisfies
+\[
+ E(Q_{\omega_0,v})={v\cdot P(Q_{\omega_0,v})\over2m}
+ ={1\over m}v^{\mathsf T}\mathcal I v+o(|v|^2).
+\]
+Every strictly negative direction of $\mathcal I$ therefore gives exact global negative-energy traveling solutions in the energy-space distributional sense, with constant $Z_m$ norm, for sufficiently small velocities in that direction. The statement does not assert existence of the required stationary state in each dimension. The accompanying general-mechanism note additionally proves elliptic regularity of these profiles; the explicit four-dimensional constructions above already give strong $H^4$ solutions.
+\end{theorem}
+\begin{proof}
+The embedding $Z_m\hookrightarrow L^{2+\beta}$ is subcritical relative to the energy-space Sobolev endpoint. The map
+\[
+ f\longmapsto |f|^\beta f:
+ L^{2+\beta}\longrightarrow L^{(2+\beta)/(1+\beta)}
+\]
+is $C^1$ for every $\beta>0$. Its derivative is locally H\"older of exponent $\min\{1,\beta\}$, so a noninteger power causes no failure of the $C^1$ argument. Compose this map with the Sobolev embedding and its dual. On the inversion-conjugation space the profile derivative is $\operatorname{diag}(L_+,L_-)$, hence the Banach-space implicit-function theorem applies jointly in $(\omega,v)$.
+
+At the base point,
+\[
+ \partial_{v_k}Q_{\omega_0,0}=-\ii L_-^{-1}\partial_kQ,
+ \qquad \partial_{v_k}P_j(Q_{\omega_0,0})=2\mathcal I_{jk}.
+\]
+The matrix is symmetric by self-adjointness. Conjugation and local uniqueness imply $P(Q_{\omega,-v})=-P(Q_{\omega,v})$, and thus
+$P(Q_{\omega_0,v})=2\mathcal I v+o(|v|)$.
+
+To justify dilation without assuming spatial moments, write $T_\lambda f(x)=\lambda^{N/2}f(\lambda x)$. The scaled profile solves the equation at $(\lambda^m\omega,\lambda^{m-1}v)$. Strong continuity of dilations in $Z_m$ and local uniqueness imply
+\[
+ T_\lambda Q_{\omega,v}=Q_{\lambda^m\omega,\lambda^{m-1}v}
+\]
+for $\lambda$ near one. The right side is $C^1$ in $Z_m$, so this particular dilation curve is differentiable even though arbitrary $Z_m$ functions need not have $x\cdot\nabla f\in Z_m$. Differentiate the action
+\[
+ S_{\omega,v}(f)=E(f)+{\omega\over2}\norm f_2^2-{1\over2}v\cdot P(f)
+\]
+along the curve at its critical point. Exact scaling of its three terms gives $mE-v\cdot P/2=0$. The asserted expansion follows.
+\end{proof}
+
+For the biharmonic equation $m=4$, this gives $E=v\cdot P/8$ in every dimension under the stated spectral hypotheses. The four-dimensional certificate supplies one verified input state; it does not supply all other dimensions. In the pure homogeneous model, scaling also gives negative energies of every prescribed magnitude from any one exact negative-energy wave, while preserving mass.
+
+\section{The cylindrical theorem conflict}\label{sec:gou}
+Gou's Theorem 1.2 \cite{Gou} concerns cylindrical data with a finite axial moment. It states finite-time blowup when $\mu>0$ and finite- or infinite-time blowup when $\mu=0$. The latter is written in an $H^2$ solution framework and closes by reference to Boulenger--Lenzmann \cite{BL}. Theorem~\ref{thm:allB}, in its scalar case, directly conflicts with the finite-time claim for $\mu>0$ if the companion input certificate is correct. This avoids ambiguity about the meaning of infinite-time growth.
+
+\begin{lemma}[The moment hypothesis is satisfied]
+Every small-parameter profile in Theorem~\ref{thm:explicit} satisfies $x_jU\in L^2$ for each $j$. The same holds after the fixed scaling in Theorem~\ref{thm:allB}.
+\end{lemma}
+\begin{proof}
+The Fourier multiplier $P_0=a(D)+\mathcal D_B+1+\ii v\partial_1$ is coercive for the stated small parameters. The profile is in $H^4(\R^4)\subset C_0$, and $P_0U=|U|^2U$. Put $f_R=x_j\chi(x/R)$ and $h_R=f_RU$. Then
+\[
+ P_0h_R=|U|^2h_R+[P_0,f_R]U.
+\]
+All derivatives of $f_R$ of orders one through four are uniformly bounded for $R\ge1$, so the commutator is uniformly bounded in $L^2$ by $\norm U_{H^3}$. Outside a fixed ball, $|U|^2$ is small enough to absorb its multiplication into the coercive $L^2$ estimate. Inside the ball, $f_R$ is bounded uniformly in $R$. Thus $\norm{h_R}_2$ is bounded uniformly; Fatou's lemma gives $x_jU\in L^2$.
+\end{proof}
+
+The exact point preventing a direct transplantation of the referenced proof is its multiplier
+\[
+ \phi_R(y,s)=\psi_R(|y|)+s^2/2,\qquad
+ \mathcal M_R(u)=2\Ima\int\overline u\nabla\phi_R\cdot\nabla u.
+\]
+Here $\partial_s\phi_R=s$ is unbounded. Its immediate Cauchy--Schwarz estimate includes
+$2\norm{su}_2\norm{\partial_su}_2$, whereas BL equation (7.15) uses a finite $\norm{\nabla\phi_R}_\infty$. Gou's final appeal after (2.25), (2.29) supplies no uniform axial-moment estimate replacing that input.
+
+For any sufficiently localized traveling profile,
+\begin{equation}\label{eq:drift}
+ \mathcal M_R(e^{\ii\omega t}U(y,s-vt))
+ =\mathcal M_R(U)+2vtP_s(U).
+\end{equation}
+In the pure quartic case the slope equals $16E(U)$. In the scalar mixed case it equals $16E_\mu(U)-4\mu\norm{\nabla U}_2^2$. Both can be negative while the $H^2$ norm is constant. The first spatial moment grows because the whole wave travels. The proof gap alone would not disprove a theorem; the separately constructed exact wave is the proposed counterexample. Both statements must be made explicit in an independent review.
+
+\section{What the extension does and does not settle}
+\subsection{Other dimensions}
+The conditional mechanism above applies to the mass-critical exponent $8/N$, not the cubic exponent kept fixed while changing dimension. This round produced the following numerical results; none of these rows is a new certified counterexample.
+\begin{center}
+\begin{tabular}{@{}cll@{}}
+\toprule
+Dimension & Candidate & Inverse response (numerical)\\
+\midrule
+3 & Four strong radial rings & $I\approx-1323.39702629$\\
+5 & One strong radial ring & $I\approx-194759.8229$\\
+2 & Two excited $m=1$ vortices & $\mathcal I\approx78.18055\,\mathrm{Id}_2$,\\
+  & & $\mathcal I\approx219.24665\,\mathrm{Id}_2$\\
+\bottomrule
+\end{tabular}
+\end{center}
+The three-dimensional negative response persists under changes of the truncated domain, origin cutoff and boundary condition, and is supported by an independent finite-difference calculation. Certification remains difficult: its odd degree-one Birman--Schwinger eigenvalues lie near $1.0066732$ and $0.9884677$, on both sides of the inversion threshold. Several real-even channels are also indefinite. A finite-dimensional spectral enclosure with a controlled remainder is needed; copying the four-dimensional coarse Hilbert--Schmidt bound is not sufficient. The five-dimensional candidate is more ill-conditioned. The two-dimensional tested responses are positive and give no negative-energy branch by this mechanism. Numerical evidence and failed solver runs are documented in \path{round3_dimensions.md}; the vortex calculation uses a different, complex stationary-state reduction and is not an application of the real-profile theorem above.
+
+\subsection{Zero total momentum and multiple waves}
+A negative-energy solution whose orbit is precompact in $H^2$ modulo a bounded-speed translation has
+\[
+ \lim_{T\to\infty}{P\cdot(a(T)-a(0))\over T}=8E
+\]
+in the pure mass-critical biharmonic model. This follows by integrating the moving localized virial identity, first letting $T\to\infty$ at fixed radius and then letting the radius tend to infinity. Uniform compactness makes all tail errors vanish. Consequently such an orbit cannot have $P=0$ and $E<0$.
+
+This does not prove blowup for all negative-energy data of zero momentum. Two separating negative-energy waves with opposite momenta would evade compactness. An exact multi-soliton theorem with those asymptotics would yield an exact zero-momentum counterexample by conservation and asymptotic decoupling. Adding two profiles is only an approximate solution; a nonlinear correction and control of unstable modes remain essential. No such construction is supplied here.
+
+\subsection{Stability and completeness}
+Parameter persistence is not orbital stability. The certificate does not prove that an open set of initial data stays near the traveling waves. Nor does it classify every global negative-energy solution. The next substantial questions are whether the three-dimensional candidate can be certified, which excited branches admit negative inertia, whether exact separating configurations exist, and what the full linearized dynamics imply about instability or stable manifolds. These are genuine new proof obligations; the elementary scaling consequences above should not be counted as multiple independent conjectures solved.
+
+\section{Reproduction and files}
+The supplement's exact arithmetic checker is
+\begin{verbatim}
+python verify_explicit_extension.py
+\end{verbatim}
+It writes \path{explicit_extension_results.json} and checks all ten displayed rational implications. The companion's base verifiers and frozen data are included under \path{base_certificate/}; they remain required to establish~\eqref{eq:inputs}. The base manuscript, detailed general-mechanism proof, robustness notes, cylindrical audit, dimension-search evidence, and independent explicit-constant audit accompany this supplement. Numerical evidence is labeled separately from certified bounds.
+
+\begin{thebibliography}{9}
+\bibitem{Base} Computer-assisted research manuscript, \emph{Global negative-energy traveling waves for the mass-critical biharmonic Schr\"odinger equation in four space dimensions}, 7 October 2026. Companion manuscript and frozen certificate package; internally verified, not externally reviewed.
+\bibitem{BL} T. Boulenger and E. Lenzmann, \emph{Blowup for biharmonic NLS}, Ann. Sci. \'Ec. Norm. Sup\'er. (4) \textbf{50} (2017), 503--544. \url{https://doi.org/10.24033/asens.2326}.
+\bibitem{Gou} T. Gou, \emph{Blowup of cylindrically symmetric solutions for biharmonic NLS}, Proceedings of the Edinburgh Mathematical Society (2024); preprint \url{https://arxiv.org/abs/2205.08167}, version 3.
+\bibitem{Travel} L. Bugiera, E. Lenzmann, A. Schikorra and J. Sok, \emph{On symmetry of traveling solitary waves for dispersion generalized NLS}, Nonlinearity \textbf{33} (2020), 2797--2819. \url{https://doi.org/10.1088/1361-6544/ab74b2}.
+\bibitem{Dinh} L. Dinh, \emph{Finite-Time Blow-Up of Radial Negative-Energy Solutions for the Mass-Critical Biharmonic Nonlinear Schr\"odinger Equation}, Meta AI research manuscript, 2 October 2026. Remark 1.4 discusses the nonradial question.
+\end{thebibliography}
+\end{document}

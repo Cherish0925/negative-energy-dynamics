@@ -1,0 +1,269 @@
+\section{The energy geometry at fixed mass and momentum}
+\label{sec:r12-constraint}
+
+The spectral reduction for a specified smooth branch requires control of
+the real linearized kernel. The variational assertion below does not:
+the imaginary response alone forces a negative constrained energy
+curvature when the homogeneous order exceeds two. Every component of
+momentum is preserved, and no differentiability of the dilation group on
+the individual profile is assumed.
+
+Let $s=m/2$, $\alpha=2m/N$, and let $a$ be a positive, real-even,
+elliptic homogeneous symbol of degree $m>1$. Write
+\[
+ E(u)=\frac12 A(u)-\frac1{\alpha+2}\|u\|_{\alpha+2}^{\alpha+2},
+ \quad M(u)=\|u\|_2^2,
+ \quad P(u)=\operatorname{Im}\int\overline u\nabla u.
+\]
+Let $Q$ be a real sharp ground profile at frequency one. The scalar
+phase-coercivity theorem gives
+\[
+ L_-=a(D)+1-|Q|^\alpha\geq0,\qquad \ker L_-=\mathbb RQ,
+\]
+with coercivity on $H^s\cap Q^\perp$. Define
+\begin{equation}\label{eq:r12-phase-T}
+ Z_j=L_-^{-1}\partial_jQ,\qquad
+ T_{ij}=\langle\partial_iQ,Z_j\rangle.
+\end{equation}
+The inverse and pairing can be understood in energy-space form sense.
+In particular $T$ is positive definite.
+
+\begin{theorem}[Constrained curvature without a profile branch]
+\label{thm:r12-constrained-curvature}
+Suppose $v_n\to0$, $v_n\ne0$, and exact profiles satisfy
+\[
+ (a(D)+1+iv_n\cdot\nabla)U_n-|U_n|^\alpha U_n=0,
+ \qquad U_n\longrightarrow Q\quad\hbox{strongly in }H^s,
+\]
+after phase and translation. For every sufficiently large $n$ there is
+a continuous $H^s$ curve $V_n(\lambda)$, defined near $\lambda=1$, with
+\[
+ V_n(1)=U_n,\qquad
+ M(V_n(\lambda))=M(U_n),\qquad
+ P(V_n(\lambda))=P(U_n).
+\]
+Its scalar energy is $C^2$ and obeys
+\begin{equation}\label{eq:r12-constrained-curvature}
+ \left.\frac{d}{d\lambda}E(V_n(\lambda))\right|_1=0,
+ \qquad
+ \left.\frac{d^2}{d\lambda^2}E(V_n(\lambda))\right|_1
+ =(2-m)v_n^TTv_n+o(|v_n|^2).
+\end{equation}
+For $m>2$ the profile is therefore not a local energy minimum at its
+fixed mass and momentum: both sides of this curve have strictly lower
+energy. The statement assumes neither a differentiable family of
+profiles nor nondegeneracy of the real block $L_+$.
+\end{theorem}
+
+\begin{proof}
+We suppress the sequence index and keep errors relative to its limit.
+Choose the phase so that $U=X+iY$ and $\langle Y,Q\rangle=0$.
+The imaginary profile equation is
+\[
+ L_-Y=-v\cdot\nabla X+(|U|^\alpha-|Q|^\alpha)Y.
+\]
+Put $p=\alpha+2$. Since $H^s\hookrightarrow L^p$, the potential
+$|U|^\alpha-|Q|^\alpha$ tends to zero as a quadratic form on $H^s$:
+this follows from H\"older and its convergence in $L^{p/\alpha}$.
+The derivative maps $H^s$ continuously to $H^{-s}$ because $2s=m>1$.
+Project onto $Q^\perp$ and apply phase coercivity. First
+$\|Y\|_{H^s}=O(|v|)$; substituting this bound back into the equation gives
+\begin{equation}\label{eq:r12-imaginary-response}
+ Y=-\sum_jv_jZ_j+o(|v|)\quad\hbox{in }H^s.
+\end{equation}
+No estimate for a derivative of the real profile is needed.
+The bilinear momentum form is continuous on $H^s$, and
+$P_j(U)=-2\langle Y,\partial_jX\rangle$. Hence
+\begin{equation}\label{eq:r12-P-response}
+ P(U)=2Tv+o(|v|).
+\end{equation}
+The positivity of $T$ follows from phase coercivity and the fact that a
+nonzero $L^2$ function cannot have a vanishing nonzero directional
+derivative.
+
+For $c=(c_0,c_1,\ldots,c_N)\in\mathbb R^{N+1}$ set
+\[
+ W(c)=(1+c_0)U+i\sum_{j=1}^N c_jZ_j.
+\]
+The Jacobian at $c=0$ of $c\mapsto(M(W(c)),P(W(c)))$ is
+\[
+ \begin{pmatrix}
+  2M(U)&O(|v|)\\
+  2P(U)&-2T+o(1)
+ \end{pmatrix}.
+\]
+It is invertible for sufficiently small velocity. The finite-dimensional
+implicit-function theorem supplies a smooth $c(\lambda)$ with $c(1)=0$
+and
+\begin{equation}\label{eq:r12-W-charges}
+ M(W(\lambda))=M(U),\qquad
+ P(W(\lambda))=\lambda^{-1}P(U).
+\end{equation}
+Here and below $W(\lambda)$ denotes $W(c(\lambda))$.
+Differentiating these equations and using
+\eqref{eq:r12-P-response} gives
+\[
+ c_j'(1)=v_j+o(|v|),\qquad c_0'(1)=O(|v|^2),
+ \qquad h:=W'(1)=i\sum_jv_jZ_j+o(|v|)\quad\hbox{in }H^s.
+\]
+The amplitude estimate uses
+$\langle U,iZ_j\rangle=\langle Y,Z_j\rangle=O(|v|)$.
+
+Define
+\[
+ V(\lambda,x)=\lambda^{N/2}W(\lambda,\lambda x).
+\]
+Critical homogeneity gives the exact identities
+\begin{equation}\label{eq:r12-scaled-charges}
+ M(V(\lambda))=M(U),\quad P(V(\lambda))=P(U),\quad
+ E(V(\lambda))=\lambda^mE(W(\lambda)).
+\end{equation}
+Strong continuity of dilation gives a continuous $H^s$ curve. Although
+that curve need not be differentiable in $H^s$, its scalar energy is
+$C^2$ by the last identity. This is the reason that no weighted moment
+or dilation-domain assumption enters the theorem.
+
+Let $\mathcal L_U$ be the real Hessian of
+$S=E+M/2-v\cdot P/2$, and put
+$q_U(h)=\langle h,\mathcal L_Uh\rangle$ in form notation.
+Because $S'(U)=0$, differentiating \eqref{eq:r12-W-charges} yields
+\[
+ \left.\frac{d}{d\lambda}E(W(\lambda))\right|_1=-\frac12v\cdot P(U),
+ \qquad
+ \left.\frac{d^2}{d\lambda^2}E(W(\lambda))\right|_1
+ =q_U(h)+v\cdot P(U).
+\]
+Using the exact profile identity $v\cdot P=2mE$ in
+\eqref{eq:r12-scaled-charges}, we conclude that
+\begin{equation}\label{eq:r12-exact-curvature}
+ E(V)'(1)=0,\qquad
+ E(V)''(1)=q_U(h)-\frac{m-1}{2}v\cdot P(U).
+\end{equation}
+The energy is a $C^2$ functional on $H^s$, since $p>2$ and
+$H^s\hookrightarrow L^p$. Its Hessian forms therefore converge on bounded
+sets as $U\to Q$, $v\to0$. The imaginary block at $Q$ is $L_-$, so
+\[
+ q_U(h)=q_Q\Big(i\sum_jv_jZ_j\Big)+o(|v|^2)
+ =v^TTv+o(|v|^2).
+\]
+Together with \eqref{eq:r12-P-response} and
+\eqref{eq:r12-exact-curvature}, this proves
+\eqref{eq:r12-constrained-curvature}. The sign for $m>2$ follows from
+positive definiteness of $T$.
+\end{proof}
+
+\begin{corollary}[All sufficiently slow action ground waves]
+\label{cor:r12-all-ground-waves}
+At frequency one, define
+\[
+ K_v(u)=A(u)+M(u)-v\cdot P(u),\qquad
+ \kappa_v=\inf_{u\ne0}\frac{K_v(u)}{\|u\|_p^2},
+ \qquad p=2+\frac{2m}{N}.
+\]
+For sufficiently small $|v|$, this infimum is attained. Normalize each
+minimizer $U$ by $K_v(U)=\|U\|_p^p$; these are precisely the action
+minimizers on the nonzero Nehari manifold. If $m>2$, then every such
+ground wave at every sufficiently small nonzero velocity is not a local
+energy minimum at fixed mass and momentum. This conclusion requires no
+uniqueness, differentiable branch, or real-profile nondegeneracy.
+\end{corollary}
+
+\begin{proof}
+Ellipticity and H\"older in Fourier variables give
+\[
+ |P(u)|\leq C A(u)^{1/m}M(u)^{1-1/m}
+          \leq C'(A(u)+M(u)).
+\]
+Consequently $K_v$ is uniformly equivalent to the $H^s$ norm squared
+for sufficiently small $|v|$. The exponent $p>2$ is strictly below the
+energy-space Sobolev endpoint, including when $s\geq N/2$.
+For completeness, normalize a minimizing sequence by $\|u_n\|_p=1$.
+It is bounded in $H^s$ and cannot vanish locally, by the standard
+localized Sobolev interpolation argument. After a translation it has a
+nonzero weak limit $u$. Local compact embedding and the
+Brezis--Lieb identity split the $p$th power norm into $c$ and $1-c$,
+where $c=\|u\|_p^p>0$. Weak Hilbert-space orthogonality splits $K_v$.
+Thus
+\[
+ \kappa_v\geq\kappa_v\big(c^{2/p}+(1-c)^{2/p}\big).
+\]
+Since $2/p<1$, this forces $c=1$. Norm convergence and the coercivity of
+$K_v$ give strong $H^s$ convergence and attainment. Rescaling a minimizer
+to the Nehari manifold gives the profile equation and
+\begin{equation}\label{eq:r12-ground-norm}
+ K_v(U)=\|U\|_p^p=\kappa_v^{p/(p-2)}.
+\end{equation}
+On that manifold $S_v(U)=(1/2-1/p)\|U\|_p^p$, proving the asserted
+minimizing equivalence.
+
+The Fourier bound also gives $\kappa_v\to\kappa_0$ as $v\to0$.
+Let $v_n\to0$ and let $U_n$ be any Nehari-normalized minimizers.
+They are bounded in $H^s$ by \eqref{eq:r12-ground-norm}, and
+$K_0(U_n)-K_{v_n}(U_n)=v_n\cdot P(U_n)\to0$. Therefore their normalized
+versions form a minimizing sequence for $\kappa_0$.
+The preceding compactness proof gives, after translations and passing to
+a subsequence, $U_n\to Q$ strongly in $H^s$, where $Q$ is a
+frequency-one ground profile.
+
+We verify that this limiting profile is one of the sharp critical
+optimizers used in Theorem~\ref{thm:r12-constrained-curvature}.
+Write $r=m/N$ and let the sharp critical inequality be
+\[
+ \|u\|_p^p\leq C_* M(u)^r A(u).
+\]
+For fixed $A+M$, the product $M^rA$ is maximal at $M=rA$.
+A critical dilation of a sharp optimizer attains that ratio, so it also
+attains $\kappa_0$. Conversely, attainment of $\kappa_0$ forces equality
+in both inequalities, hence sharp critical optimization and $M=rA$.
+The density phase-rigidity theorem makes this optimizer real after a
+constant phase. Nehari normalization then gives
+$\|Q\|_p^p=(1+r)A(Q)$, and equality in
+$\|Q\|_p^p\leq(1+r)(M(Q)/M_c)^r A(Q)$ gives $M(Q)=M_c$.
+
+If the asserted uniform small-velocity conclusion failed, there would
+be a sequence of nonzero $v_n\to0$ and ground waves lacking a negative
+fixed-charge curve. The compactness just proved produces a real limiting
+$Q$, to which Theorem~\ref{thm:r12-constrained-curvature} applies. Its
+strictly negative curvature contradicts that failure. No uniform
+choice of a differentiable family was used.
+\end{proof}
+
+\paragraph{Why the phase correction matters.}
+The linear boost
+\[
+ V_b(\lambda,x)=e^{i(1-\lambda)k\cdot x}
+                  \lambda^{N/2}U(\lambda x),\qquad
+ k=\frac{P(U)}{M(U)},
+\]
+also fixes both charges. However its curvature, when $a$ has the
+homogeneous $C^2$ derivative bounds and $m>2$, is
+\begin{equation}\label{eq:r12-linear-boost}
+ E(V_b)''(1)=\frac12\left(k^TH_Uk-(m-1)v\cdot P(U)\right),
+ \qquad H_U=\int D^2a(\xi)|\widehat U(\xi)|^2\,d\xi.
+\end{equation}
+Indeed the kinetic term is
+$\int a(k+\lambda(\xi-k))|\widehat U(\xi)|^2\,d\xi$.
+Euler's identities and the profile boost identity
+$\int\nabla a|\widehat U|^2=vM$ give
+\eqref{eq:r12-linear-boost}. Near $Q$ its leading term is
+\[
+ \frac{2}{M(Q)^2}v^TTH_QTv-(m-1)v^TTv.
+\]
+Phase positivity alone gives no sign for this expression.
+By contrast the optimal imaginary correction minimizes
+$\langle\psi,L_-\psi\rangle$ under
+$-2\langle\partial_jQ,\psi\rangle=-P_j$. Its minimum is
+$P^TT^{-1}P/4$, attained at
+$\psi=\frac12\sum_j(T^{-1}P)_jZ_j$.
+This is the correction used to leading order in the theorem.
+
+\begin{remark}[Energetic and dynamical conclusions]
+The theorem gives energy-decreasing perturbations at precisely the same
+conserved charges as the wave. It does not alone prove that their
+solutions escape a neighborhood of the symmetry orbit. In particular,
+Morse index one does not remove an uncontrolled extra kernel: a negative
+direction can belong to a zero Jordan chain. Nonlinear or spectral
+instability requires the additional dynamical argument stated in its
+own theorem. For $1<m<2$ the displayed curve instead has positive
+leading curvature, which also does not establish stability.
+\end{remark}

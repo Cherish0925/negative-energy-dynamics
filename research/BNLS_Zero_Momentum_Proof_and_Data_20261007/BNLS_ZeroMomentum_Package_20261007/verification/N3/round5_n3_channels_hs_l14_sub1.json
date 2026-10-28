@@ -1,0 +1,15 @@
+{
+  "status": "whole-space radial Birman Schwinger Hilbert Schmidt bound",
+  "ell": 14,
+  "beta": "[3.66666666666666666666666666666666666666666666666666666667 +/- 4.40e-57]",
+  "profile_sha256": "5d2a86dc991fe960e7036ca651634c556ded9da4aa7d1ae357ab5f4f656d526b",
+  "precision_bits": 192,
+  "subdivision_multiplier": 1,
+  "cells": 67686,
+  "trace": "[2.19973 +/- 7.24e-6]",
+  "HS_squared": "[1.3718 +/- 3.40e-5]",
+  "HS_squared_upper": "[1.37178579209821540250694001653504652798044204505030360902 +/- 1.03e-57]",
+  "origin_HS_bound": "[1.0680559280119901316350463287038984973726661853736962169e-9 +/- 4.74e-65]",
+  "HS_squared_lt_8_8": true,
+  "seconds": 18.431139707565308
+}

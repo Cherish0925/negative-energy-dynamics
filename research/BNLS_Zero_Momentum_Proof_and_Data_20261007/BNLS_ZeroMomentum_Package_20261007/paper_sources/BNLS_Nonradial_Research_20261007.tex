@@ -1,0 +1,732 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=24mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype,amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,array,longtable,enumitem,xcolor}
+\usepackage[colorlinks=true,linkcolor=blue!45!black,citecolor=blue!45!black,urlcolor=blue!45!black]{hyperref}
+\usepackage{listings}
+\lstset{basicstyle=\ttfamily\footnotesize,breaklines=true,columns=fullflexible,frame=single}
+\setlength{\parskip}{3pt}
+\setlength{\parindent}{14pt}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newcommand{\N}{\mathbb N}
+\newcommand{\ii}{\mathrm i}
+\newcommand{\dd}{\,\mathrm d}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\newcommand{\ip}[2]{\left\langle #1,#2\right\rangle}
+\newcommand{\spec}{\operatorname{spec}}
+\newcommand{\dist}{\operatorname{dist}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\HS}{\mathrm{HS}}
+\newcommand{\Rea}{\operatorname{Re}}
+\newcommand{\Ima}{\operatorname{Im}}
+\newcommand{\file}[1]{\path{#1}}
+\title{Global negative-energy traveling waves for the\newline mass-critical biharmonic Schr\"odinger equation\newline in four space dimensions}
+\author{Computer-assisted research manuscript}
+\date{7 October 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We construct nonradial global solutions of
+\(\ii\partial_tu=\Delta^2u-|u|^2u\) on \(\R^4\) with strictly negative energy and constant finite \(H^2\) norm. The construction starts from a radial stationary state validated near an explicitly specified compact piecewise rational polynomial. Exact polynomial arithmetic, variational certificates, and Arb interval bounds establish the required spectral gaps and a negative inverse pairing
+\(\ip{\partial_1Q}{(\Delta^2+1-Q^2)^{-1}\partial_1Q}<-175\).
+An analytic implicit-function theorem then produces traveling profiles with energy \(Iv^2/4+O(v^4)<0\). The Pohozaev identity is justified without spatial moment assumptions. The accompanying finite data and verification programs form part of the proof. This disproves the dimension-unrestricted assertion that negative energy alone forces finite-time blowup for every nonradial mass-critical biharmonic NLS datum. No conclusion for dimensions two or three is asserted.
+\end{abstract}
+\noindent\textbf{Status.} This is a computer-assisted research proof with completed internal certificates. It has not undergone external peer review or independent reproduction outside the research session. The analytic arguments, finite input data, and verification instructions are supplied for that purpose.
+
+\section{Statement and conventions}
+
+Consider the mass-critical equation in four dimensions,
+\begin{equation}\label{eq:bnls}
+ \ii\partial_tu=\Delta^2u-|u|^2u,
+ \qquad (t,x)\in\R\times\R^4.
+\end{equation}
+We use the normalization
+\begin{equation}\label{eq:conserved}
+ M(f)=\norm f_2^2,\quad
+ E(f)=\frac12\norm{\Delta f}_2^2-\frac14\norm f_4^4,
+ \quad P(f)=\Ima\int_{\R^4}\overline f\,\nabla f\dd x.
+\end{equation}
+All unmarked integrals and inner products below are over \(\R^4\); inner products of real functions have their usual real meaning. The choice of sign in \eqref{eq:bnls} and the factor in \(P\) are important for the energy expansion.
+
+\begin{theorem}\label{thm:main}
+There exist a nonzero real radial function \(Q\in H^4(\R^4)\), a number \(\varepsilon>0\), and a real-analytic map
+\[
+ (-\varepsilon,\varepsilon)\ni v\longmapsto Q_v\in H^2(\R^4;\C)
+\]
+with \(Q_0=Q\), such that
+\begin{equation}\label{eq:profile}
+ \Delta^2Q_v+Q_v+\ii v\partial_1Q_v-|Q_v|^2Q_v=0.
+\end{equation}
+Each \(Q_v\) belongs to \(H^4\). For every sufficiently small nonzero \(v\),
+\[
+ E(Q_v)<0,\qquad
+ u_v(t,x)=e^{\ii t}Q_v(x-vte_1)
+\]
+is a global solution of \eqref{eq:bnls}, and
+\[
+ \norm{u_v(t)}_{H^2}=\norm{Q_v}_{H^2}<\infty\qquad(t\in\R).
+\]
+The profile \(Q_v\) is not radial about any point when \(v\ne0\).
+\end{theorem}
+
+The theorem is an existence statement for an interval of sufficiently small velocities. We do not give a numerical lower bound on \(\varepsilon\), and do not certify that a particular numerical velocity such as \(v=0.02\) lies in that interval. Such a bound is unnecessary for the counterexample. No stability claim is made. A global exact traveling wave suffices regardless of its dynamical instability.
+
+The construction addresses the original assertion without radial symmetry in a permitted dimension, \(N=4\), where the mass-critical power \(8/N\) equals two. It does not decide the analogous question separately for \(N=2\) or \(N=3\). Radial blowup arguments and their structural limitations provide useful background; see Boulenger--Lenzmann \cite{BL}. The traveling profiles here are nonradial, so they do not contradict a theorem restricted to radial initial data.
+
+\section{An energy space with rational constants}
+
+Put \(A=\Delta^2+1\). On \(Z=H^2(\R^4)\) use the equivalent norm
+\begin{equation}\label{eq:znorm}
+ \norm h_Z=\norm{A^{1/2}h}_2
+ =\bigl(\norm{\Delta h}_2^2+\norm h_2^2\bigr)^{1/2},
+ \qquad \norm f_{Z^*}=\norm{A^{-1/2}f}_2.
+\end{equation}
+The Fourier transform is unitary. Complex spaces are regarded as real Banach spaces whenever the cubic nonlinearity is differentiated.
+
+\begin{lemma}\label{lem:sobolev}
+For \(h,f,g,k\in Z\),
+\begin{align}
+ \norm h_4&\le\tfrac14\norm h_Z,\label{eq:l4}\\
+ \norm{\partial_1h}_{Z^*}&\le\tfrac35\norm h_Z,\label{eq:derivative}\\
+ \norm{f g k}_{Z^*}&\le\alpha\norm f_Z\norm g_Z\norm k_Z,
+ \qquad\alpha=\tfrac1{256}.\label{eq:trilinear}
+\end{align}
+The same product estimate holds with any factors conjugated.
+\end{lemma}
+\begin{proof}
+The sharp four-dimensional Sobolev inequality \cite{Talenti} is
+\[
+ \norm h_4^2\le\frac{\sqrt6}{8\pi}\norm{\nabla h}_2^2.
+\]
+By Fourier space and \(2|\xi|^2\le1+|\xi|^4\), its right side is at most
+\(\sqrt6\norm h_Z^2/(16\pi)\). Since \(\pi>3>\sqrt6\), this is less than \(\norm h_Z^2/16\), proving \eqref{eq:l4}. The derivative estimate follows from
+\[
+ \sup_{r\ge0}\frac{r}{1+r^4}=\frac{3^{3/4}}4<\frac35;
+\]
+the last strict inequality can be checked by fourth powers. Finally test the product against a unit vector in \(Z\), apply H\"older with four \(L^4\) factors, and use \eqref{eq:l4}.
+\end{proof}
+
+If \(q\) is bounded and compactly supported, define the positive compact Birman--Schwinger operator
+\begin{equation}\label{eq:bs}
+ K_{c,q}=A^{-1/2}(c q^2)A^{-1/2},\qquad c>0.
+\end{equation}
+The same notation denotes its restriction to an invariant angular sector. The factorization
+\begin{equation}\label{eq:factorization}
+ A-cq^2=A^{1/2}(1-K_{c,q})A^{1/2}
+\end{equation}
+shows that a gap \(\dist(1,\spec K_{c,q})\ge\gamma>0\) gives
+\begin{equation}\label{eq:inverse}
+ \norm{(A-cq^2)^{-1}}_{Z^*\to Z}\le\gamma^{-1}.
+\end{equation}
+This avoids converting a spectral bound into a costly \(L^2\to H^4\) estimate.
+
+\section{The finite data and their certified inequalities}\label{sec:data}
+
+\subsection{Exact definition of the trial profile}
+The trial \(q\) is not specified by a plot or a numerical differential-equation solver. It is the following exact function. Set
+\[
+ r_j=j/16\quad(0\le j\le512),\qquad r_{513}=36.
+\]
+At each node, four rational values \(q^{(k)}(r_j)\), \(0\le k\le3\), are supplied in
+\file{round2_radial_H4_exact_h1_16.json}.
+The hexadecimal entries are finite binary rationals, interpreted exactly. On each interval \([r_j,r_{j+1}]\), let \(q\) be the unique polynomial of degree at most seven matching these eight endpoint conditions. Set \(q(r)=0\) for \(r\ge36\). Thus the data specify a unique radial function without reference to its numerical discovery.
+
+The endpoint jets satisfy \(q'(0)=q'''(0)=0\), and all four jets vanish at \(r=36\). The shared jets give \(C^3\) matching at every internal node. In particular the radial extension belongs to \(H^4(\R^4)\), and its fourth weak derivatives are the piecewise ordinary derivatives; there are no interface delta terms. At the origin the absence of the linear and cubic radial terms supplies the required local regularity.
+
+The canonical profile file has SHA-256
+\begin{center}\small\ttfamily
+c50a6f98682ce5f5bef9ab62ae2a93ba06b9\\
+1522c8f3e29b859ac521afb8f627
+\end{center}
+where the two displayed strings are concatenated. The hash is an identity check, not a substitute for the mathematical specification or verification.
+
+A second compact rational Hermite function \(V\), on the nodes \(j/5\), \(0\le j\le200\), defines the real trial response
+\begin{equation}\label{eq:psi}
+ \psi(x)=x_1V(|x|).
+\end{equation}
+Its jets are the \texttt{vjets} entries in
+\file{round2_certificate_exact_rational_data.json}; it is zero for \(r\ge40\).
+The unused \texttt{qjets} in that historical file do not define the canonical \(q\). All computations in this proof use the canonical profile above.
+
+\subsection{Scalar certificates}
+Write \(g_q=\partial_1q\), and define
+\begin{equation}\label{eq:Jq}
+ J_q=2\ip{g_q}{\psi}-\ip{\psi}{(A-q^2)\psi}.
+\end{equation}
+The following are verified bounds for the same \(q,\psi\).
+\begin{proposition}[Finite scalar certificate]\label{prop:scalar}
+The exact trial functions satisfy
+\begin{align}
+ \norm q_Z&\le104,& \norm\psi_Z&\le132,\label{eq:normcert}\\
+ \norm{Aq-q^3}_2&<\frac{121}{500000},&
+ \norm{(A-q^2)\psi-g_q}_2&<\frac{331}{500000},\label{eq:rescert}\\
+ J_q&\le-273.\label{eq:Jcert}
+\end{align}
+\end{proposition}
+The certificate is obtained by exact rational polynomial operations, Bernstein bounds for residuals, and rational enclosures of \(\pi\). The verification method is detailed in Section~\ref{sec:poly}. For orientation, outward upper bounds before simplification are
+\[
+ \norm q_Z^2<10635.58449,\quad
+ \norm\psi_Z^2<17273.99594,\quad
+ J_q<-273.47386,
+\]
+\[
+ \norm{Aq-q^3}_2<0.000241906,\qquad
+ \norm{(A-q^2)\psi-g_q}_2^2<4.147920\cdot10^{-7}.
+\]
+These decimal summaries are not the quantities used for exact Boolean decisions.
+
+\subsection{Angular operators and the spectral certificate}
+Let \(\ell\in\N\cup\{0\}\), \(\lambda_\ell=\ell(\ell+2)\), and
+\begin{equation}\label{eq:angular}
+ D_\ell=\partial_r^2+\frac3r\partial_r-\frac{\lambda_\ell}{r^2},
+ \qquad H_\ell=-D_\ell,\qquad A_\ell=H_\ell^2+1.
+\end{equation}
+These operators act in \(L^2((0,\infty),r^3\dd r)\), with the regular radial realizations inherited from spherical harmonic decomposition of \(-\Delta\). Define
+\[
+ K_{c,q,\ell}=A_\ell^{-1/2}(c q^2)A_\ell^{-1/2}.
+\]
+Its positive eigenvalues, in nonincreasing order and with multiplicity, are denoted \(\mu_j\). Angular normalization cancels from all Rayleigh quotients and trace formulas in this single-channel space.
+
+\begin{proposition}[Finite spectral certificate]\label{prop:spectral}
+The canonical \(q\) satisfies all inequalities in Table~\ref{tab:spectrum}.
+\end{proposition}
+\begin{table}[ht]
+\centering\small
+\begin{tabular}{@{}ccp{53mm}p{39mm}@{}}
+\toprule
+\(c\)&\(\ell\)&Certified variational lower bounds&Certified upper bound\\
+\midrule
+3&0&\(\mu_1\ge5.395,\quad\mu_2>2.999\)&\(\norm K_\HS^2<38.80\)\\
+3&2&\(\mu_1>2.11\)&\(\norm K_\HS^2<4.80\)\\
+3&4&none needed&\(\norm K_\HS^2<0.73\)\\
+1&1&\(\mu_1>1.04\)&\(\tr K<1.70\)\\
+1&3&none needed&\(\norm K_\HS^2<0.22\)\\
+\bottomrule
+\end{tabular}
+\caption{Completed certificates. Lower bounds use exact rational Ritz forms; upper bounds use rigorous Arb enclosures.}\label{tab:spectrum}
+\end{table}
+
+Here and below every finite decimal in a stated bound is the corresponding exact terminating rational. For \(c=3,\ell=0\) we deliberately weaken the upper bound to \(39\). Since
+\[
+ 39-5.395^2-2.999^2=0.899974<(1-0.05)^2,
+\]
+positivity and \(\sum_j\mu_j^2=\norm K_\HS^2\) imply
+\begin{equation}\label{eq:radialgap}
+ \dist(1,\spec K_{3,q,0})\ge\frac1{20}.
+\end{equation}
+Indeed the first two eigenvalues lie above \(1+1/20\), and every remaining eigenvalue lies below \(1-1/20\). Likewise,
+\begin{align}
+ \dist(1,\spec K_{3,q,2})&\ge\frac25,
+ &K_{3,q,4}&\le\frac9{10},\label{eq:plusgaps}\\
+ \dist(1,\spec K_{1,q,1})&\ge\frac1{25},
+ &K_{1,q,3}&\le\frac9{10}.\label{eq:minusgaps}
+\end{align}
+For the \(\ell=2\) claim, \(4.80-2.11^2=0.3479<0.6^2\). For \(\ell=1\), all eigenvalues after the first are at most \(1.70-1.04=0.66\). The other two claims follow from \(\norm K\le\norm K_\HS\).
+
+\subsection{All higher angular degrees}
+For \(\ell\ge1\), integration by parts on a common form core gives
+\begin{equation}\label{eq:angularidentity}
+ \int_0^\infty r^3|D_\ell f|^2\dd r
+ =\int_0^\infty r^3|D_0f|^2\dd r
+ +2\lambda_\ell\int_0^\infty r|f'|^2\dd r
+ +\lambda_\ell^2\int_0^\infty r^{-1}|f|^2\dd r.
+\end{equation}
+There is no boundary contribution at zero on this core; extension follows by closure. The forms for \(\ell\ge1\) have the same domain, with equivalent norms. They increase with \(\ell\). The variational formula for the largest BS eigenvalue therefore shows that it cannot increase with \(\ell\) for a fixed potential. Consequently the \(\ell=4\) bound covers every even \(\ell\ge4\), and the \(\ell=3\) bound covers every odd \(\ell\ge3\).
+
+An additional exact check, included in the bundle as a redundant independent control of the large degrees, proves
+\[
+ c r^4 q(r)^2\le\tfrac9{10}(r^4+\lambda_\ell^2)
+\]
+for \((c,\ell)=(1,5)\) and \((3,6)\). Bernstein coefficients of the differences are positive on every profile cell. Combined with \eqref{eq:angularidentity}, this gives \(A_\ell-cq^2\ge A_\ell/10\) for all higher corresponding degrees. Either this check or the preceding monotonicity argument completes the infinite angular tail.
+
+\section{Exact polynomial verification}\label{sec:poly}
+
+This section describes why the finite scalar and variational certificates are rigorous, and specifies enough algebra to reproduce them independently.
+
+\subsection{Polynomial arithmetic and residuals}
+On a cell \([a,a+h]\) set \(t=(r-a)/h\). If \(j_k^-\) and \(j_k^+\) are the four endpoint jets, write \(q(r)=\sum_{k=0}^7b_kt^k\). The first four coefficients are \(b_k=h^kj_k^-/k!\). The last four are obtained from the rational system enforcing the jets at \(t=1\), with coefficient matrix
+\[
+ \begin{pmatrix}
+ 1&1&1&1\\4&5&6&7\\12&20&30&42\\24&60&120&210
+ \end{pmatrix}.
+\]
+All differentiation, multiplication, restriction to common cells, and integration of these polynomials is performed in rational arithmetic.
+
+The radial stationary residual is
+\begin{equation}\label{eq:radres}
+ F=q^{(4)}+\frac6r q'''+\frac3{r^2}q''-\frac3{r^3}q'+q-q^3.
+\end{equation}
+The numerator \(B=r^3F\) is polynomial on each cell. For a nonzero-radius cell,
+\[
+ \int_a^{a+h}|F|^2r^3\dd r
+ =\int_a^{a+h}|B|^2r^{-3}\dd r
+ \le \sup|B|^2\frac{a^{-2}-(a+h)^{-2}}2.
+\]
+At the origin, exact cancellation shows that \(B\) is divisible by \(r^3\), and the regular polynomial \(F\) is bounded with the weight \(r^3\). The polynomial supremum is enclosed using its Bernstein coefficients, with three exact dyadic subdivisions per cell. Summing and multiplying by the sphere area \(2\pi^2\) proves the stationary bound in \eqref{eq:rescert}. The verifier uses the rigorous rational upper bound \(2(355/113)^2\) for this area.
+
+For \(\psi=x_1V(r)\),
+\[
+ \Delta\psi=x_1\left(V''+\frac5rV'\right),\quad
+ \Delta^2\psi=x_1\left(V^{(4)}+\frac{10}rV'''
+ +\frac{15}{r^2}V''-\frac{15}{r^3}V'\right).
+\]
+The angular identity \(\int_{S^3}\omega_1^2\dd\omega=\pi^2/2\) gives
+\begin{align}
+ \norm\psi_Z^2&=\frac{\pi^2}2\int_0^\infty
+ \left[\left(V''+\frac5rV'\right)^2+V^2\right]r^5\dd r,\label{eq:psinorm}\\
+ \ip{g_q}{\psi}&=\frac{\pi^2}2\int_0^\infty q'V r^4\dd r,\label{eq:pairint}\\
+ \ip\psi{(A-q^2)\psi}&=\frac{\pi^2}2\int_0^\infty
+ \left[\left(V''+\frac5rV'\right)^2+(1-q^2)V^2\right]r^5\dd r.\label{eq:formint}
+\end{align}
+These expressions become exact polynomial integrals on the common refinement of the two meshes. Multiplying the response residual coefficient by \(r^3\) also gives a polynomial. Its squared norm has weight \(r^{-1}\), bounded by \(a^{-1}\) on cells with \(a>0\); at zero the exact cancellation is integrated directly. Rational upper and lower bounds for \(\pi\) follow from the alternating series in Machin's formula
+\(\pi=16\arctan(1/5)-4\arctan(1/239)\).
+Thus every decision in Proposition~\ref{prop:scalar} is an exact rational comparison.
+
+\subsection{Ritz lower bounds}
+For each of \(\ell=0,1,2\), the frozen file
+\file{round2_ritz_exact_data.json}
+supplies a compact rational Hermite function \(f\). The physical radial harmonic coefficient is \(r^\ell f(r)\). Set \(d=4+2\ell\). The identity
+\[
+ D_\ell(r^\ell f)=r^\ell\left(f''+\frac{d-1}r f'\right)
+\]
+reduces the kinetic and mass forms to polynomial integrals with weights \(r^{d-1}\). If \(f_i\) are the trial functions, define
+\begin{align*}
+ \mathsf A_{ij}&=\int_0^\infty
+ \left[\left(f_i''+\frac{d-1}r f_i'\right)
+ \left(f_j''+\frac{d-1}r f_j'\right)+f_if_j\right]r^{d-1}\dd r,\\
+ \mathsf V_{ij}&=c\int_0^\infty q^2 f_if_j r^{d-1}\dd r.
+\end{align*}
+For \(\ell=0\), the two trial vectors are the frozen trial and \(q\). The exact checks are
+\[
+ \mathsf V_{11}\ge5.395\mathsf A_{11},\qquad
+ \mathsf V-2.999\mathsf A>0.
+\]
+For \(\ell=2\) and \(\ell=1\), one-vector checks give respectively the thresholds \(2.11\) and \(1.04\). Positivity of the one- or two-dimensional Gram and excess matrices is checked by their rational principal minors. The min--max principle for the quotient
+\(c\int q^2|f|^2/\ip f{A_\ell f}\)
+then gives the lower eigenvalue bounds in Table~\ref{tab:spectrum}. No approximate eigensolver output is used in these decisions. The frozen verifier recomputes the matrices from the jets and checks that they equal the stored rational matrices.
+
+\section{Validated Birman--Schwinger upper bounds}\label{sec:arb}
+
+We give the kernel formula, endpoint bounds, and quadrature error estimates used in Proposition~\ref{prop:spectral}. This supplies a proof of the numerical procedure rather than an appeal to mesh convergence.
+
+\subsection{Free radial Green kernel}
+The nonzero spectrum of \(K_{c,q,\ell}\) agrees with that of
+\[
+ B_{c,q,\ell}=cM_q(H_\ell^2+1)^{-1}M_q.
+\]
+Both operators are positive, including when \(q\) changes sign. The equality follows by interchanging the two factors of a compact product, or by the usual \(T^*T\), \(TT^*\) argument. Here \(B\) is trace class, as also follows from the explicit finite trace bound below.
+
+Set \(\nu=\ell+1\) and \(\kappa=e^{\ii\pi/4}\). The Green kernel of \(H_\ell+\ii\), in measure \(s^3\dd s\), is
+\[
+ \frac1{rs} I_\nu(\kappa\min\{r,s\})K_\nu(\kappa\max\{r,s\}).
+\]
+It follows directly by taking the solution regular at zero and the decaying solution at infinity of the modified Bessel equation, using their Wronskian. The spectral identity
+\((H^2+1)^{-1}=-\Ima(H+\ii)^{-1}\)
+then gives the real free fourth-order resolvent kernel. After unitary conjugation from \(r^3\dd r\) to \(\dd r\), the kernel of \(B\) is
+\begin{equation}\label{eq:bkernel}
+ B(r,s)=-c\sqrt{rs}\,q(r)q(s)
+ \Ima\{I_\nu(\kappa\min\{r,s\})K_\nu(\kappa\max\{r,s\})\}.
+\end{equation}
+Consequently,
+\begin{equation}\label{eq:trace}
+ \tr B=-c\int_0^{36}r q(r)^2
+ \Ima\{I_\nu(\kappa r)K_\nu(\kappa r)\}\dd r.
+\end{equation}
+There is no angular multiplicity in this single-channel trace.
+
+For the HS norm, put \(a(r)=rq(r)^2\), let \(I_R,I_I,K_R,K_I\) denote the real and imaginary parts of the two Bessel functions, and set \(\epsilon=10^{-5}\). Define
+\begin{align*}
+ F&=(aI_R^2,\ aI_RI_I,\ aI_I^2),\\
+ b&=(aK_I^2,\ 2aK_RK_I,\ aK_R^2),\qquad
+ J_j(s)=\int_\epsilon^sF_j(r)\dd r.
+\end{align*}
+Expanding the square of the imaginary part in \eqref{eq:bkernel} and using the two triangular halves of the square gives the exact formula
+\begin{equation}\label{eq:hs1d}
+ \norm{\boldsymbol1_{[\epsilon,36]}B\boldsymbol1_{[\epsilon,36]}}_\HS^2
+ =2c^2\int_\epsilon^{36}\sum_{j=1}^3 b_j(s)J_j(s)\dd s.
+\end{equation}
+In particular both the cross term and the factor two are retained.
+
+\subsection{Rigorous neighborhoods of Bessel values}
+The code uses 192-bit Arb/acb ball arithmetic \cite{Arb}, via \texttt{python-flint} 0.9.0. Bessel values at the midpoint of each rational cell are rigorous complex balls. Derivatives with respect to \(r\) are evaluated from
+\[
+ I'(r)=\kappa I_{\nu-1}(\kappa r)-\frac\nu r I_\nu(\kappa r),\qquad
+ K'(r)=-\kappa K_{\nu-1}(\kappa r)-\frac\nu r K_\nu(\kappa r).
+\]
+Whole-cell neighborhoods are bounded by the differential equation, rather than inferred from nearby sample values. For either function \(f\),
+\[
+ f''+r^{-1}f'-(\ii+\nu^2r^{-2})f=0.
+\]
+On a cell \([a,b]\subset(0,\infty)\), let \(m=(a+b)/2\), \(d=(b-a)/2\),
+\[
+ L=\frac{\nu^2}a+b+\frac1a,
+ \qquad M=|f(m)|+m|f'(m)|.
+\]
+Writing \(Y=(f,rf')\) gives
+\[
+ Y'=\begin{pmatrix}0&r^{-1}\\\nu^2/r+\ii r&0\end{pmatrix}Y.
+\]
+The matrix infinity norm is at most \(L\), so Gronwall in either direction from \(m\) gives \(\norm{Y(r)}_\infty\le e^{Ld}M\). Integration of its two components yields
+\begin{align}
+ |f(r)-f(m)|&\le(d/a)e^{Ld}M,\label{eq:besselerr1}\\
+ |rf'(r)-mf'(m)|&\le d(\nu^2/a+b)e^{Ld}M.\label{eq:besselerr2}
+\end{align}
+These absolute bounds are added to both real and imaginary components of the midpoint balls. Dividing the second component by the positive interval \([a,b]\) encloses \(f'\), and the differential equation encloses \(f''\). Polynomial interval evaluation supplies \(q,q',q''\). Product rules then enclose \(F_j,b_j\), and the trace integrand, through second derivatives throughout each cell.
+
+\subsection{Quadrature with cumulative integrals}
+For a twice continuously differentiable scalar integrand \(f\), a cell of width \(h\) and midpoint \(m\) obeys
+\begin{equation}\label{eq:midpoint}
+ \int_a^{a+h}f(r)\dd r\in h f(m)
+ +\left[-\frac{h^3}{24}\sup|f''|,\frac{h^3}{24}\sup|f''|\right].
+\end{equation}
+The inner cumulative integrals in \eqref{eq:hs1d} must also be enclosed, including their errors. If \(J_j(a)\) is already a certified ball, then on the whole cell
+\[
+ J_j(r)\in J_j(a)+[0,h]F_j([a,a+h]),
+\]
+and at its midpoint the sharper enclosure is
+\begin{equation}\label{eq:halfcell}
+ J_j(m)\in J_j(a)+\frac h2F_j(m)-\frac{h^2}8F_j'(m)
+ +\left[-\frac{h^3}{48}\sup|F_j''|,\frac{h^3}{48}\sup|F_j''|\right].
+\end{equation}
+For \(G=\sum_jb_jJ_j\), differentiation gives
+\[
+ G''=\sum_j\bigl(b_j''J_j+2b_j'F_j+b_jF_j'\bigr).
+\]
+The whole-cell enclosures therefore bound \(G''\). Applying \eqref{eq:midpoint} to \(G\), with \eqref{eq:halfcell} at the midpoint, rigorously accumulates the HS integral. Equation~\eqref{eq:midpoint} also updates each \(J_j\) and the trace integral. Every uncertainty is retained under outward-rounded ball arithmetic.
+
+Each quadrature cell lies inside a single polynomial piece. Starting at \(\epsilon\), the origin mesh grows by a factor at most \(21/20\); all physical cell widths are at most \(1/256\). The four-unit polynomial tail is also subdivided. There are 9380 cells per channel. The subdivisions affect computational cost, but each cell has its own error estimate and the argument does not rely on a convergence extrapolation.
+
+\subsection{The omitted origin strips and the exact tail}
+For a nonnegative self-adjoint \(H\), functional calculus gives
+\[
+ (H^2+1)^{-1}\le(2H)^{-1}
+\]
+as quadratic forms on the appropriate domain. The Green kernel of \(H_\ell^{-1}\), in radial measure, has diagonal \(1/(2\nu r^2)\). Hence
+\begin{equation}\label{eq:origintrace}
+ T_0:=\frac{c\norm q_\infty^2\epsilon^2}{8\nu}
+ \ \ge\ \tr(\boldsymbol1_{[0,\epsilon]}B\boldsymbol1_{[0,\epsilon]}),
+\end{equation}
+while the full trace is at most
+\begin{equation}\label{eq:coarsetrace}
+ T_{\rm coarse}:=\frac c{4\nu}\int_0^{36}r q(r)^2\dd r.
+\end{equation}
+These inequalities can first be applied with a positive spectral regularization of \(H\), then passed to the limit; the displayed finite diagonal majorants justify the limits. Both the moment in \eqref{eq:coarsetrace} and the Bernstein bound on \(\norm q_\infty\) are obtained from exact rational polynomials.
+
+A positive integral kernel satisfies \(|B(r,s)|^2\le B(r,r)B(s,s)\). Thus the union of the two omitted strips touching zero contributes at most \(2T_0T_{\rm coarse}\) to the HS square. The verifier adds the interval \([0,T_0]\) to the trace and \([0,2T_0T_{\rm coarse}]\) to the HS result. For \(\ell=0\) these errors are respectively less than \(1.695\cdot10^{-9}\) and \(8.705\cdot10^{-8}\). No contribution is omitted beyond \(r=36\), since \(q\) is identically zero there.
+
+\subsection{Completed output record}
+The executed ball comparisons prove Table~\ref{tab:spectrum}. A clean rerun from the frozen bundle reproduced all five required comparisons; conservative upper endpoints are listed in Table~\ref{tab:actual}. The full endpoint balls, input hash, program hash, precision, software version, and success flag are stored in the individual JSON certificates. Short printed midpoint-radius summaries can be less sharp than the internal balls; the asserted comparisons and full endpoints determine the claims.
+\begin{table}[ht]
+\centering\small
+\begin{tabular}{@{}cccl@{}}
+\toprule
+\(c\)&\(\ell\)&Quantity&Strict upper endpoint bound\\\midrule
+3&0&\(\norm K_\HS^2\)&38.795691\\
+1&1&\(\tr K\)&1.691185\\
+3&2&\(\norm K_\HS^2\)&4.797952\\
+1&3&\(\norm K_\HS^2\)&0.211703\\
+3&4&\(\norm K_\HS^2\)&0.725270\\\bottomrule
+\end{tabular}
+\caption{Conservative decimal endpoint bounds from the completed rigorous runs.}\label{tab:actual}
+\end{table}
+
+\section{Validation of an exact stationary state}
+
+\begin{proposition}\label{prop:stationary}
+There is a real radial solution \(Q\in H^4(\R^4)\) of
+\begin{equation}\label{eq:stationary}
+ AQ-Q^3=0
+\end{equation}
+with
+\begin{equation}\label{eq:qdistance}
+ \norm{Q-q}_Z\le\rho:=\frac3{500}.
+\end{equation}
+\end{proposition}
+\begin{proof}
+Restrict first to real radial functions. By \eqref{eq:radialgap} and \eqref{eq:inverse}, \(L_q=A-3q^2\) has inverse \(Z^*\to Z\) of norm at most 20. Writing \(Q=q+h\), the equation becomes the fixed-point equation
+\[
+ h=\mathcal T(h):=-L_q^{-1}(Aq-q^3)+L_q^{-1}(3qh^2+h^3).
+\]
+Let \(m=104\), \(\eta=121/500000\), \(\gamma_R=1/20\). Since \(A\ge1\), an \(L^2\) residual bound is also a \(Z^*\) bound. Lemma~\ref{lem:sobolev} gives, on \(\norm h_Z\le\rho\),
+\[
+ \norm{\mathcal T(h)}_Z\le
+ \frac{\eta+\alpha(3m\rho^2+\rho^3)}{\gamma_R},
+\]
+and a Lipschitz constant at most
+\[
+ \frac{\alpha(6m\rho+3\rho^2)}{\gamma_R}.
+\]
+The exact rational values are
+\begin{equation}\label{eq:newtonnumbers}
+ \frac{9148027}{1600000000}<\frac3{500},\qquad
+ \frac{936027}{3200000}<1,
+\end{equation}
+respectively. Banach's fixed-point theorem proves existence and uniqueness in this radial correction ball. The equation holds in \(Z^*\). Since \(H^2(\R^4)\) embeds continuously into \(L^6\), \(Q^3\in L^2\); hence \(AQ=Q^3\) gives \(Q\in H^4\).
+
+The solution is nonzero. Indeed the Ritz lower bound \(\norm{K_{3,q,0}}\ge5.395\), together with \eqref{eq:trilinear}, gives \(5.395\le3\alpha\norm q_Z^2\). Thus \(\norm q_Z\) is much larger than \(\rho\), excluding \(Q=0\) in \eqref{eq:qdistance}.
+\end{proof}
+
+\begin{lemma}[Spectral transfer]\label{lem:transfer}
+In every angular sector,
+\begin{equation}\label{eq:potentialperturb}
+ \norm{K_{c,Q,\ell}-K_{c,q,\ell}}
+ \le d_c:=c\alpha(2m\rho+\rho^2).
+\end{equation}
+With the preceding constants,
+\begin{equation}\label{eq:dvalues}
+ d_1=\frac{312009}{64000000},\qquad
+ d_3=\frac{936027}{64000000}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+For unit \(Z\) test vectors \(f,g\), H\"older and \eqref{eq:l4} give
+\[
+ \left|\int c(Q-q)(Q+q)f\overline g\dd x\right|
+ \le c\alpha\norm{Q-q}_Z\norm{Q+q}_Z
+ \le c\alpha\rho(2m+\rho).
+\]
+This bounds the preconditioned operator norm. Restricting to an angular sector cannot increase it.
+\end{proof}
+
+Define \(L_+=A-3Q^2\), \(L_-=A-Q^2\). Equations~\eqref{eq:radialgap}--\eqref{eq:minusgaps}, the high-angular control, and \eqref{eq:dvalues} show:
+\begin{itemize}[leftmargin=20pt,itemsep=1pt]
+\item \(L_+\) is invertible \(Z^*\to Z\) on the direct sum of every even angular degree;
+\item \(L_-\) is invertible on the direct sum of every odd angular degree;
+\item in degree one the exact preconditioned gap is at least
+\begin{equation}\label{eq:exactminusgap}
+ \gamma:=\frac1{25}-d_1=\frac{2247991}{64000000}>0.
+\end{equation}
+\end{itemize}
+The gaps are uniform across the indicated direct sums: use the finite low-degree minimum and the positive high-degree bound \(1/10-d_c\). Notice that the real and imaginary operators are required on different parity sectors. The unavoidable translation and phase kernels will therefore not obstruct the branch construction.
+
+\section{A certified negative inverse pairing}
+
+Let \(g=\partial_1Q\). It lies in angular degree one. The inverse in that sector is well-defined by \eqref{eq:exactminusgap}; set
+\begin{equation}\label{eq:Idefinition}
+ z=L_-^{-1}g,\qquad I=\ip g z.
+\end{equation}
+The pairing is the full four-dimensional pairing, including the factor \(\pi^2/2\) already used in \eqref{eq:pairint}.
+
+\begin{proposition}\label{prop:negativeI}
+The exact stationary state of Proposition~\ref{prop:stationary} satisfies \(I<-175\).
+\end{proposition}
+\begin{proof}
+The proof uses a quadratic residual identity, which is valid for an indefinite operator. Put \(L=L_-\), \(r=g-L\psi\), and
+\[
+ J_Q=2\ip g\psi-\ip\psi{L\psi}.
+\]
+Since \(g=L\psi+r\), direct expansion gives
+\begin{equation}\label{eq:quadraticidentity}
+ I=J_Q+\ip r{L^{-1}r}.
+\end{equation}
+All terms are interpreted by the \(Z^*,Z\) duality where necessary. Although \(L\) need not be positive, its inverse norm gives the upper bound
+\(\ip r{L^{-1}r}\le\gamma^{-1}\norm r_{Z^*}^2\).
+
+Let \(b=132\), \(G=3/5\), \(\eta_\psi=331/500000\). Lemmas~\ref{lem:sobolev} and \ref{lem:transfer} imply
+\begin{align}
+ J_Q-J_q&\le2G\rho b+d_1b^2,\label{eq:Jpert}\\
+ \norm r_{Z^*}&\le\eta_\psi+d_1b+G\rho.\label{eq:rpert}
+\end{align}
+For example, the source change is bounded by \(\norm{\partial_1(Q-q)}_{Z^*}\le G\rho\), and the potential change in \(J\) is at most \(d_1\norm\psi_Z^2\). Combining the inequalities gives
+\begin{equation}\label{eq:Ifinalbound}
+ I\le-273+2G\rho b+d_1b^2
+ +\frac{(\eta_\psi+d_1b+G\rho)^2}{1/25-d_1}.
+\end{equation}
+Every quantity on the right is rational. More explicitly,
+\[
+ 2G\rho b+d_1b^2=\frac{343579401}{4000000},\qquad
+ \eta_\psi+d_1b+G\rho=\frac{10364489}{16000000}.
+\]
+Substitution yields
+\begin{equation}\label{eq:I175}
+ I\le-\frac{24609689664617}{140499437500}<-175<0.
+\end{equation}
+The exact fraction comparisons, the contraction tests, and all gap reductions are also independently evaluated by \file{round2_final_rational_implication.py}.
+\end{proof}
+
+\section{The traveling branch and its energy}
+
+\subsection{Symmetries and the implicit-function theorem}
+Write \(x=(s,y)\in\R\times\R^3\). Let \(X\) be the closed real-linear subspace of \(Z(\R^4;\C)\) defined by
+\begin{equation}\label{eq:symmetry}
+ f(s,Oy)=f(s,y)\quad(O\in O(3)),\qquad
+ f(-s,y)=\overline{f(s,y)}.
+\end{equation}
+Thus the real part is axially symmetric and even in \(s\); the imaginary part is axially symmetric and odd in \(s\). Let \(Y\) be the corresponding real subspace of \(Z^*\). Consider
+\[
+ \mathcal F(v,f)=Af+\ii v\partial_1f-|f|^2f:
+ \R\times X\longrightarrow Y.
+\]
+The symmetry conditions are preserved by every term. Lemma~\ref{lem:sobolev} makes the cubic a continuous real polynomial \(Z\to Z^*\), and \(\partial_1\) is bounded between these spaces. Hence \(\mathcal F\) is real analytic.
+
+At \((0,Q)\), its profile derivative is
+\[
+ D_f\mathcal F(0,Q)(a+\ii b)=L_+a+\ii L_-b.
+\]
+For each spherical harmonic degree there is one \(O(3)\)-invariant zonal harmonic, with parity \((-1)^\ell\) under \(s\mapsto-s\). Thus the real component of \(X\) uses exactly the even degrees and the imaginary component exactly the odd degrees. The spectral transfer gives a bounded inverse \(Y\to X\) on both blocks. The analytic Banach-space implicit-function theorem proves the branch \(Q_v\) of Theorem~\ref{thm:main}.
+
+The symmetry-generated kernels are absent for explicit reasons. The phase kernel of \(L_-\) is radial and even, so it is excluded from the imaginary odd sector. The longitudinal translation kernel of \(L_+\) is odd, so it is excluded from the real even sector. Transverse translations are not \(O(3)\)-invariant. Any further accidental kernel is ruled out by the certified gaps, rather than by a nondegeneracy assumption.
+
+For each branch member, \(Q_v\in H^2\subset L^6\) and \(\partial_1Q_v\in L^2\). Equation~\eqref{eq:profile} therefore implies
+\[
+ AQ_v=|Q_v|^2Q_v-\ii v\partial_1Q_v\in L^2,
+\]
+so \(Q_v\in H^4\). This is qualitative elliptic regularity; no separate numerical \(H^4\) inverse bound is needed. Further elliptic bootstrap is available, but \(H^4\) already suffices below.
+
+Differentiating at zero gives
+\[
+ L_+\Rea Q'_0=0,\qquad L_-\Ima Q'_0=-\partial_1Q,
+\]
+and hence
+\begin{equation}\label{eq:branchfirst}
+ Q_v=Q-\ii v z+O_Z(v^2).
+\end{equation}
+Conjugation takes \(\mathcal F(v,Q_v)=0\) to \(\mathcal F(-v,\overline{Q_v})=0\). Local uniqueness yields \(Q_{-v}=\overline{Q_v}\). Momentum is therefore odd and energy even along the branch. Differentiating the continuous quadratic momentum functional and integrating by parts gives
+\begin{equation}\label{eq:Pexp}
+ \left.\frac\dd{\dd v}P_1(Q_v)\right|_{v=0}
+ =\int(z\partial_1Q-Q\partial_1z)\dd x=2I,
+ \qquad P_1(Q_v)=2Iv+O(v^3).
+\end{equation}
+
+\subsection{Pohozaev identity without a finite moment}
+\begin{lemma}\label{lem:pohozaev}
+Every \(H^4\) solution of \eqref{eq:profile} satisfies
+\begin{equation}\label{eq:pohozaev}
+ E(Q_v)=\frac v8P_1(Q_v).
+\end{equation}
+No weighted spatial integrability hypothesis is required.
+\end{lemma}
+\begin{proof}
+Write \(W=Q_v\). Let \(\chi\) be a smooth compactly supported real cutoff equal to one near zero, and define
+\[
+ F_R(x)=x\chi(x/R),\qquad
+ \mathcal D_R=F_R\cdot\nabla+\tfrac12\operatorname{div}F_R.
+\]
+The operator \(\mathcal D_R\) is skew-adjoint on \(L^2\). Pair \eqref{eq:profile} with \(\mathcal D_RW\), take real parts, and let \(R\to\infty\). The mass contribution is zero for every \(R\).
+
+For the kinetic contribution, use
+\begin{align*}
+ \Delta(\mathcal D_RW)={}&\mathcal D_R\Delta W
+ +2\sum_{j,k}(\partial_kF_{R,j})\partial_{kj}W\\
+ &+(\Delta F_R+\nabla\operatorname{div}F_R)\cdot\nabla W
+ +\tfrac12\Delta\operatorname{div}F_R\,W.
+\end{align*}
+The real pairing of \(\Delta W\) with \(\mathcal D_R\Delta W\) vanishes. The principal remaining term tends to \(2\norm{\Delta W}_2^2\). Its error and the lower-order terms are bounded by annular integrals of a constant times
+\[
+ |\Delta W|\,|D^2W|
+ +R^{-1}|\Delta W|\,|\nabla W|
+ +R^{-2}|\Delta W|\,|W|,
+\]
+which vanish by Cauchy--Schwarz and the \(H^2\) tails. No weighted \(L^2\) norm of \(W\) is used.
+
+For the cubic term, integration by parts gives exactly
+\[
+ \Rea\int |W|^2W\overline{\mathcal D_RW}\dd x
+ =\tfrac14\int\operatorname{div}F_R\,|W|^4\dd x
+ \longrightarrow\norm W_4^4.
+\]
+For the momentum density \(p_j=\Ima(\overline W\partial_jW)\), a second elementary integration by parts gives
+\[
+ \Rea\int\ii v\partial_1W\overline{\mathcal D_RW}\dd x
+ =-\frac v2\int\sum_j(\partial_1F_{R,j})p_j\dd x
+ \longrightarrow-\frac v2P_1(W).
+\]
+Here \(p\in L^1\), and derivatives of \(F_R\) are uniformly bounded, so dominated convergence applies. All integrations at fixed \(R\) are legitimate for \(H^4\) profiles, or follow by smoothing on the compact support of \(F_R\). The limit is
+\[
+ 2\norm{\Delta W}_2^2-\norm W_4^4-\frac v2P_1(W)=0,
+\]
+which is \eqref{eq:pohozaev} in the normalization \eqref{eq:conserved}.
+\end{proof}
+
+Combining \eqref{eq:Pexp}, \eqref{eq:pohozaev}, and Proposition~\ref{prop:negativeI} gives
+\begin{equation}\label{eq:energyexp}
+ E(Q_v)=\frac I4v^2+O(v^4)<0
+\end{equation}
+for sufficiently small nonzero \(v\). The sign is a rigorous conclusion from the inverse pairing, not an extrapolation of numerically computed moving profiles.
+
+\subsection{Global solution and nonradiality}
+Substituting \(u_v(t,x)=e^{\ii t}Q_v(x-vte_1)\) directly into \eqref{eq:bnls} shows that it is an exact solution for every real \(t\). The regularity just proved makes the identity valid in \(L^2\), and therefore also in the energy-class formulation. Translation and multiplication by a constant phase preserve the \(H^2\) norm. Thus no finite-time blowup occurs, in either time direction.
+
+For completeness, a nonzero solution of \eqref{eq:profile} with \(v\ne0\) cannot be radial about any center. Translate the center to zero. All terms other than \(\ii v\partial_1Q_v\) are then radial; the derivative belongs to spherical harmonic degree one. Orthogonality of these degrees forces \(\partial_1Q_v=0\). A radial \(L^2\) function with this property is zero, a contradiction. The branch is nonzero by continuity from the nonzero \(Q\). This completes the proof of Theorem~\ref{thm:main}.
+
+\section{Reproduction, scope, and proof record}\label{sec:repro}
+
+The mathematical input consists of the explicitly defined rational functions. Their discovery by numerical continuation is not a premise of the proof. The validation never needs the original differential-equation solver, its stopping criterion, a plotted solution, or a floating-point numerical spectrum.
+
+The electronic bundle has a \file{round2_certificate/} directory containing the data, verifiers, dependency information, and machine-readable outputs. Its main entry point is
+\begin{lstlisting}
+cd round2_certificate
+python run_verification.py
+\end{lstlisting}
+The packaged runner checks the frozen inputs, executes the exact certificates and all five interval computations, and writes \file{VERIFICATION_SUMMARY.json}. The completed clean rerun had every required check pass. The original environment used Python 3.12.14 and \texttt{python-flint} 0.9.0; the included dependency instructions specify how to supply the interval arithmetic implementation. Basic exact-arithmetic checks use the Python standard library. See Table~\ref{tab:filemap} for the proof components.
+
+\begin{longtable}{@{}p{72mm}p{83mm}@{}}
+\caption{Principal electronic proof components. Paths are relative to the certificate directory.}\label{tab:filemap}\\
+\toprule File&Role\\\midrule\endfirsthead
+\toprule File&Role\\\midrule\endhead
+\file{round2_radial_H4_exact_h1_16.json}&Canonical exact profile jets and rational nodes.\\
+\file{round2_certificate_exact_rational_data.json}&Exact response jets; its historical profile jets are unused.\\
+\file{round2_ritz_exact_data.json}&Frozen rational Ritz trial jets and exact matrices.\\
+\file{round2_verify_frozen_ritz.py}&Recomputes the stationary residual, profile norm, and Ritz forms directly from frozen data.\\
+\file{round2_certificate_canonical.py}&Recomputes response residual, norms, and \(J_q\) by exact rational polynomial integration.\\
+\file{round2_certified_birman_hs.py}&Proves each of the five BS scalar upper bounds with ball arithmetic.\\
+\file{round2_certified_birman_l0_sub16.json}\newline through \file{round2_certified_birman_l4_sub16.json}&Full interval output, endpoint enclosures, hashes, software information, and required success flags.\\
+\file{round2_radial_highangular_certificate.json}&Additional rational polynomial control of all sufficiently large angular degrees.\\
+\file{round2_final_rational_implication.py}&Exact final contraction, perturbation, gap, and \(I<-175\) comparisons.\\
+\file{round2_validation.md}&Additional detailed description of the BS interval algorithm.\\
+\file{run_verification.py}\newline \file{VERIFICATION_SUMMARY.json}&Reproduction entry point and summary of the completed checks.\\
+\bottomrule
+\end{longtable}
+
+For direct reproduction of the central checks, the component commands are
+\begin{lstlisting}
+python round2_verify_frozen_ritz.py
+python round2_certificate_canonical.py
+python round2_certified_birman_hs.py 0 16
+python round2_certified_birman_hs.py 1 16
+python round2_certified_birman_hs.py 2 16
+python round2_certified_birman_hs.py 3 16
+python round2_certified_birman_hs.py 4 16
+python round2_final_rational_implication.py
+\end{lstlisting}
+The independent high-angular certificate is also run by the packaged runner. The analytic monotonicity argument above means that this redundant check is not needed to infer the infinite angular tail from the five completed BS sectors.
+
+The remaining frozen-data hashes, with each pair of lines concatenated, are
+\begin{center}\small
+\begin{tabular}{@{}l@{}}
+Response data:\\[-1pt]
+\texttt{46c7b6d0023781c769dc3077c99476a13d08}\\
+\texttt{c2b0b930deb5fc1e6802acc5b7e4}\\[4pt]
+Ritz data:\\[-1pt]
+\texttt{e028e0e15d82adc377d83dc7afb397403f31}\\
+\texttt{2c9127f32fdf3aa37bc3bebaa511}
+\end{tabular}
+\end{center}
+
+This proof uses exact integer/rational arithmetic and rigorously rounded real/complex ball arithmetic, together with the analytic estimates presented here. It is not a proof-assistant formalization. Its computational trusted base includes the Python integer arithmetic and the Arb/FLINT implementation of validated arithmetic and special functions. External review should assess both the analytic reductions and the implemented enclosures; the frozen data and successful outputs make that review concrete and reproducible.
+
+The conclusion is the global negative-energy counterexample in \(\R^4\), with sufficiently small nonzero velocity. It is not a classification of all negative-energy solutions, a statement that blowup does not occur for other data, a stability theorem for these traveling waves, or a result for every dimension. The threshold on velocity need not be numerically identified to establish the stated counterexample.
+
+\begin{thebibliography}{9}
+\bibitem{Talenti}
+G.~Talenti, \emph{Best constant in Sobolev inequality},
+Annali di Matematica Pura ed Applicata \textbf{110} (1976), 353--372.
+\href{https://doi.org/10.1007/BF02418013}{doi:10.1007/BF02418013}.
+
+\bibitem{Arb}
+F.~Johansson, \emph{Arb: Efficient Arbitrary-Precision Midpoint-Radius Interval Arithmetic},
+2016 preprint, \href{https://arxiv.org/abs/1611.02831}{arXiv:1611.02831}.
+
+\bibitem{BL}
+T.~Boulenger and E.~Lenzmann, \emph{Blowup for Biharmonic NLS},
+2015, \href{https://arxiv.org/abs/1503.01741}{arXiv:1503.01741}.
+\end{thebibliography}
+\end{document}

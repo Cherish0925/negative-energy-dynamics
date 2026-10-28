@@ -1,0 +1,228 @@
+from pathlib import Path
+
+root = Path(__file__).resolve().parent
+systems = (root / 'round11_systems_section.tex').read_text()
+start = systems.index(r'\subsection{Sharp interpolation and complete polarization}')
+end = systems.index(r'\subsection{Profile identities and nonpositive-energy rigidity}')
+intro = systems[systems.index(r'Let $\mathcal H$'):systems.index(r'Allow a common scalar addition')]
+statement_start = systems.index(r'\begin{theorem}[Sharp interpolation')
+statement_end = systems.index(r'\begin{theorem}[Nonpositive-energy rigidity')
+foundation = r'''\section{Sharp density geometry and quantitative polarization}
+\label{sec:r12-polarization-foundation}
+This appendix reproduces the analytic inputs used by the new evolution
+arguments. They are proved here, including the infinite-dimensional
+compactness step. No radiality, positivity of the kinetic semigroup,
+or real-sector nondegeneracy is used.
+
+'''+intro+systems[statement_start:statement_end]+systems[start:end]
+(root / 'round12_polarization_foundation.tex').write_text(foundation)
+
+nonlinear = (root / 'round12_nonlinear_flow_section.tex').read_text()
+nonlinear = nonlinear.replace('preceding\nspectral theorem', r'spectral theorem in Appendix~\ref{sec:r11-spectral}')
+nonlinear = nonlinear.replace('preceding small-velocity spectral theorem', r'small-velocity theorem in Appendix~\ref{sec:r11-spectral}')
+nonlinear = nonlinear.replace('preceding\nsmall-velocity spectral calculation', r'calculation in Appendix~\ref{sec:r11-spectral}')
+nonlinear = nonlinear.replace('preceding small-velocity spectral asymptotic', r'asymptotic in Theorem~\ref{thm:r11-spectral-pair}')
+(root / 'round12_nonlinear_flow_print.tex').write_text(nonlinear)
+
+spectral = (root / 'round11_spectral_section.tex').read_text()
+spectral = spectral.replace('The preceding velocity--momentum identities determine the inertia of the\ncharge Hessian.', 'The velocity--momentum identities determine the inertia of the charge Hessian.')
+spectral = spectral.replace('This is a statement\nabout linear exponential growth, not an established nonlinear escape\ntime.', 'This appendix alone concerns linear exponential growth; Section~\\ref{sec:r12-nonlinear} proves a nonlinear exit time in the specified quartic class.')
+(root / 'round12_spectral_foundation.tex').write_text(spectral)
+
+main = r'''\documentclass[11pt,a4paper]{article}
+\usepackage[margin=23mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype,amsmath,amssymb,amsthm,mathtools,enumitem,xcolor,booktabs}
+\usepackage[colorlinks=true,linkcolor=blue!45!black,citecolor=blue!45!black,urlcolor=blue!45!black]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\setlength{\parskip}{3pt}
+\setlist{nosep}
+\allowdisplaybreaks[1]
+\title{Thresholds, coherent structures, and dynamics\\of critical focusing dispersive systems\\[5pt]
+\large Kinetic amplification, nonlinear departure,\\and conserved internal correlations}
+\author{Research manuscript, version 12}
+\date{8 October 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We connect sharp critical interpolation with actual nonlinear evolution.
+For the pure mass-critical biharmonic equation, zero-momentum
+negative-energy solutions at mass excess
+$d=(M/M_c)^{4/N}-1>0$ satisfy
+$\sup_{t<T_+}\|\Delta u(t)\|_2^2\ge c|E|d^{-5/3}$ for sufficiently
+small $d$, in a conservative strong flow with the continuation property.
+The proof imposes no radial symmetry or spatial moment: quantitative
+constant-phase control produces a slowly moving core, energy splitting
+bounds exterior mass, and averaging disjoint annuli retains the favorable
+exterior kinetic term in the virial identity. Amplitude perturbations of
+sharp standing waves must consequently make arbitrarily large kinetic
+excursions as their mass approaches the threshold.
+For slow traveling waves we prove constrained energy descent without
+real-profile nondegeneracy. In dimensions one through three, with that
+nondegeneracy explicitly assumed, a small-velocity real spectral pair
+produces ancient nonlinear orbits on the exact mass--momentum--energy
+level and logarithmic orbital exit times. Finally, conserved internal
+correlations and quantitative polarization give global energy-space
+bounds beyond scalar critical mass for genuinely mixed states, and
+force every unbounded critical-mass vector evolution to be exactly
+scalar throughout its lifespan. Complete supporting proofs are included.
+\end{abstract}
+
+\noindent\textbf{Status.}
+This is a research manuscript with analytic proofs and independent
+internal derivations, not external peer review or formal verification.
+The traveling-wave nonlinear theorem retains one explicit real-sector
+nondegeneracy assumption. The main amplification theorem does not
+establish finite-time blowup, and the amplification exponent is not
+claimed optimal. A targeted primary-source comparison is given below;
+first priority has not been established.
+
+\section*{The main connection}
+The guiding question is how critical concentration geometry constrains
+time evolution. For pure quartic dispersion, energy conservation alone
+gives $A(t)\ge2|E|/d$. Our first result forces a substantially larger
+kinetic scale, $c|E|d^{-5/3}$, somewhere along the trajectory. For data
+$u_d(0)=(1+d)^{N/8}Q$, where $Q$ has mass $M_c$, this becomes
+\[
+ \sup_{0\le t<T_+}\frac{A(u_d(t))}{A(u_d(0))}\ge c d^{-2/3}.
+\]
+Thus for each prescribed factor $K$, sufficiently small nonzero $d$
+forces a finite time at which the factor $K$ is exceeded. This result
+concerns a time-dependent solution, without imposing its eventual form.
+
+The exponent has a concrete source. Near-sharp interpolation controls
+the part outside a constant complex phase by $O(\sqrt d)$. Local mass
+conservation then bounds the speed of a concentration center by the
+same order. Energy splitting leaves at most $O(d)$ mass in a remote
+tail. Fourth-order interpolation charges a tail current at the rate
+$L^{4/3}\mu$, producing $d^{2/3}d=d^{5/3}$. Annulus averaging is what
+allows this argument to use arbitrary nonradial data.
+
+The other two evolution results concern the same relationship from
+different sides. Constrained phase adjustment determines how motion
+changes a coherent wave; the spectral pair then yields genuine nonlinear
+departure, with all conserved quantities fixed. In a unitary internal
+system, polarization cannot be chosen anew at each time independently
+of the conserved correlation operator. That conservation law turns a
+static improvement of sharp interpolation into an all-time bound and
+an exact scalar reduction at critical mass.
+
+\paragraph{Organization.}
+Section~\ref{sec:r10-foundations} fixes the conventions and compactness
+input. Section~\ref{sec:r12-amplification} proves the nonradial kinetic
+amplification result. The next sections treat constrained wave geometry,
+nonlinear departure, and internal correlations. Appendices reproduce
+the density geometry and spectral reduction used by these arguments.
+The concrete strong $H^2$ flow proofs cover $N=1,2,3$; statements in
+other dimensions or for general symbols retain their stated local-flow
+assumptions.
+
+\input{round10_foundations_section.tex}
+\input{round12_critical_dynamics_section.tex}
+\input{round12_constraint_geometry_section.tex}
+\input{round12_nonlinear_flow_print.tex}
+\input{round12_internal_dynamics_section.tex}
+
+\section{Relation to prior work and the remaining evolution problem}
+Boulenger--Lenzmann~\cite{BL}, Theorem 3, prove finite- or infinite-time
+blowup for radial negative-energy data in the pure critical quartic
+equation, in dimensions at least two. Bonheure--Cast\'eras--Gou--Jeanjean
+\cite{BCGJ}, Theorem 1.2, deduce the corresponding instability of radial
+ground states, without real-sector nondegeneracy. The recent
+Dinh--Muse manuscript~\cite{DM}, Theorem 1.1, states finite-time blowup
+for radial negative-energy data, while its Remark 1.4 leaves the
+nonradial problem open. Theorem~\ref{thm:r12-amplification} treats
+unrestricted spatial geometry but adds zero momentum and small mass
+excess, and concludes quantitative amplification rather than blowup.
+It is not a strengthening of the radial finite-time conclusion.
+
+Instability obtained with radial perturbations already implies
+instability in the full perturbation space of that same radial wave.
+Moreover, Lenzmann--Sok~\cite{LS}, Theorem 2, prove radial symmetry
+of all sharp optimizers when the Lebesgue exponent is even. In the
+quartic critical problem this includes $N=1,2,4$; the radial instability
+results above therefore already cover all ground states for $N=2,4$.
+The distinct assertion here is the quantitative constraint on arbitrary
+nonradial near-threshold zero-momentum trajectories. The targeted
+comparison found no matching $d^{5/3}$ estimate, but does not establish
+exhaustive priority. Gou's cylindrical result~\cite{Gou} imposes both
+cylindrical symmetry and an axial moment condition and does not give
+that unrestricted statement.
+
+Existence of traveling ground waves for general dispersion is studied
+by Bugiera--Lenzmann--Schikorra--Sok~\cite{BLSS}. We include the
+small-velocity ground-wave compactness proof needed for constrained
+descent. Hamiltonian unstable subspaces and group bounds are established
+tools; Lin--Zeng~\cite{LZ} provide a general trichotomy theory.
+Our nonlinear construction uses these ideas in a concrete form to turn
+the computed critical small-velocity eigenvalue into an ancient orbit
+and an exit time. Real $L_+$ nondegeneracy remains an assumption for
+that result, and is not supplied by the universally valid phase gap.
+
+Conservation of mutual component inner products is established in
+unitary nonlinear Schr\"odinger systems, including
+Hong--Kwon--Yoon~\cite{HKY}, Proposition 7.3. Their generalized
+kinetic-energy inequalities also include fractional orders and the
+relevant endpoint. We do not claim those tools as new. The connection
+used here retains the sharp scalar $M_c$, introduces a quantitative
+loss $1-c\chi$ through polarization, and then uses the conserved
+$\chi$ to control every time of the evolution. The resulting enlarged
+boundedness interval is sufficient; it is not claimed to be the exact
+mixed-state critical mass.
+
+\paragraph{What is still missing.}
+A lower bound on the largest kinetic norm does not exclude a global
+bounded solution that reaches that large norm. Excluding such a
+trajectory, and then distinguishing finite-time concentration from
+infinite-time growth, remain separate unresolved steps. Zero momentum
+does not set the fourth-order mass-transport velocity to zero: that
+velocity involves a cubic Fourier moment. A sharper long-time link
+between conserved momentum, core motion, and changes of scale is the
+next central issue. We have not proved that link here.
+
+\appendix
+\input{round12_polarization_foundation.tex}
+\input{round12_spectral_foundation.tex}
+
+\clearpage
+\begin{thebibliography}{9}
+\raggedright
+\bibitem{BL} T. Boulenger and E. Lenzmann,
+\emph{Blowup for biharmonic NLS}, Ann. Sci. ENS 50 (2017).
+\href{https://arxiv.org/abs/1503.01741}{arXiv:1503.01741}.
+\bibitem{BCGJ} D. Bonheure, J.-B. Cast\'eras, T. Gou and L. Jeanjean,
+\emph{Strong instability of ground states to a fourth order Schr\"odinger equation},
+IMRN 2019, 5299--5315.
+\href{https://arxiv.org/abs/1703.07977}{arXiv:1703.07977}.
+\bibitem{DM} L. Dinh, with Muse Spark,
+\emph{Finite-Time Blow-Up of Radial Negative-Energy Solutions for the
+Mass-Critical Biharmonic Nonlinear Schr\"odinger Equation}, manuscript,
+2 October 2026.
+\href{https://ai.meta.com/research/publications/finite-time-blow-up-of-radial-negative-energy-solutions-for-the-mass-critical-biharmonic-nonlinear-schrodinger-equation/}{Official manuscript and PDF}.
+\bibitem{LS} E. Lenzmann and J. Sok,
+\emph{A sharp rearrangement principle in Fourier space and symmetry
+results for PDEs with arbitrary order}, IMRN 2021, 15040--15081.
+\href{https://arxiv.org/abs/1805.06294}{arXiv:1805.06294}.
+\bibitem{Gou} T. Gou,
+\emph{Blowup of cylindrically symmetric solutions for biharmonic NLS},
+\href{https://arxiv.org/abs/2205.08167}{arXiv:2205.08167}, version 3.
+\bibitem{BLSS} L. Bugiera, E. Lenzmann, A. Schikorra and J. Sok,
+\emph{On symmetry of traveling solitary waves for dispersion generalized NLS},
+\href{https://arxiv.org/abs/1908.06771}{arXiv:1908.06771}.
+\bibitem{LZ} Z. Lin and C. Zeng,
+\emph{Instability, index theorem, and exponential trichotomy for linear
+Hamiltonian PDEs},
+\href{https://arxiv.org/abs/1703.04016}{arXiv:1703.04016}.
+\bibitem{HKY} Y. Hong, S. Kwon and H. Yoon,
+\emph{Global existence versus finite time blowup dichotomy for the system
+of nonlinear Schr\"odinger equations},
+\href{https://arxiv.org/abs/1712.06811}{arXiv:1712.06811}.
+\end{thebibliography}
+\end{document}
+'''
+(root / 'Critical_Focusing_Dynamics_20261008_R12.tex').write_text(main)
+print('Assembled manuscript and supporting proof inputs.')

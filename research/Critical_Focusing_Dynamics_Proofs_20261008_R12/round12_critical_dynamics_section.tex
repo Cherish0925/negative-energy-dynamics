@@ -1,0 +1,330 @@
+\section{Forced kinetic amplification at nearly critical mass}
+\label{sec:r12-amplification}
+
+We return to the pure mass-critical equation
+\[
+ iu_t=\Delta^2u-|u|^{8/N}u,\qquad
+ p=2+8/N,\qquad
+ M=\|u\|_2^2,\quad A=\|\Delta u\|_2^2,\quad
+ E=\frac A2-\frac{\|u\|_p^p}{p}.
+\]
+Let $M_c$ be the mass in the sharp interpolation inequality
+\[
+ \|f\|_p^p\le\frac p2\left(\frac{M(f)}{M_c}\right)^{4/N}A(f).
+\]
+Solutions are strong conservative $H^2$ solutions for which the integrated
+localized mass and virial identities hold by approximation. No spatial
+moment or radial symmetry is imposed.
+
+\begin{theorem}[Quantitative kinetic amplification]
+\label{thm:r12-amplification}
+There are $d_0,C>0$, depending only on the scalar sharp interpolation
+problem, with the following property. If a forward-global solution has
+\[
+ P=0,\qquad E=-e<0,\qquad
+ d=\left(\frac M{M_c}\right)^{4/N}-1\in(0,d_0),\qquad
+ B=\sup_{t\ge0}A(u(t))<\infty,
+\]
+then
+\begin{equation}\label{eq:r12-amplification}
+ e\le C d^{5/3}B.
+\end{equation}
+Consequently, in any maximal strong $H^2$ flow with the usual continuation
+alternative,
+\begin{equation}\label{eq:r12-maximal-amplification}
+ \sup_{0\le t<T_+}A(u(t))\ge C^{-1}|E|d^{-5/3}.
+\end{equation}
+The latter statement allows finite-time blowup, global unbounded motion,
+and bounded global motion.
+\end{theorem}
+
+The instantaneous sharp interpolation inequality gives only
+$A(t)\ge2|E|/d$. Thus \eqref{eq:r12-maximal-amplification} forces a
+larger kinetic scale, by a factor comparable to $d^{-2/3}$.
+The result does not supply an upper bound on that scale and therefore
+does not settle finite-time blowup or growup for all such initial data.
+
+\subsection{A quantitative constant-phase estimate}
+For a nonzero scalar complex field define
+\[
+ \mathfrak d(f)=1-
+ \frac{\|f\|_p^p}{(p/2)(M(f)/M_c)^{4/N}A(f)}.
+\]
+
+\begin{lemma}[Distance to a real field]
+\label{lem:r12-realphase}
+There is $C<\infty$ such that every nonzero $f\in H^2(\mathbb R^N;\mathbb C)$
+admits a constant phase $\theta$ for which
+\begin{equation}\label{eq:r12-realphase}
+ \frac{M(\operatorname{Im}(e^{-i\theta}f))}{M(f)}+
+ \frac{A(\operatorname{Im}(e^{-i\theta}f))}{A(f)}
+ \le C\mathfrak d(f).
+\end{equation}
+No uniqueness of real optimizers or nondegeneracy of the real linearized
+operator is assumed.
+\end{lemma}
+\begin{proof}
+Amplitude and critical spatial scaling reduce the proof to $M(f)=M_c$
+and $A(f)=1$. If the result failed, since the left side is at most two,
+there would be a sequence with $\mathfrak d(f_n)\to0$ for which the ratio
+of the right defect to the best left side tends to zero. Sharp-optimizer
+compactness supplies, after translations and phases,
+$f_n\to Q$ strongly in $H^2$, for a real normalized optimizer $Q$.
+Choose the remaining phase so that $f_n=X_n+iY_n$ and
+$\langle Q,Y_n\rangle=0$.
+Put $r=4/N$, $\kappa=p/2=1+r$, $a_n=A(Y_n)$ and $y_n=M(Y_n)$.
+The transverse Taylor expansion, with the Sobolev remainder estimate,
+gives
+\[
+ \|X_n+iY_n\|_p^p
+ =\|X_n\|_p^p+\kappa\int |X_n|^{p-2}Y_n^2
+       +o(\|Y_n\|_{H^2}^2).
+\]
+For $2<p\le4$ the remainder is bounded by $C\|Y_n\|_p^p$;
+for $p>4$ use the sum of the fourth-order mixed term and
+$C\|Y_n\|_p^p$. Sharp interpolation for $X_n$ yields
+\[
+ \|X_n\|_p^p\le\kappa(1-y_n/M_c)^r(1-a_n).
+\]
+Potential form convergence therefore implies
+\[
+ \kappa-\|f_n\|_p^p
+ \ge\kappa\langle Y_n,L_-Y_n\rangle-o(\|Y_n\|_{H^2}^2),
+ \qquad L_-=\Delta^2+r/M_c-|Q|^{p-2}.
+\]
+The sharp phase form has kernel exactly $\mathbb RQ$ and is coercive
+on $Q^\perp$, as follows from density strict convexity and the sharp
+interpolation inequality. Hence the defect controls
+$\|Y_n\|_{H^2}^2$, a contradiction. Compactness of normalized optimizers
+makes the coercivity constant uniform. This proves the lemma.
+\end{proof}
+
+This is a real two-component polarization statement. Treating $f$ as a
+single complex internal component would give a vacuous rank-one assertion
+and would not prove \eqref{eq:r12-realphase}.
+
+\subsection{A slowly moving concentration center}
+Critical scaling allows us to assume $B=1$. Throughout the proof $M$ then
+lies in a fixed compact interval about $M_c$, and
+\begin{equation}\label{eq:r12-Arange}
+ 0<2e/d\le A(t)\le1.
+\end{equation}
+Since
+\[
+ \mathfrak d(u(t))=\frac{d-2e/A(t)}{1+d}\le d,
+\]
+Lemma~\ref{lem:r12-realphase} gives, separately at each time, a phase
+such that $u=e^{i\theta}(X+iY)$ with
+\begin{equation}\label{eq:r12-phase-small}
+ \|Y\|_{H^2}\le C\sqrt d,\qquad \|X\|_{H^2}\le C.
+\end{equation}
+No time derivative of the phase is used.
+
+For a real smooth bounded test function $\phi$, integration by parts in
+the mass identity gives
+\begin{equation}\label{eq:r12-density-id}
+ \frac d{dt}\int\phi|u|^2
+ =2\operatorname{Im}\int
+ \bigl(2\nabla\phi\cdot\nabla\overline u+(\Delta\phi)\overline u\bigr)
+             \Delta u.
+\end{equation}
+The local nonlinearity cancels. Substituting
+\eqref{eq:r12-phase-small} proves
+\[
+ \left|\frac d{dt}\int\phi|u|^2\right|
+ \le C\sqrt d\bigl(\|\nabla\phi\|_\infty+\|\Delta\phi\|_\infty\bigr).
+\]
+In particular, for $R\ge1$ and fixed $b$,
+\begin{equation}\label{eq:r12-density-speed}
+ \left|\frac d{dt}\int\chi((x-b)/R)|u|^2\right|
+ \le C\sqrt d/R.
+\end{equation}
+These statements hold in integrated form for the stated solution class.
+
+Choose $\varepsilon_0=M_c/32$. For sufficiently small $d_0$, compactness
+of sharp near-optimizers and \eqref{eq:r12-Arange} give a radius
+$R_0\ge1$ and a choice $c(t)$ satisfying
+\begin{equation}\label{eq:r12-core-mass}
+ \int_{|x-c(t)|\le R_0}|u(t,x)|^2\,dx\ge M_c-\varepsilon_0.
+\end{equation}
+The radius may depend on $e/d$; no uniform lower kinetic scale is needed.
+Take $\chi=1$ on the unit ball and $\chi=0$ outside the radius-two ball.
+If $|c(t)-c(s)|>4R_0$, the integral in
+\eqref{eq:r12-density-speed}, centered at $c(s)$, changes by at least
+$M_c-3\varepsilon_0$, provided $M-M_c\le\varepsilon_0$.
+Thus, for a fixed $\tau>0$,
+\[
+ |t-s|\le\tau R_0/\sqrt d\quad\Longrightarrow\quad
+ |c(t)-c(s)|\le4R_0.
+\]
+Interpolate $c$ linearly at time spacing $\tau R_0/\sqrt d$. We obtain
+one Lipschitz center $a$ satisfying
+\begin{equation}\label{eq:r12-center-speed}
+ \|a'\|_\infty\le L=C\sqrt d,\qquad
+ \sup_t|a(t)-c(t)|\le8R_0.
+\end{equation}
+Crucially, its speed bound is independent of $R_0$ and $e/d$.
+A fixed ball about $a(t)$ retains the core mass in
+\eqref{eq:r12-core-mass}.
+
+\begin{lemma}[Uniform mass outside the core]
+\label{lem:r12-tailmass}
+For every $\eta>0$ there is $R_\eta<\infty$ such that
+\begin{equation}\label{eq:r12-tailmass}
+ \sup_{t\ge0}\int_{|x-a(t)|>R_\eta}|u(t,x)|^2\,dx
+ \le M-M_c+\eta.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Otherwise choose $t_k$ and $R_k\to\infty$ violating the inequality.
+After translation by $a(t_k)$, a subsequence converges weakly in $H^2$
+and strongly locally in $L^2$ to $v$. The fixed core gives
+$M(v)\ge M_c-\varepsilon_0$, while the assumed exterior mass implies
+$M(v)\le M_c-\eta$. The remainder $w_k$ therefore has limiting mass
+at most $M-M_c+\varepsilon_0<M_c$. Quadratic splitting and the
+Brezis--Lieb identity give
+\[
+ -e=E(v)+E(w_k)+o(1).
+\]
+Both terms on the right are nonnegative by sharp interpolation, since
+both masses are strictly subcritical. This is a contradiction.
+\end{proof}
+
+The lemma permits a noncompact mass tail of size $M-M_c$. It establishes
+neither mass compactness nor kinetic compactness of the full trajectory.
+
+\subsection{Negative exterior kinetic energy in the virial derivative}
+Choose a real radial $\phi_R$ equal to $|x|^2/2$ on $|x|\le R$ and
+constant on $|x|\ge2R$, with
+\[
+ D^2\phi_R\le I,\qquad
+ \|D^j\phi_R\|_\infty\le C_jR^{2-j}.
+\]
+One construction prescribes $\phi_R'(r)=rh(r/R)$ with smooth
+nonincreasing $h$, equal to one on $[0,1]$ and zero on $[2,\infty)$.
+Set
+\begin{align*}
+ J_R(t)&=2\operatorname{Im}\int
+ \nabla\phi_R(x-a(t))\cdot\overline u\nabla u,\\
+ K_R(t)&=\int_{|x-a(t)|>2R}|D^2u|^2,\\
+ H_R(t)&=\int_{R/2<|x-a(t)|<2R}|D^2u|^2.
+\end{align*}
+We use the full Hessian in these tails. Its total squared norm equals
+$\|\Delta u\|_2^2$, but the two densities are not pointwise identical.
+
+The exact localized quartic identity is
+\begin{align*}
+ J_R'={}&8\operatorname{Re}\int\partial_{jk}\phi_R\,
+           \partial_{ij}\overline u\,\partial_{ik}u
+ -4\operatorname{Re}\int\partial_{jk}\Delta\phi_R\,
+           \partial_j\overline u\,\partial_ku\\
+ &-2\int\Delta^2\phi_R|\nabla u|^2
+   +\int\Delta^3\phi_R|u|^2
+   -\frac{16}{Np}\int\Delta\phi_R|u|^p
+   -2a'\cdot\int D^2\phi_R\operatorname{Im}(\overline u\nabla u).
+\end{align*}
+The cutoff is centered at $a(t)$. Relative to the global kinetic term
+$8A$, the first term has a nonpositive defect everywhere, and its defect
+is exactly $-8|D^2u|^2$ outside $2R$. Higher cutoff derivatives contribute
+$O(R^{-2})$. Subtracting the total momentum from the last term and using
+$P=0$ therefore gives
+\begin{equation}\label{eq:r12-retained-virial}
+ J_R'\le-16e-8K_R+C\int_{|x-a|>R}|u|^p
+          +CR^{-2}+CL\int_{|x-a|>R}|u||\nabla u|.
+\end{equation}
+Also $|J_R|\le CR$.
+
+Fix small $\eta>0$, put $\mu=M-M_c+\eta$, and take $R\ge2R_\eta$.
+For a cutoff $\zeta_R$ vanishing inside $R/2$ and equal to one outside
+$R$, Lemma~\ref{lem:r12-tailmass} and the product rule give
+\[
+ M(\zeta_Ru)\le\mu,\qquad
+ A(\zeta_Ru)\le C(K_R+H_R+R^{-2}).
+\]
+Sharp interpolation and
+$\|\nabla f\|_2^2\le\|f\|_2\|\Delta f\|_2$ imply
+\begin{align*}
+ \int_{|x-a|>R}|u|^p
+   &\le C\mu^{4/N}(K_R+H_R+R^{-2}),\\
+ \int_{|x-a|>R}|u||\nabla u|
+   &\le C\mu^{3/4}\bigl((K_R+H_R)^{1/4}+R^{-1/2}\bigr).
+\end{align*}
+Choose $d_0$ and $\eta$ so small that $C\mu^{4/N}\le1$.
+Absorb the terms containing $K_R$ into its negative coefficient in
+\eqref{eq:r12-retained-virial}; for the current term use Young's inequality.
+We obtain
+\begin{equation}\label{eq:r12-annular-virial}
+ J_R'\le-16e+C\mu^{4/N}H_R+CL\mu^{3/4}H_R^{1/4}
+             +CL^{4/3}\mu+o_R(1),
+\end{equation}
+where $o_R(1)\to0$ uniformly in time. No favorable lower bound on the
+kinetic defect in the transition annulus was used.
+
+\subsection{Averaging disjoint annuli}
+Fix a positive integer $K$ and $R_*\ge2R_\eta$. Let
+$R_j=8^jR_*$ for $0\le j<K$. Their transition annuli are disjoint about
+the same center, so
+\[
+ \sum_{j=0}^{K-1}H_{R_j}(t)\le A(t)\le1.
+\]
+For each $T$ choose an index whose time-averaged $H_{R_j}$ is at most
+$K^{-1}$. Integrate \eqref{eq:r12-annular-virial}, use Jensen's inequality
+for the fourth root, and bound both endpoint values of $J_{R_j}$:
+\[
+ 16e\le\frac{2C8^{K-1}R_*}{T}
+       +\frac{C\mu^{4/N}}K+CL\mu^{3/4}K^{-1/4}
+       +CL^{4/3}\mu+\sup_{R\ge R_*}|o_R(1)|.
+\]
+First let $T\to\infty$ with $K,R_*$ fixed, then $K\to\infty$,
+then $R_*\to\infty$, and finally $\eta\downarrow0$. This proves
+\[
+ e\le CL^{4/3}(M-M_c).
+\]
+The radius is fixed during each time integration. By
+\eqref{eq:r12-center-speed}, $L\le C\sqrt d$, and $M-M_c\le Cd$.
+Thus $e\le Cd^{5/3}$ when $B=1$. Undoing critical scaling proves
+Theorem~\ref{thm:r12-amplification}.
+
+\subsection{Finite-time excursions from every sharp standing wave}
+\begin{corollary}[Standing-wave instability without real-sector nondegeneracy]
+\label{cor:r12-standing-instability}
+Let $Q$ be any real sharp optimizer normalized by $M(Q)=M_c$,
+with its associated standing-wave frequency. Assume a strong $H^2$ local flow and the continuation alternative.
+For
+\[
+ u_d(0)=(1+d)^{N/8}Q,\qquad d>0,
+\]
+and every prescribed $K>1$, all sufficiently small $d$ admit a finite
+forward time $t_d<T_+(d)$ for which
+\[
+ A(u_d(t_d))>K A(u_d(0)).
+\]
+In particular the standing wave is orbitally unstable in $H^2$ modulo
+constant phase and translations. No radial or $L_+$ nondegeneracy
+hypothesis is needed.
+\end{corollary}
+\begin{proof}
+These initial data have $P=0$, $M=(1+d)^{N/4}M_c$ and
+$E=-dA(u_d(0))/2$. Theorem~\ref{thm:r12-amplification} gives
+\[
+ \sup_{0\le t<T_+}\frac{A(u_d(t))}{A(u_d(0))}
+ \ge(2C)^{-1}d^{-2/3}.
+\]
+For small $d$ this is strictly greater than $K$, so a finite time has
+the claimed property. Since $u_d(0)\to Q$ in $H^2$, take, for example,
+$K=4$ and use
+\[
+ \inf_{\theta,y}\|u_d(t_d)-e^{i\theta}Q(\cdot-y)\|_{H^2}
+ \ge\|\Delta u_d(t_d)\|_2-\|\Delta Q\|_2
+ \ge\|\Delta Q\|_2.
+\]
+This proves orbital instability.
+\end{proof}
+
+For $N=1,2,3$ the required strong local flow follows from the $H^2$
+algebra and composition estimates, with conservation and the integrated
+identities obtained by smooth approximation. In larger dimensions the statement
+uses the appropriate strong energy-space local theory. The conclusion
+is a finite-time excursion for the perturbed data; its proof does not
+identify which of finite blowup, global unbounded evolution, or bounded
+large motion occurs.

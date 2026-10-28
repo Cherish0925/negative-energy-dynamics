@@ -1,0 +1,27 @@
+{
+  "canonical": "round2_radial_H4_exact_h1_16.json",
+  "checks": [
+    {
+      "beta": 1,
+      "minimal_ell": 5,
+      "c_ell_squared": "1225",
+      "theta": "9/10",
+      "all_Bernstein_coefficients_positive": true,
+      "Bc_upper_decimal": "239.5074965664802174593019018769675449609775828693389068776114792248430",
+      "verified_uniform_preconditioned_gap": "1/10",
+      "pointwise_statement": "beta r^4 q(r)^2 <= (9/10)(r^4+c_ell^2) for allr>=0",
+      "operator_statement": "Delta_l^2+1-betaq\u00b2 >= (1/10)(Delta_l\u00b2+1) inquadraticformsfor ell>=minimal_ell"
+    },
+    {
+      "beta": 3,
+      "minimal_ell": 6,
+      "c_ell_squared": "2304",
+      "theta": "9/10",
+      "all_Bernstein_coefficients_positive": true,
+      "Bc_upper_decimal": "1183.830298338890403237386594119656064741326555246128337360052414704174",
+      "verified_uniform_preconditioned_gap": "1/10",
+      "pointwise_statement": "beta r^4 q(r)^2 <= (9/10)(r^4+c_ell^2) for allr>=0",
+      "operator_statement": "Delta_l^2+1-betaq\u00b2 >= (1/10)(Delta_l\u00b2+1) inquadraticformsfor ell>=minimal_ell"
+    }
+  ]
+}

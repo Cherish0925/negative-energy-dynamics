@@ -1,0 +1,89 @@
+{
+  "verified": true,
+  "scope": "Full-space Morse/kernel scalar separation, conditional only on the frozen stationary existence certificate and established Birman-Schwinger/form identities.",
+  "profile_sha256": "c50a6f98682ce5f5bef9ab62ae2a93ba06b91522c8f3e29b859ac521afb8f627",
+  "delta_minus_exact": "312009/64000000",
+  "delta_plus_exact": "936027/64000000",
+  "nonzero_preconditioned_spectral_gap_lower": "1/29",
+  "counts": {
+    "L_plus_negative": 31,
+    "L_minus_negative": 5,
+    "L_plus_kernel": 4,
+    "L_minus_kernel": 1
+  },
+  "traveling_speed_radius": "1/1000000",
+  "traveling_Hessian_perturbation_exact": "3153843/6400000000",
+  "traveling_nonzero_preconditioned_gap_lower": "1/30",
+  "checks": {
+    "ell3_exact_Rayleigh_gt_13_over_10": true,
+    "ell0_HS_squared_bound": true,
+    "ell1_HS_squared_bound": true,
+    "ell2_HS_squared_bound": true,
+    "ell3_HS_squared_bound": true,
+    "ell4_HS_squared_bound": true,
+    "traveling_Hessian_perturbation_lt_0.000493": true,
+    "traveling_nonzero_gap_gt_1_over_30": true,
+    "traveling_zero_cluster_separated": true,
+    "base_form_transfer_equal_product_estimate": true,
+    "radial_plus_remainder_lt_0.95_squared": true,
+    "radial_plus_gap_gt_1_over_29": true,
+    "radial_minus_top_gt_1": true,
+    "radial_minus_third_lt_1": true,
+    "ell1_minus_gap_gt_1_over_29": true,
+    "ell1_minus_second_lt_1": true,
+    "ell1_plus_third_q_lt_0.23": true,
+    "ell1_plus_third_Q_lt_1_over_3": true,
+    "ell1_plus_top_gt_1": true,
+    "ell2_plus_remainder_lt_0.6_squared": true,
+    "ell2_plus_gap_gt_1_over_29": true,
+    "ell2_minus_norm_lt_0.75": true,
+    "ell3_plus_remainder_lt_0.54_squared": true,
+    "ell3_plus_top_gt_1": true,
+    "ell3_plus_remainder_lt_1": true,
+    "ell4_plus_HS_lt_0.9_squared": true,
+    "ell4_plus_gap_gt_1_over_29": true
+  },
+  "ell3_trial_Rayleigh_float_diagnostic": 1.308995988054891,
+  "exact_channel_table": [
+    {
+      "ell": 0,
+      "multiplicity": 1,
+      "plus_negative_per_channel": 2,
+      "plus_kernel_per_channel": 0,
+      "minus_negative_per_channel": 1,
+      "minus_kernel_per_channel": 1
+    },
+    {
+      "ell": 1,
+      "multiplicity": 4,
+      "plus_negative_per_channel": 1,
+      "plus_kernel_per_channel": 1,
+      "minus_negative_per_channel": 1,
+      "minus_kernel_per_channel": 0
+    },
+    {
+      "ell": 2,
+      "multiplicity": 9,
+      "plus_negative_per_channel": 1,
+      "plus_kernel_per_channel": 0,
+      "minus_negative_per_channel": 0,
+      "minus_kernel_per_channel": 0
+    },
+    {
+      "ell": 3,
+      "multiplicity": 16,
+      "plus_negative_per_channel": 1,
+      "plus_kernel_per_channel": 0,
+      "minus_negative_per_channel": 0,
+      "minus_kernel_per_channel": 0
+    },
+    {
+      "ell": "all >=4",
+      "multiplicity": "(ell+1)^2",
+      "plus_negative_per_channel": 0,
+      "plus_kernel_per_channel": 0,
+      "minus_negative_per_channel": 0,
+      "minus_kernel_per_channel": 0
+    }
+  ]
+}

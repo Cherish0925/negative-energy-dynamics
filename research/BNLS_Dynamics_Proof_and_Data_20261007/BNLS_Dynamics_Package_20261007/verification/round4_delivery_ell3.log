@@ -1,0 +1,13 @@
+{
+  "verified": true,
+  "trial_description": "r^3 f(r)Y_3 with f the frozen ell2 reduced trial",
+  "profile_sha256": "c50a6f98682ce5f5bef9ab62ae2a93ba06b91522c8f3e29b859ac521afb8f627",
+  "ritz_sha256": "e028e0e15d82adc377d83dc7afb397403f312c9127f32fdf3aa37bc3bebaa511",
+  "quotient_float_diagnostic": 1.308995988054891,
+  "checks": {
+    "positive_denominator": true,
+    "lambda1_gt_1.25": true,
+    "lambda1_gt_1.30": true
+  },
+  "seconds": 1.5632529559989052
+}

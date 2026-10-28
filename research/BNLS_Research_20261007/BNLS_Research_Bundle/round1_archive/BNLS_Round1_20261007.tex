@@ -1,0 +1,449 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=25mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype,amsmath,amssymb,amsthm,mathtools}
+\usepackage{xcolor,booktabs,enumitem}
+\usepackage[colorlinks=true,linkcolor=blue!45!black,urlcolor=blue!55!black,citecolor=blue!45!black]{hyperref}
+\hypersetup{pdftitle={Nonradial mass-critical BNLS: obstructions and partial blowup theorems},pdfauthor={Research working note}}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newcommand{\dd}{\,dx}
+\newcommand{\E}{\mathcal E}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\DeclareMathOperator{\Rea}{Re}
+\DeclareMathOperator{\Ima}{Im}
+\setlength{\parskip}{2pt}
+\setlength{\parindent}{0pt}
+\setlist{nosep,leftmargin=*}
+\title{Nonradial mass-critical biharmonic NLS\\[4pt]\large Verified obstructions and partial finite-time blowup theorems}
+\author{Research working note}
+\date{7 October 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We investigate whether every negative-energy $H^2(\R^N)$ solution of the focusing mass-critical biharmonic nonlinear Schr\"odinger equation blows up in finite time, without radial symmetry. The unrestricted question is not resolved here. We prove that the proposed unrestricted small-coefficient weighted interpolation estimate is false, even at fixed mass, energy $-1$, and zero momentum, and even with an optimally chosen localization center. We replace it by a weighted estimate involving mass in relative balls. Combined with the exponential virial identities, this gives a conditional blowup criterion and unconditional consequences for several invariant, genuinely nonradial symmetry classes. A putative global negative-energy solution must develop a precise form of angular concentration. A separate angular-regularity criterion and traveling-wave tests identify further constraints. The general virial mechanism is inherited from prior work; no external priority or peer-review claim is made for the additional derivations.
+\end{abstract}
+
+\section{Problem, status, and provenance}
+Set $N\ge2$ and $p=2+8/N$. The equation and conserved quantities are
+\begin{align}
+ i\partial_tu&=\Delta^2u-|u|^{p-2}u,\qquad u(0)=u_0\in H^2(\R^N),\label{eq:pde}\\
+ m=M(u)&=\norm{u}_2^2,\qquad
+ E(u)=\frac12\norm{\Delta u}_2^2-\frac1p\norm{u}_p^p,\qquad
+ P(u)=\Ima\int\bar u\nabla u\dd.\label{eq:energy}
+\end{align}
+Let $(-T_-,T_+)$ be the maximal $H^2$ lifespan. The target is
+\begin{equation}\label{eq:target}
+ E(u_0)<0\quad\Longrightarrow\quad T_+<\infty\text{ and }T_-<\infty
+\end{equation}
+for arbitrary initial data, with no symmetry or finite-variance hypothesis. Finite lifespan means divergence of the $H^2$ norm through the usual blowup alternative. Infinite-time growth of that norm is not sufficient to prove \eqref{eq:target}.
+
+Boulenger--Lenzmann \cite{BL} obtained the radial finite-time/infinite-time alternative. The manuscript posted on 2 October 2026 by Dinh \cite{Dinh} proves finite-time blowup for radial data in every $N\ge2$. Its Remark 1.4 explicitly retains the nonradial question. The present literature check did not locate a full resolution under \eqref{eq:pde}--\eqref{eq:target}. Results with an inhomogeneous coefficient, extra dispersion, or additional symmetry do not directly answer this formulation.
+
+The statements below distinguish three levels: established source identities; derivations proved in this note; and unresolved requirements. The proofs of the local-mass estimate, orbit-packing consequence, and static obstructions were cross-checked by independent derivations during this research session. This is not a substitute for external mathematical review or a proof of publication novelty.
+
+\section{The part of the virial argument that needs no symmetry}
+For a real smooth multiplier $\phi$ with the required bounded derivatives, define
+\[
+ V_\phi(u)=2\Ima\int\bar u\nabla\phi\cdot\nabla u\dd.
+\]
+Direct differentiation, integration by parts, and \eqref{eq:pde} give
+\begin{align}
+ V_\phi'={}&8\Rea\sum_{i,j,k}\int\phi_{jk}\bar u_{ij}u_{ik}\dd
+ -4\Rea\sum_{j,k}\int(\Delta\phi)_{jk}\bar u_j u_k\dd\notag\\
+ &-2\int\Delta^2\phi|\nabla u|^2\dd
+ +\int\Delta^3\phi|u|^2\dd
+ -\frac8{N+4}\int\Delta\phi|u|^p\dd.\label{eq:virial}
+\end{align}
+For $H^2$ solutions this is understood via smooth approximation, or as the integrated localized multiplier identity. Each displayed right-hand term is continuous in $H^2$ for fixed multiplier. The local theory supplies the corresponding approximation on compact lifespan intervals.
+
+Fix a center $c$ and $R>0$. Write $r=|x-c|$, $s=r/R$, and choose
+\begin{equation}\label{eq:weights}
+ h=e^{-s^4},\quad w=1-h,\quad \nabla\phi_{R,c}=(x-c)h,\quad
+ D=\int w|D^2u|_F^2\dd,\quad L=\int w|u|^p\dd.
+\end{equation}
+The quartic exponent in this weight is important. It is not the Gaussian weight $e^{-s^2}$. The multiplier Hessian is
+\[
+ D^2\phi_{R,c}=hI-4s^4h\,e_r\otimes e_r.
+\]
+Thus the exact principal and nonlinear decomposition is
+\begin{equation}\label{eq:ledger}
+ V_R'=16E-8D-32\mathcal H+B+\mathcal L,
+\end{equation}
+where
+\begin{align*}
+ \mathcal H&=\int s^4h|D^2u\,e_r|^2\dd\ge0,\\
+ B&=\frac8{N+4}\int[Nw+4s^4h]|u|^p\dd,\qquad 0\le B\le8L,\\
+ \mathcal L&=-4\Rea\sum_{j,k}\int(\Delta\phi_{R,c})_{jk}\bar u_j u_k\dd
+ -2\int\Delta^2\phi_{R,c}|\nabla u|^2\dd
+ +\int\Delta^3\phi_{R,c}|u|^2\dd.
+\end{align*}
+We used $s^4e^{-s^4}\le1-e^{-s^4}$ and the unweighted identity
+$\norm{D^2u}_{L^2,F}^2=\norm{\Delta u}_2^2$.
+
+Let $g=\sqrt w$. Near the origin $g$ is a smooth multiple of $r^2/R^2$; hence
+\begin{align*}
+ \norm{\Delta g}_\infty&\le C_NR^{-2},\\
+ |D^2\Delta\phi_{R,c}|+|\Delta^2\phi_{R,c}|&\le C_NR^{-2}g,
+ \qquad |\Delta^3\phi_{R,c}|\le C_NR^{-4}.
+\end{align*}
+Integration by parts gives
+\begin{align}
+ \int g|\nabla u|^2\dd
+ &=-\Rea\int g\bar u\Delta u\dd+\frac12\int\Delta g|u|^2\dd\notag\\
+ &\le\sqrt N\,m^{1/2}D^{1/2}+C_NR^{-2}m.\label{eq:grad}
+\end{align}
+Consequently, for every $\eta>0$,
+\begin{equation}\label{eq:lower}
+ |\mathcal L|\le\eta D+C_{N,\eta}R^{-4}m.
+\end{equation}
+Finally $|\nabla\phi_{R,c}|^4\le C_NR^4w$, Cauchy--Schwarz, and \eqref{eq:grad} imply
+\begin{equation}\label{eq:bridge}
+ |V_R(u)|\le C_Nm+C_NR m^{3/4}D^{1/4}.
+\end{equation}
+Equations \eqref{eq:ledger}--\eqref{eq:bridge} require no radial symmetry. They are the inherited exponential virial mechanism. The missing input is control of $L$.
+
+\section{Why direct unrestricted absorption cannot work}
+\subsection{A translated concentration}
+For $a\ne c$, $f\in C_c^\infty(\R^N)\setminus\{0\}$, put
+\[
+ f_{\lambda,a}(x)=\lambda^{N/2}f(\lambda(x-a)).
+\]
+Mass is independent of $\lambda$, while, with $R,c,a$ fixed,
+\begin{align*}
+ \lambda^{-4}\int w|f_{\lambda,a}|^p\dd&\longrightarrow w(a)\norm f_p^p,\\
+ \lambda^{-4}\int w|D^2f_{\lambda,a}|_F^2\dd&\longrightarrow w(a)\norm{D^2f}_2^2.
+\end{align*}
+Therefore an estimate $L\le\varepsilon D+C_{\varepsilon,m}R^{-4}$ for arbitrary $\varepsilon>0$ and all $H^2$ data would force
+$\norm f_p^p\le\varepsilon\norm{D^2f}_2^2$ for arbitrary $\varepsilon$, a contradiction.
+
+\subsection{Fixed invariants and an optimally chosen center}
+\begin{proposition}\label{prop:nogo}
+For every fixed $R>0$ there are $m_0>0$ and real $U_\lambda\in C_c^\infty(\R^N)$ such that
+\[
+ M(U_\lambda)=m_0,\qquad E(U_\lambda)=-1,\qquad P(U_\lambda)=0,
+\]
+and, uniformly over all centers $c\in\R^N$,
+\[
+ \frac{L_{R,c}(U_\lambda)}{D_{R,c}(U_\lambda)}\longrightarrow\frac p2,
+ \qquad \inf_c D_{R,c}(U_\lambda)\longrightarrow\infty.
+\]
+In particular, choosing a center separately for each datum cannot give
+$L_{R,c}\le\varepsilon D_{R,c}+C$ for any $\varepsilon<p/2$, even if $C$ depends on the fixed mass, energy, momentum, and $R$.
+\end{proposition}
+\begin{proof}
+Choose real radial $q\in C_c^\infty\setminus\{0\}$ and $A>0$ so that $f=Aq$ has zero energy. Explicitly,
+\[
+ A^{p-2}=\frac{p\norm{\Delta q}_2^2}{2\norm q_p^p}.
+\]
+Then $K:=\norm{D^2f}_2^2>0$ and $Q:=\norm f_p^p=(p/2)K$. Choose a real compactly supported $b$ with $E(b)=-1$: first increase amplitude to make energy negative, then use critical spatial scaling to normalize it. Choose distinct points $a_1,a_2$ outside the support of $b$ and put
+\[
+ U_\lambda=f_{\lambda,a_1}+f_{\lambda,a_2}+b.
+\]
+For all large $\lambda$ the three supports are disjoint. Thus the invariant identities hold exactly, with $m_0=2M(f)+M(b)$.
+
+Set $W_c=w_{R,c}(a_1)+w_{R,c}(a_2)$ and $d=|a_1-a_2|$. At least one point is at distance $d/2$ or more from $c$, so
+\[
+ W_c\ge1-e^{-(d/(2R))^4}>0.
+\]
+The translated weights satisfy $\norm{\nabla w_{R,c}}_\infty\le C/R$ uniformly in $c$. Changing variables and using the mean value theorem yields
+\[
+ L_{R,c}(U_\lambda)=\lambda^4W_cQ+O_R(\lambda^3)+O(1),\quad
+ D_{R,c}(U_\lambda)=\lambda^4W_cK+O_R(\lambda^3)+O(1),
+\]
+with both remainders uniform in $c$. Division proves the claim.
+\end{proof}
+
+This proposition is an obstruction to a static estimate, not a global solution and not a counterexample to \eqref{eq:target}. It does not rule out a scale $R$ that changes with the datum or time, provided the resulting new terms can be controlled.
+
+\subsection{Keeping the signed terms does not recover the same defect}
+Let $\mathcal V_\phi(u)$ denote the right-hand side of \eqref{eq:virial}. For the real radial zero-energy $f$ above,
+\[
+ \Rea\sum_i\int\bar f_{ij}f_{ik}\dd=\frac KN\delta_{jk}.
+\]
+The leading $\lambda^4$ contribution of one packet to $\mathcal V_\phi$ is
+\[
+ \lambda^4\Delta\phi(a)\left(\frac{8K}{N}-\frac{8Q}{N+4}\right)=0.
+\]
+The error is $O_R(\lambda^3)$ for translated exponential multipliers; lower-order terms are $O_R(\lambda^2)$. Applying this to both packets in Proposition~\ref{prop:nogo} shows that a universal estimate
+\[
+ \mathcal V_{\phi_{R,c}}(u)\le16E(u)-\gamma D_{R,c}(u)+C,\qquad\gamma>0,
+\]
+also fails on this fixed-invariant class, even with optimized $c$. The defect grows as $\lambda^4$, while $\mathcal V$ has no contribution of that order. Rearranging the same signed terms is therefore insufficient.
+
+\section{A valid local-mass replacement}
+For $0<\delta<1/4$ and fixed $c$, define
+\begin{equation}\label{eq:mu}
+ \mu_{\delta,c}(u)=\sup_{a\ne c}\int_{B(a,\delta|a-c|)}|u(x)|^2\dd.
+\end{equation}
+These balls are narrow relative to their distance from the center. This quantity measures concentration away from a single distinguished point.
+
+\begin{lemma}\label{lem:local}
+There is $C_N$ independent of $u,R,c,\delta$ such that
+\begin{equation}\label{eq:replacement}
+ L_{R,c}(u)\le C_N\mu_{\delta,c}(u)^{4/N}
+ \left[D_{R,c}(u)+\delta^{-4}R^{-4}M(u)\right],\qquad u\in H^2(\R^N).
+\end{equation}
+\end{lemma}
+\begin{proof}
+First work on $B(a,r)$. Put $m_a=\int_{B(a,4r)}|u|^2$ and
+$H_a=\int_{B(a,4r)}|D^2u|_F^2$. Choose smooth cutoffs $\eta=1$ on $B(a,r)$ supported in $B(a,2r)$ and $\chi=1$ on $B(a,2r)$ supported in $B(a,4r)$. Their derivatives have the natural powers of $r^{-1}$.
+Writing $J=\int\chi^2|\nabla u|^2$, integration by parts gives
+\[
+ J\le\sqrt N\,m_a^{1/2}H_a^{1/2}+C_Nr^{-1}m_a^{1/2}J^{1/2}.
+\]
+Absorption and Young's inequality yield
+\[
+ r^{-2}\int_{B(a,2r)}|\nabla u|^2\le C_NH_a+C_Nr^{-4}m_a.
+\]
+The product rule and the mass-critical Gagliardo--Nirenberg inequality imply
+\begin{equation}\label{eq:ball}
+ \int_{B(a,r)}|u|^p\le\norm{\eta u}_p^p
+ \le C_Nm_a^{4/N}(H_a+r^{-4}m_a).
+\end{equation}
+
+Translate so $c=0$. On each annulus $A_j=\{2^j\le|x|<2^{j+1}\}$, choose a maximal $r_j$-separated family of centers with $r_j=\delta2^j/64$. Balls of radius $r_j$ cover $A_j$. Balls with radius $4r_j$ have bounded overlap, with a bound depending only on $N$, both within each annulus and across all annuli. Each enlarged ball is contained in $B(a,\delta|a|)$, so $m_a\le\mu_{\delta,0}(u)$.
+
+On every enlarged ball, $w_R(x)$ is comparable to $w_R(a)$ with constants independent of $\delta,R,j$. This follows from
+$w_R(x)\asymp\min\{|x|^4/R^4,1\}$. Also
+\[
+ w_R(a)r_j^{-4}\le C_N\delta^{-4}R^{-4}.
+\]
+Multiply \eqref{eq:ball} by $w_R(a)$ and sum over the cover. Bounded overlap controls the Hessian sum by $D_{R,0}$ and the cutoff sum by $C_N\delta^{-4}R^{-4}m$. This proves \eqref{eq:replacement}. The cutoff argument is valid directly in $H^2$, or by smooth approximation.
+\end{proof}
+
+\section{Conditional finite-time blowup and a necessary concentration pattern}
+\begin{theorem}\label{thm:conditional}
+There exists $m_*(N)>0$ such that a maximal solution with $E(u_0)<0$ has $T_+<\infty$ if some fixed $c$ and some fixed $\delta\in(0,1/4)$ satisfy
+\begin{equation}\label{eq:condition}
+ \sup_{0\le t<T_+}\mu_{\delta,c}(u(t))\le m_*(N).
+\end{equation}
+An analogous backward-time statement holds.
+\end{theorem}
+\begin{proof}
+Take $\eta=2$ in \eqref{eq:lower}, and choose $m_*$ so that the coefficient $C_Nm_*^{4/N}$ in \eqref{eq:replacement} is at most $1/4$. Then
+\[
+ V_R'\le16E-4D+C_NR^{-4}m(1+\delta^{-4}m_*^{4/N}).
+\]
+Choose one sufficiently large, fixed $R$ to obtain
+\begin{equation}\label{eq:decrease}
+ V_R'\le-8|E|-4D.
+\end{equation}
+Suppose the solution were forward global. With $y=-V_R$, \eqref{eq:decrease} makes $y$ reach $2C_Nm$ after finite time. Thereafter \eqref{eq:bridge} implies
+\[
+ D\ge c_NR^{-4}m^{-3}y^4,\qquad y'\ge c_NR^{-4}m^{-3}y^4.
+\]
+Integrating the differential inequality for $y^{-3}$ gives a contradiction in finite time. Backward time uses $\widetilde u(t,x)=\overline{u(-t,x)}$, which satisfies the same equation with the same mass, energy, and relative-ball masses.
+\end{proof}
+
+The hypothesis is dynamical. It cannot be inferred from negative energy alone by the estimates established here.
+
+\begin{corollary}\label{cor:concentration}
+If a negative-energy solution is forward global, then for every fixed $c$ there exist $t_n\to\infty$, $\delta_n\downarrow0$, and $a_n\ne c$ such that
+\[
+ \int_{B(a_n,\delta_n|a_n-c|)}|u(t_n,x)|^2\dd\ge\frac12m_*(N).
+\]
+\end{corollary}
+\begin{proof}
+For every fixed $f\in L^2$, $\mu_{\delta,c}(f)\to0$ as $\delta\downarrow0$. Indeed, centers very far from $c$ give balls in a small spatial tail, while centers in a bounded region give sets of uniformly vanishing volume. Absolute continuity of the mass integral handles the latter. Moreover
+\[
+ |\mu_{\delta,c}(f)-\mu_{\delta,c}(g)|
+ \le(\norm f_2+\norm g_2)\norm{f-g}_2.
+\]
+The convergence is therefore uniform on compact subsets of $L^2$, hence on each compact time interval of the solution. The contrapositive of Theorem~\ref{thm:conditional} supplies, for every $\delta$, a time and a relative ball carrying more than $m_*/2$. Choose $\delta_n$ recursively smaller than $2^{-n}$ and $\delta_{n-1}/2$, and so small that this cannot happen before time $n$; then choose such a ball. No attainment of the supremum is needed.
+\end{proof}
+
+This identifies a scenario that a general proof must exclude or control. It does not itself exclude that scenario. Negative energy supplies concentration somewhere; it does not supply the uniform upper bound in \eqref{eq:condition}.
+
+\section{Unconditional results in invariant nonradial classes}
+\begin{theorem}[Infinite-orbit symmetry]\label{thm:group}
+Let $G\subset O(N)$ be compact, with $Gx$ infinite for every $x\ne0$. Let $\chi:G\to S^1$ be a continuous unitary character. Suppose
+\[
+ u_0(gx)=\chi(g)u_0(x),\qquad g\in G,\qquad u_0\in H^2(\R^N),\quad E(u_0)<0.
+\]
+Then the maximal solution has $T_+,T_-<\infty$.
+\end{theorem}
+\begin{proof}
+Rotation invariance, phase invariance, and uniqueness preserve the equivariance at every time. In particular the solution's mass density is $G$-invariant.
+
+Fix any integer $K$. Every unit-vector orbit contains $K$ distinct points. For each unit vector choose $K$ group elements realizing positive minimum pairwise separation. The same separation, with a factor $1/2$, holds in a neighborhood of that vector. A finite cover of the unit sphere gives a uniform $d_K>0$ such that every orbit has $K$ points separated by at least $d_K|x|$.
+
+For $\delta<\min\{1/4,d_K/2\}$ the corresponding $K$ balls of radius $\delta|x|$ are disjoint and have equal mass. Hence $\mu_{\delta,0}(u(t))\le m/K$ at every time. Choose $K$ so large that $m/K\le m_*(N)$ and apply Theorem~\ref{thm:conditional} in both time directions.
+\end{proof}
+
+Only initial \emph{density} symmetry is not enough: it need not be preserved. The theorem imposes symmetry on the complex field, with a compatible phase character.
+
+\paragraph{Planar vortices.}
+In $N=2$, take $G=SO(2)$ and $\chi(R_\theta)=e^{i\ell\theta}$, $\ell\in\mathbb Z$. This gives the rigorous implication
+\[
+ u_0(r,\theta)=e^{i\ell\theta}v_0(r)\in H^2(\R^2),\quad E(u_0)<0
+ \quad\Longrightarrow\quad T_+,T_-<\infty.
+\]
+For $\ell\ne0$ the complex field is nonradial. The class is nonempty: multiply
+$(x_1+ix_2)^\ell e^{-|x|^2}$ for $\ell\ge0$, or $(x_1-ix_2)^{|\ell|}e^{-|x|^2}$ for $\ell<0$, by a sufficiently large positive amplitude. This remains a restricted class and does not address arbitrary planar data.
+
+\paragraph{Biradial data in all $N\ge4$.}
+Take $G=O(2)\times O(N-2)$ and write $x=(y,z)$. Then
+$u_0(x)=v_0(|y|,|z|)$ is allowed. Every nonzero orbit is infinite because at least one block has nonzero length and both block dimensions are at least two. A genuinely nonradial example is
+$u_0=Ae^{-|y|^2-2|z|^2}$ for sufficiently large $A$. No finite-variance hypothesis is needed in the theorem, even though this example has finite variance.
+
+\paragraph{Finite cyclic symmetry.}
+For $N=2d$ and an integer $K\ge2$, identify $\R^N=\C^d$ and put $g(z)=e^{2\pi i/K}z$. If
+$u_0(gx)=\zeta u_0(x)$ with $\zeta^K=1$, then for
+$\delta<\min\{1/4,\sin(\pi/K)\}$ the $K$ orbit balls are disjoint. Thus
+\[
+ E(u_0)<0,\qquad M(u_0)/K\le m_*(N)
+ \quad\Longrightarrow\quad T_+,T_-<\infty.
+\]
+Here only a finite symmetry is imposed, but a mass-to-orbit-size condition is required. These statements are consequences proved in this note; their external novelty has not been established.
+
+\section{A complementary angular-regularity criterion}
+Define, when finite,
+\[
+ K(u)=\int_0^\infty\norm{(1-\Delta_{S^{N-1}})u(r,\cdot)}_{L^2(S^{N-1})}^2r^{N-1}\,dr.
+\]
+This angular $H^2$ mass satisfies $K\ge m$. It is not automatically finite for arbitrary $H^2(\R^N)$ data and is not generally conserved.
+
+\begin{proposition}\label{prop:angular}
+For every $\varepsilon>0$,
+\begin{equation}\label{eq:angular}
+ L_{R,0}(u)\le\varepsilon D_{R,0}(u)+C_{N,\varepsilon}R^{-4}
+ \left[K(u)m^{4/(N-1)}+K(u)^{(N-1)/N}m^{5/N}\right].
+\end{equation}
+Consequently a global negative-energy solution cannot satisfy
+\[
+ \limsup_{T\to\infty}\frac1T\int_0^T K(u(t))\,dt<\infty.
+\]
+\end{proposition}
+\begin{proof}
+On a fixed annular cylinder, let $v$ be a localized rescaled function and set
+$\mu=\norm v_2^2$, $Q=\norm{\partial_r^2v}_2^2+\mu$, and
+$A=\norm v_{L_r^2H_\theta^2}^2$, using equivalent norms with $A\ge\mu$. The anisotropic inequality is
+\begin{equation}\label{eq:anisotropic}
+ \norm v_p^p\le C_NQ^{1/N}A^{(N-1)/N}\mu^{4/N}.
+\end{equation}
+To verify it, use finitely many smooth sphere charts and Fourier variables $(\xi,\eta)\in\R\times\R^{N-1}$. Hausdorff--Young and weighted H\"older with
+$W=1+(\xi/a)^4+|\eta/b|^4$ give
+\[
+ \norm v_p\le C\left(\int W|\widehat v|^2\right)^{1/2}
+ \left(\int W^{-p/(p-2)}\right)^{1/2-1/p}.
+\]
+The integral is finite since $p/(p-2)=(N+4)/4>N/4$. Put
+$a=(Q/\mu)^{1/4}$ and $b=(A/\mu)^{1/4}$; the case $\mu=0$ is immediate. Raising to the power $p$ gives \eqref{eq:anisotropic}. Chart and interval cutoff derivatives are controlled by their fixed-domain $H^2$ norms.
+
+On dyadic annuli of radius $\rho_j=2^jR$, let
+$\alpha_j=\rho_j^{-4}\min\{1,(\rho_j/R)^4\}\le R^{-4}$. Write $D_j,A_j,\mu_j$ for the weighted Hessian, angular mass, and mass on fixed enlarged annuli. Rescaling and the cutoff gradient estimate used in Lemma~\ref{lem:local} give
+\begin{align*}
+ \int_{A_j}w|u|^p\le{}&C\alpha_j^{1-1/N}D_j^{1/N}A_j^{(N-1)/N}\mu_j^{4/N}\\
+ &+C\alpha_j A_j^{(N-1)/N}\mu_j^{5/N}.
+\end{align*}
+Young's inequality bounds the first term by
+$\varepsilon' D_j+C_{\varepsilon'}\alpha_j A_j\mu_j^{4/(N-1)}$.
+Sum with bounded overlap and use
+\[
+ \sum_j A_j^{(N-1)/N}\mu_j^{5/N}
+ \le\left(\sum_jA_j\right)^{(N-1)/N}\left(\sum_j\mu_j^5\right)^{1/N}.
+\]
+This proves \eqref{eq:angular}.
+
+For the time-average assertion, $K\ge m$ implies
+$K^{(N-1)/N}m^{5/N}\le Km^{4/N}$. Combine \eqref{eq:angular} with the virial bounds, integrate in time, and choose one fixed large $R$ using the supposed finite upper average of $K$. For $y=-V_R$ this gives
+\[
+ y(t)\ge8|E|t-C+c\int_0^t D(s)\,ds.
+\]
+The bridge \eqref{eq:bridge} implies $D\ge c_R(y-C_Nm)_+^4$. The right-hand integral lower bound therefore satisfies a superlinear integral differential inequality once positive. More explicitly, define
+$F(t)=8|E|t-C+c\int_0^tD$; then $y\ge F$, and for all sufficiently large $t$,
+$F'\ge c_R(F-C_Nm)^4$. This contradicts global existence.
+\end{proof}
+
+For a planar $\ell$-vortex, $K=(1+\ell^2)^2m$ is constant; this independently recovers that case of Theorem~\ref{thm:group}. Conserved total angular momentum, a much weaker signed quantity, cannot replace $K$.
+
+\begin{corollary}[Quantitative angular growth]
+If a forward-global negative-energy solution has locally integrable $K(t)=K(u(t))$, then there exist $c(u_0,N)>0$ and $T_0$ such that
+\[
+ \int_0^T K(t)\,dt\ge c(u_0,N)T^5,\qquad T\ge T_0.
+\]
+\end{corollary}
+\begin{proof}
+Put $e=|E|$ and $S(T)=\int_0^T K$. The preceding estimates, using $K\ge m>0$, give
+\[
+ y(t)\ge -V_R(u_0)+16et+c_N\int_0^tD(s)\,ds-C_{N,m}R^{-4}S(t).
+\]
+Also $|V_R(u_0)|\le C(u_0)R$ by Cauchy--Schwarz and boundedness of $\nabla\phi_R/R$. For each large test horizon $T$, choose $R=\alpha T$, which remains fixed throughout $[0,T]$. First choose $\alpha>0$ small enough that $C(u_0)\alpha\le e$. If $S(T)\le\kappa T^5$, choose $\kappa>0$ small enough that $C_{N,m}\alpha^{-4}\kappa\le e$. Then, for $T/2\le t\le T$,
+\[
+ y(t)\ge6eT+c_N\int_{T/2}^tD(s)\,ds=:F(t).
+\]
+For sufficiently large $T$, $F\ge2C_Nm$. The bridge gives
+$F'\ge c_{N,m}\alpha^{-4}T^{-4}F^4$. Starting at $F(T/2)=6eT$, this forces divergence within $C_{N,m,e}\alpha^4T$. Choosing $\alpha$ smaller, before choosing $\kappa$, makes this time less than $T/2$, a contradiction. Thus $S(T)>\kappa T^5$ for every sufficiently large $T$. No derivative of a time-dependent $R$ was used.
+\end{proof}
+
+\section{Additional proof obstructions and counterexample tests}
+\subsection{A direct fixed-multiplier Riccati inequality can have the wrong sign}
+It is also possible to have very negative $V_R$ but very positive instantaneous $V_R'$ at fixed mass, energy $-1$, and momentum zero. Here is a reproducible algebraic construction.
+
+Choose real radial $q\in C_c^\infty\setminus\{0\}$, $k\ne0$, and $A>0$ so
+$f=Ae^{ik\cdot x}q$ has zero energy. Put
+$m_q=\norm q_2^2$, $a_q=\norm{\nabla q}_2^2/N$, and
+$b_k=(N+4)a_q+|k|^2m_q$. The traceless integrated kinetic tensor is
+\[
+ \Rea\sum_i\int\bar f_{ij}f_{ik}
+ -\frac{\norm{\Delta f}_2^2}{N}\delta_{jk}
+ =A^2b_k\left(k_jk_k-\frac{|k|^2}{N}\delta_{jk}\right).
+\]
+This identity follows by shifting the radial Fourier density by $k$ and expanding its fourth moments.
+
+Place critically scaled copies at $\pm ae$, with modulations $k$ and $-k$, where
+\[
+ a>0,\quad |e|=1,\qquad -|k|/\sqrt N<k\cdot e<0.
+\]
+More explicitly, add a fixed disjoint real packet $b$ of energy $-1$ and set
+\begin{align*}
+ U_\lambda(x)=A\lambda^{N/2}\big[&e^{i\lambda k\cdot(x-ae)}q(\lambda(x-ae))\\
+ &+e^{-i\lambda k\cdot(x+ae)}q(\lambda(x+ae))\big]+b(x).
+\end{align*}
+The physical modulations are $\pm\lambda k$. For the multiplier centered at zero,
+\[
+ V_R(U_\lambda)=4\lambda a e^{-a^4/R^4}A^2m_q(k\cdot e)+O(1)\to-\infty.
+\]
+Write $h_r=e^{-s}(1-4s)$ and $h_t=e^{-s}$ with $s=a^4/R^4$. Each concentrated packet contributes
+\[
+ 8\lambda^4(h_r-h_t)A^2b_k
+ \left((k\cdot e)^2-|k|^2/N\right)+O_R(\lambda^3)>0
+\]
+to the derivative for large $\lambda$. Thus $\mathcal V_{\phi_R}(U_\lambda)\to+\infty$. A universal instantaneous negative quartic inequality for this fixed $V_R$ cannot hold without further information.
+
+\subsection{Moving centers and traveling profiles}
+If $c=c(t)$, differentiation adds the term
+\[
+ -2\dot c(t)\cdot\Ima\int\bar u\,D^2\phi_{R,c(t)}\nabla u\dd.
+\]
+It cannot simply be discarded. Total momentum zero does not force each separated component to have zero momentum. Fourth-order dispersion also lacks the usual second-order Galilean symmetry.
+
+A possible genuine counterexample would be a traveling wave
+$u(t,x)=e^{i\omega t}Q(x-vt)$ with $Q\in H^2$ and $E(Q)<0$. Its profile solves
+\[
+ \Delta^2Q+\omega Q+i v\cdot\nabla Q-|Q|^{p-2}Q=0.
+\]
+For a sufficiently localized profile, differentiating
+$E+\omega M/2-v\cdot P/2$ along mass-preserving scaling gives
+\[
+ 4E(Q)-\tfrac12v\cdot P(Q)=0,
+ \qquad E(Q)=\tfrac18v\cdot P(Q).
+\]
+Standing profiles have zero energy. This identity does not by itself determine the sign for arbitrary excited traveling profiles.
+
+Exploratory one-dimensional and planar profile computations were undertaken in this session. A 14-pulse one-dimensional candidate at velocity $v=0.01$ gave energy approximately $-4.35117\times10^{-7}$, with $E-vP/8$ approximately $-1.84\times10^{-13}$ in a finite-domain boundary-value calculation. This is a candidate, not a certified real-line solution. Planar collinear and square multipulse tests did not produce a negative response form. These calculations do not answer the specified $N\ge2$ problem. Domains, boundary conditions, solver limitations, data, and code are retained in the accompanying research bundle; the proved statements above do not depend on these computations.
+
+\section{What remains to solve the original problem}
+For arbitrary initial data, the missing step is a time-independent $\delta$ and fixed center satisfying \eqref{eq:condition}, or another argument controlling the concentration in Corollary~\ref{cor:concentration}. The static obstructions show why conserved mass, energy, and momentum do not close the proposed multiplier argument. A complete proof must exploit additional dynamics, a different coercive functional, or controlled multi-center transport. A rigorous negative-energy global solution would instead disprove the conjecture. Neither conclusion has been obtained. \textbf{The unrestricted problem remains unresolved by this work;} the proved outputs are the obstruction statements, replacement estimates, and conditional and symmetry-restricted theorems above.
+
+\begin{thebibliography}{9}
+\bibitem{BL} T. Boulenger and E. Lenzmann, \emph{Blowup for Biharmonic NLS}, arXiv:1503.01741, version 2, 21 April 2015. \url{https://arxiv.org/abs/1503.01741}.
+\bibitem{Dinh} L. Dinh, \emph{Finite-Time Blow-Up of Radial Negative-Energy Solutions for the Mass-Critical Biharmonic Nonlinear Schr\"odinger Equation}, 20-page manuscript, Meta AI Research, posted 2 October 2026. \href{https://ai.meta.com/research/publications/finite-time-blow-up-of-radial-negative-energy-solutions-for-the-mass-critical-biharmonic-nonlinear-schrodinger-equation/}{Official publication page and full PDF}.
+\end{thebibliography}
+\end{document}

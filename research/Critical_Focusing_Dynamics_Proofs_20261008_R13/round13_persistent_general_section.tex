@@ -1,0 +1,207 @@
+\section{Persistent amplification for homogeneous dispersion}
+\label{sec:r13-persistent-general}
+
+The exterior commutator estimates yield a stronger statement than one
+kinetic excursion: a lower long-time average in actual physical time,
+without a global kinetic bound. Let $m>2$, $s=m/2$, and let $a$ satisfy
+the positive elliptic, real-even, homogeneous symbol assumptions above.
+Write $A(u)=\|a(D)^{1/2}u\|_2^2$, $M(u)=\|u\|_2^2$ and
+$P(u)=\operatorname{Im}\int\overline u\nabla u$.
+
+We treat both the local equation $iu_t=a(D)u-|u|^{2m/N}u$ and the
+Hartree equation $iu_t=a(D)u-(K*|u|^2)u$ under the preceding Hartree
+kernel assumptions: $2<m<N$, a real-even, degree-$-m$ homogeneous
+$C^1$ kernel away from zero, positive-definite density form, and
+$|K(x)|+|x||\nabla K(x)|\le C|x|^{-m}$. Put
+\[
+ \kappa=1+m/N\quad\hbox{(local)},\qquad
+ \kappa=2\quad\hbox{(Hartree)}.
+\]
+Their sharp energy inequalities have the common form
+\[
+ E(u)=A(u)/2-\mathcal F(u)/(2\kappa),\qquad
+ \mathcal F(u)\le\kappa(M(u)/M_c)^{\kappa-1}A(u).
+\]
+Here $\mathcal F=\|u\|_{2\kappa}^{2\kappa}$ locally and is the Hartree
+interaction otherwise.
+
+\begin{theorem}[Lower long-time kinetic average]\label{thm:r13-general-average}
+For each fixed equation above there are $d_0,c>0$ such that every
+forward-global conservative strong $H^s$ solution, for which the
+localized identities pass by strong energy-space approximation, with
+\[
+ P=0,\qquad E=-e<0,\qquad
+ 0<d=(M/M_c)^{\kappa-1}-1<d_0
+\]
+satisfies
+\begin{equation}\label{eq:r13-general-average}
+ \boxed{\quad
+ \liminf_{T\to\infty}\frac1T\int_0^T A(u(t))\,dt
+ \ge c e d^{-\alpha_m},\qquad
+ \alpha_m=1+\frac{m}{2(m-1)}.
+ \quad}
+\end{equation}
+No uniform kinetic bound, radial symmetry, finite spatial moment,
+convexity of $a$, or real-sector linearized nondegeneracy is assumed.
+The theorem specifies its solution class; it does not assert local
+well-posedness for every symbol and dimension.
+\end{theorem}
+
+\begin{proof}
+Write $A(t)=A(u(t))$, $\delta=M-M_c$, $\gamma=(m-1)/m$.
+Sharp interpolation gives $A(t)\ge a_*:=2e/d>0$.
+Real polarization supplies, separately at each time, a phase with
+$u=e^{i\theta}(X+iY)$, $X,Y$ real, and
+$M(Y)\le CdM$, $A(Y)\le CdA(t)$.
+The nonlinear potential is real in both models and cancels from the
+localized mass derivative. Apply the normalized Fourier mass-commutator
+bound after scaling $A$ to one. For $R A(t)^{1/m}\ge1$ it gives
+\begin{equation}\label{eq:r13g-variable-density}
+ \left|\frac d{dt}\int\chi((x-z)/R)|u|^2\right|
+ \le C\sqrt d R^{-1}A(t)^\gamma.
+\end{equation}
+No time derivative of the chosen phase is taken.
+
+\medskip\noindent\emph{Center and uniform mass tail.}
+Fix $\varepsilon_0=M_c/32$ and take $d_0$ small. Normalized
+near-optimizer compactness gives a fixed $\overline R$ and centers
+$c(t)$ with
+\[
+ \int_{|x-c(t)|\le\overline R A(t)^{-1/m}}|u(t,x)|^2\,dx
+ \ge M_c-\varepsilon_0.
+\]
+Choose $R_0\ge1$ containing these balls and satisfying
+$R_0\ge a_*^{-1/m}$. Introduce $s(t)=\int_0^tA(\tau)^\gamma d\tau$.
+Two centers separated by more than $4R_0$ force a cutoff mass change
+of at least $M_c-3\varepsilon_0$. Equation
+\eqref{eq:r13g-variable-density} excludes this when
+$|s(t)-s(t')|\le\tau R_0/\sqrt d$, with fixed small $\tau>0$.
+Interpolating sampled centers at these intrinsic-time intervals gives
+a locally absolutely continuous $b(t)$ with
+\begin{equation}\label{eq:r13g-variable-center}
+ |b(t)-c(t)|\le8R_0,\qquad
+ |b'(t)|\le C\sqrt d A(t)^\gamma\quad\hbox{a.e.}
+\end{equation}
+The speed constant is independent of $R_0$ and $e/d$.
+
+For every $\eta>0$ there is $R_\eta<\infty$ such that
+\begin{equation}\label{eq:r13g-variable-tail}
+ \sup_{t\ge0}\int_{|x-b(t)|>R_\eta}|u(t,x)|^2\,dx
+ \le\delta+\eta.
+\end{equation}
+Here is the compactness argument without a kinetic upper bound.
+Suppose bad times $t_k$ and radii $R_k\to\infty$ exist. The bad mass
+lies also outside $B(c(t_k),R_k-8R_0)$. Set $A_k=A(t_k)$,
+$\ell_k=A_k^{-1/m}$ and
+$v_k(y)=\ell_k^{N/2}u(t_k,c(t_k)+\ell_k y)$.
+Then $A(v_k)=1$, $M(v_k)=M$, $E(v_k)=-e/A_k\in[-d/2,0)$,
+and a fixed ball contains $M_c-\varepsilon_0$ mass.
+A weak $H^s$ limit $v$, with strong local $L^2$ convergence, therefore
+has $M(v)\ge M_c-\varepsilon_0>0$. The normalized bad radius tends
+to infinity, since
+$(R_k-8R_0)\ell_k^{-1}\ge(R_k-8R_0)a_*^{1/m}\to\infty$.
+Consequently $M(v)\le M_c-\eta$.
+For $w_k=v_k-v$, mass and energy split:
+\[
+ E(v_k)=E(v)+E(w_k)+o(1),\qquad
+ M(w_k)\le\delta+\varepsilon_0+o(1)<M_c.
+\]
+Locally the nonlinear splitting is Brezis--Lieb. For Hartree, the
+Riesz bound and HLS imply that $v\overline{w_k}$ vanishes in the
+density space, while $|w_k|^2$ converges weakly to zero there. First
+approximate $v$ by bounded compactly supported functions and use local
+compactness; then use uniform Sobolev and HLS bounds. This removes all
+mixed interaction terms. Sharp interpolation gives $E(w_k)\ge0$
+eventually and $E(v)>0$, because $v\ne0$ is strictly subcritical,
+contradicting $E(v_k)<0$. This proves \eqref{eq:r13g-variable-tail}.
+
+\medskip\noindent\emph{Variable-scale virial.}
+Let $g=a(D)^{1/2}u$ and use the compact vector field $f_R$ of the
+exterior commutator lemma. Define
+\[
+ J_R=2\operatorname{Im}\int f_R(x-b(t))\cdot\overline u\nabla u,
+ \quad K_R=\int_{|x-b|>8R}|g|^2,
+ \quad H_R=\int_{R/4<|x-b|<8R}|g|^2.
+\]
+Scaling the normalized exterior commutator and cutoff-energy estimates
+back to $A(t)$ gives errors $CR^{-1}A^\gamma$ and
+$CR^{-2}A^{(m-2)/m}$. Write
+\[
+ q_R(t)=R^{-1}A(t)^\gamma+R^{-2}A(t)^{(m-2)/m}+R^{-m}.
+\]
+The last term is needed only for separated Hartree interactions.
+For $R\ge4R_\eta$, $R\ge a_*^{-1/m}$ and $\mu=\delta+\eta$,
+the preceding localized identities give
+\begin{align*}
+ J_R'\le{}&-4me-2mK_R+CH_R+Cq_R\\
+ &+C\mu^{\kappa-1}(K_R+H_R+q_R)\\
+ &+C|b'|\mu^{1-1/m}(K_R+H_R+q_R)^{1/m}.
+\end{align*}
+The constant center-motion term is $-2b'\cdot P=0$. Its remainder is
+bounded using $\|\zeta_Ru\|_2\|\nabla(\zeta_Ru)\|_2$ and Fourier
+interpolation, since $s>1$. For Hartree, separated inner--outer
+interactions are $O(R^{-m}M^2)$; the remaining exterior interaction
+is bounded by $C\mu A(\zeta_Ru)$.
+
+Take $d_0,\eta$ small enough to absorb the nonlinear $K_R$ term.
+Young's inequality absorbs the current's $K_R$ term and bounds the
+other parts by $C(H_R+q_R)+C\mu|b'|^{m/(m-1)}$.
+Equation \eqref{eq:r13g-variable-center} implies
+\begin{equation}\label{eq:r13g-average-virial}
+ J_R'\le-4me+CH_R+C\mu d^{m/[2(m-1)]}A(t)+Cq_R(t).
+\end{equation}
+The endpoint estimate is $|J_R(t)|\le CR A(t)^{1/m}$.
+
+\medskip\noindent\emph{Physical-time averaging.}
+Let $L$ be the left side of \eqref{eq:r13-general-average}; only finite
+$L$ needs proof. Choose $T_n\to\infty$ with averages tending to $L$.
+There is $t_n\in[T_n-\sqrt{T_n},T_n]$ with
+$A(t_n)\le C(L+1)\sqrt{T_n}$. Therefore $t_n/T_n\to1$, the
+averages through $t_n$ tend to $L$, and $A(t_n)^{1/m}/t_n\to0$.
+For fixed $K<\infty$ and large $R_*$, the annuli at radii
+$R_j=64^jR_*$, $0\le j<K$, are disjoint, so
+$\sum_jH_{R_j}(t)\le A(t)$.
+For each $n$ choose one radius with average annular energy at most
+$K^{-1}$ times the average of $A$ and integrate
+\eqref{eq:r13g-average-virial}.
+The chosen radii stay bounded for fixed $K,R_*$, so endpoints divided
+by $t_n$ vanish. Jensen's inequality bounds the fractional powers of
+$A$ in $q_R$. The time limit yields
+\[
+ 4me\le CL/K+C\mu d^{m/[2(m-1)]}L
+       +CR_*^{-1}L^\gamma+CR_*^{-2}L^{(m-2)/m}+CR_*^{-m}.
+\]
+Let $K\to\infty$, then $R_*\to\infty$, then $\eta\downarrow0$.
+Since $\delta=M_c[(1+d)^{1/(\kappa-1)}-1]\le Cd$, this proves
+\eqref{eq:r13-general-average}.
+\end{proof}
+
+\begin{corollary}[Repeated amplification and standing-wave instability]
+\label{cor:r13-general-repeat}
+For any real sharp standing wave $Q$ with $M(Q)=M_c$, take
+$u_d(0)=(1+d)^{1/[2(\kappa-1)]}Q$.
+Every global solution in the stated class satisfies
+\[
+ \liminf_{T\to\infty}\frac1T\int_0^T
+  \frac{A(u_d(t))}{A(u_d(0))}\,dt
+ \ge c d^{-m/[2(m-1)]}.
+\]
+Every prescribed finite amplification factor is thus exceeded at
+arbitrarily late times for small enough $d$. Under the usual local
+continuation alternative, each real sharp standing wave is nonlinearly
+orbitally unstable modulo phase and translation.
+\end{corollary}
+\begin{proof}
+The exact amplitude identity gives $e=dA(u_d(0))/2$.
+The initial perturbations converge to $Q$ in $H^s$, whereas a large
+kinetic excursion leaves a fixed neighborhood of its phase--translation
+orbit. Finite-time breakdown also forces such an excursion under the
+continuation alternative.
+\end{proof}
+
+If a particular orbit has $B=\sup_tA(t)<\infty$ and
+$L_*=ce d^{-\alpha_m}$, then the set $\{t:A(t)\ge L_*/2\}$ has
+lower asymptotic density at least $L_*/(2B)$. Without this extra
+boundedness, the theorem still permits sparse high spikes. For $m=4$,
+$\alpha_m=5/3$ and the perturbation exponent is $2/3$. The result does
+not by itself exclude every bounded global negative-energy orbit.

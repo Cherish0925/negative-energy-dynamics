@@ -1,0 +1,43 @@
+\section{Scalar compactness and critical normalization}
+\label{sec:r10-foundations}
+The Fourier transform is unitary, $D=-i\nabla$, and
+$P(u)=\operatorname{Im}\int\overline u\nabla u=\int\xi|\widehat u|^2$.
+The real Hilbert pairing is the real part of the complex $L^2$ pairing.
+Throughout the local-power arguments, $N\ge1$, $m>1$, $s=m/2$,
+$r=m/N$, and $p=2+2r$. A principal symbol $a$ is real, even,
+$m$-homogeneous, $C^{N+2}$ off zero, and satisfies
+$c|\xi|^m\le a(\xi)\le C|\xi|^m$.
+Set $A(u)=\int a|\widehat u|^2$, $M(u)=\|u\|_2^2$, and
+$E(u)=A(u)/2-\|u\|_p^p/p$. The sharp critical mass $M_c$ is defined by
+\begin{equation}\label{eq:r10-basic-GN}
+ \|u\|_p^p\le\frac p2\left(\frac{M(u)}{M_c}\right)^r A(u).
+\end{equation}
+The traveling-wave convention $u(t,x)=e^{i\omega t}U(x-vt)$ gives
+$[a(D)+\omega+iv\cdot\nabla]U-|U|^{2r}U=0$.
+
+\begin{lemma}[Normalized optimizer compactness]
+The inequality \eqref{eq:r10-basic-GN} is attained. If
+$M(f_n)\to M_c$, $A(f_n)\to1$, and $\|f_n\|_p^p\to p/2$, then
+some translated subsequence converges strongly in $H^s$ to an optimizer.
+The normalized optimizer set is compact modulo translations and phases.
+\end{lemma}
+\begin{proof}
+Sharp Sobolev interpolation gives a finite positive best constant, and
+amplitude and spatial scaling normalize a maximizing sequence as stated.
+Bounded energy-space sequences that vanish locally in mass converge to
+zero in $L^p$: use a bounded-overlap cover by unit balls, local Sobolev
+interpolation, and $2<p<2N/(N-m)$ when $N>m$ (all finite $p$ otherwise).
+Thus translations give a nonzero weak limit $Q$ and almost-everywhere
+convergence. Write $M_1=M(Q)>0$, $A_1=A(Q)>0$, $M_2=M_c-M_1$,
+and $A_2=1-A_1$. Quadratic splitting and Brezis--Lieb give
+\[
+ M_c^r\le M_1^r A_1+M_2^r A_2,\qquad A_1+A_2=1.
+\]
+If both masses are positive, the right side is strictly below $M_c^r$.
+Consequently $M_1=M_c$ and then $A_1=1$. Weak convergence plus
+convergence of both quadratic norms gives strong $H^s$ convergence.
+The same proof applies to a sequence of optimizers. Constant phase is
+proved by the density-norm lemma below; this compactness argument itself
+does not need a positivity-preserving kinetic operator.
+\end{proof}
+

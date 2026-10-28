@@ -1,0 +1,72 @@
+{
+  "date": "2026-10-18",
+  "scope": "First research class: negative-energy coherent dynamics",
+  "status": "Analytic continuation with internal cross-checks; earlier numerical certificates are dependencies, not rerun here.",
+  "files": [
+    {
+      "path": "Negative_Energy_Coherent_Dynamics_Advances_20261018.pdf",
+      "bytes": 398095,
+      "sha256": "f17539912a740ddd4dac13e587ec2435e43e47028409c3b9945f57bdf4e5c98a"
+    },
+    {
+      "path": "Negative_Energy_Coherent_Dynamics_Advances_20261018.tex",
+      "bytes": 50224,
+      "sha256": "f77b364fa6a2e5bfd701020c6b024fddf5f884bd675507900dd359e96213a8d9"
+    },
+    {
+      "path": "README_20261018.txt",
+      "bytes": 5066,
+      "sha256": "cad70a3e3993c049f041864e662a6cbc4bb99377876410bdb4bb199d5c5cf442"
+    },
+    {
+      "path": "proof_notes/wave_radiation.md",
+      "bytes": 16138,
+      "sha256": "5aa508e5ef5ad10ebe8a754f0047c26b12a219891cad6f5f6b350433376beae3"
+    },
+    {
+      "path": "proof_notes/wave_radiation_linear_review.md",
+      "bytes": 9126,
+      "sha256": "d3942806e1b86fe24212fc6c386bfc252f1b64755616309b8627a8504db32c42"
+    },
+    {
+      "path": "proof_notes/robust_gap.md",
+      "bytes": 10244,
+      "sha256": "9954013d14710cb45ccd9dff1acdbfb7f13965811316d61aeef72aac9f7b65f8"
+    },
+    {
+      "path": "proof_notes/robust_gap_independent_review.md",
+      "bytes": 6577,
+      "sha256": "6e677c6a1141b9a708cf8f2ed95824879ded5297c3668680d4a088edacbf2d8f"
+    },
+    {
+      "path": "proof_notes/robust_mixed_extension.md",
+      "bytes": 9665,
+      "sha256": "c9d1d73628bf1921b90cc38081ab4fcb611506843caf8149786298127f2aa8cd"
+    },
+    {
+      "path": "proof_notes/anisotropic_gap.md",
+      "bytes": 20536,
+      "sha256": "6286997ab3fb29927a159b1edf4060277258d889cd081f88655672dbd91b1d6c"
+    },
+    {
+      "path": "proof_notes/physical_bridge.md",
+      "bytes": 12633,
+      "sha256": "81618448788f43ec88185a7f9f904e6138eb77e1bdc3f625167bb074d374ceab"
+    },
+    {
+      "path": "proof_notes/endpoint.md",
+      "bytes": 11241,
+      "sha256": "51cede3c78790d8c5dfa05047e5de4f56836a38b8e02723fd4d76c72086b98a2"
+    },
+    {
+      "path": "proof_notes/endpoint_independent_review.md",
+      "bytes": 6345,
+      "sha256": "68cbb6c5dba9cad7a5626176d2857e3e7dce21f91b7c9a0f500bb6328f7abe94"
+    },
+    {
+      "path": "proof_notes/relative_periodic.md",
+      "bytes": 8203,
+      "sha256": "f8064166076957667b7a1663cc712cc130db52fc4c1a033f8a06e55a26cc9e7e"
+    }
+  ]
+}

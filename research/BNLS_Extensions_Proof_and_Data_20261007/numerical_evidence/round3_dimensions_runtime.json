@@ -1,0 +1,12 @@
+{
+  "numpy": "2.3.5",
+  "scipy": "1.17.0",
+  "arithmetic": "ordinary floating point; no interval verification",
+  "included_round2_inputs": [
+    "round2_radial_mode4_dim3.npz",
+    "round2_radial_mode1_dim5.npz",
+    "round2_radial_mode1_dim2.npz",
+    "round2_radial_mode3_dim2.npz"
+  ],
+  "maximum_parallel_numerical_jobs": 2
+}

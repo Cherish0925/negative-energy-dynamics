@@ -1,0 +1,10 @@
+progress 0 16 0 180 HS [+/- 1.91e-5] TR [0.0004 +/- 6.07e-5] sec 0.0
+progress 0 16 64 1204 HS [33.82 +/- 5.49e-3] TR [8.456 +/- 3.33e-4] sec 0.4
+progress 0 16 128 2228 HS [38.79 +/- 5.69e-3] TR [9.793 +/- 1.89e-4] sec 0.7
+progress 0 16 192 3252 HS [38.79 +/- 5.70e-3] TR [9.793 +/- 5.94e-4] sec 1.2
+progress 0 16 256 4276 HS [38.79 +/- 5.70e-3] TR [9.793 +/- 5.94e-4] sec 1.6
+progress 0 16 320 5300 HS [38.79 +/- 5.70e-3] TR [9.793 +/- 5.94e-4] sec 2.0
+progress 0 16 384 6324 HS [38.79 +/- 5.70e-3] TR [9.793 +/- 5.94e-4] sec 2.6
+progress 0 16 448 7348 HS [38.79 +/- 5.70e-3] TR [9.793 +/- 5.94e-4] sec 3.2
+progress 0 16 512 9380 HS [38.79 +/- 5.70e-3] TR [9.793 +/- 5.94e-4] sec 4.3
+{"profile": "round2_radial_H4_exact_h1_16.json", "ell": 0, "beta": 3, "sub": 16, "precision_bits": 192, "cells": 9380, "trace": "[9.793 +/- 5.94e-4]", "HS_squared": "[38.79 +/- 5.70e-3]", "origin_trace_bound": "[1.69429206158344201742790377870639482185132330081443726623e-9 +/- 3.19e-66]", "trace_upper_endpoint_enclosure": "[9.79359366992174488071350060933225461640255828069226296660 +/- 2.05e-57]", "HS_squared_upper_endpoint_enclosure": "[38.7956907754366969439250339728973902162169912315927291824 +/- 3.30e-56]", "origin_HS_bound": "[8.70430385161941078911281290979892753965299879238472927744e-8 +/- 6.06e-65]", "coarse_trace_bound": "[25.6871411044816886016265383828199794147762980246415285425 +/- 2.67e-56]", "profile_sup_bound": "6.72169038577537580891885227174498140811920166015625000000", "seconds": 4.303899049758911, "profile_sha256": "c50a6f98682ce5f5bef9ab62ae2a93ba06b91522c8f3e29b859ac521afb8f627", "verifier_sha256": "96cc5d8633361c7cd23861af1e18a7c2500d7c2fa5fc967c87f2def8e61757f4", "python_version": "3.12.14", "python_flint_version": "0.9.0", "HS_lt_39": true, "HS_lt_38_9": true, "HS_lt_38_80": true, "HS_lt_4_80": false, "HS_lt_0_73": false, "HS_lt_0_22": false, "HS_lt_5_0": false, "HS_lt_1": false, "trace_lt_1_70": false, "required_inequality": "HS squared < 38.80", "required_pass": true}

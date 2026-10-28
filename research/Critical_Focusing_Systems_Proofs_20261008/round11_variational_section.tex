@@ -1,0 +1,607 @@
+\section{Concentration energy and global dynamics at critical mass}
+\label{sec:r11-variational}
+
+A high-frequency concentration has a definite limiting energy contribution
+from a bounded correction to the homogeneous dispersion.  We identify
+that contribution using the full optimizer manifold.  Conservation then
+converts the resulting compactness statement into a global theorem for
+all initial data below the concentration energy, including data at the
+critical mass.  No proximity to a standing wave is needed.
+
+\subsection{The homogeneous problem and the concentration energy}
+
+Fix $N\ge1$, $m>1$, $s=m/2$, $r=m/N$, and $p=2+2r$.
+Let $a$ be real, even, positive elliptic, and homogeneous of degree $m$.
+Write
+\[
+ M(f)=\|f\|_2^2,\qquad
+ A(f)=\int a(\xi)|\widehat f(\xi)|^2\,d\xi,\qquad
+ E_a(f)=\tfrac12 A(f)-\tfrac1p\|f\|_p^p.
+\]
+Let $M_c$ be the sharp mass in
+\begin{equation}\label{eq:r11-sharp-gn}
+ \frac1p\|f\|_p^p\le
+ \frac12\left(\frac{M(f)}{M_c}\right)^r A(f),
+\end{equation}
+and define the normalized equality manifold
+\[
+ \mathcal G=\{Q\in H^s:M(Q)=M_c,\ A(Q)=1,\ E_a(Q)=0\}.
+\]
+We use the normalized sharp-GN compactness property: whenever
+$M(f_n)\to M_c$, $A(f_n)\to1$, and $E_a(f_n)\to0$, there are
+translations and a subsequence converging strongly in $H^s$ to an
+element of $\mathcal G$.  For the homogeneous symbols considered in
+this work this is the established sharp-GN compactness input.  It
+requires neither optimizer uniqueness nor nondegeneracy of the real
+linearized operator.  In particular $\mathcal G$ is compact modulo
+translations; constant phases are already included in this set.
+
+Let $d$ be a bounded, measurable, real, even Fourier multiplier. Assume
+that there is a bounded function $d_\infty$ on $S^{N-1}$ such that
+\begin{equation}\label{eq:r11-angular-limit}
+ \sup_{\theta\in S^{N-1}}|d(R\theta)-d_\infty(\theta)|
+       \longrightarrow0\qquad(R\longrightarrow\infty).
+\end{equation}
+Define
+\[
+ k=a-d,\qquad
+ D(f)=\int d(\xi)|\widehat f(\xi)|^2\,d\xi,\qquad
+ E_k(f)=E_a(f)-\tfrac12D(f).
+\]
+No sign assumption is imposed on $d$ or $d_\infty$.  The quadratic
+perturbation is continuous on $L^2$, and $E_k$ is continuous on $H^s$.
+Set
+\begin{equation}\label{eq:r11-concentration-energy}
+ e_\infty=-\frac12\max_{Q\in\mathcal G}
+       \int d_\infty(\xi/|\xi|)|\widehat Q(\xi)|^2\,d\xi.
+\end{equation}
+The maximum exists: its objective is a bounded-multiplier quadratic
+form, continuous in $L^2$ and invariant under translations and constant
+phase.  Compactness of $\mathcal G$ modulo translations applies.  Since
+the limiting multiplier has degree zero, the value does not depend on
+the kinetic normalization used for the equality manifold.
+
+\begin{theorem}[Energy of a concentrating sequence]
+\label{thm:r11-concentrating-sequence}
+Suppose
+\[
+ M(f_n)\le M_c,\qquad A(f_n)\longrightarrow\infty,\qquad
+ \sup_n E_k(f_n)<\infty.
+\]
+Then $M(f_n)\to M_c$.  Put $t_n=A(f_n)^{1/m}$ and write
+$f_n(x)=t_n^{N/2}V_n(t_nx)$.  After extraction and translations,
+$V_n\to Q$ strongly in $H^s$ for some $Q\in\mathcal G$, and
+\begin{align}
+ D(f_n)&\longrightarrow
+   \int d_\infty(\xi/|\xi|)|\widehat Q(\xi)|^2\,d\xi,
+       \label{eq:r11-deficit-limit}\\
+ \liminf_n E_k(f_n)&\ge
+   -\frac12\int d_\infty(\xi/|\xi|)|\widehat Q(\xi)|^2\,d\xi
+   \ge e_\infty.
+       \label{eq:r11-concentrating-liminf}
+\end{align}
+\end{theorem}
+
+\begin{proof}
+The sharp inequality and the mass bound give $E_a(f_n)\ge0$.
+Boundedness of $d$ gives
+\[
+ 0\le E_a(f_n)=E_k(f_n)+\tfrac12D(f_n)
+      \le \sup_j E_k(f_j)+\tfrac12\|d\|_\infty M_c.
+\]
+Consequently
+\[
+ A(V_n)=1,\qquad
+ E_a(V_n)=t_n^{-m}E_a(f_n)\longrightarrow0.
+\]
+Equation~\eqref{eq:r11-sharp-gn} also gives
+\[
+ 0\le\frac12\left[1-\left(\frac{M(f_n)}{M_c}\right)^r\right]
+      \le E_a(V_n)\longrightarrow0.
+\]
+Thus $M(f_n)\to M_c$, and normalized sharp-GN compactness yields
+the asserted strong convergence.  Equivalently one may first correct
+the masses and kinetic normalizations by factors tending to one and
+then undo those normalizations after obtaining a compact subsequence.
+
+Translations do not change Fourier modulus.  Since $d$ is bounded,
+strong $L^2$ convergence implies
+\[
+ \left|\int d(t_n\xi)
+      \bigl(|\widehat V_n(\xi)|^2-|\widehat Q(\xi)|^2\bigr)\,d\xi\right|
+ \le\|d\|_\infty\|V_n-Q\|_2(\|V_n\|_2+\|Q\|_2)
+ \longrightarrow0.
+\]
+For every $\xi\ne0$, \eqref{eq:r11-angular-limit} gives
+$d(t_n\xi)\to d_\infty(\xi/|\xi|)$.  Dominated convergence now
+proves~\eqref{eq:r11-deficit-limit}.  Finally
+$E_k(f_n)=E_a(f_n)-D(f_n)/2\ge-D(f_n)/2$, proving
+\eqref{eq:r11-concentrating-liminf}.
+\end{proof}
+
+\begin{corollary}[Bounded energy sublevels and sharpness]
+\label{cor:r11-sublevels}
+For every $e<e_\infty$,
+\begin{equation}\label{eq:r11-uniform-sublevel}
+ \sup\{A(f):M(f)\le M_c,\ E_k(f)\le e\}<\infty,
+\end{equation}
+where the assertion is vacuous if the set is empty.
+Conversely, for every $e>e_\infty$ the exact-mass sublevel
+$\{f:M(f)=M_c,\ E_k(f)\le e\}$ is unbounded in $H^s$.
+\end{corollary}
+
+\begin{proof}
+Failure of~\eqref{eq:r11-uniform-sublevel} contradicts
+Theorem~\ref{thm:r11-concentrating-sequence}.  For sharpness choose
+$Q\in\mathcal G$ attaining the maximum in
+\eqref{eq:r11-concentration-energy} and let
+$Q_\lambda(x)=\lambda^{N/2}Q(\lambda x)$.  Homogeneity gives
+\[
+ M(Q_\lambda)=M_c,\qquad A(Q_\lambda)=\lambda^m,\qquad
+ E_a(Q_\lambda)=0.
+\]
+Moreover
+\[
+ E_k(Q_\lambda)=-\tfrac12\int d(\lambda\xi)|\widehat Q(\xi)|^2\,d\xi
+      \longrightarrow e_\infty
+      \qquad(\lambda\longrightarrow\infty).
+\]
+For any fixed $e>e_\infty$ these trials eventually belong to the
+stated sublevel while their kinetic energies diverge.
+\end{proof}
+
+The strict comparison in this result is optimal for mass--energy
+coercivity.  At $e=e_\infty$, boundedness depends on the particular
+symbol.  Sharpness of an energy sublevel does not itself construct a
+blow-up trajectory.
+
+\begin{remark}[Choice of the zero of frequency]
+Replacing $k$ by $k+c$ multiplies solutions by $e^{-ict}$, adds $cM/2$
+to their energy, and adds $cM_c/2$ to $e_\infty$.  Thus the difference
+$E_k-e_\infty$ at $M=M_c$ is unchanged.  The concentration-energy
+comparison does not depend on the arbitrary zero of frequency.
+\end{remark}
+
+\subsection{Conservation turns the bound into global dynamics}
+
+For the general-symbol statement, we specify the local evolution input.
+Let \textup{(F)} denote the following properties of
+\begin{equation}\label{eq:r11-flow}
+ i\partial_tu=k(D)u-|u|^{p-2}u:
+\end{equation}
+for every $u_0\in H^s$ there is a unique maximal solution
+$u\in C((T_-,T_+),H^s)$, depending continuously on its initial datum,
+conserving $M$ and $E_k$, and satisfying the continuation alternative
+that a finite lifespan endpoint forces divergence of the $H^s$ norm.
+Ellipticity of an arbitrary symbol is not by itself being used as a
+substitute for this local evolution theory.
+
+\begin{theorem}[Global bounded evolution at critical mass]
+\label{thm:r11-global-endpoint}
+Assume \textup{(F)}.  If
+\[
+ M(u_0)\le M_c,\qquad E_k(u_0)<e_\infty,
+\]
+then the solution of~\eqref{eq:r11-flow} is global in both time
+directions and
+\[
+ \sup_{t\in\mathbb R}\|u(t)\|_{H^s}<\infty.
+\]
+For every strictly subcritical datum $M(u_0)<M_c$, the same conclusion
+holds without any restriction on its energy.
+\end{theorem}
+
+\begin{proof}
+In the first case, conservation places the maximal orbit in the fixed
+sublevel of Corollary~\ref{cor:r11-sublevels} with
+$e=E_k(u_0)<e_\infty$.  Ellipticity of $a$ and conservation of mass
+bound its $H^s$ norm.  The continuation alternative excludes both
+finite endpoints.  For the second assertion the direct estimate
+\begin{equation}\label{eq:r11-subcritical-coercivity}
+ E_k(f)\ge\frac12\left[1-\left(\frac{M(f)}{M_c}\right)^r\right]A(f)
+             -\frac12\|d\|_\infty M(f)
+\end{equation}
+is coercive at each fixed mass below $M_c$; conservation gives the
+same conclusion.
+\end{proof}
+
+\begin{proposition}[A concrete local theory including anisotropy]
+\label{prop:r11-quartic-local}
+For $m=4$ and $N\in\{1,2,3\}$, hypothesis \textup{(F)} holds for
+every symbol $k=a-d$ in this section.  Consequently
+Theorem~\ref{thm:r11-global-endpoint} is unconditional for these
+quartic equations, including anisotropic $a$.
+\end{proposition}
+
+\begin{proof}
+Here $s=2$ and the nonlinear map is $F(z)=|z|^\alpha z$ with
+$\alpha=8/N>2$.  Its second derivative, viewing $\mathbb C$ as
+$\mathbb R^2$, is locally Lipschitz.  The embeddings
+$H^2(\mathbb R^N)\hookrightarrow L^\infty\cap W^{1,4}$ and the
+ordinary chain and product rules imply, on every bounded $H^2$ ball,
+\begin{equation}\label{eq:r11-local-lipschitz}
+ \|F(u)-F(v)\|_{H^2}\le C_R\|u-v\|_{H^2}
+ \quad\text{if }\|u\|_{H^2}+\|v\|_{H^2}\le R.
+\end{equation}
+For example the second-derivative terms have the forms
+$F'(u)D^2u$ and $F''(u)(Du)^2$; their differences are bounded using
+$H^2\hookrightarrow L^\infty$, $H^2\hookrightarrow W^{1,4}$,
+and the local Lipschitz bounds on $F'$ and $F''$.
+
+Since $k$ is real, $e^{-itk(D)}$ is a strongly continuous unitary group
+on $H^2$.  Its Duhamel map and~\eqref{eq:r11-local-lipschitz} give a
+contraction in $C([-T,T],H^2)$ with $T$ depending only on the initial
+$H^2$ norm.  This proves existence, uniqueness, continuous dependence,
+and the $H^2$ continuation alternative.
+
+To justify conservation without assuming excessive smoothness of the
+non-polynomial power, let $P_R$ be the orthogonal Fourier projection to
+$\{\xi:|\xi|\le R\}$ and solve
+\[
+ i\partial_tu_R=k(D)u_R-P_RF(u_R),\qquad u_R(0)=P_Ru_0.
+\]
+The band-limited subspace is preserved.  On that subspace $k(D)$ is a
+bounded operator on $H^2$, so the solution is differentiable in $H^2$.
+The real $L^2$ pairings defining the derivatives of mass and energy are
+therefore legitimate.  If $g_R=k(D)u_R-F(u_R)$, then
+$\partial_tu_R=-iP_Rg_R$, so
+\[
+ \frac{d}{dt}E_k(u_R)
+   =\operatorname{Re}\langle g_R,-iP_Rg_R\rangle=0.
+\]
+Likewise $dM(u_R)/dt=0$, since $P_Ru_R=u_R$ and
+$\int\overline{u_R}F(u_R)$ is real.  The local contraction bounds are
+uniform in $R$.  Strong convergence $P_R\to\mathrm{Id}$ on $H^2$
+and the Duhamel equations yield
+$u_R\to u$ in $C([-T,T],H^2)$.  Continuity of $M$ and $E_k$ passes
+conservation to $u$.  Iterating over the maximal lifespan proves
+\textup{(F)}.
+\end{proof}
+
+\subsection{Consequences for the two-threshold interpolation}
+
+Let $a_0$ and $a_\infty$ be positive elliptic real-even symbols of degree
+$m$, with $h=a_\infty-a_0$ positive elliptic.  Consider
+\begin{equation}\label{eq:r11-rational-symbol}
+ \begin{gathered}
+ k_q(\xi)=a_0(\xi)+h(\xi)\frac{|\xi|^q}{1+|\xi|^q}
+         =a_\infty(\xi)-d_q(\xi),\\
+ d_q(\xi)=\frac{h(\xi)}{1+|\xi|^q},\qquad q>0.
+ \end{gathered}
+\end{equation}
+Denote the two homogeneous sharp masses by $M_0<M_\infty$.
+The following existence and compactness inputs are imported from the
+companion study \emph{Thresholds, spectral geometry, and persistent
+radiation in mass-critical dispersive equations}, Section~5; they are
+not reproved in the present dynamical argument.  That analysis gives
+$I(M)=\inf_{M(f)=M}E_{k_q}(f)<0$ with attainment for
+$M_0<M<M_\infty$.  At $M=M_\infty$, the infimum is also negative
+and attained when $q>m$, and every minimizing sequence is compact in
+$H^s$ modulo translations.
+
+\begin{corollary}[All negative-energy endpoint data are bounded]
+\label{cor:r11-rational-global}
+Assume a conservative local flow with the properties \textup{(F)} for
+$k_q$.  For every $q>0$, all initial data of mass less than
+$M_\infty$ generate global uniformly $H^s$-bounded solutions.
+If $q>m$, the same conclusion holds for every initial datum satisfying
+\begin{equation}\label{eq:r11-negative-endpoint-class}
+ M(u_0)=M_\infty,\qquad E_{k_q}(u_0)<0.
+\end{equation}
+For $m=4$, $N=1,2,3$, and $q>4$, the latter assertion requires no
+additional local-flow hypothesis.
+\end{corollary}
+
+\begin{proof}
+For all $q>0$, and every $\eta>0$, homogeneity gives a finite
+$C_\eta$ such that
+$k_q\ge(1-\eta)a_\infty-C_\eta$.  Hence
+\[
+ E_{k_q}(f)\ge\frac12
+ \left[1-\eta-\left(\frac{M(f)}{M_\infty}\right)^r\right]A_\infty(f)
+       -\frac12C_\eta M(f).
+\]
+For a fixed subcritical mass choose $\eta$ to make the coefficient
+positive and use conservation.  If $q>m$, $d_q$ is bounded and tends
+uniformly to zero at high frequency.  Thus $d_\infty=0$ and
+$e_\infty=0$, so Theorem~\ref{thm:r11-global-endpoint} proves
+\eqref{eq:r11-negative-endpoint-class}.  The final assertion follows
+from Proposition~\ref{prop:r11-quartic-local}.
+\end{proof}
+
+The endpoint result covers arbitrary data in the stated class: it uses
+no radial symmetry, momentum restriction, or small distance to a
+standing wave.  It excludes both finite-time blow-up and unbounded
+infinite-time growth of the energy-space norm.
+
+For $q=m$, the bounded correction has angular limit $h(\theta)$, so
+\eqref{eq:r11-concentration-energy} supplies the precise endpoint
+comparison.  If $I(M_\infty)<e_\infty$, its strict sublevel is nonempty
+and Theorem~\ref{thm:r11-global-endpoint} applies there.  In the
+isotropic case $h(\xi)=\varepsilon|\xi|^m$,
+\[
+ e_\infty=-\tfrac12\varepsilon M_\infty,
+ \qquad
+ E_{k_m}(f)>-\tfrac12\varepsilon M_\infty
+ \quad\text{for every nonzero }f\text{ of mass }M_\infty.
+\]
+Thus that strict sublevel is empty; no endpoint global conclusion is
+being inferred in the isotropic borderline case.  For $q<m$ the
+correction is unbounded at high frequency and the concentration theorem
+above does not apply.  The variational equality
+$I(M_\infty)=-\infty$ in that case does not itself prove finite-time
+blow-up.
+
+For $q>m$, if $Q$ is an $a_\infty$ equality profile, then
+$E_{k_q}(Q_\lambda)<0$ for every finite $\lambda$, while
+$E_{k_q}(Q_\lambda)\to0$ and $A_\infty(Q_\lambda)\to\infty$.
+A fixed negative energy therefore gives a bound, but no uniform bound
+can cover all negative energies approaching zero.
+
+\subsection{Stability of minimizing sets and the critical mass boundary}
+
+At a mass $c$ where the constrained infimum is attained define
+\[
+ \Sigma_c=\{U\in H^s:M(U)=c,\ E_k(U)=I(c)\}.
+\]
+This entire set includes translations and constant phases.  Its
+stability makes no uniqueness assertion about individual profiles.
+
+\begin{theorem}[Stability in the correct perturbation class]
+\label{thm:r11-set-stability}
+Assume \textup{(F)}.
+\begin{enumerate}
+ \item For the interpolation~\eqref{eq:r11-rational-symbol}, if
+ $M_0<c<M_\infty$, then $\Sigma_c$ is orbitally stable under all
+ sufficiently small $H^s$ perturbations.
+ \item For a bounded correction as above, suppose $c=M_c$,
+ $I(c)<e_\infty$, and every minimizing sequence at mass $c$ is
+ precompact in $H^s$ modulo translations.  Then $\Sigma_c$ is orbitally
+ stable under sufficiently small $H^s$ perturbations whose masses are
+ at most $c$.  In particular it is stable on the exact mass surface
+ $M=c$.  This applies to~\eqref{eq:r11-rational-symbol} at
+ $c=M_\infty$ whenever $q>m$.
+\end{enumerate}
+In both assertions all sufficiently close initial data in the indicated
+perturbation class generate global solutions.  More explicitly, for
+any $\epsilon>0$ there is $\delta>0$ such that
+$\operatorname{dist}_{H^s}(u_0,\Sigma_c)<\delta$ implies
+\[
+ \sup_{t\in\mathbb R}\operatorname{dist}_{H^s}(u(t),\Sigma_c)<\epsilon,
+\]
+with the additional mass restriction in the second assertion.
+\end{theorem}
+
+\begin{proof}
+The compactness assumption implies that $\Sigma_c$ is bounded in
+$H^s$.  Thus closeness to this set makes the mass and energy uniformly
+close to $c$ and $I(c)$, respectively.  In the first assertion all
+sufficiently close data have mass uniformly below $M_\infty$; the
+subcritical coercivity estimate used in
+Corollary~\ref{cor:r11-rational-global} makes their solutions global
+and bounds their $H^s$ norms uniformly.  In the second assertion choose
+$e$ strictly between $I(c)$ and $e_\infty$ and apply
+Corollary~\ref{cor:r11-sublevels} to masses at most $c$ and energies
+at most $e$.  This gives the same global existence and uniform bound.
+
+If stability failed, there would be initial data $u_{0,n}$ with
+$\operatorname{dist}_{H^s}(u_{0,n},\Sigma_c)\to0$ and times $t_n$
+such that $f_n=u_n(t_n)$ stays a fixed positive distance from
+$\Sigma_c$.  Conservation gives
+\[
+ M(f_n)\longrightarrow c,\qquad E_k(f_n)\longrightarrow I(c),
+\]
+and the preceding estimates bound $f_n$ in $H^s$.  Set
+$g_n=(c/M(f_n))^{1/2}f_n$.  Then
+\[
+ M(g_n)=c,\qquad \|g_n-f_n\|_{H^s}\longrightarrow0,\qquad
+ E_k(g_n)\longrightarrow I(c).
+\]
+Compactness of exact-mass minimizing sequences now gives
+\[
+ \operatorname{dist}_{H^s}(g_n,\Sigma_c)\longrightarrow0.
+\]
+The same follows for $f_n$, a contradiction.
+\end{proof}
+
+The proof is the established variational compactness mechanism for
+orbital stability.  The additional concentration-energy bound is what
+allows it to operate at the critical mass.  At that boundary the
+restriction $M(u_0)\le M_c$ cannot be silently omitted: nearby data can
+otherwise cross into the supercritical mass range, where the argument
+supplies no uniform kinetic bound.  Neither unconstrained endpoint
+stability nor instability is asserted here.
+
+\subsection{Removal of the flat scale direction}
+
+The interpolation also produces an exact measure of the energy cost of
+changing the spatial scale of a minimizer.  This statement does not
+require spectral nondegeneracy.
+
+\begin{proposition}[Exact scale curvature]
+\label{prop:r11-scale-curvature}
+Let $U\ne0$ be a constrained energy minimizer for
+\eqref{eq:r11-rational-symbol}.  Define
+\[
+ U_t(x)=e^{Nt/2}U(e^tx),\qquad
+ \mathcal K(U)=\left.\frac{d^2}{dt^2}E_{k_q}(U_t)\right|_{t=0}.
+\]
+Then the scalar energy curve is twice differentiable and, with
+$z=|\xi|^q$,
+\begin{equation}\label{eq:r11-exact-curvature}
+ \mathcal K(U)=\frac q2\int
+ h(\xi)\frac{z[(m+q)+(m-q)z]}{(1+z)^3}
+                    |\widehat U(\xi)|^2\,d\xi.
+\end{equation}
+For $0<q\le m$, $\mathcal K(U)>0$.  For $q>m$, minimality still
+gives $\mathcal K(U)\ge0$, but positivity does not follow pointwise
+from the integrand.
+\end{proposition}
+
+\begin{proof}
+Let $b(\xi)=h(\xi)|\xi|^q/(1+|\xi|^q)$ and let
+$\mathcal D=\xi\cdot\nabla_\xi$.  The derivatives
+$\mathcal D^jb$, $j=0,1,2$, are bounded in absolute value by
+$C|\xi|^m$.  Therefore differentiating the scalar Fourier energy is
+justified by dominated convergence, with no assumption of a spatial
+moment or differentiability of $t\mapsto U_t$ in $H^s$.  Homogeneity
+gives
+\[
+ E_{k_q}(U_t)=e^{mt}E_{a_0}(U)
+                 +\frac12\int b(e^t\xi)|\widehat U(\xi)|^2\,d\xi.
+\]
+Its first derivative vanishes at the scalar minimum $t=0$.  Eliminating
+$E_{a_0}(U)$ from the second derivative yields
+\[
+ \mathcal K(U)=\frac12\int(\mathcal D^2-m\mathcal D)b(\xi)
+                                    |\widehat U(\xi)|^2\,d\xi.
+\]
+Since $\mathcal Dh=mh$ and $\mathcal Dz=qz$, direct differentiation
+gives
+\[
+ (\mathcal D^2-m\mathcal D)b
+      =q h\frac{z[(m+q)+(m-q)z]}{(1+z)^3},
+\]
+proving~\eqref{eq:r11-exact-curvature}.  If $q\le m$, its coefficient
+is strictly positive for every $\xi\ne0$, and a nonzero $L^2$ function
+cannot have all Fourier mass at the origin.  If $q>m$, the coefficient
+changes sign at $z=(m+q)/(q-m)$; nonnegativity of the integral follows
+instead from minimality.
+\end{proof}
+
+For the homogeneous critical optimizer the energy is exactly flat
+under mass-preserving dilation.  Proposition~\ref{prop:r11-scale-curvature}
+proves that the rational correction removes this degeneracy in the
+scale direction when $q\le m$.  It does not identify a complete
+Hamiltonian spectral mode.
+
+We give the precise lower-threshold consequence of the selection theorem
+established for this interpolation.  Put
+\[
+ \begin{gathered}
+ \alpha=\frac{M}{M_0},\qquad d=\alpha^r-1,\qquad
+ U_M(x)=\sqrt\alpha\,\lambda_M^{N/2}V_M(\lambda_Mx),\\
+ M(V_M)=M_0,\qquad A_0(V_M)=1.
+ \end{gathered}
+\]
+Let
+\[
+ \begin{gathered}
+ \mathcal G_0=\{Q:M(Q)=M_0,\ A_0(Q)=1,\ E_{a_0}(Q)=0\},\\
+ C(Q)=\int h(\xi)|\xi|^q|\widehat Q(\xi)|^2\,d\xi,
+ \end{gathered}
+\]
+and suppose at least one element of $\mathcal G_0$ has finite $C$.
+Write $C_{\min}=\min_{\mathcal G_0}C$ and
+\[
+ \beta_*^q=\frac{m}{(m+q)C_{\min}},\qquad
+ K_* =\frac{q}{2(m+q)}\beta_*^m.
+\]
+The lower-threshold selection theorem of the same companion study
+provides the following inputs; the new deduction here is the curvature
+asymptotic, not a new proof of profile selection:
+\begin{align}
+ \lambda_M&\sim\beta_*d^{1/q},&
+ I(M)&\sim-\alpha K_*d^{1+m/q},
+       \label{eq:r11-selection-recall-a}\\
+ \frac{B(U_M)}{A_0(U_M)}&=\frac{m}{m+q}d+o(d),&
+ \int\frac{h(\xi)|\xi|^q}{1+|\lambda_M\xi|^q}
+                |\widehat V_M(\xi)|^2\,d\xi&\longrightarrow C_{\min},
+       \label{eq:r11-selection-recall-b}
+\end{align}
+where $B(f)=\int b|\widehat f|^2$.  After translations and extraction,
+$V_M$ converges strongly in $H^s$ to some $Q\in\mathcal G_0$ with
+$C(Q)=C_{\min}$.  The correction-energy convergence in
+\eqref{eq:r11-selection-recall-b}, not merely strong $H^s$
+convergence, is needed in the next deduction.
+
+\begin{corollary}[Sharp lower-threshold scale curvature]
+\label{cor:r11-curvature-asymptotic}
+For minimizers satisfying the preceding selection conclusions, for
+every $q>0$,
+\begin{equation}\label{eq:r11-curvature-asymptotic}
+ \mathcal K(U_M)\sim\frac{mq}{2}dA_0(U_M),\qquad
+ \frac{\mathcal K(U_M)}{|I(M)|}\longrightarrow m(m+q)
+ \qquad(M\downarrow M_0).
+\end{equation}
+In particular the scale curvature is strictly positive near the lower
+threshold also when $q>m$.
+\end{corollary}
+
+\begin{proof}
+Along a convergent selected-profile subsequence define the nonnegative
+finite measures
+\[
+ d\mu_M(\xi)=
+ \frac{h(\xi)|\xi|^q}{1+|\lambda_M\xi|^q}
+                       |\widehat V_M(\xi)|^2\,d\xi.
+\]
+Their total masses tend to $C_{\min}$.  On every compact annulus they
+converge to
+$h(\xi)|\xi|^q|\widehat Q(\xi)|^2\,d\xi$, whose total mass is also
+$C_{\min}$.  Positivity therefore gives tightness away from both zero
+and infinity: exhaust the limiting integral by compact annuli and use
+total-mass convergence to control the complements.
+
+Formula~\eqref{eq:r11-exact-curvature} becomes
+\[
+ \frac{\mathcal K(U_M)}{\alpha\lambda_M^{m+q}}
+ =\frac q2\int
+ \frac{(m+q)+(m-q)|\lambda_M\xi|^q}
+      {(1+|\lambda_M\xi|^q)^2}\,d\mu_M(\xi).
+\]
+The displayed multiplier is uniformly bounded and tends on compact
+annuli to $m+q$.  Tightness proves that the right side converges to
+$q(m+q)C_{\min}/2$.  Since
+$B(U_M)=\alpha\lambda_M^{m+q}\mu_M(\mathbb R^N)$, we have
+\[
+ \frac{\mathcal K(U_M)}{B(U_M)}\longrightarrow\frac{q(m+q)}2.
+\]
+Combining this with~\eqref{eq:r11-selection-recall-b} proves the first
+assertion.  The energy and scale laws in
+\eqref{eq:r11-selection-recall-a}, and
+$A_0(U_M)=\alpha\lambda_M^m$, give the second.  Every selected
+subsequence has the same scalar limits, so the conclusions hold along
+the full family.
+\end{proof}
+
+There is also a fixed-scale version.  Let
+$b_0(\xi)=a(\xi)|\xi|^q/(1+|\xi|^q)$,
+$k_\varepsilon=a+\varepsilon b_0$, and fix $0<\tau<1$.
+For the joint limit with
+$\alpha_\varepsilon=(1+\varepsilon\tau)^{1/r}$, suppose the
+selected minimizers satisfy
+$U_\varepsilon/\sqrt{\alpha_\varepsilon}\to Q$ strongly in $H^s$
+modulo translations.  Since
+$(\mathcal D^2-m\mathcal D)b_0$ is an order-$m$ multiplier,
+\begin{equation}\label{eq:r11-joint-curvature}
+ \frac{\mathcal K(U_\varepsilon)}
+      {\alpha_\varepsilon\varepsilon}
+ \longrightarrow\frac12\int
+       (\mathcal D^2-m\mathcal D)b_0(\xi)|\widehat Q(\xi)|^2\,d\xi.
+\end{equation}
+For $q\le m$ the limit is positive.  Thus an arbitrarily weak
+perturbation creates a scale curvature of order $\varepsilon$ at the
+finite spatial scale selected by a mass excess of the same order.
+
+An oscillation frequency requires a further Hamiltonian spectral
+analysis.  The conjugate phase, translation coupling, and interaction
+with other spectral modes enter that calculation.  The exact curvature
+and its asymptotics above do not presume that such an isolated
+oscillatory eigenmode has already been established.
+
+\subsection{Which parts extend to other critical interactions}
+
+The concentration argument uses only a homogeneous energy
+$E_a=A/2-\mathcal F$ with $E_a\ge0$ at mass at most $M_c$,
+compactness of normalized zero-energy sequences, and a bounded
+quadratic correction $-D/2$.  It does not use locality or a polynomial
+formula for $\mathcal F$.  Theorems~\ref{thm:r11-concentrating-sequence}
+and~\ref{thm:r11-global-endpoint} consequently extend, with the same
+proof, to a mass-critical Hartree interaction once its sharp inequality,
+optimizer compactness, and conservative local flow have been verified.
+The curvature calculation needs only
+$\mathcal F(U_t)=e^{mt}\mathcal F(U)$, in addition to the explicit
+dispersion.  Set stability further requires compactness of the relevant
+constrained minimizing sequences.  This separates the common
+concentration mechanism from the interaction-specific analytic inputs.
