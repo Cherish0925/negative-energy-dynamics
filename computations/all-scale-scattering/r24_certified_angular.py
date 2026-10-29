@@ -138,7 +138,7 @@ def main():
     ap=argparse.ArgumentParser()
     ap.add_argument('--profile',required=True)
     ap.add_argument('--shooting',required=True)
-    ap.add_argument('--output',default='research/r24_certified_angular.json')
+    ap.add_argument('--output',default='r24_certified_angular.json')
     ap.add_argument('--theta',default='0.55')
     ap.add_argument('--C',default='2.81')
     ap.add_argument('--k-start',default='0.02')

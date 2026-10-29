@@ -72,4 +72,4 @@ if __name__ == '__main__':
     for nk in [40,80,160]:
         z={'bloch_n':nk,'ratio':float(evaluate_separable(sp,nk=nk,ncut=22,clip=True))}
         results['separable_checks'].append(z);print(z,flush=True)
-    with open('research/r20_collective_candidates_results.json','w') as f:json.dump(results,f,indent=2)
+    with open('r20_collective_candidates_results.json','w') as f:json.dump(results,f,indent=2)

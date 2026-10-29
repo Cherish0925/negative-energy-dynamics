@@ -424,19 +424,20 @@ The stored results are:
 The following commands reproduce the calculation from the project root:
 
 ```sh
-python3 research/r24_validated_profile.py --mode shoot \
+cd computations/all-scale-scattering  # from the repository root
+python3 r24_validated_profile.py --mode shoot \
   --a-low 2.20620086465074 --a-high 2.20620086465075 \
   --step 0.02 --order 18 --dps 70 \
-  --output research/r24_validated_shooting_tight.json
-python3 research/r24_validated_profile.py --mode profile \
+  --output r24_validated_shooting_tight.json
+python3 r24_validated_profile.py --mode profile \
   --a-low 2.20620086465074 --a-high 2.20620086465075 \
   --stop 8 --step 0.005 --order 18 --dps 70 \
-  --output research/r24_validated_profile_tight.json
-python3 research/r24_certified_angular.py \
-  --profile research/r24_validated_profile_tight.json \
-  --shooting research/r24_validated_shooting_tight.json \
+  --output r24_validated_profile_tight.json
+python3 r24_certified_angular.py \
+  --profile r24_validated_profile_tight.json \
+  --shooting r24_validated_shooting_tight.json \
   --C 2.82 --theta 0.55 --k-start 0.02 --k-end 0.991 --k-step 0.001 \
-  --output research/r24_certified_angular.json
+  --output r24_certified_angular.json
 ```
 
 The consequence for the separated unequal Townes wells is now unconditional

@@ -37,7 +37,7 @@ for amp in [.1,.3,.5,.8,1.,1.3,1.6,2.,2.5,3.,3.5,4.,5.,6.,8.,10.]:
   Wp=-(2*g+1/xx)*W-(rho+ss)/xx-1/xx**3
   mask=(xx>.03)&(xx<15)&(yy[0]>1e-8)
   rec.update(Wmin=float(W[mask].min()),Wpmax=float(Wp[mask].max()),Dmin=float((rho-ss)[mask].min()),gmax=float(g[mask].max()),virial=float(2*np.pi*simpson(xx*xx*Wp*ss,x=xx)),v_mass=float(2*np.pi*simpson(xx*ss,x=xx)))
-  np.savez('research/r24_radial_branch_amp'+str(amp)+'.npz',r=xx,y=yy,W=W,Wp=Wp,S=ss,mass=mass,e1=e1)
+  np.savez('r24_radial_branch_amp'+str(amp)+'.npz',r=xx,y=yy,W=W,Wp=Wp,S=ss,mass=mass,e1=e1)
  print(json.dumps(rec),flush=True);out.append(rec)
  if sol.status!=0:break
-json.dump(out,open('research/r24_radial_branch.json','w'),indent=2)
+json.dump(out,open('r24_radial_branch.json','w'),indent=2)

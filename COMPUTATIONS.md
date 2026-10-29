@@ -38,6 +38,35 @@ python3 r17_tangent_certificate.py
 
 The examples for different studies start at the repository root. Use the supplied exact inputs and command-line options. NumPy and SciPy searches are separate from Arb profile enclosures. The [full contents](CONTENTS.md) link each study to its derivation.
 
+## Research figures
+
+From the repository root:
+
+~~~sh
+OPENBLAS_NUM_THREADS=1 python scripts/build_research_figures.py
+~~~
+
+This reads the saved profiles, Hermite coefficients and continuation records and generates six SVG/PNG figures. [Figure definitions and sources](figures/README.md) distinguish computed fields, exact formulae and schematic diagrams.
+
+## Hermite and periodic studies
+
+Each block starts from the repository root. Programs use their computation directory directly. The Hermite readers also accept the original filenames stored in the old JSON records.
+
+~~~sh
+cd computations/hermite-optimization
+OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python r21_orbital_search.py --cut 16 --steps 650
+python r21_orbital_refine.py
+python r21_orbital_inspect.py
+~~~
+
+~~~sh
+cd computations/periodic-potentials
+OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python r28_periodic_search.py --cutoff 10 --nq 10 --steps 25 --lattice square --norms 12 24 48 96 --output r28_periodic_square_refined
+python r28_periodic_verify.py
+~~~
+
+The [mixed-dispersion continuation guide](theory/mixed-dispersion-continuation/README.md) gives the five solvers, saved endpoints and commands for that study.
+
 ## Other studies
 
 | Directory | Purpose |

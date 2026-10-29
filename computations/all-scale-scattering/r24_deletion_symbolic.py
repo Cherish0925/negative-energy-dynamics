@@ -10,4 +10,4 @@ res=s.expand(Wp+(2*g+a/r)*W+a*(rho+S)/r-a*(a-2)/r**3)
 res=s.simplify(res.subs(G,w*w*(g*g-e+rho/2+S/2)))
 result={'general_dimension_weighted_derivative_residual':str(res)}
 print(result)
-json.dump(result,open('research/r24_deletion_symbolic.json','w'),indent=2)
+json.dump(result,open('r24_deletion_symbolic.json','w'),indent=2)

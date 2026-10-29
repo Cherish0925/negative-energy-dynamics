@@ -93,7 +93,7 @@
 - [r24_shell.npz](../../computations/full-response/r24/r24_shell.npz)：已有驻波输入；保留原目录以便直接运行。
 
 在含 NumPy、SciPy 的 Python 环境运行
-`python research/r31_response_calibration.py`。
+`python computations/full-response/r31_response_calibration.py`。
 数据输入半径为 65，所用采样点均在输入区间内。
 
 有限秩优化子与自洽方程框架沿用 Frank–Gontier–Lewin：

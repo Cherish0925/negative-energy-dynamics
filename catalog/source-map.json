@@ -316,7 +316,7 @@
       "sha256": "cda662b679497cfdda7da5f5ef404a84495677ebe5e24f8522e89d47bbd0936f",
       "path": "computations/full-response/r31_response_calibration.py",
       "disposition": "retained",
-      "edited_sha256": "cda662b679497cfdda7da5f5ef404a84495677ebe5e24f8522e89d47bbd0936f"
+      "edited_sha256": "0b1b442dd11f291312327b672c2955a33445c41a4fd2a4e58d6d8df12d8022d1"
     },
     {
       "bundle": "Critical_Focusing_R31_20261018",
@@ -372,7 +372,7 @@
       "sha256": "d5d655d837b6401fd6e96bd9e4b9ce2d3898fb816d3f7d6d1e9d1bc826548e83",
       "path": "theory/full-response/overview.md",
       "disposition": "retained",
-      "edited_sha256": "c7997c7e84ae268f6273548f2f9102f2231bdb5da0ce85306e69df6ecd0bd7a4"
+      "edited_sha256": "023967a44fc6ca3d4d075114c9957e3a3307faaf800f51cfcb087d7b913a394d"
     },
     {
       "bundle": "Critical_Focusing_R31_20261018",
@@ -448,7 +448,7 @@
       "sha256": "5fda0811353a14d763a43501ad8a1337601c4bcced2767f73592974c4a2e05bc",
       "path": "computations/periodic-potentials/r28_periodic_verify.py",
       "disposition": "retained",
-      "edited_sha256": "5fda0811353a14d763a43501ad8a1337601c4bcced2767f73592974c4a2e05bc"
+      "edited_sha256": "e2af8754e7c0b4f146857c185cf5f2f74bf27ff31be375577f062f22d80ebf8d"
     },
     {
       "bundle": "Critical_Focusing_R28_20261016",
@@ -648,7 +648,7 @@
       "sha256": "0f0dd992f4eb7928edb8a90d625bb0662eec78afeeb18215fa2f75bb9310fb07",
       "path": "computations/periodic-potentials/r28_periodic_search.py",
       "disposition": "retained",
-      "edited_sha256": "8414d3e5ea57a73c607cc391253880b80de2269b25281d35c6707a05589387bd"
+      "edited_sha256": "32b27834cde42c9a5ac7584f0692527b42069ab1fe0ed894876173d5f91a9206"
     },
     {
       "bundle": "Critical_Focusing_R28_20261016",
@@ -656,7 +656,7 @@
       "sha256": "23c8f32bdbcb41cf4d7997d91663d305ccd91dfe16477de7de81ac5c079d3229",
       "path": "computations/periodic-potentials/r28_periodic_multistart.py",
       "disposition": "retained",
-      "edited_sha256": "23c8f32bdbcb41cf4d7997d91663d305ccd91dfe16477de7de81ac5c079d3229"
+      "edited_sha256": "302438248ebcf98560ec46f3dd3b8bb768c40ea17af6ef841e860ff4342454e9"
     },
     {
       "bundle": "Critical_Focusing_R28_20261016",
@@ -816,7 +816,7 @@
       "sha256": "a0ada7a23c87223d9490709e8ee29cc9ebd17ef41ea9bfa25da7e21b392fc4bb",
       "path": "computations/periodic-potentials/r28_periodic_baseline.py",
       "disposition": "retained",
-      "edited_sha256": "a10e2755049bef0dc48b5fb504307181b8da3a7d892222b2ba9790dfb023f409"
+      "edited_sha256": "9ef9ac04f1fb15d600e92f11fa3b1a90dd3c23089b97539f13c11af4099c95fb"
     },
     {
       "bundle": "Critical_Focusing_R28_20261016",
@@ -832,7 +832,7 @@
       "sha256": "ebe3d74f54e69dbdd54859fcd9ffb96a58a89ea6d605e089a4e26e1beac50512",
       "path": "theory/periodic-potentials/overview.md",
       "disposition": "retained",
-      "edited_sha256": "46215435cb0d3de8b17839d9b0ef6b499249579081f05dabd5b6b9d72abe71a2"
+      "edited_sha256": "f4f8fc1ccb83f526796882a1214c63d2ba9ffe66610721f3ce3b095321b0c328"
     },
     {
       "bundle": "Critical_Focusing_R27_20261016",
@@ -992,7 +992,7 @@
       "sha256": "016c848201f214ed58bff8947f6c68916c2be785a9bc8115ee205c075fabe311",
       "path": "computations/all-scale-scattering/r25_uniform_certificate.py",
       "disposition": "retained",
-      "edited_sha256": "016c848201f214ed58bff8947f6c68916c2be785a9bc8115ee205c075fabe311"
+      "edited_sha256": "f15ca08b0b3dbd75d61685badd1da1a932549666245d67e9bab85251f8207f6a"
     },
     {
       "bundle": "Critical_Focusing_R25_20261015",
@@ -1008,7 +1008,7 @@
       "sha256": "11fac528f47d1ed3a6826792e6e396bceccc7acd4c2ab960a95ea3d0293471d8",
       "path": "theory/all-scale-scattering/uniform-bound.md",
       "disposition": "retained",
-      "edited_sha256": "9669a24233343112050ac291bfc6412a13ee1609329d2f9aa6f39829c2c5d584"
+      "edited_sha256": "04a1ac17ffd434e6680fd448ec8c8fafb40a8f94edf5ade44e1b6f8c89b7cf90"
     },
     {
       "bundle": "Critical_Focusing_R25_20261015",
@@ -1048,7 +1048,7 @@
       "sha256": "d524366fb097aecbf0267bc69d0d8f0bc2ee388279a88de6e23a68555814d353",
       "path": "computations/all-scale-scattering/r25_interval_shoot.py",
       "disposition": "retained",
-      "edited_sha256": "d524366fb097aecbf0267bc69d0d8f0bc2ee388279a88de6e23a68555814d353"
+      "edited_sha256": "9e5fa1deecf85c32685b54e85ddb6a37d24504b06c77d341573d671c074ccc69"
     },
     {
       "bundle": "Critical_Focusing_R25_20261015",
@@ -1118,7 +1118,7 @@
       "sha256": "881910e757768019568ff49fdb97cb6748dbfba2f989e2245051c1840c167930",
       "path": "theory/all-scale-scattering/research-summary.md",
       "disposition": "retained",
-      "edited_sha256": "b39fcdbd9454e75ec83e9a2b11d06842e95fce4fcfa2d0f75399510d05d419a0"
+      "edited_sha256": "7d9e65ae22d83e53663a801dcb8e98275ed341d1d75e85d5409174ab63031e17"
     },
     {
       "bundle": "Critical_Focusing_R24_20261015(1)",
@@ -1150,7 +1150,7 @@
       "sha256": "4807358f5d08ceff099016eb5f3088355feadf26f3a9c305aaa57356f723720b",
       "path": "theory/all-scale-scattering/validated-profile.md",
       "disposition": "retained",
-      "edited_sha256": "9efdf2d96687e7c8d05ecc9dbd36fe50d2e39234cf146d3db2a5460406c64abd"
+      "edited_sha256": "79dcc9703d4398a5ec255c9ad7621bbb3b26141a3470e464ff8cf085d4512e8f"
     },
     {
       "bundle": "Critical_Focusing_R24_20261015(1)",
@@ -1158,7 +1158,7 @@
       "sha256": "57c06cdaceca73ac27163ec9cf20765ea7d8bfb3887875e84fc3af2ee9f1d660",
       "path": "computations/all-scale-scattering/r24_scattering_bounds.py",
       "disposition": "retained",
-      "edited_sha256": "acf802d0f553973b1b785aa59fd6a565fa5d3bee6d0b5deae8ad55cfc37a791f"
+      "edited_sha256": "b605a45a2df43b429cebe031d7f6efc7425ad90bcf0ffffab3faacf615ab70bf"
     },
     {
       "bundle": "Critical_Focusing_R24_20261015(1)",
@@ -1174,7 +1174,7 @@
       "sha256": "773eddc0167eacccac93434468db07f03aa2415688faa9549b6adab3eb1e6f77",
       "path": "theory/all-scale-scattering/scattering-2cc19db4.md",
       "disposition": "retained",
-      "edited_sha256": "68ab662599a7ab3587511f81da5126ca9face873186296fc22ce76db019d5d74"
+      "edited_sha256": "06307d7eb339ee4c55eec6bcb73700d97ef58c8b3e8e04fb425e4cdbb2bf41be"
     },
     {
       "bundle": "Critical_Focusing_R24_20261015(1)",
@@ -1326,7 +1326,7 @@
       "sha256": "53cc78d31ef7c23ac65be45b1e54d2e823d6e855ff0ebd51831c9e8dc4984ff8",
       "path": "computations/all-scale-scattering/r24_radial_branch.py",
       "disposition": "retained",
-      "edited_sha256": "53cc78d31ef7c23ac65be45b1e54d2e823d6e855ff0ebd51831c9e8dc4984ff8"
+      "edited_sha256": "8afa06c60181bf99e22fb2ce999f7ed16363b67d6dbb6161dd1cb2c5fba9848f"
     },
     {
       "bundle": "Critical_Focusing_R24_20261015(1)",
@@ -1366,7 +1366,7 @@
       "sha256": "9895168c40187fe1277780963c0bb44d3f44d66afbcb7079173d8a876393bd2d",
       "path": "computations/all-scale-scattering/r24_deletion_symbolic.py",
       "disposition": "retained",
-      "edited_sha256": "9895168c40187fe1277780963c0bb44d3f44d66afbcb7079173d8a876393bd2d"
+      "edited_sha256": "16577014186a0ee531532ba294621535885651241b4135489a0845ee9dc9e231"
     },
     {
       "bundle": "Critical_Focusing_R24_20261015(1)",
@@ -1398,7 +1398,7 @@
       "sha256": "5294f06a24722a084caf1add41899f1fe4620d70963e9032e4573370c51c684c",
       "path": "computations/all-scale-scattering/r24_certified_angular.py",
       "disposition": "retained",
-      "edited_sha256": "4ee99390559063eaad88db4e36dcefd44df43b6ee3576b97ae2c5958683a37b0"
+      "edited_sha256": "73859eb5096a69287d4551b57cb8e50292b5f367b2608403da741188feaa500b"
     },
     {
       "bundle": "Critical_Focusing_R24_20261015(1)",
@@ -1406,7 +1406,7 @@
       "sha256": "9b37d81c59e82c879708385ea7382734e807371f5e5b2b0b7d8d92c267cde9e8",
       "path": "theory/all-scale-scattering/certified-angular.md",
       "disposition": "retained",
-      "edited_sha256": "645417447d9417002f219521d6d287592d4ecf70c48b0f220d37e8d220c02145"
+      "edited_sha256": "63a9624792ba39d0fb893dca588b3329fee7e90f2dd420cedcd57478074808f3"
     },
     {
       "bundle": "Critical_Focusing_R24_20261015(1)",
@@ -1574,7 +1574,7 @@
       "sha256": "051e54afb6b23e32caedd513e51dede4132e92d99b3b8f17a47e1f16554bd867",
       "path": "theory/all-scale-scattering/overview.md",
       "disposition": "retained",
-      "edited_sha256": "443dc5e5584703d83f84e8c6e0e5211922397f7340e2ce592bba6a4b713a391c"
+      "edited_sha256": "e445dd79d3bb4f99e59c61b94893d31f0d15898ead4eb33074b79db1a2d26229"
     },
     {
       "bundle": "Critical_Focusing_R24_20261015(1)",
@@ -1582,7 +1582,7 @@
       "sha256": "0040d0048db65f45a3013c02acead55055b9cd8410c30a8fd35e67402d6cf675",
       "path": "theory/all-scale-scattering/overview-bddcb667.md",
       "disposition": "retained",
-      "edited_sha256": "59e579ed4f6d1d6647f6eb76cc51bb54b49787ce5d00fe5de03aa8f528673702"
+      "edited_sha256": "a8638b7dc8d896368f44c83a7546f901b0ae694c947c97a8519b7394cd060f4d"
     },
     {
       "bundle": "Critical_Focusing_R24_20261015",
@@ -1750,7 +1750,7 @@
       "sha256": "96aeb6c56ee031c74a73073f0fdd03a530f112fadece5d9423f8ad8d2c9d3664",
       "path": "computations/townes-spectral-structure/r23_radial_compact.py",
       "disposition": "retained",
-      "edited_sha256": "96aeb6c56ee031c74a73073f0fdd03a530f112fadece5d9423f8ad8d2c9d3664"
+      "edited_sha256": "b75e69d964630ad89b77f7fa0c838a9fe5bc5b36bad1e6214ad8ada4c226501e"
     },
     {
       "bundle": "Critical_Focusing_R23_20261015",
@@ -1870,7 +1870,7 @@
       "sha256": "0040d0048db65f45a3013c02acead55055b9cd8410c30a8fd35e67402d6cf675",
       "path": "theory/all-scale-scattering/overview-bddcb667.md",
       "disposition": "retained",
-      "edited_sha256": "59e579ed4f6d1d6647f6eb76cc51bb54b49787ce5d00fe5de03aa8f528673702"
+      "edited_sha256": "a8638b7dc8d896368f44c83a7546f901b0ae694c947c97a8519b7394cd060f4d"
     },
     {
       "bundle": "Critical_Focusing_R23_20261015",
@@ -1878,7 +1878,7 @@
       "sha256": "357b04277d5ec1fd01eec81a9b98fe2fd0c5c8d1c27d62ab4d80c2ef615b890c",
       "path": "theory/townes-spectral-structure/overview.md",
       "disposition": "retained",
-      "edited_sha256": "1288edd62503aa39db4fcb3fcb6e6869d7d1c01f0b5132b075567565e001a672"
+      "edited_sha256": "7aa6b78e32d4505d0974eaefb76122fbc81f471f47085f3a9ba05260d97acbde"
     },
     {
       "bundle": "Critical_Focusing_R23_20261015",
@@ -2356,7 +2356,7 @@
       "sha256": "5808b19540219573b5b9e6b7cb75d90940bf0581c11d92ef8efe73dd55645ead",
       "path": "computations/occupation-computations/r15_numerics_search.py",
       "disposition": "retained",
-      "edited_sha256": "5808b19540219573b5b9e6b7cb75d90940bf0581c11d92ef8efe73dd55645ead"
+      "edited_sha256": "fbe62bdc774f4baf074a5f65e3c9bd963eeceb7013dbdcce87e3761fb5ea0a4d"
     },
     {
       "bundle": "Critical_Focusing_R19_20261011",
@@ -3000,7 +3000,7 @@
       "sha256": "5808b19540219573b5b9e6b7cb75d90940bf0581c11d92ef8efe73dd55645ead",
       "path": "computations/occupation-computations/r15_numerics_search.py",
       "disposition": "retained",
-      "edited_sha256": "5808b19540219573b5b9e6b7cb75d90940bf0581c11d92ef8efe73dd55645ead"
+      "edited_sha256": "fbe62bdc774f4baf074a5f65e3c9bd963eeceb7013dbdcce87e3761fb5ea0a4d"
     },
     {
       "bundle": "Critical_Focusing_R18_20261010",
@@ -3574,7 +3574,7 @@
       "sha256": "5808b19540219573b5b9e6b7cb75d90940bf0581c11d92ef8efe73dd55645ead",
       "path": "computations/occupation-computations/r15_numerics_search.py",
       "disposition": "retained",
-      "edited_sha256": "5808b19540219573b5b9e6b7cb75d90940bf0581c11d92ef8efe73dd55645ead"
+      "edited_sha256": "fbe62bdc774f4baf074a5f65e3c9bd963eeceb7013dbdcce87e3761fb5ea0a4d"
     },
     {
       "bundle": "Critical_Focusing_R17_20261009",
@@ -4022,7 +4022,7 @@
       "sha256": "5808b19540219573b5b9e6b7cb75d90940bf0581c11d92ef8efe73dd55645ead",
       "path": "computations/occupation-computations/r15_numerics_search.py",
       "disposition": "retained",
-      "edited_sha256": "5808b19540219573b5b9e6b7cb75d90940bf0581c11d92ef8efe73dd55645ead"
+      "edited_sha256": "fbe62bdc774f4baf074a5f65e3c9bd963eeceb7013dbdcce87e3761fb5ea0a4d"
     },
     {
       "bundle": "Critical_Focusing_R16_20261009",
@@ -4352,7 +4352,7 @@
       "sha256": "5808b19540219573b5b9e6b7cb75d90940bf0581c11d92ef8efe73dd55645ead",
       "path": "computations/occupation-computations/r15_numerics_search.py",
       "disposition": "retained",
-      "edited_sha256": "5808b19540219573b5b9e6b7cb75d90940bf0581c11d92ef8efe73dd55645ead"
+      "edited_sha256": "fbe62bdc774f4baf074a5f65e3c9bd963eeceb7013dbdcce87e3761fb5ea0a4d"
     },
     {
       "bundle": "Critical_Focusing_R15_20261009",
@@ -5990,7 +5990,7 @@
       "sha256": "879ffc08a8caace8bf831d088d7fe83fd7ab0e77efbb146a63437ff0b4683ef0",
       "path": "theory/mixed-dispersion-continuation/research-summary.md",
       "disposition": "retained",
-      "edited_sha256": "879ffc08a8caace8bf831d088d7fe83fd7ab0e77efbb146a63437ff0b4683ef0"
+      "edited_sha256": "114235c3011243bee5eaeea4cc2fa6c150d9ede7f79cdf2ae6d56ca30f5c3628"
     },
     {
       "bundle": "Core_Continuation_20261019",
@@ -5998,7 +5998,7 @@
       "sha256": "c6443c69765a57eec535c3544bd40188b06d85d41c1d64f4090dfe78086c573e",
       "path": "theory/mixed-dispersion-continuation/Core-Continuation-State-20261019.md",
       "disposition": "retained",
-      "edited_sha256": "0f0c01ab6aaa32784ab79e87bc2cc3fdd1b591b63a199e28558ed758fe6bc997"
+      "edited_sha256": "07bb6d6966befd7556dadcb04fba1b3e9c18d83263931560fad3e96296871337"
     },
     {
       "bundle": "Collective_Interactions_R22_20261012",
@@ -6030,7 +6030,7 @@
       "sha256": "0618a1f40764ca0bd5eb1eeb65803556f0b2a48bb78c35c54253c925dabf9194",
       "path": "computations/separated-cores/r22_scattering_check.py",
       "disposition": "retained",
-      "edited_sha256": "e2a6c0c8b6618a2abeb84b4d839f9b2680f4c1d02b9d8aa56af87f8fe5be1d9e"
+      "edited_sha256": "8bdd1cccc8e26ea693f7b03d7a61a022da88ff7d54afa37c44af2004c9a2b6a6"
     },
     {
       "bundle": "Collective_Interactions_R22_20261012",
@@ -6070,7 +6070,7 @@
       "sha256": "e9bbef1a3cd5845499761e9f8cbf2b195d3677a86f5832a86e54cfeebea1a517",
       "path": "computations/separated-cores/r22_interaction_check.py",
       "disposition": "retained",
-      "edited_sha256": "a5ca9ee76d112b0f10ce3a8b9b9348248c455e0df95dcc26b8c79f3ebfde1fd9"
+      "edited_sha256": "9c30eb00ff68c50866d60176473c033adb0b253764066c642bb7996fba0fb5b1"
     },
     {
       "bundle": "Collective_Interactions_R22_20261012",
@@ -6102,7 +6102,7 @@
       "sha256": "357b04277d5ec1fd01eec81a9b98fe2fd0c5c8d1c27d62ab4d80c2ef615b890c",
       "path": "theory/townes-spectral-structure/overview.md",
       "disposition": "retained",
-      "edited_sha256": "1288edd62503aa39db4fcb3fcb6e6869d7d1c01f0b5132b075567565e001a672"
+      "edited_sha256": "7aa6b78e32d4505d0974eaefb76122fbc81f471f47085f3a9ba05260d97acbde"
     },
     {
       "bundle": "Collective_Focusing_20261012",
@@ -6174,7 +6174,7 @@
       "sha256": "b0c2c85ca489307018bbd7618fc610544f55a6c233ab70af844bd21eadbb0dab",
       "path": "computations/hermite-optimization/r21_orbital_search.py",
       "disposition": "retained",
-      "edited_sha256": "b0c2c85ca489307018bbd7618fc610544f55a6c233ab70af844bd21eadbb0dab"
+      "edited_sha256": "c429b7931e952a0cf6f86af213e1c03086d533fac9f83e07b1fcd67858a773a5"
     },
     {
       "bundle": "Collective_Focusing_20261012",
@@ -6182,7 +6182,7 @@
       "sha256": "0e93072b16ca701722201f56c158227118dd0c09e7ac13451858015ecce3116b",
       "path": "theory/collective-threshold/orbital-search.md",
       "disposition": "retained",
-      "edited_sha256": "21a4fdcdf99a3e8d547c94b88fbba9082f85d5a128d165a29e96b565fe994c32"
+      "edited_sha256": "934fbfe1dc803d12fe8f75a0cde71c5cb6ca9012a9d706258c4c82ab7a7f6170"
     },
     {
       "bundle": "Collective_Focusing_20261012",
@@ -6318,7 +6318,7 @@
       "sha256": "080fcf0c280e786308040c5fecddc1aa0f50c60c8e7928b6cad628d259bb6cd5",
       "path": "computations/hermite-optimization/r21_orbital_refine.py",
       "disposition": "retained",
-      "edited_sha256": "080fcf0c280e786308040c5fecddc1aa0f50c60c8e7928b6cad628d259bb6cd5"
+      "edited_sha256": "19f195a0c63ef666e63f07649996f7cd4d2e5cd1c8a10145bf810c54c278d60b"
     },
     {
       "bundle": "Collective_Focusing_20261012",
@@ -6574,7 +6574,7 @@
       "sha256": "ef32615516293e16391ca4238957c3ee6fee9b11868e0bffb101167de7946e38",
       "path": "computations/hermite-optimization/r21_orbital_multiseed.py",
       "disposition": "retained",
-      "edited_sha256": "ef32615516293e16391ca4238957c3ee6fee9b11868e0bffb101167de7946e38"
+      "edited_sha256": "c91fbab7c20fd2752f8393e096d3a0a5ca61677d3f856b31ccb411cec5092648"
     },
     {
       "bundle": "Collective_Focusing_20261012",
@@ -6614,7 +6614,7 @@
       "sha256": "45ca006123979b0091b13193f431db65761b7972c42714e17208160f8a94e68a",
       "path": "computations/hermite-optimization/r21_orbital_inspect.py",
       "disposition": "retained",
-      "edited_sha256": "45ca006123979b0091b13193f431db65761b7972c42714e17208160f8a94e68a"
+      "edited_sha256": "776395cc1fa02aed522c7de0559c98a0f4ea273d00fdbe1e5788af97ddb50dc9"
     },
     {
       "bundle": "Collective_Focusing_20261012",
@@ -6742,7 +6742,7 @@
       "sha256": "a0bafb281ff7ad0005386f0a5dc8d5ac3148029e6959508937695160ac9f2f0e",
       "path": "computations/collective-threshold/r20_collective_candidates.py",
       "disposition": "retained",
-      "edited_sha256": "ab02016748318f3f3ae67b13e3c8cf98e214a52d2e64f7004e91d1b327b4c558"
+      "edited_sha256": "2d789c35913cbeb2c4183f652cb852b2c4af08883e0789b93e619fd658b9a780"
     },
     {
       "bundle": "Collective_Focusing_20261011",
@@ -6750,7 +6750,7 @@
       "sha256": "28ed5a0cfb4eab90cf44da19bfb65cd79351c77d6755396f2e32a91b4f067f03",
       "path": "theory/collective-threshold/collective-candidates.md",
       "disposition": "retained",
-      "edited_sha256": "c397d6f06ded3d601e9bd2304249a2056b3cf5f61d9e07882a726b53aeda9f31"
+      "edited_sha256": "849fcff8d15d497f6597349ca62054083fadf94ef5ca4db5318380e4b72f4cb1"
     },
     {
       "bundle": "Collective_Focusing_20261011",

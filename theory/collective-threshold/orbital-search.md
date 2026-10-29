@@ -106,11 +106,12 @@ stationary solutions of the continuum nonlinear PDE.
 ## Reproduction
 
 ```
-OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python research/r21_orbital_search.py --cut 16 --steps 650
-OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python research/r21_orbital_refine.py
-OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python research/r21_orbital_search.py --cut 24 --steps 1000 --ranks 8,12 --kinds shell,random,complex --seed 314 --output research/r21_orbital_high_rank_results.json
-OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python research/r21_orbital_multiseed.py
-OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python research/r21_orbital_inspect.py
+cd computations/hermite-optimization  # from the repository root
+OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python r21_orbital_search.py --cut 16 --steps 650
+OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python r21_orbital_refine.py
+OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python r21_orbital_search.py --cut 24 --steps 1000 --ranks 8,12 --kinds shell,random,complex --seed 314 --output r21_orbital_high_rank_results.json
+OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python r21_orbital_multiseed.py
+OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python r21_orbital_inspect.py
 ```
 
 Scripts, JSON results, all coefficient matrices and the density figure are

@@ -22,12 +22,13 @@
 
 ## 复现
 
-依赖 Python 3 与 mpmath 1.3.0。解压后，从本 README 所在目录依次运行：
+依赖 Python 3 与 mpmath 1.3.0。从仓库根目录开始，进入计算目录后依次运行：
 
 ```sh
-python research/r25_interval_shoot.py
-python research/r25_interval_shoot.py 2.2062008646507,2.2062008646508 8 --enclose
-python research/r25_uniform_certificate.py
+cd computations/all-scale-scattering  # from the repository root
+python r25_interval_shoot.py
+python r25_interval_shoot.py 2.2062008646507,2.2062008646508 8 --enclose
+python r25_uniform_certificate.py
 ```
 
 第三个程序也可直接读取包内已保存的精确二进制区间端点，复核最终证书。它会断言全区间上界小于有理数 24/25；记录的最大区间上界小于 0.959318。此结果由连续区间覆盖和解析端点控制给出，不是离散采样推断。

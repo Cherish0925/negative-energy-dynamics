@@ -167,6 +167,7 @@ Darboux 一阶分解是经典方法，Chang–Gustafson–Nakanishi–Tsai 的 N
 径向 Galerkin 搜索未找到合格的紧致反例：六次运行都向窄核心加扩散模态发展，且第二乘子仍为正。数据没有被当成不存在定理。无需重跑这些实验即可阅读解析成果。
 
 ```bash
-python3 research/r23_symbolic_identities.py
+cd computations/all-scale-scattering  # from the repository root
+python3 r23_symbolic_identities.py
 ```
 

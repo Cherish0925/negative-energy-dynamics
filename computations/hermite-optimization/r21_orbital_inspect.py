@@ -1,3 +1,4 @@
+from pathlib import Path
 import os
 os.environ['OPENBLAS_NUM_THREADS']='1';os.environ['OMP_NUM_THREADS']='1'
 from r21_orbital_search import *
@@ -11,7 +12,7 @@ def physical_basis(x,nmax):
  return h
 
 def inspect(path,grid=501,L=13):
- d=np.load(path);C=d['C'];ix=d['ix'];cut=ix.max();N=C.shape[1];x=np.linspace(-L,L,grid);dx=x[1]-x[0]
+ d=np.load(Path(path).name);C=d['C'];ix=d['ix'];cut=ix.max();N=C.shape[1];x=np.linspace(-L,L,grid);dx=x[1]-x[0]
  h=physical_basis(x,cut+1);dh=np.zeros_like(h[:,:cut+1])
  for n in range(cut+1):
    dh[:,n]=-np.sqrt((n+1)/2)*h[:,n+1]
@@ -42,15 +43,15 @@ def inspect(path,grid=501,L=13):
  return result,rho,x
 
 if __name__=='__main__':
- rows=json.load(open('research/r21_orbital_refinement.json'));out=[]
+ rows=json.load(open('r21_orbital_refinement.json'));out=[]
  import matplotlib;matplotlib.use('Agg')
  import matplotlib.pyplot as plt
  fig,axs=plt.subplots(2,4,figsize=(12,6),layout='constrained')
  for col,N in enumerate([2,3,4,6]):
    for row,cut in enumerate([16,40]):
-     allrows=json.load(open('research/r21_orbital_results.json')) if cut==16 else rows
+     allrows=json.load(open('r21_orbital_results.json')) if cut==16 else rows
      rr=max([r for r in allrows if r['rank']==N and r['cut']==cut],key=lambda r:r['quotient'])
      data,rho,x=inspect(rr['coefficients']);out.append(data);print(json.dumps(data),flush=True)
      axs[row,col].imshow(rho.T,origin='lower',extent=[x[0],x[-1],x[0],x[-1]],cmap='inferno');axs[row,col].set(xlim=(-9,9),ylim=(-9,9),title=f'N={N}, degree={cut}\nR={data["R_direct"]:.9f}',xlabel='x',ylabel='y')
- fig.savefig('research/r21_orbital_densities.png',dpi=160)
- with open('research/r21_orbital_independent_checks.json','w') as f:json.dump(out,f,indent=2)
+ fig.savefig('r21_orbital_densities.png',dpi=160)
+ with open('r21_orbital_independent_checks.json','w') as f:json.dump(out,f,indent=2)

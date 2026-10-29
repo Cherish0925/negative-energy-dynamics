@@ -210,7 +210,8 @@ ulp. The logical comparisons use interval endpoints before display.
 Run the two profile commands in [validated-profile.md](validated-profile.md), followed by
 
 ```bash
-python3 research/r24_certified_angular.py --profile research/r24_validated_profile_tight.json --shooting research/r24_validated_shooting_tight.json --C 2.82 --output research/r24_certified_angular.json
+cd computations/all-scale-scattering  # from the repository root
+python3 r24_certified_angular.py --profile r24_validated_profile_tight.json --shooting r24_validated_shooting_tight.json --C 2.82 --output r24_certified_angular.json
 ```
 
 Dependencies: Python 3, NumPy and mpmath. The proof does not require SciPy.

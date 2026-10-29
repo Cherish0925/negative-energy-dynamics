@@ -92,8 +92,9 @@ Frank–Gontier–Lewin 的相关结合构造在二维要求 $\gamma>1$，相应
 在本目录上级运行：
 
 ```bash
-OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python3 research/r22_interaction_check.py
-OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python3 research/r22_scattering_check.py
+cd computations/separated-cores  # from the repository root
+OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python3 r22_interaction_check.py
+OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python3 r22_scattering_check.py
 ```
 
 依赖 NumPy、SciPy。两个 JSON 保存实际运行结果；计算只作解析推导的一致性检查。[orientation.md](../separated-cores/orientation.md) 另保存方向场方法的准确重述及未闭合之处，不将其计为全局问题的解决。

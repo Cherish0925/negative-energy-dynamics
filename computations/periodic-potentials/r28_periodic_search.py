@@ -111,7 +111,7 @@ def main():
     parser.add_argument("--steps", type=int, default=40)
     parser.add_argument("--lattice", choices=["square", "triangular"], default="square")
     parser.add_argument("--norms", type=float, nargs="+", default=[4, 12, 24, 48, 96])
-    parser.add_argument("--output", default="research/r28_periodic_square")
+    parser.add_argument("--output", default="r28_periodic_square")
     args = parser.parse_args()
     problem = BlochProblem(args.cutoff, args.nq, args.lattice)
     results = []

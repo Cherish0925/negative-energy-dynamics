@@ -195,7 +195,8 @@ rechecks the recorded candidates and writes
 Gaussian-lattice parameter optimization. Run with
 
 ```
-OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python research/r20_collective_candidates.py
+cd computations/collective-threshold  # from the repository root
+OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python r20_collective_candidates.py
 ```
 
 The meaningful distinction exposed here is between complete separable

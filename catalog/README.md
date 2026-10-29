@@ -4,7 +4,7 @@ This edition assembles 32 recovered research packages spanning 7–19 October 20
 
 The source map records every package member, its original SHA-256, and the retained location. Original archive containers, superseded generated file indexes, and duplicate typeset copies are represented by their contents or retained LaTeX. Scientific derivations from earlier technical checking notes are retained; transient execution instructions and repetitive editorial status paragraphs are omitted.
 
-[Package list](packages.md) · [Machine-readable source map](source-map.json) · [Complete contents](../CONTENTS.md) · [Research history](../HISTORY.md)
+[Original-filename index](files.md) · [Package list](packages.md) · [Machine-readable source map](source-map.json) · [Complete contents](../CONTENTS.md) · [Research history](../HISTORY.md)
 
 ## Unavailable material
 

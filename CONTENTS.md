@@ -1,6 +1,6 @@
 # Complete contents
 
-[Research narrative](RESEARCH.md) · [Results](RESULTS.md) · [History](HISTORY.md) · [References](references/README.md)
+[Visual overview](README.md) · [Original filenames](catalog/files.md) · [Research narrative](RESEARCH.md) · [Results](RESULTS.md) · [History](HISTORY.md) · [References](references/README.md)
 
 The topic indexes below include the full derivations, supplementary arguments, and earlier formulations. The result catalogue gives the current conclusion where a later argument strengthens an earlier note.
 

@@ -1,7 +1,7 @@
 """Numerical consistency check of analytic two-Townes interaction asymptotics.
 
 This is floating-point quadrature, not an interval proof or a counterexample.
-Run from the parent of research/. Dependencies: numpy, scipy.
+Run from this computation directory. Dependencies: numpy, scipy.
 """
 import json
 from pathlib import Path
@@ -80,7 +80,7 @@ def main():
         q0=float(sol.y[0,0]),mass=mass,c1=c1,normalized_tail_a=tail_a,
         bvp_max_rms_residual=float(sol.rms_residuals.max()),nodes=sol.x.size,
         unequal_scale_moments=moment_rows,rows=rows)
-    Path('research/r22_interaction_check.json').write_text(json.dumps(output,indent=2)+'\n')
+    Path('r22_interaction_check.json').write_text(json.dumps(output,indent=2)+'\n')
     print(json.dumps({k:v for k,v in output.items() if k not in ('rows','unequal_scale_moments')},indent=2))
     print('Unequal-scale G(k) sampled minimum:',min(z['G'] for z in moment_rows))
     for z in rows:

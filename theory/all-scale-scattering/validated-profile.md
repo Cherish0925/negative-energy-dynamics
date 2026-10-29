@@ -190,8 +190,9 @@ is assumed. The connectedness argument and uniqueness suffice.
 Run the two commands from the project root:
 
 ```bash
-python3 research/r24_validated_profile.py --mode shoot --a-low 2.20620086465074 --a-high 2.20620086465075 --stop 24 --output research/r24_validated_shooting_tight.json
-python3 research/r24_validated_profile.py --mode profile --a-low 2.20620086465074 --a-high 2.20620086465075 --step 0.005 --output research/r24_validated_profile_tight.json
+cd computations/all-scale-scattering  # from the repository root
+python3 r24_validated_profile.py --mode shoot --a-low 2.20620086465074 --a-high 2.20620086465075 --stop 24 --output r24_validated_shooting_tight.json
+python3 r24_validated_profile.py --mode profile --a-low 2.20620086465074 --a-high 2.20620086465075 --step 0.005 --output r24_validated_profile_tight.json
 ```
 
 The shooting file must have `bracket_success: true`; the lower shot must

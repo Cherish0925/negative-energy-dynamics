@@ -50,7 +50,7 @@ def run(d,seed):
             blocks.append(row)
         hes[m]=la.eigvalsh(np.block(blocks))[:4].tolist()
     res={'degree':d,'seed':seed,'R':R,'F':F,'T':T,'gradnorm':gn,'iterations':z.nit,'success':bool(z.success),'occ':occ.tolist(),'lowest_m0':la.eigvalsh(H0)[:4].tolist(),'lowest_m':hm,'hessian_lowest_m':hes,'edge_weight':float(np.sum(C[-4:]**2))}
-    np.savez_compressed(f'research/r23_radial_d{d}_s{seed}.npz',C=C)
+    np.savez_compressed(f'r23_radial_d{d}_s{seed}.npz',C=C)
     print(json.dumps(res),flush=True)
     return res
 
@@ -58,4 +58,4 @@ if __name__=='__main__':
     results=[]
     for d in (20,40,60):
         for seed in (13,31):results.append(run(d,seed))
-    with open('research/r23_radial_results.json','w') as f:json.dump(results,f,indent=2)
+    with open('r23_radial_results.json','w') as f:json.dump(results,f,indent=2)

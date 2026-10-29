@@ -10,7 +10,6 @@ The previous centroid-reversal and quartic-calibration calculations do not solve
 Recorded computations:
 1. Recovered the frozen three-dimensional excited radial seed from
 BNLS_Dynamics_Proof_and_Data_20261007.zip,
-Library ID libfile_05a1279d757c8191853eeee98e803390.
 The frozen seed is verification/round4_n3_mixed_exact.json in that package.
 
 2. Axisymmetric finite-volume continuation, even in tau and radial in (x,y):
@@ -50,11 +49,9 @@ represented as target-model counterexamples.
 two spectral states. Its result was not retrieved because the execution service
 disconnected. No successful result is claimed for that run.
 
-Code and raw checkpoints were written under
-/workspace/scratch/2d79348278a6/core_continuation/:
-continue_core.py, critical_path.py, arclength.py, spectral_core.py,
-spectral_arclength.py, with JSON logs and NPZ states.
-Their persistence was not confirmed at the time of the service disconnect.
+Code, configurations, JSON records and NPZ checkpoints are preserved in
+[the computation directory](../../computations/mixed-dispersion-continuation/core_continuation/).
+The [continuation guide](README.md) provides the current commands and links to each path.
 
 These calculations tested direct transfers of the negative-response
 mechanism rather than adding unrelated optical illustrations. It did not close

@@ -36,11 +36,11 @@ def run(n=96,L=12.,kind='scalar',steps=400,complex_=False,seed=1,init_path=None,
     err=abs(fd-np.dot(df,d)); t=time.time()
     opt=so.minimize(calc,z,jac=True,method='L-BFGS-B',options={'maxiter':steps,'ftol':1e-13,'gtol':1e-9,'maxcor':10,'maxls':30})
     result,Y=calc(opt.x,False);result.update(iterations=opt.nit,success=bool(opt.success),message=str(opt.message),seconds=time.time()-t,gradcheck=err)
-    np.savez_compressed(f'research/r15_numerics_{kind}_{n}{tag}.npz',Y=Y.reshape(n,n,rank),h=h,**result)
+    np.savez_compressed(f'r15_numerics_{kind}_{n}{tag}.npz',Y=Y.reshape(n,n,rank),h=h,**result)
     print(json.dumps(result),flush=True); return result
 
 if __name__=='__main__':
     n=int(sys.argv[1]) if len(sys.argv)>1 else 96
     kinds=sys.argv[2:] or ['scalar','dipole','ground_vortex','radial','vortex','two_well','asymmetric']
     rr=[run(n=n,kind=s) for s in kinds]
-    with open(f'research/r15_numerics_results_{n}.json','w') as f:json.dump(rr,f,indent=2)
+    with open(f'r15_numerics_results_{n}.json','w') as f:json.dump(rr,f,indent=2)

@@ -126,7 +126,7 @@ if __name__=='__main__':
         result=calculate(R,h)
         results.append(result)
         print(R,h,[t['ratio'] for t in result['sectors']],flush=True)
-    result=dict(source='research/r24/r24_shell.npz',energy=energy,
+    result=dict(source='r24/r24_shell.npz',energy=energy,
                 beta_f=beta_f,beta_g=beta_g,
                 interpretation='Numerical calibration only; no rigorous error certificate.',
                 results=results)

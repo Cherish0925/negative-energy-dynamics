@@ -1,4 +1,4 @@
-"""Independent constant-shift audit of saved periodic Galerkin potentials.
+"""Constant-shift optimization of saved periodic Galerkin potentials.
 
 All matrix eigenvalues are retained. The Fourier potential is kept fixed;
 only its constant coefficient changes. Results remain floating-point.
@@ -68,7 +68,7 @@ def main():
     parser.add_argument("files", nargs="+")
     parser.add_argument("--cutoff", type=int)
     parser.add_argument("--nq", type=int)
-    parser.add_argument("--output", default="research/r28_periodic_baseline.json")
+    parser.add_argument("--output", default="r28_periodic_baseline.json")
     args = parser.parse_args()
     rows = []
     for path in args.files:

@@ -12,11 +12,11 @@ def up(x):return I(ends(x)[1])
 def positive(x):return ends(x)[0]>0
 
 def run():
- bracket=json.loads(Path('research/r25_shoot_bracket.json').read_text())
+ bracket=json.loads(Path('r25_shoot_bracket.json').read_text())
  assert bracket[0]['status']=='undershoot' and bracket[0]['positive_on_all_step_tubes']
  assert bracket[1]['status']=='overshoot'
  assert positive(val(bracket[0]['p_raw'])) and positive(-val(bracket[1]['q_raw']))
- data=json.loads(Path('research/r25_shoot_2_2062008646507_2_2062008646508.json').read_text())
+ data=json.loads(Path('r25_shoot_2_2062008646507_2_2062008646508.json').read_text())
  rows=data['rows'];nodes=[I(0)]+[val(t['r_raw']) for t in rows]
  values=[up(val(data['a_raw']))]+[up(val(t['q_raw'])) for t in rows]
  # values[i] bounds Q at nodes[i], hence on interval i by strict decrease.
@@ -105,7 +105,7 @@ def run():
       'maximizing_interval':[enc(points[imax]),enc(points[imax+1])],
       'rational_uniform_upper':'24/25',
       'all_k_upper':mp.nstr(max(maximum,ends(low_bound)[1],ends(high_bound)[1]),40)}
- Path('research/r25_uniform_certificate.json').write_text(json.dumps(out,indent=2)+'\n')
+ Path('r25_uniform_certificate.json').write_text(json.dumps(out,indent=2)+'\n')
  print(json.dumps(out,indent=2),flush=True)
  return out
 if __name__=='__main__':run()

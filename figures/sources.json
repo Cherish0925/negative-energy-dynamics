@@ -1,0 +1,53 @@
+{
+  "coherent-profiles": {
+    "kind": "Recorded numerical profiles; theorem stated separately",
+    "inputs": [
+      "computations/excited-waves/axial-profiles/round2_radial_mode1_dim4.npz",
+      "computations/excited-waves/axial-profiles/round2_N4_axial_N512_L64_v0.02.npz"
+    ]
+  },
+  "radiation-and-gap": {
+    "kind": "Exact normalized cost and qualitative theorem diagram",
+    "inputs": [
+      "theory/coherent-radiation/wave-radiation.md",
+      "theory/profile-mass-gap/traveling-mass-gap.md"
+    ]
+  },
+  "occupations-and-core": {
+    "kind": "Threshold formula, profile rescalings, and labeled asymptotic laws",
+    "inputs": [
+      "computations/occupation-computations/r15_townes_profile.npz",
+      "theory/occupation-thresholds/occupation-gap.md",
+      "theory/background-interaction/modulation.md",
+      "theory/background-interaction/quintic-closure.md",
+      "manuscripts/fixed-occupation/Fixed-Occupation-Thresholds.tex"
+    ]
+  },
+  "collective-binding": {
+    "kind": "Recorded optimization outputs and reconstructed densities",
+    "inputs": [
+      "computations/hermite-optimization/r21_orbital_summary.json",
+      "computations/hermite-optimization/r21_orbital_refine_multicore_n2_c40_s21.npz",
+      "computations/hermite-optimization/r21_orbital_refine_shell_n4_c40_s21.npz"
+    ]
+  },
+  "spectral-response": {
+    "kind": "Recorded spectral calibration and analytical asymptotic comparison",
+    "inputs": [
+      "computations/full-response/r31_response_calibration.json",
+      "theory/full-response/response-schur.md",
+      "theory/full-response/density-gradient.md"
+    ]
+  },
+  "mixed-dispersion": {
+    "kind": "Exact dispersion contours and recorded continuation data",
+    "inputs": [
+      "computations/mixed-dispersion-continuation/core_continuation/run128/results.json",
+      "computations/mixed-dispersion-continuation/core_continuation/refine192/results.json",
+      "computations/mixed-dispersion-continuation/core_continuation/spectral256/results.json",
+      "computations/mixed-dispersion-continuation/core_continuation/critical128/results.json",
+      "computations/mixed-dispersion-continuation/core_continuation/arc128/results.json",
+      "theory/coherent-radiation/anisotropic-gap.md"
+    ]
+  }
+}

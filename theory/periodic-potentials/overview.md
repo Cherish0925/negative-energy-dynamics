@@ -68,11 +68,12 @@ $$
 - [r28_periodic_verify.py](../../computations/periodic-potentials/r28_periodic_verify.py)：固定最佳试探势的分辨率复核。
 - 同名前缀 JSON 保存结果，NPZ 保存全部试探势 Fourier 系数。
 
-从解压目录运行，例如：
+从仓库根目录开始，例如：
 
 ```bash
-OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python research/r28_periodic_search.py --cutoff 10 --nq 10 --steps 25 --lattice square --norms 12 24 48 96 --output research/r28_periodic_square_refined
-OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python research/r28_periodic_verify.py
+cd computations/periodic-potentials  # from the repository root
+OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python r28_periodic_search.py --cutoff 10 --nq 10 --steps 25 --lattice square --norms 12 24 48 96 --output r28_periodic_square_refined
+OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python r28_periodic_verify.py
 ```
 
 依赖：Python、NumPy、SciPy。本轮环境 NumPy 2.3.5、SciPy 1.17.0。

@@ -94,7 +94,7 @@ def shoot(a,R='20',enclose=False,N=20):
 if __name__=='__main__':
     if len(sys.argv)>1:
         out=shoot(sys.argv[1],sys.argv[2] if len(sys.argv)>2 else '20', '--enclose' in sys.argv)
-        Path('research/r25_shoot_'+sys.argv[1].replace('.','_').replace('[','').replace(']','').replace(',','_')+'.json').write_text(json.dumps(out,indent=2)+'\n')
+        Path('r25_shoot_'+sys.argv[1].replace('.','_').replace('[','').replace(']','').replace(',','_')+'.json').write_text(json.dumps(out,indent=2)+'\n')
     else:
         out=[shoot(a) for a in ['2.2062008646507','2.2062008646508']]
-        Path('research/r25_shoot_bracket.json').write_text(json.dumps(out,indent=2)+'\n')
+        Path('r25_shoot_bracket.json').write_text(json.dumps(out,indent=2)+'\n')

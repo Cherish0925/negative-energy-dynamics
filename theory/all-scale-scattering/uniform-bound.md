@@ -45,9 +45,10 @@ The independent files are:
 Run, in order, from the workspace root:
 
 ```bash
-python research/r25_interval_shoot.py
-python research/r25_interval_shoot.py 2.2062008646507,2.2062008646508 8 --enclose
-python research/r25_uniform_certificate.py
+cd computations/all-scale-scattering  # from the repository root
+python r25_interval_shoot.py
+python r25_interval_shoot.py 2.2062008646507,2.2062008646508 8 --enclose
+python r25_uniform_certificate.py
 ```
 
 The arithmetic is `mpmath.iv` at 60 decimal digits. The raw `_mpi_` tuples in

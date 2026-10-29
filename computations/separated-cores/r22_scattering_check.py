@@ -51,7 +51,7 @@ def run():
         row=dict(k=k,modes=modes,partial_sums=partial)
         rows.append(row)
         print('k',k,'T partial',partial,flush=True)
-        Path('research/r22_scattering_check.json').write_text(json.dumps(dict(
+        Path('r22_scattering_check.json').write_text(json.dumps(dict(
             status='exploratory non-interval partial-wave calculation',
             normalization='Q solves -Delta Q+Q-Q^3=0; T=2pi(a0+2sum a_m)',
             rows=rows),indent=2)+'\n')

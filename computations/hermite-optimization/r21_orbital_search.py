@@ -65,13 +65,13 @@ def optimize(cut,N,kind,seednum=1,steps=700,initial=None,tag=''):
     opt=so.minimize(calc,a,jac=True,method='L-BFGS-B',options=dict(maxiter=steps,ftol=2e-13,gtol=1e-8,maxls=30,maxcor=15))
     C,result=calc(opt.x,True)
     result.update(cut=cut,rank=N,kind=kind,seed=seednum,iterations=int(opt.nit),message=str(opt.message),success=bool(opt.success),seconds=time.time()-start,gradcheck=float(gradcheck),relative_gap=float((TARGET-result['quotient'])/TARGET))
-    path=f'research/r21_orbital_{tag}{kind}_n{N}_c{cut}_s{seednum}.npz';np.savez_compressed(path,C=C,ix=ix)
+    path=f'r21_orbital_{tag}{kind}_n{N}_c{cut}_s{seednum}.npz';np.savez_compressed(path,C=C,ix=ix)
     result['coefficients']=path
     print(json.dumps(result),flush=True)
     return result,C
 
 if __name__=='__main__':
-  p=argparse.ArgumentParser();p.add_argument('--cut',type=int,default=16);p.add_argument('--steps',type=int,default=700);p.add_argument('--ranks',default='1,2,3,4,6');p.add_argument('--kinds',default='shell,random,multicore,complex');p.add_argument('--seed',type=int,default=21);p.add_argument('--output',default='research/r21_orbital_results.json');a=p.parse_args()
+  p=argparse.ArgumentParser();p.add_argument('--cut',type=int,default=16);p.add_argument('--steps',type=int,default=700);p.add_argument('--ranks',default='1,2,3,4,6');p.add_argument('--kinds',default='shell,random,multicore,complex');p.add_argument('--seed',type=int,default=21);p.add_argument('--output',default='r21_orbital_results.json');a=p.parse_args()
   results=[]
   for N in map(int,a.ranks.split(',')):
     for kind in a.kinds.split(','):

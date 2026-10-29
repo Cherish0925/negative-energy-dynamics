@@ -22,8 +22,8 @@ for lattice in ["square", "triangular"]:
             hat *= np.sqrt(norm/(problem.area*np.sum(abs(hat)**2)))
             hat, info = problem.optimize(norm, steps=45, initial_hat=hat)
             info["start"] = start
-            name=f"research/r28_periodic_multi_{lattice}_{start}_D{norm:g}.npz"
+            name=f"r28_periodic_multi_{lattice}_{start}_D{norm:g}.npz"
             np.savez(name, hat=hat, **info)
             out.append(info)
             print(json.dumps(info), flush=True)
-Path("research/r28_periodic_multistart.json").write_text(json.dumps(out, indent=2)+"\n")
+Path("r28_periodic_multistart.json").write_text(json.dumps(out, indent=2)+"\n")

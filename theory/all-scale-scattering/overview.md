@@ -169,9 +169,10 @@ https://arxiv.org/html/2002.04964v3 。
 复现全尺度计算只需 Python、mpmath、NumPy：
 
 ```bash
-python3 research/r24_validated_profile.py --mode shoot --a-low 2.20620086465074 --a-high 2.20620086465075 --stop 24 --output research/r24_validated_shooting_tight.json
-python3 research/r24_validated_profile.py --mode profile --a-low 2.20620086465074 --a-high 2.20620086465075 --step 0.005 --output research/r24_validated_profile_tight.json
-python3 research/r24_certified_angular.py --profile research/r24_validated_profile_tight.json --shooting research/r24_validated_shooting_tight.json --C 2.82 --output research/r24_certified_angular.json
+cd computations/all-scale-scattering  # from the repository root
+python3 r24_validated_profile.py --mode shoot --a-low 2.20620086465074 --a-high 2.20620086465075 --stop 24 --output r24_validated_shooting_tight.json
+python3 r24_validated_profile.py --mode profile --a-low 2.20620086465074 --a-high 2.20620086465075 --step 0.005 --output r24_validated_profile_tight.json
+python3 r24_certified_angular.py --profile r24_validated_profile_tight.json --shooting r24_validated_shooting_tight.json --C 2.82 --output r24_certified_angular.json
 ```
 
 最终输出应为 `all_k_bound_closes: true`。算术假设、逐项余项及射击识别的证明

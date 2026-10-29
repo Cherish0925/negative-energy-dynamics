@@ -65,7 +65,7 @@ def run():
     out={'status':'floating-point analytic-bound exploration; no interval certification',
          'Q0':float(sol.sol(0)[0]), 'M':mass, 'HS0':hs,
          'optimization':results, 'rows':rows}
-    Path('research/r24_scattering_bounds.json').write_text(json.dumps(out,indent=2)+'\n')
+    Path('r24_scattering_bounds.json').write_text(json.dumps(out,indent=2)+'\n')
     print(json.dumps(out,indent=2))
 
 if __name__=='__main__':
