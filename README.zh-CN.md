@@ -9,6 +9,8 @@ Shuxing Yang
 
 研究由三个相连的问题展开：负能量全局运动及其质量间隙；占据谱决定的阈值与塌缩核心；多模态吸引与正交代价之间的竞争。[第一篇工作的完整入口](papers/negative-energy/README.md)集中呈现负能量主线；本仓库也保存此后发展出的占据谱与集体束缚研究。
 
+这项研究从 [Leonard Dinh 于 2026 年 10 月 2 日在 Meta AI 研究网站公布的径向爆破论文](https://ai.meta.com/research/publications/finite-time-blow-up-of-radial-negative-energy-solutions-for-the-mass-critical-biharmonic-nonlinear-schrodinger-equation/)出发，承接 Boulenger–Lenzmann 的问题，追问去掉径向对称后会发生什么。负能量行波与零动量构造说明，无条件的非径向推广为何不成立；质量间隙则刻画这种相干机制无法出现的区域。[文献对照](references/README.md)列出与前人结论的精确关系。
+
 ## 1. 负能量与全局相干运动可以共存
 
 对质量临界双调和薛定谔方程
