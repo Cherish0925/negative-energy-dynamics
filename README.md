@@ -9,6 +9,8 @@ Shuxing Yang
 
 The research develops three connected questions: negative-energy global motion and its mass gap; occupation-dependent thresholds and the structure of a collapsing core; and the competition between collective attraction and orthogonality. [The first paper](papers/negative-energy/README.md) brings together the negative-energy results; the repository also contains the subsequent occupation and collective-binding work.
 
+The starting point was [Leonard Dinh’s radial blowup paper, published on Meta AI’s research site on 2 October 2026](https://ai.meta.com/research/publications/finite-time-blow-up-of-radial-negative-energy-solutions-for-the-mass-critical-biharmonic-nonlinear-schrodinger-equation/), following Boulenger–Lenzmann. This project asks what happens when radial symmetry is removed. Its negative-energy traveling waves and zero-momentum constructions show why the unrestricted extension fails; the mass gap identifies where that coherent mechanism cannot occur. The [source comparison](references/README.md) gives the precise relationship to the earlier results.
+
 ## 1. Negative energy can coexist with global coherent motion
 
 For mass-critical biharmonic NLS,
